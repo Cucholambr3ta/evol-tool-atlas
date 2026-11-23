@@ -205,7 +205,7 @@ function runCommand(script) {
     const chunks = [];
     const child = spawn('npm', ['run', script], {
       cwd: ROOT,
-      env: { ...process.env, NO_COLOR: '1', CI: process.env.CI ?? '1' },
+      env: { ...process.env, CI: process.env.CI ?? '1' }, // los códigos ANSI se eliminan en sanitize()
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     child.stdout.on('data', (d) => chunks.push(d));
