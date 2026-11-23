@@ -14,7 +14,9 @@
     "verify:catalog": "node scripts/verify-atlas.mjs",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "check": "npm run generate:data && npm run typecheck && npm run lint && npm run test:unit && npm run build && npm run verify:catalog"
+    "check": "npm run generate:data && npm run typecheck && npm run lint && npm run test:unit && npm run build && npm run verify:catalog",
+    "atlas:report": "node scripts/atlas-report.mjs",
+    "atlas:report:full": "node scripts/atlas-report.mjs --e2e"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",

@@ -5,3 +5,7 @@ playwright-report/
 test-results/
 .vite/
 *.tsbuildinfo
+reports/atlas-status.json
+reports/evidence/
+reports/atlas-report.log
+reports/.atlas-report.lock
