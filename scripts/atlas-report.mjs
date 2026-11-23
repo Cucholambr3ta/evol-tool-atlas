@@ -205,7 +205,7 @@ function runCommand(script) {
     const chunks = [];
     const child = spawn('npm', ['run', script], {
       cwd: ROOT,
-      env: { ...process.env, NO_COLOR: '1', FORCE_COLOR: '0', CI: process.env.CI ?? '1' },
+      env: { ...process.env, NO_COLOR: '1', CI: process.env.CI ?? '1' },
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     child.stdout.on('data', (d) => chunks.push(d));
