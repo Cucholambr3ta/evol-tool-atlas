@@ -1,0 +1,3 @@
+fb488d9ee100225b65d079d51f57756ca474c6dc9c283dd2483b19d12adc4516  02-catalogo/seguridad/catalogo/simpleemailspoofer/README.md
+ddde1eb56b273ac770bb2f266518215210b350f36824372be126104afee995ba  02-catalogo/seguridad/catalogo/simpleemailspoofer/index.html
+80b56de4cacb22b758f886440c17579ad97744b6110e04e6cecf7c88ce34d768  02-catalogo/seguridad/catalogo/simpleemailspoofer/metadata.json

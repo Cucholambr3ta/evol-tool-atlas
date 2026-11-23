@@ -1,0 +1,27 @@
+{
+  "advertencia": "Puede permitir lectura no autorizada de memoria. No ejecutar en el host de trabajo ni en equipos ajenos; se documenta como herramienta de investigación restringida.",
+  "registro_origen": {
+    "categoria": "grupo-hardware",
+    "fuente_historica": "https://github.com/ufrisk/pcileech/releases",
+    "name": "pcileech",
+    "sha256_registro_fuente": "5a14079c4d42eaaa3ecb0a7bed617fc8f9d1056ee719e73948919d2219aa9ba3",
+    "version_historica": "4.19.5"
+  },
+  "categoria_atlas": "hardware",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+  "estado_mantenimiento": "Requisitos concretos de hardware/versiones no comprobados",
+  "fuente_distribucion_comprobada": "https://github.com/ufrisk/pcileech/releases",
+  "fuente_proyecto": "https://github.com/ufrisk/pcileech",
+  "fuentes_consultadas": [
+    "https://github.com/ufrisk/pcileech",
+    "https://github.com/ufrisk/pcileech/releases"
+  ],
+  "id": "pcileech",
+  "instalado_en_host": null,
+  "nombre": "PCILeech",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

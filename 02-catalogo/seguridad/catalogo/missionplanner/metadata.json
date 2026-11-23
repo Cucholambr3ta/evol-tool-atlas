@@ -1,0 +1,27 @@
+{
+  "advertencia": "El repositorio de descargas visible incluye paquetes Windows; no declararlo instalado ni compatible de forma nativa con CachyOS. No operar aeronaves reales.",
+  "registro_origen": {
+    "categoria": "grupo-drone",
+    "fuente_historica": "https://firmware.ardupilot.org/Tools/MissionPlanner/",
+    "name": "missionplanner",
+    "sha256_registro_fuente": "8e851541bc54abb8ffe9e6947131e25bc0a9576ad45b4aad6bd0516fb1126633",
+    "version_historica": "1.3.83"
+  },
+  "categoria_atlas": "drones",
+  "detalle_verificacion": "DISTRIBUCION_OFICIAL_IDENTIFICADA",
+  "estado": "DISTRIBUCION_OFICIAL_VERIFICADA_LIMITACION_LINUX",
+  "estado_mantenimiento": "Los paquetes visibles no verifican compatibilidad nativa Linux",
+  "fuente_distribucion_comprobada": "https://firmware.ardupilot.org/Tools/MissionPlanner/",
+  "fuente_proyecto": "https://firmware.ardupilot.org/Tools/MissionPlanner/",
+  "fuentes_consultadas": [
+    "https://firmware.ardupilot.org/Tools/MissionPlanner/",
+    "https://ardupilot.org/planner/"
+  ],
+  "id": "missionplanner",
+  "instalado_en_host": null,
+  "nombre": "Mission Planner",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

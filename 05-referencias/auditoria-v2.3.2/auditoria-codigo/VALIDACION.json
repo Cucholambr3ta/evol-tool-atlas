@@ -1,0 +1,277 @@
+{
+  "admitidas": 26,
+  "categoria": "Auditoría de código",
+  "estado_verificacion": "FUENTES_CONTRASTADAS_SIN_INSTALACION",
+  "excluidas": 4,
+  "exclusiones": [
+    {
+      "id": "bof-detector",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: GitHub responde 404: repositorio eliminado o privado",
+      "url_historica": "https://github.com/st9140927/BOF_Detector"
+    },
+    {
+      "id": "mosca",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: GitHub responde 404: repositorio eliminado o privado",
+      "url_historica": "https://github.com/CoolerVoid/Mosca"
+    },
+    {
+      "id": "pscan",
+      "razon": "Página antigua: no se confirmó distribución actual ni fuente con trazabilidad suficiente.",
+      "url_historica": "http://deployingradius.com/pscan/"
+    },
+    {
+      "id": "yasca",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "url_historica": "http://www.scovetta.com/yasca.html"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "incluidas": [
+    {
+      "advertencia": "Web oficial del analizador Brakeman.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-brakeman-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "brakeman",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/brakeman/index.html",
+      "url_fuente": "https://brakemanscanner.org/"
+    },
+    {
+      "advertencia": "La referencia antigua no respondió; GNU mantiene descarga oficial de cflow.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-cflow-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "cflow",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/cflow/index.html",
+      "url_fuente": "https://www.gnu.org/software/cflow/"
+    },
+    {
+      "advertencia": "Repositorio del analizador de IaC Checkov.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-checkov-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "checkov",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/checkov/index.html",
+      "url_fuente": "https://github.com/bridgecrewio/checkov"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-cpptest-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "cpptest",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/cpptest/index.html",
+      "url_fuente": "https://github.com/cpptest/cpptest"
+    },
+    {
+      "advertencia": "Repositorio y documentación oficiales del proyecto OWASP Dependency-Check.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-dependency-check-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "dependency-check",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/dependency-check/index.html",
+      "url_fuente": "https://github.com/dependency-check/DependencyCheck"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-detect-secrets-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "detect-secrets",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/detect-secrets/index.html",
+      "url_fuente": "https://github.com/Yelp/detect-secrets"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-devaudit-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "devaudit",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/devaudit/index.html",
+      "url_fuente": "https://github.com/sonatype-nexus-community/DevAudit"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-githound-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "githound",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/githound/index.html",
+      "url_fuente": "https://github.com/tillson/git-hound"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-graudit-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "graudit",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/graudit/index.html",
+      "url_fuente": "https://github.com/wireghoul/graudit"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-horusec-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "horusec",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/horusec/index.html",
+      "url_fuente": "https://github.com/ZupIT/horusec"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-local-php-security-checker-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "local-php-security-checker",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/local-php-security-checker/index.html",
+      "url_fuente": "https://github.com/fabpot/local-php-security-checker"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-njsscan-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "njsscan",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/njsscan/index.html",
+      "url_fuente": "https://pypi.org/project/njsscan/"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-phpstan-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "phpstan",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/phpstan/index.html",
+      "url_fuente": "https://github.com/phpstan/phpstan"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-rats-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "rats",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/rats/index.html",
+      "url_fuente": "https://github.com/andrew-d/rough-auditing-tool-for-security"
+    },
+    {
+      "advertencia": "Repositorio oficial y publicaciones del proyecto Semgrep; se conserva la ficha anterior idéntica.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-semgrep-v1.zip",
+      "estado": "REUTILIZADA_PREVIAMENTE",
+      "id": "semgrep",
+      "nivel_evidencia": "REUTILIZADA_FICHA_VERIFICADA",
+      "ruta_ficha": "02-catalogo/testing-y-auditoria/semgrep/index.html",
+      "url_fuente": "https://github.com/semgrep/semgrep"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-slither-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "slither",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/slither/index.html",
+      "url_fuente": "https://github.com/crytic/slither"
+    },
+    {
+      "advertencia": "Código y releases de Snyk CLI; parte de los servicios depende de proveedor y cuenta.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-snyk-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "snyk",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/snyk/index.html",
+      "url_fuente": "https://github.com/snyk/cli"
+    },
+    {
+      "advertencia": "Documentación oficial del escáner Sonar; revisar los requisitos de servicio/licencia.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sonar-scanner-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "sonar-scanner",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/sonar-scanner/index.html",
+      "url_fuente": "https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/scanners/sonarscanner/"
+    },
+    {
+      "advertencia": "Repositorio y sitio oficial SpotBugs.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-spotbugs-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "spotbugs",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/spotbugs/index.html",
+      "url_fuente": "https://github.com/spotbugs/spotbugs"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-stoq-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "stoq",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/stoq/index.html",
+      "url_fuente": "https://github.com/PUNCH-Cyber/stoq"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tell-me-your-secrets-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "tell-me-your-secrets",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/tell-me-your-secrets/index.html",
+      "url_fuente": "https://github.com/valayDave/tell-me-your-secrets"
+    },
+    {
+      "advertencia": "Fuente del detector de secretos TruffleHog.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-trufflehog-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "trufflehog",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/trufflehog/index.html",
+      "url_fuente": "https://github.com/trufflesecurity/trufflehog"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-whispers-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "whispers",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/whispers/index.html",
+      "url_fuente": "https://github.com/adeptex/whispers"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-wpbullet-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "wpbullet",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/wpbullet/index.html",
+      "url_fuente": "https://github.com/webarx-security/wpbullet"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-wscript-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "wscript",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/wscript/index.html",
+      "url_fuente": "https://github.com/mrpapercut/wscript"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-zarn-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "zarn",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/zarn/index.html",
+      "url_fuente": "https://github.com/htrgouvea/zarn"
+    }
+  ],
+  "limitaciones": [
+    "No validación funcional en CachyOS",
+    "No todas las fuentes fueron reconsultadas en vivo el mismo día",
+    "No verificación de licencias o firmas de binarios",
+    "No publicación de URLs excluidas como enlaces navegables"
+  ],
+  "metodologia": "Fuente histórica revisada al 2026-11-21 + corroboración independiente en fuentes seleccionadas al 2026-11-22; no se presume mantenimiento activo por repositorio público.",
+  "numero": 24,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "slug": "auditoria-codigo",
+  "total_en_corpus": 30
+}

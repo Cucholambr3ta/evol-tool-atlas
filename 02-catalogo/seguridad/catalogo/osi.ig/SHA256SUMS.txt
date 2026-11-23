@@ -1,0 +1,3 @@
+c82c6837672e46eca4a2485d35978849ae26892011c36465bd0d2fa1d920da84  02-catalogo/seguridad/catalogo/osi.ig/README.md
+d1e7991d1cba796c879b90dcd8cb35f4bf12381e022a6b8644d7191216e3688e  02-catalogo/seguridad/catalogo/osi.ig/index.html
+3570826187d8799d24bf0c3ebe7bf6b0cbf3d5f702a17635432482e5b7dcad4b  02-catalogo/seguridad/catalogo/osi.ig/metadata.json

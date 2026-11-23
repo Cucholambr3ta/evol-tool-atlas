@@ -1,0 +1,484 @@
+{
+  "admitidas": [
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/claudijd/c7decrypt",
+      "id": "c7decrypt",
+      "nombre": "c7decrypt"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/OpenSecurityResearch/ciphertest",
+      "id": "ciphertest",
+      "nombre": "ciphertest"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/frohoff/ciphr",
+      "id": "ciphr",
+      "nombre": "ciphr"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SpiderLabs/cribdrag",
+      "id": "cribdrag",
+      "nombre": "cribdrag"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/chokepoint/CryptHook",
+      "id": "crypthook",
+      "nombre": "crypthook"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Ekultek/Dagon",
+      "id": "dagon",
+      "nombre": "dagon"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SideChannelMarvels/Daredevil",
+      "id": "daredevil",
+      "nombre": "daredevil"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/UltimateHackers/Decodify",
+      "id": "decodify",
+      "nombre": "decodify"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/takeshixx/deen",
+      "id": "deen",
+      "nombre": "deen"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/demiguise",
+      "id": "demiguise",
+      "nombre": "demiguise"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Aorimn/dislocker",
+      "id": "dislocker",
+      "nombre": "dislocker"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/featherduster",
+      "id": "featherduster",
+      "nombre": "featherduster"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ALSchwalm/foresight",
+      "id": "foresight",
+      "nombre": "foresight"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://gitlab.com/GasparVardanyan/gcrypt",
+      "id": "gcrypt",
+      "nombre": "gcrypt"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://gitlab.com/GasparVardanyan/gdir.pl",
+      "id": "gdir-pl",
+      "nombre": "gdir.pl"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/t0thkr1s/gpp-decrypt",
+      "id": "gpp-decrypt",
+      "nombre": "gpp-decrypt"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://noraj.github.io/haiti/",
+      "id": "haiti",
+      "nombre": "haiti"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/UltimateHackers/Hash-Buster/",
+      "id": "hash-buster",
+      "nombre": "hash-buster"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/iagox86/hash_extender",
+      "id": "hash-extender",
+      "nombre": "hash-extender"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/blackploit/hash-identifier",
+      "id": "hash-identifier",
+      "nombre": "hash-identifier"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Telefonica/HashCheck",
+      "id": "hashcheck",
+      "nombre": "hashcheck"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/NPS-DEEP/hashdb/",
+      "id": "hashdb",
+      "nombre": "hashdb"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jessek/hashdeep",
+      "id": "hashdeep",
+      "nombre": "hashdeep"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/rurapenthe/hashfind",
+      "id": "hashfind",
+      "nombre": "hashfind"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/psypanda/hashID",
+      "id": "hashid",
+      "nombre": "hashid"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ColumPaget/Hashrat",
+      "id": "hashrat",
+      "nombre": "hashrat"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/rjw57/hdcp-genkey",
+      "id": "hdcp-genkey",
+      "nombre": "hdcp-genkey"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/stephenbradshaw/hlextend",
+      "id": "hlextend",
+      "nombre": "hlextend"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/salesforce/ja3",
+      "id": "ja3",
+      "nombre": "ja3"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/FlorianPicca/JWT-Key-Recovery",
+      "id": "jwt-key-recovery",
+      "nombre": "jwt-key-recovery"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/noraj/kh2hc",
+      "id": "kh2hc",
+      "nombre": "kh2hc"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/libyal/libbde",
+      "id": "libbde",
+      "nombre": "libbde"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/hiddenillusion/NoMoreXOR",
+      "id": "nomorexor",
+      "nombre": "nomorexor"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/evilmog/ntlmv1-multi",
+      "id": "ntlmv1-multi",
+      "nombre": "ntlmv1-multi"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Miserlou/omnihash",
+      "id": "omnihash",
+      "nombre": "omnihash"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/syvaidya/openstego/releases",
+      "id": "openstego",
+      "nombre": "openstego"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/resurrecting-open-source-projects/outguess",
+      "id": "outguess",
+      "nombre": "outguess"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/bniemczyk/pacumen",
+      "id": "pacumen",
+      "nombre": "pacumen"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/imyelo/padoracle",
+      "id": "padoracle",
+      "nombre": "padoracle"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/glebarez/padre",
+      "id": "padre",
+      "nombre": "padre"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/liamg/pax",
+      "id": "pax-oracle",
+      "nombre": "pax-oracle"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/pip3line",
+      "id": "pip3line",
+      "nombre": "pip3line"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/iagox86/poracle",
+      "id": "poracle",
+      "nombre": "poracle"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ins1gn1a/pwdlyser",
+      "id": "pwdlyser",
+      "nombre": "pwdlyser"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Ganapati/RsaCtfTool",
+      "id": "rsactftool",
+      "nombre": "rsactftool"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ius/rsatool",
+      "id": "rsatool",
+      "nombre": "rsatool"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/zweisamkeit/RSHack",
+      "id": "rshack",
+      "nombre": "rshack"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/decrypto-org/rupture",
+      "id": "rupture",
+      "nombre": "rupture"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Kibouo/rustpad",
+      "id": "rustpad",
+      "nombre": "rustpad"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/cr-marcstevens/sha1collisiondetection",
+      "id": "sha1collisiondetection",
+      "nombre": "sha1collisiondetection"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://darkside.com.au/snow/index.html",
+      "id": "snow",
+      "nombre": "snow"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/nabla-c0d3/sslyze",
+      "id": "sslyze",
+      "nombre": "sslyze"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/RUB-NDS/TLS-Attacker",
+      "id": "tls-attacker",
+      "nombre": "tls-attacker"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://noraj.github.io/tls-map/",
+      "id": "tls-map",
+      "nombre": "tls-map"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Ayrx/tlsenum",
+      "id": "tlsenum",
+      "nombre": "tlsenum"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/tomato42/tlsfuzzer",
+      "id": "tlsfuzzer",
+      "nombre": "tlsfuzzer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/hannob/tlshelpers",
+      "id": "tlshelpers",
+      "nombre": "tlshelpers"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/iSECPartners/tlspretense",
+      "id": "tlspretense",
+      "nombre": "tlspretense"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/altf4/untwister",
+      "id": "untwister",
+      "nombre": "untwister"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/X-Vector/X-RSA",
+      "id": "x-rsa",
+      "nombre": "x-rsa"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Tylous/ZipExec",
+      "id": "zipexec",
+      "nombre": "zipexec"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/mhogomchungu/zuluCrypt",
+      "id": "zulucrypt",
+      "nombre": "zulucrypt"
+    }
+  ],
+  "categoria": "Criptografía",
+  "corpus_origen": "auditoria-documental-v2.3.2.zip",
+  "entradas_originales": 80,
+  "estado_de_comprobacion": "Sólo fuentes seleccionadas contrastadas públicamente; el resto se basa en evidencia fuente del 21-11-2026",
+  "excluidas": [
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «aespipe»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "aespipe"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "auto-xor-decryptor"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «bletchley»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "bletchley"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "codetective"
+    },
+    {
+      "detalle_expediente": "aparcamiento o reventa de dominio (www.networksolutions.com)",
+      "motivo": "Fuera del catálogo operativo: BLOQUEADO",
+      "nombre": "cryptonark"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "factordb-pycli"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «findmyhash»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "findmyhash"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "hashpeek"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "hashpump"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "kraken"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «luksipc»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "luksipc"
+    },
+    {
+      "detalle_expediente": "contenido de apuestas o casino",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "morxkeyfmt"
+    },
+    {
+      "detalle_expediente": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (gdssecurity.com -> github.com))",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "padbuster"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "posttester"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "pwd-hash"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "sbd"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «xorbruteforcer»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "xorbruteforcer"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «xorsearch»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "xorsearch"
+    }
+  ],
+  "fecha_entrega": "2026-11-22",
+  "fichas_documentales": 62,
+  "grupo_original": "grupo-crypto",
+  "limitaciones": [
+    "No se han instalado ni ejecutado herramientas",
+    "No se han comprobado licencias, firmas o últimas versiones de todas las herramientas",
+    "No se ha demostrado vigencia actual de referencias cuya única evidencia es el expediente de ayer"
+  ],
+  "numero": 37,
+  "politica_admision": "Fuente HTTPS con identidad comprobada en expediente o nueva fuente verificada hoy; resto fuera del catálogo operativo",
+  "procedencia_solo_expediente": 61,
+  "verificadas_publicamente_en_este_turno": 1
+}

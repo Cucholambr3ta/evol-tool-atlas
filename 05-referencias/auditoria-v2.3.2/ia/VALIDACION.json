@@ -1,0 +1,291 @@
+{
+  "admitidas": 8,
+  "alcance": "comprobación documental de fuente externa; no instalación ni ejecución de las herramientas",
+  "categoria": "ia",
+  "excluidas": 2,
+  "exclusiones": [
+    {
+      "estado": "EXCLUIDA_DEL_CATALOGO_OPERATIVO",
+      "id": "aimap",
+      "razon": "Fuente original marcada NO_DISPONIBLE en el catálogo v2.3.2; no se identificó procedencia externa suficiente."
+    },
+    {
+      "estado": "EXCLUIDA_DEL_CATALOGO_OPERATIVO",
+      "id": "evil-opencode",
+      "razon": "Repositorio accesible, pero fork que declara eliminar barreras de seguridad; exclusión editorial del catálogo operativo EVOL, no por falta de disponibilidad."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "herramientas": [
+    {
+      "advertencia": "Confirmar versión y licencias de dependencias antes del uso.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Biblioteca de evaluación de robustez y ataques adversariales a modelos de aprendizaje automático.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+      "fuente_proyecto": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+      "fuentes_consultadas": [
+        "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+      ],
+      "id": "adversarial-robustness-toolbox",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Adversarial Robustness Toolbox",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Pruebas de robustez en modelos del laboratorio, con corpus sintéticos.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "1.20.1.r258.ge8cfffd"
+    },
+    {
+      "advertencia": "Repositorio archivado y avisos de inyección de comandos publicados; no apto para instalación sin revisión de seguridad y controles.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Framework de investigación en seguridad asistida por agentes de IA.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "LEGADO_RIESGO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/aliasrobotics/cai",
+      "fuente_proyecto": "https://github.com/aliasrobotics/cai",
+      "fuentes_consultadas": [
+        "https://github.com/aliasrobotics/cai"
+      ],
+      "id": "cai",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "CAI (Cybersecurity AI)",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Revisar su arquitectura como referencia; no integrarlo como agente con privilegios.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "1.6dc7925"
+    },
+    {
+      "advertencia": "Revisar compatibilidad de frameworks y releases actuales.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Biblioteca de investigación y benchmarking de ejemplos adversariales.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "MANTENIMIENTO_NO_CONFIRMADO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/cleverhans-lab/cleverhans",
+      "fuente_proyecto": "https://github.com/cleverhans-lab/cleverhans",
+      "fuentes_consultadas": [
+        "https://github.com/cleverhans-lab/cleverhans"
+      ],
+      "id": "cleverhans",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "CleverHans",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Benchmark de resistencia de modelos en laboratorio aislado.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "v4.0.0.r7.g574efc1"
+    },
+    {
+      "advertencia": "Orientado a Windows y evaluación ofensiva; ejecutar solo con muestras autorizadas y en VM.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Framework experimental de análisis de controladores Windows con agentes de IA.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EXPERIMENTAL",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/416rehman/DeepZero",
+      "fuente_proyecto": "https://github.com/416rehman/DeepZero",
+      "fuentes_consultadas": [
+        "https://github.com/416rehman/DeepZero"
+      ],
+      "id": "deepzero",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "DeepZero",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Referencia de automatización y análisis de firmware o controladores en entornos desechables.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "deepzero.v0.4.0.r4.g1bf1818"
+    },
+    {
+      "advertencia": "Los probes pueden enviar prompts a proveedores externos; controlar claves, privacidad y costes.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Herramienta para evaluar vulnerabilidades y fallos de comportamiento de modelos LLM.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/NVIDIA/garak",
+      "fuente_proyecto": "https://github.com/NVIDIA/garak",
+      "fuentes_consultadas": [
+        "https://github.com/NVIDIA/garak"
+      ],
+      "id": "garak",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "garak",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Pruebas de modelos y agentes de laboratorio EVOL.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "0.17.1.r31.g4b7761c"
+    },
+    {
+      "advertencia": "Revisar diferencias de API v2/v3 antes de adoptar y dependencias externas.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Suite de pruebas y evaluación de agentes LLM; en su tercera generación de arquitectura.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/Giskard-AI/giskard-oss",
+      "fuente_proyecto": "https://github.com/Giskard-AI/giskard-oss",
+      "fuentes_consultadas": [
+        "https://github.com/Giskard-AI/giskard-oss"
+      ],
+      "id": "giskard",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Giskard",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Pruebas de asistentes y flujos RAG del laboratorio.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "3.0.1.r32.g9a30fc3"
+    },
+    {
+      "advertencia": "Verificar alcance de las reglas y falsos positivos; ninguna prueba permite acceso privilegiado.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Scanner de seguridad de código y repositorios con cobertura de archivos de configuración de agentes IA.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/Pantheon-Security/medusa",
+      "fuente_proyecto": "https://github.com/Pantheon-Security/medusa",
+      "fuentes_consultadas": [
+        "https://github.com/Pantheon-Security/medusa"
+      ],
+      "id": "medusa-ai",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Medusa",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Evaluación de repositorios y configuraciones de desarrollo con datos de prueba.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "2026.7.0"
+    },
+    {
+      "advertencia": "Configurar explícitamente el uso offline para evitar envío no deseado de datos.",
+      "categoria_atlas": "ia",
+      "categoria_origen": "grupo-ai",
+      "descripcion": "Evaluación de prompts, agentes y aplicaciones LLM mediante casos reproducibles.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/promptfoo/promptfoo",
+      "fuente_proyecto": "https://github.com/promptfoo/promptfoo",
+      "fuentes_consultadas": [
+        "https://github.com/promptfoo/promptfoo"
+      ],
+      "id": "promptfoo",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "promptfoo",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Regresiones de prompts, flujos y defensas de agentes EVOL.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "0.120.20"
+    }
+  ],
+  "nombre": "Seguridad e inteligencia artificial",
+  "numero": 13,
+  "originales": 10,
+  "schema": "evol-tool-atlas/category-validation/2",
+  "sha256_tools_json": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+}

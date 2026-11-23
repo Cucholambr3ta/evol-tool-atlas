@@ -1,0 +1,26 @@
+{
+  "advertencia": "Su disponibilidad como código no demuestra compatibilidad del hardware ni de bibliotecas gráficas concretas.",
+  "registro_origen": {
+    "categoria": "grupo-automobile",
+    "fuente_historica": "https://github.com/collin80/SavvyCAN",
+    "name": "savvycan",
+    "sha256_registro_fuente": "38542155f8f5aeb0e11f4c275d5f5244bc90ea9269064c923dbe661ae1f969c7",
+    "version_historica": "continuous.r0.g7f8f605"
+  },
+  "categoria_atlas": "automocion",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "No se ha compilado ni comprobado en CachyOS",
+  "fuente_distribucion_comprobada": "https://github.com/collin80/SavvyCAN",
+  "fuente_proyecto": "https://github.com/collin80/SavvyCAN",
+  "fuentes_consultadas": [
+    "https://github.com/collin80/SavvyCAN"
+  ],
+  "id": "savvycan",
+  "instalado_en_host": null,
+  "nombre": "SavvyCAN",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

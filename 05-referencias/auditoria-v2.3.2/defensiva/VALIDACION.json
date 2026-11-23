@@ -1,0 +1,368 @@
+{
+  "admitidas": 39,
+  "admitidas_detalle": [
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://aide.github.io/",
+      "id": "aide",
+      "nombre": "aide",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-aide-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://arpon.sourceforge.io/",
+      "id": "arpon",
+      "nombre": "arpon",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-arpon-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/he2ss/arpstraw",
+      "id": "arpstraw",
+      "nombre": "arpstraw",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-arpstraw-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/mthbernardes/ARTLAS",
+      "id": "artlas",
+      "nombre": "artlas",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-artlas-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/mandiant/capa",
+      "id": "capa",
+      "nombre": "capa",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-capa-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/WithSecureOpenSource/chainsaw",
+      "id": "chainsaw",
+      "nombre": "chainsaw",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-chainsaw-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://www.chkrootkit.org/",
+      "id": "chkrootkit",
+      "nombre": "chkrootkit",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-chkrootkit-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/galkan/tools",
+      "id": "detect-sniffer",
+      "nombre": "detect-sniffer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-detect-sniffer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/pavel-odintsov/fastnetmon",
+      "id": "fastnetmon",
+      "nombre": "fastnetmon",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-fastnetmon-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/adtac/fssb",
+      "id": "fssb",
+      "nombre": "fssb",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-fssb-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://www.inetsim.org/",
+      "id": "inetsim",
+      "nombre": "inetsim",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-inetsim-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/utkusen/jeopardize",
+      "id": "jeopardize",
+      "nombre": "jeopardize",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-jeopardize-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/jensvoid/lorg",
+      "id": "lorg",
+      "nombre": "lorg",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-lorg-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/maliceio/malice",
+      "id": "malice",
+      "nombre": "malice",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-malice-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://sourceforge.net/projects/malmon/",
+      "id": "malmon",
+      "nombre": "malmon",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-malmon-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/stamparm/maltrail",
+      "id": "maltrail",
+      "nombre": "maltrail",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-maltrail-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Neo23x0/munin",
+      "id": "munin-hashchecker",
+      "nombre": "munin-hashchecker",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-munin-hashchecker-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/htrgouvea/nipe",
+      "id": "nipe",
+      "nombre": "nipe",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-nipe-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/orjail/orjail",
+      "id": "orjail",
+      "nombre": "orjail",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-orjail-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/segofensiva/OSfooler-ng",
+      "id": "osfooler-ng",
+      "nombre": "osfooler-ng",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-osfooler-ng-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/last-byte/PersistenceSniper",
+      "id": "persistencesniper",
+      "nombre": "persistencesniper",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-persistencesniper-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Mutasem-mk4/procscope",
+      "id": "procscope",
+      "nombre": "procscope",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-procscope-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/prowler-cloud/prowler",
+      "id": "prowler",
+      "nombre": "prowler",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-prowler-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/tylabs/qs_old",
+      "id": "quicksand-lite",
+      "nombre": "quicksand-lite",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-quicksand-lite-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/SentryPeer/SentryPeer",
+      "id": "sentrypeer",
+      "nombre": "sentrypeer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sentrypeer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/SigmaHQ/sigma",
+      "id": "sigma",
+      "nombre": "sigma",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sigma-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/vecna/sniffjoke",
+      "id": "sniffjoke",
+      "nombre": "sniffjoke",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sniffjoke-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://www.snort.org/",
+      "id": "snort",
+      "nombre": "snort",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-snort-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/TheresAFewConors/Sooty",
+      "id": "sooty",
+      "nombre": "sooty",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sooty-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://suricata.io/download/",
+      "id": "suricata",
+      "nombre": "suricata",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-suricata-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ANSSI-FR/tabi",
+      "id": "tabi",
+      "nombre": "tabi",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tabi-v1.zip"
+    },
+    {
+      "estado_vigencia": "HISTORICA_NO_RECOMENDADA",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/aquasecurity/tfsec",
+      "id": "tfsec",
+      "nombre": "tfsec",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tfsec-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/threatspec/threatspec",
+      "id": "threatspec",
+      "nombre": "threatspec",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-threatspec-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://download.torproject.org/tor-browser-for-desktop/",
+      "id": "tor-browser",
+      "nombre": "tor-browser",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tor-browser-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Edu4rdSHL/tor-router",
+      "id": "tor-router",
+      "nombre": "tor-router",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tor-router-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/nbulischeck/tyton",
+      "id": "tyton",
+      "nombre": "tyton",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tyton-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/errbufferoverfl/usb-canary",
+      "id": "usb-canary",
+      "nombre": "usb-canary",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-usb-canary-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/yeti-platform/yeti",
+      "id": "yeti",
+      "nombre": "yeti",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-yeti-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/DenizParlak/Zeus",
+      "id": "zeus",
+      "nombre": "zeus",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-zeus-v1.zip"
+    }
+  ],
+  "categoria": "Seguridad defensiva",
+  "categoria_original": "grupo-defensive",
+  "excluidas": 6,
+  "excluidas_detalle": [
+    {
+      "estado_origen": "IDENTIDAD_NO_VERIFICADA",
+      "id": "artillery",
+      "motivo": "HTTP 301 sin contenido verificable",
+      "url_original": "https://www.trustedsec.com/downloads/artillery/"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "honeycreds",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/Ben0xA/HoneyCreds"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "ifchk",
+      "motivo": "HTTP 404: el recurso ya no existe en el servidor",
+      "url_original": "http://www.noorg.org/ifchk/"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "mat",
+      "motivo": "el dominio no resuelve (DNS): retirado o inexistente",
+      "url_original": "https://mat.boum.org/"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "portspoof",
+      "motivo": "HTTP 404: el recurso ya no existe en el servidor",
+      "url_original": "https://drk1wi.github.io/portspoof/"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "tor-autocircuit",
+      "motivo": "el dominio no resuelve (DNS): retirado o inexistente",
+      "url_original": "http://www.thesprawl.org/projects/tor-autocircuit/"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_revalidadas_hoy": 7,
+  "fuentes_solo_expediente": 32,
+  "limitacion": "No se hizo verificación de red individual de cada entrada. Las entradas del expediente provienen del sondeo de 2026-11-21 y no acreditan mantenimiento, licencia, seguridad ni funcionamiento en CachyOS.",
+  "numero": 31,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 45,
+  "verificacion_del_expediente": "2026-11-21",
+  "vinculo_a_expediente": "Herramientas con URL upstream u oficial verificadas; enlaces rotos, archivo histórico e identidad no verificable excluidos; Python2 duplicado y SDK Tools obsoleto excluidos."
+}

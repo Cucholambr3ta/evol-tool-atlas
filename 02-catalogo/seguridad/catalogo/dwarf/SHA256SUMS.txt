@@ -1,0 +1,3 @@
+d7e9898ebb167d54ca5f3093d15167f59806e0831e25980d1f29aa6fbc7f3b70  02-catalogo/seguridad/catalogo/dwarf/README.md
+b35b2f8d8a37b808855a4e498ec6f4d7913391c460613c44fa5d537d7305963e  02-catalogo/seguridad/catalogo/dwarf/index.html
+11b8eb79aa7d574432f896fd98dadeb18aaca7b5f5c40754ce108cef47960b3a  02-catalogo/seguridad/catalogo/dwarf/metadata.json

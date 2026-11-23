@@ -1,0 +1,3 @@
+a6e0845dd41d7525dec338c8f4af0a568bcb9cd035c8ab10e7c8596376645707  02-catalogo/seguridad/catalogo/bsdiff/README.md
+9555b3ee5c76b993a52f1090155bf226cd4080a86b81d9aeea4cc03f8aa23d6c  02-catalogo/seguridad/catalogo/bsdiff/index.html
+3cc4d03c27cfdb38e06725b58cfe2e6d66ff7446385703722984a92f8791d9c4  02-catalogo/seguridad/catalogo/bsdiff/metadata.json

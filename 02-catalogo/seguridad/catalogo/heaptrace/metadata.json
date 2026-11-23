@@ -1,0 +1,33 @@
+{
+  "advertencia": "Revisar dependencia ptrace y permisos del host.",
+  "categoria_atlas": "depuradores",
+  "categoria_origen": "grupo-debugger",
+  "descripcion": "Herramienta para observar operaciones de heap y apoyar depuración de memoria.",
+  "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+  "estado_mantenimiento": "HISTORICO",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fuente_historica": "https://github.com/Arinerron/heaptrace",
+  "fuente_proyecto": "https://github.com/Arinerron/heaptrace",
+  "fuentes_consultadas": [
+    "https://github.com/Arinerron/heaptrace"
+  ],
+  "id": "heaptrace",
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "nombre": "heaptrace",
+  "probado_en_cachyos": false,
+  "proveniencia": {
+    "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+    "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+  },
+  "schema": "evol-tool-atlas/tool/2",
+  "uso_evol_propuesto": "Análisis de binarios de prueba en sandbox.",
+  "validaciones_pendientes": [
+    "Revisión de licencia específica y dependencias",
+    "Prueba local segura en CachyOS",
+    "Aprobación del propietario para instalación"
+  ],
+  "verificacion_fecha": "2026-11-22",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "2.2.8.2.r20.g06f43fc"
+}

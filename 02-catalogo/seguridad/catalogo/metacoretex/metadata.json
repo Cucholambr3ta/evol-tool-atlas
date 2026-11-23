@@ -1,0 +1,26 @@
+{
+  "advertencia": "Página de proyecto identificada en SourceForge, pero sin prueba de descarga ni ejecución. No tratarlo como una opción de seguridad vigente para producción.",
+  "registro_origen": {
+    "categoria": "grupo-database",
+    "fuente_historica": "http://metacoretex.sourceforge.net/",
+    "name": "metacoretex",
+    "sha256_registro_fuente": "1cba6b56e9ddbac6cec64b05fea764b8a4731803744383f31e6ed48ca862a43e",
+    "version_historica": "0.8.0"
+  },
+  "categoria_atlas": "bases-de-datos",
+  "detalle_verificacion": "FICHA_DE_DISTRIBUCION_HISTORICA_IDENTIFICADA",
+  "estado": "DISTRIBUCION_HISTORICA_VERIFICADA",
+  "estado_mantenimiento": "Proyecto histórico; última actividad conocida antigua; descarga binaria concreta no ensayada",
+  "fuente_distribucion_comprobada": "https://sourceforge.net/projects/metacoretex/",
+  "fuente_proyecto": "https://sourceforge.net/projects/metacoretex/",
+  "fuentes_consultadas": [
+    "https://sourceforge.net/projects/metacoretex/"
+  ],
+  "id": "metacoretex",
+  "instalado_en_host": null,
+  "nombre": "MetaCoretex",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

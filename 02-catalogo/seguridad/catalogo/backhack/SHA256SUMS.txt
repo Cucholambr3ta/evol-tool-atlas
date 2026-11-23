@@ -1,0 +1,3 @@
+8160885a302373e5214ad9c7b5ec4b1d3c63ac69132f96fc4146a3017a12e1bd  02-catalogo/seguridad/catalogo/backhack/README.md
+fffe9015e5693017b6f750798127c5df2e2a2fa69097ef3076ed1c079d73b36d  02-catalogo/seguridad/catalogo/backhack/index.html
+7bfef1bf2357df480125c58ac9a43ac8e1917be30d2b6eb988c3a8888c7621d6  02-catalogo/seguridad/catalogo/backhack/metadata.json

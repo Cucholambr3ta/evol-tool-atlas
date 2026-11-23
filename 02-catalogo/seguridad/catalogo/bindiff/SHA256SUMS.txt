@@ -1,0 +1,3 @@
+ff0c869f336e10895b1b02377e036f3ea99e4a8b11e5a283be9268fff710f5b9  02-catalogo/seguridad/catalogo/bindiff/README.md
+fcbdcf0e539ca322928c679ca931f006aeb1cf4998cbb3a40f0bf654a29fde3e  02-catalogo/seguridad/catalogo/bindiff/index.html
+9f81f0dae2dee9091f185f5fe9e4f7b462d1bf690e0603a55471da08e7608175  02-catalogo/seguridad/catalogo/bindiff/metadata.json

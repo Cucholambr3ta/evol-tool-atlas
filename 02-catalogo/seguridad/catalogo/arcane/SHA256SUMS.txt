@@ -1,0 +1,3 @@
+fd850cab6e39eefb3bcd00bb5214394011fa92ac973ad01a3f25388ddb2ba111  02-catalogo/seguridad/catalogo/arcane/README.md
+aaecb81a0d2e4d217d6da930ccce64f4a408a7e0da7c83c1ec46ca52f3057b1c  02-catalogo/seguridad/catalogo/arcane/index.html
+b30137b6aae24b64c13f119332805e3e5381de75fcb25fde1d22d28ccc67e03f  02-catalogo/seguridad/catalogo/arcane/metadata.json

@@ -1,0 +1,3 @@
+1832a1761dc7abcb2c1a17a1590ae8a297cc8d6fc6bf33c5407f7d63ab608919  02-catalogo/seguridad/catalogo/mara-framework/README.md
+765ac7f47b7d36139ce975b34eb9df39e788b7d0a89945f16aecb576db108d33  02-catalogo/seguridad/catalogo/mara-framework/index.html
+44fad541555c4eefe3822f2cb1a0bbdc9db9d48f7ba8a312f7c9d760d02a080e  02-catalogo/seguridad/catalogo/mara-framework/metadata.json

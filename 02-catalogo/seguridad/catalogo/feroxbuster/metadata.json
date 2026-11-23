@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "webapp",
+  "categoria_origen": "grupo-webapp",
+  "descripcion_original_catalogo": "A fast, simple, recursive content discovery tool written in Rust.",
+  "distribucion_actual": "REPOSITORIO_IDENTIFICADO_SIN_VERIFICACION_DE_INSTALACION",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_WEB_CONTRASTADA_2026-11-22",
+  "evidencia_nota": "Distribución verificada; evitar dominio feroxbuster.com que upstream no avala",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/epi052/feroxbuster",
+  "fuente_proyecto": "https://github.com/epi052/feroxbuster",
+  "id": "feroxbuster",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "feroxbuster",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "v2.13.1.r27.gdba16dd"
+}

@@ -1,0 +1,3 @@
+e73ef43549ec9ad62096762fbb2dcf94c6b93153be526f9aa9a6ef10913c34ce  02-catalogo/seguridad/catalogo/k55/README.md
+ee92f61c3c064b6d123afc16a50d2f5c1ef071b6875479e3b4b6d7d489feb60a  02-catalogo/seguridad/catalogo/k55/index.html
+7fbce45f71d47841ea4c5ddfa6ecc44a704a853a83191cd29e5d58482080a786  02-catalogo/seguridad/catalogo/k55/metadata.json

@@ -1,0 +1,3 @@
+7252056d59f007cea1aae46e12af7d99bdf17be6ec428ea94987bf14eea4601b  02-catalogo/seguridad/catalogo/gobd/README.md
+82350e049dd5aedb8cd40789e8ff89d5b532a7520d29188209029a16807d5ada  02-catalogo/seguridad/catalogo/gobd/index.html
+a3cda113f300c5a39da57737e8d9e8226ed8e001b907ba0809d8aea86afeded5  02-catalogo/seguridad/catalogo/gobd/metadata.json

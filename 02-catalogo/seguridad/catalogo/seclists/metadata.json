@@ -1,0 +1,26 @@
+{
+  "advertencia": "Contiene material heterogéneo y potencialmente sensible; revisar origen y condiciones de cada lista y no cargar el repositorio completo sin justificación.",
+  "registro_origen": {
+    "categoria": "grupo-wordlist",
+    "fuente_historica": "https://github.com/danielmiessler/SecLists/",
+    "name": "seclists",
+    "sha256_registro_fuente": "1881a1c4908298ceb9e9df683ec5854bac5700f2b3023e0041aea10c5626b658",
+    "version_historica": "2026.2.r13.g00f80ec"
+  },
+  "categoria_atlas": "listas-de-palabras",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "Versión, licencia de contenidos y dimensiones por lista requieren revisión específica",
+  "fuente_distribucion_comprobada": "https://github.com/danielmiessler/SecLists",
+  "fuente_proyecto": "https://github.com/danielmiessler/SecLists",
+  "fuentes_consultadas": [
+    "https://github.com/danielmiessler/SecLists"
+  ],
+  "id": "seclists",
+  "instalado_en_host": null,
+  "nombre": "SecLists",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

@@ -1,0 +1,3 @@
+0f47143ec3de8a051bc4e30617601595fff9b64e254508710c569dbba8735538  02-catalogo/seguridad/catalogo/pyaxmlparser/README.md
+1484a4c6039007861a1d25e8d7cbd9bfd1772a4be9a2ebf68ca360d57b433d99  02-catalogo/seguridad/catalogo/pyaxmlparser/index.html
+c7d40cd9b2558ac7bc928992364c42559b2e37e5b4e96c61611fb1b4604518ef  02-catalogo/seguridad/catalogo/pyaxmlparser/metadata.json

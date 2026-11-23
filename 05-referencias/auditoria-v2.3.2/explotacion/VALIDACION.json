@@ -1,0 +1,284 @@
+{
+  "categoria": "Investigación de explotación",
+  "categoria_carpeta": "explotacion",
+  "entradas_originales": 182,
+  "excluidas": 37,
+  "exclusion": [
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "armitage",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.fastandeasyhacking.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "arpoison",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.arpoison.net/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "backoori",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/giuliocomi/backoori"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "binex",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.morxploit.com/morxtool"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "bluffy",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/ad/bluffy"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "cisco-global-exploiter",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://www.blackangels.it/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "darkd0rk3r",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/117403/Dark-D0rk3r.0.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "dotdotpwn",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://dotdotpwn.blogspot.com"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "encodeshellcode",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/119904/Encode-Shellcode.1b.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "entropy",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/entynetproject/entropy"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "exploitpack",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/juansacco/exploitpack"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "eyepwn",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.pentest.co.uk"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "ghostdelivery",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/s1egesystems/GhostDelivery"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "hamster",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://hamster.erratasec.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "htexploit",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://www.mkit.com.ar/labs/htexploit/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Fuente bloqueada o dominio no apto para recomendación",
+      "nombre": "inception",
+      "tipo_fuente": "BLOQUEADO",
+      "url_original": "http://www.breaknenter.org/projects/inception/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "irpas",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://phenoelit-us.org/irpas"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "l0l",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/roissy/l0l"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "leroy-jenkins",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/captainhooligan/Leroy-Jenkins"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "lfi-autopwn",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://www.blackhatlibrary.net/Lfi_autopwn.pl"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "minimysqlator",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.scrt.ch/en/attack/downloads/mini-mysqlat0r"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "miranda-upnp",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/archive/p/miranda-upnp/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "otori",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.beneaththewaves.net/Software/On_The_Outside_Reaching_In.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "pblind",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.edge-security.com/pblind.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Fuente bloqueada o dominio no apto para recomendación",
+      "nombre": "pirana",
+      "tipo_fuente": "BLOQUEADO",
+      "url_original": "http://www.guay-leroux.com/projects.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "pmcma",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/104724/Post-Memory-Corruption-Memory-Analyzer.00.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pykek",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/bidord/pykek"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "rebind",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://code.google.com/p/rebind/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "ropeme",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.vnsecurity.net/2010/08/ropeme-rop-exploit-made-easy/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "shellcodecs",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.blackhatlibrary.net/Shellcodecs"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "shellter",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://www.shellterproject.com/download/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "smap",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/suraj-root/smap"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "staekka",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/j-t/staekka"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "tcpjunk",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://code.google.com/p/tcpjunk"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "viproy-voipkit",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://viproy.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "vmap",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/git-rep/vmap"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "yinjector",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/98359/yInjector-MySQL-Injection-Tool.html"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 143,
+  "fuentes_web_revisadas": [
+    "cvemap",
+    "exploit-db"
+  ],
+  "fuentes_web_verificadas_2026_11_22": 2,
+  "id_grupo_origen": "grupo-exploitation",
+  "incluidas_documentales": 145,
+  "limites": [
+    "Los enlaces no revisados hoy conservan solo comprobación del expediente 21-11-2026.",
+    "No se ha comprobado distribución actual, integridad criptográfica del software, licencia ni mantenimiento individual de todas las herramientas.",
+    "No se han probado ni instalado herramientas en CachyOS.",
+    "No hay instrucciones de ejecución o explotación en las fichas."
+  ],
+  "numero": 45,
+  "regla_inclusion": "Enlace HTTPS upstream/oficial con identidad de proyecto identificada en el expediente y estado navegable; correcciones explícitas para fuentes contrastadas hoy."
+}

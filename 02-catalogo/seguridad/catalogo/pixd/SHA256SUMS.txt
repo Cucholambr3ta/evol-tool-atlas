@@ -1,0 +1,3 @@
+c32d7ae2bc4644283af12d8d9920c6659cce4ee1616361f9ab1d9bb38cc17d0a  02-catalogo/seguridad/catalogo/pixd/README.md
+3bc68f52ffeaeed618775880e8f10534cf225611df3d3577fa2364e068a5bf2f  02-catalogo/seguridad/catalogo/pixd/index.html
+df4df6f82df3981a6f64317827607347d75907433d2b3ccbc44e499f220346ce  02-catalogo/seguridad/catalogo/pixd/metadata.json

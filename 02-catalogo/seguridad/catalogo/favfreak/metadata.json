@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "reconocimiento",
+  "categoria_origen": "grupo-recon",
+  "descripcion_original_catalogo": "Weaponizing favicon.ico for BugBounties , OSINT and what not.",
+  "distribucion_actual": "NO_VERIFICADA_INDIVIDUALMENTE",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_COMPROBADA_SOLO_EN_EXPEDIENTE_2026-11-21",
+  "evidencia_nota": "Procedencia reflejada en expediente v2.3.2, no revalidada públicamente en esta entrega",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/devanshbatham/FavFreak",
+  "fuente_proyecto": "https://github.com/devanshbatham/FavFreak",
+  "id": "favfreak",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "favfreak",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "27.8acea5e"
+}

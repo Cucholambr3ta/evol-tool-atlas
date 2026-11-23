@@ -1,0 +1,56 @@
+{
+  "aceptadas": [
+    {
+      "estado": "DISTRIBUCION_OFICIAL_VERIFICADA_LIMITACION_LINUX",
+      "fuente": "https://firmware.ardupilot.org/Tools/MissionPlanner/",
+      "no_probado_localmente": true,
+      "nombre": "missionplanner"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/samyk/skyjack",
+      "no_probado_localmente": true,
+      "nombre": "skyjack"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/sensepost/snoopy-ng",
+      "no_probado_localmente": true,
+      "nombre": "snoopy-ng"
+    }
+  ],
+  "admitidas": 3,
+  "categoria_origen": "grupo-drone",
+  "excluidas": 1,
+  "exclusiones": [
+    {
+      "estado": "EXCLUIDA_NO_VERIFICADA",
+      "id": "crozono",
+      "motivo": "Repositorio principal devuelve 404. No se comprobó una distribución auténtica vigente.",
+      "registro_origen": {
+        "cat": "grupo-drone",
+        "cat_source": "oficial",
+        "desc": "A modular framework designed to automate the penetration testing of wireless networks from drones and such unconventional devices.",
+        "desc_source": "oficial",
+        "name": "crozono",
+        "site": "https://github.com/crozono/crozono-free",
+        "url_estado": "https_declarada",
+        "url_fecha_verificacion": "2026-11-21",
+        "url_fuente": "github_head sobre https://github.com/crozono/crozono-free",
+        "url_motivo": "GitHub responde 404: repositorio eliminado o privado",
+        "url_navegable": false,
+        "url_original_origen": "https://github.com/crozono/crozono-free",
+        "url_tipo": "NO_DISPONIBLE",
+        "url_verificada": null,
+        "version": "5.6a51669"
+      }
+    }
+  ],
+  "fecha": "2026-11-22",
+  "numero_origen": 4,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "politica": "Ninguna entrada no comprobada se incorpora al navegador operativo. Fuente existente no implica mantenimiento, versión vigente o instalación probada.",
+  "schema": "evol-tool-atlas/categoria/1",
+  "sha256_zip_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "titulo": "Drones y sistemas autónomos"
+}

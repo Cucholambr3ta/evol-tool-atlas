@@ -1,0 +1,249 @@
+{
+  "admitidas": 19,
+  "categoria": "Fingerprinting",
+  "estado_verificacion": "FUENTES_CONTRASTADAS_SIN_INSTALACION",
+  "excluidas": 11,
+  "exclusiones": [
+    {
+      "id": "asp-audit",
+      "razon": "Lista de correo histórica, no canal de descarga comprobado.",
+      "url_historica": "http://seclists.org/basics/2006/Sep/128"
+    },
+    {
+      "id": "blindelephant",
+      "razon": "Página antigua: no se confirmó release o archivo distribuido en esta revisión.",
+      "url_historica": "https://blindelephant.sourceforge.net/"
+    },
+    {
+      "id": "fl0p",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 200, pero el contenido no identifica la herramienta",
+      "url_historica": "http://lcamtuf.coredump.cx/"
+    },
+    {
+      "id": "ftpmap",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 404: el recurso ya no existe en el servidor",
+      "url_historica": "http://wcoserver.googlecode.com/files/"
+    },
+    {
+      "id": "htrosbif",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: GitHub responde 404: repositorio eliminado o privado",
+      "url_historica": "https://github.com/lkarsten/htrosbif"
+    },
+    {
+      "id": "httprint",
+      "razon": "Sitio histórico, descarga comprobable no confirmada.",
+      "url_historica": "https://www.net-square.com/httprint.html"
+    },
+    {
+      "id": "kolkata",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: certificado TLS inválido: no se puede confiar en el destino",
+      "url_historica": "https://www.blackhatlibrary.net/Kolkata"
+    },
+    {
+      "id": "ntp-fingerprint",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "url_historica": "http://www.hackingciscoexposed.com/?link=tools"
+    },
+    {
+      "id": "sinfp",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (metacpan.org -> cpan.org))",
+      "url_historica": "https://cpan.metacpan.org/authors/id/G/GO/GOMOR/"
+    },
+    {
+      "id": "smtpmap",
+      "razon": "Página genérica antigua, distribución verificable no confirmada.",
+      "url_historica": "http://www.projectiwear.org/~plasmahh/software.html"
+    },
+    {
+      "id": "smtpscan",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "http://packetstormsecurity.com/files/31102/smtpscan.5.tar.gz.html"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "incluidas": [
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-cms-explorer-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "cms-explorer",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/cms-explorer/index.html",
+      "url_fuente": "https://github.com/FlorianHeigl/cms-explorer"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-detectem-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "detectem",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/detectem/index.html",
+      "url_fuente": "https://github.com/alertot/detectem"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-dhcpf-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "dhcpf",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/dhcpf/index.html",
+      "url_fuente": "https://github.com/elceef/dhcpf"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-dnsmap-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "dnsmap",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/dnsmap/index.html",
+      "url_fuente": "https://github.com/pagvac/dnsmap"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-fpdns-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "fpdns",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/fpdns/index.html",
+      "url_fuente": "https://github.com/kirei/fpdns"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-lbmap-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "lbmap",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/lbmap/index.html",
+      "url_fuente": "https://github.com/wireghoul/lbmap"
+    },
+    {
+      "advertencia": "Proyecto Cisco Mercury, análisis de metadatos de red.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-mercury-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "mercury",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/mercury/index.html",
+      "url_fuente": "https://github.com/cisco/mercury"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-mwebfp-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "mwebfp",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/mwebfp/index.html",
+      "url_fuente": "https://github.com/falcon-lnhg/mwebfp"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-neighbor-cache-fingerprinter-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "neighbor-cache-fingerprinter",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/neighbor-cache-fingerprinter/index.html",
+      "url_fuente": "https://github.com/PherricOxide/Neighbor-Cache-Fingerprinter"
+    },
+    {
+      "advertencia": "Repositorio con documentación y releases de Nerva.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-nerva-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "nerva",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/nerva/index.html",
+      "url_fuente": "https://github.com/praetorian-inc/nerva"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-nimbostratus-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "nimbostratus",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/nimbostratus/index.html",
+      "url_fuente": "https://github.com/andresriancho/nimbostratus"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-operative-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "operative",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/operative/index.html",
+      "url_fuente": "https://github.com/graniet/operative-framework"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-scannerl-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "scannerl",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/scannerl/index.html",
+      "url_fuente": "https://github.com/kudelskisecurity/scannerl"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-spartan-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "spartan",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/spartan/index.html",
+      "url_fuente": "https://github.com/sensepost/SPartan"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-thcrut-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "thcrut",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/thcrut/index.html",
+      "url_fuente": "https://github.com/hackerschoice/THC-Archive"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tls-fingerprinting-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "tls-fingerprinting",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/tls-fingerprinting/index.html",
+      "url_fuente": "https://github.com/LeeBrotherston/tls-fingerprinting"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tls-prober-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "tls-prober",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/tls-prober/index.html",
+      "url_fuente": "https://github.com/WestpointLtd/tls_prober"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-xprobe2-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "xprobe2",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/xprobe2/index.html",
+      "url_fuente": "https://sourceforge.net/projects/xprobe/"
+    },
+    {
+      "advertencia": "Repositorio oficial del proyecto ZMap; sustituye ZGrab anterior.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-zgrab2-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "zgrab2",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/zgrab2/index.html",
+      "url_fuente": "https://github.com/zmap/zgrab2"
+    }
+  ],
+  "limitaciones": [
+    "No validación funcional en CachyOS",
+    "No todas las fuentes fueron reconsultadas en vivo el mismo día",
+    "No verificación de licencias o firmas de binarios",
+    "No publicación de URLs excluidas como enlaces navegables"
+  ],
+  "metodologia": "Fuente histórica revisada al 2026-11-21 + corroboración independiente en fuentes seleccionadas al 2026-11-22; no se presume mantenimiento activo por repositorio público.",
+  "numero": 25,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "slug": "fingerprinting",
+  "total_en_corpus": 30
+}

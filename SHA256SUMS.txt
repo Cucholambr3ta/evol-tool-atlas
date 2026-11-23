@@ -1,0 +1,3 @@
+0629d75321262e09afdb7480ba521312deabe386ae2eb880e4653b1ea4cdabf3  05-referencias/auditoria-v2.3.2/INFORME-FINAL.json
+e9256ecde2aa28e5c632967992ad47e61ff8d608e8b3a8e66b49d15a18125577  05-referencias/auditoria-v2.3.2/INFORME-FINAL.md
+dbff7f5d0c896e4029cea9cf015ec7890a25044a5fe934d945e77769eb4e31d0  catalogo.json

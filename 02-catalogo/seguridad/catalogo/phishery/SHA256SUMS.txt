@@ -1,0 +1,3 @@
+a42ef7d424d2e38e2978328c8d6fd4c4977c990f308458f5d0009d9aaee36756  02-catalogo/seguridad/catalogo/phishery/README.md
+22f2abd215fc4c4953f2b0ac6f47128ded7d921d1b733a9b8cbe4673b57dcb53  02-catalogo/seguridad/catalogo/phishery/index.html
+8583177c912df42bdb5b390c216132fe1823c397336a77eafd76cda3d8c8b1f0  02-catalogo/seguridad/catalogo/phishery/metadata.json

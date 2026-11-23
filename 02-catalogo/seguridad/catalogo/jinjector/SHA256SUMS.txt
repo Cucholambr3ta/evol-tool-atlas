@@ -1,0 +1,3 @@
+71fc287d78f513d1048800bd42c57d080382231a464a8e6035ed8298b2b68325  02-catalogo/seguridad/catalogo/jinjector/README.md
+6898de1b0ed8303b9deb57f3360ec7df7db38095e461d21cbd5914e3e0f42cc2  02-catalogo/seguridad/catalogo/jinjector/index.html
+7d4f0c59f000dc16d3bab6b40ab8d45bf104ab1bcc9db4044d2547fb14290e62  02-catalogo/seguridad/catalogo/jinjector/metadata.json

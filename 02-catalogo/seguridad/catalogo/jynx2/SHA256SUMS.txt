@@ -1,0 +1,3 @@
+0aea07bf7e36f5a0b2e54317e4590d436f03133e718f6387281529c46e39b0c4  02-catalogo/seguridad/catalogo/jynx2/README.md
+b405ad5b1b149cccd66bd428230706a7e4e7c920b7c73b563b3f35a962a4fe45  02-catalogo/seguridad/catalogo/jynx2/index.html
+fdc7c150b1badee23efc9ed34931bca5275a98677b96960ebb732672aad3002b  02-catalogo/seguridad/catalogo/jynx2/metadata.json

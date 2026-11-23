@@ -1,0 +1,3 @@
+37082d63059da2220aafed8f8a78405e9345a6504eeaf53c0f89aadfe60fef1e  02-catalogo/seguridad/catalogo/maigret/README.md
+e856a77b1d3eb8043dc0415225ee9a5c5d667c8b64644f2e9019432858355ae9  02-catalogo/seguridad/catalogo/maigret/index.html
+0937cf700b506d4f096483d44cdddecf7fbbc511ab3866248bd8428524d8f0a2  02-catalogo/seguridad/catalogo/maigret/metadata.json

@@ -1,0 +1,189 @@
+{
+  "admitidas": 9,
+  "categoria": "Bluetooth",
+  "estado_verificacion": "FUENTES_CONTRASTADAS_SIN_INSTALACION",
+  "excluidas": 17,
+  "exclusiones": [
+    {
+      "id": "bluebugger",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "http://packetstormsecurity.com/files/54024/bluebugger.1.tar.gz.html"
+    },
+    {
+      "id": "bluefog",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin URL en tools.html ni en el PKGBUILD",
+      "url_historica": ""
+    },
+    {
+      "id": "blueprint",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 206, pero el contenido no identifica la herramienta",
+      "url_historica": "https://trifinite.org/trifinite_stuff_blueprinting.html"
+    },
+    {
+      "id": "bluescan",
+      "razon": "Artículo divulgativo, sin descarga oficial comprobada.",
+      "url_historica": "http://www.darknet.org.uk/2015/01/bluescan-bluetooth-device-scanner/"
+    },
+    {
+      "id": "bluesnarfer",
+      "razon": "Página histórica, distribución y licencia no verificadas.",
+      "url_historica": "http://www.alighieri.org/project.html"
+    },
+    {
+      "id": "braces",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: el dominio no resuelve (DNS): retirado o inexistente",
+      "url_historica": "http://braces.shmoo.com/"
+    },
+    {
+      "id": "bss",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 206, pero el contenido no identifica la herramienta",
+      "url_historica": "http://www.secuobs.com/news/15022006-bss_0_8.shtml"
+    },
+    {
+      "id": "bt_audit",
+      "razon": "Página antigua con identidad, artefacto descargable y licencia no revalidados.",
+      "url_historica": "http://www.betaversion.net/btdsd/download/"
+    },
+    {
+      "id": "btcrack",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: redirige a un destino que no es el recurso (la redirección pierde la ruta del recurso (/_en/security_tools_btcrack.php -> raíz))",
+      "url_historica": "http://www.nruns.com/_en/security_tools_btcrack.php"
+    },
+    {
+      "id": "btscanner",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 206, pero el contenido no identifica la herramienta",
+      "url_historica": "http://www.pentest.co.uk"
+    },
+    {
+      "id": "carwhisperer",
+      "razon": "Proyecto histórico: distribución verificable no confirmada en esta revisión.",
+      "url_historica": "https://trifinite.org/stuff/carwhisperer/"
+    },
+    {
+      "id": "ghettotooth",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: el dominio no resuelve (DNS): retirado o inexistente",
+      "url_historica": "http://www.oldskoolphreak.com/tfiles/ghettotooth.txt"
+    },
+    {
+      "id": "hidattack",
+      "razon": "Página antigua sin canal de distribución confirmado en esta revisión.",
+      "url_historica": "http://mulliner.org/bluetooth/hidattack.php"
+    },
+    {
+      "id": "obexstress",
+      "razon": "Página histórica sin distribución actual comprobada.",
+      "url_historica": "http://bluetooth-pentest.narod.ru/"
+    },
+    {
+      "id": "redfang",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "http://packetstormsecurity.com/files/31864/redfang.2.5.tar.gz.html"
+    },
+    {
+      "id": "spooftooph",
+      "razon": "Página histórica sin artefactos comprobados.",
+      "url_historica": "http://www.hackfromacave.com/projects/spooftooph.html"
+    },
+    {
+      "id": "tbear",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (freshmeat.net -> sf.net))",
+      "url_historica": "http://freshmeat.net/projects/t-bear"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "incluidas": [
+    {
+      "advertencia": "Repositorio alternativo rastreado desde el proyecto Blue Hydra; el enlace antiguo de Pwnie Express no responde.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-blue-hydra-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "blue-hydra",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/blue-hydra/index.html",
+      "url_fuente": "https://github.com/ZeroChaos-/blue_hydra"
+    },
+    {
+      "advertencia": "Web histórica del proyecto Bluediving; no inferir mantenimiento actual.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bluediving-v1.zip",
+      "estado": "REFERENCIA_HISTORICA_NO_APROBADA",
+      "id": "bluediving",
+      "nivel_evidencia": "FUENTE_HISTORICA_IDENTIFICADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/bluediving/index.html",
+      "url_fuente": "https://bluediving.sourceforge.net/"
+    },
+    {
+      "advertencia": "El dominio original ya no resuelve; se localizó código del proyecto Bluelog en GitHub.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bluelog-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "bluelog",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/bluelog/index.html",
+      "url_fuente": "https://github.com/MS3FGX/Bluelog"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bluepot-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "bluepot",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/bluepot/index.html",
+      "url_fuente": "https://github.com/andrewmichaelsmith/bluepot"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bluphish-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "bluphish",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/bluphish/index.html",
+      "url_fuente": "https://github.com/olivo/BluPhish"
+    },
+    {
+      "advertencia": "Repositorio identificado de BTLEJack.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-btlejack-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "btlejack",
+      "nivel_evidencia": "FUENTE_REVISADA_EN_SNAPSHOT",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/btlejack/index.html",
+      "url_fuente": "https://github.com/virtualabs/btlejack"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-btproxy-mitm-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "btproxy-mitm",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/btproxy-mitm/index.html",
+      "url_fuente": "https://github.com/conorpp/btproxy"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sparrow-wifi-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "sparrow-wifi",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/sparrow-wifi/index.html",
+      "url_fuente": "https://github.com/ghostop14/sparrow-wifi"
+    },
+    {
+      "advertencia": "Proyecto oficial de Great Scott Gadgets para Ubertooth.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-ubertooth-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "ubertooth",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/ubertooth/index.html",
+      "url_fuente": "https://github.com/greatscottgadgets/ubertooth"
+    }
+  ],
+  "limitaciones": [
+    "No validación funcional en CachyOS",
+    "No todas las fuentes fueron reconsultadas en vivo el mismo día",
+    "No verificación de licencias o firmas de binarios",
+    "No publicación de URLs excluidas como enlaces navegables"
+  ],
+  "metodologia": "Fuente histórica revisada al 2026-11-21 + corroboración independiente en fuentes seleccionadas al 2026-11-22; no se presume mantenimiento activo por repositorio público.",
+  "numero": 22,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "slug": "bluetooth",
+  "total_en_corpus": 26
+}

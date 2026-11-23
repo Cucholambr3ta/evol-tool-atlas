@@ -1,0 +1,26 @@
+{
+  "advertencia": "No usar para recopilar datos personales. No se validó funcionamiento en CachyOS, Plasma ni Wayland. El nombre del expediente documental no implica compatibilidad actual.",
+  "registro_origen": {
+    "categoria": "grupo-keylogger",
+    "fuente_historica": "https://github.com/GiacomoLaw/Keylogger",
+    "name": "python-keylogger",
+    "sha256_registro_fuente": "d6f8b964e74b865799c78ae8b20505860037018ed3bf09283d5217439ca9a4cf",
+    "version_historica": "2.7.3"
+  },
+  "categoria_atlas": "keylogger",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+  "estado_mantenimiento": "Estado de mantenimiento y compatibilidad sin verificar",
+  "fuente_distribucion_comprobada": "https://github.com/GiacomoLaw/Keylogger",
+  "fuente_proyecto": "https://github.com/GiacomoLaw/Keylogger",
+  "fuentes_consultadas": [
+    "https://github.com/GiacomoLaw/Keylogger"
+  ],
+  "id": "python-keylogger",
+  "instalado_en_host": null,
+  "nombre": "Python Keylogger (GiacomoLaw)",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

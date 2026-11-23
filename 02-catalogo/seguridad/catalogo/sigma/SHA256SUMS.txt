@@ -1,0 +1,3 @@
+31db9a8eceef2966a785077cf990b493e2ac0fe5d3f9abec970d6e216605f628  02-catalogo/seguridad/catalogo/sigma/README.md
+a5f9cced0b0f744f47b04fc6be614e4fd85ad02ea1f503493ca387f70944a704  02-catalogo/seguridad/catalogo/sigma/index.html
+672986f14b2fe913691c787e52d6c59f8e03239ef5ff6769e1aa3df90e359359  02-catalogo/seguridad/catalogo/sigma/metadata.json

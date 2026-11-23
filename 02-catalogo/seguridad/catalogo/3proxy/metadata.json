@@ -1,0 +1,32 @@
+{
+  "id": "3proxy",
+  "nombre": "3proxy",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_instalacion": "NO_VERIFICADA_EN_HOST",
+  "fecha_verificacion": "2026-11-22",
+  "version_release_verificada": "1.0.4",
+  "categoria": "Seguridad · Redes",
+  "ubicacion": "02-catalogo/seguridad/catalogo/3proxy",
+  "descripcion": "Servidor proxy ligero y configurable. Permite probar encaminamiento, autenticación y políticas de acceso en redes aisladas.",
+  "caso_uso_evol": "Laboratorios de proxies y pruebas de configuración de servicios de red con autorización explícita.",
+  "advertencias": "No exponer un proxy abierto a Internet. Configurar autenticación, ACL y escucha local o en laboratorio aislado.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/3proxy/3proxy",
+    "releases": "https://github.com/3proxy/3proxy/releases"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/3proxy/3proxy",
+    "https://github.com/3proxy/3proxy/releases"
+  ],
+  "fuente_historia": {
+    "archivo": "auditoria-documental-v2.3.2.zip",
+    "incluida_en_expediente_origen": true,
+    "version_en_guia": "0.9.6",
+    "incluida_en_complementarias": false,
+    "nota": "La Versión histórica de referencia 0.9.6 no coincide con la publicación oficial 1.0.4 del 21-11-2026. No se validó compilación ni instalación local."
+  },
+  "limites": [
+    "Disponibilidad del repositorio y releases comprobada con búsqueda web; no se realizó descarga, instalación, compilación ni prueba funcional en CachyOS.",
+    "No implica que el paquete de referencia existente esté actualizado o que sea el mejor método de instalación."
+  ]
+}

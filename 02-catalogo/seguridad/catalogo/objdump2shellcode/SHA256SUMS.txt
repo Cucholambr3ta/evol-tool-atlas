@@ -1,0 +1,3 @@
+bb94df62ef5ff3c6d193d24e4218da74b3d6ebd54141e83d8d7d940071f8b778  02-catalogo/seguridad/catalogo/objdump2shellcode/README.md
+702332a8bc432d34b3e77d3106366511fc9f61a2710c1cd78849c63bce55ef77  02-catalogo/seguridad/catalogo/objdump2shellcode/index.html
+6bf2c334546eb74863d16dfcef6383ed51d2aec0eafae930f224cf11cd75bfaa  02-catalogo/seguridad/catalogo/objdump2shellcode/metadata.json

@@ -1,0 +1,3 @@
+8e58917dc86ba1d643c72f6ffcb9da7f1234d63ebf341988dd0f0511a1fc45d2  02-catalogo/seguridad/catalogo/qark/README.md
+f9e0a2cddc56539cb315493e93911e0bde81fab85efac5b5ab50640c527a6e9b  02-catalogo/seguridad/catalogo/qark/index.html
+4c2e383335f2e053d3ff6cf31e5d3845d0755f4ced1c085dd5610f8327846121  02-catalogo/seguridad/catalogo/qark/metadata.json

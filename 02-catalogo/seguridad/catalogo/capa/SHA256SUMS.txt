@@ -1,0 +1,3 @@
+b326dbb37c5e5890c5356afc74ca03ca6c0a1180cd170ece3ec13e9d48f32df8  02-catalogo/seguridad/catalogo/capa/README.md
+6c89cd706a9a3be30da8be432a5d6acad6c99562c1a7000d6b21253b2be8bc1d  02-catalogo/seguridad/catalogo/capa/index.html
+31f1cdf35b340dbe384d78fad0beba0eda248c9bb5f4f0380089c8abef39cc70  02-catalogo/seguridad/catalogo/capa/metadata.json

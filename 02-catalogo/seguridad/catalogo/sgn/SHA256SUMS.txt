@@ -1,0 +1,3 @@
+7217bf6a49a8d8a0d6da5048f7b570c2ba9d6f0032311d8eaa74fff00b9223b7  02-catalogo/seguridad/catalogo/sgn/README.md
+cdff233e8da178c8a244597f720adb15955d0b30f8170feb95b5d786d0c809e9  02-catalogo/seguridad/catalogo/sgn/index.html
+37cfe1be37d39163f832eec96e46b4f750fc94c17f7bebe203d5bdfe695c7a28  02-catalogo/seguridad/catalogo/sgn/metadata.json

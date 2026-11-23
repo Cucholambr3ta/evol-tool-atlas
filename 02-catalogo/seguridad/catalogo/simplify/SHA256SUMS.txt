@@ -1,0 +1,3 @@
+2d322baa99e4b28d5da619dab587400a251b9979dff9f091b7fb24e49f2a5cdd  02-catalogo/seguridad/catalogo/simplify/README.md
+57ad94b1a10488c214a4beec4cb652e4c3a7e637c397380c6243b03d00b596de  02-catalogo/seguridad/catalogo/simplify/index.html
+7ee5103c80c29d7b38cb82f8223758f3ae5a87dc171f468a334c5ef5063e593c  02-catalogo/seguridad/catalogo/simplify/metadata.json

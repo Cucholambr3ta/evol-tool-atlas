@@ -1,0 +1,3 @@
+45ab0dc1fb840d1b9a1fb30f68766da3fb1dba9aa4939c00b7690e5404cd96a6  02-catalogo/seguridad/catalogo/social-mapper/README.md
+4bf4c43c9a411c956fb94890db9d1a99b11ce420e1b28e8d5ea10dcfb9b88d1d  02-catalogo/seguridad/catalogo/social-mapper/index.html
+ba55a095e61b4b9882fd0bddae4844652088416f92fafb2f51ddde6b3f0910f8  02-catalogo/seguridad/catalogo/social-mapper/metadata.json

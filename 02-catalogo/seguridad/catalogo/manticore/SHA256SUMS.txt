@@ -1,0 +1,3 @@
+9f8e238653892cc0a8d8058831c8949553e76c118355ad1d5fdd1905d9739a5a  02-catalogo/seguridad/catalogo/manticore/README.md
+25bb8171e43f66f561e60bf233aea298a07b07e239deb14a56eaa5e6cec512d2  02-catalogo/seguridad/catalogo/manticore/index.html
+861e85f1c22e34159b8ff0c763a015b02755136fb2b645c9cb8030932acfaae2  02-catalogo/seguridad/catalogo/manticore/metadata.json

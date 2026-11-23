@@ -1,0 +1,500 @@
+{
+  "categoria": "WebApp",
+  "categoria_carpeta": "webapp",
+  "entradas_originales": 317,
+  "excluidas": 60,
+  "exclusion": [
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/CoolerVoid/0d1n",
+      "nombre": "0d1n",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 502",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/sahakkhotsanyan/adfind",
+      "nombre": "adfind",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/112855/Admin-Page-Finder-Script.html",
+      "nombre": "adminpagefinder",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/121590/Bing-LFI-RFI-Scanner.html",
+      "nombre": "bing-lfi-rfi",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/shawarkhanethicalhacker/BruteXSS",
+      "nombre": "brutexss",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «bsqlbf-v2»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://code.google.com/p/bsqlbf-v2/",
+      "nombre": "bsqlbf",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://portswigger.net/burp/releases",
+      "nombre": "burpsuite",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://caido.io/",
+      "nombre": "caido-cli",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://caido.io/",
+      "nombre": "caido-desktop",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/enddo/CJExploiter",
+      "nombre": "cjexploiter",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/64722/cms_few.py.txt.html",
+      "nombre": "cms-few",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/nahamsec/CMSFuzz",
+      "nombre": "cmsfuzz",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/hahwul/dirhunt",
+      "nombre": "dirhunt",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/104315/FHTTP-Attack-Tool.3.html",
+      "nombre": "fhttp",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/0blio/fileGPS",
+      "nombre": "filegps",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://jeanphix.github.com/Ghost.py/",
+      "nombre": "ghost-py",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206 y el contenido menciona «grabber»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://rgaucher.info/beta/grabber/",
+      "nombre": "grabber",
+      "razon_exclusion": "No consta un origen seguro HTTPS y verificable en este cierre",
+      "tipo_expediente": "OFICIAL_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/98109/HTTPForge.02.01.html",
+      "nombre": "httpforge",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/121390/Janissaries-Joomla-Fingerprint-Tool.html",
+      "nombre": "jomplug",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/rastating/jooforce",
+      "nombre": "jooforce",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/62126/joomlascan.2.py.txt.html",
+      "nombre": "joomlascan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/m4ll0k/Konan",
+      "nombre": "konan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/124332/LFI-Exploiter.1.html",
+      "nombre": "lfi-exploiter",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/106912/LFI-Fuzzploit-Tool.1.html",
+      "nombre": "lfi-fuzzploit",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/129871/LFI-Image-Helper.8.html",
+      "nombre": "lfi-image-helper",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/96056/Simple-Local-File-Inclusion-Exploiter.0.html",
+      "nombre": "lfi-sploiter",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.whoppix.net/",
+      "nombre": "list-urls",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/z0noxz/mando.me",
+      "nombre": "mando.me",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.open-labs.org/",
+      "nombre": "metoscan",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/vortexau/mooscan",
+      "nombre": "mooscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "contenido de apuestas o casino",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://www.morxploit.com/tools/",
+      "nombre": "morxtraversal",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/mIcHyAmRaNe/okadminfinder3",
+      "nombre": "okadminfinder",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/depasonico/OWASP-ByWaf",
+      "nombre": "owasp-bywaf",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.parosproxy.org",
+      "nombre": "paros",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/CoolerVoid/payloadmask",
+      "nombre": "payloadmask",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "la API responde 404: el proyecto no existe",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://bitbucket.org/LaNMaSteR53/peepingtom",
+      "nombre": "peepingtom",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/graniet/riwifshell",
+      "nombre": "riwifshell",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/79021/Remote-Web-Workplace-Attack-Tool.html",
+      "nombre": "rww-attack",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «secscan-py»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/archive/p/secscan-py/",
+      "nombre": "secscan",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/104872/Short-Fuzzy-Rat-Scanner.html",
+      "nombre": "shortfuzzy",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «skipfish»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://code.google.com/p/skipfish/",
+      "nombre": "skipfish",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/z0noxz/smplshllctrlr",
+      "nombre": "smplshllctrlr",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/gwen001/pentest-tools/blob/master/smuggler.py",
+      "nombre": "smuggler-py",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://sparty.secniche.org/",
+      "nombre": "sparty",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.immunitysec.com/resources-freesoftware.shtml",
+      "nombre": "spike-proxy",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://sqid.rubyforge.org/",
+      "nombre": "sqid",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (uncaptcha.cs.umd.edu)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://uncaptcha.cs.umd.edu/",
+      "nombre": "uncaptcha2",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/ferrery1/UpPwn",
+      "nombre": "uppwn",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «urldigger»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/archive/p/urldigger/",
+      "nombre": "urldigger",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/110603/Vanguard-Pentesting-Scanner.html",
+      "nombre": "vanguard",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/84468/Web-Application-Finger-Printer.01-26c3.html",
+      "nombre": "wafp",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/m4ll0k/WAScan",
+      "nombre": "wascan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/122064/Web-Soul-Scanner.html",
+      "nombre": "web-soul",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «webslayer»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/archive/p/webslayer/",
+      "nombre": "webslayer",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://epinna.github.io/Weevely/",
+      "nombre": "weevely",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/97465/Witchxtool-Port-LFI-SQL-Scanner-And-MD5-Bruteforcing-Tool.1.html",
+      "nombre": "witchxtool",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/m4ll0k/WPSeku",
+      "nombre": "wpseku",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/hacker900123/XSS-Freak",
+      "nombre": "xss-freak",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/RomeuG/YAAF",
+      "nombre": "yaaf",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/98546/yCrawler-Web-Crawling-Utility.html",
+      "nombre": "ycrawler",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 251,
+  "fuentes_web_verificadas_2026_11_22": 6,
+  "id_grupo_origen": "grupo-webapp",
+  "incluidas_documentales": 257,
+  "limites": [
+    "No se comprobó la instalación ni ejecución de herramientas en CachyOS",
+    "La evidencia del expediente v2.3.2 no equivale a una prueba en vivo del 22-11-2026",
+    "Las licencias y dependencias requieren revisión individual antes de instalar"
+  ],
+  "numero": 48,
+  "regla_inclusion": "Repositorio upstream o sitio oficial HTTPS con identidad constatada en expediente, o evidencia oficial fresca; nunca archivos exclusivamente históricos o fuentes sin identidad"
+}

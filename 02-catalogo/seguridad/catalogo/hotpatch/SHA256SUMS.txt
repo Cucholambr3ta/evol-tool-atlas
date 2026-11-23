@@ -1,0 +1,3 @@
+aca76db1753d9199653d42e7ec0bb0b09875eba5d3ca2b785dedf6d5a1696424  02-catalogo/seguridad/catalogo/hotpatch/README.md
+4d8cdba8e34f55a5d0178dc3545c2076cadd6dee05fa151518dc457ba24e4045  02-catalogo/seguridad/catalogo/hotpatch/index.html
+b461afaf3a144273d65de8352a30c8138c6fcf3680d33a2044328f09d7a76bd5  02-catalogo/seguridad/catalogo/hotpatch/metadata.json

@@ -1,0 +1,3 @@
+78a84e659973664916f58356abc442bb4a9e853298b7ca02292b4e828304868d  02-catalogo/seguridad/catalogo/social-vuln-scanner/README.md
+70898136680511e04fd0d1710afb891478e90d2bcfd4b06c80ebe47c8372e628  02-catalogo/seguridad/catalogo/social-vuln-scanner/index.html
+657789460312e8c3ba6eca4da4485c63ed5bbb5bb7131f456c62dd2e1c7c0b73  02-catalogo/seguridad/catalogo/social-vuln-scanner/metadata.json

@@ -1,0 +1,3 @@
+3970d1fe4624374193b0d7f147cf982ca071386072110e1487f98a3fe63af81f  02-catalogo/seguridad/catalogo/bandicoot/README.md
+6943b9d07d2bfd194872cae45184072f06a555399ef979dc3c956d3142688a3d  02-catalogo/seguridad/catalogo/bandicoot/index.html
+93027203d3ac6e10e4d1b277518d540fc222f7677ba397f38f3e38d68cde8d6b  02-catalogo/seguridad/catalogo/bandicoot/metadata.json

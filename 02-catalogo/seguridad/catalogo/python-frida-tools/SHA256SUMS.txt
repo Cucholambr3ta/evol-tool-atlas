@@ -1,0 +1,3 @@
+eaa73938979c0c81d890f8ed3d7b250c6c0810fa91e18eed374324b82f5fa0de  02-catalogo/seguridad/catalogo/python-frida-tools/README.md
+84cc63a7f329072738f9c4b1dfd4ecc695074065b11667da284152ac2536bd14  02-catalogo/seguridad/catalogo/python-frida-tools/index.html
+788b8f7beb49430da85cf96018f827a4a06a83b4a72c9084c44a1b3fbe25b38e  02-catalogo/seguridad/catalogo/python-frida-tools/metadata.json

@@ -1,0 +1,32 @@
+{
+  "id": "meanalyzer",
+  "nombre": "ME Analyzer",
+  "categoria_origen": "grupo-firmware",
+  "categoria_evol": "Seguridad / Firmware",
+  "ubicacion": "02-catalogo/seguridad/catalogo/meanalyzer",
+  "fecha_verificacion": "2026-11-22",
+  "fuente_origen": "auditoria-documental-v2.3.2.zip",
+  "categoria_del_dataset": "grupo-firmware",
+  "version_dataset": "1.273.0",
+  "estado_fuente": "RELEASE_OFICIAL_VERIFICADA",
+  "estado_instalacion": "NO_VERIFICADA_EN_HOST",
+  "estado_prueba_funcional": "NO_EJECUTADA",
+  "version_publicacion_verificada": "1.312.0 r378",
+  "fuente_repositorio": "https://github.com/platomav/MEAnalyzer",
+  "fuente_distribucion": "https://github.com/platomav/MEAnalyzer/releases",
+  "fuentes_consultadas": [
+    "https://github.com/platomav/MEAnalyzer",
+    "https://github.com/platomav/MEAnalyzer/releases"
+  ],
+  "descripcion": "Herramienta de análisis de firmware Intel Engine y Graphics. Examina familias ME/CSME, TXE y SPS, entre otras.",
+  "aplicacion_evol": "Inspección documental de componentes de firmware Intel en entornos de laboratorio; no requiere modificar el firmware del equipo.",
+  "mantenimiento": "Hay una publicación marcada Latest, sin inferir seguridad ni compatibilidad de ejecución en el host.",
+  "riesgos": "Tratar imágenes de firmware de terceros como entrada no confiable. No flashear ni modificar la BIOS del host. El análisis no reemplaza una validación de Secure Boot.",
+  "licencia": "BSD-2-Clause-Patent, según el repositorio oficial",
+  "observaciones": "La versión registro documental 1.273.0 es anterior a la publicación 1.312.0 r378; no se ha verificado actualización del paquete de referencia.",
+  "limites": [
+    "La presencia del repositorio no implica mantenimiento ni seguridad del código.",
+    "No se instaló ni ejecutó esta herramienta sobre CachyOS.",
+    "No se infiere una versión upstream actual a partir del identificador del paquete de referencia."
+  ]
+}

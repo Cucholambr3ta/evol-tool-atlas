@@ -1,0 +1,3 @@
+806563784ed1d51baf623867dc1198f31a585ba649b85fe4e397771f4e37b473  02-catalogo/seguridad/catalogo/angr/README.md
+85e84eba8705217d7d556ebb33a2be99c7827a21f17b0532f864e0f239f080ff  02-catalogo/seguridad/catalogo/angr/index.html
+eb2fe443cf7338854b4bf44f1967a61419b0cf8e6583d68d081f0cda6b76f69d  02-catalogo/seguridad/catalogo/angr/metadata.json

@@ -1,0 +1,3 @@
+81a2d752793a50c90fc821abd4afbbd836d4589fb20bb0cdd1c9a75347b6e67c  02-catalogo/seguridad/catalogo/artlas/README.md
+6aae504c7ac4c71358abe69e99b8cd97afbc8e3749866356efa1333d6e4ad8fc  02-catalogo/seguridad/catalogo/artlas/index.html
+7dcbff03ca48b465b4bcbcdac138d186148ac2e5ebf61bc045f396adb8543d5f  02-catalogo/seguridad/catalogo/artlas/metadata.json

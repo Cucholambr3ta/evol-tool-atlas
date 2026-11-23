@@ -1,0 +1,480 @@
+{
+  "admitidas": [
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/doyensec/ajpfuzzer",
+      "id": "ajpfuzzer",
+      "nombre": "ajpfuzzer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/localh0t/backfuzz",
+      "id": "backfuzz",
+      "nombre": "backfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/RootUp/BFuzz",
+      "id": "bfuzz",
+      "nombre": "bfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/jtpereyda/boofuzz",
+      "id": "boofuzz",
+      "nombre": "boofuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/s7x/brainstorm",
+      "id": "brainstorm",
+      "nombre": "brainstorm"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/CENSUS/choronzon",
+      "id": "choronzon",
+      "nombre": "choronzon"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/rudSarkar/crlf-injector",
+      "id": "crlf-injector",
+      "nombre": "crlf-injector"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/MozillaSecurity/dharma",
+      "id": "dharma",
+      "nombre": "dharma"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/googleprojectzero/domato",
+      "id": "domato",
+      "nombre": "domato"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/wireghoul/doona",
+      "id": "doona",
+      "nombre": "doona"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/zznop/flyr",
+      "id": "flyr",
+      "nombre": "flyr"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/FrisbeeLite",
+      "id": "frisbeelite",
+      "nombre": "frisbeelite"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/k0retux/fuddly",
+      "id": "fuddly",
+      "nombre": "fuddly"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/fuzzdb-project/fuzzdb",
+      "id": "fuzzdb",
+      "nombre": "fuzzdb"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/fuzzowski",
+      "id": "fuzzowski",
+      "nombre": "fuzzowski"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/m3n0sd0n4ld/GooFuzz",
+      "id": "goofuzz",
+      "nombre": "goofuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/renatahodovan/grammarinator",
+      "id": "grammarinator",
+      "nombre": "grammarinator"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/trailofbits/grr",
+      "id": "grr",
+      "nombre": "grr"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/hodor",
+      "id": "hodor",
+      "nombre": "hodor"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/google/honggfuzz",
+      "id": "honggfuzz",
+      "nombre": "honggfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/cisco-sas/kitty",
+      "id": "kitty-framework",
+      "nombre": "kitty-framework"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/mxmssh/manul",
+      "id": "manul",
+      "nombre": "manul"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Caleb1994/peach",
+      "id": "peach-fuzz",
+      "nombre": "peach-fuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/mseclab/PyJFuzz",
+      "id": "pyjfuzz",
+      "nombre": "pyjfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/petermbenjamin/s3-fuzzer",
+      "id": "s3-fuzzer",
+      "nombre": "s3-fuzzer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/TheTarquin/samesame",
+      "id": "samesame",
+      "nombre": "samesame"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/xoreaxeaxeax/sandsifter",
+      "id": "sandsifter",
+      "nombre": "sandsifter"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Metalnem/sharpfuzz",
+      "id": "sharpfuzz",
+      "nombre": "sharpfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/mfontanini/sloth-fuzzer",
+      "id": "sloth-fuzzer",
+      "nombre": "sloth-fuzzer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/landw1re/socketfuzz",
+      "id": "socketfuzz",
+      "nombre": "socketfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/allfro/sploitego",
+      "id": "sploitego",
+      "nombre": "sploitego"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/OpenRCE/sulley/",
+      "id": "sulley",
+      "nombre": "sulley"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/droberson/thefuzz",
+      "id": "thefuzz",
+      "nombre": "thefuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sw33tLie/uff",
+      "id": "uff",
+      "nombre": "uff"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/rk700/uniFuzzer",
+      "id": "unifuzzer",
+      "nombre": "unifuzzer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/andresriancho/w3af/releases",
+      "id": "w3af",
+      "nombre": "w3af"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/xmendez/wfuzz",
+      "id": "wfuzz",
+      "nombre": "wfuzz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.owasp.org/index.php/Category:OWASP_WSFuzzer_Project",
+      "id": "wsfuzzer",
+      "nombre": "wsfuzzer"
+    }
+  ],
+  "categoria": "Fuzzing",
+  "corpus_origen": "auditoria-documental-v2.3.2.zip",
+  "entradas_originales": 84,
+  "estado_de_comprobacion": "Sólo fuentes seleccionadas contrastadas públicamente; el resto se basa en evidencia fuente del 21-11-2026",
+  "excluidas": [
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "browser-fuzzer"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «bunny-the-fuzzer»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "bunny"
+    },
+    {
+      "detalle_expediente": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (cirt.dk -> ecrimelabs.com))",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "cirt-fuzzer"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «conscan»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "conscan"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "cookie-cadger"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "dizzy"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «easyfuzzer»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "easyfuzzer"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «firewalk»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "firewalk"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «ftester»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "ftester"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «ftp-fuzz»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "ftp-fuzz"
+    },
+    {
+      "detalle_expediente": "la API responde 404: el proyecto no existe",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "fusil"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (conexion_rechazada): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "fuzzball2"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "fuzzdiff"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «hexorbase»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "hexorbase"
+    },
+    {
+      "detalle_expediente": "sin URL en tools.html ni en el PKGBUILD",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "http-fuzz"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "ifuzz"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «ikeprober»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "ikeprober"
+    },
+    {
+      "detalle_expediente": "la API de sourceforge confirma el proyecto «jbrofuzz»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "jbrofuzz"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «malybuzz»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "malybuzz"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "melkor"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "notspikefile"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "oat"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "ohrwurm"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "oscanner"
+    },
+    {
+      "detalle_expediente": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (peachfuzzer.com -> gitlab.com))",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "peach"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «pentbox»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "pentbox"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "portmanteau"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «powerfuzzer»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "powerfuzzer"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "profuzz"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «ratproxy»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "ratproxy"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "sfuzz"
+    },
+    {
+      "detalle_expediente": "sin URL en tools.html ni en el PKGBUILD",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "smtp-fuzz"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "snmp-fuzzer"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «spiderpig-pdffuzzer»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "spiderpig-pdffuzzer"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "spike-fuzzer"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "sqlbrute"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "sshfuzz"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "taof"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "tcpcontrol-fuzzer"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «termineter»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "termineter"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «tftp-fuzz»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "tftp-fuzz"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "trinity"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «uniofuzz»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "uniofuzz"
+    },
+    {
+      "detalle_expediente": "la API de sourceforge confirma el proyecto «uniscan»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "uniscan"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «webscarab»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "webscarab"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "webshag"
+    }
+  ],
+  "fecha_entrega": "2026-11-22",
+  "fichas_documentales": 38,
+  "grupo_original": "grupo-fuzzer",
+  "limitaciones": [
+    "No se han instalado ni ejecutado herramientas",
+    "No se han comprobado licencias, firmas o últimas versiones de todas las herramientas",
+    "No se ha demostrado vigencia actual de referencias cuya única evidencia es el expediente de ayer"
+  ],
+  "numero": 38,
+  "politica_admision": "Fuente HTTPS con identidad comprobada en expediente o nueva fuente verificada hoy; resto fuera del catálogo operativo",
+  "procedencia_solo_expediente": 36,
+  "verificadas_publicamente_en_este_turno": 2
+}

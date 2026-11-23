@@ -1,0 +1,3 @@
+134be692c1f616f0b2115caaac82b8cca471b0cb82f6c76bb7b870c179296fea  02-catalogo/seguridad/catalogo/kwetza/README.md
+d3aabf022e0e97a27fd1bd04713dda0afb963c245b9315d8fc8fc9bb809eac18  02-catalogo/seguridad/catalogo/kwetza/index.html
+57c296fee1d09f52287e9f3a3625d54f7679a5150f11dd905bd0bd9a8b6bd088  02-catalogo/seguridad/catalogo/kwetza/metadata.json

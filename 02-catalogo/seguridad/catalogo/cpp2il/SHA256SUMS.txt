@@ -1,0 +1,3 @@
+9f7204ca7e02de1a437d3a976eaec5b6c2cb5474ddc13c8855dbc89dac7e87fa  02-catalogo/seguridad/catalogo/cpp2il/README.md
+d4b3ae86808622fcb831ef755f431aaab29fd5a47f3c3f65b5ba6de96ba917f5  02-catalogo/seguridad/catalogo/cpp2il/index.html
+4ea7f3ff2759501f8f0968e0244c225c258b8b9b8b024d99a6805a764d44ae66  02-catalogo/seguridad/catalogo/cpp2il/metadata.json

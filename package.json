@@ -1,0 +1,34 @@
+{
+  "name": "evol-tool-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Evol Tool Atlas — Progressive Web App documental con identidad visual oficial Evol OS (Minimal line art).",
+  "scripts": {
+    "generate:data": "node scripts/build-catalog-index.mjs",
+    "dev": "npm run generate:data && vite",
+    "build": "npm run generate:data && vite build && node scripts/copy-static-catalog.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.sw.json --noEmit",
+    "lint": "eslint src scripts tests",
+    "verify:catalog": "node scripts/verify-atlas.mjs",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run generate:data && npm run typecheck && npm run lint && npm run test:unit && npm run build && npm run verify:catalog"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.65.1",
+    "eslint": "9.39.5",
+    "globals": "17.14.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.73.0",
+    "vite": "6.4.6",
+    "vite-plugin-pwa": "1.2.0",
+    "vitest": "5.1.1",
+    "workbox-core": "7.4.1",
+    "workbox-precaching": "7.4.1",
+    "workbox-routing": "7.4.1",
+    "workbox-strategies": "7.4.1"
+  }
+}

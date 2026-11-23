@@ -1,0 +1,124 @@
+{
+  "admitidas": 16,
+  "alcance": "Disponibilidad verificable de fuente externa, no instalación ni funcionamiento en CachyOS",
+  "categoria": "decompiladores",
+  "categoria_origen": "grupo-decompiler",
+  "excluidas": 3,
+  "exclusiones": [
+    {
+      "id": "cafebabe",
+      "razon": "El destino oficial original está bloqueado y no hay una descarga comprobada."
+    },
+    {
+      "id": "flasm",
+      "razon": "Fuente histórica respondió error; no se confirmó canal actual confiable."
+    },
+    {
+      "id": "jpexs-decompiler",
+      "razon": "Es el mismo proyecto FFDec; unificado bajo una sola ficha para evitar duplicados."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "incluidas": [
+    {
+      "advertencia": "Descompilador .NET; plataforma y dependencias de GUI deben comprobarse en CachyOS.",
+      "id": "avaloniailspy",
+      "ruta": "02-catalogo/seguridad/catalogo/avaloniailspy/index.html",
+      "url_fuente": "https://github.com/icsharpcode/AvaloniaILSpy"
+    },
+    {
+      "advertencia": "El upstream lo describe como analizador de explotabilidad, no descompilador genérico; categoría heredada.",
+      "id": "beebug",
+      "ruta": "02-catalogo/seguridad/catalogo/beebug/index.html",
+      "url_fuente": "https://github.com/invictus1306/beebug"
+    },
+    {
+      "advertencia": "Proyecto de JetBrains de descompilación Java; para uso actual comprobar relación con IntelliJ y dependencias.",
+      "id": "fernflower",
+      "ruta": "02-catalogo/seguridad/catalogo/fernflower/index.html",
+      "url_fuente": "https://github.com/JetBrains/fernflower"
+    },
+    {
+      "advertencia": "El proyecto se denomina JPEXS Free Flash Decompiler (FFDec); consolida dos entradas históricas del catálogo.",
+      "id": "ffdec",
+      "ruta": "02-catalogo/seguridad/catalogo/ffdec/index.html",
+      "url_fuente": "https://github.com/jindrapetrik/jpexs-decompiler"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "gadgetinspector",
+      "ruta": "02-catalogo/seguridad/catalogo/gadgetinspector/index.html",
+      "url_fuente": "https://github.com/JackOfMostTrades/gadgetinspector"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "jbe",
+      "ruta": "02-catalogo/seguridad/catalogo/jbe/index.html",
+      "url_fuente": "https://set.ee/jbe/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "jd-cli",
+      "ruta": "02-catalogo/seguridad/catalogo/jd-cli/index.html",
+      "url_fuente": "https://github.com/intoolswetrust/jd-cli"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "jd-gui",
+      "ruta": "02-catalogo/seguridad/catalogo/jd-gui/index.html",
+      "url_fuente": "https://github.com/java-decompiler/jd-gui"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "luyten",
+      "ruta": "02-catalogo/seguridad/catalogo/luyten/index.html",
+      "url_fuente": "https://github.com/deathmarine/Luyten"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "pcode2code",
+      "ruta": "02-catalogo/seguridad/catalogo/pcode2code/index.html",
+      "url_fuente": "https://github.com/Big5-sec/pcode2code"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "procyon",
+      "ruta": "02-catalogo/seguridad/catalogo/procyon/index.html",
+      "url_fuente": "https://github.com/mstrobel/procyon"
+    },
+    {
+      "advertencia": "La publicación PyPI no acredita compatibilidad con todas las versiones nuevas de bytecode Python.",
+      "id": "python-uncompyle6",
+      "ruta": "02-catalogo/seguridad/catalogo/python-uncompyle6/index.html",
+      "url_fuente": "https://pypi.org/project/uncompyle6/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "recaf",
+      "ruta": "02-catalogo/seguridad/catalogo/recaf/index.html",
+      "url_fuente": "https://github.com/Col-E/Recaf"
+    },
+    {
+      "advertencia": "Proyecto de archivo SourceForge; existencia de ficheros no implica mantenimiento contemporáneo.",
+      "id": "rej",
+      "ruta": "02-catalogo/seguridad/catalogo/rej/index.html",
+      "url_fuente": "https://sourceforge.net/projects/rejava/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "retdec",
+      "ruta": "02-catalogo/seguridad/catalogo/retdec/index.html",
+      "url_fuente": "https://github.com/avast/retdec"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "shuji",
+      "ruta": "02-catalogo/seguridad/catalogo/shuji/index.html",
+      "url_fuente": "https://github.com/paazmaya/shuji"
+    }
+  ],
+  "posicion_entrega": 20,
+  "total_origen": 19,
+  "versiones_actuales": "NO_COMPROBADAS"
+}

@@ -1,0 +1,272 @@
+{
+  "admitidas": 31,
+  "admitidas_detalle": [
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "above",
+      "name": "above",
+      "reused": false,
+      "source": "https://github.com/caster0x00/Above"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "bittwist",
+      "name": "bittwist",
+      "reused": false,
+      "source": "https://bittwist.sourceforge.io/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "capfuzz",
+      "name": "capfuzz",
+      "reused": false,
+      "source": "https://github.com/MobSF/CapFuzz"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "cdpsnarf",
+      "name": "cdpsnarf",
+      "reused": false,
+      "source": "https://github.com/Zapotek/cdpsnarf"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "cottontail",
+      "name": "cottontail",
+      "reused": false,
+      "source": "https://github.com/QKaiser/cottontail"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "creds",
+      "name": "creds",
+      "reused": false,
+      "source": "https://github.com/DanMcInerney/creds.py"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "dnswatch",
+      "name": "dnswatch",
+      "reused": false,
+      "source": "https://github.com/HalilDeniz/DNSWatch"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "espionage",
+      "name": "espionage",
+      "reused": false,
+      "source": "https://github.com/josh0xA/Espionage"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "firstorder",
+      "name": "firstorder",
+      "reused": false,
+      "source": "https://github.com/utkusen/firstorder"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "hexinject",
+      "name": "hexinject",
+      "reused": false,
+      "source": "https://hexinject.sourceforge.net/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "httpry",
+      "name": "httpry",
+      "reused": false,
+      "source": "https://dumpsterventures.com/jason/httpry/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "httpsniff",
+      "name": "httpsniff",
+      "reused": false,
+      "source": "https://www.sump.org/projects/httpsniff/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "hungry-interceptor",
+      "name": "hungry-interceptor",
+      "reused": false,
+      "source": "https://github.com/nbuechler/hungry-interceptor"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "issniff",
+      "name": "issniff",
+      "reused": false,
+      "source": "https://github.com/juphoff/issniff"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "mitmer",
+      "name": "mitmer",
+      "reused": false,
+      "source": "https://github.com/husam212/MITMer"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "mots",
+      "name": "mots",
+      "reused": false,
+      "source": "https://github.com/kevinkoo001/MotS"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "net-creds",
+      "name": "net-creds",
+      "reused": false,
+      "source": "https://github.com/DanMcInerney/net-creds"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "nsntrace",
+      "name": "nsntrace",
+      "reused": false,
+      "source": "https://github.com/nsntrace/nsntrace"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "ofp-sniffer",
+      "name": "ofp-sniffer",
+      "reused": false,
+      "source": "https://github.com/amlight/ofp_sniffer"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "ostinato",
+      "name": "ostinato",
+      "reused": false,
+      "source": "https://github.com/pstavirs/ostinato"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "passivedns",
+      "name": "passivedns",
+      "reused": false,
+      "source": "https://github.com/gamelinux/passivedns"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "pcapteller",
+      "name": "pcapteller",
+      "reused": false,
+      "source": "https://www.encripto.no/downloads/tools/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "pth-toolkit",
+      "name": "pth-toolkit",
+      "reused": false,
+      "source": "https://github.com/byt3bl33d3r/pth-toolkit"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "pyrdp",
+      "name": "pyrdp",
+      "reused": false,
+      "source": "https://github.com/GoSecure/pyrdp"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "rvi-capture",
+      "name": "rvi-capture",
+      "reused": false,
+      "source": "https://github.com/gh2o/rvi_capture"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sipffer",
+      "name": "sipffer",
+      "reused": false,
+      "source": "https://github.com/xenomuta/SIPffer"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "snapception",
+      "name": "snapception",
+      "reused": false,
+      "source": "https://github.com/thebradbain/snapception"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sslsniff",
+      "name": "sslsniff",
+      "reused": false,
+      "source": "https://github.com/moxie0/sslsniff"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "stenographer",
+      "name": "stenographer",
+      "reused": false,
+      "source": "https://github.com/google/stenographer"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "wifi-monitor",
+      "name": "wifi-monitor",
+      "reused": false,
+      "source": "https://github.com/DanMcInerney/wifi-monitor"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "xcavator",
+      "name": "xcavator",
+      "reused": false,
+      "source": "https://github.com/nccgroup/xcavator"
+    }
+  ],
+  "archivo_fuente": "auditoria-documental-v2.3.2.zip",
+  "categoria": "Análisis de tráfico",
+  "categoria_numero": 30,
+  "categoria_slug": "sniffers",
+  "estado_ejecucion": "SOLO_DOCUMENTAL_NO_INSTALADO",
+  "excluidas": 7,
+  "excluidas_detalle": [
+    {
+      "fuente_original": "http://www.hackingciscoexposed.com/?link=tools",
+      "id": "eigrp-tools",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: sin respuesta HTTP (timeout): posible indisponibilidad temporal"
+    },
+    {
+      "fuente_original": "https://github.com/cthit/hubbIT-sniffer",
+      "id": "hubbit-sniffer",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: GitHub responde 404: repositorio eliminado o privado"
+    },
+    {
+      "fuente_original": "https://github.com/securactive/junkie",
+      "id": "junkie",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: GitHub responde 404: repositorio eliminado o privado"
+    },
+    {
+      "fuente_original": "http://packetstormsecurity.com/files/52514/katsnoop.tbz2.html",
+      "id": "katsnoop",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: un intersticial anti-bots impide comprobar el destino (packetstorm.news)"
+    },
+    {
+      "fuente_original": "http://packetstormsecurity.com/files/120802/MF-Sniffer-TN3270-Password-Grabber.html",
+      "id": "mfsniffer",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: un intersticial anti-bots impide comprobar el destino (packetstorm.news)"
+    },
+    {
+      "fuente_original": "http://packetstormsecurity.com/files/124299/pytacle-alpha2.tar.gz",
+      "id": "pytacle",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: un intersticial anti-bots impide comprobar el destino (packetstorm.news)"
+    },
+    {
+      "fuente_original": "http://www.rtfm.com/ssldump/",
+      "id": "ssldump",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 404: el recurso ya no existe en el servidor"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente_de_verificacion_exp": "2026-11-21",
+  "grupo_original": "grupo-sniffer",
+  "principio": "Existencia de repositorio o sitio no demuestra release actual, mantenimiento, seguridad ni compatibilidad.",
+  "revalidacion_2026_11_22": 5,
+  "sha256_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 38
+}

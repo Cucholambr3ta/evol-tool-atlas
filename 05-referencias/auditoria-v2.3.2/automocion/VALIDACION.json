@@ -1,0 +1,39 @@
+{
+  "aceptadas": [
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA",
+      "fuente": "https://github.com/linux-can/can-utils",
+      "no_probado_localmente": true,
+      "nombre": "can-utils"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/schutzwerk/CANalyzat0r",
+      "no_probado_localmente": true,
+      "nombre": "canalyzat0r"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/CANToolz/CANToolz",
+      "no_probado_localmente": true,
+      "nombre": "cantoolz"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA",
+      "fuente": "https://github.com/collin80/SavvyCAN",
+      "no_probado_localmente": true,
+      "nombre": "savvycan"
+    }
+  ],
+  "admitidas": 4,
+  "categoria_origen": "grupo-automobile",
+  "excluidas": 0,
+  "exclusiones": [],
+  "fecha": "2026-11-22",
+  "numero_origen": 4,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "politica": "Ninguna entrada no comprobada se incorpora al navegador operativo. Fuente existente no implica mantenimiento, versión vigente o instalación probada.",
+  "schema": "evol-tool-atlas/categoria/1",
+  "sha256_zip_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "titulo": "Automoción y CAN"
+}

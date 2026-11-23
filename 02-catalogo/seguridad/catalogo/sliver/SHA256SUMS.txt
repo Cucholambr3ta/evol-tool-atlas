@@ -1,0 +1,3 @@
+db44ccff70c392da2ee876b33c828864b0ad713fc2d781752ceda4936898764d  02-catalogo/seguridad/catalogo/sliver/README.md
+800f7e3371f8b25dab2ab03d806a7bab9f5b1437615101b4512571493328c9ac  02-catalogo/seguridad/catalogo/sliver/index.html
+f42541a3b34ba84084a3a2b6dafe0f319b62ccfbe65606e96bb02e5e92cf972a  02-catalogo/seguridad/catalogo/sliver/metadata.json

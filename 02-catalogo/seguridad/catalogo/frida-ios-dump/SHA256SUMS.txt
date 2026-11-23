@@ -1,0 +1,3 @@
+cde71c073f690c55f9b4003a6624557da5b3ddcbce3604ef5fbb7cec96500ff7  02-catalogo/seguridad/catalogo/frida-ios-dump/README.md
+3aee6cf798f1c3fc66e9ebb088cd2f5bf2f9ff9519ba7d4672b55e61b07aef42  02-catalogo/seguridad/catalogo/frida-ios-dump/index.html
+70008eda42659b6b17cb90197b027ad391f4e21da55b4c42397fe75cd66b77a3  02-catalogo/seguridad/catalogo/frida-ios-dump/metadata.json

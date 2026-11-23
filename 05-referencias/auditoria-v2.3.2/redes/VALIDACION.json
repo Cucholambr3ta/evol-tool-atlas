@@ -1,0 +1,339 @@
+{
+  "categoria": "Redes",
+  "categoria_carpeta": "redes",
+  "entradas_originales": 146,
+  "excluidas": 45,
+  "exclusion": [
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "apacket",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/Acey9/apacket"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "argus",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://qosient.com/argus/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "argus-clients",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://qosient.com/argus/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "autovpn",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/adtac/autovpn"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "chameleon",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/mdsecactivebreach/Chameleon"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "cidr2range",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.cpan.org/authors/id/R/RA/RAYNERLUC"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "depdep",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/galkan/depdep"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "dinouml",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://kernel.embedromix.ro/us/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "dripcap",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/dripcap/dripcap"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "gwcheck",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/62047/gwcheck.c.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "hharp",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/81368/Hackers-Hideaway-ARP-Attack-Tool.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "http-traceroute",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/107167/Traceroute-Like-HTTP-Scanner.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "hyde",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/CoolerVoid/Hyde"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "ipdecap",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.loicp.eu/ipdecap#dependances"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "maclookup",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/paraxor/maclookup"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "maketh",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://packetstormsecurity.com/files/83892/Maketh-Packet-Generator.2.0.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "middler",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/archive/p/middler/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "mptcp",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/119132/Mptcp-Packet-Manipulator.9.0.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "nbtool",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://wiki.skullsecurity.org/Nbtool"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "ncpfs",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.novell.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "netreconn",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/86076/NetReconn-Scanning-Tool-Collection.76.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "netsed",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://silicone.homelinux.org/projects/netsed/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "nield",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://nield.sourceforge.net/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "nipper",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://www.titania-security.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "nsdtool",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.curesec.com/en/publications/tools.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "nsoq",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.nsoq.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "packet-o-matic",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.packet-o-matic.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "packit",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://packetfactory.openwall.net/projects/packit/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "pwnat",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://samy.pl/pwnat/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pyminifakedns",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://code.activestate.com/recipes/491264/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "rinetd",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.boutell.com/rinetd"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "rtpbreak",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://packetstorm.news/files/id/66494/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "sessionlist",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.0xrage.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sniffer",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/julioreynaga/sniffer"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "snmpattack",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.c0decafe.de/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "snmpcheck",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.nothink.org/perl/snmpcheck/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "sockstat",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://packages.debian.org/unstable/main/sockstat"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tcpextract",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://pypi.python.org/pypi/tcpextract/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "tcptrace",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://tcptrace.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tcptraceroute",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://michael.toren.net/code/tcptraceroute/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tcpwatch",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://hathawaymix.org/Software/TCPWatch"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "udptunnel",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/archive/p/udptunnel/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Fuente bloqueada o dominio no apto para recomendación",
+      "nombre": "umit",
+      "tipo_fuente": "BLOQUEADO",
+      "url_original": "http://www.umitproject.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "uw-offish",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://uberwall.org/bin/download/42/UW_offish.1.tar.gz"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "websockify",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://github.com/kanaka/websockify"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 100,
+  "fuentes_web_revisadas": [
+    "asnmap"
+  ],
+  "fuentes_web_verificadas_2026_11_22": 1,
+  "id_grupo_origen": "grupo-networking",
+  "incluidas_documentales": 101,
+  "limites": [
+    "Los enlaces no revisados hoy conservan solo comprobación del expediente 21-11-2026.",
+    "No se ha comprobado distribución actual, integridad criptográfica del software, licencia ni mantenimiento individual de todas las herramientas.",
+    "No se han probado ni instalado herramientas en CachyOS.",
+    "No hay instrucciones de ejecución o explotación en las fichas."
+  ],
+  "numero": 41,
+  "regla_inclusion": "Enlace HTTPS upstream/oficial con identidad de proyecto identificada en el expediente y estado navegable; correcciones explícitas para fuentes contrastadas hoy."
+}

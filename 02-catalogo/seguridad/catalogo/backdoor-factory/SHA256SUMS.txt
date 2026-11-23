@@ -1,0 +1,3 @@
+f9390e5d6373ab6366be6da24a9f6d5458f7089d04bd814daa1cdca4ad9cf7fc  02-catalogo/seguridad/catalogo/backdoor-factory/README.md
+655dbf33b76f4dfa9a3660d96d4c2c13ef03fe0ad828fdd91a4a55339a6a3857  02-catalogo/seguridad/catalogo/backdoor-factory/index.html
+73de83e782e59ca239fce6a51db0c3c93bba63469a483cb2819eeb11360fb2a3  02-catalogo/seguridad/catalogo/backdoor-factory/metadata.json

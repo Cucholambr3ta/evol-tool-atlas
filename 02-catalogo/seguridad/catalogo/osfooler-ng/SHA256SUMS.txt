@@ -1,0 +1,3 @@
+c885fee89a310bb82c2cbe91250bf2b4474ace0bad2e411d6e3f75b49f784caf  02-catalogo/seguridad/catalogo/osfooler-ng/README.md
+367d2bdd5204a598deaff39dafec48b0890b9e4e74a29fc45577765278545d91  02-catalogo/seguridad/catalogo/osfooler-ng/index.html
+ea28ed4306fb708a1b01b93a9151ba24e43a528da07ce86564165ab37f794921  02-catalogo/seguridad/catalogo/osfooler-ng/metadata.json

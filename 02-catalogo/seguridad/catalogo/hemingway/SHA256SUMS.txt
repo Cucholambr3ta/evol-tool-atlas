@@ -1,0 +1,3 @@
+58801806f44973269088f0da8bc6923eb40f3c0e02734adf006b9473db9e0df4  02-catalogo/seguridad/catalogo/hemingway/README.md
+dfebbbe0d62e05b914fca3737ddda38a3db9a1c0a12adabdf58d5d7eee5c5f43  02-catalogo/seguridad/catalogo/hemingway/index.html
+3a2115004c4ce0423102dbe40e0c30b64ce4672812d93dc2a9a1d939677cd7e3  02-catalogo/seguridad/catalogo/hemingway/metadata.json

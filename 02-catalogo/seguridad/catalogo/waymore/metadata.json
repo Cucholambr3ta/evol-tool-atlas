@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "reconocimiento",
+  "categoria_origen": "grupo-recon",
+  "descripcion_original_catalogo": "Find way more from the Wayback Machine, Common Crawl, Alien Vault OTX, URLScan & VirusTotal.",
+  "distribucion_actual": "NO_VERIFICADA_INDIVIDUALMENTE",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_COMPROBADA_SOLO_EN_EXPEDIENTE_2026-11-21",
+  "evidencia_nota": "Procedencia reflejada en expediente v2.3.2, no revalidada públicamente en esta entrega",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/xnl-h4ck3r/waymore",
+  "fuente_proyecto": "https://github.com/xnl-h4ck3r/waymore",
+  "id": "waymore",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "waymore",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "v8.9.r0.g4e02de5"
+}

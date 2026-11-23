@@ -1,0 +1,3 @@
+2c8d0482c7d24eefd60192a81a30a80ea161e14072c053f27df6e6c4109bf9b3  02-catalogo/seguridad/catalogo/sherlock/README.md
+672488b88c4309f531b46fb73d7aac2eaaf9d03e32a790c69625ac6afe36ccc4  02-catalogo/seguridad/catalogo/sherlock/index.html
+5c7d4ce2731eaec609eb4ef341db537f584bea3d5b12fed1e6063c7c35e60042  02-catalogo/seguridad/catalogo/sherlock/metadata.json

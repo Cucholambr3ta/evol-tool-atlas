@@ -1,0 +1,3 @@
+60b6b3685455040e0505c2abb3c29fe17f93dd31befa91eab2c1533d0ff2b207  02-catalogo/seguridad/catalogo/barf/README.md
+de34f3ec5887ece93be183421ebee643557eb9d1877d20a5ea8ebdbb170e34a6  02-catalogo/seguridad/catalogo/barf/index.html
+d96765e5a5feef2f20986f79fba977f542eef0ddebaedef003722bbf5d54dc37  02-catalogo/seguridad/catalogo/barf/metadata.json

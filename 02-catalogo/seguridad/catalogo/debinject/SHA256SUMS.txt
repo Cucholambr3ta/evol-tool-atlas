@@ -1,0 +1,3 @@
+65f0f33dc09c12513f8becd147f4302354e5c322d04be99a3680d92078aec96f  02-catalogo/seguridad/catalogo/debinject/README.md
+ba4d2aef8d466576b7cc55e152f662ca6fa4e26f837cfe70a89d73b4594f5c23  02-catalogo/seguridad/catalogo/debinject/index.html
+27301ee8bf175321072f591c042d122ff5cdcc4edee260bb2f7bbdda48a038da  02-catalogo/seguridad/catalogo/debinject/metadata.json

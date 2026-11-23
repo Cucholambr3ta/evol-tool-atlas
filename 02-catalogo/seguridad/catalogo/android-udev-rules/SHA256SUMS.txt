@@ -1,0 +1,3 @@
+bea7381074b652eb342d57d168ec4adb0b06dca52f12d929168cc0076f21e580  02-catalogo/seguridad/catalogo/android-udev-rules/README.md
+7f78a07197887a8bd21259ec8fc4d741530e67d63a719bb61565f999a2d970bb  02-catalogo/seguridad/catalogo/android-udev-rules/index.html
+2e048e04f1a7b9ffc03f92440ab25cfae593981ef5611d730243f035d21c11eb  02-catalogo/seguridad/catalogo/android-udev-rules/metadata.json

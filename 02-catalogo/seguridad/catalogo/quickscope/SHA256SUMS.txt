@@ -1,0 +1,3 @@
+deb2aa96e379c7d2ed90e5f4312a50e1cd5e43bb5991204626ef9a0aac170dd7  02-catalogo/seguridad/catalogo/quickscope/README.md
+ebc67c33a0702e722fbeb04e5ddd591f6ee7232b21ddea21cef7445c805f8ce7  02-catalogo/seguridad/catalogo/quickscope/index.html
+f70830ffc37974b3a013ecb116e863f7320e062946e14289a140fb1607f29a29  02-catalogo/seguridad/catalogo/quickscope/metadata.json

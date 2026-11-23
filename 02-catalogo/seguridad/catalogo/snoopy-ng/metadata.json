@@ -1,0 +1,26 @@
+{
+  "advertencia": "No recopilar información de ubicación de personas ni dispositivos ajenos. No incluye instrucciones de seguimiento.",
+  "registro_origen": {
+    "categoria": "grupo-drone",
+    "fuente_historica": "https://github.com/sensepost/snoopy-ng",
+    "name": "snoopy-ng",
+    "sha256_registro_fuente": "548b5dbbe14889e213ab115f0e7a51e4629d32fe2db5101a04917c21e4537023",
+    "version_historica": "128.eac73f5"
+  },
+  "categoria_atlas": "drones",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+  "estado_mantenimiento": "Compatibilidad actual y mantenimiento sin comprobar",
+  "fuente_distribucion_comprobada": "https://github.com/sensepost/snoopy-ng",
+  "fuente_proyecto": "https://github.com/sensepost/snoopy-ng",
+  "fuentes_consultadas": [
+    "https://github.com/sensepost/snoopy-ng"
+  ],
+  "id": "snoopy-ng",
+  "instalado_en_host": null,
+  "nombre": "Snoopy-ng",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

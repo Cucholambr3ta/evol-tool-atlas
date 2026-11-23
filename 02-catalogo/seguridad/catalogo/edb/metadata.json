@@ -1,0 +1,33 @@
+{
+  "advertencia": "Revisar requisitos Qt y privilegios de depuración.",
+  "categoria_atlas": "depuradores",
+  "categoria_origen": "grupo-debugger",
+  "descripcion": "Depurador gráfico de código máquina para distintas arquitecturas.",
+  "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+  "estado_mantenimiento": "EVALUACION",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fuente_historica": "https://github.com/eteran/edb-debugger/",
+  "fuente_proyecto": "https://github.com/eteran/edb-debugger",
+  "fuentes_consultadas": [
+    "https://github.com/eteran/edb-debugger"
+  ],
+  "id": "edb",
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "nombre": "edb-debugger",
+  "probado_en_cachyos": false,
+  "proveniencia": {
+    "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+    "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+  },
+  "schema": "evol-tool-atlas/tool/2",
+  "uso_evol_propuesto": "Diagnóstico de ejecutables y utilidades nativas en VM.",
+  "validaciones_pendientes": [
+    "Revisión de licencia específica y dependencias",
+    "Prueba local segura en CachyOS",
+    "Aprobación del propietario para instalación"
+  ],
+  "verificacion_fecha": "2026-11-22",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "3337.eedd97a0"
+}

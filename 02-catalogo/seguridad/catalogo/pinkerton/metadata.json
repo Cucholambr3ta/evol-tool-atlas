@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "webapp",
+  "categoria_origen": "grupo-webapp",
+  "descripcion_original_catalogo": "JavaScript file crawler and secret finder.",
+  "distribucion_actual": "NO_VERIFICADA_INDIVIDUALMENTE",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_COMPROBADA_SOLO_EN_EXPEDIENTE_2026-11-21",
+  "evidencia_nota": "Procedencia reflejada en expediente v2.3.2, no revalidada públicamente en esta entrega",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/oppsec/Pinkerton",
+  "fuente_proyecto": "https://github.com/dsssssssm/Pinkerton",
+  "id": "pinkerton",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "pinkerton",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "1.7.r13.g6deb355"
+}

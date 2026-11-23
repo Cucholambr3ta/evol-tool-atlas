@@ -1,0 +1,3 @@
+0117e722a7f1b7392f9df50acd9b66ae075ceeaa51635646734c9ecdf6c4f6cf  02-catalogo/seguridad/catalogo/detect-sniffer/README.md
+7ebf49d6f6fd3ca3e1ee20a35f5149fec73b8edb0dac12f7ebf1e54bb72387a1  02-catalogo/seguridad/catalogo/detect-sniffer/index.html
+c4b03b75a1aa93a4979038d18f16a8582436afdab8a9755495d88a0e03c1bf6f  02-catalogo/seguridad/catalogo/detect-sniffer/metadata.json

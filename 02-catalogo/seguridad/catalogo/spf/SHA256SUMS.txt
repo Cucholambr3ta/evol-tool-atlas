@@ -1,0 +1,3 @@
+a29f67e9c83c0972d155dd59ae65930ffd38485bfbdc824e7eaf4c2bc7216b2f  02-catalogo/seguridad/catalogo/spf/README.md
+db1875ed3f4ec32f956cce630fffa5b4921f463389070e1207211ce440956aba  02-catalogo/seguridad/catalogo/spf/index.html
+cf56d428ab389469428f8d1f318750389d3a6aced92da738c8b188eba3595b1f  02-catalogo/seguridad/catalogo/spf/metadata.json

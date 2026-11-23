@@ -1,0 +1,26 @@
+{
+  "advertencia": "El análisis de bajo nivel puede exigir privilegios y modificar estado del dispositivo. No ejecutarlo en el host sin respaldo y autorización.",
+  "registro_origen": {
+    "categoria": "grupo-hardware",
+    "fuente_historica": "https://github.com/chipsec/chipsec",
+    "name": "chipsec",
+    "sha256_registro_fuente": "3bd1dfbad16843ada6f654a0ee04a58f3656eb656cdfae357f41d7bc24285b21",
+    "version_historica": "2.0.9.r11.g2545706"
+  },
+  "categoria_atlas": "hardware",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+  "estado_mantenimiento": "Versión reciente y compatibilidad de kernel no comprobadas",
+  "fuente_distribucion_comprobada": "https://github.com/chipsec/chipsec",
+  "fuente_proyecto": "https://github.com/chipsec/chipsec",
+  "fuentes_consultadas": [
+    "https://github.com/chipsec/chipsec"
+  ],
+  "id": "chipsec",
+  "instalado_en_host": null,
+  "nombre": "CHIPSEC",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

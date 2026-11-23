@@ -1,0 +1,3 @@
+1f1b91f7a5a6e6728e93ae597c03370293341b76611a1cec813cb81c600cb6ac  02-catalogo/seguridad/catalogo/amoco/README.md
+49afc499c2c555ff4be37cdecc38c63920c2a5cdb46a297e819db81431d13493  02-catalogo/seguridad/catalogo/amoco/index.html
+a43edefbca02a69800d566bfee5c1519d32f02f0081f5a0f37481523f08766b2  02-catalogo/seguridad/catalogo/amoco/metadata.json

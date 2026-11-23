@@ -1,0 +1,3 @@
+9cf67cab3fdd8e992443627d3e8ba080c1b0a20b7bb405f3151ebf6ebb9835a1  02-catalogo/seguridad/catalogo/slackpirate/README.md
+81fdb9209a9a422c077a38af60b1950057f6152b8df394820bcb393bcdf0af3e  02-catalogo/seguridad/catalogo/slackpirate/index.html
+eb1fb125dc3c9eed27e460022b98088e1d7c3279eca98be4e1e74c68be04e465  02-catalogo/seguridad/catalogo/slackpirate/metadata.json

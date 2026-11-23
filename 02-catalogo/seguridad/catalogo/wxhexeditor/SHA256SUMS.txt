@@ -1,0 +1,3 @@
+9a9eb4ee94b78ad0bd37df728d34010915cb19b89c31f3211c0971dc117099fb  02-catalogo/seguridad/catalogo/wxhexeditor/README.md
+03931a27621a89fa5488a730f828bd5ddd8499652347ed0e62d45a2888319af9  02-catalogo/seguridad/catalogo/wxhexeditor/index.html
+f79585f5985ff87eb0dc5e75f0e188bb25c9a27ecfb30877b878a43a1d06916d  02-catalogo/seguridad/catalogo/wxhexeditor/metadata.json

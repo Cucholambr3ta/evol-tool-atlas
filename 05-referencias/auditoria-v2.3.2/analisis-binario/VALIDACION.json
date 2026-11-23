@@ -1,0 +1,510 @@
+{
+  "admitidas": 56,
+  "admitidas_detalle": [
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/EgeBalci/Amber",
+      "id": "amber",
+      "nombre": "amber",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-amber-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/bdcht/amoco",
+      "id": "amoco",
+      "nombre": "amoco",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-amoco-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/androguard/androguard",
+      "id": "androguard",
+      "nombre": "androguard",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-androguard-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://pypi.org/project/angr/",
+      "id": "angr",
+      "nombre": "angr",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-angr-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/angr/angr-management",
+      "id": "angr-management",
+      "nombre": "angr-management",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-angr-management-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/govolution/avet",
+      "id": "avet",
+      "nombre": "avet",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-avet-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/programa-stic/barf-project",
+      "id": "barf",
+      "nombre": "barf",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-barf-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/tmbinc/bgrep",
+      "id": "bgrep",
+      "nombre": "bgrep",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bgrep-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://bitbucket.org/mihaila/bindead",
+      "id": "bindead",
+      "nombre": "bindead",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bindead-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://www.zynamics.com/bindiff.html",
+      "id": "bindiff",
+      "nombre": "bindiff",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bindiff-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/elfmaster/binflow",
+      "id": "binflow",
+      "nombre": "binflow",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-binflow-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/bmaia/binwally",
+      "id": "binwally",
+      "nombre": "binwally",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-binwally-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://www.daemonology.net/bsdiff/",
+      "id": "bsdiff",
+      "nombre": "bsdiff",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bsdiff-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://bvi.sourceforge.net/",
+      "id": "bvi",
+      "nombre": "bvi",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bvi-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Konloch/bytecode-viewer",
+      "id": "bytecode-viewer",
+      "nombre": "bytecode-viewer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bytecode-viewer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/EgeBalci/Cminer",
+      "id": "cminer",
+      "nombre": "cminer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-cminer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/SamboyCoding/Cpp2IL",
+      "id": "cpp2il",
+      "nombre": "cpp2il",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-cpp2il-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/horsicq/DIE-engine",
+      "id": "detect-it-easy",
+      "nombre": "detect-it-easy",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-detect-it-easy-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/dungtv543/Dutas",
+      "id": "dutas",
+      "nombre": "dutas",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-dutas-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/iGio90/Dwarf",
+      "id": "dwarf",
+      "nombre": "dwarf",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-dwarf-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://dynamorio.org/page_download",
+      "id": "dynamorio",
+      "nombre": "dynamorio",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-dynamorio-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/elfmaster/ecfs",
+      "id": "ecfs",
+      "nombre": "ecfs",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-ecfs-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/jacob-baines/elfparser",
+      "id": "elfparser",
+      "nombre": "elfparser",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-elfparser-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/thorkill/eresi",
+      "id": "eresi",
+      "nombre": "eresi",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-eresi-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/cysinfo/Exescan",
+      "id": "exescan",
+      "nombre": "exescan",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-exescan-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ExpoSEJS/ExpoSE",
+      "id": "expose",
+      "nombre": "expose",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-expose-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/trolldbois/python-haystack",
+      "id": "haystack",
+      "nombre": "haystack",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-haystack-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/EgeBalci/HERCULES",
+      "id": "hercules-payload",
+      "nombre": "hercules-payload",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-hercules-payload-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://hex2bin.sourceforge.net/",
+      "id": "hex2bin",
+      "nombre": "hex2bin",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-hex2bin-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/jklmnn/imagejs",
+      "id": "imagejs",
+      "nombre": "imagejs",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-imagejs-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://blog.didierstevens.com/my-software/#jpegdump",
+      "id": "jpegdump",
+      "nombre": "jpegdump",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-jpegdump-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/klee/klee",
+      "id": "klee",
+      "nombre": "klee",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-klee-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/mmicu/leena",
+      "id": "leena",
+      "nombre": "leena",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-leena-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/taviso/loadlibrary",
+      "id": "loadlibrary",
+      "nombre": "loadlibrary",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-loadlibrary-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/trailofbits/manticore",
+      "id": "manticore",
+      "nombre": "manticore",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-manticore-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/a0rtega/metame",
+      "id": "metame",
+      "nombre": "metame",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-metame-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/wetw0rk/sickle-pdk",
+      "id": "objdump2shellcode",
+      "nombre": "objdump2shellcode",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-objdump2shellcode-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://blog.didierstevens.com/programs/oledump-py/",
+      "id": "oledump",
+      "nombre": "oledump",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-oledump-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/sooshie/packerid",
+      "id": "packerid",
+      "nombre": "packerid",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-packerid-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/lunixbochs/patchkit",
+      "id": "patchkit",
+      "nombre": "patchkit",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-patchkit-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/FireyFly/pixd",
+      "id": "pixd",
+      "nombre": "pixd",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-pixd-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/microsoft/ProcDump-Linux",
+      "id": "procdump",
+      "nombre": "procdump",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-procdump-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/daniel-araujo/proctal",
+      "id": "proctal",
+      "nombre": "proctal",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-proctal-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://pypi.org/project/oletools/",
+      "id": "python-oletools",
+      "nombre": "python-oletools",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-python-oletools-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/QBDI/QBDI",
+      "id": "qbdi",
+      "nombre": "qbdi",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-qbdi-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/CYB3RMX/Qu1cksc0pe",
+      "id": "quickscope",
+      "nombre": "quickscope",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-quickscope-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/sgayou/rbasefind",
+      "id": "rbasefind",
+      "nombre": "rbasefind",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-rbasefind-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/goretk/redress",
+      "id": "redress",
+      "nombre": "redress",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-redress-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/elfmaster/saruman",
+      "id": "saruman",
+      "nombre": "saruman",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-saruman-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/EgeBalci/sgn",
+      "id": "sgn",
+      "nombre": "sgn",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sgn-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/mandiant/stringsifter",
+      "id": "stringsifter",
+      "nombre": "stringsifter",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-stringsifter-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/JonathanSalwan/Triton",
+      "id": "triton",
+      "nombre": "triton",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-triton-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://codisec.com/veles/",
+      "id": "veles",
+      "nombre": "veles",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-veles-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/endrazine/wcc",
+      "id": "wcc",
+      "nombre": "wcc",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-wcc-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/EUA/wxHexEditor",
+      "id": "wxhexeditor",
+      "nombre": "wxhexeditor",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-wxhexeditor-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/zeropointdynamics/zelos",
+      "id": "zelos",
+      "nombre": "zelos",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-zelos-v1.zip"
+    }
+  ],
+  "categoria": "Análisis binario",
+  "categoria_original": "grupo-binary",
+  "excluidas": 7,
+  "excluidas_detalle": [
+    {
+      "estado_origen": "OFICIAL_VERIFICADO",
+      "id": "angr-py2",
+      "motivo": "Entrada histórica Python 2 que apunta a PyPI de angr moderno; no evidencia de distribución vigente para Python 2.",
+      "url_original": "https://pypi.org/project/angr/#files"
+    },
+    {
+      "estado_origen": "ARCHIVO_HISTORICO_VERIFICADO",
+      "id": "dissector",
+      "motivo": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_original": "http://packetstormsecurity.com/files/125972/Coloured-ELF-File-Dissector.html"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "expimp-lookup",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/tr3w/ExpImp-Lookup"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "powerstager",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/z0noxz/powerstager"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "python-peid",
+      "motivo": "sin URL en tools.html ni en el PKGBUILD",
+      "url_original": ""
+    },
+    {
+      "estado_origen": "OFICIAL_VERIFICADO",
+      "id": "python2-oletools",
+      "motivo": "Entrada antigua Python 2 que apunta a la distribución Python 3; se evita duplicación y falsa compatibilidad.",
+      "url_original": "https://pypi.org/project/oletools/"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "soot",
+      "motivo": "HTTP 404: el recurso ya no existe en el servidor",
+      "url_original": "http://www.sable.mcgill.ca/soot"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_revalidadas_hoy": 3,
+  "fuentes_solo_expediente": 53,
+  "limitacion": "No se hizo verificación de red individual de cada entrada. Las entradas del expediente provienen del sondeo de 2026-11-21 y no acreditan mantenimiento, licencia, seguridad ni funcionamiento en CachyOS.",
+  "numero": 35,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 63,
+  "verificacion_del_expediente": "2026-11-21",
+  "vinculo_a_expediente": "Herramientas con URL upstream u oficial verificadas; enlaces rotos, archivo histórico e identidad no verificable excluidos; Python2 duplicado y SDK Tools obsoleto excluidos."
+}

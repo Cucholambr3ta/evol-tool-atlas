@@ -1,0 +1,3 @@
+4e24f89f8fd1c9409ffabea4a4cd72b07e00689250ea7ea56e68d3b5763cbceb  02-catalogo/seguridad/catalogo/socialfish/README.md
+d57b2ac1fb11b0763ac376c9e874121d34a433923946c1b0255b6d2041070f37  02-catalogo/seguridad/catalogo/socialfish/index.html
+a490af2f3861b810f1458912188ebf49046c93eacff2f5dbc877ef90ae91a913  02-catalogo/seguridad/catalogo/socialfish/metadata.json

@@ -1,0 +1,236 @@
+{
+  "admitidas": 28,
+  "admitidas_detalle": [
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "3proxy",
+      "name": "3proxy",
+      "reused": true,
+      "source": "https://github.com/3proxy/3proxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "bdfproxy",
+      "name": "bdfproxy",
+      "reused": false,
+      "source": "https://github.com/secretsquirrel/BDFProxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "binproxy",
+      "name": "binproxy",
+      "reused": false,
+      "source": "https://github.com/nccgroup/BinProxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "cntlm",
+      "name": "cntlm",
+      "reused": false,
+      "source": "https://github.com/bseb/cntlm"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "datajackproxy",
+      "name": "datajackproxy",
+      "reused": false,
+      "source": "https://github.com/nccgroup/DatajackProxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "dns-reverse-proxy",
+      "name": "dns-reverse-proxy",
+      "reused": false,
+      "source": "https://github.com/StalkR/dns-reverse-proxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "elite-proxy-finder",
+      "name": "elite-proxy-finder",
+      "reused": false,
+      "source": "https://github.com/DanMcInerney/elite-proxy-finder"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "fakedns",
+      "name": "fakedns",
+      "reused": false,
+      "source": "https://github.com/Crypt0s/FakeDns"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "fireprox",
+      "name": "fireprox",
+      "reused": false,
+      "source": "https://github.com/ustayready/fireprox"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "mallory",
+      "name": "mallory",
+      "reused": false,
+      "source": "https://github.com/justmao945/mallory"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "mitm-relay",
+      "name": "mitm-relay",
+      "reused": false,
+      "source": "https://github.com/jrmdev/mitm_relay"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "modlishka",
+      "name": "modlishka",
+      "reused": false,
+      "source": "https://github.com/drk1wi/Modlishka"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "mubeng",
+      "name": "mubeng",
+      "reused": false,
+      "source": "https://github.com/mubeng/mubeng"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "obfs4proxy",
+      "name": "obfs4proxy",
+      "reused": false,
+      "source": "https://gitlab.com/yawning/obfs4"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "pr0cks",
+      "name": "pr0cks",
+      "reused": false,
+      "source": "https://github.com/n1nj4sec/pr0cks"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "proxify",
+      "name": "proxify",
+      "reused": false,
+      "source": "https://github.com/projectdiscovery/proxify"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "proxybroker2",
+      "name": "proxybroker2",
+      "reused": false,
+      "source": "https://github.com/bluet/proxybroker2"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "proxyp",
+      "name": "proxyp",
+      "reused": false,
+      "source": "https://sourceforge.net/projects/proxyp/"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "redsocks",
+      "name": "redsocks",
+      "reused": false,
+      "source": "https://github.com/darkk/redsocks"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "rpivot",
+      "name": "rpivot",
+      "reused": false,
+      "source": "https://github.com/klsecservices/rpivot"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sergio-proxy",
+      "name": "sergio-proxy",
+      "reused": false,
+      "source": "https://github.com/supernothing/sergio-proxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sslstrip",
+      "name": "sslstrip",
+      "reused": false,
+      "source": "https://github.com/moxie0/sslstrip"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "ssrf-proxy",
+      "name": "ssrf-proxy",
+      "reused": false,
+      "source": "https://github.com/bcoles/ssrf_proxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "starttls-mitm",
+      "name": "starttls-mitm",
+      "reused": false,
+      "source": "https://github.com/ipopov/starttls-mitm"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "stowaway",
+      "name": "stowaway",
+      "reused": false,
+      "source": "https://github.com/ph4ntonn/Stowaway"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "striptls",
+      "name": "striptls",
+      "reused": false,
+      "source": "https://github.com/tintinweb/striptls"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "trevorproxy",
+      "name": "trevorproxy",
+      "reused": false,
+      "source": "https://github.com/blacklanternsecurity/TREVORproxy"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "webfixy",
+      "name": "webfixy",
+      "reused": false,
+      "source": "https://github.com/takeshixx/webfixy"
+    }
+  ],
+  "archivo_fuente": "auditoria-documental-v2.3.2.zip",
+  "categoria": "Proxies",
+  "categoria_numero": 29,
+  "categoria_slug": "proxy",
+  "estado_ejecucion": "SOLO_DOCUMENTAL_NO_INSTALADO",
+  "excluidas": 4,
+  "excluidas_detalle": [
+    {
+      "fuente_original": "http://thesprawl.org/projects/dnschef/",
+      "id": "dnschef",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: el dominio no resuelve (DNS): retirado o inexistente"
+    },
+    {
+      "fuente_original": "https://anonymous-proxy-servers.net/",
+      "id": "jondo",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: sin respuesta HTTP (conexion_rechazada): posible indisponibilidad temporal"
+    },
+    {
+      "fuente_original": "https://www.soapui.org/downloads/soapui/source-forge.html",
+      "id": "soapui",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 404: el recurso ya no existe en el servidor"
+    },
+    {
+      "fuente_original": "http://www.c0decafe.de/",
+      "id": "tftp-proxy",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 200, pero el contenido no identifica la herramienta"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente_de_verificacion_exp": "2026-11-21",
+  "grupo_original": "grupo-proxy",
+  "principio": "Existencia de repositorio o sitio no demuestra release actual, mantenimiento, seguridad ni compatibilidad.",
+  "revalidacion_2026_11_22": 6,
+  "sha256_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 32
+}

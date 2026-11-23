@@ -1,0 +1,3 @@
+6fb229f1b8dd35b897ad33866bf43bb885c4cfcd6fbb75027cade61926f9443a  02-catalogo/seguridad/catalogo/whatbreach/README.md
+fc2ecfd2210e784483bf20061db4f8849becaa7db1306720d7bc11e676d114e9  02-catalogo/seguridad/catalogo/whatbreach/index.html
+3ebe80a167890be4bda1cc411708a1a305652b9f4b79d825be86707b0a1cbd00  02-catalogo/seguridad/catalogo/whatbreach/metadata.json

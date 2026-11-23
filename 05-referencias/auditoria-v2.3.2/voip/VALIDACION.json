@@ -1,0 +1,165 @@
+{
+  "admitidas": 8,
+  "categoria": "VoIP",
+  "estado_verificacion": "FUENTES_CONTRASTADAS_SIN_INSTALACION",
+  "excluidas": 14,
+  "exclusiones": [
+    {
+      "id": "ace",
+      "razon": "Sitio informativo antiguo; no se ha comprobado distribución del ejecutable.",
+      "url_historica": "https://ucsniff.sourceforge.net/ace.html"
+    },
+    {
+      "id": "erase-registrations",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 200, pero el contenido no identifica la herramienta",
+      "url_historica": "http://www.hackingexposedvoip.com/"
+    },
+    {
+      "id": "ilty",
+      "razon": "Página histórica accesible, pero no se pudo confirmar descarga actual y procedencia.",
+      "url_historica": "http://chdir.org/~nico/ilty/"
+    },
+    {
+      "id": "isme",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "https://packetstormsecurity.com/files/123534/IP-Phone-Scanning-Made-Easy.12.html"
+    },
+    {
+      "id": "pcapsipdump",
+      "razon": "Página antigua sin confirmación independiente del artefacto distribuido.",
+      "url_historica": "http://pcapsipdump.sourceforge.net/"
+    },
+    {
+      "id": "protos-sip",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "url_historica": "https://www.ee.oulu.fi/research/ouspg/PROTOS_Test-Suite_c07-sip"
+    },
+    {
+      "id": "redirectpoison",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 200, pero el contenido no identifica la herramienta",
+      "url_historica": "http://www.hackingexposedvoip.com/"
+    },
+    {
+      "id": "rtp-flood",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 200, pero el contenido no identifica la herramienta",
+      "url_historica": "http://www.hackingexposedvoip.com/"
+    },
+    {
+      "id": "siparmyknife",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "http://packetstormsecurity.com/files/107301/sipArmyKnife_11232011.pl.txt"
+    },
+    {
+      "id": "storm-ring",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "http://packetstormsecurity.com/files/115852/Storm-Ringing-PABX-Test-Tool.html"
+    },
+    {
+      "id": "teardown",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 200, pero el contenido no identifica la herramienta",
+      "url_historica": "http://www.hackingexposedvoip.com/"
+    },
+    {
+      "id": "vnak",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: el dominio no resuelve (DNS): retirado o inexistente",
+      "url_historica": "https://www.isecpartners.com/vnak.html"
+    },
+    {
+      "id": "voiper",
+      "razon": "Página histórica sin comprobación actual de descarga íntegra.",
+      "url_historica": "http://voiper.sourceforge.net/"
+    },
+    {
+      "id": "voipong",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "url_historica": "http://www.enderunix.org/voipong/"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "incluidas": [
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bluebox-ng-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "bluebox-ng",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/bluebox-ng/index.html",
+      "url_fuente": "https://github.com/jesusprubio/bluebox"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-isip-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "isip",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/isip/index.html",
+      "url_fuente": "https://github.com/halit/isip"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-mrsip-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "mrsip",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/mrsip/index.html",
+      "url_fuente": "https://github.com/meliht/mr.sip"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sipbrute-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "sipbrute",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/sipbrute/index.html",
+      "url_fuente": "https://github.com/packetassailant/sipbrute"
+    },
+    {
+      "advertencia": "Repositorio oficial de SIPp con releases; reemplaza página histórica SourceForge.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sipp-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "sipp",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/sipp/index.html",
+      "url_fuente": "https://github.com/SIPp/sipp"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sippts-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "sippts",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/sippts/index.html",
+      "url_fuente": "https://github.com/Pepelux/sippts"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sipsak-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "sipsak",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/sipsak/index.html",
+      "url_fuente": "https://github.com/nils-ohlmeier/sipsak"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-vsaudit-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "vsaudit",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/vsaudit/index.html",
+      "url_fuente": "https://github.com/sonnyattck/vsaudit"
+    }
+  ],
+  "limitaciones": [
+    "No validación funcional en CachyOS",
+    "No todas las fuentes fueron reconsultadas en vivo el mismo día",
+    "No verificación de licencias o firmas de binarios",
+    "No publicación de URLs excluidas como enlaces navegables"
+  ],
+  "metodologia": "Fuente histórica revisada al 2026-11-21 + corroboración independiente en fuentes seleccionadas al 2026-11-22; no se presume mantenimiento activo por repositorio público.",
+  "numero": 21,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "slug": "voip",
+  "total_en_corpus": 22
+}

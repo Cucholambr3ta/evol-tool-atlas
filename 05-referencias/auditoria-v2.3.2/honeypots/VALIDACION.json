@@ -1,0 +1,102 @@
+{
+  "admitidas": 11,
+  "alcance": "Disponibilidad verificable de fuente externa, no instalación ni funcionamiento en CachyOS",
+  "categoria": "honeypots",
+  "categoria_origen": "grupo-honeypot",
+  "excluidas": 5,
+  "exclusiones": [
+    {
+      "id": "fakeap",
+      "razon": "El portal original no se encuentra disponible; no se validó distribución auténtica."
+    },
+    {
+      "id": "heartbleed-honeypot",
+      "razon": "Solo se conserva una copia de archivo histórico; distribución actual no verificada."
+    },
+    {
+      "id": "honssh",
+      "razon": "El destino original no está disponible; el PKGBUILD por sí solo no demuestra upstream actual."
+    },
+    {
+      "id": "python2-hpfeeds",
+      "razon": "Paquete legado de Python 2; el proyecto canónico hpfeeds se documenta por separado."
+    },
+    {
+      "id": "wifi-honey",
+      "razon": "Fuente original inaccesible en la comprobación actual."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "incluidas": [
+    {
+      "advertencia": "Proyecto histórico: comprobar dependencias antes de cualquier uso; una URL accesible no garantiza compatibilidad.",
+      "id": "beeswarm",
+      "ruta": "02-catalogo/seguridad/catalogo/beeswarm/index.html",
+      "url_fuente": "https://github.com/honeynet/beeswarm"
+    },
+    {
+      "advertencia": "La fuente canónica actual es mushorg/conpot; el paquete 0.6.0 del expediente documental es histórico y no acredita la versión actual. La rama del proyecto tiene publicaciones posteriores.",
+      "id": "conpot",
+      "ruta": "02-catalogo/seguridad/catalogo/conpot/index.html",
+      "url_fuente": "https://github.com/mushorg/conpot"
+    },
+    {
+      "advertencia": "Herramienta de evaluación IKE/XAUTH con captura de credenciales en su modo de uso original; la clasificación Honeypots proviene del catálogo histórico y no implica recomendación de despliegue.",
+      "id": "fiked",
+      "ruta": "02-catalogo/seguridad/catalogo/fiked/index.html",
+      "url_fuente": "https://www.roe.ch/FakeIKEd"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "honeyd",
+      "ruta": "02-catalogo/seguridad/catalogo/honeyd/index.html",
+      "url_fuente": "https://github.com/DataSoft/Honeyd"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "honeypy",
+      "ruta": "02-catalogo/seguridad/catalogo/honeypy/index.html",
+      "url_fuente": "https://github.com/foospidy/HoneyPy"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "hpfeeds",
+      "ruta": "02-catalogo/seguridad/catalogo/hpfeeds/index.html",
+      "url_fuente": "https://github.com/hpfeeds/hpfeeds"
+    },
+    {
+      "advertencia": "Honeypot SSH histórico: no confundir la existencia del repositorio con mantenimiento vigente.",
+      "id": "kippo",
+      "ruta": "02-catalogo/seguridad/catalogo/kippo/index.html",
+      "url_fuente": "https://github.com/desaster/kippo"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "pshitt",
+      "ruta": "02-catalogo/seguridad/catalogo/pshitt/index.html",
+      "url_fuente": "https://github.com/regit/pshitt"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "snare",
+      "ruta": "02-catalogo/seguridad/catalogo/snare/index.html",
+      "url_fuente": "https://github.com/mushorg/snare"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "ssh-honeypot",
+      "ruta": "02-catalogo/seguridad/catalogo/ssh-honeypot/index.html",
+      "url_fuente": "https://github.com/droberson/ssh-honeypot"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "wordpot",
+      "ruta": "02-catalogo/seguridad/catalogo/wordpot/index.html",
+      "url_fuente": "https://github.com/gbrindisi/wordpot"
+    }
+  ],
+  "posicion_entrega": 16,
+  "total_origen": 16,
+  "versiones_actuales": "NO_COMPROBADAS"
+}

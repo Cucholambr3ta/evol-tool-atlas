@@ -1,0 +1,3 @@
+e0ea2fae7e1f650156c5d98924e4a27affc78bf8ec3c24c6e9a15dc7addb9ab0  02-catalogo/seguridad/catalogo/tabi/README.md
+750a3b88f896956549c9766ed87298ca86faacd7e2a0a3cb1a351d295c7a5f35  02-catalogo/seguridad/catalogo/tabi/index.html
+84a776c9261aef99a5b502fdd3540c7c48fa62636ed6368dc4888ae222bdc36a  02-catalogo/seguridad/catalogo/tabi/metadata.json

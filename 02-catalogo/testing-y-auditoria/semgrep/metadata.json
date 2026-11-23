@@ -1,0 +1,33 @@
+{
+  "id": "semgrep",
+  "nombre": "Semgrep",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_instalacion": "NO_VERIFICADA_EN_HOST",
+  "fecha_verificacion": "2026-11-22",
+  "version_release_verificada": "1.186.0",
+  "categoria": "Auditoría · SAST",
+  "ubicacion": "02-catalogo/testing-y-auditoria/semgrep",
+  "descripcion": "Análisis estático basado en patrones y reglas para revisar código y detectar errores o patrones inseguros.",
+  "caso_uso_evol": "Auditoría automatizada de repositorios EVOL y comprobaciones en CI con reglas explícitas.",
+  "advertencias": "Los hallazgos requieren revisión humana. Comprobar política de telemetría y la configuración elegida antes de conectar repositorios privados.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/semgrep/semgrep",
+    "releases": "https://github.com/semgrep/semgrep/releases"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/semgrep/semgrep",
+    "https://github.com/semgrep/semgrep/releases",
+    "https://pypi.org/project/semgrep/"
+  ],
+  "fuente_historia": {
+    "archivo": "auditoria-documental-v2.3.2.zip",
+    "incluida_en_expediente_origen": true,
+    "version_en_guia": "1.183.0",
+    "incluida_en_complementarias": true,
+    "nota": "La guía documental registra 1.183.0; la fuente oficial presenta 1.186.0 como versión reciente el 18-11-2026. No se validó instalación local."
+  },
+  "limites": [
+    "Disponibilidad del repositorio y releases comprobada con búsqueda web; no se realizó descarga, instalación, compilación ni prueba funcional en CachyOS.",
+    "No implica que el paquete de referencia existente esté actualizado o que sea el mejor método de instalación."
+  ]
+}

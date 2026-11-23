@@ -1,0 +1,3 @@
+dedaeef9cba86b3eb185d2a55e9d425b31809757d400c4d1018e7f99d0bee52d  02-catalogo/seguridad/catalogo/lorg/README.md
+d80909d8dc3cbf5847289c0b516d1d666c2b448bbd032bebaa483668c254e25a  02-catalogo/seguridad/catalogo/lorg/index.html
+ae4498e55cb4e1432a4344329ece475461951ab09899792f21efff30064deb67  02-catalogo/seguridad/catalogo/lorg/metadata.json

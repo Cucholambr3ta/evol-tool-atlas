@@ -1,0 +1,199 @@
+{
+  "categoria": "Miscelánea",
+  "categoria_carpeta": "miscelanea",
+  "entradas_originales": 149,
+  "excluidas": 25,
+  "exclusion": [
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "checkiban",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://kernel.embedromix.ro/us/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "cisco-router-config",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": ""
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "dhcdrop",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.netpatch.ru/dhcdrop.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "ent",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.fourmilab.ch/random"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "extracthosts",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/bwall/ExtractHosts"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "flare",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.nowrap.de/flare.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "genlist",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": ""
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "geoipgen",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/archive/p/geoipgen/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "http-put",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": ""
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "hxd",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://mh-nexus.de/en/hxd/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "laudanum",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://laudanum.inguardians.com/#"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "nmap-parse-output",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/hahwul/nmap-parse-output"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "plutil",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://scw.us/iPhone/plutil/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "qrgen",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/h0nus/QRGen"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "redpoint",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://github.com/digitalbond/Redpoint3"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "schnappi-dhcp",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.emanuelegentili.eu/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sleuthql",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/RhinoSecurityLabs/SleuthQL"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "stompy",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://lcamtuf.coredump.cx/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tempomail",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/kavishgr/tempomail"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tnscmd",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.jammed.com/~jwa/hacks/security/tnscmd/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "uatester",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/archive/p/ua-tester/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "vfeed",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.toolswatch.org/vfeed"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "web2ldap",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://web2ldap.de/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "wol-e",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/archive/p/wol-e/"
+    },
+    {
+      "evidencia_fecha": "2026-11-22",
+      "motivo": "Excluida por política editorial (metapaquete específico de distribución externa)",
+      "nombre": "metapaquete-oficial-distribucion-externa",
+      "tipo_fuente": "REFERENCIA_DISTRIBUCION"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 123,
+  "fuentes_web_revisadas": [
+    "archivebox",
+    "avml"
+  ],
+  "fuentes_web_verificadas_2026_11_22": 2,
+  "id_grupo_origen": "grupo-misc",
+  "incluidas_documentales": 124,
+  "limites": [
+    "Los enlaces no revisados hoy conservan solo comprobación del expediente 21-11-2026.",
+    "No se ha comprobado distribución actual, integridad criptográfica del software, licencia ni mantenimiento individual de todas las herramientas.",
+    "No se han probado ni instalado herramientas en CachyOS.",
+    "No hay instrucciones de ejecución o explotación en las fichas."
+  ],
+  "numero": 42,
+  "regla_inclusion": "Enlace HTTPS upstream/oficial con identidad de proyecto identificada en el expediente y estado navegable; correcciones explícitas para fuentes contrastadas hoy."
+}

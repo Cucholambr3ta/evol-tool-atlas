@@ -1,0 +1,30 @@
+{
+  "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+  "categoria_atlas": "decompiladores",
+  "categoria_origen": "grupo-decompiler",
+  "condiciones_antes_de_uso": [
+    "Confirmar licencia y dependencias",
+    "Verificar compatibilidad y procedencia de artefactos de release",
+    "Ejecutar pruebas seguras en entorno aislado",
+    "Obtener autorización para instalación"
+  ],
+  "descripcion_historica": "A standalone graphical utility that displays Java source codes of .class files.",
+  "estado_fuente": "PROYECTO_O_DISTRIBUCION_ACCESIBLE",
+  "estado_mantenimiento": "NO_DETERMINADO",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fecha_verificacion": "2026-11-22",
+  "fuente_historica": "https://github.com/java-decompiler/jd-gui",
+  "fuente_proyecto_verificada": "https://github.com/java-decompiler/jd-gui",
+  "id": "jd-gui",
+  "instalado_en_host": null,
+  "nombre": "jd-gui",
+  "origen_corpus": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+  "probado_en_cachyos": false,
+  "requiere_red_o_proveedor": false,
+  "schema": "evol-tool-atlas/tool/3",
+  "sha256_corpus": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c",
+  "sin_ejecutables": true,
+  "tipo_verificacion": "revisión externa documental, sin instalación ni compilación",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "1.6.6"
+}

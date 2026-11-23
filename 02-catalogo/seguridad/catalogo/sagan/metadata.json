@@ -1,0 +1,27 @@
+{
+  "advertencia": "El dominio original en la guía cambió de destino. La identidad actual se contrastó con el repositorio quadrantsec/sagan y la indicación de traslado del proyecto anterior. No consta prueba de instalación en CachyOS.",
+  "registro_origen": {
+    "categoria": "grupo-ids",
+    "fuente_historica": "https://quadrantsec.com/sagan_log_analysis_engine/",
+    "name": "sagan",
+    "sha256_registro_fuente": "693fd08a7c5f191bb107b4fe501a4e51ae48f2027e2e50650e024dba369efa58",
+    "version_historica": "2.0.2"
+  },
+  "categoria_atlas": "ids",
+  "detalle_verificacion": "REPOSITORIO_OFICIAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "Versión actual y mantenimiento no comprobados",
+  "fuente_distribucion_comprobada": "https://github.com/quadrantsec/sagan",
+  "fuente_proyecto": "https://github.com/quadrantsec/sagan",
+  "fuentes_consultadas": [
+    "https://github.com/quadrantsec/sagan",
+    "https://github.com/beave/sagan"
+  ],
+  "id": "sagan",
+  "instalado_en_host": null,
+  "nombre": "Sagan",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

@@ -1,0 +1,3 @@
+4ed000533835697759ad4b23446ffd5626da64ca5c6708ca071a7421676f85b6  02-catalogo/seguridad/catalogo/mobsf/README.md
+a0a09f7da5b141b3ee5fc6d7244587ade2ce6a3d2301a48556eb0188b23e12cd  02-catalogo/seguridad/catalogo/mobsf/index.html
+8d4a6c46b6164ba179db32a80f78d33393919ce91836b9271bcb14588d10103e  02-catalogo/seguridad/catalogo/mobsf/metadata.json

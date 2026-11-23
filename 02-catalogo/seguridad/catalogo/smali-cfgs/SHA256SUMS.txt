@@ -1,0 +1,3 @@
+9ad036bd5948adf3ffb225188713ba4f41f8ecd48afab6f017199c464a2a47ce  02-catalogo/seguridad/catalogo/smali-cfgs/README.md
+d7be29b367ef5fd858b9592d11edbe35c5cab5113d3fb0ad5bbe60bae3fd4a59  02-catalogo/seguridad/catalogo/smali-cfgs/index.html
+1801319c4fdcbc4055bffbea446bd4c9e7d0c2a1e3cd7c6530530dc95fee69f0  02-catalogo/seguridad/catalogo/smali-cfgs/metadata.json

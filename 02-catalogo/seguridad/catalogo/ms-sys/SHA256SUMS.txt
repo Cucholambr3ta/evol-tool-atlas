@@ -1,0 +1,3 @@
+3999e962ebad1b110796bfd10026bfd59b661ef15b0948c5cf985f5dc151e7fb  02-catalogo/seguridad/catalogo/ms-sys/README.md
+7b54b35f22dc8e1c1b7a35d658e0c83b3e85cfb8fbe3c16b7b8c961e9607e29a  02-catalogo/seguridad/catalogo/ms-sys/index.html
+b09275098fe82906e33eb3b78c82baefc68312e2aac8f3dca438197e01cf4574  02-catalogo/seguridad/catalogo/ms-sys/metadata.json

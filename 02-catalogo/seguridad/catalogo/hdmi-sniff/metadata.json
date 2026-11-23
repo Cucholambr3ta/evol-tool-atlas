@@ -1,0 +1,26 @@
+{
+  "advertencia": "No acceder al tráfico de terceros ni conectar hardware sin medidas contra interferencia eléctrica. El enlace antiguo dirige a la cuenta actual del repositorio.",
+  "registro_origen": {
+    "categoria": "grupo-hardware",
+    "fuente_historica": "https://github.com/ApertureLabsLtd/hdmi-sniff",
+    "name": "hdmi-sniff",
+    "sha256_registro_fuente": "a5679261a86f896432556ff2cb48ef697d1db8b7800b973167c26bdb1be2c963",
+    "version_historica": "5.f7fbc0e"
+  },
+  "categoria_atlas": "hardware",
+  "detalle_verificacion": "REDIRECCION_A_REPOSITORIO_ORIGINAL_IDENTIFICADA",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_HEREDADA",
+  "estado_mantenimiento": "Proyecto histórico; mantenimiento y compatibilidad no comprobados",
+  "fuente_distribucion_comprobada": "https://github.com/AdamLaurie/hdmi-sniff",
+  "fuente_proyecto": "https://github.com/AdamLaurie/hdmi-sniff",
+  "fuentes_consultadas": [
+    "https://github.com/AdamLaurie/hdmi-sniff"
+  ],
+  "id": "hdmi-sniff",
+  "instalado_en_host": null,
+  "nombre": "hdmi-sniff",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

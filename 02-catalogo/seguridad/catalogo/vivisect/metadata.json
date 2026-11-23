@@ -1,0 +1,33 @@
+{
+  "advertencia": "Revisar licencias y recursos antes de su adopción.",
+  "categoria_atlas": "depuradores",
+  "categoria_origen": "grupo-debugger",
+  "descripcion": "Entorno de análisis estático y dinámico de binarios.",
+  "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+  "estado_mantenimiento": "EVALUACION",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fuente_historica": "https://github.com/vivisect/vivisect",
+  "fuente_proyecto": "https://github.com/vivisect/vivisect",
+  "fuentes_consultadas": [
+    "https://github.com/vivisect/vivisect"
+  ],
+  "id": "vivisect",
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "nombre": "Vivisect",
+  "probado_en_cachyos": false,
+  "proveniencia": {
+    "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+    "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+  },
+  "schema": "evol-tool-atlas/tool/2",
+  "uso_evol_propuesto": "Análisis de ejecutables de prueba y diagnóstico de formatos.",
+  "validaciones_pendientes": [
+    "Revisión de licencia específica y dependencias",
+    "Prueba local segura en CachyOS",
+    "Aprobación del propietario para instalación"
+  ],
+  "verificacion_fecha": "2026-11-22",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "v1.3.2.r10.g66c93f0c"
+}

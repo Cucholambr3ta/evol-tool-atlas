@@ -1,0 +1,3 @@
+e37a9251928f6d2b4a2bdf2f00f7ce7db636c0d12c9b85e499710e65491ea8b2  02-catalogo/seguridad/catalogo/yeti/README.md
+015b1e134df97604101cfeeb158ad975e28b2761aad59d4de7f505ca35e08e3a  02-catalogo/seguridad/catalogo/yeti/index.html
+0bf8dbff9c1417646707fc4d331c587c00d2e9f0d70180299d0040541db902ef  02-catalogo/seguridad/catalogo/yeti/metadata.json

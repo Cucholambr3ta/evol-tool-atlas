@@ -1,0 +1,3 @@
+8020f699a70cddef31a28bd66c93730643fb5240ab2ed8b0a6416453f35955fd  02-catalogo/seguridad/catalogo/harness/README.md
+d3990041be13c935a26f15480dd7c057ab0289091f5f0432d39382fa71fb2fd4  02-catalogo/seguridad/catalogo/harness/index.html
+58d5234ca2e7b9d3bdf301182d73270f63b16ee1fb9a9aac0d1789f9e902c960  02-catalogo/seguridad/catalogo/harness/metadata.json

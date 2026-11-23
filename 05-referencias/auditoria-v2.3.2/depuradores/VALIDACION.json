@@ -1,0 +1,319 @@
+{
+  "admitidas": 9,
+  "alcance": "comprobación documental de fuente externa; no instalación ni ejecución de las herramientas",
+  "categoria": "depuradores",
+  "excluidas": 1,
+  "exclusiones": [
+    {
+      "estado": "EXCLUIDA_DEL_CATALOGO_OPERATIVO",
+      "id": "ollydbg",
+      "razon": "Sitio oficial y descarga histórica verificados, pero es un depurador Win32; no existe validación nativa Linux ni utilidad operativa demostrada para CachyOS."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "herramientas": [
+    {
+      "advertencia": "Revisar requisitos Qt y privilegios de depuración.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Depurador gráfico de código máquina para distintas arquitecturas.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/eteran/edb-debugger/",
+      "fuente_proyecto": "https://github.com/eteran/edb-debugger",
+      "fuentes_consultadas": [
+        "https://github.com/eteran/edb-debugger"
+      ],
+      "id": "edb",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "edb-debugger",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Diagnóstico de ejecutables y utilidades nativas en VM.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "3337.eedd97a0"
+    },
+    {
+      "advertencia": "Distribución Debian verificada, no compatibilidad Arch ni versión fuente original; consume mucha memoria.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Biblioteca histórica para detectar accesos indebidos a memoria mediante guard pages.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "LEGADO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://packages.debian.org/sid/electric-fence",
+      "fuente_proyecto": "https://packages.debian.org/trixie/electric-fence",
+      "fuentes_consultadas": [
+        "https://packages.debian.org/trixie/electric-fence"
+      ],
+      "id": "electric-fence",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Electric Fence",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Investigación de errores de memoria en programas C/C++ de prueba.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "2.2.5"
+    },
+    {
+      "advertencia": "No exponer el servidor web a redes ajenas.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Interfaz web local para GNU Debugger.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/cs01/gdbgui",
+      "fuente_proyecto": "https://github.com/cs01/gdbgui",
+      "fuentes_consultadas": [
+        "https://github.com/cs01/gdbgui"
+      ],
+      "id": "gdbgui",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "gdbgui",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Depuración visual de código nativo Rust/C/C++ en entornos de laboratorio.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "438.773b916"
+    },
+    {
+      "advertencia": "Revisar dependencia ptrace y permisos del host.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Herramienta para observar operaciones de heap y apoyar depuración de memoria.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/Arinerron/heaptrace",
+      "fuente_proyecto": "https://github.com/Arinerron/heaptrace",
+      "fuentes_consultadas": [
+        "https://github.com/Arinerron/heaptrace"
+      ],
+      "id": "heaptrace",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "heaptrace",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Análisis de binarios de prueba en sandbox.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "2.2.8.2.r20.g06f43fc"
+    },
+    {
+      "advertencia": "Requiere soporte de CPU/perf apropiado; verificar funcionamiento en CachyOS.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Grabación y reproducción determinista de ejecuciones para depuración.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/mozilla/rr",
+      "fuente_proyecto": "https://github.com/rr-debugger/rr",
+      "fuentes_consultadas": [
+        "https://github.com/rr-debugger/rr"
+      ],
+      "id": "rr",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "rr",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Investigar fallos intermitentes y regresiones en software Linux.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "6869.556551e4"
+    },
+    {
+      "advertencia": "Distribución Linux oficial, pero requiere hardware/udev; no se ha probado en equipo EVOL.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Software oficial para análisis y captura de señales de hardware Saleae.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://www.saleae.com/downloads",
+      "fuente_proyecto": "https://www.saleae.com/downloads",
+      "fuentes_consultadas": [
+        "https://www.saleae.com/downloads"
+      ],
+      "id": "saleae-logic",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Saleae Logic 2",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Depuración de dispositivos físicos y buses en laboratorio equipado.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "2.3.47"
+    },
+    {
+      "advertencia": "Herramienta de investigación ofensiva; no habilitar ejecución de payloads en host.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Kit histórico para creación y análisis de código máquina en contextos de investigación.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/reyammer/shellnoob",
+      "fuente_proyecto": "https://github.com/reyammer/shellnoob",
+      "fuentes_consultadas": [
+        "https://github.com/reyammer/shellnoob"
+      ],
+      "id": "shellnoob",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "shellnoob",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Solo referencia de formatos y depuración en VM aislada.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "37.6586133"
+    },
+    {
+      "advertencia": "Revisar licencias y recursos antes de su adopción.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Entorno de análisis estático y dinámico de binarios.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/vivisect/vivisect",
+      "fuente_proyecto": "https://github.com/vivisect/vivisect",
+      "fuentes_consultadas": [
+        "https://github.com/vivisect/vivisect"
+      ],
+      "id": "vivisect",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Vivisect",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Análisis de ejecutables de prueba y diagnóstico de formatos.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "v1.3.2.r10.g66c93f0c"
+    },
+    {
+      "advertencia": "Mantenimiento reciente y compatibilidad no confirmados.",
+      "categoria_atlas": "depuradores",
+      "categoria_origen": "grupo-debugger",
+      "descripcion": "Interfaz complementaria para depuradores, orientada a análisis de bajo nivel.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/snare/voltron",
+      "fuente_proyecto": "https://github.com/snare/voltron",
+      "fuentes_consultadas": [
+        "https://github.com/snare/voltron"
+      ],
+      "id": "voltron",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Voltron",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Referencia de UI para sesiones de debugging en entornos de prueba.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "v0.1.8.r0.gbe9e54b"
+    }
+  ],
+  "nombre": "Depuradores y análisis de ejecución",
+  "numero": 14,
+  "originales": 10,
+  "schema": "evol-tool-atlas/category-validation/2",
+  "sha256_tools_json": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+}

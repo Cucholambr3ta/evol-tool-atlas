@@ -1,0 +1,225 @@
+{
+  "admitidas": 25,
+  "admitidas_detalle": [
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "android-apktool",
+      "name": "android-apktool",
+      "reused": false,
+      "source": "https://github.com/iBotPeaches/Apktool"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "apkstudio",
+      "name": "apkstudio",
+      "reused": false,
+      "source": "https://vaibhavpandey.com/apkstudio/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "binaryninja",
+      "name": "binaryninja",
+      "reused": false,
+      "source": "https://binary.ninja/free/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "ctypes-sh",
+      "name": "ctypes-sh",
+      "reused": false,
+      "source": "https://github.com/taviso/ctypes.sh"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "elidecode",
+      "name": "elidecode",
+      "reused": false,
+      "source": "https://github.com/ETeissonniere/EliDecode"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "frida-extract",
+      "name": "frida-extract",
+      "reused": false,
+      "source": "https://github.com/OALabs/frida-extract"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "ghidriff",
+      "name": "ghidriff",
+      "reused": false,
+      "source": "https://github.com/clearbluejar/ghidriff"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gostringsr2",
+      "name": "gostringsr2",
+      "reused": false,
+      "source": "https://github.com/ivision-research/gostringsr2"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "hopper",
+      "name": "hopper",
+      "reused": false,
+      "source": "https://www.hopperapp.com/download.html?"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "ida-free",
+      "name": "ida-free",
+      "reused": false,
+      "source": "https://hex-rays.com/ida-free"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "innounp",
+      "name": "innounp",
+      "reused": false,
+      "source": "https://sourceforge.net/projects/innounp/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "jeb-android",
+      "name": "jeb-android",
+      "reused": false,
+      "source": "https://www.pnfsoftware.com/jeb/android"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "jeb-mips",
+      "name": "jeb-mips",
+      "reused": false,
+      "source": "https://www.pnfsoftware.com/jeb/mips"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "jwscan",
+      "name": "jwscan",
+      "reused": false,
+      "source": "https://github.com/struppigel/JWScan"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "libc-database",
+      "name": "libc-database",
+      "reused": false,
+      "source": "https://github.com/niklasb/libc-database"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "mikrotik-npk",
+      "name": "mikrotik-npk",
+      "reused": false,
+      "source": "https://github.com/kost/mikrotik-npk"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "netzob",
+      "name": "netzob",
+      "reused": false,
+      "source": "https://github.com/netzob/netzob"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "pintool",
+      "name": "pintool",
+      "reused": false,
+      "source": "https://github.com/wagiro/pintool"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "pintool2",
+      "name": "pintool2",
+      "reused": false,
+      "source": "https://github.com/sebastiendamaye/pintool2"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "pyinstxtractor",
+      "name": "pyinstxtractor",
+      "reused": false,
+      "source": "https://github.com/extremecoders-re/pyinstxtractor"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "python-frida",
+      "name": "python-frida",
+      "reused": false,
+      "source": "https://pypi.org/project/frida/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "radare2-keystone",
+      "name": "radare2-keystone",
+      "reused": false,
+      "source": "https://github.com/radareorg/radare2-extras"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "seccomp-tools",
+      "name": "seccomp-tools",
+      "reused": false,
+      "source": "https://github.com/david942j/seccomp-tools"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "syms2elf",
+      "name": "syms2elf",
+      "reused": false,
+      "source": "https://github.com/danigargu/syms2elf"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "udis86",
+      "name": "udis86",
+      "reused": false,
+      "source": "https://sourceforge.net/projects/udis86/"
+    }
+  ],
+  "archivo_fuente": "auditoria-documental-v2.3.2.zip",
+  "categoria": "Ingeniería inversa",
+  "categoria_numero": 28,
+  "categoria_slug": "ingenieria-inversa",
+  "estado_ejecucion": "SOLO_DOCUMENTAL_NO_INSTALADO",
+  "excluidas": 6,
+  "excluidas_detalle": [
+    {
+      "fuente_original": "https://code.google.com/p/javasnoop/",
+      "id": "javasnoop",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: Google Code cerró; el archivo oficial conserva el proyecto «javasnoop»"
+    },
+    {
+      "fuente_original": "https://www.pnfsoftware.com/jeb/arm",
+      "id": "jeb-arm",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 206, pero el contenido no identifica la herramienta"
+    },
+    {
+      "fuente_original": "https://www.pnfsoftware.com/jeb/intel",
+      "id": "jeb-intel",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 206, pero el contenido no identifica la herramienta"
+    },
+    {
+      "fuente_original": "https://www.pnfsoftware.com/jeb/#wasm",
+      "id": "jeb-webasm",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 206, pero el contenido no identifica la herramienta"
+    },
+    {
+      "fuente_original": "https://pypi.org/project/frida/#files",
+      "id": "python2-frida",
+      "motivo": "Variante Python 2 histórica; el enlace apunta a Frida moderno, no acredita distribución compatible con Python 2."
+    },
+    {
+      "fuente_original": "https://code.google.com/archive/p/swfintruder/",
+      "id": "swfintruder",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: Google Code cerró; el archivo oficial conserva el proyecto «swfintruder»"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente_de_verificacion_exp": "2026-11-21",
+  "grupo_original": "grupo-reversing",
+  "principio": "Existencia de repositorio o sitio no demuestra release actual, mantenimiento, seguridad ni compatibilidad.",
+  "revalidacion_2026_11_22": 3,
+  "sha256_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 31
+}

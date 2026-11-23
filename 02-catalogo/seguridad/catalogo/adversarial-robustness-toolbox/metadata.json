@@ -1,0 +1,33 @@
+{
+  "advertencia": "Confirmar versión y licencias de dependencias antes del uso.",
+  "categoria_atlas": "ia",
+  "categoria_origen": "grupo-ai",
+  "descripcion": "Biblioteca de evaluación de robustez y ataques adversariales a modelos de aprendizaje automático.",
+  "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+  "estado_mantenimiento": "EVALUACION",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fuente_historica": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+  "fuente_proyecto": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+  "fuentes_consultadas": [
+    "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+  ],
+  "id": "adversarial-robustness-toolbox",
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "nombre": "Adversarial Robustness Toolbox",
+  "probado_en_cachyos": false,
+  "proveniencia": {
+    "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+    "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+  },
+  "schema": "evol-tool-atlas/tool/2",
+  "uso_evol_propuesto": "Pruebas de robustez en modelos del laboratorio, con corpus sintéticos.",
+  "validaciones_pendientes": [
+    "Revisión de licencia específica y dependencias",
+    "Prueba local segura en CachyOS",
+    "Aprobación del propietario para instalación"
+  ],
+  "verificacion_fecha": "2026-11-22",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "1.20.1.r258.ge8cfffd"
+}

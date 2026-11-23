@@ -1,0 +1,3 @@
+62f1734e11945d771fae8edf8ce09403193d82d6c0269070e7ab4bd37b9c4d1c  02-catalogo/seguridad/catalogo/nxcrypt/README.md
+b4848f0729d214f4795ec5466a492106862a327906cdd95c798a99c5d721fa0a  02-catalogo/seguridad/catalogo/nxcrypt/index.html
+3819c580a712970caf910204420fa159c101c1a6e32224e569b7b2853b714b58  02-catalogo/seguridad/catalogo/nxcrypt/metadata.json

@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "webapp",
+  "categoria_origen": "grupo-webapp",
+  "descripcion_original_catalogo": "Crawling and spidering framework.",
+  "distribucion_actual": "REPOSITORIO_IDENTIFICADO_SIN_VERIFICACION_DE_INSTALACION",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_WEB_CONTRASTADA_2026-11-22",
+  "evidencia_nota": "Identidad actual del proyecto Katana de ProjectDiscovery",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/projectdiscovery/katana",
+  "fuente_proyecto": "https://github.com/projectdiscovery/katana",
+  "id": "katana-pd",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "katana-pd",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "v1.8.0.r100.ge1a9ba74"
+}

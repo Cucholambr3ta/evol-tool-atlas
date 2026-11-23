@@ -1,0 +1,388 @@
+{
+  "categoria": "Reconocimiento",
+  "categoria_carpeta": "reconocimiento",
+  "entradas_originales": 257,
+  "excluidas": 46,
+  "exclusion": [
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/bharshbarger/AutOSINT",
+      "nombre": "autosint",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.morningstarsecurity.com/research",
+      "nombre": "basedomainname",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/GitHackTools/BillCipher",
+      "nombre": "billcipher",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/jakecreps/Citadel",
+      "nombre": "citadel",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://labs.portcullis.co.uk/application/enum4linux/",
+      "nombre": "enum4linux",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "sin URL en tools.html ni en el PKGBUILD",
+      "fecha_evidencia_original": null,
+      "fuente_original": "",
+      "nombre": "geoedge",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200 y el contenido menciona «goodork»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://goo-dork.blogspot.com/",
+      "nombre": "goodork",
+      "razon_exclusion": "No consta un origen seguro HTTPS y verificable en este cierre",
+      "tipo_expediente": "OFICIAL_VERIFICADO"
+    },
+    {
+      "evidencia_original": "sin respuesta HTTP (conexion_cortada): posible indisponibilidad temporal",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.darkc0de.com/others/goog-mail.py",
+      "nombre": "goog-mail",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/zombiesam/googlesub",
+      "nombre": "googlesub",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/black-brain/graBing",
+      "nombre": "grabing",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "certificado TLS inválido: no se puede confiar en el destino",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://www.blackhatlibrary.net/Halcyon",
+      "nombre": "halcyon",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/galkan/hasere",
+      "nombre": "hasere",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.hsc.fr/ressources/outils/idswakeup/index.html.en",
+      "nombre": "idswakeup",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/m4ll0k/infoga",
+      "nombre": "infoga",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://intrace.googlecode.com",
+      "nombre": "intrace",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206 y el contenido menciona «ip2clue»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://kernel.embedromix.ro/us/",
+      "nombre": "ip2clue",
+      "razon_exclusion": "No consta un origen seguro HTTPS y verificable en este cierre",
+      "tipo_expediente": "OFICIAL_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/bwall/ircsnapshot",
+      "nombre": "ircsnapshot",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.infobyte.com.ar/",
+      "nombre": "isr-form",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://ivre.rocks/",
+      "nombre": "ivre-docs",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/galkan/kacak",
+      "nombre": "kacak",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub no respondió (timeout)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://github.com/rflynn/lanmap2",
+      "nombre": "lanmap2",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "sin respuesta HTTP (conexion_rechazada): posible indisponibilidad temporal",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://ge.mine.nu/code/lbd",
+      "nombre": "lbd",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://gobag.googlecode.com/svn-history/r2/trunk/ldap/ldapenum/",
+      "nombre": "ldapenum",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 403: el servidor bloquea la comprobación",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://pwhois.org/lft/",
+      "nombre": "lft",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/GuerrillaWarfare/Loot",
+      "nombre": "loot",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://raw.githubusercontent.com/galkan/tools/master/mail-crawl/",
+      "nombre": "mail-crawl",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 403: el servidor bloquea la comprobación",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.edge-security.com/metagoofil.php",
+      "nombre": "metagoofil",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/99823/Monocle-Host-Discovery-Tool.0.html",
+      "nombre": "monocle",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/GuerrillaWarfare/neglected",
+      "nombre": "neglected",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://ftp.linux.org.uk/pub/linux/Networking/netkit",
+      "nombre": "netkit-bsd-finger",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://packages.debian.org/source/sid/net/netkit-rusers",
+      "nombre": "netkit-rusers",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.securepla.net/",
+      "nombre": "ntp-ip-enum",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/guitarmanj/OSINTerator",
+      "nombre": "osinterator",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/104314/QuickRecon.3.2.html",
+      "nombre": "quickrecon",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/radenvodka/Recsech",
+      "nombre": "recsech",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/PypeRanger/revipd",
+      "nombre": "revipd",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.p1sec.com/",
+      "nombre": "sctpscan",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/bishopfox/spoofcheck",
+      "nombre": "spoofcheck",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "la API responde 404: el proyecto no existe",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://gitlab.com/Edu0x01/SR",
+      "nombre": "sr",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/120634/Common-Name-Grabber-Script.html",
+      "nombre": "ssl-hostname-resolver",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 403: el servidor bloquea la comprobación",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.edge-security.com/subdomainer.php",
+      "nombre": "subdomainer",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/jakecreps/swamp",
+      "nombre": "swamp",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.vicenteaguileradiaz.com/tools/",
+      "nombre": "tinfoleak2",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/GuerrillaWarfare/Treasure",
+      "nombre": "treasure",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.digininja.org/projects/twofi.php",
+      "nombre": "twofi",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/thelinuxchoice/userrecon",
+      "nombre": "userrecon",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 210,
+  "fuentes_web_verificadas_2026_11_22": 1,
+  "id_grupo_origen": "grupo-recon",
+  "incluidas_documentales": 211,
+  "limites": [
+    "No se comprobó la instalación ni ejecución de herramientas en CachyOS",
+    "La evidencia del expediente v2.3.2 no equivale a una prueba en vivo del 22-11-2026",
+    "Las licencias y dependencias requieren revisión individual antes de instalar"
+  ],
+  "numero": 46,
+  "regla_inclusion": "Repositorio upstream o sitio oficial HTTPS con identidad constatada en expediente, o evidencia oficial fresca; nunca archivos exclusivamente históricos o fuentes sin identidad"
+}

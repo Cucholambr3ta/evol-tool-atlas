@@ -1,0 +1,3 @@
+b395cce2e2fceb4a701bb098ad7bed36535f329de049770451c050fbb01891e6  02-catalogo/seguridad/catalogo/bindead/README.md
+840a05c452e415bcd213cb0078a28c8a98a1db1f764cc72138783dda9ff04cc2  02-catalogo/seguridad/catalogo/bindead/index.html
+8a1411ebe9412eb6fa8d41e365582c4050a8c40abcb70c220c2e07edaaa30a8a  02-catalogo/seguridad/catalogo/bindead/metadata.json

@@ -1,0 +1,3 @@
+4b7ec02a94a886320b887996e86dfaa28866c5da71e8ad0693031f5daff56ddc  02-catalogo/seguridad/catalogo/credsniper/README.md
+6cb5d4423faff0ca0df60fedd9720ea1d01c9fe647b31aeeb1a131f06b8edea5  02-catalogo/seguridad/catalogo/credsniper/index.html
+6c7e2a0f3fa7282e879ac4bd07b142fdd73d9e15f356e048c78064442c23aec0  02-catalogo/seguridad/catalogo/credsniper/metadata.json

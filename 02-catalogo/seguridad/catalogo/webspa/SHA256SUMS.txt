@@ -1,0 +1,3 @@
+2ad8befa521427b6b85bd38b67e360bd955f530ff71c6f608e24b34d1134aabf  02-catalogo/seguridad/catalogo/webspa/README.md
+3d745d4ff04d6d45ce65a0ac6e78b338d55d9d25a30b06ebab45913ab26c0f39  02-catalogo/seguridad/catalogo/webspa/index.html
+40b5103212bc88cbf25eb58d02eaf922e4b233db5199ef1e05c004b5c0db8645  02-catalogo/seguridad/catalogo/webspa/metadata.json

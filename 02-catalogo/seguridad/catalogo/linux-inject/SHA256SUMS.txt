@@ -1,0 +1,3 @@
+1a4722d1d1bf79e56241767a6976ac27702fe810f9268947a8b01bc0ab0a9f5d  02-catalogo/seguridad/catalogo/linux-inject/README.md
+c2d67999534a8c12188cde122a712f92bfb717fc4f625721c0af3d56a3b76f38  02-catalogo/seguridad/catalogo/linux-inject/index.html
+f891bedd9e2313c91eda4394f6651a9691d4d1cfe8766ac3adaa2d7e7ee25cc9  02-catalogo/seguridad/catalogo/linux-inject/metadata.json

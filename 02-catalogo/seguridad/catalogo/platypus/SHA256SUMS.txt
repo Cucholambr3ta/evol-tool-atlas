@@ -1,0 +1,3 @@
+538930e42cc66ebf7da233546623febf3653c310b1e361ffc6835d07079cb49a  02-catalogo/seguridad/catalogo/platypus/README.md
+3cc5481fba14574e79d84e16a69fcf719a4c6ce8d961eac01d556cdb7ed3790d  02-catalogo/seguridad/catalogo/platypus/index.html
+2725f8d4f9df88b4b7bfa25b851c141d31b4dce2276efafdab870e78b0d541c5  02-catalogo/seguridad/catalogo/platypus/metadata.json

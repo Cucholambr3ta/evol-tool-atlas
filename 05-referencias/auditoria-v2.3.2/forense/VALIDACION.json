@@ -1,0 +1,736 @@
+{
+  "admitidas": [
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sshock/AFFLIBv3",
+      "id": "afflib",
+      "nombre": "afflib"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://sourceforge.net/projects/air-imager/",
+      "id": "air",
+      "nombre": "air"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/dkovar/analyzeMFT",
+      "id": "analyzemft",
+      "nombre": "analyzemft"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/sleuthkit/autopsy",
+      "id": "autopsy",
+      "nombre": "autopsy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ANSSI-FR/bmc-tools",
+      "id": "bmc-tools",
+      "nombre": "bmc-tools"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/simsong/bulk_extractor",
+      "id": "bulk-extractor",
+      "nombre": "bulk-extractor"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://pypi.org/project/canari/#files",
+      "id": "canari",
+      "nombre": "canari"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/resurrecting-open-source-projects/dcfldd/",
+      "id": "dcfldd",
+      "nombre": "dcfldd"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/msuhanov/dfir_ntfs",
+      "id": "dfir-ntfs",
+      "nombre": "dfir-ntfs"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/log2timeline/dftimewolf",
+      "id": "dftimewolf",
+      "nombre": "dftimewolf"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://blog.didierstevens.com/my-software/#disitool",
+      "id": "disitool",
+      "nombre": "disitool"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://dmde.com/download.html",
+      "id": "dmde",
+      "nombre": "dmde"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/USArmyResearchLab/Dshell",
+      "id": "dshell",
+      "nombre": "dshell"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://blog.didierstevens.com/my-software/#emldump",
+      "id": "emldump",
+      "nombre": "emldump"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/yarox24/evtkit",
+      "id": "evtkit",
+      "nombre": "evtkit"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/aydinnyunus/exifLooter",
+      "id": "exiflooter",
+      "nombre": "exiflooter"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://sourceforge.net/projects/ext4magic/",
+      "id": "ext4magic",
+      "nombre": "ext4magic"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/ExtractUsnJrnl",
+      "id": "extractusnjrnl",
+      "nombre": "extractusnjrnl"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/unode/firefox_decrypt",
+      "id": "firefox-decrypt",
+      "nombre": "firefox-decrypt"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Nightbringer21/fridump",
+      "id": "fridump",
+      "nombre": "fridump"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Mutasem-mk4/gspy",
+      "id": "gspy",
+      "nombre": "gspy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ralphje/imagemounter",
+      "id": "imagemounter",
+      "nombre": "imagemounter"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/Indx2Csv",
+      "id": "indx2csv",
+      "nombre": "indx2csv"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/IndxCarver",
+      "id": "indxcarver",
+      "nombre": "indxcarver"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/carmaa/interrogate",
+      "id": "interrogate",
+      "nombre": "interrogate"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Flo354/iOSForensic",
+      "id": "iosforensic",
+      "nombre": "iosforensic"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/onekey-sec/jefferson",
+      "id": "jefferson",
+      "nombre": "jefferson"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/AlessandroZ/LaZagne",
+      "id": "lazagne",
+      "nombre": "lazagne"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/kgoins/ldsview",
+      "id": "ldsview",
+      "nombre": "ldsview"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/williballenthin/LfLe",
+      "id": "lfle",
+      "nombre": "lfle"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/libyal/libfvde",
+      "id": "libfvde",
+      "nombre": "libfvde"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/kd8bny/LiMEaide",
+      "id": "limeaide",
+      "nombre": "limeaide"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/LogFileParser",
+      "id": "log-file-parser",
+      "nombre": "log-file-parser"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Neo23x0/Loki",
+      "id": "loki-scanner",
+      "nombre": "loki-scanner"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jbj/magicrescue",
+      "id": "magicrescue",
+      "nombre": "magicrescue"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.maltego.com/downloads/",
+      "id": "maltego",
+      "nombre": "maltego"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://lcamtuf.coredump.cx/",
+      "id": "memfetch",
+      "nombre": "memfetch"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/Mft2Csv",
+      "id": "mft2csv",
+      "nombre": "mft2csv"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/MftCarver",
+      "id": "mftcarver",
+      "nombre": "mftcarver"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/MftRcrd",
+      "id": "mftrcrd",
+      "nombre": "mftrcrd"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/MftRef2Name",
+      "id": "mftref2name",
+      "nombre": "mftref2name"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/huntergregal/mimipenguin",
+      "id": "mimipenguin",
+      "nombre": "mimipenguin"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/rek7/mXtract",
+      "id": "mxtract",
+      "nombre": "mxtract"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://blog.didierstevens.com/my-software/#NAFT",
+      "id": "naft",
+      "nombre": "naft"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ANG13T/netspionage",
+      "id": "netspionage",
+      "nombre": "netspionage"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/csababarta/ntdsxtract",
+      "id": "ntdsxtract",
+      "nombre": "ntdsxtract"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/NtfsFileExtractor",
+      "id": "ntfs-file-extractor",
+      "nombre": "ntfs-file-extractor"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://sites.google.com/site/forensicnote/ntfs-log-tracker",
+      "id": "ntfs-log-tracker",
+      "nombre": "ntfs-log-tracker"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/KasperskyLab/ForensicsTools",
+      "id": "parse-evtx",
+      "nombre": "parse-evtx"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Srinivas11789/PcapXray",
+      "id": "pcapxray",
+      "nombre": "pcapxray"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SecurityRiskAdvisors/PDBlaster",
+      "id": "pdblaster",
+      "nombre": "pdblaster"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://eternal-todo.com/tools/peepdf-pdf-analysis-tool",
+      "id": "peepdf",
+      "nombre": "peepdf"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/PowerMft",
+      "id": "powermft",
+      "nombre": "powermft"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/fox-it/flow.record",
+      "id": "python-flow-record",
+      "nombre": "python-flow.record"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://eternal-todo.com/tools/peepdf-pdf-analysis-tool",
+      "id": "python2-peepdf",
+      "nombre": "python2-peepdf"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/RcrdCarver",
+      "id": "rcrdcarver",
+      "nombre": "rcrdcarver"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/samueltardieu/recoverjpeg",
+      "id": "recoverjpeg",
+      "nombre": "recoverjpeg"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Lazza/RecuperaBit",
+      "id": "recuperabit",
+      "nombre": "recuperabit"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/mkorman90/regipy",
+      "id": "regipy",
+      "nombre": "regipy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/keydet89/RegRipper3.0",
+      "id": "regripper",
+      "nombre": "regripper"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://pypi.org/project/regrippy/#files",
+      "id": "regrippy",
+      "nombre": "regrippy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/google/rekall",
+      "id": "rekall",
+      "nombre": "rekall"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/abelcheung/rifiuti2",
+      "id": "rifiuti2",
+      "nombre": "rifiuti2"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://sourceforge.net/projects/safecopy/files/safecopy/",
+      "id": "safecopy",
+      "nombre": "safecopy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/Secure2Csv",
+      "id": "secure2csv",
+      "nombre": "secure2csv"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.shadowexplorer.com/downloads.html",
+      "id": "shadowexplorer",
+      "nombre": "shadowexplorer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sevagas/swap_digger",
+      "id": "swap-digger",
+      "nombre": "swap-digger"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/antagon/TCHunt-ng",
+      "id": "tchunt-ng",
+      "nombre": "tchunt-ng"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/1aN0rmus/TekDefense-Automater",
+      "id": "tekdefense-automater",
+      "nombre": "tekdefense-automater"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/thumbcacheviewer/thumbcacheviewer",
+      "id": "thumbcacheviewer",
+      "nombre": "thumbcacheviewer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/adoreste/truehunter",
+      "id": "truehunter",
+      "nombre": "truehunter"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/onekey-sec/unblob",
+      "id": "unblob",
+      "nombre": "unblob"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ZungBang/undbx",
+      "id": "undbx",
+      "nombre": "undbx"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/snovvcrash/usbrip",
+      "id": "usbrip",
+      "nombre": "usbrip"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jschicht/UsnJrnl2Csv",
+      "id": "usnjrnl2csv",
+      "nombre": "usnjrnl2csv"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://pypi.org/project/usnparser/#files",
+      "id": "usnparser",
+      "nombre": "usnparser"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://vinetto.sourceforge.net",
+      "id": "vinetto",
+      "nombre": "vinetto"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/decalage2/ViperMonkey",
+      "id": "vipermonkey",
+      "nombre": "vipermonkey"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/n0fate/volafox",
+      "id": "volafox",
+      "nombre": "volafox"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/volatilityfoundation/community",
+      "id": "volatility-extra",
+      "nombre": "volatility-extra"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/PoorBillionaire/Windows-Prefetch-Parser",
+      "id": "windows-prefetch-parser",
+      "nombre": "windows-prefetch-parser"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/davidpany/WMI_Forensics",
+      "id": "wmi-forensics",
+      "nombre": "wmi-forensics"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/xplico/xplico/",
+      "id": "xplico",
+      "nombre": "xplico"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://blog.didierstevens.com/my-software/#zipdump",
+      "id": "zipdump",
+      "nombre": "zipdump"
+    }
+  ],
+  "categoria": "Forense digital",
+  "corpus_origen": "auditoria-documental-v2.3.2.zip",
+  "entradas_originales": 126,
+  "estado_de_comprobacion": "Sólo fuentes seleccionadas contrastadas públicamente; el resto se basa en evidencia fuente del 21-11-2026",
+  "excluidas": [
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "aimage"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "bmap-tools"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «captipper»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "captipper"
+    },
+    {
+      "detalle_expediente": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (paterva.com -> maltego.com))",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "casefile"
+    },
+    {
+      "detalle_expediente": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (freecode.com -> sf.net))",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "chaosmap"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «chromefreak»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "chromefreak"
+    },
+    {
+      "detalle_expediente": "la API de sourceforge confirma el proyecto «dc3dd»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "dc3dd"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «dmg2img»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "dmg2img"
+    },
+    {
+      "detalle_expediente": "contenido de apuestas o casino",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "dumpzilla"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "eindeutig"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "galleta"
+    },
+    {
+      "detalle_expediente": "certificado TLS inválido: no se puede confiar en el destino",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "grokevt"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «guymager»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "guymager"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "indxparse"
+    },
+    {
+      "detalle_expediente": "página de aparcamiento o venta de dominio",
+      "motivo": "Fuera del catálogo operativo: BLOQUEADO",
+      "nombre": "ipba2"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «iphoneanalyzer»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "iphoneanalyzer"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "mac-robber"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «make-pdf»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "make-pdf"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «malheur»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "malheur"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "malwaredetect"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «mboxgrep»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "mboxgrep"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "mdbtools"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «memdump»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "memdump"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «mobiusft»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "mobiusft"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "mp3nema"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «myrescue»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "myrescue"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «networkminer»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "networkminer"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «nfex»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "nfex"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "pasco"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «pdf-parser»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "pdf-parser"
+    },
+    {
+      "detalle_expediente": "la API de sourceforge confirma el proyecto «pdfbook»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "pdfbook-analyzer"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «pdfid»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "pdfid"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "pdfresurrect"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «pev (título)»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "pev"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "recentfilecache-parser"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "recoverdm"
+    },
+    {
+      "detalle_expediente": "certificado TLS inválido: no se puede confiar en el destino",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "reglookup"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «replayproxy»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "replayproxy"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "scalpel"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "scrounge-ntfs"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «skypefreak»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "skypefreak"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «trid»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "trid"
+    }
+  ],
+  "fecha_entrega": "2026-11-22",
+  "fichas_documentales": 84,
+  "grupo_original": "grupo-forensic",
+  "limitaciones": [
+    "No se han instalado ni ejecutado herramientas",
+    "No se han comprobado licencias, firmas o últimas versiones de todas las herramientas",
+    "No se ha demostrado vigencia actual de referencias cuya única evidencia es el expediente de ayer"
+  ],
+  "numero": 40,
+  "politica_admision": "Fuente HTTPS con identidad comprobada en expediente o nueva fuente verificada hoy; resto fuera del catálogo operativo",
+  "procedencia_solo_expediente": 81,
+  "verificadas_publicamente_en_este_turno": 3
+}

@@ -1,0 +1,112 @@
+{
+  "admitidas": 12,
+  "alcance": "Disponibilidad verificable de fuente externa, no instalación ni funcionamiento en CachyOS",
+  "categoria": "tuneles",
+  "categoria_origen": "grupo-tunnel",
+  "excluidas": 6,
+  "exclusiones": [
+    {
+      "id": "ctunnel",
+      "razon": "El sitio oficial original no está disponible."
+    },
+    {
+      "id": "dns2tcp",
+      "razon": "No se confirmó la identidad ni un canal actual de distribución de la URL original."
+    },
+    {
+      "id": "morxtunel",
+      "razon": "Solo copia archivada, no distribución actual."
+    },
+    {
+      "id": "multitun",
+      "razon": "Repositorio original no disponible."
+    },
+    {
+      "id": "vstt",
+      "razon": "La página de origen no se pudo abrir ni verificar."
+    },
+    {
+      "id": "xfltreat",
+      "razon": "No se pudo obtener evidencia externa suficiente de la distribución actual."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "incluidas": [
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "chisel",
+      "ruta": "02-catalogo/seguridad/catalogo/chisel/index.html",
+      "url_fuente": "https://github.com/jpillora/chisel"
+    },
+    {
+      "advertencia": "Sitio primario verificable, pero proyecto antiguo; la existencia de la página no confirma compilación actual.",
+      "id": "chownat",
+      "ruta": "02-catalogo/seguridad/catalogo/chownat/index.html",
+      "url_fuente": "https://sa.my/chownat/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "fraud-bridge",
+      "ruta": "02-catalogo/seguridad/catalogo/fraud-bridge/index.html",
+      "url_fuente": "https://github.com/stealth/fraud-bridge"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "icmptx",
+      "ruta": "02-catalogo/seguridad/catalogo/icmptx/index.html",
+      "url_fuente": "https://thomer.com/icmptx/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "ip-https-tools",
+      "ruta": "02-catalogo/seguridad/catalogo/ip-https-tools/index.html",
+      "url_fuente": "https://github.com/takeshixx/ip-https-tools"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "ligolo-ng",
+      "ruta": "02-catalogo/seguridad/catalogo/ligolo-ng/index.html",
+      "url_fuente": "https://github.com/nicocha30/ligolo-ng"
+    },
+    {
+      "advertencia": "Herramienta histórica con comportamiento de shell remoto; no desplegar fuera de VM controlada.",
+      "id": "matahari",
+      "ruta": "02-catalogo/seguridad/catalogo/matahari/index.html",
+      "url_fuente": "https://matahari.sourceforge.net/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "neo-regeorg",
+      "ruta": "02-catalogo/seguridad/catalogo/neo-regeorg/index.html",
+      "url_fuente": "https://github.com/L-codes/Neo-reGeorg"
+    },
+    {
+      "advertencia": "Servicio y binario propietarios dependientes de proveedor y red; no es offline-first.",
+      "id": "ngrok",
+      "ruta": "02-catalogo/seguridad/catalogo/ngrok/index.html",
+      "url_fuente": "https://ngrok.com/"
+    },
+    {
+      "advertencia": "El identificador antiguo oniongrok redirige al proyecto onionpipe; la ficha documenta el cambio de identidad.",
+      "id": "oniongrok",
+      "ruta": "02-catalogo/seguridad/catalogo/oniongrok/index.html",
+      "url_fuente": "https://github.com/cmars/onionpipe"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "regeorg",
+      "ruta": "02-catalogo/seguridad/catalogo/regeorg/index.html",
+      "url_fuente": "https://github.com/sensepost/reGeorg"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "stegosip",
+      "ruta": "02-catalogo/seguridad/catalogo/stegosip/index.html",
+      "url_fuente": "https://github.com/epinna/Stegosip"
+    }
+  ],
+  "posicion_entrega": 19,
+  "total_origen": 18,
+  "versiones_actuales": "NO_COMPROBADAS"
+}

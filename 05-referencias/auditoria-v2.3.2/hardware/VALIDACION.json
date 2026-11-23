@@ -1,0 +1,45 @@
+{
+  "aceptadas": [
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/chipsec/chipsec",
+      "no_probado_localmente": true,
+      "nombre": "chipsec"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA",
+      "fuente": "https://github.com/pxb1988/dex2jar",
+      "no_probado_localmente": true,
+      "nombre": "dex2jar"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_HEREDADA",
+      "fuente": "https://github.com/AdamLaurie/hdmi-sniff",
+      "no_probado_localmente": true,
+      "nombre": "hdmi-sniff"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/samratashok/Kautilya",
+      "no_probado_localmente": true,
+      "nombre": "kautilya"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/ufrisk/pcileech",
+      "no_probado_localmente": true,
+      "nombre": "pcileech"
+    }
+  ],
+  "admitidas": 5,
+  "categoria_origen": "grupo-hardware",
+  "excluidas": 0,
+  "exclusiones": [],
+  "fecha": "2026-11-22",
+  "numero_origen": 5,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "politica": "Ninguna entrada no comprobada se incorpora al navegador operativo. Fuente existente no implica mantenimiento, versión vigente o instalación probada.",
+  "schema": "evol-tool-atlas/categoria/1",
+  "sha256_zip_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "titulo": "Seguridad de hardware"
+}

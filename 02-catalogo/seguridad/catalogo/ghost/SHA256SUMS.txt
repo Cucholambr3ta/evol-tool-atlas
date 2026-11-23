@@ -1,0 +1,3 @@
+19092b15215db78b45215c1c58d944534dd9db3270e5bef8f751e8a1f74ec25b  02-catalogo/seguridad/catalogo/ghost/README.md
+7ed1104336aa14b8dd16b1507b1445a1611e92357f58827dc4cb0c542540ef3a  02-catalogo/seguridad/catalogo/ghost/index.html
+810ed0cc7d1a2110d44207ea1b9d6537e035d85385177f58c38f8a0839cefb41  02-catalogo/seguridad/catalogo/ghost/metadata.json

@@ -1,0 +1,3 @@
+189fc39c2c9ed4a9399dd376bb78dbce9d151a270c6385643b0a4865ecd8e089  02-catalogo/seguridad/catalogo/stacoan/README.md
+c85e7acf0dc1ce2534ab34d23c918084885f106b11bb47d5bce2dd6fb3aabad4  02-catalogo/seguridad/catalogo/stacoan/index.html
+8ec89f021e8aeba09b710fc480c4664195e14ed47c5d1dab7a32ab3c88fe52b8  02-catalogo/seguridad/catalogo/stacoan/metadata.json

@@ -1,0 +1,3 @@
+508795e60f3cd1432518ea00dbe57ede41e1580bf73aa92621f855e468e32111  02-catalogo/seguridad/catalogo/persistencesniper/README.md
+eb6eed579f44d3c8f78b29d11594dfe0984255a25c3a12417177cf229f3e8fd8  02-catalogo/seguridad/catalogo/persistencesniper/index.html
+3f5b4dea980086a3ea9cb76740d6b4f76a91ed93661c534426e19aa16c349c28  02-catalogo/seguridad/catalogo/persistencesniper/metadata.json

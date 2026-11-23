@@ -1,0 +1,3 @@
+d76cab8e61abe4cb8ecce52a6b607151f5e940aa77ebe103df5182ef79ecf056  02-catalogo/seguridad/catalogo/mailcat/README.md
+66d4afcbea60794aa3a7d1e11acae6b56ee081ae8b540aff7d9d538d0905f82b  02-catalogo/seguridad/catalogo/mailcat/index.html
+f5c84cc3a16ab26637525417fe9f55b75259d9f6169bcc4147ade45d7142c796  02-catalogo/seguridad/catalogo/mailcat/metadata.json

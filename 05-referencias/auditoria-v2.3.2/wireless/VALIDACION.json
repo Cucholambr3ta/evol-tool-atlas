@@ -1,0 +1,403 @@
+{
+  "admitidas": [
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/v1s1t0r1sh3r3/airgeddon",
+      "id": "airgeddon",
+      "nombre": "airgeddon"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Josue87/Airopy",
+      "id": "airopy",
+      "nombre": "airopy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/NORMA-Inc/AtEar",
+      "id": "atear",
+      "nombre": "atear"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Tylous/Auto_EAP",
+      "id": "auto-eap",
+      "nombre": "auto-eap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sensepost/berate_ap",
+      "id": "berate-ap",
+      "nombre": "berate_ap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/oblique/create_ap",
+      "id": "create-ap",
+      "nombre": "create_ap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/securestate/eapeak",
+      "id": "eapeak",
+      "nombre": "eapeak"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/s0lst1c3/eaphammer",
+      "id": "eaphammer",
+      "nombre": "eaphammer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/kylemcdonald/FreeWifi",
+      "id": "freewifi",
+      "nombre": "freewifi"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/lostincynicism/FuzzAP",
+      "id": "fuzzap",
+      "nombre": "fuzzap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/staz0t/hashcatch/releases",
+      "id": "hashcatch",
+      "nombre": "hashcatch"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/xme/hoover/",
+      "id": "hoover",
+      "nombre": "hoover"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sensepost/hostapd-mana",
+      "id": "hostapd-mana",
+      "nombre": "hostapd-mana"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://w1.fi/hostapd/",
+      "id": "hostapd-wpe",
+      "nombre": "hostapd-wpe"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sensepost/mana",
+      "id": "mana",
+      "nombre": "mana"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/xdavidhu/mitmAP",
+      "id": "mitmap",
+      "nombre": "mitmap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/iamckn/mousejack_transmit",
+      "id": "mousejack",
+      "nombre": "mousejack"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/kkonradpl/mtscan",
+      "id": "mtscan",
+      "nombre": "mtscan"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/chrizator/netattack2",
+      "id": "netattack",
+      "nombre": "netattack"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.nzyme.org/download",
+      "id": "nzyme",
+      "nombre": "nzyme"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/WiPi-Hunter/PiDense",
+      "id": "pidense",
+      "nombre": "pidense"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/calebmadrigal/trackerjacker",
+      "id": "python-trackerjacker",
+      "nombre": "python-trackerjacker"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/wifiphisher/roguehostapd",
+      "id": "roguehostapd",
+      "nombre": "roguehostapd"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/morrownr/8814au",
+      "id": "rtl8814au-dkms-git",
+      "nombre": "rtl8814au-dkms-git"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SkypLabs/sniff-probe-req",
+      "id": "sniff-probe-req",
+      "nombre": "sniff-probe-req"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.kismetwireless.net/spectools/",
+      "id": "spectools",
+      "nombre": "spectools"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://bastianborn.de/radio-clock-hack/",
+      "id": "timegen",
+      "nombre": "timegen"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SYWorks/waidps",
+      "id": "waidps",
+      "nombre": "waidps"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/P0cL4bs/wifipumpkin3",
+      "id": "wifi-pumpkin",
+      "nombre": "wifi-pumpkin"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/hash3liZer/WiFiBroot",
+      "id": "wifibroot",
+      "nombre": "wifibroot"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/oblique/wificurse",
+      "id": "wificurse",
+      "nombre": "wificurse"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/DanMcInerney/wifijammer",
+      "id": "wifijammer",
+      "nombre": "wifijammer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/wifiphisher/wifiphisher",
+      "id": "wifiphisher",
+      "nombre": "wifiphisher"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/mehdilauters/wifiScanMap",
+      "id": "wifiscanmap",
+      "nombre": "wifiscanmap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/GDSSecurity/wifitap",
+      "id": "wifitap",
+      "nombre": "wifitap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SYWorks/wireless-ids",
+      "id": "wireless-ids",
+      "nombre": "wireless-ids"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.willhackforsushi.com/resources/wlan2eth/",
+      "id": "wlan2eth",
+      "nombre": "wlan2eth"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SYWorks/wpa-bruteforcer",
+      "id": "wpa-bruteforcer",
+      "nombre": "wpa-bruteforcer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/dxa4481/WPA2-HalfHandshake-Crack",
+      "id": "wpa2-halfhandshake-crack",
+      "nombre": "wpa2-halfhandshake-crack"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/0x90/wpsik",
+      "id": "wpsik",
+      "nombre": "wpsik"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/cyrus-and/zizzania",
+      "id": "zizzania",
+      "nombre": "zizzania"
+    }
+  ],
+  "categoria": "Wireless",
+  "corpus_origen": "auditoria-documental-v2.3.2.zip",
+  "entradas_originales": 68,
+  "estado_de_comprobacion": "Sólo fuentes seleccionadas contrastadas públicamente; el resto se basa en evidencia fuente del 21-11-2026",
+  "excluidas": [
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "airflood"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (conexion_rechazada): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "airoscript"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «airpwn»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "airpwn"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "aphopper"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "apnbf"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "batman-adv"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "batman-alfred"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "beholder"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "boopsuite"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «fern-wifi-cracker»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "fern-wifi-cracker"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "g72x++"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "gerix-wifi-cracker"
+    },
+    {
+      "detalle_expediente": "certificado TLS inválido: no se puede confiar en el destino",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "giskismet"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "hotspotter"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "hwk"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «jcrack»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "jcrack"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "kismet-earth"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «kismet2earth»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "kismet2earth"
+    },
+    {
+      "detalle_expediente": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (salecker.org -> github.com))",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "kismon"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "mdk3"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «mfcuk»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "mfcuk"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «rfidiot»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "rfidiot"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "rfidtool"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «ubitack»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "ubitack"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «wepbuster»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "wepbuster"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «wirouter keyrec»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "wirouter-keyrec"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "zykeys"
+    }
+  ],
+  "fecha_entrega": "2026-11-22",
+  "fichas_documentales": 41,
+  "grupo_original": "grupo-wireless",
+  "limitaciones": [
+    "No se han instalado ni ejecutado herramientas",
+    "No se han comprobado licencias, firmas o últimas versiones de todas las herramientas",
+    "No se ha demostrado vigencia actual de referencias cuya única evidencia es el expediente de ayer"
+  ],
+  "numero": 36,
+  "politica_admision": "Fuente HTTPS con identidad comprobada en expediente o nueva fuente verificada hoy; resto fuera del catálogo operativo",
+  "procedencia_solo_expediente": 40,
+  "verificadas_publicamente_en_este_turno": 1
+}

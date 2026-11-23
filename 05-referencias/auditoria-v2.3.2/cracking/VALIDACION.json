@@ -1,0 +1,472 @@
+{
+  "categoria": "Auditoría de credenciales",
+  "categoria_carpeta": "cracking",
+  "entradas_originales": 161,
+  "excluidas": 64,
+  "exclusion": [
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "aesfix",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://citp.princeton.edu/memory/code/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "aeskeyfind",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://citp.princeton.edu/memory/code/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "bgp-md5crack",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.c0decafe.de/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "bios_memimage",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://citp.princeton.edu/memory/code/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo réplica, origen o autorización de distribución no establecidos",
+      "nombre": "blackhash",
+      "tipo_fuente": "REPLICA_IDENTIFICADA",
+      "url_original": "http://16s.us/blackhash/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "bob-the-butcher",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://btb.banquise.net/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "brutessh",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.edge-security.com/edge-soft.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "cisco-auditing-tool",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.scrypt.net"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "cisco-ocs",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.question-defense.com/2013/01/11/ocs-version-2-release-ocs-cisco-router-default-password-scanner"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "cisco-scanner",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://wayreth.eu.org/old_page/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "cryptohazemultiforcer",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.cryptohaze.com/multiforcer.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "cudahashcat",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://hashcat.net/oclhashcat/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "cupp",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.remote-exploit.org/?page_id=418"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "dbpwaudit",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.cqure.net/wp/dbpwaudit/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "depant",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://midnightresearch.com/projects/depant/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "dpeparser",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.toolswatch.org/dpe/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "enabler",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.org/cisco/enabler.c"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "evilmaid",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://theinvisiblethings.blogspot.com"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "ftp-scanner",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://wayreth.eu.org/old_page/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "icloudbrutter",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/m4ll0k/iCloudBrutter"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "iheartxor",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://hooked-on-mnemonics.blogspot.com.es/p/iheartxor.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "iisbruteforcer",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.open-labs.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "keimpx",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://code.google.com/p/keimpx/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "khc",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/87003/Known-Host-Cracker.2.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "levye",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/galkan/levye"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "lodowep",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.cqure.net/wp/lodowep/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "mdcrack",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://c3rb3r.openwall.net/mdcrack/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "mkbrutus",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://mkbrutusproject.github.io/MKBRUTUS/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "morxbook",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.morxploit.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "morxbrute",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.morxploit.com/morxbrute/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "morxbtcrack",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.morxploit.com/tools/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "morxcoinpwn",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.morxploit.com/tools/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "morxcrack",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.morxploit.com/morxcrack/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "oclhashcat",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://hashcat.net/oclhashcat/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "onesixtyone",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://labs.portcullis.co.uk/application/onesixtyone/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "owabf",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://netsec.rs/70/tools.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pack",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://thesprawl.org/projects/pack/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "passe-partout",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.hsc.fr/ressources/outils/passe-partout/index.html.en"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pemcracker",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/bwall/pemcracker.git"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "php-rfi-payload-decoder",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/bwall/PHP-RFI-Payload-Decoder"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "rainbowcrack",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://project-rainbowcrack.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Fuente bloqueada o dominio no apto para recomendación",
+      "nombre": "rdesktop-brute",
+      "tipo_fuente": "BLOQUEADO",
+      "url_original": "http://www.rdesktop.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "rlogin-scanner",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://wayreth.eu.org/old_page/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "rootbrute",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.packetstormsecurity.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "rsakeyfind",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://citp.princeton.edu/memory/code/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "samydeluxe",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://github.com/jensp/samydeluxe"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sidguesser",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.cqure.net/wp/tools/database/sidguesser/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sipcrack",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.remote-exploit.org/codes_sipcrack.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "smbbf",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/25381/smbbf.9.1.tar.gz.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "speedpwn",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://gitorious.org/speedpwn/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sqlpat",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.cqure.net/wp/sqlpat/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "ssh-privkey-crack",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/p/lusas/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sshatter",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.nth-dimension.org.uk/downloads.php?id=34"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "sucrack",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://labs.portcullis.co.uk/application/sucrack"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tftp-bruteforce",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hackingexposedcisco.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "thc-keyfinder",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://www.thc.org/releases.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "thc-pptp-bruter",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.thc.org"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "thc-smartbrute",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://www.thc.org/thc-smartbrute/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "truecrack",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://code.google.com/p/truecrack/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "tweetshell",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/thelinuxchoice/tweetshell"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "ufo-wardriving",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.ufo-wardriving.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "vnc-bypauth",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://pentester.fr/resources/tools/techno/VNC/VNC_bypauth/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "wmat",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://netsec.rs/70/tools.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "wyd",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.remote-exploit.org/?page_id=418"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 96,
+  "fuentes_web_revisadas": [
+    "bkcrack"
+  ],
+  "fuentes_web_verificadas_2026_11_22": 1,
+  "id_grupo_origen": "grupo-cracker",
+  "incluidas_documentales": 97,
+  "limites": [
+    "Los enlaces no revisados hoy conservan solo comprobación del expediente 21-11-2026.",
+    "No se ha comprobado distribución actual, integridad criptográfica del software, licencia ni mantenimiento individual de todas las herramientas.",
+    "No se han probado ni instalado herramientas en CachyOS.",
+    "No hay instrucciones de ejecución o explotación en las fichas."
+  ],
+  "numero": 44,
+  "regla_inclusion": "Enlace HTTPS upstream/oficial con identidad de proyecto identificada en el expediente y estado navegable; correcciones explícitas para fuentes contrastadas hoy."
+}

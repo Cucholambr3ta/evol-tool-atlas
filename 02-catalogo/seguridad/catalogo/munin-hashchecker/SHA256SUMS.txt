@@ -1,0 +1,3 @@
+4a3e667294d2a956f7275af4990ff0928eb26709e2352fad9b9e411a90d5fec3  02-catalogo/seguridad/catalogo/munin-hashchecker/README.md
+056182960432fd674ff61630180cc48b77685b74e9c75604085e874f43c973b8  02-catalogo/seguridad/catalogo/munin-hashchecker/index.html
+f7e03a7b337fd3479301ae4b7e80329b90294ffcb2e71abd0aa8868bdc4f107e  02-catalogo/seguridad/catalogo/munin-hashchecker/metadata.json

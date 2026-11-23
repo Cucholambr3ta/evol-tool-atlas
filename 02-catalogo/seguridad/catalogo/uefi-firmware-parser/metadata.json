@@ -1,0 +1,32 @@
+{
+  "id": "uefi-firmware-parser",
+  "nombre": "UEFI Firmware Parser",
+  "categoria_origen": "grupo-firmware",
+  "categoria_evol": "Seguridad / Firmware",
+  "ubicacion": "02-catalogo/seguridad/catalogo/uefi-firmware-parser",
+  "fecha_verificacion": "2026-11-22",
+  "fuente_origen": "auditoria-documental-v2.3.2.zip",
+  "categoria_del_dataset": "grupo-firmware",
+  "version_dataset": "215.c4b8c64",
+  "estado_fuente": "DISTRIBUCION_PYPI_VERIFICADA",
+  "estado_instalacion": "NO_VERIFICADA_EN_HOST",
+  "estado_prueba_funcional": "NO_EJECUTADA",
+  "version_publicacion_verificada": "1.17",
+  "fuente_repositorio": "https://github.com/theopolis/uefi-firmware-parser",
+  "fuente_distribucion": "https://pypi.org/project/uefi-firmware/",
+  "fuentes_consultadas": [
+    "https://github.com/theopolis/uefi-firmware-parser",
+    "https://pypi.org/project/uefi-firmware/"
+  ],
+  "descripcion": "Módulo y utilidad CLI de Python para analizar estructuras UEFI, cápsulas, volúmenes y otras estructuras de firmware.",
+  "aplicacion_evol": "Análisis sin ejecución de muestras UEFI en el laboratorio EVOL; apoyo a diagnósticos de compatibilidad de arranque.",
+  "mantenimiento": "Publicación 1.17 en PyPI el 15-11-2026; requiere Python 3.10 o superior.",
+  "riesgos": "Analizar firmware desconocido únicamente en entornos aislados; no ejecutar código extraído ni instalar globalmente por defecto.",
+  "licencia": "Consultar LICENSE del repositorio; licencia no ratificada en este paquete",
+  "observaciones": "El número 215.c4b8c64 del expediente documental corresponde a su esquema de paquetización, no se equipara directamente a la versión PyPI 1.17.",
+  "limites": [
+    "La presencia del repositorio no implica mantenimiento ni seguridad del código.",
+    "No se instaló ni ejecutó esta herramienta sobre CachyOS.",
+    "No se infiere una versión upstream actual a partir del identificador del paquete de referencia."
+  ]
+}

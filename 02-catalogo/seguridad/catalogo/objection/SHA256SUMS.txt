@@ -1,0 +1,3 @@
+40997c076ac580e5a43c74cd295c541874780430acdcd184b675f284d679e492  02-catalogo/seguridad/catalogo/objection/README.md
+a83bfc0f0a10fe2f1284e2580456f7d17ec06b73949aab64970c6f1b95256fd1  02-catalogo/seguridad/catalogo/objection/index.html
+5d0d8bfab9bc962b02c2fac18ce01dfa45c5d2c5e1de70d82fe74cbd5783bf12  02-catalogo/seguridad/catalogo/objection/metadata.json

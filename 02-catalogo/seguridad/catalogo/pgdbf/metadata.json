@@ -1,0 +1,26 @@
+{
+  "advertencia": "Revisar licencias, cobertura de tipos, codificaciones y controles de integridad antes de cualquier migración real.",
+  "registro_origen": {
+    "categoria": "grupo-database",
+    "fuente_historica": "https://github.com/kstrauser/pgdbf",
+    "name": "pgdbf",
+    "sha256_registro_fuente": "6e0aa5c85ba4ef2f832549e06638786c65844250461778a63edb6cdb059dd40b",
+    "version_historica": "113.4e84775"
+  },
+  "categoria_atlas": "bases-de-datos",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "Mantenimiento y versión actual sin comprobar",
+  "fuente_distribucion_comprobada": "https://github.com/kstrauser/pgdbf",
+  "fuente_proyecto": "https://github.com/kstrauser/pgdbf",
+  "fuentes_consultadas": [
+    "https://github.com/kstrauser/pgdbf"
+  ],
+  "id": "pgdbf",
+  "instalado_en_host": null,
+  "nombre": "pgdbf",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

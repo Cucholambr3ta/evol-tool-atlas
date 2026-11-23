@@ -1,0 +1,63 @@
+{
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "fecha": "2026-11-22",
+  "categoria": "grupo-threat-model",
+  "herramientas_origen": 1,
+  "herramientas_verificadas": 1,
+  "excluidas": 0,
+  "referencia_historica": {
+    "name": "threat-dragon",
+    "version": "2.2.0",
+    "desc": "Electron Threat Modelling and diagramming tool.",
+    "cat": "grupo-threat-model",
+    "site": "https://owasp.org/www-project-threat-dragon/",
+    "cat_source": "oficial",
+    "desc_source": "oficial",
+    "url_estado": "https_declarada",
+    "url_original_origen": "https://owasp.org/www-project-threat-dragon/",
+    "url_tipo": "OFICIAL_VERIFICADO",
+    "url_verificada": "https://owasp.org/projects/threat-dragon",
+    "url_motivo": "HTTP 200 y el contenido menciona «threat-dragon»",
+    "url_fecha_verificacion": "2026-11-21",
+    "url_fuente": "get sobre https://owasp.org/www-project-threat-dragon/",
+    "url_navegable": true
+  },
+  "herramienta_actual": {
+    "id": "threat-dragon",
+    "nombre": "OWASP Threat Dragon",
+    "categoria_origen": "grupo-threat-model",
+    "categoria_evol": "Seguridad / Modelado de amenazas",
+    "ubicacion": "02-catalogo/seguridad/catalogo/threat-dragon",
+    "fecha_verificacion": "2026-11-22",
+    "fuente_origen": "auditoria-documental-v2.3.2.zip",
+    "version_historica": "2.2.0",
+    "version_release_verificada": "2.6.2",
+    "estado_fuente": "FUENTE_Y_RELEASE_OFICIALES_VERIFICADOS",
+    "estado_instalacion": "NO_VERIFICADA_EN_HOST",
+    "pruebas_funcionales": "NO_EJECUTADAS",
+    "repositorio": "https://github.com/OWASP/threat-dragon",
+    "releases": "https://github.com/OWASP/threat-dragon/releases",
+    "sitio_oficial": "https://owasp.org/projects/threat-dragon",
+    "descripcion": "Aplicación de modelado de amenazas para diagramas, límites de confianza, flujos de datos y mitigaciones.",
+    "uso_evol": "Modelar amenazas de Evol Guard, Evol Core y Memory Engine antes de implementar cambios sensibles. Puede apoyar sesiones de revisión de arquitectura; no sustituye pruebas de seguridad.",
+    "formatos": "Aplicación de escritorio y aplicación web autoalojable según OWASP; no se comprobó ejecución.",
+    "frameworks_de_modelado": [
+      "STRIDE",
+      "CIA",
+      "LINDDUN",
+      "DIE",
+      "PLOT4ai"
+    ],
+    "licencia": "Open source; comprobar LICENSE de la release antes de redistribuir binarios.",
+    "advertencias": "La versión de la guía (2.2.0) es histórica. OWASP registra release 2.6.2. No se ha descargado ni ejecutado la aplicación y no se recomienda publicar diagramas confidenciales en servicios de terceros.",
+    "fuentes_verificadas": [
+      "https://owasp.org/projects/threat-dragon",
+      "https://github.com/OWASP/threat-dragon",
+      "https://github.com/OWASP/threat-dragon/releases"
+    ],
+    "limites": [
+      "Se validaron páginas del proyecto y release, no el checksum del ejecutable descargado",
+      "Estado de instalación local desconocido."
+    ]
+  }
+}

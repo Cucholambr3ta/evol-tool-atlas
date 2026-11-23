@@ -1,0 +1,3 @@
+35e3394be0766d7b2b87c3210f6d1259d4a25a86cba02bb8b7f78e9a6f25ea78  02-catalogo/seguridad/catalogo/jeopardize/README.md
+9b09097ae1d51097f1947191d70a5a5b28cf3be6c8beaefba3ab28f9aa0d0cef  02-catalogo/seguridad/catalogo/jeopardize/index.html
+605cb3371749732e4f7a5994df795544b599a9fd8a66c7f52b86cff0f42f6865  02-catalogo/seguridad/catalogo/jeopardize/metadata.json

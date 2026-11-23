@@ -1,0 +1,33 @@
+{
+  "advertencia": "Proyecto upstream evolucionó desde 3.0.3 a desarrollo pngcheck 4; no atribuir versión actual sin comprobar release.",
+  "categoria_atlas": "esteganografia",
+  "categoria_origen": "grupo-stego",
+  "descripcion": "Validación de estructura y comprobaciones CRC de PNG, MNG y JNG.",
+  "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+  "estado_mantenimiento": "EVALUACION",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fuente_historica": "https://www.libpng.org/pub/png/apps/pngcheck.html",
+  "fuente_proyecto": "https://github.com/pnggroup/pngcheck",
+  "fuentes_consultadas": [
+    "https://github.com/pnggroup/pngcheck"
+  ],
+  "id": "pngcheck",
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "nombre": "pngcheck",
+  "probado_en_cachyos": false,
+  "proveniencia": {
+    "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+    "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+  },
+  "schema": "evol-tool-atlas/tool/2",
+  "uso_evol_propuesto": "Análisis y validación de archivos PNG del laboratorio y del diseño EVOL.",
+  "validaciones_pendientes": [
+    "Revisión de licencia específica y dependencias",
+    "Prueba local segura en CachyOS",
+    "Aprobación del propietario para instalación"
+  ],
+  "verificacion_fecha": "2026-11-22",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "3.0.3"
+}

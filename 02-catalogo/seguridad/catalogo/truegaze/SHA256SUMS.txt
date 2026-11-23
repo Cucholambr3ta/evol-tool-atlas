@@ -1,0 +1,3 @@
+4c115d7105f98d41585a20f35057981630ced7675dc7bd2e71ac6d92debb14b7  02-catalogo/seguridad/catalogo/truegaze/README.md
+c946692fe4bc6a419174cb574abdae6426454510f9917f12341788a3effc4ab6  02-catalogo/seguridad/catalogo/truegaze/index.html
+679e27c33ad4b89b073b56919c40b4dade24ae729f0f5f561426cf2bed939879  02-catalogo/seguridad/catalogo/truegaze/metadata.json

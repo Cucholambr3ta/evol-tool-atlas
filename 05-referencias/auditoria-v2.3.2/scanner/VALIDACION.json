@@ -1,0 +1,676 @@
+{
+  "categoria": "Scanner",
+  "categoria_carpeta": "scanner",
+  "entradas_originales": 310,
+  "excluidas": 82,
+  "exclusion": [
+    {
+      "evidencia_original": "sin URL en tools.html ni en el PKGBUILD",
+      "fecha_evidencia_original": null,
+      "fuente_original": "",
+      "nombre": "admsnmp",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://freeworld.thc.org/releases.php",
+      "nombre": "amap",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/93062/Athena-SSL-Cipher-Scanner.html",
+      "nombre": "athena-ssl-scanner",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/astryzia/BashScan",
+      "nombre": "bashscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://s-tech.elsat.net.pl/braa/",
+      "nombre": "braa",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/66683/check_weak_dh_ssh.pl.bz2.html",
+      "nombre": "check-weak-dh-ssh",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.secfu.net/tools-scripts/",
+      "nombre": "chiron",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "sin URL en tools.html ni en el PKGBUILD",
+      "fecha_evidencia_original": null,
+      "fuente_original": "",
+      "nombre": "ciscos",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/126621/Config-Push-snmpset-Utility.html",
+      "nombre": "configpush",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/118851/Control-Panel-Finder-Script.html",
+      "nombre": "cpfinder",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/shawarkhanethicalhacker/D-TECT",
+      "nombre": "d-tect",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/111510/darkBing-SQL-Scanner.1.html",
+      "nombre": "darkbing",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «davtest»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://code.google.com/p/davtest/",
+      "nombre": "davtest",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://www.trustedsec.com/september/owning-dell-drac-awesome-hack/",
+      "nombre": "delldrac",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/117773/Directory-Scanner-Tool.html",
+      "nombre": "dirscanner",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/118036/DNS-GeoIP.html",
+      "nombre": "dns2geoip",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «dnsbf»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/archive/p/dnsbf/",
+      "nombre": "dnsbf",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 403: el servidor bloquea la comprobación",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://johnny.ihackstuff.com/",
+      "nombre": "dnspredict",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/blueudp/DorkMe",
+      "nombre": "dorkme",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200 y el contenido menciona «dripper»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.blackhatlibrary.net/Dripper",
+      "nombre": "dripper",
+      "razon_exclusion": "No consta un origen seguro HTTPS y verificable en este cierre",
+      "tipo_expediente": "OFICIAL_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/117572/EAZY-Web-Scanner.html",
+      "nombre": "eazy",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.fantaghost.com/fgscanner",
+      "nombre": "fgscanner",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://packetstormsecurity.com/files/132449/Find-DNS-Scanner.html",
+      "nombre": "find-dns",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «flunym0us»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/archive/p/flunym0us/",
+      "nombre": "flunym0us",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://magikh0e.xyz/",
+      "nombre": "forkingportscanner",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.fulgursecurity.com/en/content/fs-nyarl",
+      "nombre": "fs-nyarl",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://vladz.devzero.fr/fsnoop.php",
+      "nombre": "fsnoop",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/35120/ftp-spider.pl.html",
+      "nombre": "ftp-spider",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://michenriksen.com/blog/gitrob-putting-the-open-source-in-osint/",
+      "nombre": "gitrob",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://packetstormsecurity.com/files/11372/grabbb.0.7.tar.gz.html",
+      "nombre": "grabbb",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.c0decafe.de/",
+      "nombre": "gtp-scan",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://halberd.superadditive.com/",
+      "nombre": "halberd",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.curesec.com/",
+      "nombre": "hbad",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «host-extract»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/p/host-extract/",
+      "nombre": "host-extract",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «libre-tools»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/p/libre-tools/",
+      "nombre": "httpsscanner",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «iaxscan»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://code.google.com/p/iaxscan/",
+      "nombre": "iaxscan",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 301 sin contenido verificable",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.nta-monitor.com/tools/ike-scan/",
+      "nombre": "ike-scan",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/104927/infIP.1-Blacklist-Checker.html",
+      "nombre": "infip",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "la API responde 403 sin identidad coincidente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/p/inurlbr/",
+      "nombre": "inurlbr",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/102848/LFI-Scanner.0.html",
+      "nombre": "lfi-scanner",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «littleblackbox»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://code.google.com/p/littleblackbox/wiki/FAQ",
+      "nombre": "littleblackbox",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://packetstormsecurity.com/files/55250/lotophagi.rar.html",
+      "nombre": "lotophagi",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "Google Code cerró; el archivo oficial conserva el proyecto «modscan»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://code.google.com/p/modscan/",
+      "nombre": "modscan",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.cqure.net/wp/mssqlscan/",
+      "nombre": "mssqlscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/125569/Netscan-Port-Scanner.0.html",
+      "nombre": "netscan",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://nmbscan.gbarbier.org/",
+      "nombre": "nmbscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/119462/OCS-Cisco-Scanner.2.html",
+      "nombre": "ocs",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": null,
+      "nombre": "openvas",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.doxpara.com/paketto/",
+      "nombre": "paketto",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/128065/Paranoic-Scan.7.html",
+      "nombre": "paranoic",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/119726/PLC-Device-Scanner.html",
+      "nombre": "plcscan",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 206 y el contenido menciona «pnscan»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.lysator.liu.se/~pen/pnscan/",
+      "nombre": "pnscan",
+      "razon_exclusion": "No consta un origen seguro HTTPS y verificable en este cierre",
+      "tipo_expediente": "OFICIAL_VERIFICADO"
+    },
+    {
+      "evidencia_original": "sin respuesta HTTP (conexion_rechazada): posible indisponibilidad temporal",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://nologin.org/main.pl?action=codeList&",
+      "nombre": "poison",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "https://packetstormsecurity.com/files/82897/PPScan-Portscanner.3.html",
+      "nombre": "ppscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206 y el contenido menciona «prads»",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://gamelinux.github.io/prads/",
+      "nombre": "prads",
+      "razon_exclusion": "No consta un origen seguro HTTPS y verificable en este cierre",
+      "tipo_expediente": "OFICIAL_VERIFICADO"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/61864/proxycheck.pl.txt.html",
+      "nombre": "proxycheck",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/69778/proxyScan.3.tgz.html",
+      "nombre": "proxyscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://labs.f-secure.com/tools/rdp-cipher-checker/",
+      "nombre": "rdp-cipher-checker",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "redirige a otro dominio que no menciona la herramienta; su relación con el proyecto no se pudo comprobar (cambio de dominio registrable (cirt.dk -> ecrimelabs.com))",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://www.cirt.dk",
+      "nombre": "relay-scanner",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/jh00nbr/Routerhunter.0",
+      "nombre": "routerhunter",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://isecpartners.github.io/Scout2/",
+      "nombre": "scout2",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://thesprawl.org/projects/search-engine-assessment-tool/",
+      "nombre": "seat",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/97353/Simple-LAN-Scanner.0.html",
+      "nombre": "simple-lan-scan",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://codeberg.org/invirtuate/slurp",
+      "nombre": "slurp-scanner",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/pentestgeek/smbexec",
+      "nombre": "smbexec",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/T-S-A/smbspider",
+      "nombre": "smbspider",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/enddo/smod",
+      "nombre": "smod",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "sin URL en tools.html ni en el PKGBUILD",
+      "fecha_evidencia_original": null,
+      "fuente_original": "",
+      "nombre": "smtp-vrfy",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 206, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.0x90.se/",
+      "nombre": "smtptx",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.filip.waeytens.easynet.be/",
+      "nombre": "snmpenum",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 404: el recurso ya no existe en el servidor",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.nothink.org/perl/snmpscan/index.php",
+      "nombre": "snmpscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 200, pero el contenido no identifica la herramienta",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://sparta.secforce.com/",
+      "nombre": "sparta",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "fecha_evidencia_original": "2026-11-22",
+      "fuente_original": "http://packetstormsecurity.com/files/127994/SSDP-Amplification-Scanner.html",
+      "nombre": "ssdp-scanner",
+      "razon_exclusion": "Fuente no admisible: ARCHIVO_HISTORICO_VERIFICADO",
+      "tipo_expediente": "ARCHIVO_HISTORICO_VERIFICADO"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://thesprawl.org/projects/latest/",
+      "nombre": "sslmap",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://www.stig-viewer.com",
+      "nombre": "stig-viewer",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/m4ll0k/takeover",
+      "nombre": "takeover",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "el dominio no resuelve (DNS): retirado o inexistente",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://www.cqure.net/wp/upnpscan/",
+      "nombre": "upnpscan",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "HTTP 301 sin contenido verificable",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://uberwall.org/bin/download/45/UWloveimap.tgz",
+      "nombre": "uw-loveimap",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 301 sin contenido verificable",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://uberwall.org/bin/download/44/UWudpscan.tar.gz",
+      "nombre": "uw-udpscan",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "HTTP 301 sin contenido verificable",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "http://uberwall.org/bin/download/43/UWzone.tgz",
+      "nombre": "uw-zone",
+      "razon_exclusion": "Fuente no admisible: IDENTIDAD_NO_VERIFICADA",
+      "tipo_expediente": "IDENTIDAD_NO_VERIFICADA"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/blackvkng/viSQL",
+      "nombre": "visql",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    },
+    {
+      "evidencia_original": "GitHub responde 404: repositorio eliminado o privado",
+      "fecha_evidencia_original": "2026-11-21",
+      "fuente_original": "https://github.com/Crapworks/wolpertinger",
+      "nombre": "wolpertinger",
+      "razon_exclusion": "Fuente no admisible: NO_DISPONIBLE",
+      "tipo_expediente": "NO_DISPONIBLE"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 225,
+  "fuentes_web_verificadas_2026_11_22": 3,
+  "id_grupo_origen": "grupo-scanner",
+  "incluidas_documentales": 228,
+  "limites": [
+    "No se comprobó la instalación ni ejecución de herramientas en CachyOS",
+    "La evidencia del expediente v2.3.2 no equivale a una prueba en vivo del 22-11-2026",
+    "Las licencias y dependencias requieren revisión individual antes de instalar"
+  ],
+  "numero": 47,
+  "regla_inclusion": "Repositorio upstream o sitio oficial HTTPS con identidad constatada en expediente, o evidencia oficial fresca; nunca archivos exclusivamente históricos o fuentes sin identidad"
+}

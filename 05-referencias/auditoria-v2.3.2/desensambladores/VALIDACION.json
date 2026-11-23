@@ -1,0 +1,108 @@
+{
+  "admitidas": 12,
+  "alcance": "Disponibilidad verificable de fuente externa, no instalación ni funcionamiento en CachyOS",
+  "categoria": "desensambladores",
+  "categoria_origen": "grupo-disassembler",
+  "excluidas": 5,
+  "exclusiones": [
+    {
+      "id": "exe2hex",
+      "razon": "Repositorio real, pero la función documentada es transferencia de archivos, no desensamblado; necesita reclasificación."
+    },
+    {
+      "id": "python-lief",
+      "razon": "Empaquetado Python del mismo proyecto LIEF; unificado en su ficha canónica."
+    },
+    {
+      "id": "python2-capstone",
+      "razon": "Paquete Python 2 obsoleto; no se acredita un canal actual para esta variante."
+    },
+    {
+      "id": "python2-pcodedmp",
+      "razon": "Variante Python 2 obsoleta; ficha canónica actual corresponde a pcodedmp."
+    },
+    {
+      "id": "radare2-unicorn",
+      "razon": "La fuente consultada corresponde a un repositorio de extras/graveyard, sin validar la disponibilidad del plugin como herramienta independiente."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "incluidas": [
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "abcd",
+      "ruta": "02-catalogo/seguridad/catalogo/abcd/index.html",
+      "url_fuente": "https://github.com/MITRECND/abcd"
+    },
+    {
+      "advertencia": "IDE de análisis binario histórico; disponibilidad de código verificada, mantenimiento reciente no acreditado.",
+      "id": "binnavi",
+      "ruta": "02-catalogo/seguridad/catalogo/binnavi/index.html",
+      "url_fuente": "https://github.com/google/binnavi"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "chiasm-shell",
+      "ruta": "02-catalogo/seguridad/catalogo/chiasm-shell/index.html",
+      "url_fuente": "https://github.com/0xbc/chiasm-shell"
+    },
+    {
+      "advertencia": "Biblioteca histórica de desensamblado x86; estado de mantenimiento no acreditado.",
+      "id": "libdisasm",
+      "ruta": "02-catalogo/seguridad/catalogo/libdisasm/index.html",
+      "url_fuente": "https://bastard.sourceforge.net/libdisasm.html"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "lief",
+      "ruta": "02-catalogo/seguridad/catalogo/lief/index.html",
+      "url_fuente": "https://github.com/lief-project/lief"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "marc4dasm",
+      "ruta": "02-catalogo/seguridad/catalogo/marc4dasm/index.html",
+      "url_fuente": "https://github.com/AdamLaurie/marc4dasm"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "plasma-disasm",
+      "ruta": "02-catalogo/seguridad/catalogo/plasma-disasm/index.html",
+      "url_fuente": "https://github.com/plasma-disassembler/plasma"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "python-pcodedmp",
+      "ruta": "02-catalogo/seguridad/catalogo/python-pcodedmp/index.html",
+      "url_fuente": "https://pypi.org/project/pcodedmp/"
+    },
+    {
+      "advertencia": "El repositorio histórico REDasmOrg/REDasm devuelve 404; fuente nueva oficial redasm-dev/redasm y redasm.dev. No reutilizar versiones históricas como actuales.",
+      "id": "redasm",
+      "ruta": "02-catalogo/seguridad/catalogo/redasm/index.html",
+      "url_fuente": "https://github.com/redasm-dev/redasm"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "scratchabit",
+      "ruta": "02-catalogo/seguridad/catalogo/scratchabit/index.html",
+      "url_fuente": "https://github.com/pfalcon/ScratchABit"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "unstrip",
+      "ruta": "02-catalogo/seguridad/catalogo/unstrip/index.html",
+      "url_fuente": "https://github.com/pzread/unstrip"
+    },
+    {
+      "advertencia": "El proyecto corresponde a un framework de análisis de binarios; su pertenencia a Desensambladores procede dEl registro documental.",
+      "id": "viper",
+      "ruta": "02-catalogo/seguridad/catalogo/viper/index.html",
+      "url_fuente": "https://github.com/viper-framework/viper"
+    }
+  ],
+  "posicion_entrega": 17,
+  "total_origen": 17,
+  "versiones_actuales": "NO_COMPROBADAS"
+}

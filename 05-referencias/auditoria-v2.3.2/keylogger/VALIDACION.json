@@ -1,0 +1,50 @@
+{
+  "aceptadas": [
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/kernc/logkeys",
+      "no_probado_localmente": true,
+      "nombre": "logkeys"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/GiacomoLaw/Keylogger",
+      "no_probado_localmente": true,
+      "nombre": "python-keylogger"
+    }
+  ],
+  "admitidas": 2,
+  "categoria_origen": "grupo-keylogger",
+  "excluidas": 1,
+  "exclusiones": [
+    {
+      "estado": "EXCLUIDA_NO_VERIFICADA",
+      "id": "xspy",
+      "motivo": "Distribución histórica FreeBSD retirada en 2020; la copia de código no permite acreditar una distribución vigente.",
+      "registro_origen": {
+        "cat": "grupo-keylogger",
+        "cat_source": "oficial",
+        "desc": "A utility for monitoring keypresses on remote X servers",
+        "desc_source": "oficial",
+        "name": "xspy",
+        "site": "http://www.freshports.org/security/xspy/",
+        "url_estado": "http_sin_verificar",
+        "url_fecha_verificacion": "2026-11-21",
+        "url_fuente": "get sobre http://www.freshports.org/security/xspy/",
+        "url_motivo": "HTTP 200 y el contenido menciona «xspy»",
+        "url_navegable": true,
+        "url_original_origen": "http://www.freshports.org/security/xspy/",
+        "url_tipo": "OFICIAL_VERIFICADO",
+        "url_verificada": "https://www.freshports.org/security/xspy/",
+        "version": "1.0c"
+      }
+    }
+  ],
+  "fecha": "2026-11-22",
+  "numero_origen": 3,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "politica": "Ninguna entrada no comprobada se incorpora al navegador operativo. Fuente existente no implica mantenimiento, versión vigente o instalación probada.",
+  "schema": "evol-tool-atlas/categoria/1",
+  "sha256_zip_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "titulo": "Captura de teclado: investigación defensiva"
+}

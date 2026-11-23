@@ -1,0 +1,32 @@
+{
+  "id": "firmware-mod-kit",
+  "nombre": "Firmware Mod Kit",
+  "categoria_origen": "grupo-firmware",
+  "categoria_evol": "Seguridad / Firmware",
+  "ubicacion": "02-catalogo/seguridad/catalogo/firmware-mod-kit",
+  "fecha_verificacion": "2026-11-22",
+  "fuente_origen": "auditoria-documental-v2.3.2.zip",
+  "categoria_del_dataset": "grupo-firmware",
+  "version_dataset": "0.99.r119.gc72f45d",
+  "estado_fuente": "REPOSITORIO_HISTORICO_ACCESIBLE",
+  "estado_instalacion": "NO_VERIFICADA_EN_HOST",
+  "estado_prueba_funcional": "NO_EJECUTADA",
+  "version_publicacion_verificada": null,
+  "fuente_repositorio": "https://github.com/rampageX/firmware-mod-kit",
+  "fuente_distribucion": null,
+  "fuentes_consultadas": [
+    "https://github.com/rampageX/firmware-mod-kit",
+    "https://github.com/rampageX/firmware-mod-kit/blob/master/README.md"
+  ],
+  "descripcion": "Colección histórica de scripts para extraer y modificar imágenes de firmware, preservada en un repositorio exportado desde Google Code.",
+  "aplicacion_evol": "Consultar formatos antiguos de firmware y técnicas de análisis en un entorno desechable. No se incorpora como dependencia operativa de Evol OS.",
+  "mantenimiento": "Repositorio público accesible, identificado como una exportación histórica; mantenimiento, release actual y compatibilidad con CachyOS no verificados.",
+  "riesgos": "El contenido modifica firmware y puede requerir herramientas antiguas. No usar para modificar imágenes reales ni instalar en el host sin auditoría independiente.",
+  "licencia": "No verificada en las fuentes consultadas",
+  "observaciones": "La versión registro documental 0.99.r119.gc72f45d no debe mostrarse como versión upstream actual. Sin release oficial moderno comprobado.",
+  "limites": [
+    "La presencia del repositorio no implica mantenimiento ni seguridad del código.",
+    "No se instaló ni ejecutó esta herramienta sobre CachyOS.",
+    "No se infiere una versión upstream actual a partir del identificador del paquete de referencia."
+  ]
+}

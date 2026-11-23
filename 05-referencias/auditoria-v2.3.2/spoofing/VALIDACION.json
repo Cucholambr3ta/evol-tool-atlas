@@ -1,0 +1,108 @@
+{
+  "admitidas": 10,
+  "alcance": "Disponibilidad verificable de fuente externa, no instalación ni funcionamiento en CachyOS",
+  "categoria": "spoofing",
+  "categoria_origen": "grupo-spoof",
+  "excluidas": 8,
+  "exclusiones": [
+    {
+      "id": "admid-pack",
+      "razon": "Se conserva únicamente una distribución histórica archivada."
+    },
+    {
+      "id": "aranea",
+      "razon": "No se identificó repositorio específico que pruebe la identidad del proyecto."
+    },
+    {
+      "id": "cisco-snmp-slap",
+      "razon": "La URL no pudo comprobarse con suficiente certeza en la revisión externa."
+    },
+    {
+      "id": "evil-ssdp",
+      "razon": "La URL devuelve inicio de sesión de GitLab; acceso público y distribución no comprobados."
+    },
+    {
+      "id": "lsrtunnel",
+      "razon": "Sitio original no disponible."
+    },
+    {
+      "id": "nbnspoof",
+      "razon": "Fuente de distribución original no disponible."
+    },
+    {
+      "id": "netcommander",
+      "razon": "Repositorio original no disponible."
+    },
+    {
+      "id": "synner",
+      "razon": "Solo un archivo histórico, sin distribución actual confirmada."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "incluidas": [
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "arpspoof-smikims",
+      "ruta": "02-catalogo/seguridad/catalogo/arpspoof-smikims/index.html",
+      "url_fuente": "https://github.com/smikims/arpspoof"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "dns-spoof",
+      "ruta": "02-catalogo/seguridad/catalogo/dns-spoof/index.html",
+      "url_fuente": "https://github.com/maurotfilho/dns-spoof"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "fakenetbios",
+      "ruta": "02-catalogo/seguridad/catalogo/fakenetbios/index.html",
+      "url_fuente": "https://github.com/mubix/FakeNetBIOS"
+    },
+    {
+      "advertencia": "El upstream describe inyección de código y espionaje de clientes Wi-Fi; documentación exclusivamente para pruebas autorizadas en redes aisladas.",
+      "id": "lans",
+      "ruta": "02-catalogo/seguridad/catalogo/lans/index.html",
+      "url_fuente": "https://github.com/DanMcInerney/LANs.py"
+    },
+    {
+      "advertencia": "Es una utilidad SMTP general; su categoría Spoofing se hereda del expediente documental, no es su función primaria.",
+      "id": "mailsend-go",
+      "ruta": "02-catalogo/seguridad/catalogo/mailsend-go/index.html",
+      "url_fuente": "https://github.com/muquit/mailsend-go"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "motsa-dns-spoofing",
+      "ruta": "02-catalogo/seguridad/catalogo/motsa-dns-spoofing/index.html",
+      "url_fuente": "https://github.com/waytoalpit/ManOnTheSideAttack-DNS-Spoofing"
+    },
+    {
+      "advertencia": "Fuente SourceForge accesible; comprobar plataforma y soporte Linux antes de cualquier instalación.",
+      "id": "multimac",
+      "ruta": "02-catalogo/seguridad/catalogo/multimac/index.html",
+      "url_fuente": "https://sourceforge.net/projects/multimac/"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "rbndr",
+      "ruta": "02-catalogo/seguridad/catalogo/rbndr/index.html",
+      "url_fuente": "https://github.com/taviso/rbndr"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "spoofy",
+      "ruta": "02-catalogo/seguridad/catalogo/spoofy/index.html",
+      "url_fuente": "https://github.com/MattKeeley/Spoofy"
+    },
+    {
+      "advertencia": "Fuente primaria accesible; mantenimiento, versión vigente y compatibilidad en CachyOS no verificados.",
+      "id": "sylkie",
+      "ruta": "02-catalogo/seguridad/catalogo/sylkie/index.html",
+      "url_fuente": "https://github.com/dlrobertson/sylkie"
+    }
+  ],
+  "posicion_entrega": 18,
+  "total_origen": 18,
+  "versiones_actuales": "NO_COMPROBADAS"
+}

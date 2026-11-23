@@ -1,0 +1,26 @@
+{
+  "advertencia": "No prometer borrado irrecuperable en SSD, Btrfs, snapshots, copy-on-write, remapeo de bloques o backups. No ejecutar sobre el disco anfitrión ni sobre recuerdos reales. El sitio THC del catálogo no identifica el recurso; se verificó paquete Debian.",
+  "registro_origen": {
+    "categoria": "grupo-anti-forensic",
+    "fuente_historica": "http://www.thc.org/",
+    "name": "secure-delete",
+    "sha256_registro_fuente": "79724d4376a0e6eef4d92d0689a42b8fe89194f80d60aff97760980b890d6883",
+    "version_historica": "1.b63d814"
+  },
+  "categoria_atlas": "anti-forense",
+  "detalle_verificacion": "ESPEJO_Y_DISTRIBUCION_VERIFICADOS",
+  "estado": "DISTRIBUCION_VERIFICADA_HEREDADA",
+  "estado_mantenimiento": "Utilidad heredada; la fuente GitHub consultada es un espejo, no upstream",
+  "fuente_distribucion_comprobada": "https://packages.debian.org/trixie/secure-delete",
+  "fuente_proyecto": "https://packages.debian.org/trixie/secure-delete",
+  "fuentes_consultadas": [
+    "https://packages.debian.org/trixie/secure-delete"
+  ],
+  "id": "secure-delete",
+  "instalado_en_host": null,
+  "nombre": "secure-delete",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

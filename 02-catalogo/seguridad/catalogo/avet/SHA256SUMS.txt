@@ -1,0 +1,3 @@
+f0af40cd9caa6ebffe07de7f8d6469a1be382543617d4dda95ec2c4b1b800ed9  02-catalogo/seguridad/catalogo/avet/README.md
+5e7cbe26cf84513d6cf432ca08d4d8b5bb746a11ec8c52d770e2e03c7705d7d4  02-catalogo/seguridad/catalogo/avet/index.html
+810974c05ed0c99c7116c505710c72854e2138f79dde6b14954899f2762db254  02-catalogo/seguridad/catalogo/avet/metadata.json

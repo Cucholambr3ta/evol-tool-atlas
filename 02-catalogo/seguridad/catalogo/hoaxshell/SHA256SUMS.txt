@@ -1,0 +1,3 @@
+1cc6b8dec010e761d14caaad9007fa249bddba2a850a15ebedd0d2855fe84010  02-catalogo/seguridad/catalogo/hoaxshell/README.md
+82c34b40a0422d111845bd5f5e4aade0041b9fdf26dc303f5105c4c5ad9813fc  02-catalogo/seguridad/catalogo/hoaxshell/index.html
+88abc21f56b32030442662d22afd7fb4339b722456de3e926c0994dd74e7a187  02-catalogo/seguridad/catalogo/hoaxshell/metadata.json

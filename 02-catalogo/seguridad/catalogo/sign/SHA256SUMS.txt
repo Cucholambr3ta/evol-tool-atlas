@@ -1,0 +1,3 @@
+8fba9cfbc122f5fb8dd246fe60065a953d15b71fdce4e948e4823b5c7ef8ca4e  02-catalogo/seguridad/catalogo/sign/README.md
+040560b53c9c9f4c469a14fe5245ba63ca9a5b1bb6eee626557212d1fcb0a83e  02-catalogo/seguridad/catalogo/sign/index.html
+8457147b9563492af7d5aff78f13f316ab13ece622db3cf4c2270a245cc554ce  02-catalogo/seguridad/catalogo/sign/metadata.json

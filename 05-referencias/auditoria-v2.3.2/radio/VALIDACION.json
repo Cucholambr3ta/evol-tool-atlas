@@ -1,0 +1,223 @@
+{
+  "admitidas": 24,
+  "admitidas_detalle": [
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "aptdec",
+      "name": "aptdec",
+      "reused": false,
+      "source": "https://github.com/Xerbo/aptdec"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "csdr",
+      "name": "csdr",
+      "reused": false,
+      "source": "https://github.com/jketterl/csdr"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "cubicsdr",
+      "name": "cubicsdr",
+      "reused": false,
+      "source": "https://github.com/cjcliffe/CubicSDR"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "deskhpsdr",
+      "name": "deskhpsdr",
+      "reused": false,
+      "source": "https://github.com/dl1bz/deskhpsdr"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gpredict",
+      "name": "gpredict",
+      "reused": false,
+      "source": "https://oz9aec.dk/gpredict/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gps-sdr-sim",
+      "name": "gps-sdr-sim",
+      "reused": false,
+      "source": "https://github.com/osqzss/gps-sdr-sim"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gqrx-scanner",
+      "name": "gqrx-scanner",
+      "reused": false,
+      "source": "https://github.com/neural75/gqrx-scanner"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gr-air-modes",
+      "name": "gr-air-modes",
+      "reused": false,
+      "source": "https://github.com/bistromath/gr-air-modes"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gr-dect2",
+      "name": "gr-dect2",
+      "reused": false,
+      "source": "https://github.com/pavelyazev/gr-dect2"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gr-gsm",
+      "name": "gr-gsm",
+      "reused": false,
+      "source": "https://github.com/ptrkrysik/gr-gsm"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gr-paint",
+      "name": "gr-paint",
+      "reused": false,
+      "source": "https://github.com/drmpeg/gr-paint"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "gsmevil2",
+      "name": "gsmevil2",
+      "reused": false,
+      "source": "https://github.com/ninjhacks/gsmevil2"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "lte-cell-scanner",
+      "name": "lte-cell-scanner",
+      "reused": false,
+      "source": "https://github.com/JiaoXianjun/LTE-Cell-Scanner"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "openwebrx",
+      "name": "openwebrx",
+      "reused": false,
+      "source": "https://github.com/jketterl/openwebrx"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "rtl",
+      "name": "rtl",
+      "reused": false,
+      "source": "https://github.com/merbanan/rtl_433"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "rtl-wmbus",
+      "name": "rtl-wmbus",
+      "reused": false,
+      "source": "https://github.com/xaelsouth/rtl-wmbus"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "rtlamr",
+      "name": "rtlamr",
+      "reused": false,
+      "source": "https://github.com/bemasher/rtlamr"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "sdrangel",
+      "name": "sdrangel",
+      "reused": false,
+      "source": "https://github.com/f4exb/sdrangel"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sdrpp",
+      "name": "sdrpp",
+      "reused": false,
+      "source": "https://www.sdrpp.org/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sdrsharp",
+      "name": "sdrsharp",
+      "reused": false,
+      "source": "https://airspy.com/"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "sdrtrunk",
+      "name": "sdrtrunk",
+      "reused": false,
+      "source": "https://github.com/DSheirer/sdrtrunk"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "spektrum",
+      "name": "spektrum",
+      "reused": false,
+      "source": "https://github.com/pavels/spektrum"
+    },
+    {
+      "evidence": "REVALIDADA_WEB_2026-11-22",
+      "id": "wmbusmeters",
+      "name": "wmbusmeters",
+      "reused": false,
+      "source": "https://github.com/wmbusmeters/wmbusmeters"
+    },
+    {
+      "evidence": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "id": "yate-bts",
+      "name": "yate-bts",
+      "reused": false,
+      "source": "https://yatebts.com/"
+    }
+  ],
+  "archivo_fuente": "auditoria-documental-v2.3.2.zip",
+  "categoria": "Radio y SDR",
+  "categoria_numero": 27,
+  "categoria_slug": "radio",
+  "estado_ejecucion": "SOLO_DOCUMENTAL_NO_INSTALADO",
+  "excluidas": 7,
+  "excluidas_detalle": [
+    {
+      "fuente_original": "https://airspy.com",
+      "id": "airspyhf",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 206, pero el contenido no identifica la herramienta"
+    },
+    {
+      "fuente_original": "",
+      "id": "hacktv",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: sin URL en tools.html ni en el PKGBUILD"
+    },
+    {
+      "fuente_original": "https://osmocom.org/projects/libosmocore/wiki/Libosmocore",
+      "id": "libosmocore",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 200, pero el contenido no identifica la herramienta"
+    },
+    {
+      "fuente_original": "https://github.com/qradiolink/qradiolink",
+      "id": "qradiolink",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: GitHub responde 404: repositorio eliminado o privado"
+    },
+    {
+      "fuente_original": "https://code.google.com/archive/p/rfcat/",
+      "id": "rfcat",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: Google Code cerró; el archivo oficial conserva el proyecto «rfcat»"
+    },
+    {
+      "fuente_original": "https://osmocom.org/projects/simtrace2/wiki",
+      "id": "simtrace2",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: HTTP 200, pero el contenido no identifica la herramienta"
+    },
+    {
+      "fuente_original": "https://github.com/black/VULTURE",
+      "id": "vulture-black",
+      "motivo": "No se acreditó actualmente un enlace auténtico y navegable: GitHub responde 404: repositorio eliminado o privado"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente_de_verificacion_exp": "2026-11-21",
+  "grupo_original": "grupo-radio",
+  "principio": "Existencia de repositorio o sitio no demuestra release actual, mantenimiento, seguridad ni compatibilidad.",
+  "revalidacion_2026_11_22": 4,
+  "sha256_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 31
+}

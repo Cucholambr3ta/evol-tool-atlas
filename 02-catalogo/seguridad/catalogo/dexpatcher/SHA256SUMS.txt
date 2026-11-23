@@ -1,0 +1,3 @@
+75f445dc8dd1f84f66534c2df197e3d3a3f4a978ef90d5f3b410bbc9beb65606  02-catalogo/seguridad/catalogo/dexpatcher/README.md
+e67c7ed1d1eba554f819c71e46fa95d2be3634abc59df9ca0b8d8c790e516145  02-catalogo/seguridad/catalogo/dexpatcher/index.html
+a2124317b5131fabec277c39357b61f5d15cef24b1edfda046261ab107b8aa44  02-catalogo/seguridad/catalogo/dexpatcher/metadata.json

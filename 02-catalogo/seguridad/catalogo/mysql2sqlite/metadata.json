@@ -1,0 +1,26 @@
+{
+  "advertencia": "No ejecutar conversiones sobre bases reales sin respaldo, validación de tipos y reconciliación de datos.",
+  "registro_origen": {
+    "categoria": "grupo-database",
+    "fuente_historica": "https://gist.github.com/esperlu/943776",
+    "name": "mysql2sqlite",
+    "sha256_registro_fuente": "6e1b181f213b28ad0a078b3b4fce2178aae1999ffbd1c1794434912721270132",
+    "version_historica": "14.e5b2c31"
+  },
+  "categoria_atlas": "bases-de-datos",
+  "detalle_verificacion": "SCRIPT_DE_AUTOR_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_HEREDADA",
+  "estado_mantenimiento": "Script histórico; mantenimiento y compatibilidad no comprobados",
+  "fuente_distribucion_comprobada": "https://gist.github.com/esperlu/943776",
+  "fuente_proyecto": "https://gist.github.com/esperlu/943776",
+  "fuentes_consultadas": [
+    "https://gist.github.com/esperlu/943776"
+  ],
+  "id": "mysql2sqlite",
+  "instalado_en_host": null,
+  "nombre": "mysql2sqlite",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

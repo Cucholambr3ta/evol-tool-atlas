@@ -1,0 +1,26 @@
+{
+  "advertencia": "No conectarse a vehículos en servicio ni emitir mensajes en buses reales sin autorización y control de riesgos.",
+  "registro_origen": {
+    "categoria": "grupo-automobile",
+    "fuente_historica": "https://github.com/linux-can/can-utils",
+    "name": "can-utils",
+    "sha256_registro_fuente": "76c805f532fdbbe3e89ec39f799497239a8d192df0d53bede0c587e6ca09c005",
+    "version_historica": "1304.834ceef"
+  },
+  "categoria_atlas": "automocion",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "Versión concreta y funcionamiento local no comprobados",
+  "fuente_distribucion_comprobada": "https://github.com/linux-can/can-utils",
+  "fuente_proyecto": "https://github.com/linux-can/can-utils",
+  "fuentes_consultadas": [
+    "https://github.com/linux-can/can-utils"
+  ],
+  "id": "can-utils",
+  "instalado_en_host": null,
+  "nombre": "can-utils",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

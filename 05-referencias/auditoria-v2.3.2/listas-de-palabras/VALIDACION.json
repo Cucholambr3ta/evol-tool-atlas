@@ -1,0 +1,45 @@
+{
+  "aceptadas": [
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA",
+      "fuente": "https://github.com/assetnote/wordlists",
+      "no_probado_localmente": true,
+      "nombre": "assetnote-wordlists"
+    },
+    {
+      "estado": "FUENTE_DISTRIBUCION_VERIFICADA",
+      "fuente": "https://github.com/herrbischoff/country-ip-blocks",
+      "no_probado_localmente": true,
+      "nombre": "country-ip-blocks"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/p0dalirius/pyLDAPWordlistHarvester",
+      "no_probado_localmente": true,
+      "nombre": "ldapwordlistharvester"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA",
+      "fuente": "https://github.com/danielmiessler/SecLists",
+      "no_probado_localmente": true,
+      "nombre": "seclists"
+    },
+    {
+      "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+      "fuente": "https://github.com/pyqlsa/wdict",
+      "no_probado_localmente": true,
+      "nombre": "wdict"
+    }
+  ],
+  "admitidas": 5,
+  "categoria_origen": "grupo-wordlist",
+  "excluidas": 0,
+  "exclusiones": [],
+  "fecha": "2026-11-22",
+  "numero_origen": 5,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "politica": "Ninguna entrada no comprobada se incorpora al navegador operativo. Fuente existente no implica mantenimiento, versión vigente o instalación probada.",
+  "schema": "evol-tool-atlas/categoria/1",
+  "sha256_zip_fuente": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "titulo": "Listas de palabras y datos de prueba"
+}

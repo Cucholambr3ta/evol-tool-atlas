@@ -1,0 +1,26 @@
+{
+  "advertencia": "No descargar datasets extensos automáticamente ni utilizar listas contra sistemas sin autorización.",
+  "registro_origen": {
+    "categoria": "grupo-wordlist",
+    "fuente_historica": "https://github.com/assetnote/wordlists",
+    "name": "assetnote-wordlists",
+    "sha256_registro_fuente": "9ae0666eb5570b25f17eb138aff7e6eb9230ac795fe2b8d310470fa767b2ceaa",
+    "version_historica": "183.6dea231"
+  },
+  "categoria_atlas": "listas-de-palabras",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "Edición del dataset actualmente publicada no comprobada",
+  "fuente_distribucion_comprobada": "https://github.com/assetnote/wordlists",
+  "fuente_proyecto": "https://github.com/assetnote/wordlists",
+  "fuentes_consultadas": [
+    "https://github.com/assetnote/wordlists"
+  ],
+  "id": "assetnote-wordlists",
+  "instalado_en_host": null,
+  "nombre": "Assetnote Wordlists",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

@@ -1,0 +1,3 @@
+f8dc5ad91c683ac8337fcbb4f1328369b2fc1a52931eb47cc54719a72efc95f8  02-catalogo/seguridad/catalogo/android-ndk/README.md
+481f9a41648d6c5f0285e7ca74e9e9499a40d77871b4d9d34e1ae7b278088e25  02-catalogo/seguridad/catalogo/android-ndk/index.html
+3b4d9e9f3ff9823221590ea4e4365e7c490f32a2bbb7d813faae3e681d6fb64a  02-catalogo/seguridad/catalogo/android-ndk/metadata.json

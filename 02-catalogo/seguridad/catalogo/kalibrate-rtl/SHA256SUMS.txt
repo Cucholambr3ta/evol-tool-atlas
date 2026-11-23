@@ -1,0 +1,3 @@
+0a20ec28efa1d1a37efee40e902098302ac186ab7ede43fd3e1455dac354b195  02-catalogo/seguridad/catalogo/kalibrate-rtl/README.md
+a3a72c04a4ae15c7ab5272d055b4af7184a7c6b9d9caa6594095b0c60c730cd7  02-catalogo/seguridad/catalogo/kalibrate-rtl/index.html
+0d0fd591778e07aaa8dd1bf81896df78f74e9a47df61fd65b7e69a7c7fc44e21  02-catalogo/seguridad/catalogo/kalibrate-rtl/metadata.json

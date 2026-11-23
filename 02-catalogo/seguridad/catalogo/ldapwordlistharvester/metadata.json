@@ -1,0 +1,26 @@
+{
+  "advertencia": "No consultar directorios de terceros ni recolectar información personal o credenciales. Referencia sin instrucciones operativas de ataque.",
+  "registro_origen": {
+    "categoria": "grupo-wordlist",
+    "fuente_historica": "https://github.com/p0dalirius/pyLDAPWordlistHarvester",
+    "name": "ldapwordlistharvester",
+    "sha256_registro_fuente": "2d0181f0d1d61c9c9fe50206ddccd2e99978738d9cc5c63796df9199754d5823",
+    "version_historica": "1.2.r20.g78cd116"
+  },
+  "categoria_atlas": "listas-de-palabras",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+  "estado_mantenimiento": "Compatibilidad actual y soporte no verificados",
+  "fuente_distribucion_comprobada": "https://github.com/p0dalirius/pyLDAPWordlistHarvester",
+  "fuente_proyecto": "https://github.com/p0dalirius/pyLDAPWordlistHarvester",
+  "fuentes_consultadas": [
+    "https://github.com/p0dalirius/pyLDAPWordlistHarvester"
+  ],
+  "id": "ldapwordlistharvester",
+  "instalado_en_host": null,
+  "nombre": "pyLDAPWordlistHarvester",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

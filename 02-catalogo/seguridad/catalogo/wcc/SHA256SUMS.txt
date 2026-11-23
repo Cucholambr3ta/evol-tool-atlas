@@ -1,0 +1,3 @@
+8bb8972a96d70654ffabe59ac768d10fb92713ae886a1908d6fbb15b2113a65f  02-catalogo/seguridad/catalogo/wcc/README.md
+f44ed248bc1e03b68d21f0f382562439c38935baed0736edf5a406eae582034b  02-catalogo/seguridad/catalogo/wcc/index.html
+a6dbea13cf83c561ea6c3a857b6cd00a03f04e2903b67fe79ffed52094dc72ae  02-catalogo/seguridad/catalogo/wcc/metadata.json

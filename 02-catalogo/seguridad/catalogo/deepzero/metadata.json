@@ -1,0 +1,33 @@
+{
+  "advertencia": "Orientado a Windows y evaluación ofensiva; ejecutar solo con muestras autorizadas y en VM.",
+  "categoria_atlas": "ia",
+  "categoria_origen": "grupo-ai",
+  "descripcion": "Framework experimental de análisis de controladores Windows con agentes de IA.",
+  "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+  "estado_mantenimiento": "EXPERIMENTAL",
+  "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+  "fuente_historica": "https://github.com/416rehman/DeepZero",
+  "fuente_proyecto": "https://github.com/416rehman/DeepZero",
+  "fuentes_consultadas": [
+    "https://github.com/416rehman/DeepZero"
+  ],
+  "id": "deepzero",
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "nombre": "DeepZero",
+  "probado_en_cachyos": false,
+  "proveniencia": {
+    "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+    "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+  },
+  "schema": "evol-tool-atlas/tool/2",
+  "uso_evol_propuesto": "Referencia de automatización y análisis de firmware o controladores en entornos desechables.",
+  "validaciones_pendientes": [
+    "Revisión de licencia específica y dependencias",
+    "Prueba local segura en CachyOS",
+    "Aprobación del propietario para instalación"
+  ],
+  "verificacion_fecha": "2026-11-22",
+  "version_actual": "NO_COMPROBADA",
+  "version_historica": "deepzero.v0.4.0.r4.g1bf1818"
+}

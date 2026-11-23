@@ -1,0 +1,3 @@
+3f089d7324760ef57429683d37e5bf89c5635fdb0bd13614d93ab8f4bff52784  02-catalogo/seguridad/catalogo/catphish/README.md
+ade7defb4efb98c69218221be991b10ae668f081f79c4aa73a18123fefc3d5f8  02-catalogo/seguridad/catalogo/catphish/index.html
+59baedd4b0e812de4e82821c45e1e3d2db92a4bb13ee7ec33052f4acbfaa5a05  02-catalogo/seguridad/catalogo/catphish/metadata.json

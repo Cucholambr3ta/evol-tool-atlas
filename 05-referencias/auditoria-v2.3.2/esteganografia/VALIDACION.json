@@ -1,0 +1,324 @@
+{
+  "admitidas": 9,
+  "alcance": "comprobación documental de fuente externa; no instalación ni ejecución de las herramientas",
+  "categoria": "esteganografia",
+  "excluidas": 2,
+  "exclusiones": [
+    {
+      "estado": "EXCLUIDA_DEL_CATALOGO_OPERATIVO",
+      "id": "openpuff",
+      "razon": "Fuente de descarga original sin verificación suficiente; no se incorpora una alternativa desconocida."
+    },
+    {
+      "estado": "EXCLUIDA_DEL_CATALOGO_OPERATIVO",
+      "id": "stegsolve",
+      "razon": "El sitio original de distribución no está disponible; espejos y forks no prueban procedencia de la distribución histórica."
+    }
+  ],
+  "fecha": "2026-11-22",
+  "fuente": "auditoria-documental-v2.3.2.zip",
+  "herramientas": [
+    {
+      "advertencia": "Estado de mantenimiento no confirmado.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Herramienta Python para explorar técnicas esteganográficas con imágenes.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/fgrimme/Matroschka",
+      "fuente_proyecto": "https://github.com/fbngrm/Matroschka",
+      "fuentes_consultadas": [
+        "https://github.com/fbngrm/Matroschka"
+      ],
+      "id": "matroschka",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Matroschka",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Comparación de transformaciones con imágenes sintéticas de prueba.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "58.2f026a4"
+    },
+    {
+      "advertencia": "Proyecto upstream evolucionó desde 3.0.3 a desarrollo pngcheck 4; no atribuir versión actual sin comprobar release.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Validación de estructura y comprobaciones CRC de PNG, MNG y JNG.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://www.libpng.org/pub/png/apps/pngcheck.html",
+      "fuente_proyecto": "https://github.com/pnggroup/pngcheck",
+      "fuentes_consultadas": [
+        "https://github.com/pnggroup/pngcheck"
+      ],
+      "id": "pngcheck",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "pngcheck",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Análisis y validación de archivos PNG del laboratorio y del diseño EVOL.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "3.0.3"
+    },
+    {
+      "advertencia": "Confirmar compilación Qt, dependencias y mantenimiento.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Aplicación gráfica de esteganografía en imágenes y sonidos.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/achorein/silenteye/",
+      "fuente_proyecto": "https://github.com/achorein/silenteye",
+      "fuentes_consultadas": [
+        "https://github.com/achorein/silenteye"
+      ],
+      "id": "silenteye",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "SilentEye",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Pruebas de comportamiento con medios sintéticos.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "21.a53a7ff"
+    },
+    {
+      "advertencia": "Repositorio GitHub archivado; mantenimiento abandonado.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Herramienta histórica para pruebas controladas de recuperación de datos protegidos en archivos esteganográficos.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "ARCHIVADO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/Paradoxis/StegCracker/tags",
+      "fuente_proyecto": "https://github.com/Paradoxis/StegCracker",
+      "fuentes_consultadas": [
+        "https://github.com/Paradoxis/StegCracker"
+      ],
+      "id": "stegcracker",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "StegCracker",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Referencia de laboratorio, no recomendación para nuevas integraciones.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "2.1.0"
+    },
+    {
+      "advertencia": "Código antiguo; validar formato y exactitud antes de concluir resultados.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Detección heurística de ciertos formatos de contenido oculto en imágenes.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/redNixon/stegdetect",
+      "fuente_proyecto": "https://github.com/redNixon/stegdetect",
+      "fuentes_consultadas": [
+        "https://github.com/redNixon/stegdetect"
+      ],
+      "id": "stegdetect",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "stegdetect",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Análisis comparativo con imágenes de prueba.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "20.28a4f07"
+    },
+    {
+      "advertencia": "Procedencia pública verificada, mantenimiento y compatibilidad no confirmados.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Herramienta de experimentación esteganográfica.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "HISTORICO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/razc411/StegoLeggo",
+      "fuente_proyecto": "https://github.com/razc411/StegoLeggo",
+      "fuentes_consultadas": [
+        "https://github.com/razc411/StegoLeggo"
+      ],
+      "id": "stegolego",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "StegoLeggo",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Casos educativos controlados de comparación de medios.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "8.85354f6"
+    },
+    {
+      "advertencia": "No utilizar sobre archivos ajenos ni datos privados.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Herramienta de laboratorio para análisis de medios creados con steghide.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/RickdeJager/stegseek",
+      "fuente_proyecto": "https://github.com/RickdeJager/stegseek",
+      "fuentes_consultadas": [
+        "https://github.com/RickdeJager/stegseek"
+      ],
+      "id": "stegseek",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Stegseek",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Pruebas autorizadas sobre fixtures sintéticos propios.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "v0.6.r10.g5896978"
+    },
+    {
+      "advertencia": "Últimas publicaciones son antiguas; compatibilidad con Python actual no confirmada.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Proyecto Python histórico de esteganografía de imágenes, disponible como paquete en PyPI.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "LEGADO",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "http://domnit.org/stepic/doc/",
+      "fuente_proyecto": "https://pypi.org/project/stepic/",
+      "fuentes_consultadas": [
+        "https://pypi.org/project/stepic/"
+      ],
+      "id": "stepic",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "Stepic",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Referencia de pruebas de compatibilidad con formatos antiguos.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "0.4"
+    },
+    {
+      "advertencia": "Fuente oficial identificada mediante un origen distinto del enlace caído del catálogo antiguo.",
+      "categoria_atlas": "esteganografia",
+      "categoria_origen": "grupo-stego",
+      "descripcion": "Detección de datos ocultos en archivos PNG y BMP.",
+      "estado_fuente": "FUENTE_EXTERNA_COMPROBADA",
+      "estado_mantenimiento": "EVALUACION",
+      "estado_operativo_evol": "NO_APROBADA_PARA_INSTALACION",
+      "fuente_historica": "https://github.com/zedxff/zsteg",
+      "fuente_proyecto": "https://github.com/zed-0xff/zsteg",
+      "fuentes_consultadas": [
+        "https://github.com/zed-0xff/zsteg"
+      ],
+      "id": "zsteg",
+      "instalado_en_host": null,
+      "no_incluye_codigo_ni_ejecutables": true,
+      "nombre": "zsteg",
+      "probado_en_cachyos": false,
+      "proveniencia": {
+        "dataset": "auditoria-documental-v2.3.2.zip:_src/tools.json",
+        "sha256_dataset": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+      },
+      "schema": "evol-tool-atlas/tool/2",
+      "uso_evol_propuesto": "Validar imágenes sintéticas y los resultados de un pipeline de medios.",
+      "validaciones_pendientes": [
+        "Revisión de licencia específica y dependencias",
+        "Prueba local segura en CachyOS",
+        "Aprobación del propietario para instalación"
+      ],
+      "verificacion_fecha": "2026-11-22",
+      "version_actual": "NO_COMPROBADA",
+      "version_historica": "v0.2.14.r0.gb75b578"
+    }
+  ],
+  "nombre": "Esteganografía y análisis de imágenes",
+  "numero": 15,
+  "originales": 11,
+  "schema": "evol-tool-atlas/category-validation/2",
+  "sha256_tools_json": "23a0c69f213370c577602fdc13b68756d2c9e54f3b8e8faec87deed5ca0ab99c"
+}

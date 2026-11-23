@@ -1,0 +1,492 @@
+{
+  "admitidas": 53,
+  "admitidas_detalle": [
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://anontwi.sourceforge.net/",
+      "id": "anontwi",
+      "nombre": "anontwi",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-anontwi-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/thewickedkarma/blackeye-im",
+      "id": "blackeye",
+      "nombre": "blackeye",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-blackeye-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/sham00n/buster",
+      "id": "buster",
+      "nombre": "buster",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-buster-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/itsmehacker/CardPwn",
+      "id": "cardpwn",
+      "nombre": "cardpwn",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-cardpwn-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ring0lab/catphish",
+      "id": "catphish",
+      "nombre": "catphish",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-catphish-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/emsec/ChameleonMini",
+      "id": "chameleonmini",
+      "nombre": "chameleonmini",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-chameleonmini-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ustayready/CredSniper",
+      "id": "credsniper",
+      "nombre": "credsniper",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-credsniper-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/m8sec/CrossLinked",
+      "id": "crosslinked",
+      "nombre": "crosslinked",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-crosslinked-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/martinvigo/email2phonenumber",
+      "id": "email2phonenumber",
+      "nombre": "email2phonenumber",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-email2phonenumber-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/tomoneill19/facebookOSINT",
+      "id": "facebookosint",
+      "nombre": "facebookosint",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-facebookosint-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/PowerScript/facebrok",
+      "id": "facebrok",
+      "nombre": "facebrok",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-facebrok-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/FluxionNetwork/fluxion",
+      "id": "fluxion",
+      "nombre": "fluxion",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-fluxion-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ahayder/Genisys",
+      "id": "genisys",
+      "nombre": "genisys",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-genisys-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://codeberg.org/nanoory/gg_images",
+      "id": "gg-images",
+      "nombre": "gg-images",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-gg-images-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/KINGSABRI/goCabrito",
+      "id": "gocabrito",
+      "nombre": "gocabrito",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-gocabrito-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/gophish/gophish",
+      "id": "gophish",
+      "nombre": "gophish",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-gophish-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ytisf/hemingway",
+      "id": "hemingway",
+      "nombre": "hemingway",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-hemingway-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/megadose/holehe",
+      "id": "holehe",
+      "nombre": "holehe",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-holehe-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/sc1341/InstagramOSINT",
+      "id": "instagramosint",
+      "nombre": "instagramosint",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-instagramosint-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/initstring/linkedin2username",
+      "id": "linkedin2username",
+      "nombre": "linkedin2username",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-linkedin2username-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/vysecurity/LinkedInt",
+      "id": "linkedint",
+      "nombre": "linkedint",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-linkedint-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/soxoj/maigret",
+      "id": "maigret",
+      "nombre": "maigret",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-maigret-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/sharsil/mailcat",
+      "id": "mailcat",
+      "nombre": "mailcat",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-mailcat-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/muraenateam/muraena",
+      "id": "muraena",
+      "nombre": "muraena",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-muraena-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/thewhiteh4t/nexfil",
+      "id": "nexfil",
+      "nombre": "nexfil",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-nexfil-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/th3unkn0n/osi.ig",
+      "id": "osi.ig",
+      "nombre": "osi.ig",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-osi.ig-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/woj-ciech/pepe",
+      "id": "pepe",
+      "nombre": "pepe",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-pepe-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Dionach/PhEmail",
+      "id": "phemail",
+      "nombre": "phemail",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-phemail-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/t4d/PhishingKitHunter",
+      "id": "phishingkithunter",
+      "nombre": "phishingkithunter",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-phishingkithunter-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/sundowndev/PhoneInfoga",
+      "id": "phoneinfoga",
+      "nombre": "phoneinfoga",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-phoneinfoga-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/OWASP/QRLJacking",
+      "id": "qrljacker",
+      "nombre": "qrljacker",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-qrljacker-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/0x09AL/raven",
+      "id": "raven",
+      "nombre": "raven",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-raven-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/mandiant/ReelPhish",
+      "id": "reelphish",
+      "nombre": "reelphish",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-reelphish-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/thewhiteh4t/seeker",
+      "id": "seeker",
+      "nombre": "seeker",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-seeker-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/trustedsec/social-engineer-toolkit",
+      "id": "set",
+      "nombre": "set",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-set-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/sherlock-project/sherlock",
+      "id": "sherlock",
+      "nombre": "sherlock",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-sherlock-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/lunarca/SimpleEmailSpoofer",
+      "id": "simpleemailspoofer",
+      "nombre": "simpleemailspoofer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-simpleemailspoofer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/84KaliPleXon3/skiptracer",
+      "id": "skiptracer",
+      "nombre": "skiptracer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-skiptracer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/emtunc/SlackPirate",
+      "id": "slackpirate",
+      "nombre": "slackpirate",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-slackpirate-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://pypi.org/project/social-analyzer/",
+      "id": "social-analyzer",
+      "nombre": "social-analyzer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-social-analyzer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Greenwolf/social_mapper",
+      "id": "social-mapper",
+      "nombre": "social-mapper",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-social-mapper-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/Betawolf/social-vuln-scanner",
+      "id": "social-vuln-scanner",
+      "nombre": "social-vuln-scanner",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-social-vuln-scanner-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/UndeadSec/SocialFish",
+      "id": "socialfish",
+      "nombre": "socialfish",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-socialfish-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/MrTuxx/SocialPwned",
+      "id": "socialpwned",
+      "nombre": "socialpwned",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-socialpwned-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/tatanus/SPF",
+      "id": "spf",
+      "nombre": "spf",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-spf-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/jofpin/trape",
+      "id": "trape",
+      "nombre": "trape",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-trape-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/x0rz/tweets_analyzer",
+      "id": "tweets-analyzer",
+      "nombre": "tweets-analyzer",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-tweets-analyzer-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/twintproject/twint",
+      "id": "twint",
+      "nombre": "twint",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-twint-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/harismuneer/Ultimate-Social-Scrapers",
+      "id": "ultimate-facebook-scraper",
+      "nombre": "ultimate-facebook-scraper",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-ultimate-facebook-scraper-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/kaifcodec/user-scanner",
+      "id": "user-scanner",
+      "nombre": "user-scanner",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-user-scanner-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/lucmski/userrecon-py",
+      "id": "userrecon-py",
+      "nombre": "userrecon-py",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-userrecon-py-v1.zip"
+    },
+    {
+      "estado_vigencia": "DOCUMENTADA_NO_VERIFICADA_EN_CACHYOS",
+      "evidencia": "EXPEDIENTE_URL_VERIFICADA_2026-11-21",
+      "fuente": "https://github.com/ekultek/whatbreach",
+      "id": "whatbreach",
+      "nombre": "whatbreach",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-whatbreach-v1.zip"
+    },
+    {
+      "estado_vigencia": "HISTORICA_NO_RECOMENDADA",
+      "evidencia": "REVALIDADA_WEB_2026-11-22",
+      "fuente": "https://github.com/WebBreacher/WhatsMyName",
+      "id": "whatsmyname",
+      "nombre": "whatsmyname",
+      "zip_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-whatsmyname-v1.zip"
+    }
+  ],
+  "categoria": "Ingeniería social y OSINT",
+  "categoria_original": "grupo-social",
+  "excluidas": 8,
+  "excluidas_detalle": [
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "facebash",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/thelinuxchoice/facebash"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "fbi",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/xHak9x/fbi"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "hiddeneye",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/DarkSecDevelopers/HiddenEye"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "hiddeneye-legacy",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/DarkSecDevelopers/HiddenEye-Legacy"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "phonia",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/entynetproject/phonia"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "sees",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/galkan/sees/"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "token-hunter",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/GitLab-Red-Team/token-hunter"
+    },
+    {
+      "estado_origen": "NO_DISPONIBLE",
+      "id": "weeman",
+      "motivo": "GitHub responde 404: repositorio eliminado o privado",
+      "url_original": "https://github.com/Hypsurus/weeman"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_revalidadas_hoy": 2,
+  "fuentes_solo_expediente": 51,
+  "limitacion": "No se hizo verificación de red individual de cada entrada. Las entradas del expediente provienen del sondeo de 2026-11-21 y no acreditan mantenimiento, licencia, seguridad ni funcionamiento en CachyOS.",
+  "numero": 34,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "total_origen": 61,
+  "verificacion_del_expediente": "2026-11-21",
+  "vinculo_a_expediente": "Herramientas con URL upstream u oficial verificadas; enlaces rotos, archivo histórico e identidad no verificable excluidos; Python2 duplicado y SDK Tools obsoleto excluidos."
+}

@@ -1,0 +1,3 @@
+eec45a53bd5abd9d9a3542ea5540a5f455f3b534bf9525748ceeb028c314e158  02-catalogo/seguridad/catalogo/microsploit/README.md
+95639dff8c7b9c4af1bb3d4fefc7800a23e5aa06a78390c08d4ddc37a4c7f034  02-catalogo/seguridad/catalogo/microsploit/index.html
+bbd41781a36b2cd41bb7e53b8637f86ed3f9dabd3f812bd51d1178fee8224a2d  02-catalogo/seguridad/catalogo/microsploit/metadata.json

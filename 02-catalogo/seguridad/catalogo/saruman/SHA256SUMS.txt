@@ -1,0 +1,3 @@
+98a7f63a037d83885234379eda69bd5953e719d09d7bba806219122e8d02d5a2  02-catalogo/seguridad/catalogo/saruman/README.md
+34a98246ccaaa9dad57512beea961a6cbb22980b35f3c5c8a2427a61543d1d83  02-catalogo/seguridad/catalogo/saruman/index.html
+7484f121c51b843df9a8e4deeccd25932e445b6cb341e212fa7356b640e7d6db  02-catalogo/seguridad/catalogo/saruman/metadata.json

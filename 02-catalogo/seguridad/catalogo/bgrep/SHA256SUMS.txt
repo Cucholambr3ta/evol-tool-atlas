@@ -1,0 +1,3 @@
+260aa9a8e6edda412cef2ffc6e639f979a85aac850f33de75b49a64e6d55b9d3  02-catalogo/seguridad/catalogo/bgrep/README.md
+859d71d2934689a5e83fca5ec37566d02530cb03df1eaa66d37574085efd8595  02-catalogo/seguridad/catalogo/bgrep/index.html
+21bacb718837c7e4ef8b773e302a7e9b56eaa5ce8601762fae1056a9ef67e46e  02-catalogo/seguridad/catalogo/bgrep/metadata.json

@@ -1,0 +1,27 @@
+{
+  "advertencia": "Se verificó el proyecto y su código, no la compatibilidad con lectores NFC del equipo ni una publicación reciente. La actividad conocida es antigua.",
+  "registro_origen": {
+    "categoria": "grupo-nfc",
+    "fuente_historica": "https://github.com/nfc-tools/nfcutils",
+    "name": "nfcutils",
+    "sha256_registro_fuente": "7db06915cbc10bf5ca04ffcf4d4035eaafabe0756ae862072c86007b947204c9",
+    "version_historica": "61.49aa178"
+  },
+  "categoria_atlas": "nfc",
+  "detalle_verificacion": "REPOSITORIO_OFICIAL_IDENTIFICADO_HISTORICO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_HEREDADA",
+  "estado_mantenimiento": "Proyecto histórico; no consta mantenimiento actual",
+  "fuente_distribucion_comprobada": "https://github.com/nfc-tools/nfcutils",
+  "fuente_proyecto": "https://github.com/nfc-tools/nfcutils",
+  "fuentes_consultadas": [
+    "https://nfc-tools.github.io/projects/nfcutils/",
+    "https://github.com/nfc-tools/nfcutils"
+  ],
+  "id": "nfcutils",
+  "instalado_en_host": null,
+  "nombre": "nfcutils",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

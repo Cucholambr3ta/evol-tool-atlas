@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "scanner",
+  "categoria_origen": "grupo-scanner",
+  "descripcion_original_catalogo": "A fast port scanner written in go with focus on reliability and simplicity.",
+  "distribucion_actual": "REPOSITORIO_IDENTIFICADO_SIN_VERIFICACION_DE_INSTALACION",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_WEB_CONTRASTADA_2026-11-22",
+  "evidencia_nota": "ProjectDiscovery; repositorio oficial",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/projectdiscovery/naabu",
+  "fuente_proyecto": "https://github.com/projectdiscovery/naabu",
+  "id": "naabu",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "naabu",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "v2.6.1.r143.g6f69a8b"
+}

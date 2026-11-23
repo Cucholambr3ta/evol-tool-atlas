@@ -1,0 +1,452 @@
+{
+  "categoria": "Windows",
+  "categoria_carpeta": "windows",
+  "entradas_originales": 158,
+  "excluidas": 61,
+  "exclusion": [
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "atstaketools",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/50718/AtStakeTools.zip.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "browselist",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://vidstromlabs.com/browselist/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "brutus",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hoobie.net/brutus/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "cachedump",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://packetstormsecurity.com/files/36781/cachedump.1.zip.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "chrome-decode",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/119153/Chrome-Web-Browser-Decoder.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "dark-dork-searcher",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://rafale.org/~mattoufoutu/darkc0de.com/c0de/c/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "dumpacl",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.systemtools.com/cgi-bin/download.pl?DumpAcl"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "eraser",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://eraser.heidi.ie/download/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "etherflood",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://ntsecurity.nu/toolbox/etherflood/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "filefuzz",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.fuzzing.org/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "fport",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.foundstone.com/us/resources/proddesc/fport.htm"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "fuzztalk",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/p/fuzztalk"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "grabitall",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://ntsecurity.nu/toolbox/grabitall/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "gtalk-decode",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/119154/Google-Talk-Decoder.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "handle",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.tarasco.org/security/handle/index.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "hookanalyser",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://hookanalyser.blogspot.de/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "httprecon",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.computec.ch/projekte/httprecon/?s=download"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "httprint-win32",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://net-square.com/httprint"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "intercepter-ng",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://sniff.su/download.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "justdecompile",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/telerik/JustDecompileEngine/releases"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "kerbcrack",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/kerbcrack/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "klogger",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/klogger/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "malwareanalyser",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://malwareanalyser.blogspot.de/2011/10/malware-analyser.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "mbenum",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.cqure.net/wp/mbenum/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "memimager",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/memimager/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "mingsweeper",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hoobie.net/mingsweeper/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "msvpwn",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://bitbucket.org/mrabault/msvpwn"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "nbname",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.cultdeadcow.com/tools/bo.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Fuente bloqueada o dominio no apto para recomendación",
+      "nombre": "nbtenum",
+      "tipo_fuente": "BLOQUEADO",
+      "url_original": "http://reedarvin.thearvins.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "netbus",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://packetstormsecurity.com/files/10320/nb16_p04.zip.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "nishang",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "https://code.google.com/p/nishang/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "ntds-decode",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://packetstormsecurity.com/files/121543/NTDS-Hash-Decoder.b.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pafish",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hoobie.net/pafish/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "pextractor",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/62977/PExtractor_v0.18b_binary_and_src.rar.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "php-vulnerability-hunter",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://phpvulnhunter.codeplex.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pmap",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hellfiresecurity.com/tools.htm"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "powerops",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://github.com/fdiskyou/PowerOPS"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "pstoreview",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://vidstromlabs.com/freetools/pstoreview/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "pwdump",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.tarasco.org/security/pwdump_7/index.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "regreport",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://www.gaijin.at/dlregreport.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "regview",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://www.gaijin.at/en/dlregview.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "resourcehacker",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.angusj.com/resourcehacker/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "rpak",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://ntsecurity.nu/toolbox/promisdetect/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "rpctools",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://packetstormsecurity.com/files/31879/rpctools.0.zip.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "sipscan",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.hackingvoip.com/sec_tools.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "skype-dump",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://packetstormsecurity.com/files/119155/Skype-Hash-Dumper.0.html"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Solo referencia archivada; no acredita distribución vigente",
+      "nombre": "smbrelay",
+      "tipo_fuente": "ARCHIVO_HISTORICO_VERIFICADO",
+      "url_original": "http://www.tarasco.org/security/smbrelay/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "snitch",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/snitch/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "snowman",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://derevenets.com/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "snscan",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.mcafee.com/uk/downloads/free-tools/snscan.aspx"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "spade",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hoobie.net/brutus/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "sqldict",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/sqldict/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No satisface el umbral de procedencia para publicación",
+      "nombre": "sqlpowerinjector",
+      "tipo_fuente": "OFICIAL_VERIFICADO",
+      "url_original": "http://www.sqlpowerinjector.com/download.htm"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "streamfinder",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "https://www.gaijin.at/en/dlstreamfind.php"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "sub7",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "https://dl.packetstormsecurity.net/trojans/Subseven.2.2.zip"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "superscan",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.foundstone.com/us/resources/proddesc/superscan.htm"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "unsecure",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://www.sniperx.net/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "wce",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.hoobie.net/wce/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "winrelay",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/winrelay/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "No se pudo corroborar la identidad del proyecto",
+      "nombre": "wups",
+      "tipo_fuente": "IDENTIDAD_NO_VERIFICADA",
+      "url_original": "http://ntsecurity.nu/toolbox/wups/"
+    },
+    {
+      "evidencia_fecha": "2026-11-21",
+      "motivo": "Dirección inaccesible según expediente; falta distribución confiable",
+      "nombre": "x-scan",
+      "tipo_fuente": "NO_DISPONIBLE",
+      "url_original": "http://www.xfocus.org/"
+    }
+  ],
+  "fecha_revision": "2026-11-22",
+  "fuentes_con_evidencia_solo_expediente_2026_11_21": 95,
+  "fuentes_web_revisadas": [
+    "lolbas",
+    "mimikatz"
+  ],
+  "fuentes_web_verificadas_2026_11_22": 2,
+  "id_grupo_origen": "grupo-windows",
+  "incluidas_documentales": 97,
+  "limites": [
+    "Los enlaces no revisados hoy conservan solo comprobación del expediente 21-11-2026.",
+    "No se ha comprobado distribución actual, integridad criptográfica del software, licencia ni mantenimiento individual de todas las herramientas.",
+    "No se han probado ni instalado herramientas en CachyOS.",
+    "No hay instrucciones de ejecución o explotación en las fichas."
+  ],
+  "numero": 43,
+  "regla_inclusion": "Enlace HTTPS upstream/oficial con identidad de proyecto identificada en el expediente y estado navegable; correcciones explícitas para fuentes contrastadas hoy."
+}

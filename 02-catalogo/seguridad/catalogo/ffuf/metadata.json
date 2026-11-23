@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "webapp",
+  "categoria_origen": "grupo-webapp",
+  "descripcion_original_catalogo": "Fast web fuzzer written in Go.",
+  "distribucion_actual": "REPOSITORIO_IDENTIFICADO_SIN_VERIFICACION_DE_INSTALACION",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_WEB_CONTRASTADA_2026-11-22",
+  "evidencia_nota": "Repositorio upstream oficial",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/ffuf/ffuf",
+  "fuente_proyecto": "https://github.com/ffuf/ffuf",
+  "id": "ffuf",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "ffuf",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "v2.3.0.r7.g8d65e03"
+}

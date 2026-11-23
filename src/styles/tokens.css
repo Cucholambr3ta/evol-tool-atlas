@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("../assets/fonts/manrope.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("../assets/fonts/atkinsonhyperlegible.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* Official 14-minimal-line-art Light tokens */
+  --evol-canvas: #f6f3ed;
+  --evol-surface: #fffdf7;
+  --evol-text: #30383c;
+  --evol-muted: #4d4b48;
+  --evol-accent: #365568;
+  --evol-on-accent: #ffffff;
+  --evol-border: #9b8793;
+
+  /* Official foundations tokens */
+  --evol-font-display: "Manrope", sans-serif;
+  --evol-font-body: "Atkinson Hyperlegible", sans-serif;
+  --evol-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --evol-body-size: 14px;
+  --evol-radius-window: 14px;
+  --evol-radius-control: 10px;
+  --evol-border-width: 1px;
+  --evol-focus-width: 3px;
+  --evol-focus-offset: 3px;
+  --evol-motion-enter: 200ms;
+
+  /* Derived perceptual surfaces built strictly from official tokens */
+  --evol-surface-subtle: color-mix(in srgb, var(--evol-canvas) 78%, var(--evol-border) 22%);
+  --evol-border-soft: color-mix(in srgb, var(--evol-border) 48%, transparent);
+  --evol-accent-tint: color-mix(in srgb, var(--evol-accent) 11%, var(--evol-surface) 89%);
+  --evol-accent-hover: color-mix(in srgb, var(--evol-accent) 88%, var(--evol-text) 12%);
+  --evol-backdrop: color-mix(in srgb, var(--evol-text) 42%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --evol-canvas: #191b1e;
+    --evol-surface: #27292d;
+    --evol-text: #faf8f0;
+    --evol-muted: #ccc9c1;
+    --evol-accent: #f6f3ed;
+    --evol-on-accent: #30383c;
+    --evol-border: #a98a9f;
+    --evol-surface-subtle: color-mix(in srgb, var(--evol-surface) 84%, var(--evol-canvas) 16%);
+    --evol-border-soft: color-mix(in srgb, var(--evol-border) 45%, transparent);
+    --evol-accent-tint: color-mix(in srgb, var(--evol-accent) 12%, var(--evol-surface) 88%);
+    --evol-accent-hover: color-mix(in srgb, var(--evol-accent) 88%, var(--evol-muted) 12%);
+    --evol-backdrop: color-mix(in srgb, var(--evol-canvas) 72%, transparent);
+  }
+}
+
+:root[data-theme="dark"] {
+  --evol-canvas: #191b1e;
+  --evol-surface: #27292d;
+  --evol-text: #faf8f0;
+  --evol-muted: #ccc9c1;
+  --evol-accent: #f6f3ed;
+  --evol-on-accent: #30383c;
+  --evol-border: #a98a9f;
+  --evol-surface-subtle: color-mix(in srgb, var(--evol-surface) 84%, var(--evol-canvas) 16%);
+  --evol-border-soft: color-mix(in srgb, var(--evol-border) 45%, transparent);
+  --evol-accent-tint: color-mix(in srgb, var(--evol-accent) 12%, var(--evol-surface) 88%);
+  --evol-accent-hover: color-mix(in srgb, var(--evol-accent) 88%, var(--evol-muted) 12%);
+  --evol-backdrop: color-mix(in srgb, var(--evol-canvas) 72%, transparent);
+}
+
+:root[data-theme="light"] {
+  --evol-canvas: #f6f3ed;
+  --evol-surface: #fffdf7;
+  --evol-text: #30383c;
+  --evol-muted: #4d4b48;
+  --evol-accent: #365568;
+  --evol-on-accent: #ffffff;
+  --evol-border: #9b8793;
+  --evol-surface-subtle: color-mix(in srgb, var(--evol-canvas) 78%, var(--evol-border) 22%);
+  --evol-border-soft: color-mix(in srgb, var(--evol-border) 48%, transparent);
+  --evol-accent-tint: color-mix(in srgb, var(--evol-accent) 11%, var(--evol-surface) 89%);
+  --evol-accent-hover: color-mix(in srgb, var(--evol-accent) 88%, var(--evol-text) 12%);
+  --evol-backdrop: color-mix(in srgb, var(--evol-text) 42%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --evol-motion-enter: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  font-size: var(--evol-body-size);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--evol-canvas);
+  color: var(--evol-text);
+  font-family: var(--evol-font-body);
+  font-size: var(--evol-body-size);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--evol-font-display);
+  color: var(--evol-text);
+  margin: 0;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--evol-accent);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: var(--evol-focus-width) solid var(--evol-accent);
+  outline-offset: var(--evol-focus-offset);
+}
+
+code,
+pre,
+.mono {
+  font-family: var(--evol-font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  background: var(--evol-surface-subtle);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  background: var(--evol-accent);
+  color: var(--evol-on-accent);
+  padding: 10px 16px;
+  border-radius: var(--evol-radius-control);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top var(--evol-motion-enter) ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}

@@ -1,0 +1,3 @@
+f7cffb453e1f0a55371224273abdbe4caf58f4058d106c2b50a7b48bb3428a38  02-catalogo/seguridad/catalogo/cnamulator/README.md
+a0c052dfaa619cc78521b8f8df50d801c46e0ca8346292150578fa32672d431f  02-catalogo/seguridad/catalogo/cnamulator/index.html
+aaece0be47a614f1eafd84a7da09f46727a0ef5c2b3b9a3c2c7cbed1e918a08b  02-catalogo/seguridad/catalogo/cnamulator/metadata.json

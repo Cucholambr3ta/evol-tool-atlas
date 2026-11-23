@@ -1,0 +1,3 @@
+f00526470b3687c25ae029a5d3f2237c9948b0a522daa297f2ebd3579b050875  02-catalogo/seguridad/catalogo/elfparser/README.md
+e29b4b022f1593e7ee2dbb13b305364fabef7cdd32b11df3c8f98d6be5212b0d  02-catalogo/seguridad/catalogo/elfparser/index.html
+06466feb3141e55b519c2a77dccaa262db26e3770b97cc2754d631a516e7f539  02-catalogo/seguridad/catalogo/elfparser/metadata.json

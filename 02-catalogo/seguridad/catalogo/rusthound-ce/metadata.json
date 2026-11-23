@@ -1,0 +1,23 @@
+{
+  "categoria_atlas": "reconocimiento",
+  "categoria_origen": "grupo-recon",
+  "descripcion_original_catalogo": "Active Directory data collector for BloodHound community edition (v5).",
+  "distribucion_actual": "NO_VERIFICADA_INDIVIDUALMENTE",
+  "estado_operativo_evol": "FICHA_DOCUMENTAL_SIN_INSTALACION",
+  "evidencia_fuente": "FUENTE_COMPROBADA_SOLO_EN_EXPEDIENTE_2026-11-21",
+  "evidencia_nota": "Procedencia reflejada en expediente v2.3.2, no revalidada públicamente en esta entrega",
+  "evidencia_tipo_expediente": "REPOSITORIO_UPSTREAM_VERIFICADO",
+  "fecha_revision_documental": "2026-11-22",
+  "fecha_verificacion_expediente": "2026-11-21",
+  "fuente_corpus": "auditoria-documental-v2.3.2.zip",
+  "fuente_historica": "https://github.com/g0h4n/RustHound-CE",
+  "fuente_proyecto": "https://github.com/g0h4n/RustHound-CE",
+  "id": "rusthound-ce",
+  "instalado_en_cachyos": null,
+  "licencia": "NO_VERIFICADA",
+  "mantenimiento_actual": "NO_DETERMINADO",
+  "nombre": "rusthound-ce",
+  "probado_en_cachyos": false,
+  "restriccion": "Uso exclusivo en sistemas propios, con permiso o en laboratorio aislado",
+  "version_historica": "v2.5.30.r0.gbaa7285"
+}

@@ -1,0 +1,26 @@
+{
+  "advertencia": "Su ejecución puede revelar credenciales e información privada. La ficha es solo documentación de investigación; no incluye instrucciones de despliegue ni herramientas de vigilancia.",
+  "registro_origen": {
+    "categoria": "grupo-keylogger",
+    "fuente_historica": "https://github.com/kernc/logkeys",
+    "name": "logkeys",
+    "sha256_registro_fuente": "0cfa3d2fba46171e8514c5ce3ebfecd74d771e2e63f56ac7a40fc471314e6fb8",
+    "version_historica": "97.98aac72"
+  },
+  "categoria_atlas": "keylogger",
+  "detalle_verificacion": "REPOSITORIO_ORIGINAL_IDENTIFICADO",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA_RESTRINGIDA",
+  "estado_mantenimiento": "Estado de mantenimiento/compatibilidad no comprobado",
+  "fuente_distribucion_comprobada": "https://github.com/kernc/logkeys",
+  "fuente_proyecto": "https://github.com/kernc/logkeys",
+  "fuentes_consultadas": [
+    "https://github.com/kernc/logkeys"
+  ],
+  "id": "logkeys",
+  "instalado_en_host": null,
+  "nombre": "logkeys",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

@@ -1,0 +1,3 @@
+a2228896b495e38cb6f27526967d783718b85beda60e2ec8031e3fd8db1c9107  02-catalogo/seguridad/catalogo/bagbak/README.md
+da42305bcc7d6eac0ed23e62f988a3ad15017cee9e90b9988b1d1f1b44b528d9  02-catalogo/seguridad/catalogo/bagbak/index.html
+4b26f2d86019eb128567ce71821e8586e1cda6b46603a1155247c74e452791ff  02-catalogo/seguridad/catalogo/bagbak/metadata.json

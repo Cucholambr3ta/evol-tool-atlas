@@ -1,0 +1,226 @@
+{
+  "admitidas": 17,
+  "categoria": "DoS y pruebas de carga",
+  "estado_verificacion": "FUENTES_CONTRASTADAS_SIN_INSTALACION",
+  "excluidas": 10,
+  "exclusiones": [
+    {
+      "id": "42zip",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin respuesta HTTP (conexion_cortada): posible indisponibilidad temporal",
+      "url_historica": "http://blog.fefe.de/?ts=b6cea88d"
+    },
+    {
+      "id": "davoset",
+      "razon": "Sitio histórico; código o distribución vigente no confirmados.",
+      "url_historica": "http://websecurity.com.ua/davoset/"
+    },
+    {
+      "id": "dnsdrdos",
+      "razon": "Página genérica de múltiples herramientas; no hay enlace primario individual comprobado.",
+      "url_historica": "http://nullsecurity.net/tools/dos.html"
+    },
+    {
+      "id": "iaxflood",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 200, pero el contenido no identifica la herramienta",
+      "url_historica": "https://www.hackingexposedvoip.com/"
+    },
+    {
+      "id": "nkiller2",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 301 sin contenido verificable",
+      "url_historica": "http://sock-raw.org/projects.html"
+    },
+    {
+      "id": "shitflood",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: GitHub responde 404: repositorio eliminado o privado",
+      "url_historica": "https://github.com/acidvegas/shitflood"
+    },
+    {
+      "id": "slowloris",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "url_historica": "http://ha.ckers.org/slowloris/"
+    },
+    {
+      "id": "synflood",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: el dominio no resuelve (DNS): retirado o inexistente",
+      "url_historica": "http://thesprawl.org/projects/syn-flooder/"
+    },
+    {
+      "id": "tcgetkey",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "url_historica": "http://packetstormsecurity.com/files/119146/tcgetkey.1.html"
+    },
+    {
+      "id": "thc-ssl-dos",
+      "razon": "El expediente no acredita un repositorio o distribución primaria vigente: HTTP 404: el recurso ya no existe en el servidor",
+      "url_historica": "http://www.thc.org/thc-ssl-dos/"
+    }
+  ],
+  "fecha": "2026-11-22",
+  "incluidas": [
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-blacknurse-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "blacknurse",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/blacknurse/index.html",
+      "url_fuente": "https://github.com/jedisct1/blacknurse"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-bonesi-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "bonesi",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/bonesi/index.html",
+      "url_fuente": "https://github.com/Markus-Go/bonesi"
+    },
+    {
+      "advertencia": "Ddosify fue renombrado Anteon; se conserva ID histórico para rastrear el cambio.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-ddosify-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "ddosify",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/ddosify/index.html",
+      "url_fuente": "https://github.com/getanteon/anteon"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-goldeneye-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "goldeneye",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/goldeneye/index.html",
+      "url_fuente": "https://github.com/jseidl/GoldenEye"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-hulk-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "hulk",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/hulk/index.html",
+      "url_fuente": "https://github.com/grafov/hulk"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-impulse-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "impulse",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/impulse/index.html",
+      "url_fuente": "https://github.com/LimerBoy/Impulse"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-inviteflood-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "inviteflood",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/inviteflood/index.html",
+      "url_fuente": "https://github.com/foreni-packages/inviteflood"
+    },
+    {
+      "advertencia": "Mausezahn forma parte del paquete oficial netsniff-ng.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-mausezahn-v1.zip",
+      "estado": "FUENTE_REVALIDADA_WEB",
+      "id": "mausezahn",
+      "nivel_evidencia": "NUEVA_FUENTE_CONTRASTADA",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/mausezahn/index.html",
+      "url_fuente": "https://github.com/netsniff-ng/netsniff-ng"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-network-app-stress-tester-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "network-app-stress-tester",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/network-app-stress-tester/index.html",
+      "url_fuente": "https://github.com/PherricOxide/Network-App-Stress-Tester"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-ntpdos-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "ntpdos",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/ntpdos/index.html",
+      "url_fuente": "https://github.com/sepehrdaddev/ntpdos"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-phpstress-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "phpstress",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/phpstress/index.html",
+      "url_fuente": "https://github.com/nightlionsec/phpstress"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-pwnloris-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "pwnloris",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/pwnloris/index.html",
+      "url_fuente": "https://github.com/h0ussni/pwnloris"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-slowloris-py-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "slowloris-py",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/slowloris-py/index.html",
+      "url_fuente": "https://github.com/gkbrk/slowloris"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-t50-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "t50",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/t50/index.html",
+      "url_fuente": "https://gitlab.com/fredericopissarra/t50"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-torshammer-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "torshammer",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/torshammer/index.html",
+      "url_fuente": "https://sourceforge.net/projects/torshammer/"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-ufonet-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "ufonet",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/ufonet/index.html",
+      "url_fuente": "https://github.com/epsylon/ufonet"
+    },
+    {
+      "advertencia": "Fuente enlazada en el corpus y verificada por su expediente de enlaces el 21-11-2026; mantenimiento actual no inferido.",
+      "archivo_individual": "EVOL-TOOL-ATLAS-HERRAMIENTA-wreckuests-v1.zip",
+      "estado": "FUENTE_DOCUMENTAL_IDENTIFICADA",
+      "id": "wreckuests",
+      "nivel_evidencia": "FUENTE_SNAPSHOT_2026-11-21",
+      "ruta_ficha": "02-catalogo/seguridad/catalogo/wreckuests/index.html",
+      "url_fuente": "https://github.com/abriginets/wreckuests"
+    }
+  ],
+  "limitaciones": [
+    "No validación funcional en CachyOS",
+    "No todas las fuentes fueron reconsultadas en vivo el mismo día",
+    "No verificación de licencias o firmas de binarios",
+    "No publicación de URLs excluidas como enlaces navegables"
+  ],
+  "metodologia": "Fuente histórica revisada al 2026-11-21 + corroboración independiente en fuentes seleccionadas al 2026-11-22; no se presume mantenimiento activo por repositorio público.",
+  "numero": 23,
+  "origen": "auditoria-documental-v2.3.2.zip",
+  "sha256_origen": "193faed51f41c2710ea91c01ba1845dd35be7a122023e53a0a70779e9ffb2a8e",
+  "slug": "dos",
+  "total_en_corpus": 27
+}

@@ -1,0 +1,3 @@
+82aba6b4b54fc434e3409972add2221d4e125927b8c7042ba502d7125132ad42  02-catalogo/seguridad/catalogo/gophish/README.md
+11d5163831deb828cb13dab742f6aa7baf688edc045f59d8f3fc7f11a2fda21c  02-catalogo/seguridad/catalogo/gophish/index.html
+0fdda851a567c15265924697ad08cc03a02554cfcda1011a89827f8a6e6edad6  02-catalogo/seguridad/catalogo/gophish/metadata.json

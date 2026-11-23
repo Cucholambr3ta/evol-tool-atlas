@@ -1,0 +1,27 @@
+{
+  "advertencia": "Minificar no equivale a validar la seguridad del código ni su procedencia. La existencia del proyecto no acredita que sea adecuado para un pipeline EVOL.",
+  "registro_origen": {
+    "categoria": "grupo-packer",
+    "fuente_historica": "https://noraj.github.io/vbsmin/",
+    "name": "vbsmin",
+    "sha256_registro_fuente": "a027f5799795efbd74688823d6a95b7176f2e503a0ed2ad994944cd3830b3486",
+    "version_historica": "v1.2.0.r34.gf907829"
+  },
+  "categoria_atlas": "packer",
+  "detalle_verificacion": "REPOSITORIO_Y_DOCUMENTACION_OFICIAL",
+  "estado": "FUENTE_PRIMARIA_VERIFICADA",
+  "estado_mantenimiento": "Versión reciente no comprobada",
+  "fuente_distribucion_comprobada": "https://github.com/noraj/vbsmin",
+  "fuente_proyecto": "https://github.com/noraj/vbsmin",
+  "fuentes_consultadas": [
+    "https://github.com/noraj/vbsmin",
+    "https://noraj.github.io/vbsmin/"
+  ],
+  "id": "vbsmin",
+  "instalado_en_host": null,
+  "nombre": "vbsmin",
+  "probado_en_cachyos": false,
+  "schema": "evol-tool-atlas/tool/1",
+  "sin_instrucciones_de_instalacion": true,
+  "verificacion_fecha": "2026-11-22"
+}

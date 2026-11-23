@@ -1,0 +1,3 @@
+924c4766f0667e7a8944d4fc0f57aa3a10f10b8361be453ee849a9374781f203  02-catalogo/seguridad/catalogo/dutas/README.md
+574503180c01bbe11addb385dd39cc74eeb9a9f2651800cc25d33e297d65b279  02-catalogo/seguridad/catalogo/dutas/index.html
+48fd0e4dcd71c374953f998b99ee4bf84157601d9526ef30b0f8de994bbc511a  02-catalogo/seguridad/catalogo/dutas/metadata.json

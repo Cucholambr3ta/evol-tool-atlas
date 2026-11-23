@@ -1,0 +1,3 @@
+c9b7492caa2b73274f7d8c66ab67080a140055dffc1bda1f903a65d16a382b7a  02-catalogo/seguridad/catalogo/social-analyzer/README.md
+201a1d54dcd6dacdb32be2a5e3373e1c6795235245e644680ba82463cb53fdd5  02-catalogo/seguridad/catalogo/social-analyzer/index.html
+26bb1eb0c448a4024743b602d0895173b6197204e513dd8988e627aa38e0400d  02-catalogo/seguridad/catalogo/social-analyzer/metadata.json

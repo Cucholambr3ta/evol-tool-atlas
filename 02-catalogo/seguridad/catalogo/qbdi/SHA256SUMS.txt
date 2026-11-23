@@ -1,0 +1,3 @@
+9c8f1b86f6b3d4b566e7586db5ffdfcc3ae3f360761af20825b2a24041aa0ae7  02-catalogo/seguridad/catalogo/qbdi/README.md
+e19041adee40a2d3034906a24a5acf968c9eab369e7899551576db17e4b4a0a7  02-catalogo/seguridad/catalogo/qbdi/index.html
+c03bdbbd31e1493b935e37a21e7936344e80fd0113a16359fa2059237ea0598b  02-catalogo/seguridad/catalogo/qbdi/metadata.json

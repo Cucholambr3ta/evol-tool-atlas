@@ -1,0 +1,634 @@
+{
+  "admitidas": [
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/skahwah/automato",
+      "id": "automato",
+      "nombre": "automato"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/redteamsecurity/AutoNessus",
+      "id": "autonessus",
+      "nombre": "autonessus"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/autopwn",
+      "id": "autopwn",
+      "nombre": "autopwn"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/Tib3rius/AutoRecon",
+      "id": "autorecon",
+      "nombre": "autorecon"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jordanpotti/AWSBucketDump",
+      "id": "awsbucketdump",
+      "nombre": "awsbucketdump"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Bashfuscator/Bashfuscator",
+      "id": "bashfuscator",
+      "nombre": "bashfuscator"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/R3nt0n/bopscrk",
+      "id": "bopscrk",
+      "nombre": "bopscrk"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/x90skysn3k/brutespray",
+      "id": "brutespray",
+      "nombre": "brutespray"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/1N3/BruteX",
+      "id": "brutex",
+      "nombre": "brutex"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/webpwnized/byepass",
+      "id": "byepass",
+      "nombre": "byepass"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/cisco-snmp-enumeration",
+      "id": "cisco-snmp-enumeration",
+      "nombre": "cisco-snmp-enumeration"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/hatRiot/clusterd",
+      "id": "clusterd",
+      "nombre": "clusterd"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/github/codeql",
+      "id": "codeql",
+      "nombre": "codeql"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/assetnote/commonspeak2",
+      "id": "commonspeak",
+      "nombre": "commonspeak"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/giteshnxtlvl/cook",
+      "id": "cook",
+      "nombre": "cook"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/byt3bl33d3r/DeathStar",
+      "id": "deathstar",
+      "nombre": "deathstar"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/R4yGM/dorkscout",
+      "id": "dorkscout",
+      "nombre": "dorkscout"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/screetsec/Dracnmap",
+      "id": "dracnmap",
+      "nombre": "dracnmap"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/0verl0ad/Dumb0",
+      "id": "dumb0",
+      "nombre": "dumb0"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/brav0hax/easy-creds",
+      "id": "easy-creds",
+      "nombre": "easy-creds"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/easyda",
+      "id": "easyda",
+      "nombre": "easyda"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jm33-m0/emp3r0r",
+      "id": "emp3r0r",
+      "nombre": "emp3r0r"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/BC-SECURITY/Empire",
+      "id": "empire",
+      "nombre": "empire"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/1N3/findsploit",
+      "id": "findsploit",
+      "nombre": "findsploit"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/OWASP/glue",
+      "id": "glue",
+      "nombre": "glue"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/vulsio/go-exploitdb",
+      "id": "go-exploitdb",
+      "nombre": "go-exploitdb"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/anarcoder/google_explorer",
+      "id": "google-explorer",
+      "nombre": "google-explorer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Te-k/harpoon",
+      "id": "harpoon",
+      "nombre": "harpoon"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/trustedsec/hate_crack",
+      "id": "hate-crack",
+      "nombre": "hate-crack"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/danielbohannon/Invoke-CradleCrafter",
+      "id": "invoke-cradlecrafter",
+      "nombre": "invoke-cradlecrafter"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/danielbohannon/Invoke-DOSfuscation",
+      "id": "invoke-dosfuscation",
+      "nombre": "invoke-dosfuscation"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/danielbohannon/Invoke-Obfuscation",
+      "id": "invoke-obfuscation",
+      "nombre": "invoke-obfuscation"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/offsecginger/koadic",
+      "id": "koadic",
+      "nombre": "koadic"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://sourceforge.net/projects/ldapscripts",
+      "id": "ldapscripts",
+      "nombre": "ldapscripts"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/portcullislabs/linikatz",
+      "id": "linikatz",
+      "nombre": "linikatz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/vk496/linset",
+      "id": "linset",
+      "nombre": "linset"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/initstring/lyricpass",
+      "id": "lyricpass",
+      "nombre": "lyricpass"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://hashcat.net/wiki/doku.php?id=maskprocessor",
+      "id": "maskprocessor",
+      "nombre": "maskprocessor"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/trevordavenport/MasscanAutomation",
+      "id": "masscan-automation",
+      "nombre": "masscan-automation"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/jm33-m0/massExpConsole",
+      "id": "massexpconsole",
+      "nombre": "massexpconsole"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/sc0tfree/mentalist",
+      "id": "mentalist",
+      "nombre": "mentalist"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Ne0nd0g/merlin",
+      "id": "merlin-server",
+      "nombre": "merlin-server"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/hahwul/metasploit-autopwn",
+      "id": "metasploit-autopwn",
+      "nombre": "metasploit-autopwn"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/g0tmi1k/mpc",
+      "id": "msf-mpc",
+      "nombre": "msf-mpc"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/wez3/msfenum",
+      "id": "msfenum",
+      "nombre": "msfenum"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://bitbucket.org/alone/mutator/",
+      "id": "mutator",
+      "nombre": "mutator"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/OWASP/Nettacker",
+      "id": "nettacker",
+      "nombre": "nettacker"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/bonsaiviking/NfSpy",
+      "id": "nfspy",
+      "nombre": "nfspy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/youngyangyang04/NoSQLAttack",
+      "id": "nosqlattack",
+      "nombre": "nosqlattack"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/lightos/Panoptic",
+      "id": "panoptic",
+      "nombre": "panoptic"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/D4Vinci/PasteJacker",
+      "id": "pastejacker",
+      "nombre": "pastejacker"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/isaudits/pasv-agrsv",
+      "id": "pasv-agrsv",
+      "nombre": "pasv-agrsv"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/x3omdax/PenBox",
+      "id": "penbox",
+      "nombre": "penbox"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/GreyDGL/PentestGPT",
+      "id": "pentestgpt",
+      "nombre": "pentestgpt"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/GinjaChris/pentmenu",
+      "id": "pentmenu",
+      "nombre": "pentmenu"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads",
+      "id": "pin",
+      "nombre": "pin"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/SpiderLabs/portia",
+      "id": "portia",
+      "nombre": "portia"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/n1nj4sec/pupy",
+      "id": "pupy",
+      "nombre": "pupy"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/CBHue/PyFuscation",
+      "id": "pyfuscation",
+      "nombre": "pyfuscation"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/secretsquirrel/recomposer",
+      "id": "recomposer",
+      "nombre": "recomposer"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/utkusen/rhodiola",
+      "id": "rhodiola",
+      "nombre": "rhodiola"
+    },
+    {
+      "evidencia_fuente": "FUENTE_CONTRASTADA_EN_ESTA_ENTREGA",
+      "fuente": "https://github.com/ComplianceAsCode/content",
+      "id": "scap-security-guide",
+      "nombre": "scap-security-guide"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://www.open-scap.org/tools/scap-workbench/",
+      "id": "scap-workbench",
+      "nombre": "scap-workbench"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ShutdownRepo/shellerator",
+      "id": "shellerator",
+      "nombre": "shellerator"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/4ndr34z/shells",
+      "id": "shellz",
+      "nombre": "shellz"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/1N3/Sn1per",
+      "id": "sn1per",
+      "nombre": "sn1per"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "Referencia externa retirada por política editorial",
+      "id": "sploitctl",
+      "nombre": "sploitctl"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/hlldz/SpookFlare",
+      "id": "spookflare",
+      "nombre": "spookflare"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://hashcat.net/wiki/doku.php?id=statsprocessor",
+      "id": "statsprocessor",
+      "nombre": "statsprocessor"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Screetsec/TheFatRat",
+      "id": "thefatrat",
+      "nombre": "thefatrat"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "Referencia externa retirada por política editorial",
+      "id": "torctl",
+      "nombre": "torctl"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/tp7309/TTPassGen",
+      "id": "ttpassgen",
+      "nombre": "ttpassgen"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/NextronSystems/valhallaAPI",
+      "id": "valhalla-api",
+      "nombre": "valhalla-api"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Veil-Framework/Veil",
+      "id": "veil",
+      "nombre": "veil"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/nccgroup/vlan-hopping",
+      "id": "vlan-hopping",
+      "nombre": "vlan-hopping"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/Mi-Al/WiFi-autopwner",
+      "id": "wifi-autopwner",
+      "nombre": "wifi-autopwner"
+    },
+    {
+      "evidencia_fuente": "FUENTE_COMPROBADA_EN_EXPEDIENTE_2026-11-21",
+      "fuente": "https://github.com/ThomasTJdev/WMD",
+      "id": "wmd",
+      "nombre": "wmd"
+    }
+  ],
+  "categoria": "Automatización",
+  "corpus_origen": "auditoria-documental-v2.3.2.zip",
+  "entradas_originales": 107,
+  "estado_de_comprobacion": "Sólo fuentes seleccionadas contrastadas públicamente; el resto se basa en evidencia fuente del 21-11-2026",
+  "excluidas": [
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "apt2"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "autonse"
+    },
+    {
+      "detalle_expediente": "certificado TLS inválido: no se puede confiar en el destino",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "blueranger"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "cewl"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "cheat-sh"
+    },
+    {
+      "detalle_expediente": "la API de sourceforge confirma el proyecto «crunch-wordlist»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "crunch"
+    },
+    {
+      "detalle_expediente": "un intersticial anti-bots impide comprobar el destino (packetstorm.news)",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "fstealer"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "gooscan"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "hackersh"
+    },
+    {
+      "detalle_expediente": "HTTP 200, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "havoc-c2"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "intersect"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "mitmap-old"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "nfsshell"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «nullscan»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "nullscan"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "octopwnweb"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "pureblood"
+    },
+    {
+      "detalle_expediente": "el dominio no resuelve (DNS): retirado o inexistente",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "rsmangler"
+    },
+    {
+      "detalle_expediente": "sin respuesta HTTP (timeout): posible indisponibilidad temporal",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "sakis3g"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "search1337"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "shellpop"
+    },
+    {
+      "detalle_expediente": "Google Code cerró; el archivo oficial conserva el proyecto «simple-ducky-payload-generator»",
+      "motivo": "Fuera del catálogo operativo: ARCHIVO_HISTORICO_VERIFICADO",
+      "nombre": "simple-ducky"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «sipvicious»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "sipvicious"
+    },
+    {
+      "detalle_expediente": "HTTP 206, pero el contenido no identifica la herramienta",
+      "motivo": "Fuera del catálogo operativo: IDENTIDAD_NO_VERIFICADA",
+      "nombre": "sn00p"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «tiger»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "tiger"
+    },
+    {
+      "detalle_expediente": "HTTP 404: el recurso ya no existe en el servidor",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "tlssled"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «unix-privesc-check»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "unix-privesc-check"
+    },
+    {
+      "detalle_expediente": "HTTP 200 y el contenido menciona «username-anarchy»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "username-anarchy"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «voiphopper»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "voiphopper"
+    },
+    {
+      "detalle_expediente": "GitHub responde 404: repositorio eliminado o privado",
+      "motivo": "Fuera del catálogo operativo: NO_DISPONIBLE",
+      "nombre": "wikigen"
+    },
+    {
+      "detalle_expediente": "HTTP 206 y el contenido menciona «wnmap»",
+      "motivo": "URL de distribución no HTTPS o inexistente; requiere revalidación primaria",
+      "nombre": "wnmap"
+    }
+  ],
+  "fecha_entrega": "2026-11-22",
+  "fichas_documentales": 77,
+  "grupo_original": "grupo-automation",
+  "limitaciones": [
+    "No se han instalado ni ejecutado herramientas",
+    "No se han comprobado licencias, firmas o últimas versiones de todas las herramientas",
+    "No se ha demostrado vigencia actual de referencias cuya única evidencia es el expediente de ayer"
+  ],
+  "numero": 39,
+  "politica_admision": "Fuente HTTPS con identidad comprobada en expediente o nueva fuente verificada hoy; resto fuera del catálogo operativo",
+  "procedencia_solo_expediente": 74,
+  "verificadas_publicamente_en_este_turno": 3
+}

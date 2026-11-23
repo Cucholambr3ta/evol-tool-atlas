@@ -1,0 +1,3 @@
+9a9d89f31f46023507ff4f0ebd715a2bfc9fbc9057ec8e508cd37f807cb3235d  02-catalogo/seguridad/catalogo/smalisca/README.md
+c88a50b738d5394d75f817adb28714c3a029c27cf9f839e94a3bae57e32f7d3f  02-catalogo/seguridad/catalogo/smalisca/index.html
+0acf52338840325e4f4f4382d8bfdf57510b8a1fedc507574fbddc93c5d21b89  02-catalogo/seguridad/catalogo/smalisca/metadata.json

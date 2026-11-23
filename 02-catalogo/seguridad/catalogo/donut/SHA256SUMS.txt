@@ -1,0 +1,3 @@
+4acde36c947eb8ad3c01f0daf0b960b8275d8f47459543dd4ef14af732c26012  02-catalogo/seguridad/catalogo/donut/README.md
+5125cf0ecef5d34be31a5fc6fc12b059c696c5d953f5ea0c84cdb48cf6987e6f  02-catalogo/seguridad/catalogo/donut/index.html
+c62a43ba80c095360ac63670dced9f6e33c250abdca2445cc83906b39980f5e6  02-catalogo/seguridad/catalogo/donut/metadata.json
