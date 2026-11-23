@@ -40,7 +40,27 @@
 
 ---
 
-## Instalación local, desarrollo y compilación
+## Instalar la PWA en un equipo (recomendado)
+
+Requisitos: Linux con systemd, Git, Node.js 22+ y npm (`sudo pacman -S git nodejs npm`), y un navegador Chromium (Chrome, Chromium, Brave o Edge). El repositorio es privado: inicia sesión antes con `gh auth login` y `gh auth setup-git`.
+
+```bash
+git clone https://github.com/Cucholambr3ta/evol-tool-atlas.git
+cd evol-tool-atlas
+./scripts/install-local.sh
+```
+
+El script instala dependencias, compila la versión de producción y crea el servicio de usuario systemd `evol-tool-atlas`, que sirve la app en **http://127.0.0.1:4173/evol-tool-atlas/** y arranca solo al iniciar sesión. Abre esa dirección y pulsa el icono de **Instalar** en la barra de direcciones. La dirección no debe cambiar: la PWA instalada depende de ese origen exacto.
+
+- **Actualizar:** `git pull && ./scripts/install-local.sh`
+- **Estado / registros:** `systemctl --user status evol-tool-atlas` · `journalctl --user -u evol-tool-atlas -n 50`
+- **Quitar el servicio:** `./scripts/install-local.sh --uninstall` (la PWA se desinstala desde el navegador).
+
+Una vez instalada, el *App Shell* y el índice funcionan sin conexión aunque el servicio esté detenido; las fichas que no hayas descargado para uso offline necesitan el servicio activo.
+
+---
+
+## Desarrollo y compilación
 
 Requisitos: Node.js 22+ y npm.
 
@@ -69,18 +89,13 @@ npm run preview
 # Verificación integral: datos + TypeScript (app y SW) + ESLint + Vitest + build + auditoría de catálogo y marca
 npm run check
 
-# Pruebas end-to-end reales con Chromium (PWA, manifiesto, SW, offline real y responsive)
+# Pruebas end-to-end reales con Chromium (PWA, manifiesto, SW, offline real y responsive).
+# Usan el puerto 4174 para no chocar con el servicio local en 4173.
 npm run test:e2e
 ```
 
 ---
 
-## Despliegue en GitHub Pages
+## Integración continua
 
-El repositorio incluye el workflow único `.github/workflows/deploy-pages.yml`:
-
-1. Compila con `VITE_BASE_PATH=/evol-tool-atlas/`.
-2. Ejecuta `generate:data`, `typecheck`, `lint`, `test:unit`, `build` y `verify:catalog`.
-3. Publica el artefacto `./dist` en el entorno `github-pages` de `https://cucholambr3ta.github.io/evol-tool-atlas/`.
-
-En la configuración del repositorio en GitHub (**Settings → Pages**), la fuente de publicación debe estar configurada como **GitHub Actions**.
+El workflow `.github/workflows/ci.yml` se ejecuta en cada push y pull request a `main`: `generate:data`, `typecheck`, `lint`, `test:unit`, `build` y `verify:catalog`. No publica la app en ningún sitio: la distribución es local mediante `scripts/install-local.sh`.

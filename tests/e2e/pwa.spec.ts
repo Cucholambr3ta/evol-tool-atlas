@@ -18,7 +18,7 @@ test.describe('Evol Tool Atlas PWA', () => {
       pageErrors.push(err.message);
     });
     page.on('response', (res) => {
-      if (res.status() >= 400 && res.url().startsWith('http://127.0.0.1:4173')) {
+      if (res.status() >= 400 && res.url().startsWith('http://127.0.0.1:4174')) {
         badResponses.push(`${res.status()} ${res.url()}`);
       }
     });
@@ -213,7 +213,7 @@ test.describe('Evol Tool Atlas PWA', () => {
     expect(manifest.icons.some((i) => i.purpose === 'maskable')).toBe(true);
 
     for (const icon of manifest.icons) {
-      const iconUrl = new URL(icon.src, `http://127.0.0.1:4173${BASE_PATH}`).pathname;
+      const iconUrl = new URL(icon.src, `http://127.0.0.1:4174${BASE_PATH}`).pathname;
       const iconRes = await page.request.get(iconUrl);
       expect(iconRes.ok(), `Icon ${iconUrl} should return HTTP 200`).toBe(true);
     }
