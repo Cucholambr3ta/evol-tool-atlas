@@ -56,6 +56,14 @@ El script instala dependencias, compila la versión de producción y crea el ser
 - **Estado / registros:** `systemctl --user status evol-tool-atlas` · `journalctl --user -u evol-tool-atlas -n 50`
 - **Quitar el servicio:** `./scripts/install-local.sh --uninstall` (la PWA se desinstala desde el navegador).
 
+### Cómo llegan las actualizaciones
+
+1. Se modifica el contenido (`catalogo.json`, fichas de `02-catalogo/`, etc.) o el código en un equipo, se valida con `npm run check` y se hace `git commit` + `git push`.
+2. En cada equipo: `git pull && ./scripts/install-local.sh` (recompila y reinicia el servicio).
+3. Al abrir la PWA aparece el aviso **«Hay una nueva versión de Evol Tool Atlas…»**; al aceptarlo se activa la nueva versión. Favoritos y descargas offline se conservan.
+
+Las fichas y categorías se piden siempre primero al servicio local (*network-first*), así que se ve la versión actual y la copia offline se refresca al abrirlas. La copia guardada solo se usa sin conexión. Para refrescar de una vez todas las fichas descargadas, pulsa **«Borrar copia offline»** en el centro offline (`#/offline`) y vuelve a descargarla.
+
 Una vez instalada, el *App Shell* y el índice funcionan sin conexión aunque el servicio esté detenido; las fichas que no hayas descargado para uso offline necesitan el servicio activo.
 
 ---

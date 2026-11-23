@@ -12,6 +12,7 @@ declare const self: ServiceWorkerGlobalScope & {
 };
 
 const CATALOG_CACHE_NAME = 'evol-atlas-catalog-v1';
+const NETWORK_TIMEOUT_MS = 4000;
 
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();
@@ -149,22 +150,30 @@ registerRoute(
     );
   },
   async ({ request, url }) => {
+    // Network-first: the catalog is served by the local service, so a live copy is
+    // always preferred (keeps catalog updates visible) and refreshes the cache.
+    // The cached copy is used only when the server is unreachable (offline mode).
     const cache = await caches.open(CATALOG_CACHE_NAME);
-    const cached = await cache.match(request);
-    if (cached) {
-      return cached;
-    }
     try {
-      const response = await fetch(request);
+      const response = await fetch(request, {
+        cache: 'no-cache',
+        signal: AbortSignal.timeout(NETWORK_TIMEOUT_MS),
+      });
       if (response.ok && response.status === 200) {
         try {
           await cache.put(request, response.clone());
         } catch {
           // Recover gracefully if storage quota is full; still deliver live response.
         }
+        return response;
       }
-      return response;
+      const cachedOnError = await cache.match(request);
+      return cachedOnError ?? response;
     } catch {
+      const cached = await cache.match(request);
+      if (cached) {
+        return cached;
+      }
       const base = getBasePath();
       const accept = request.headers.get('accept') ?? '';
       if (accept.includes('text/html') || url.pathname.endsWith('.html')) {
