@@ -77,6 +77,29 @@ export function renderAboutView(index: CatalogIndex): HTMLElement {
     el(
       'section',
       { className: 'surface-window' },
+      el('h2', { text: 'Documentación y skill de mantenimiento' }),
+      el('p', {
+        text: 'El estándar editorial ATDS v1 está disponible en docs/atds/ATDS-v1.md. La skill oficial de curaduría está disponible en skills/atlas-catalog-curator/SKILL.md y enseña a investigar, crear, completar y validar fichas.',
+      }),
+      isSafeCatalogPath('skills/atlas-catalog-curator/SKILL.md')
+        ? el(
+            'p',
+            null,
+            el('a', {
+              className: 'btn btn-sm',
+              attrs: {
+                href: withBase('skills/atlas-catalog-curator/SKILL.md'),
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              },
+              text: 'Abrir skill atlas-catalog-curator',
+            }),
+          )
+        : null,
+    ),
+    el(
+      'section',
+      { className: 'surface-window' },
       el('h2', { text: 'Identidad visual y licencias' }),
       el('p', {
         text: 'Interfaz alineada con el sistema oficial Evol OS Minimal line art (paleta cálida #f6f3ed / #191b1e, acento #365568, bordes #9b8793 / #a98a9f, iconografía Fine Line y glifo O institucional). Tipografías locales Manrope y Atkinson Hyperlegible bajo licencia SIL Open Font License 1.1.',

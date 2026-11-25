@@ -24,7 +24,7 @@ export function isSafeCatalogPath(relPath: string | null | undefined): relPath i
   if (!trimmed || trimmed.startsWith('/') || trimmed.includes('..') || trimmed.includes('\\')) {
     return false;
   }
-  return /^(02-catalogo|05-referencias)\/[a-z0-9._/-]+$/i.test(trimmed) ||
+  return /^(02-catalogo|05-referencias|skills)\/[a-z0-9._/-]+$/i.test(trimmed) ||
     trimmed === 'catalogo.json' ||
     trimmed === 'SHA256SUMS.txt';
 }
