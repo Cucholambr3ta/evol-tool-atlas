@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "MCP Inspector",
+  "id_catalogo": "AT-SEC-004",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-004-01",
+      "titulo": "Inventario del contrato de un servidor MCP propio",
+      "contexto": "Un servidor MCP de EVOL va a conectarse a un agente y se necesita revisar qué expone.",
+      "objetivo": "Listar herramientas, recursos y prompts sin invocar acciones.",
+      "prerequisitos": [
+        "Servidor MCP en entorno de pruebas",
+        "Node.js compatible",
+        "Autorización"
+      ],
+      "pasos": [
+        "Ejecutar `initialize`.",
+        "Listar herramientas y recursos.",
+        "Guardar la salida JSON.",
+        "Revisar nombres, esquemas y descripciones."
+      ],
+      "resultado_esperado": "Inventario reproducible del contrato observable.",
+      "evidencia_requerida": [
+        "Comando",
+        "Salida JSON",
+        "Versión",
+        "SHA-256"
+      ],
+      "riesgo": "BAJO · Solo métodos de lectura.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-004-02",
+      "titulo": "Verificación de una herramienta de solo lectura",
+      "contexto": "Se quiere comprobar que una herramienta de consulta devuelve el formato esperado.",
+      "objetivo": "Probar una llamada con datos ficticios y comparar el resultado.",
+      "prerequisitos": [
+        "Herramienta sin efectos secundarios",
+        "Datos ficticios",
+        "Servidor aislado"
+      ],
+      "pasos": [
+        "Revisar el esquema de la herramienta.",
+        "Invocar con `tools/call` y argumentos ficticios.",
+        "Guardar la respuesta.",
+        "Comprobar que no se modificó estado externo."
+      ],
+      "resultado_esperado": "Respuesta conforme al esquema y sin efectos laterales.",
+      "evidencia_requerida": [
+        "Esquema",
+        "Comando",
+        "Respuesta",
+        "Comprobación de estado"
+      ],
+      "riesgo": "MEDIO · Una herramienta mal clasificada podría escribir.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-004-03",
+      "titulo": "Diagnóstico de un servidor que no arranca",
+      "contexto": "Un agente no puede conectarse a un servidor MCP.",
+      "objetivo": "Aislar si el problema es de arranque, transporte o contrato.",
+      "prerequisitos": [
+        "Comando del servidor",
+        "Entorno de pruebas"
+      ],
+      "pasos": [
+        "Ejecutar el servidor manualmente.",
+        "Probar `initialize` con el Inspector.",
+        "Revisar logs y variables de entorno.",
+        "Documentar el punto de fallo."
+      ],
+      "resultado_esperado": "Causa identificada o evidencia suficiente para escalar.",
+      "evidencia_requerida": [
+        "Logs redactados",
+        "Comando",
+        "Salida"
+      ],
+      "riesgo": "BAJO · Diagnóstico en entorno aislado.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "evol-tool-atlas/evidencias/1",
+  "herramienta": "promptfoo",
+  "id_catalogo": "AT-SEC-002",
+  "fecha_actualizacion": "2026-11-25",
+  "principio": "El Atlas no ejecuta pruebas. Solo conserva y normaliza resultados obtenidos por agentes o desarrolladores en entornos externos, con procedencia verificable.",
+  "registros": [
+    {
+      "id": "EV-AT-SEC-002-01",
+      "herramienta": "promptfoo",
+      "id_catalogo": "AT-SEC-002",
+      "tipo": "verificacion_de_version",
+      "fecha": "2026-11-18",
+      "entorno": "Entorno de laboratorio de evol-security-toolchain; binario npm local",
+      "version": "0.125.1",
+      "comando": "promptfoo --version",
+      "resultado": "PASS",
+      "resumen": "La ejecución devolvió `0.125.1` con código 0. No se ejecutó una evaluación de prompts.",
+      "evidencia": {
+        "sha256": "a07452a1e658464b07aef21c840f2dd00fa53b5c765865830b1d7020841a670e",
+        "sourceSha256": "a07452a1e658464b07aef21c840f2dd00fa53b5c765865830b1d7020841a670e",
+        "sourceBytes": 287,
+        "destRel": "02-catalogo/seguridad/catalogo/promptfoo/evidencias/promptfoo-prueba.json"
+      },
+      "sha256": "a07452a1e658464b07aef21c840f2dd00fa53b5c765865830b1d7020841a670e",
+      "procedencia": {
+        "repositorio": "evol-security-toolchain",
+        "archivo_original": "evidence/fase2/promptfoo-prueba.json",
+        "sha256_original": "a07452a1e658464b07aef21c840f2dd00fa53b5c765865830b1d7020841a670e"
+      },
+      "artefactos": [
+        {
+          "nombre": "Binario promptfoo",
+          "sha256": "6f356e4648a7c8eec6b2021d4e5f7a7b498cc90b91fb149c55c1de0cfea2d15f"
+        }
+      ],
+      "limitaciones": [
+        "Solo confirma la versión; no evalúa prompts, aserciones ni red teaming.",
+        "La versión probada no es la última publicada."
+      ]
+    }
+  ],
+  "pendientes": [
+    "Evaluación funcional con un proveedor local o autorizado.",
+    "Prueba de red teaming acotada con datos sintéticos.",
+    "Verificación de la versión 0.126.0 y de sus requisitos de Node.js."
+  ],
+  "limitaciones_generales": [
+    "La evidencia disponible no certifica seguridad, calidad ni compatibilidad universal.",
+    "Una versión probada no implica que la versión más reciente tenga el mismo comportamiento.",
+    "Los resultados sobre fixtures sintéticos no demuestran el comportamiento sobre repositorios reales."
+  ]
+}

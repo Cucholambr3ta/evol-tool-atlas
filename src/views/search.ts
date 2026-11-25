@@ -28,7 +28,7 @@ export function renderSearchView(
   const catSelect = el(
     'select',
     { className: 'select', attrs: { 'aria-label': 'Filtrar por categoría' } },
-    el('option', { attrs: { value: 'all' }, text: 'Todas las categorías (48)' }),
+    el('option', { attrs: { value: 'all' }, text: 'Todas las categorías (49)' }),
     ...index.categories.map((c) =>
       el('option', {
         attrs: { value: c.slug },

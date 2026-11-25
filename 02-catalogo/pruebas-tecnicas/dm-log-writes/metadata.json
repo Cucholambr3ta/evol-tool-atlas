@@ -1,0 +1,84 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "dm-log-writes",
+  "id_catalogo": "AT-SEC-008",
+  "nombre": "dm-log-writes",
+  "tipo": "Objetivo de device-mapper del kernel + herramienta userspace",
+  "categoria": "Pruebas y auditoría técnica · Consistencia de almacenamiento",
+  "subtipo": "Pruebas y auditoría técnica · Consistencia de almacenamiento",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://docs.kernel.org/admin-guide/device-mapper/log-writes.html",
+  "sitio_web": "https://docs.kernel.org/admin-guide/device-mapper/log-writes.html",
+  "descripcion": "Objetivo de device-mapper que registra escrituras para reproducir y verificar la consistencia de un sistema de archivos.",
+  "uso_evol_propuesto": "Verificar la consistencia de escrituras y fsync en capas de almacenamiento de EVOL OS.",
+  "caso_uso_evol": "Verificar la consistencia de escrituras y fsync en capas de almacenamiento de EVOL OS.",
+  "estado_fuente": "FUENTE_OFICIAL_VERIFICADA",
+  "estado_mantenimiento": "MANTENIDO EN EL KERNEL · documentación y código en el árbol de Linux",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "kernel Linux (docs 7.4.0-rc4; host 7.3.5-2-cachyos)",
+  "version_actual": "kernel Linux (docs 7.4.0-rc4; host 7.3.5-2-cachyos)",
+  "version_evidencia": null,
+  "licencia": "GPL-2.0-only (kernel Linux); herramienta de replay con su propia licencia",
+  "sistema_operativo": "Linux únicamente",
+  "dependencias": "Kernel con CONFIG_DM_LOG_WRITES, device-mapper, dmsetup y la herramienta userspace replay-log.",
+  "requisitos": "Root o CAP_SYS_ADMIN, dos dispositivos de pruebas y espacio para el log.",
+  "fuentes_oficiales": {
+    "documentacion": "https://docs.kernel.org/admin-guide/device-mapper/log-writes.html",
+    "codigo": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-log-writes.c",
+    "replay": "https://github.com/josefbacik/log-writes"
+  },
+  "fuentes_consultadas": [
+    "https://docs.kernel.org/admin-guide/device-mapper/log-writes.html",
+    "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-log-writes.c",
+    "https://github.com/josefbacik/log-writes"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Documentación del kernel",
+      "url": "https://docs.kernel.org/admin-guide/device-mapper/log-writes.html"
+    },
+    {
+      "label": "Código en el árbol de Linux",
+      "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-log-writes.c"
+    },
+    {
+      "label": "Herramienta de replay",
+      "url": "https://github.com/josefbacik/log-writes"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Riesgo ALTO: los dispositivos usados se sobrescriben. Usar solo discos o imágenes desechables.",
+    "Requiere privilegios elevados y puede afectar a la estabilidad del kernel.",
+    "El log contiene datos de escritura y puede incluir información sensible.",
+    "No usar en producción ni en el host principal sin autorización y copia de seguridad.",
+    "Verificar dos veces las rutas de dispositivo antes de ejecutar `dmsetup create`."
+  ],
+  "limites": [
+    "No se localizó evidencia de ejecución en los espacios de trabajo revisados; no se creó ningún target ni se reprodujo un log.",
+    "El flujo mostrado procede de la documentación del kernel; requiere adaptación y validación en un laboratorio."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/dm-log-writes/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/dm-log-writes/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/dm-log-writes/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/dm-log-writes/evidencias.json"
+  }
+}

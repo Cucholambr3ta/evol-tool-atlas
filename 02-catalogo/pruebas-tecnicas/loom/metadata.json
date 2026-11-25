@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "loom",
+  "id_catalogo": "AT-SEC-006",
+  "nombre": "Loom",
+  "tipo": "Biblioteca de pruebas",
+  "categoria": "Pruebas y auditoría técnica · Concurrencia",
+  "subtipo": "Pruebas y auditoría técnica · Concurrencia",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://github.com/tokio-rs/loom",
+  "sitio_web": "https://docs.rs/loom",
+  "descripcion": "Herramienta de prueba de permutaciones de concurrencia para código Rust.",
+  "uso_evol_propuesto": "Explorar interleavings en estructuras concurrentes de EVOL Memory Engine y detectar carreras lógicas.",
+  "caso_uso_evol": "Explorar interleavings en estructuras concurrentes de EVOL Memory Engine y detectar carreras lógicas.",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · última release 0.7.3 (2026-11-08)",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "0.7.3",
+  "version_actual": "0.7.3",
+  "version_evidencia": null,
+  "licencia": "MIT",
+  "sistema_operativo": "Linux, macOS y Windows con toolchain Rust",
+  "dependencias": "Rust estable; crate de desarrollo `loom` 0.7.",
+  "requisitos": "Modelo acotado de la estructura concurrente y tests deterministas.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/tokio-rs/loom",
+    "documentacion": "https://docs.rs/loom",
+    "releases": "https://github.com/tokio-rs/loom/releases"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/tokio-rs/loom",
+    "https://docs.rs/loom",
+    "https://github.com/tokio-rs/loom/releases"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Repositorio oficial",
+      "url": "https://github.com/tokio-rs/loom"
+    },
+    {
+      "label": "Documentación de la API",
+      "url": "https://docs.rs/loom"
+    },
+    {
+      "label": "Publicaciones oficiales",
+      "url": "https://github.com/tokio-rs/loom/releases"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Un resultado sin fallos no demuestra ausencia de carreras; Loom explora un subconjunto de ejecuciones.",
+    "No usar Loom como sustituto de Miri, pruebas de estrés o revisión de diseño.",
+    "Los modelos deben ser acotados; un modelo demasiado grande puede consumir memoria y tiempo.",
+    "Ejecutar en un entorno de CI aislado y con límites."
+  ],
+  "limites": [
+    "No se localizó evidencia de ejecución de Loom en los espacios de trabajo revisados.",
+    "La ficha documenta el uso previsto; no se ha creado ni ejecutado un modelo sobre EVOL Memory Engine."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/loom/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/loom/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/loom/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/loom/evidencias.json"
+  }
+}

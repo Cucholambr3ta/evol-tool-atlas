@@ -198,7 +198,7 @@ export function renderOfflineView(onStatusUpdated: () => void): HTMLElement {
           'div',
           { className: 'notice-box' },
           createFineLineIcon('success'),
-          el('div', null, el('p', { text: 'Todas las categorías y las 2.127 fichas están disponibles sin conexión.' })),
+          el('div', null, el('p', { text: 'Todas las categorías y las 2.137 fichas están disponibles sin conexión.' })),
         ),
       );
     }
@@ -264,7 +264,7 @@ export function renderOfflineView(onStatusUpdated: () => void): HTMLElement {
     el('h2', { text: 'Paquete completo sin conexión' }),
     el('p', {
       className: 'section-subtitle',
-      text: 'Durante la instalación inicial solo se precarga la aplicación esencial y el índice de búsqueda para instalar rápido y respetar cuotas. Desde aquí puedes guardar las 48 categorías, las 2.127 fichas JSON/HTML y el informe de cierre para consultarlos sin red.',
+      text: 'Durante la instalación inicial solo se precarga la aplicación esencial y el índice de búsqueda para instalar rápido y respetar cuotas. Desde aquí puedes guardar las 49 categorías, las 2.137 fichas JSON/HTML y el informe de cierre para consultarlos sin red.',
     }),
     el('div', { className: 'progress-wrap' }, progressBar, progressText),
     el('div', { className: 'pill-row' }, downloadBtn, cancelBtn, retryBtn, refreshBtn, clearBtn, installBtn),

@@ -62,15 +62,15 @@ function verifyCatalogAndLinks() {
   const indexData = readJson(path.join(ROOT, 'public', 'data', 'catalog-index.json'));
   const offlineManifest = readJson(path.join(ROOT, 'public', 'data', 'offline-manifest.json'));
 
-  assert(catalogo.categorias.length === 48, `Expected 48 categories in catalogo.json, got ${catalogo.categorias.length}`);
-  assert(catalogo.herramientas.length === 2127, `Expected 2127 tools in catalogo.json, got ${catalogo.herramientas.length}`);
-  assert(indexData.categories.length === 48, `Expected 48 categories in catalog-index.json, got ${indexData.categories.length}`);
-  assert(indexData.tools.length === 2127, `Expected 2127 tools in catalog-index.json, got ${indexData.tools.length}`);
+  assert(catalogo.categorias.length === 49, `Expected 49 categories in catalogo.json, got ${catalogo.categorias.length}`);
+  assert(catalogo.herramientas.length === 2137, `Expected 2137 tools in catalogo.json, got ${catalogo.herramientas.length}`);
+  assert(indexData.categories.length === 49, `Expected 49 categories in catalog-index.json, got ${indexData.categories.length}`);
+  assert(indexData.tools.length === 2137, `Expected 2137 tools in catalog-index.json, got ${indexData.tools.length}`);
   assert(indexData.totals.excluded === 741, `Expected 741 excluded entries, got ${indexData.totals.excluded}`);
-  assert(indexData.totals.totalEntries === 2868, `Expected 2868 total entries, got ${indexData.totals.totalEntries}`);
+  assert(indexData.totals.totalEntries === 2878, `Expected 2878 total entries, got ${indexData.totals.totalEntries}`);
 
   const toolIds = new Set(indexData.tools.map((t) => t.id));
-  assert(toolIds.size === 2127, 'Duplicate tool IDs found in catalog-index.json');
+  assert(toolIds.size === 2137, 'Duplicate tool IDs found in catalog-index.json');
 
   let shardToolCount = 0;
   const excludedNames = new Set();
@@ -87,7 +87,7 @@ function verifyCatalogAndLinks() {
     }
   }
 
-  assert(shardToolCount === 2127, `Total shard tools mismatch: ${shardToolCount}`);
+  assert(shardToolCount === 2137, `Total shard tools mismatch: ${shardToolCount}`);
 
   // Ensure excluded entries (without colliding legitimate names? verify exact tool IDs vs excluded names)
   for (const ex of excludedNames) {
@@ -103,7 +103,7 @@ function verifyCatalogAndLinks() {
 
   // Verify zero broken internal links & zero inline scripts across 02-catalogo HTML files
   const catalogHtmlFiles = walkFiles(path.join(ROOT, '02-catalogo')).filter((f) => f.endsWith('.html'));
-  assert(catalogHtmlFiles.length === 2175, `Expected 2175 HTML files in 02-catalogo, got ${catalogHtmlFiles.length}`);
+  assert(catalogHtmlFiles.length === 2186, `Expected 2186 HTML files in 02-catalogo, got ${catalogHtmlFiles.length}`);
 
   for (const htmlFile of catalogHtmlFiles) {
     const html = fs.readFileSync(htmlFile, 'utf8');
@@ -258,4 +258,4 @@ verifyCatalogAndLinks();
 verifyBrandingCompliance();
 verifyZeroForbiddenMentions();
 verifyDistBuild();
-console.log('ALL VERIFICATIONS PASSED: 48 categories, 2127 tools, 741 excluded, 0 broken links, 0 forbidden mentions, official Evol branding verified.');
+console.log('ALL VERIFICATIONS PASSED: 49 categories, 2137 tools, 741 excluded, 0 broken links, 0 forbidden mentions, official Evol branding verified.');

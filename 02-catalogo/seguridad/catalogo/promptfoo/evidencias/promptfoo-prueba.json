@@ -1,0 +1,11 @@
+{
+  "codigo": 0,
+  "stdout": "0.125.1\n",
+  "stderr": "",
+  "aprobado": true,
+  "sha256_ejecutable": "6f356e4648a7c8eec6b2021d4e5f7a7b498cc90b91fb149c55c1de0cfea2d15f",
+  "ejecutable": "artifacts/fase2/node/promptfoo/node_modules/.bin/promptfoo",
+  "argumentos": [
+    "--version"
+  ]
+}

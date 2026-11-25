@@ -85,7 +85,7 @@ export function renderDashboardView(
     el('h1', { className: 'hero-title', text: 'Evol Tool Atlas' }),
     el('p', {
       className: 'hero-lead',
-      text: 'Catálogo documental de herramientas de seguridad, auditoría y análisis para Evol OS, organizado en 48 categorías con preservación íntegra de fichas y acceso offline.',
+      text: 'Catálogo documental de herramientas de seguridad, auditoría y análisis para Evol OS, organizado en 49 categorías con preservación íntegra de fichas y acceso offline.',
     }),
     createFineLineCurve(),
     searchForm,

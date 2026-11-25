@@ -1,0 +1,15 @@
+{
+  "herramienta": "cargo-fuzz",
+  "orden": [
+    "<workspace>/artifacts/fase5/devsecops/cargo-fuzz/root/bin/cargo-fuzz",
+    "--version"
+  ],
+  "cwd": "<workspace>",
+  "control_socket": "EPERM",
+  "inicio_utc": "2026-11-20T14:55:42+00:00",
+  "fin_utc": "2026-11-20T14:55:42+00:00",
+  "codigo": 0,
+  "timeout": false,
+  "stdout": "cargo-fuzz 0.13.2\n",
+  "stderr": ""
+}

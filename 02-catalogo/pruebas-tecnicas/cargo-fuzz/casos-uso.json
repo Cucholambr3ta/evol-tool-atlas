@@ -1,0 +1,88 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "cargo-fuzz",
+  "id_catalogo": "AT-SEC-003",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-003-01",
+      "titulo": "Fuzzing de un parser de entrada no confiable",
+      "contexto": "Un componente Rust procesa datos externos y necesita robustez ante entradas malformadas.",
+      "objetivo": "Encontrar panics y fallos de memoria con un objetivo acotado.",
+      "prerequisitos": [
+        "Crate Rust",
+        "Toolchain nightly",
+        "Entorno aislado",
+        "Límite de ejecución"
+      ],
+      "pasos": [
+        "Inicializar cargo-fuzz.",
+        "Crear un objetivo que consuma bytes.",
+        "Ejecutar con límite de tiempo.",
+        "Triar crashes y reproducirlos.",
+        "Registrar versión, comando y artefactos."
+      ],
+      "resultado_esperado": "Crashes reproducibles o ausencia de fallos en el periodo acotado, con limitaciones explícitas.",
+      "evidencia_requerida": [
+        "Objetivo",
+        "Comando",
+        "Versión",
+        "Artefactos de crash",
+        "Hashes"
+      ],
+      "riesgo": "MEDIO · Consumo de recursos y posibles datos sensibles en el corpus.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-003-02",
+      "titulo": "Verificación de un decodificador tras un cambio",
+      "contexto": "Un cambio en el parser puede introducir un panic en una ruta poco frecuente.",
+      "objetivo": "Comparar el comportamiento antes y después del cambio.",
+      "prerequisitos": [
+        "Corpus de regresión",
+        "Objetivo estable",
+        "Entorno aislado"
+      ],
+      "pasos": [
+        "Conservar el corpus.",
+        "Ejecutar el objetivo con el mismo límite.",
+        "Comparar crashes y cobertura.",
+        "Documentar diferencias."
+      ],
+      "resultado_esperado": "Evidencia de regresión o de ausencia de nuevos fallos en el periodo probado.",
+      "evidencia_requerida": [
+        "Corpus",
+        "Salidas",
+        "Versión",
+        "Hashes"
+      ],
+      "riesgo": "MEDIO · El corpus puede contener datos internos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-003-03",
+      "titulo": "Preparación de un objetivo para integración futura",
+      "contexto": "El equipo quiere dejar un objetivo reproducible sin ejecutarlo todavía en producción.",
+      "objetivo": "Documentar el objetivo y sus límites antes de una campaña.",
+      "prerequisitos": [
+        "Crate candidato",
+        "Revisión de seguridad"
+      ],
+      "pasos": [
+        "Crear el objetivo en una rama.",
+        "Revisar que no acceda a red ni disco real.",
+        "Documentar comando y límites.",
+        "Marcar la ejecución como pendiente."
+      ],
+      "resultado_esperado": "Objetivo versionado y plan de ejecución.",
+      "evidencia_requerida": [
+        "Código del objetivo",
+        "Plan",
+        "Revisión"
+      ],
+      "riesgo": "BAJO · No se ejecuta en esta fase.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

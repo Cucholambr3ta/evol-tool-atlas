@@ -54,6 +54,40 @@ export interface ExternalReference {
   url: string;
 }
 
+export interface TechnicalResource {
+  label: string;
+  href: string;
+  kind: 'guide' | 'skill' | 'use-cases' | 'evidence' | string;
+}
+
+export interface UseCaseSummary {
+  id: string;
+  titulo: string;
+  objetivo: string;
+  estado: string;
+  evidenciaRequerida: string[];
+  riesgo: string;
+}
+
+export interface EvidenceRecordSummary {
+  id: string;
+  tipo: string;
+  fecha: string | null;
+  resultado: 'PASS' | 'FAIL' | 'BLOCKED' | 'INCONCLUSIVE' | string;
+  version: string | null;
+  resumen: string;
+  evidencia: string | null;
+  sha256: string | null;
+}
+
+export interface EvidenceSummary {
+  schema: string;
+  total: number;
+  counts: Record<string, number>;
+  records: EvidenceRecordSummary[];
+  pendientes: string[];
+}
+
 export interface ToolDetail {
   id: string;
   name: string;
@@ -82,6 +116,9 @@ export interface ToolDetail {
   htmlHref: string;
   metadataHref: string;
   readmeHref: string | null;
+  technicalResources: TechnicalResource[];
+  useCases: UseCaseSummary[];
+  evidence: EvidenceSummary | null;
   historicalFlag: boolean;
   revalidated20261122: boolean;
   rawMetadata: Record<string, unknown>;
@@ -104,7 +141,7 @@ export interface CategoryShard {
 
 export interface OfflineManifestItem {
   url: string;
-  kind: 'shard' | 'report' | 'category-html' | 'tool-html';
+  kind: 'shard' | 'report' | 'category-html' | 'tool-html' | 'tool-resource';
 }
 
 export interface OfflineManifest {

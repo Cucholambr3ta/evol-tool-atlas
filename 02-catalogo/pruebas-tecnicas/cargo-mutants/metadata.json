@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "cargo-mutants",
+  "id_catalogo": "AT-SEC-011",
+  "nombre": "cargo-mutants",
+  "tipo": "CLI / subcomando de Cargo",
+  "categoria": "Pruebas y auditoría técnica · Mutación",
+  "subtipo": "Pruebas y auditoría técnica · Mutación",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://github.com/sourcefrog/cargo-mutants",
+  "sitio_web": "https://mutants.rs/",
+  "descripcion": "Herramienta de mutación que inserta fallos y comprueba si los tests los detectan.",
+  "uso_evol_propuesto": "Medir la calidad de la suite de pruebas de componentes Rust de EVOL.",
+  "caso_uso_evol": "Medir la calidad de la suite de pruebas de componentes Rust de EVOL.",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · última release v27.1.0 (2026-06-02); proyecto de mantenimiento parcial",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "27.1.0",
+  "version_actual": "27.1.0",
+  "version_evidencia": null,
+  "licencia": "MIT",
+  "sistema_operativo": "Linux, macOS y Windows con toolchain Rust",
+  "dependencias": "Rust estable, tests que pasan de forma determinista.",
+  "requisitos": "Suite de tests no flaky; tiempo de ejecución acotado y política de mutantes.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/sourcefrog/cargo-mutants",
+    "documentacion": "https://mutants.rs/",
+    "releases": "https://github.com/sourcefrog/cargo-mutants/releases"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/sourcefrog/cargo-mutants",
+    "https://mutants.rs/",
+    "https://github.com/sourcefrog/cargo-mutants/releases"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Repositorio oficial",
+      "url": "https://github.com/sourcefrog/cargo-mutants"
+    },
+    {
+      "label": "Manual",
+      "url": "https://mutants.rs/"
+    },
+    {
+      "label": "Publicaciones oficiales",
+      "url": "https://github.com/sourcefrog/cargo-mutants/releases"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Los mutantes se compilan y ejecutan; aislar el entorno y limitar recursos.",
+    "No ejecutar sobre código que realice acciones irreversibles durante los tests.",
+    "Los tests pueden acceder a datos reales si no están aislados; usar fixtures y variables de entorno de prueba.",
+    "El informe puede revelar estructura interna del código; tratarlo según la política de información."
+  ],
+  "limites": [
+    "No se localizó evidencia de ejecución de cargo-mutants en los espacios de trabajo revisados.",
+    "No se ha medido la calidad de ninguna suite de tests de EVOL con esta herramienta."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/cargo-mutants/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/cargo-mutants/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/cargo-mutants/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/cargo-mutants/evidencias.json"
+  }
+}

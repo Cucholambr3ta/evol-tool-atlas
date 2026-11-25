@@ -286,7 +286,117 @@ export function renderToolDetailView(
     ),
   );
 
+  // Technical resources, use cases and evidence (only when present in the static sheet)
+  const technicalChildren: HTMLElement[] = [];
+  const resourceLinks = tool.technicalResources
+    .filter((resource) => isSafeCatalogPath(resource.href))
+    .map((resource) =>
+      el(
+        'a',
+        {
+          className: 'btn btn-sm',
+          attrs: {
+            href: withBase(resource.href),
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          },
+        },
+        resource.label,
+      ),
+    );
+  if (resourceLinks.length > 0) {
+    technicalChildren.push(
+      el('h2', { text: 'Recursos técnicos' }),
+      el('div', { className: 'pill-row' }, ...resourceLinks),
+    );
+  }
+
+  if (tool.useCases.length > 0) {
+    technicalChildren.push(
+      el('h2', { text: `Casos de uso propuestos (${tool.useCases.length})` }),
+      el(
+        'ul',
+        { className: 'ref-list' },
+        ...tool.useCases.map((useCase) =>
+          el(
+            'li',
+            null,
+            el('strong', { text: `${useCase.id} · ${useCase.titulo}` }),
+            useCase.objetivo ? ` — ${useCase.objetivo}` : '',
+            useCase.riesgo ? ` (${useCase.riesgo})` : '',
+          ),
+        ),
+      ),
+      el('p', {
+        className: 'section-subtitle',
+        text: 'Casos documentados, no ejecutados por el Atlas. Requieren autorización, entorno aislado y registro de evidencia.',
+      }),
+    );
+  }
+
+  if (tool.evidence) {
+    const summary = Object.entries(tool.evidence.counts)
+      .map(([status, count]) => `${status}: ${count}`)
+      .join(' · ');
+    technicalChildren.push(
+      el('h2', { text: 'Evidencia registrada' }),
+      el('p', {
+        className: 'section-subtitle',
+        text: `${tool.evidence.total} registro(s) · ${summary || 'sin registros'} · El Atlas no ejecuta pruebas.`,
+      }),
+      tool.evidence.records.length > 0
+        ? el(
+            'ul',
+            { className: 'ref-list' },
+            ...tool.evidence.records.map((record) =>
+              el(
+                'li',
+                null,
+                el('span', {
+                  className: record.resultado === 'PASS' ? 'pill pill-accent' : 'pill pill-muted',
+                  text: record.resultado,
+                }),
+                ' ',
+                el('strong', { text: `${record.id} · ${record.tipo}` }),
+                record.fecha ? ` · ${record.fecha}` : '',
+                record.version ? ` · v${record.version}` : '',
+                el('p', { text: record.resumen }),
+                record.sha256
+                  ? el('p', {
+                      className: 'section-subtitle mono',
+                      text: `SHA-256: ${record.sha256}`,
+                    })
+                  : null,
+              ),
+            ),
+          )
+        : el('p', { text: 'No hay evidencia registrada para esta herramienta.' }),
+      ...(tool.evidence.pendientes.length > 0
+        ? [
+            el(
+              'div',
+              null,
+              el('strong', { text: 'Evidencia pendiente' }),
+              el(
+                'ul',
+                { className: 'warning-list' },
+                ...tool.evidence.pendientes.map((item) => el('li', { text: item })),
+              ),
+            ),
+          ]
+        : []),
+    );
+  }
+
+  const technicalSection =
+    technicalChildren.length > 0
+      ? el('section', { className: 'surface-window' }, ...technicalChildren)
+      : null;
+
   container.append(header, descSection, warningBox, factsSection);
+  if (technicalSection) {
+    container.append(technicalSection);
+  }
 
   // External References
   const safeRefs = tool.externalReferences.filter((ref) => isSafeHttpUrl(ref.url));

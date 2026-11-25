@@ -1,0 +1,57 @@
+{
+  "schema": "evol-tool-atlas/evidencias/1",
+  "herramienta": "cargo-audit",
+  "id_catalogo": "AT-SEC-005",
+  "fecha_actualizacion": "2026-11-25",
+  "principio": "El Atlas no ejecuta pruebas. Solo conserva y normaliza resultados obtenidos por agentes o desarrolladores en entornos externos, con procedencia verificable.",
+  "registros": [
+    {
+      "id": "EV-AT-SEC-005-01",
+      "herramienta": "cargo-audit",
+      "id_catalogo": "AT-SEC-005",
+      "tipo": "prueba_positiva_y_negativa",
+      "fecha": "2026-11-20",
+      "entorno": "Laboratorio de evol-security-toolchain; base RustSec local y fixtures de Cargo.lock",
+      "version": "0.23.0",
+      "comando": "cargo-audit audit --no-fetch --no-yanked --format json --db <db-local> --file <fixture>/Cargo.lock",
+      "resultado": "PASS",
+      "resumen": "El caso positivo detectó RUSTSEC-2022-0013 en regex 1.5.4 (código 1). El caso negativo no devolvió avisos (código 0). Ambos JSON fueron válidos.",
+      "evidencia": {
+        "sha256": "424248e0e154a042a986b470dc6dea9fd6a20ff1a8e88de39d58ff7bb8e73bfb",
+        "sourceSha256": "14177716ed9e5045dbebeec7ee8666510845b16d7207e853b0002af6a314c7ab",
+        "sourceBytes": 1404,
+        "destRel": "02-catalogo/pruebas-tecnicas/cargo-audit/evidencias/cargo-audit-sondas.json"
+      },
+      "sha256": "424248e0e154a042a986b470dc6dea9fd6a20ff1a8e88de39d58ff7bb8e73bfb",
+      "procedencia": {
+        "repositorio": "evol-security-toolchain",
+        "archivo_original": "evidence/fase4/cargo-audit-sondas.json",
+        "sha256_original": "14177716ed9e5045dbebeec7ee8666510845b16d7207e853b0002af6a314c7ab"
+      },
+      "artefactos": [
+        {
+          "nombre": "Binario cargo-audit",
+          "sha256": "157d20500114f77f49fe6c4bc6c4b55102a2f8571ef6bfee56f254fe1a12e5c5"
+        },
+        {
+          "nombre": "Salida normalizada",
+          "sha256": "424248e0e154a042a986b470dc6dea9fd6a20ff1a8e88de39d58ff7bb8e73bfb"
+        }
+      ],
+      "limitaciones": [
+        "Fixtures sintéticos; no representa un proyecto EVOL real.",
+        "La base de avisos usada es local y puede no estar actualizada."
+      ]
+    }
+  ],
+  "pendientes": [
+    "Auditoría de un Cargo.lock de un proyecto EVOL real.",
+    "Medición de la actualización de la base y de la integración en CI.",
+    "Verificación de la política de excepciones."
+  ],
+  "limitaciones_generales": [
+    "La evidencia disponible no certifica seguridad, calidad ni compatibilidad universal.",
+    "Una versión probada no implica que la versión más reciente tenga el mismo comportamiento.",
+    "Los resultados sobre fixtures sintéticos no demuestran el comportamiento sobre repositorios reales."
+  ]
+}

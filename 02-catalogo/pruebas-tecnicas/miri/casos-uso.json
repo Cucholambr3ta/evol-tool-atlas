@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "Miri",
+  "id_catalogo": "AT-SEC-010",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-010-01",
+      "titulo": "Revisar código unsafe de una estructura de memoria",
+      "contexto": "EVOL Memory Engine contiene código unsafe que manipula buffers.",
+      "objetivo": "Detectar UB en los tests existentes.",
+      "prerequisitos": [
+        "Toolchain nightly con Miri",
+        "Tests acotados",
+        "Entorno aislado"
+      ],
+      "pasos": [
+        "Instalar Miri.",
+        "Ejecutar `cargo +nightly miri test`.",
+        "Analizar errores.",
+        "Reproducir con el commit registrado."
+      ],
+      "resultado_esperado": "Lista de UB detectado o evidencia de ausencia en los tests ejecutados.",
+      "evidencia_requerida": [
+        "Commit",
+        "Comando",
+        "Salida",
+        "Versión nightly"
+      ],
+      "riesgo": "MEDIO · Lentitud y falsa confianza si el alcance es limitado.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-010-02",
+      "titulo": "Comprobar una dependencia crítica",
+      "contexto": "Una dependencia Rust con código unsafe se quiere evaluar antes de integrarla.",
+      "objetivo": "Ejecutar sus tests bajo Miri en un entorno aislado.",
+      "prerequisitos": [
+        "Fuente de la dependencia",
+        "Toolchain nightly",
+        "Revisión de licencia"
+      ],
+      "pasos": [
+        "Obtener una copia autorizada.",
+        "Ejecutar sus tests con Miri.",
+        "Documentar errores y limitaciones.",
+        "No modificar la dependencia sin un plan."
+      ],
+      "resultado_esperado": "Evidencia acotada sobre la dependencia.",
+      "evidencia_requerida": [
+        "Versión",
+        "Commit",
+        "Comando",
+        "Salida"
+      ],
+      "riesgo": "MEDIO · La dependencia puede requerir APIs no soportadas.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-010-03",
+      "titulo": "Comparar Stacked Borrows y Tree Borrows",
+      "contexto": "Se evalúa el modelo de aliasing más adecuado para el proyecto.",
+      "objetivo": "Documentar diferencias sin asumir que un modelo es definitivo.",
+      "prerequisitos": [
+        "Conocimiento de las flags experimentales",
+        "Tests representativos"
+      ],
+      "pasos": [
+        "Ejecutar con el modelo por defecto.",
+        "Ejecutar con la flag experimental correspondiente.",
+        "Comparar resultados.",
+        "Documentar limitaciones."
+      ],
+      "resultado_esperado": "Nota técnica con diferencias observadas.",
+      "evidencia_requerida": [
+        "Flags",
+        "Salidas",
+        "Versión"
+      ],
+      "riesgo": "MEDIO · Los modelos experimentales pueden cambiar.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

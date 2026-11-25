@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "Loom",
+  "id_catalogo": "AT-SEC-006",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-006-01",
+      "titulo": "Modelo de una cola concurrente",
+      "contexto": "Una estructura de EVOL Memory Engine usa atomics y necesita revisar interleavings.",
+      "objetivo": "Explorar ejecuciones acotadas y detectar violaciones de invariantes.",
+      "prerequisitos": [
+        "Crate Rust",
+        "Abstracción de sincronización",
+        "Modelo acotado"
+      ],
+      "pasos": [
+        "Aislar la primitiva bajo `cfg(loom)`.",
+        "Escribir un test con `loom::model`.",
+        "Ejecutar con `RUSTFLAGS`.",
+        "Documentar límites y resultados."
+      ],
+      "resultado_esperado": "Fallo reproducible o ausencia de fallos en el espacio explorado.",
+      "evidencia_requerida": [
+        "Modelo",
+        "Comando",
+        "Versión",
+        "Límites"
+      ],
+      "riesgo": "MEDIO · Consumo de recursos y falsa confianza si se ignora el alcance.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-006-02",
+      "titulo": "Revisión de un cambio en una ruta atómica",
+      "contexto": "Un cambio introduce un nuevo ordenamiento de operaciones.",
+      "objetivo": "Comparar el modelo antes y después del cambio.",
+      "prerequisitos": [
+        "Modelo estable",
+        "Límite de ejecución"
+      ],
+      "pasos": [
+        "Ejecutar el modelo en la versión base.",
+        "Ejecutar en la versión modificada.",
+        "Comparar fallos.",
+        "Documentar la diferencia."
+      ],
+      "resultado_esperado": "Evidencia de regresión o de estabilidad en el espacio explorado.",
+      "evidencia_requerida": [
+        "Dos ejecuciones",
+        "Versiones",
+        "Hashes"
+      ],
+      "riesgo": "MEDIO · Un modelo incompleto puede no cubrir el cambio.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-006-03",
+      "titulo": "Documentación de límites antes de adopción",
+      "contexto": "El equipo quiere saber si Loom es adecuado para un componente.",
+      "objetivo": "Evaluar el coste y las limitaciones sin ejecutar en producción.",
+      "prerequisitos": [
+        "Revisión de la API",
+        "Componente candidato"
+      ],
+      "pasos": [
+        "Leer las limitaciones oficiales.",
+        "Identificar primitivas no soportadas.",
+        "Estimar el tamaño del modelo.",
+        "Documentar la decisión."
+      ],
+      "resultado_esperado": "Decisión de adopción con limitaciones explícitas.",
+      "evidencia_requerida": [
+        "Nota técnica",
+        "Referencias",
+        "Revisión"
+      ],
+      "riesgo": "BAJO · No se ejecuta código.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

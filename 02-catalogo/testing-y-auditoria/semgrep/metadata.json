@@ -1,9 +1,32 @@
 {
   "id": "semgrep",
+  "id_catalogo": "AT-SEC-001",
   "nombre": "Semgrep",
+  "tipo": "CLI / analizador estático (SAST)",
+  "subtipo": "Auditoría · SAST",
+  "upstream": "https://github.com/semgrep/semgrep",
+  "sitio_web": "https://semgrep.dev/",
+  "licencia": "LGPL-2.1",
+  "sistema_operativo": "Linux, macOS y Windows (Python 3.10+)",
+  "dependencias": "Python 3.10+, pip; Docker o Homebrew como alternativas.",
+  "requisitos": "Reglas revisadas y revisión humana de hallazgos.",
+  "version_actual_oficial": "1.187.0",
+  "referencias_oficiales": [
+    { "label": "Repositorio oficial", "url": "https://github.com/semgrep/semgrep" },
+    { "label": "Publicaciones oficiales", "url": "https://github.com/semgrep/semgrep/releases" },
+    { "label": "Documentación oficial", "url": "https://semgrep.dev/docs/" }
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/testing-y-auditoria/semgrep/GUIA.md",
+    "skill": "02-catalogo/testing-y-auditoria/semgrep/SKILL.md",
+    "casos_uso": "02-catalogo/testing-y-auditoria/semgrep/casos-uso.json",
+    "evidencias": "02-catalogo/testing-y-auditoria/semgrep/evidencias.json"
+  },
+  "probado_en_host": false,
   "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
   "estado_instalacion": "NO_VERIFICADA_EN_HOST",
   "fecha_verificacion": "2026-11-22",
+  "fecha_revision": "2026-11-25",
   "version_release_verificada": "1.186.0",
   "categoria": "Auditoría · SAST",
   "ubicacion": "02-catalogo/testing-y-auditoria/semgrep",

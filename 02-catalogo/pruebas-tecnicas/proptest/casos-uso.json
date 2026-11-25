@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "proptest",
+  "id_catalogo": "AT-SEC-012",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-012-01",
+      "titulo": "Probar una invariante de un parser",
+      "contexto": "Un parser debe rechazar entradas inválidas sin entrar en pánico.",
+      "objetivo": "Comprobar que ninguna entrada genera un panic.",
+      "prerequisitos": [
+        "Parser aislado",
+        "Estrategia de entrada",
+        "Límite de casos"
+      ],
+      "pasos": [
+        "Definir la propiedad.",
+        "Escribir el test con `proptest!`.",
+        "Ejecutar con un límite.",
+        "Guardar el caso reducido si falla."
+      ],
+      "resultado_esperado": "Fallo reproducible o evidencia acotada de ausencia de panics.",
+      "evidencia_requerida": [
+        "Código del test",
+        "Semilla",
+        "Salida",
+        "Versión"
+      ],
+      "riesgo": "MEDIO · Entradas grandes y consumo de recursos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-012-02",
+      "titulo": "Comprobar round-trip de un codec",
+      "contexto": "Codificar y decodificar debería devolver el valor original.",
+      "objetivo": "Validar la propiedad con entradas generadas.",
+      "prerequisitos": [
+        "Codec determinista",
+        "Estrategia de valores válidos"
+      ],
+      "pasos": [
+        "Definir la estrategia.",
+        "Escribir la propiedad de round-trip.",
+        "Ejecutar.",
+        "Registrar fallos reducidos."
+      ],
+      "resultado_esperado": "Evidencia de round-trip o contraejemplo mínimo.",
+      "evidencia_requerida": [
+        "Test",
+        "Contraejemplo",
+        "Versión"
+      ],
+      "riesgo": "MEDIO · Una estrategia demasiado estrecha puede no cubrir el espacio.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-012-03",
+      "titulo": "Documentar propiedades antes de implementar",
+      "contexto": "El equipo quiere acordar invariantes antes de escribir el código.",
+      "objetivo": "Convertir supuestos en propiedades verificables.",
+      "prerequisitos": [
+        "Diseño del componente",
+        "Revisión del equipo"
+      ],
+      "pasos": [
+        "Listar invariantes.",
+        "Definir estrategias.",
+        "Escribir tests que fallen inicialmente.",
+        "Marcar la ejecución como pendiente hasta implementar."
+      ],
+      "resultado_esperado": "Conjunto de propiedades versionado.",
+      "evidencia_requerida": [
+        "Documento",
+        "Tests",
+        "Revisión"
+      ],
+      "riesgo": "BAJO · No se ejecuta sobre producción.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

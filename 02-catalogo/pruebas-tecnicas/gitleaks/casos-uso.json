@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "Gitleaks",
+  "id_catalogo": "AT-SEC-009",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-009-01",
+      "titulo": "Comprobación previa a publicar un repositorio",
+      "contexto": "Un repositorio interno va a hacerse público o compartirse con un tercero.",
+      "objetivo": "Detectar secretos en el árbol y el historial antes de publicar.",
+      "prerequisitos": [
+        "Copia autorizada",
+        "Binario verificado",
+        "Configuración revisada"
+      ],
+      "pasos": [
+        "Ejecutar `gitleaks git .`.",
+        "Revisar hallazgos y falsos positivos.",
+        "Rotar cualquier secreto real.",
+        "Guardar informe restringido y decisión."
+      ],
+      "resultado_esperado": "Informe de secretos y acciones de remediación.",
+      "evidencia_requerida": [
+        "Comando",
+        "Versión",
+        "Informe redactado",
+        "Hash"
+      ],
+      "riesgo": "ALTO · El informe puede contener credenciales.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-009-02",
+      "titulo": "Escaneo de un directorio de artefactos",
+      "contexto": "Se quiere revisar un directorio que no es un repositorio Git.",
+      "objetivo": "Buscar secretos en archivos generados.",
+      "prerequisitos": [
+        "Directorio autorizado",
+        "Configuración"
+      ],
+      "pasos": [
+        "Ejecutar `gitleaks dir <ruta>`.",
+        "Revisar coincidencias.",
+        "Redactar el informe.",
+        "Documentar limitaciones."
+      ],
+      "resultado_esperado": "Lista de posibles secretos en el directorio.",
+      "evidencia_requerida": [
+        "Ruta",
+        "Comando",
+        "Informe",
+        "Versión"
+      ],
+      "riesgo": "MEDIO · Contenido sensible en artefactos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-009-03",
+      "titulo": "Integración como puerta de CI",
+      "contexto": "Se quiere bloquear la introducción de secretos en cambios nuevos.",
+      "objetivo": "Automatizar una comprobación repetible.",
+      "prerequisitos": [
+        "CI con Gitleaks",
+        "Configuración versionada",
+        "Política de manejo de informes"
+      ],
+      "pasos": [
+        "Fijar versión y hash.",
+        "Ejecutar sobre el cambio.",
+        "Publicar informe restringido.",
+        "Definir el flujo de rotación."
+      ],
+      "resultado_esperado": "Comprobación reproducible con tratamiento seguro de hallazgos.",
+      "evidencia_requerida": [
+        "Configuración de CI",
+        "Informe",
+        "Versión"
+      ],
+      "riesgo": "ALTO · Un informe mal protegido expone secretos.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

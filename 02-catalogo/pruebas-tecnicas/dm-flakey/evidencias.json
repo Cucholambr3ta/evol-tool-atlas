@@ -1,0 +1,43 @@
+{
+  "schema": "evol-tool-atlas/evidencias/1",
+  "herramienta": "dm-flakey",
+  "id_catalogo": "AT-SEC-007",
+  "fecha_actualizacion": "2026-11-25",
+  "principio": "El Atlas no ejecuta pruebas. Solo conserva y normaliza resultados obtenidos por agentes o desarrolladores en entornos externos, con procedencia verificable.",
+  "registros": [
+    {
+      "id": "EV-AT-SEC-007-BLOCKED-01",
+      "herramienta": "dm-flakey",
+      "id_catalogo": "AT-SEC-007",
+      "tipo": "prueba_funcional",
+      "fecha": "2026-11-25",
+      "entorno": "No ejecutado; revisión documental del 2026-11-25",
+      "version": "No determinada",
+      "comando": "No ejecutado: el Atlas no ejecuta pruebas",
+      "resultado": "BLOCKED",
+      "resumen": "No se localizó evidencia de ejecución de dm-flakey; el módulo está disponible en el host, pero no se cargó durante la actualización.",
+      "evidencia": null,
+      "sha256": null,
+      "procedencia": {
+        "origen": "Sin evidencia localizada en los espacios de trabajo revisados",
+        "archivo_original": null,
+        "sha256_original": null
+      },
+      "artefactos": [],
+      "limitaciones": [
+        "No se ejecutó la herramienta durante la actualización del Atlas.",
+        "No debe interpretarse este estado como fallo de la herramienta: falta evidencia, no resultado negativo."
+      ]
+    }
+  ],
+  "pendientes": [
+    "Creación y eliminación de un target sobre un dispositivo desechable.",
+    "Prueba de recuperación con datos ficticios y logs completos.",
+    "Verificación de la configuración del kernel del host."
+  ],
+  "limitaciones_generales": [
+    "La evidencia disponible no certifica seguridad, calidad ni compatibilidad universal.",
+    "Una versión probada no implica que la versión más reciente tenga el mismo comportamiento.",
+    "Los resultados sobre fixtures sintéticos no demuestran el comportamiento sobre repositorios reales."
+  ]
+}
