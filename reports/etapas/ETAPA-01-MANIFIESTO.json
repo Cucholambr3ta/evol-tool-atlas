@@ -5,7 +5,7 @@
   "url_rama": "https://github.com/Cucholambr3ta/evol-tool-atlas/tree/atlas/etapa-01-recuperacion",
   "head_inicial_etapa": "e061d48c30c488016c2bfe5e660eaf01e28c907e",
   "head_auditado_no_go": "bc50dea4458b5f9ff86f635e49744fa4ea0a776e",
-  "head_corregido_final": "309c088d13596ac9492ca9b7d96803a3309a2111",
+  "head_corregido_final": "31b2d2b826a4365220531fba4ef08df9216388bf",
   "url_pull_request": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/1",
   "commits_etapa": [
     {
@@ -20,6 +20,11 @@
     },
     {
       "sha": "309c088d13596ac9492ca9b7d96803a3309a2111",
+      "mensaje": "fix(etapa-01): complete audit corrections E1-04",
+      "tipo": "correccion_final_auditoria"
+    },
+    {
+      "sha": "31b2d2b826a4365220531fba4ef08df9216388bf",
       "mensaje": "fix(etapa-01): complete audit corrections E1-04",
       "tipo": "correccion_final_auditoria"
     }
@@ -111,8 +116,8 @@
   "resultado_pruebas": {
     "typecheck": "PASS — TypeScript strict mode compila sin errores",
     "test_unit": {
-      "total": 151,
-      "passed": 151,
+      "total": 150,
+      "passed": 150,
       "failed": 0,
       "reg_codes": [
         "REG-01: 12/12 herramientas existen",
@@ -127,7 +132,7 @@
         "REG-10: Catálogo preservado (49/2137/741/2878)",
         "REG-11: 12/12 guías/skills estructurales + 2 fixtures negativas",
         "REG-12: 5/5 artefactos PASS con hash cruzado en SHA256SUMS",
-        "REG-13: 8/8 fixtures negativas detectan defectos"
+        "REG-13: 10/10 fixtures negativas detectan defectos"
       ]
     },
     "validate_atds": {
@@ -156,5 +161,5 @@
     "7 herramientas con evidencias BLOCKED - estado correcto, no se convierten a FAIL/PASS",
     "Lint preexistente: 42 errores en scripts/lib/familias.js y scripts/normalizar-catalogo.mjs (ajenos a esta intervención)"
   ],
-  "nota_hashes": "El SHA final del commit de corrección (309c088d13596ac9492ca9b7d96803a3309a2111) se registra en el mensaje de entrega final y en la descripción del PR, no dentro del propio manifiesto versionado (evita referencia circular)."
+  "nota_hashes": "El SHA final del commit de corrección (31b2d2b826a4365220531fba4ef08df9216388bf) se registra en el mensaje de entrega final y en la descripción del PR, no dentro del propio manifiesto versionado (evita referencia circular)."
 }

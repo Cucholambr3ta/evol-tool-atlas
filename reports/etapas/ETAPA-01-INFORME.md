@@ -19,7 +19,7 @@ La auditoría independiente identificó que el diff real entre `e061d48c30c48801
 | | `02-catalogo/pruebas-tecnicas/cargo-fuzz/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/cargo-fuzz-version.json` |
 | | `02-catalogo/pruebas-tecnicas/cargo-audit/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/cargo-audit-sondas.json` |
 | | `02-catalogo/pruebas-tecnicas/gitleaks/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/gitleaks-prueba.json` |
-| **E1-04 Pruebas regresión** | `tests/unit/etapa-01-recuperacion.test.ts` | 151 pruebas automatizadas focalizadas (REG-01 a REG-13) |
+| **E1-04 Pruebas regresión** | `tests/unit/etapa-01-recuperacion.test.ts` | 150 pruebas automatizadas focalizadas (REG-01 a REG-13) |
 | **E1-03 Informe** | `reports/etapas/ETAPA-01-INFORME.md`, `reports/etapas/ETAPA-01-MANIFIESTO.json` | Documentos corregidos para reflejar la realidad del historial |
 | **E1-04-A TypeScript** | `tests/unit/etapa-01-recuperacion.test.ts` | Interfaz `PriorityTool` unificada con `hasPassEvidence` |
 | **E1-04-B no any** | `tests/unit/etapa-01-recuperacion.test.ts` | Tipos explícitos para `CatalogCategory`, `CatalogTool`, `EvidenceRecord`, `EvidenceFile` |
@@ -65,7 +65,7 @@ Todas las 12 herramientas **ya contenían** en `e061d48`:
 npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts
 ```
 
-**Resultado: 151 pruebas PASARON / 0 fallaron**
+**Resultado: 150 pruebas PASARON / 0 fallaron**
 
 | Código | Descripción | Estado |
 |--------|-------------|--------|
@@ -81,7 +81,7 @@ npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts
 | REG-10 | Catálogo preservado (49 cat, 2137 adm, 741 exc, 2878 total) | ✅ |
 | REG-11 | Guías/skills estructurales + fixtures negativas rechazan plantillas | ✅ 12/12 + 2 fixtures negativas |
 | REG-12 | Artefactos de evidencia PASS existen y hashes cruzados con SHA256SUMS | ✅ 5/5 |
-| REG-13 | Pruebas negativas: validador detecta defectos (ID inválido, BLOCKED→PASS, evidencia sin artefacto, hash inválido, archivo faltante, path traversal, guía genérica, skill con placeholders) | ✅ 8/8 |
+| REG-13 | Pruebas negativas: validador detecta defectos (ID inválido, BLOCKED→PASS, evidencia sin artefacto, hash inválido, archivo faltante, path traversal, guía genérica, skill con placeholders) | ✅ 10/10 |
 
 ## Validaciones complementarias
 
@@ -93,7 +93,7 @@ npm run typecheck
 ```
 npm run test:unit
 ```
-✅ PASS — 151 tests / 0 fallos
+✅ PASS — 150 tests / 0 fallos
 
 ```
 npm run validate:atds
@@ -126,19 +126,20 @@ La auditoría detectó que el ZIP histórico (`auditoria-documental-v2.3.2.zip`)
 ## Problemas conocidos (no bloqueantes para etapa 1)
 
 1. **9 herramientas con MISSING_SOURCE** (sploitctl, torctl, netcon, msfdb, wordlistctl, windows-binaries, darkmysqli, webrute, webshells) — pertenecen a investigación documental posterior
-2. **7 herramientas con evidencias BLOCKED** (MCP Inspector, Loom, dm-flakey, dm-log-writes, Miri, cargo-mutants, proptest) — estado correcto, no se convierten a FAIL/PASS
+2. **7 herramientas con evidencias BLOCKED** — estado correcto, no se convierten a FAIL/PASS
 3. **Lint preexistente** — 42 errores en `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` ajenos a esta intervención
 
 ## Commits de corrección
 
 1. `bc50dea` — `docs(etapa-01): add recovery report and manifest` (HEAD auditado original)
 2. `6368c6e` — `fix(etapa-01): correct SHA-256 for semgrep metadata; add regression tests; update reports`
-3. `309c088` — `fix(etapa-01): complete audit corrections E1-04` (HEAD corregido final)
+3. `309c088` — `fix(etapa-01): complete audit corrections E1-04`
+4. `31b2d2b` — `fix(etapa-01): complete audit corrections E1-04` (HEAD corregido final)
 
 ---
 
 **HEAD inicial etapa:** `e061d48c30c488016c2bfe5e660eaf01e28c907e`  
 **HEAD auditado (NO-GO):** `bc50dea4458b5f9ff86f635e49744fa4ea0a776e`  
-**HEAD corregido final:** `309c088d13596ac9492ca9b7d96803a3309a2111`  
+**HEAD corregido final:** `31b2d2b826a4365220531fba4ef08df9216388bf`  
 **Rama:** `atlas/etapa-01-recuperacion`  
 **Fecha:** 2026-11-26
