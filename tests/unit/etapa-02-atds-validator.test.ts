@@ -11,8 +11,8 @@ import { fileURLToPath } from 'node:url';
 import { mkdtempSync, rmSync } from 'node:fs';
 import * as os from 'node:os';
 
-// Importar módulos de producción
-// @ts-expect-error - JS modules without type declarations
+// Importar módulos de producción (JS modules without type declarations)
+// @ts-ignore
 import { 
   normalizeMetadata, 
   isVerifiedValue, 
@@ -20,22 +20,22 @@ import {
   VAGUE_PATTERNS
 } from '../../scripts/lib/atds/normalize.mjs';
 
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { checkGuideContent } from '../../scripts/lib/atds/guide.mjs';
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { checkSkillContent } from '../../scripts/lib/atds/skill.mjs';
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { checkCasesContent } from '../../scripts/lib/atds/cases.mjs';
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { checkEvidenceContent } from '../../scripts/lib/atds/evidence.mjs';
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { 
   evaluateL1, evaluateL2, evaluateL3, evaluateL4, 
   computeLevels, computeStatus 
 } from '../../scripts/lib/atds/classify.mjs';
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { makeFinding, mapCodeToDoc, summarizeFindings } from '../../scripts/lib/atds/diagnostics.mjs';
-// @ts-expect-error - JS module without type declarations
+// @ts-ignore
 import { resolveWithin, toolDirFromHref } from '../../scripts/lib/atds/paths.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
