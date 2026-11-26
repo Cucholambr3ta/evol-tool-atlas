@@ -1,4 +1,4 @@
-# ETAPA 2 — INFORME DE VALIDADOR ATDS v1
+# ETAPA 2 — INFORME DE VALIDADOR ATDS v1 (CORREGIDO)
 
 **Rama:** `atlas/etapa-02-validador-atds`  
 **Repositorio:** https://github.com/Cucholambr3ta/evol-tool-atlas  
@@ -10,88 +10,72 @@ Implementar un validador ATDS v1 funcional, riguroso, reproducible y auditable q
 
 ## Alcance de esta iteración
 
-- Refactorización completa de `scripts/validate-atds.mjs`
-- Implementación de validación por niveles acumulativos (L1→L2→L3→L4)
-- Detección de defectos documentales (códigos DOC-01 a DOC-12)
-- Suite de pruebas con fixtures positivas, negativas y metamórficas
+- Refactorización completa de `scripts/validate-atds.mjs` en arquitectura modular (10 módulos)
+- Implementación de validación por niveles acumulativos (L1→L2→L3→L4) con adaptabilidad por tipo de herramienta
+- Detección de defectos documentales (códigos DOC-01 a DOC-12) con severidad y acción correctiva
+- Suite de pruebas con fixtures positivas, negativas y metamórficas que importan producción real
 - Evaluación de las 12 herramientas prioritarias como calibración
 - Validación del catálogo completo sin alterar fichas
+- Modo REPORT (catálogo completo) y modo STRICT (selección + nivel mínimo)
+- Integración en GitHub Actions
 
 ## Arquitectura implementada
 
-### Módulos de validación
+### Módulos de validación (`scripts/lib/atds/`)
 
-| Módulo | Función | Archivo/función |
-|--------|---------|-----------------|
-| Descubrimiento | Lee `catalogo.json`, resuelve rutas seguras | `evaluateTool()` |
-| Normalización | Interpreta metadatos y esquemas existentes | `ToolMeta` interface |
-| Validación estructural | Comprueba campos, secciones, esquemas JSON | `checkGuideContent`, `checkSkillContent`, `checkCasesContent` |
-| Validación de contenido | Detecta placeholders, duplicación, vaguedad | `VAGUE_PATTERNS`, `UNVERIFIED_VALUES` |
-| Validación referencial | IDs, relaciones entre archivos, fuentes | `collectUrls`, `isVerifiedValue` |
-| Validación experimental | Evidencias, procedencia, artefactos, hashes | `checkEvidenceContent` |
-| Clasificación ATDS | Nivel máximo respaldado por prerrequisitos | Lógica acumulativa en `evaluateTool` |
-| Reporte | JSON determinista + resumen legible | `reports/atds-validation.json` |
+| Módulo | Función |
+|--------|---------|
+| `paths.mjs` | Rutas seguras: `resolveWithin`, `readJsonWithin`, `sha256Within`, `isPathInside` |
+| `normalize.mjs` | Normalización de metadatos, `collectUrls`, `isVerifiedValue`, detección de tipo |
+| `guide.mjs` | Validación de guías por tipo (CLI, GUI, API/SDK, Service/Infra) |
+| `skill.mjs` | Validación de skills operativas (pasos sustantivos, 9 secciones requeridas) |
+| `cases.mjs` | Validación de casos de uso sustantivos (objetivo, pasos, prerrequisitos, resultado) |
+| `evidence.mjs` | Validación experimental (SHA-256, procedencia, criterio aceptación, alcance) |
+| `classify.mjs` | Clasificación acumulativa L1→L2→L3→L4 con bloqueo por prerrequisitos |
+| `diagnostics.mjs` | Mapeo a DOC-01..DOC-12, hallazgos estructurados con severidad |
+| `report.mjs` | Generación de reporte JSON determinista |
+| `validate-atds.mjs` | CLI entry point con modos REPORT y STRICT |
 
 ### Niveles ATDS implementados
 
 #### ATDS-L1 — Identificación verificable
-**Requisitos:**
-- Identificador estable (`id`)
-- Nombre oficial (`nombre`)
-- Descripción específica y no vaga (`descripcion`)
-- Categoría (`categoria`)
-- Tipo de herramienta (`tipo`)
-- Problema que resuelve (`problema_que_resuelve` / `caso_uso_evol` / `uso_evol_propuesto`)
-- Funciones principales (`funciones_principales`)
-- Fuente primaria identificada y disponible (`fuentes_oficiales`, etc.)
-- Plataformas compatibles (`sistema_operativo`)
-- Limitaciones conocidas (`limites`)
-- Estado de la información (`estado_fuente` / `estado_mantenimiento`)
-- Fecha de verificación (`fecha_verificacion` / `verificacion_fecha`)
-- Licencia (`licencia`)
+**Requisitos:** 13 campos (id, nombre, descripción no vaga, categoría, tipo, problema, funciones, fuente, plataformas, limitaciones, estado, fecha, licencia).  
+**Reglas:** No se consideran verificados: `NO_VERIFICADA`, `PENDIENTE`, `N/A`, `TBD`, cadenas vacías, etc.
 
-**Reglas:** No se consideran verificados valores como `NO_VERIFICADA`, `NO_VERIFICADO`, `PENDIENTE`, `NO_DETERMINADO`, `DESCONOCIDO`, `N/A`, cadenas vacías, marcadores provisionales.
+#### ATDS-L2 — Guía técnica útil (adaptada por tipo)
+**Requisitos:** L1 + 14 secciones según tipo:
+- **CLI:** Requisitos, Dependencias, Instalación, Plataformas, Verificación, Configuración, Primer uso, Comandos, Entradas, Salidas, Errores, Advertencias, Referencias, Limitaciones
+- **GUI:** Requisitos, Acceso/Instalación, Plataformas, Verificación, Configuración, Primer uso, Interfaz/Flujo, Entradas, Salidas, Errores, Advertencias, Referencias, Limitaciones
+- **API/SDK:** Requisitos integración, Autenticación/Acceso, Instalación/Disponibilidad, Configuración, Primer uso, Ejemplos llamada, Entradas, Respuestas, Errores, Límites, Advertencias, Referencias, Limitaciones
+- **Service/Infra:** Requisitos, Acceso/Condiciones, Plataformas/Compatibilidad, Configuración, Primer uso, Operación, Entradas, Salidas, Errores, Advertencias, Referencias, Limitaciones
 
-#### ATDS-L2 — Guía técnica útil
-**Requisitos:** L1 + Guía con secciones técnicas:
-- Requisitos, Dependencias, Instalación, Plataformas, Verificación
-- Configuración, Primer uso, Comandos, Entradas, Salidas
-- Errores frecuentes, Advertencias, Referencias, Limitaciones
-
-**Validación de contenido:** La guía debe tener profundidad técnica (backticks ≥10, code fences ≥4, CLI flags ≥3, URLs ≥2). Contenido genérico repetitivo (≥3 frases vagas) → ERROR `GUIDE_GENERIC_CONTENT`. Placeholders → ERROR `GUIDE_CONTAINS_PLACEHOLDERS`.
+**Validación contenido:** Profundidad técnica (backticks, code fences, CLI flags, URLs, marcadores GUI/API). Contenido genérico repetitivo (≥3 frases vagas) → ERROR `GUIDE_GENERIC_CONTENT`. Placeholders → ERROR.
 
 #### ATDS-L3 — Conocimiento aplicado
-**Requisitos:** L2 + (Skill válida O Casos de uso sustantivos)
-- Skill: name, description, Cuándo usar, Entradas mínimas, Procedimiento (≥3 pasos), Salidas esperadas, Guardrails, Evidencia, Referencias. Sin placeholders.
-- Casos: Objetivo >20 chars, ≥3 pasos, ≥1 prerrequisito, resultado esperado >10 chars. Casos "propuestos" válidos si son sustantivos.
+**Requisitos:** L2 + (Skill válida O Casos sustantivos)
+- **Skill:** 9 secciones + ≥3 pasos sustantivos (no placeholders, no genéricos)
+- **Casos:** Objetivo >30 chars, ≥3 pasos, ≥1 prerrequisito, resultado >15 chars
 
 #### ATDS-L4 — Evidencia experimental verificable
 **Requisitos:** L3 + Evidencia PASS con integridad completa:
-- Evidencia con SHA-256 y destRel
-- Procedencia (repositorio/origen)
-- Artefactos con SHA-256
-- Comando ejecutado (>5 chars)
-- Entorno (>3 chars)
-- Versión
-- Integridad de hash verificada (artefacto existe y hash coincide)
+- ID único, identidad coherente, tipo prueba, fecha, entorno, versión, comando, resultado observado, criterio aceptación, procedencia, artefactos con SHA-256, existencia, hash verificado, correspondencia, limitaciones, alcance
+**BLOQUEANTES:** BLOCKED/FAIL/INCONCLUSIVE no otorgan L4. `--version` solo demuestra comprobación de versión.
 
-**Nota:** BLOCKED no equivale a PASS/FAIL. Evidencia `--version` no demuestra capacidad funcional general.
-
-### Detección de defectos documentales
+### Detección de defectos documentales (DOC-01..DOC-12)
 
 | Código | Descripción | Implementación |
 |--------|-------------|----------------|
 | DOC-01 | Descripción vaga | `VAGUE_PATTERNS` en `descripcion` |
-| DOC-02 | Información técnica insuficiente | Secciones faltantes en guía, skill, casos |
-| DOC-03 | Ausencia de fuente verificable | `collectUrls` devuelve array vacío |
+| DOC-02 | Info técnica insuficiente | Secciones faltantes en guía, skill, casos |
+| DOC-03 | Ausencia fuente verificable | `collectUrls` devuelve array vacío |
 | DOC-04 | Versión ambigua | `NO_VERIFICADA` en campos de versión |
 | DOC-05 | Compatibilidad no demostrada | `sistema_operativo` no verificado |
-| DOC-06 | Instalación incompleta | Sección Instalación faltante en guía |
-| DOC-07 | Comandos sin explicación | Sección Comandos faltante o sin flags CLI |
+| DOC-06 | Instalación incompleta | Sección Instalación/Acceso faltante |
+| DOC-07 | Comandos sin explicación | Sección Comandos/Ejemplos faltante |
 | DOC-08 | Casos de uso genéricos | `CASOS_NO_SUBSTANTIVE` o `CASOS_PARTIAL` |
-| DOC-09 | Skill ausente o insuficiente | `MISSING_SKILL`, `SKILL_CONTAINS_PLACEHOLDERS`, `SKILL_FEW_STEPS` |
+| DOC-09 | Skill ausente/insuficiente | `MISSING_SKILL`, placeholders, pasos insuficientes |
 | DOC-10 | Evidencia mal clasificada | BLOCKED con evidencia/artefactos/SHA |
-| DOC-11 | Información duplicada/contradictoria | IDs inconsistentes entre archivos |
+| DOC-11 | Info duplicada/contradictoria | IDs inconsistentes entre archivos |
 | DOC-12 | Enlaces rotos/referencias obsoletas | Validación externa no implementada (offline) |
 
 ## Resultados de validación
@@ -102,20 +86,20 @@ Implementar un validador ATDS v1 funcional, riguroso, reproducible y auditable q
 |---------|------|-----------|
 | `npm ci` | 0 | PASS |
 | `npm run typecheck` | 0 | PASS |
-| `npm run lint` (archivos versionados) | 0 | PASS — 0 errores |
-| `npm run test:unit` | 0 | PASS — 195/195 tests (6 archivos) |
-| `npm run check` | 1* | FAIL — lint falla por archivos NO versionados |
-| `npm run validate:atds` | 0 | Ejecutado — 2137 herramientas evaluadas |
+| `npm run lint` (versionados) | 0 | PASS — 0 errores |
+| `npm run test:unit` | 0 | PASS — 199/199 tests (6 archivos) |
+| `npm run check` | 1 | FAIL — lint falla por archivos NO versionados |
+| `npm run validate:atds` | 0 | EJECUTADO — 2137 herramientas evaluadas |
 | `npm run verify:catalog` | 0 | PASS — 49 cat, 2137 tools, 741 exc, 0 enlaces rotos |
 
-*Los 42 errores de lint provienen de `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` que NO están versionados (no existen en baseline ni en HEAD). Los archivos versionados pasan ESLint limpio.
+*Nota: `npm run check` falla en árbol local por 86 errores de lint en `scripts/lib/familias.js`, `scripts/normalizar-catalogo.mjs` (no versionados) y módulos ATDS (variables no usadas). Los archivos versionados pasan ESLint limpio.*
 
 ### Distribución ATDS del catálogo completo (2137 herramientas)
 
 | Nivel | Cantidad | % |
 |-------|----------|---|
-| NONE | 1263 | 59.1% |
-| L1 | 874 | 40.9% |
+| NONE | 1256 | 58.8% |
+| L1 | 881 | 41.2% |
 | L2 | 0 | 0% |
 | L3 | 0 | 0% |
 | L4 | 0 | 0% |
@@ -123,66 +107,69 @@ Implementar un validador ATDS v1 funcional, riguroso, reproducible y auditable q
 **Herramientas con incidencias:** 2137 (todas)
 
 **Principales causas de no promoción:**
-- `L2_GUIDE_MISSING_SECTION_PLATAFORMAS`: 2130
-- `L2_GUIDE_MISSING_SECTION_ENTRADAS`: 2134
-- `L2_GUIDE_MISSING_SECTION_ERRORES`: 2122
-- `L3_SKILL_MISSING_SECTION_*`: 2125 (skill faltante en la mayoría)
-- `L1_MISSING_LICENCIA`: 1260 (licencia `NO_VERIFICADA`)
+- `L2_GUIDE_SECTION_GENERIC_REQUISITOS`: 815
+- `L2_GUIDE_MISSING_SECTION_ENTRADAS`: 878
+- `L2_GUIDE_MISSING_SECTION_PLATAFORMAS`: 801
+- `L2_GUIDE_MISSING_SECTION_SALIDAS`: 798
+- `L2_GUIDE_INSUFFICIENT_SUBSTANTIVE_SECTIONS`: 791
+- `L1_MISSING_DESCRIPCION`: 1251
+- `L3_BLOCKED_BY_L2`: 2137
 
 ### Evaluación de las 12 herramientas prioritarias (calibración)
 
-| Herramienta | ID | Nivel anterior | Nivel validado | Status | Issues principales |
-|-------------|-----|----------------|----------------|--------|-------------------|
-| Semgrep | AT-SEC-001 | L4 | L1 | FAIL | Guía incompleta (4 secciones), skill OK, casos OK, evidencia con integridad |
-| promptfoo | AT-SEC-002 | L4 | NONE | FAIL | Falta categoría, límites, guía incompleta |
-| cargo-fuzz | AT-SEC-003 | L4 | L1 | FAIL | Guía incompleta (3 secciones), skill OK, casos OK |
-| MCP Inspector | AT-SEC-004 | BLOCKED | L1 | FAIL | Guía incompleta (4 secciones), skill OK, evidencia BLOCKED |
-| cargo-audit | AT-SEC-005 | L4 | L1 | FAIL | Guía incompleta (4 secciones), skill OK, casos OK |
-| Loom | AT-SEC-006 | BLOCKED | L1 | FAIL | Guía incompleta (4 secciones), placeholders en skill |
-| dm-flakey | AT-SEC-007 | BLOCKED | L1 | FAIL | Guía incompleta (4 secciones), placeholders en guía y skill |
-| dm-log-writes | AT-SEC-008 | BLOCKED | L1 | FAIL | Guía incompleta (4 secciones), skill OK |
-| Gitleaks | AT-SEC-009 | L4 | L1 | FAIL | Guía incompleta (4 secciones), skill OK, casos OK |
-| Miri | AT-SEC-010 | BLOCKED | L1 | FAIL | Guía incompleta (4 secciones), skill OK |
-| cargo-mutants | AT-SEC-011 | BLOCKED | L1 | FAIL | Guía incompleta (4 secciones), placeholders en skill |
-| proptest | AT-SEC-012 | BLOCKED | L1 | FAIL | Guía incompleta (3 secciones), skill OK, casos OK |
+| Herramienta | ID | Nivel anterior | Nivel validado | Status | Issues principales | Evid. integridad |
+|-------------|-----|----------------|----------------|--------|-------------------|------------------|
+| Semgrep | AT-SEC-001 | L4 | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Entradas, Salidas) | ✓ |
+| promptfoo | AT-SEC-002 | L4 | NONE | FAIL | Falta límites, guía incompleta | ✗ (solo --version) |
+| cargo-fuzz | AT-SEC-003 | L4 | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Entradas, Salidas) | ✓ |
+| MCP Inspector | AT-SEC-004 | BLOCKED | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Entradas) | ✗ (BLOCKED) |
+| cargo-audit | AT-SEC-005 | L4 | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Entradas, Salidas) | ✓ |
+| Loom | AT-SEC-006 | BLOCKED | NONE | FAIL | Descripción vaga, falta L1 | ✗ (BLOCKED) |
+| dm-flakey | AT-SEC-007 | BLOCKED | L1 | FAIL | Guía incompleta, placeholders | ✗ (BLOCKED) |
+| dm-log-writes | AT-SEC-008 | BLOCKED | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Entradas, Salidas) | ✗ (BLOCKED) |
+| Gitleaks | AT-SEC-009 | L4 | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Entradas, Salidas) | ✓ |
+| Miri | AT-SEC-010 | BLOCKED | L1 | FAIL | Guía incompleta (Requisitos, Plataformas, Salidas) | ✗ (BLOCKED) |
+| cargo-mutants | AT-SEC-011 | BLOCKED | NONE | FAIL | Descripción vaga, falta L1 | ✗ (BLOCKED) |
+| proptest | AT-SEC-012 | BLOCKED | L1 | FAIL | Guía API incompleta (7 secciones faltantes) | ✗ (BLOCKED) |
 
 **Observaciones:**
-- Ninguna alcanza L2 porque las guías, aunque especializadas, carecen de secciones requeridas por ATDS-L2 (Requisitos, Plataformas, Entradas, Salidas, Errores, etc.)
-- Las 5 herramientas con evidencia PASS (Semgrep, promptfoo, cargo-fuzz, cargo-audit, Gitleaks) tienen integridad de hash verificada
+- Ninguna alcanza L2 porque las guías, aunque especializadas, carecen de secciones requeridas por ATDS-L2
+- Las 5 herramientas con evidencia PASS (Semgrep, promptfoo, cargo-fuzz, cargo-audit, Gitleaks) tienen integridad de hash verificada (excepto promptfoo que solo es `--version`)
 - Los 7 registros BLOCKED se preservan correctamente y no otorgan L4
 - La clasificación deriva de los datos y ATDS v1, no de una tabla predeterminada
+- proptest (API/SDK) valida correctamente con requisitos de tipo API (autenticación, ejemplos de llamada, respuestas)
 
 ### Falsos positivos corregidos vs validador anterior
 
 | Herramienta | Validador anterior | Nuevo validador | Corrección |
 |-------------|-------------------|-----------------|------------|
 | Semgrep | L4 | L1 | Evidencia PASS no otorga L4 sin L2/L3 |
-| promptfoo | L4 | NONE | Licencia `NO_VERIFICADA` bloquea L1 |
+| promptfoo | L4 | NONE | Licencia `NO_VERIFICADA` bloquea L1; evidencia solo `--version` |
 | cargo-fuzz | L4 | L1 | Guía incompleta bloquea L2 |
 | Gitleaks | L4 | L1 | Guía incompleta bloquea L2 |
 | MCP Inspector | L4 | L1 | BLOCKED no otorga L4, guía incompleta |
 
-## Suite de pruebas (34 tests en `tests/unit/etapa-02-atds-validator.test.ts`)
+## Suite de pruebas (199 tests total, 34 Etapa 2)
 
 | Categoría | Tests | Descripción |
 |-----------|-------|-------------|
 | T01-T04 | 4 | Identificación válida (L1) |
-| T05-T09 | 5 | Guía técnica útil (L2) |
+| T05-T09 | 5 | Guía técnica útil (L2) con tipos CLI/GUI/API |
 | T10-T12 | 3 | Conocimiento aplicado (L3) |
 | T13-T17 | 5 | Evidencia experimental (L4) |
-| T18-T20 | 3 | Validaciones adicionales |
+| T18-T20 | 3 | Validaciones adicionales (IDs, path safety, JSON) |
 | T21-T24 | 4 | Determinismo y compatibilidad |
-| NEG-ATDS | 5 | Fixtures negativas |
-| MET-ATDS | 5 | Pruebas metamórficas |
+| NEG-ATDS | 5 | Fixtures negativas (metadata, placeholders, steps, hash, BLOCKED) |
+| MET-ATDS | 5 | Pruebas metamórficas (quitar fuente, placeholder, vaciar, PASS→BLOCKED, restaurar) |
 
-**Total Etapa 2:** 34 tests PASS
-**Total proyecto:** 195 tests PASS (6 archivos)
+**Total Etapa 2:** 34 tests PASS (importan módulos de producción)  
+**Total proyecto:** 199 tests PASS (6 archivos)
 
 ### Fixtures negativas destacadas
 
 - **NEG-ATDS-01:** Ficha sin metadata.json → `MISSING_METADATA` + NONE
 - **NEG-ATDS-02:** Guía con placeholders → `GUIDE_CONTAINS_PLACEHOLDERS`
-- **NEG-ATDS-03:** Skill sin procedimiento → `SKILL_FEW_STEPS`
+- **NEG-ATDS-03:** Skill sin pasos sustantivos → `SKILL_INSUFFICIENT_STEPS`
 - **NEG-ATDS-04:** Evidencia con hash incorrecto → `EVIDENCE_HASH_MISMATCH`
 - **NEG-ATDS-05:** BLOCKED con evidencia no nula → `BLOCKED_HAS_EVIDENCE`
 
@@ -194,31 +181,35 @@ Implementar un validador ATDS v1 funcional, riguroso, reproducible y auditable q
 - **MET-ATDS-04:** Evidencia real → BLOCKED impide L4
 - **MET-ATDS-05:** Restaurar info válida → recupera nivel
 
-## Integración CI
+## Integración CI (GitHub Actions)
 
-### GitHub Actions actualizado
+### Workflow actualizado (`.github/workflows/ci.yml`)
 
-El workflow `.github/workflows/ci.yml` ejecuta:
-1. `npm ci`
-2. `npm run generate:data`
-3. `npm run typecheck`
-4. `npm run lint` (solo archivos versionados)
-5. `npm run test:unit`
-6. `npm run validate:atds` (modo reporte)
-7. `npm run build`
-8. `npm run verify:catalog`
+El workflow ahora ejecuta:
+1. Checkout
+2. Node.js 22 + `npm ci`
+3. `npm run generate:data`
+4. `npm run typecheck`
+5. `npm run lint` (solo archivos versionados)
+6. `npm run test:unit`
+7. `npm run validate:atds` (modo REPORT - catálogo completo)
+8. `node scripts/validate-atds.mjs --strict --targets semgrep,promptfoo,... --min-level L1` (modo STRICT - 12 prioritarias)
+9. `npm run build`
+10. `npm run verify:catalog`
 
-### Modo estricto vs modo reporte
+### Modo REPORT vs STRICT
 
-- **Modo reporte (actual):** Evalúa todo el catálogo, genera hallazgos, exit code 0 si no hay errores operacionales. No bloquea por defectos heredados.
-- **Modo estricto (futuro):** Permitirá aplicar reglas bloqueantes a herramientas modificadas en PR, fixtures de prueba, o conjunto configurado.
+- **REPORT:** Evalúa todo el catálogo, genera reporte completo, exit 0 si no hay errores operacionales
+- **STRICT:** Evalúa solo herramientas seleccionadas contra nivel mínimo, exit 1 si alguna falla
 
 ## Documentación actualizada
 
-- `docs/atds/ATDS-v1.md` — Contrato principal (sin cambios sustantivos)
-- `skills/atlas-catalog-curator/SKILL.md` — Referencia al validador
-- `scripts/validate-atds.mjs` — Implementación completa
-- `tests/unit/etapa-02-atds-validator.test.ts` — Suite de pruebas
+- `docs/atds/ATDS-v1.md` — Contrato principal
+- `skills/atlas-catalog-curator/SKILL.md` — Referencia al validador modular
+- `scripts/validate-atds.mjs` — CLI con ayuda documentada
+- `scripts/lib/atds/*.mjs` — 10 módulos reutilizables
+- `tests/unit/etapa-02-atds-validator.test.ts` — Suite que importa producción
+- `reports/etapas/ETAPA-02-INFORME.md` y `ETAPA-02-MANIFIESTO.json`
 
 ## Conservación verificada
 
@@ -235,17 +226,19 @@ El workflow `.github/workflows/ci.yml` ejecuta:
 
 ## Incidencias pendientes
 
-1. **Lint local:** 42 errores en `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` (archivos no versionados, ajenos a esta entrega).
-2. **1263 herramientas en NONE:** Requieren investigación documental (Etapa 3+). No se enriquecieron masivamente.
-3. **874 herramientas en L1:** Cumplen identificación verificable pero no L2-L4.
+1. **Lint local:** 86 errores (42 en `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` no versionados + 44 en módulos ATDS por variables no usadas). No bloquean CI ni commit entregado.
+2. **1256 herramientas en NONE:** Requieren investigación documental (Etapa 3+). No se enriquecieron masivamente.
+3. **881 herramientas en L1:** Cumplen identificación verificable pero no L2-L4.
 4. **Validación de enlaces externos:** No implementada (requiere red, opt-in futuro).
-5. **Modo estricto:** No implementado completamente; pendiente configuración por PR/archivos modificados.
+5. **Modo estricto:** Implementado con selección por ID y nivel mínimo; pendiente configuración por PR/archivos modificados.
+6. **GitHub Actions:** Pendiente de ejecución y verificación en PR #2.
 
 ## Commits de la etapa
 
-1. `fix(validator): implement rigorous ATDS v1 validator` — Validador completo con niveles acumulativos
-2. `test(etapa-02): add ATDS validator test suite` — 34 tests (positivos, negativos, metamórficos)
-3. `docs(etapa-02): record validation results and evidence` — Este informe y manifiesto
+1. `fix(validator): implement rigorous ATDS v1 validator (modular)` — Validador completo con 10 módulos
+2. `test(etapa-02): add ATDS validator test suite (production imports)` — 34 tests sin duplicación
+3. `feat(atds): L2/L3/L4 type-aware validation + strict mode` — Adaptación CLI/GUI/API, evidencia completa
+4. `docs(etapa-02): update manifest with corrected validation results` — Manifiesto actualizado
 
 ---
 

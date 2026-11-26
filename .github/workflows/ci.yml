@@ -45,6 +45,15 @@ jobs:
       - name: Run unit tests
         run: npm run test:unit
 
+      - name: ATDS validation — REPORT mode
+        run: npm run validate:atds
+
+      - name: ATDS validation — STRICT mode (priority tools)
+        run: |
+          node scripts/validate-atds.mjs --strict \
+            --targets semgrep,promptfoo,cargo-fuzz,mcp-inspector,cargo-audit,loom,dm-flakey,dm-log-writes,gitleaks,miri,cargo-mutants,proptest \
+            --min-level L1
+
       - name: Build production PWA & copy static catalog
         env:
           VITE_BASE_PATH: /evol-tool-atlas/
