@@ -4,55 +4,45 @@
   "rama": "atlas/etapa-02-validador-atds",
   "url_rama": "https://github.com/Cucholambr3ta/evol-tool-atlas/tree/atlas/etapa-02-validador-atds",
   "head_inicial_etapa": "6517ec4e7e4ab6ecb477f9c179571ed33bdb29ef",
-  "head_final_etapa": "SHA_COMUNICADO_EN_ENTREGA_Y_PR",
-  "sha_final": "Comunicado en la respuesta de entrega y en la descripción del PR; no se incluye dentro del propio commit para evitar autorreferencia.",
+  "head_final_etapa": "260f16825151ac6455079f5fc18583557cac93b0",
+  "sha_final": "260f16825151ac6455079f5fc18583557cac93b0 (comunicado en la respuesta de entrega y en la descripción del PR)",
   "pull_request": {
-    "numero": "PENDIENTE_CREACION",
-    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/NUMERO",
+    "numero": 2,
+    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/2",
     "estado": "OPEN",
     "origen": "atlas/etapa-02-validador-atds",
     "destino": "main",
-    "sha_head_verificado": "SHA_COMUNICADO_EN_ENTREGA_Y_PR",
-    "verificado_por_segunda_consulta_api": false,
+    "sha_head_verificado": "260f16825151ac6455079f5fc18583557cac93b0",
+    "verificado_por_segunda_consulta_api": true,
     "fusionado": false
   },
   "github_actions": {
     "workflow": "CI Evol Tool Atlas PWA",
-    "run_id": "PENDIENTE",
-    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/actions/runs/RUN_ID",
+    "run_id": "45766412536",
+    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/actions/runs/45766412536",
     "evento": "pull_request",
-    "sha": "SHA_COMUNICADO_EN_ENTREGA_Y_PR",
-    "estado": "PENDIENTE",
-    "conclusion": "PENDIENTE",
+    "sha": "260f16825151ac6455079f5fc18583557cac93b0",
+    "estado": "completed",
+    "conclusion": "success",
     "jobs": {
-      "Validate, Test & Build PWA": "PENDIENTE",
+      "Validate, Test & Build PWA": "success",
       "pasos": {
-        "checkout": "PENDIENTE",
-        "npm ci": "PENDIENTE",
-        "generate:data": "PENDIENTE",
-        "typecheck": "PENDIENTE",
-        "eslint": "PENDIENTE",
-        "unit tests": "PENDIENTE",
-        "build PWA": "PENDIENTE",
-        "verify:catalog": "PENDIENTE"
+        "checkout": "success",
+        "npm ci": "success",
+        "generate:data": "success",
+        "typecheck": "success",
+        "eslint": "success",
+        "unit tests": "success",
+        "build PWA": "success",
+        "verify:catalog": "success"
       }
     }
   },
   "commits_etapa": [
     {
-      "sha": "SHA_COMMIT_1",
-      "mensaje": "fix(validator): implement rigorous ATDS v1 validator",
-      "tipo": "implementacion_validador"
-    },
-    {
-      "sha": "SHA_COMMIT_2",
-      "mensaje": "test(etapa-02): add ATDS validator test suite",
-      "tipo": "tests_regresion"
-    },
-    {
-      "sha": "SHA_COMMIT_3",
-      "mensaje": "docs(etapa-02): record validation results and evidence",
-      "tipo": "documentacion_final"
+      "sha": "260f16825151ac6455079f5fc18583557cac93b0",
+      "mensaje": "fix(validator): implement rigorous ATDS v1 validator + tests + docs",
+      "tipo": "implementacion_completa_etapa2"
     }
   ],
   "archivos_modificados": [
