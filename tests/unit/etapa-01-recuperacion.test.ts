@@ -10,6 +10,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { mkdtempSync, rmSync } from 'node:fs';
+import * as os from 'node:os';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -145,7 +146,7 @@ function validateCatalogId(id: string, expectedId: string): ValidationResult {
  */
 function validateEvidenceRecord(
   record: EvidenceRecord,
-  _toolDir: string,
+  documentationRoot: string,
   expectedId: string,
   expectedTool: string
 ): ValidationResult {
@@ -187,8 +188,8 @@ function validateEvidenceRecord(
         errors.push('MISSING_EVIDENCE_DESTREL');
       } else {
         try {
-          // destRel is already relative to ROOT
-          const artifactPath = resolveSafe(ROOT, record.evidencia.destRel);
+          // destRel is resolved against the explicitly authorised documentation root
+          const artifactPath = resolveSafe(documentationRoot, record.evidencia.destRel);
           checkedFiles.push(artifactPath);
           if (!fs.existsSync(artifactPath)) {
             errors.push(`EVIDENCE_ARTIFACT_MISSING: ${artifactPath}`);
@@ -249,12 +250,12 @@ function validateEvidenceRecord(
 /**
  * Valida integridad SHA256SUMS.txt
  */
-function validateSha256Manifest(toolDir: string, _toolName: string): ValidationResult {
+function validateSha256Manifest(toolDir: string, _toolName: string, documentationRoot: string): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
   const checkedFiles: string[] = [];
 
-  const sumsPath = path.join(ROOT, toolDir, 'SHA256SUMS.txt');
+  const sumsPath = path.join(documentationRoot, toolDir, 'SHA256SUMS.txt');
   if (!fs.existsSync(sumsPath)) {
     errors.push('MISSING_SHA256SUMS');
     return { valid: false, errors, warnings, checkedFiles };
@@ -291,7 +292,7 @@ function validateSha256Manifest(toolDir: string, _toolName: string): ValidationR
     }
     seenFiles.add(fileName);
 
-    const filePath = resolveSafe(path.join(ROOT, toolDir), fileName);
+    const filePath = resolveSafe(path.join(documentationRoot, toolDir), fileName);
     checkedFiles.push(filePath);
 
     if (!fs.existsSync(filePath)) {
@@ -369,7 +370,8 @@ function validateGuideStructure(content: string, expectedId: string): Validation
     errors.push('GUIDE_MISSING_URLS');
   }
 
-  // Detectar contenido genérico
+  // Detectar documentación genérica (heurística estructural, no análisis semántico completo).
+  // ERROR solo con evidencia fuerte y combinada; WARNING para señales débiles.
   const genericPatterns = [
     /herramienta para seguridad/i,
     /sirve para analizar sistemas/i,
@@ -378,10 +380,40 @@ function validateGuideStructure(content: string, expectedId: string): Validation
     /herramienta avanzada/i,
     /utilidad de seguridad/i,
   ];
-  for (const pattern of genericPatterns) {
-    if (pattern.test(content)) {
-      warnings.push(`GUIDE_GENERIC_PATTERN: ${pattern.source}`);
-    }
+  const genericMatches = genericPatterns.filter(pattern => pattern.test(content)).length;
+
+  const lines = content.split(/\r?\n/).map(line => line.trim()).filter(line => line.length > 0);
+  const lineCounts = new Map<string, number>();
+  for (const line of lines) {
+    lineCounts.set(line, (lineCounts.get(line) ?? 0) + 1);
+  }
+  const duplicateLines = lines.filter(line => (lineCounts.get(line) ?? 0) > 1).length;
+  const duplicateRatio = lines.length > 0 ? duplicateLines / lines.length : 0;
+
+  const words = content.toLowerCase().match(/[a-záéíóúñü]+/g) ?? [];
+  const uniqueWordRatio = words.length > 0 ? new Set(words).size / words.length : 0;
+
+  const backticks = (content.match(/`/g) ?? []).length;
+  const fences = (content.match(/```/g) ?? []).length;
+  const cliFlags = (content.match(/--[a-zA-Z]/g) ?? []).length;
+  const lacksTechnicalContent = backticks < 10 && fences < 4 && cliFlags < 2;
+
+  if (genericMatches >= 3) {
+    errors.push(`GENERIC_DOCUMENTATION: multiple generic phrases (${genericMatches})`);
+  } else if (genericMatches >= 1) {
+    warnings.push(`GUIDE_GENERIC_PATTERN: ${genericMatches} generic phrase(s)`);
+  }
+
+  if (lacksTechnicalContent && duplicateRatio >= 0.4) {
+    errors.push(`GENERIC_DOCUMENTATION: repetitive content (duplicate line ratio ${duplicateRatio.toFixed(2)})`);
+  } else if (duplicateRatio >= 0.3) {
+    warnings.push(`GUIDE_REPETITIVE_CONTENT: duplicate line ratio ${duplicateRatio.toFixed(2)}`);
+  }
+
+  if (lacksTechnicalContent && uniqueWordRatio < 0.3) {
+    errors.push(`GENERIC_DOCUMENTATION: low lexical diversity (unique word ratio ${uniqueWordRatio.toFixed(2)})`);
+  } else if (uniqueWordRatio < 0.35) {
+    warnings.push(`GUIDE_LOW_DIVERSITY: unique word ratio ${uniqueWordRatio.toFixed(2)}`);
   }
 
   return { valid: errors.length === 0, errors, warnings, checkedFiles };
@@ -431,6 +463,58 @@ function validateSkillStructure(content: string, expectedId: string, toolName: s
   }
 
   return { valid: errors.length === 0, errors, warnings, checkedFiles };
+}
+
+/**
+ * Construye una guía sintética con TODAS las secciones requeridas y longitud
+ * suficiente, pero cuyo contenido es deliberadamente genérico y repetitivo.
+ * Sirve para demostrar que la detección no depende de títulos ausentes ni de
+ * que el documento sea corto.
+ */
+function buildCompleteGenericGuide(): string {
+  const genericParagraph =
+    'Esta herramienta avanzada es una utilidad de seguridad que permite realizar pruebas y sirve para analizar sistemas de forma general.';
+  const repeated = Array.from({ length: 6 }, () => genericParagraph).join('\n\n');
+  return `# Herramienta Genérica
+
+**ID de catálogo:** AT-SEC-001
+**Categoría Atlas:** Pruebas y auditoría técnica
+**Versión de referencia verificada:** 1.0.0
+**Fecha de verificación documental:** 2026-11-26
+**Estado en este Atlas:** documentado.
+
+## Introducción
+
+${repeated}
+
+## Instalación manual
+
+${repeated}
+
+## Configuración
+
+${repeated}
+
+## Primer uso
+
+${repeated}
+
+## Seguridad
+
+${repeated}
+
+## Limitaciones
+
+${repeated}
+
+## Advertencias
+
+${repeated}
+
+## Referencias oficiales
+
+- https://example.com
+`;
 }
 
 describe('REG-01: Existen las doce herramientas prioritarias', () => {
@@ -523,7 +607,7 @@ describe('REG-06: Las evidencias PASS conservan referencias, artefactos y hashes
       expect(passRecords.length).toBeGreaterThan(0);
 
       for (const registro of passRecords) {
-        const validation = validateEvidenceRecord(registro, tool.dir, tool.idCatalogo, tool.name);
+        const validation = validateEvidenceRecord(registro, ROOT, tool.idCatalogo, tool.name);
         if (!validation.valid) {
           console.log(`Validation failed for ${tool.name} ${registro.id}:`, validation.errors);
         }
@@ -554,7 +638,7 @@ describe('REG-07: Los siete registros BLOCKED históricos permanecen inalterados
       expect(blockedRecord).toBeDefined();
 
       if (blockedRecord) {
-        const validation = validateEvidenceRecord(blockedRecord, record.toolDir, record.idCatalogo, record.toolName);
+        const validation = validateEvidenceRecord(blockedRecord, ROOT, record.idCatalogo, record.toolName);
         expect(validation.valid).toBe(true);
         expect(blockedRecord.resultado).toBe('BLOCKED');
         expect(blockedRecord.resultado).not.toBe('PASS');
@@ -585,7 +669,7 @@ describe('REG-07: Los siete registros BLOCKED históricos permanecen inalterados
 describe('REG-08: Integridad SHA-256 completa — todos los archivos listados existen y coinciden', () => {
   for (const tool of PRIORITY_TOOLS) {
     it(`${tool.name} — SHA256SUMS.txt válido y consistente`, () => {
-      const validation = validateSha256Manifest(tool.dir, tool.name);
+      const validation = validateSha256Manifest(tool.dir, tool.name, ROOT);
       if (!validation.valid) {
         console.log(`SHA256 validation failed for ${tool.name}:`, validation.errors);
       }
@@ -665,6 +749,13 @@ describe('REG-11: Guías y skills especializados — comprobaciones estructurale
       expect(validation.valid).toBe(true);
     });
   }
+
+  it('Rechaza una guía genérica con estructura completa por su contenido', () => {
+    const validation = validateGuideStructure(buildCompleteGenericGuide(), 'AT-SEC-001');
+    // La estructura está completa: el rechazo no depende de secciones ausentes.
+    expect(validation.errors.some(e => e.startsWith('GUIDE_MISSING_SECTION'))).toBe(false);
+    expect(validation.errors.some(e => e.includes('GENERIC_DOCUMENTATION'))).toBe(true);
+  });
 });
 
 describe('REG-12: Enlaces a artefactos de evidencia PASS existen y hashes coinciden', () => {
@@ -706,8 +797,8 @@ describe('REG-13: Pruebas negativas — el validador detecta defectos reales', (
   let tempDir: string;
 
   beforeAll(() => {
-    // Usar directorio temporal seguro y aislado
-    tempDir = mkdtempSync(path.join(process.cwd(), 'tests-unit-negative-'));
+    // Directorio temporal exclusivo fuera del repositorio, aislado por prueba
+    tempDir = mkdtempSync(path.join(os.tmpdir(), 'evol-tool-atlas-negative-'));
   });
 
   afterAll(() => {
@@ -737,7 +828,7 @@ describe('REG-13: Pruebas negativas — el validador detecta defectos reales', (
       sha256: null,
     };
 
-    const validation = validateEvidenceRecord(blockedRecord, '02-catalogo/pruebas-tecnicas/mcp-inspector', 'AT-SEC-004', 'MCP Inspector');
+    const validation = validateEvidenceRecord(blockedRecord, ROOT, 'AT-SEC-004', 'MCP Inspector');
     expect(validation.valid).toBe(false);
     // The validator detects PASS records that have BLOCKED characteristics
     expect(validation.errors.some(e => e.includes('PASS_RECORD_HAS_BLOCKED_CHARACTERISTICS'))).toBe(true);
@@ -756,33 +847,46 @@ describe('REG-13: Pruebas negativas — el validador detecta defectos reales', (
       sha256: 'a'.repeat(64),
     };
 
-    const validation = validateEvidenceRecord(record, '02-catalogo/testing-y-auditoria/semgrep', 'AT-SEC-001', 'Semgrep');
+    const validation = validateEvidenceRecord(record, ROOT, 'AT-SEC-001', 'Semgrep');
     expect(validation.valid).toBe(false);
     expect(validation.errors).toContain('MISSING_ARTIFACTS');
   });
 
   // NEG-04 — SHA-256 incorrecto
-  it('NEG-04: detecta evidencia con hash incorrecto', () => {
-    // Create artifact in the correct location relative to ROOT
-    const artifactDir = path.join(ROOT, 'tests', 'unit', 'fixtures', 'negative', 'test-tool');
+  it('NEG-04: detecta evidencia con hash incorrecto en artefacto aislado', () => {
+    // El artefacto vive únicamente dentro del directorio temporal de la prueba.
+    const artifactDir = path.join(tempDir, 'hash-tool', 'evidencias');
     fs.mkdirSync(artifactDir, { recursive: true });
     const artifactPath = path.join(artifactDir, 'artifact.json');
     fs.writeFileSync(artifactPath, '{"test": "data"}');
 
     const record: EvidenceRecord = {
       id: 'EV-TEST-002',
-      herramienta: 'Test Tool',
+      herramienta: 'Semgrep',
       id_catalogo: 'AT-SEC-001',
       resultado: 'PASS',
-      evidencia: { sha256: 'b'.repeat(64), destRel: 'tests/unit/fixtures/negative/test-tool/artifact.json' },
+      evidencia: { sha256: 'b'.repeat(64), destRel: 'hash-tool/evidencias/artifact.json' },
       procedencia: { repositorio: 'test-repo' },
       artefactos: [{ sha256: 'b'.repeat(64) }],
       sha256: 'b'.repeat(64),
     };
 
-    const validation = validateEvidenceRecord(record, '02-catalogo/testing-y-auditoria/semgrep', 'AT-SEC-001', 'Semgrep');
+    const validation = validateEvidenceRecord(record, tempDir, 'AT-SEC-001', 'Semgrep');
     expect(validation.valid).toBe(false);
     expect(validation.errors.some(e => e.includes('EVIDENCE_HASH_MISMATCH'))).toBe(true);
+
+    // Control positivo: con el hash correcto, el mismo validador no marca mismatch.
+    // Si el validador dejase de detectar el hash incorrecto, la aserción anterior fallaría.
+    const correctHash = sha256(artifactPath);
+    const validRecord: EvidenceRecord = {
+      ...record,
+      evidencia: { sha256: correctHash, destRel: 'hash-tool/evidencias/artifact.json' },
+      artefactos: [{ sha256: correctHash }],
+      sha256: correctHash,
+    };
+    const validValidation = validateEvidenceRecord(validRecord, tempDir, 'AT-SEC-001', 'Semgrep');
+    expect(validValidation.valid).toBe(true);
+    expect(validValidation.errors.some(e => e.includes('EVIDENCE_HASH_MISMATCH'))).toBe(false);
   });
 
   // NEG-05 — Archivo inexistente en manifiesto
@@ -792,7 +896,7 @@ describe('REG-13: Pruebas negativas — el validador detecta defectos reales', (
     const sumsPath = path.join(toolDir, 'SHA256SUMS.txt');
     fs.writeFileSync(sumsPath, 'a'.repeat(64) + '  missing-file.json\n');
 
-    const validation = validateSha256Manifest(path.relative(ROOT, toolDir), 'test-tool');
+    const validation = validateSha256Manifest(path.relative(tempDir, toolDir), 'test-tool', tempDir);
     expect(validation.valid).toBe(false);
     expect(validation.errors.some(e => e.includes('MANIFEST_FILE_MISSING'))).toBe(true);
   });
@@ -841,7 +945,7 @@ describe('REG-13: Pruebas negativas — el validador detecta defectos reales', (
     const hash = 'a'.repeat(64);
     fs.writeFileSync(sumsPath, `${hash}  duplicate.json\n${hash}  duplicate.json\n`);
 
-    const validation = validateSha256Manifest(path.relative(ROOT, toolDir), 'test-tool');
+    const validation = validateSha256Manifest(path.relative(tempDir, toolDir), 'test-tool', tempDir);
     expect(validation.valid).toBe(false);
     expect(validation.errors.some(e => e.includes('DUPLICATE_MANIFEST_ENTRY'))).toBe(true);
   });
@@ -853,8 +957,15 @@ describe('REG-13: Pruebas negativas — el validador detecta defectos reales', (
     const sumsPath = path.join(toolDir, 'SHA256SUMS.txt');
     fs.writeFileSync(sumsPath, 'not-a-valid-hash  file.json\n');
 
-    const validation = validateSha256Manifest(path.relative(ROOT, toolDir), 'test-tool');
+    const validation = validateSha256Manifest(path.relative(tempDir, toolDir), 'test-tool', tempDir);
     expect(validation.valid).toBe(false);
     expect(validation.errors.some(e => e.includes('INVALID_SHA256_IN_MANIFEST'))).toBe(true);
+  });
+
+  // NEG-11 — Documentación genérica con estructura completa
+  it('NEG-11: rechaza documentación genérica con estructura completa (GENERIC_DOCUMENTATION)', () => {
+    const validation = validateGuideStructure(buildCompleteGenericGuide(), 'AT-SEC-001');
+    expect(validation.errors.some(e => e.startsWith('GUIDE_MISSING_SECTION'))).toBe(false);
+    expect(validation.errors.some(e => e.includes('GENERIC_DOCUMENTATION'))).toBe(true);
   });
 });
