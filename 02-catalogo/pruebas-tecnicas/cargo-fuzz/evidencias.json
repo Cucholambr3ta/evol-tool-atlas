@@ -1,0 +1,53 @@
+{
+  "schema": "evol-tool-atlas/evidencias/1",
+  "herramienta": "cargo-fuzz",
+  "id_catalogo": "AT-SEC-003",
+  "fecha_actualizacion": "2026-11-25",
+  "principio": "El Atlas no ejecuta pruebas. Solo conserva y normaliza resultados obtenidos por agentes o desarrolladores en entornos externos, con procedencia verificable.",
+  "registros": [
+    {
+      "id": "EV-AT-SEC-003-01",
+      "herramienta": "cargo-fuzz",
+      "id_catalogo": "AT-SEC-003",
+      "tipo": "verificacion_de_version",
+      "fecha": "2026-11-20",
+      "entorno": "Entorno de laboratorio de evol-security-toolchain; binario instalado en artefacto DevSecOps",
+      "version": "0.13.2",
+      "comando": "cargo-fuzz --version",
+      "resultado": "PASS",
+      "resumen": "La ejecución devolvió `cargo-fuzz 0.13.2` con código 0. No se ejecutó una campaña de fuzzing.",
+      "evidencia": {
+        "sha256": "530fa9c137f87dda3e8425ef286ad6a343412a6f0e21f66d0b586e949a9f2c2d",
+        "sourceSha256": "26d6115bc099b12c9858249b011886cf3777d3e32915cae60a1ce6d39a275a94",
+        "sourceBytes": 444,
+        "destRel": "02-catalogo/pruebas-tecnicas/cargo-fuzz/evidencias/cargo-fuzz-version.json"
+      },
+      "sha256": "530fa9c137f87dda3e8425ef286ad6a343412a6f0e21f66d0b586e949a9f2c2d",
+      "procedencia": {
+        "repositorio": "evol-security-toolchain",
+        "archivo_original": "evidence/fase5/instrumentos-codigo/cargo-fuzz.json",
+        "sha256_original": "26d6115bc099b12c9858249b011886cf3777d3e32915cae60a1ce6d39a275a94"
+      },
+      "artefactos": [
+        {
+          "nombre": "Salida normalizada",
+          "sha256": "530fa9c137f87dda3e8425ef286ad6a343412a6f0e21f66d0b586e949a9f2c2d"
+        }
+      ],
+      "limitaciones": [
+        "Solo confirma el binario y la versión; no demuestra fuzzing ni cobertura.",
+        "No se registró el hash del binario en la evidencia original."
+      ]
+    }
+  ],
+  "pendientes": [
+    "Campaña de fuzzing sobre un objetivo real con límites y corpus controlados.",
+    "Triaje de crashes y reproducción con la toolchain registrada.",
+    "Verificación de la integración con CI."
+  ],
+  "limitaciones_generales": [
+    "La evidencia disponible no certifica seguridad, calidad ni compatibilidad universal.",
+    "Una versión probada no implica que la versión más reciente tenga el mismo comportamiento.",
+    "Los resultados sobre fixtures sintéticos no demuestran el comportamiento sobre repositorios reales."
+  ]
+}

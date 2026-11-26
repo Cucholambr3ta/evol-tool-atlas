@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "dm-flakey",
+  "id_catalogo": "AT-SEC-007",
+  "nombre": "dm-flakey",
+  "tipo": "Objetivo de device-mapper del kernel",
+  "categoria": "Pruebas y auditoría técnica · Inyección de fallos",
+  "subtipo": "Pruebas y auditoría técnica · Inyección de fallos",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://docs.kernel.org/admin-guide/device-mapper/dm-flakey.html",
+  "sitio_web": "https://docs.kernel.org/admin-guide/device-mapper/dm-flakey.html",
+  "descripcion": "Objetivo de device-mapper del kernel Linux que simula fallos intermitentes de E/S.",
+  "uso_evol_propuesto": "Probar la tolerancia a fallos de sistemas de archivos y capas de almacenamiento de EVOL OS.",
+  "caso_uso_evol": "Probar la tolerancia a fallos de sistemas de archivos y capas de almacenamiento de EVOL OS.",
+  "estado_fuente": "FUENTE_OFICIAL_VERIFICADA",
+  "estado_mantenimiento": "MANTENIDO EN EL KERNEL · documentación y código en el árbol de Linux",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "kernel Linux (docs 7.4.0-rc4; host 7.3.5-2-cachyos)",
+  "version_actual": "kernel Linux (docs 7.4.0-rc4; host 7.3.5-2-cachyos)",
+  "version_evidencia": null,
+  "licencia": "GPL-2.0-only (kernel Linux)",
+  "sistema_operativo": "Linux únicamente",
+  "dependencias": "Kernel con CONFIG_DM_FLAKEY, device-mapper y dmsetup; dispositivo de bloque de pruebas.",
+  "requisitos": "Root o CAP_SYS_ADMIN, dispositivo no productivo y copia de seguridad.",
+  "fuentes_oficiales": {
+    "documentacion": "https://docs.kernel.org/admin-guide/device-mapper/dm-flakey.html",
+    "codigo": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-flakey.c"
+  },
+  "fuentes_consultadas": [
+    "https://docs.kernel.org/admin-guide/device-mapper/dm-flakey.html",
+    "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-flakey.c",
+    "https://docs.kernel.org/admin-guide/device-mapper/"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Documentación del kernel",
+      "url": "https://docs.kernel.org/admin-guide/device-mapper/dm-flakey.html"
+    },
+    {
+      "label": "Código en el árbol de Linux",
+      "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-flakey.c"
+    },
+    {
+      "label": "Documentación de device-mapper",
+      "url": "https://docs.kernel.org/admin-guide/device-mapper/"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Riesgo ALTO: apuntar el target a un dispositivo real puede destruir datos. Usar únicamente dispositivos de pruebas desechables.",
+    "Requiere privilegios de root o CAP_SYS_ADMIN; limitar el uso a entornos aislados.",
+    "El módulo y el target forman parte del kernel: un fallo puede afectar a todo el sistema.",
+    "Registrar siempre la tabla, el dispositivo y el momento de eliminación.",
+    "No usar en producción ni en el host principal sin una autorización explícita y copia de seguridad verificada."
+  ],
+  "limites": [
+    "No se localizó evidencia de ejecución en los espacios de trabajo revisados; el módulo está disponible en el host, pero no se cargó ni se creó un target durante esta actualización.",
+    "El ejemplo de creación es una construcción con parámetros documentados, no un procedimiento probado en este Atlas."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/dm-flakey/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/dm-flakey/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/dm-flakey/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/dm-flakey/evidencias.json"
+  }
+}

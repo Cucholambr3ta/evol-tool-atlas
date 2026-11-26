@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 
-const ITEMS_TO_COPY = ['02-catalogo', '05-referencias', 'catalogo.json', 'SHA256SUMS.txt'];
+const ITEMS_TO_COPY = ['02-catalogo', '05-referencias', 'skills', 'catalogo.json', 'SHA256SUMS.txt'];
 
 function copyEntry(src, dest) {
   const stat = fs.statSync(src);

@@ -1,0 +1,52 @@
+{
+  "control_socket": "EPERM",
+  "casos": {
+    "positivo": {
+      "orden": [
+        "<workspace>/artifacts/fase2/cargo-audit/cargo-audit",
+        "audit",
+        "--no-fetch",
+        "--no-yanked",
+        "--format",
+        "json",
+        "--db",
+        "<workspace>/artifacts/fase4/db/rustsec",
+        "--file",
+        "<workspace>/artifacts/fase4/fixtures/positivo/Cargo.lock"
+      ],
+      "codigo": 1,
+      "json_valido": true,
+      "identificadores": [
+        "RUSTSEC-2022-0013"
+      ],
+      "paquetes": [
+        [
+          "regex",
+          "1.5.4"
+        ]
+      ],
+      "entrada_confirmada": true,
+      "aprobado": true
+    },
+    "negativo": {
+      "orden": [
+        "<workspace>/artifacts/fase2/cargo-audit/cargo-audit",
+        "audit",
+        "--no-fetch",
+        "--no-yanked",
+        "--format",
+        "json",
+        "--db",
+        "<workspace>/artifacts/fase4/db/rustsec",
+        "--file",
+        "<workspace>/artifacts/fase4/fixtures/negativo/Cargo.lock"
+      ],
+      "codigo": 0,
+      "json_valido": true,
+      "identificadores": [],
+      "paquetes": [],
+      "entrada_confirmada": true,
+      "aprobado": true
+    }
+  }
+}

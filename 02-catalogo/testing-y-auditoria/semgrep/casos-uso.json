@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "Semgrep",
+  "id_catalogo": "AT-SEC-001",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-001-01",
+      "titulo": "Revisión de patrones inseguros en un repositorio EVOL",
+      "contexto": "Un repositorio propio necesita una primera pasada de SAST antes de una revisión manual.",
+      "objetivo": "Detectar patrones concretos (por ejemplo, eval) sin enviar código a servicios externos.",
+      "prerequisitos": [
+        "Copia autorizada del repositorio",
+        "Regla local revisada",
+        "Entorno aislado"
+      ],
+      "pasos": [
+        "Crear `.semgrep.yml` con la regla acordada.",
+        "Ejecutar `semgrep scan --config .semgrep.yml --metrics=off .`.",
+        "Clasificar hallazgos y abrir revisión manual.",
+        "Guardar salida JSON y versión usada."
+      ],
+      "resultado_esperado": "Lista reproducible de coincidencias con ruta, línea y severidad.",
+      "evidencia_requerida": [
+        "Comando exacto",
+        "Versión de Semgrep",
+        "Archivo JSON de salida",
+        "SHA-256 del artefacto"
+      ],
+      "riesgo": "MEDIO · Falsos positivos y posible exposición de rutas internas en informes.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-001-02",
+      "titulo": "Puerta de calidad en CI sobre cambios",
+      "contexto": "Se quiere revisar solo el diff de una propuesta de cambio.",
+      "objetivo": "Evitar que patrones prohibidos lleguen a la rama principal.",
+      "prerequisitos": [
+        "CI con Semgrep instalado",
+        "Reglas versionadas",
+        "Commit base disponible"
+      ],
+      "pasos": [
+        "Fijar la versión de Semgrep.",
+        "Ejecutar con `--baseline-commit`.",
+        "Publicar SARIF como artefacto.",
+        "Definir umbral de bloqueo con revisión humana."
+      ],
+      "resultado_esperado": "Informe SARIF adjunto al cambio y decisión trazable.",
+      "evidencia_requerida": [
+        "Commit base",
+        "SARIF",
+        "Código de salida",
+        "Versión"
+      ],
+      "riesgo": "MEDIO · Un umbral automático mal calibrado puede bloquear cambios legítimos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-001-03",
+      "titulo": "Comparación de reglas antes de adopción",
+      "contexto": "El equipo evalúa varias reglas candidatas para el mismo patrón.",
+      "objetivo": "Medir coincidencias y falsos positivos sobre un fixture controlado.",
+      "prerequisitos": [
+        "Fixture sintético",
+        "Conjunto de reglas candidatas"
+      ],
+      "pasos": [
+        "Ejecutar cada regla por separado.",
+        "Comparar hallazgos y tiempos.",
+        "Documentar limitaciones.",
+        "Elegir la regla con revisión humana."
+      ],
+      "resultado_esperado": "Tabla comparativa reproducible.",
+      "evidencia_requerida": [
+        "Configuraciones",
+        "Salidas JSON",
+        "Hashes"
+      ],
+      "riesgo": "BAJO · Solo se usan datos sintéticos.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "evol-tool-atlas/evidencias/1",
+  "herramienta": "Semgrep",
+  "id_catalogo": "AT-SEC-001",
+  "fecha_actualizacion": "2026-11-25",
+  "principio": "El Atlas no ejecuta pruebas. Solo conserva y normaliza resultados obtenidos por agentes o desarrolladores en entornos externos, con procedencia verificable.",
+  "registros": [
+    {
+      "id": "EV-AT-SEC-001-01",
+      "herramienta": "Semgrep",
+      "id_catalogo": "AT-SEC-001",
+      "tipo": "prueba_funcional_acotada",
+      "fecha": "2026-11-18",
+      "entorno": "Entorno de laboratorio de evol-security-toolchain; Python venv y fixture sintético",
+      "version": "1.186.0",
+      "comando": "semgrep scan --metrics=off --disable-version-check --no-git-ignore --config artifacts/fase2/fixtures/semgrep.yml --json artifacts/fase2/fixtures/sample.py",
+      "resultado": "PASS",
+      "resumen": "La ejecución terminó con código 0, una regla y un hallazgo sobre el fixture sintético; el JSON de salida fue válido.",
+      "evidencia": {
+        "sha256": "8ef2c4b7d9025a8e17d9685686b01a5843dabc119f4301cdca70b5d5fe1d8b03",
+        "sourceSha256": "8ef2c4b7d9025a8e17d9685686b01a5843dabc119f4301cdca70b5d5fe1d8b03",
+        "sourceBytes": 2971,
+        "destRel": "02-catalogo/testing-y-auditoria/semgrep/evidencias/semgrep-prueba.json"
+      },
+      "sha256": "8ef2c4b7d9025a8e17d9685686b01a5843dabc119f4301cdca70b5d5fe1d8b03",
+      "procedencia": {
+        "repositorio": "evol-security-toolchain",
+        "archivo_original": "evidence/fase2/semgrep-prueba.json",
+        "sha256_original": "8ef2c4b7d9025a8e17d9685686b01a5843dabc119f4301cdca70b5d5fe1d8b03"
+      },
+      "artefactos": [
+        {
+          "nombre": "Binario Semgrep",
+          "sha256": "e2d7274e573a7e81641d1b972c542efe6b20bcde738d9ce46d46ef3debd10282"
+        },
+        {
+          "nombre": "Salida JSON normalizada",
+          "sha256": "8ef2c4b7d9025a8e17d9685686b01a5843dabc119f4301cdca70b5d5fe1d8b03"
+        }
+      ],
+      "limitaciones": [
+        "Un solo fixture; no mide falsos positivos ni cobertura real.",
+        "La versión probada no es la última publicada."
+      ]
+    }
+  ],
+  "pendientes": [
+    "Prueba sobre un repositorio EVOL real con datos autorizados.",
+    "Medición de falsos positivos sobre el conjunto de reglas propuesto.",
+    "Verificación de la versión 1.187.0 y de la política de telemetría vigente."
+  ],
+  "limitaciones_generales": [
+    "La evidencia disponible no certifica seguridad, calidad ni compatibilidad universal.",
+    "Una versión probada no implica que la versión más reciente tenga el mismo comportamiento.",
+    "Los resultados sobre fixtures sintéticos no demuestran el comportamiento sobre repositorios reales."
+  ]
+}

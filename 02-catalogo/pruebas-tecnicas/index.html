@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Pruebas y auditoría técnica · Evol Tool Atlas</title><meta name="description" content="Categoría 49: herramientas de pruebas y auditoría técnica para Evol OS"><style>
+:root{--paper:#F6F3ED;--ink:#30383C;--accent:#365568;--quiet:#647078;--line:#c6cfd0;--panel:#fffdf9}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:960px;margin:0 auto;padding:54px 22px 80px}header{border-bottom:1px solid var(--line);padding-bottom:28px}
+.brand{font-weight:700;letter-spacing:.22em;font-size:.78rem;color:var(--accent);text-transform:uppercase}.eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--quiet);margin-top:32px}
+h1{font-size:clamp(2.6rem,6vw,4rem);font-weight:400;line-height:1.08;letter-spacing:-.04em;margin:10px 0 15px}
+h2{font-size:1.14rem;font-weight:650;letter-spacing:-.01em;margin:0 0 12px}p{margin:0 0 12px}.lead{font-size:1.12rem;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:28px 0}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:24px}.wide{margin:20px 0}
+a{color:var(--accent);text-underline-offset:4px;overflow-wrap:anywhere}ul{padding-left:20px;margin:8px 0}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:20px;color:var(--quiet);font-size:.85rem}
+@media(max-width:620px){main{padding:30px 18px 60px}.grid{grid-template-columns:1fr}}
+</style></head>
+<body><main><header><div class="brand">EVOL / Tool Atlas</div><div class="eyebrow">Categoría 49 · Pruebas y auditoría técnica</div><h1>Pruebas y auditoría técnica</h1><p class="lead">Herramientas complementarias para fuzzing, análisis de dependencias, concurrencia, inyección de fallos, detección de secretos, comportamiento indefinido, mutación y property testing.</p></header>
+<section class="panel wide"><h2>Alcance de la categoría</h2><p>Esta categoría agrupa diez herramientas que no forman parte del catálogo histórico de auditoría de código. Semgrep (categoría 24) y promptfoo (categoría 13) conservan su ubicación original y se enlazan aquí como recursos relacionados.</p><p>La inclusión es documental: no implica instalación, validación funcional ni aprobación para uso operativo.</p></section>
+<div class="grid">
+<section class="panel"><h2>Fuzzing y mutación</h2><ul><li><a href="cargo-fuzz/index.html">cargo-fuzz</a> · fuzzing con libFuzzer</li><li><a href="cargo-mutants/index.html">cargo-mutants</a> · mutación de código Rust</li><li><a href="proptest/index.html">proptest</a> · property testing</li></ul></section>
+<section class="panel"><h2>Dependencias y secretos</h2><ul><li><a href="cargo-audit/index.html">cargo-audit</a> · avisos RustSec</li><li><a href="gitleaks/index.html">Gitleaks</a> · detección de secretos</li></ul></section>
+<section class="panel"><h2>Concurrencia y UB</h2><ul><li><a href="loom/index.html">Loom</a> · permutaciones de concurrencia</li><li><a href="miri/index.html">Miri</a> · comportamiento indefinido</li></ul></section>
+<section class="panel"><h2>Almacenamiento y MCP</h2><ul><li><a href="dm-flakey/index.html">dm-flakey</a> · fallos de E/S</li><li><a href="dm-log-writes/index.html">dm-log-writes</a> · consistencia de escrituras</li><li><a href="mcp-inspector/index.html">MCP Inspector</a> · contrato de servidores MCP</li></ul></section>
+</div>
+<section class="panel wide"><h2>Recursos relacionados</h2><ul><li><a href="../testing-y-auditoria/semgrep/index.html">Semgrep</a> · AT-SEC-001 · análisis estático</li><li><a href="../seguridad/catalogo/promptfoo/index.html">promptfoo</a> · AT-SEC-002 · evaluación de prompts y agentes</li></ul></section>
+<section class="panel wide"><h2>Advertencia</h2><p>Las herramientas de kernel (dm-flakey y dm-log-writes) requieren privilegios elevados y pueden destruir datos si se aplican al dispositivo equivocado. Usar únicamente entornos de laboratorio aislados y dispositivos desechables.</p></section>
+<footer>Evol Tool Atlas · Categoría 49 · Documentación estática · Sin ejecución · 2026-11-25</footer></main></body></html>

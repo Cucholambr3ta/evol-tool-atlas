@@ -1,0 +1,84 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "dm-flakey",
+  "id_catalogo": "AT-SEC-007",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-007-01",
+      "titulo": "Validar tolerancia a errores de E/S de un sistema de archivos",
+      "contexto": "EVOL OS necesita comprobar cómo responde una capa de almacenamiento ante fallos intermitentes.",
+      "objetivo": "Provocar errores controlados y observar la recuperación.",
+      "prerequisitos": [
+        "Dispositivo de pruebas desechable",
+        "Root en entorno aislado",
+        "Copia de seguridad"
+      ],
+      "pasos": [
+        "Identificar el dispositivo con `lsblk`.",
+        "Crear el target con intervalos acotados.",
+        "Montar o ejecutar la prueba sobre el mapper.",
+        "Observar errores y recuperación.",
+        "Eliminar el target y documentar."
+      ],
+      "resultado_esperado": "Registro del comportamiento ante fallos inducidos, con limitaciones.",
+      "evidencia_requerida": [
+        "Tabla usada",
+        "Dispositivo",
+        "Logs",
+        "Comandos de limpieza"
+      ],
+      "riesgo": "ALTO · Pérdida de datos si se usa el dispositivo equivocado.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-007-02",
+      "titulo": "Prueba de recuperación tras errores de lectura",
+      "contexto": "Se quiere comprobar si una aplicación reintenta o falla de forma segura.",
+      "objetivo": "Simular errores de lectura con `error_reads`.",
+      "prerequisitos": [
+        "Dispositivo de pruebas",
+        "Aplicación con datos ficticios"
+      ],
+      "pasos": [
+        "Crear el target con `error_reads`.",
+        "Ejecutar la aplicación.",
+        "Registrar errores y reintentos.",
+        "Restaurar el estado."
+      ],
+      "resultado_esperado": "Evidencia de manejo de errores sin corrupción.",
+      "evidencia_requerida": [
+        "Tabla",
+        "Salida de la aplicación",
+        "Logs"
+      ],
+      "riesgo": "ALTO · Entorno de kernel y almacenamiento.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-007-03",
+      "titulo": "Documentar un plan de prueba sin ejecutarlo",
+      "contexto": "El equipo evalúa adoptar dm-flakey pero aún no tiene laboratorio.",
+      "objetivo": "Dejar un procedimiento revisado y marcado como no ejecutado.",
+      "prerequisitos": [
+        "Revisión de la documentación del kernel",
+        "Dispositivo de pruebas identificado"
+      ],
+      "pasos": [
+        "Documentar tabla y límites.",
+        "Revisar riesgos y limpieza.",
+        "Definir criterios de aceptación.",
+        "Marcar el estado como BLOCKED."
+      ],
+      "resultado_esperado": "Plan reproducible pendiente de autorización.",
+      "evidencia_requerida": [
+        "Plan",
+        "Revisión",
+        "Estado BLOCKED"
+      ],
+      "riesgo": "BAJO · No se ejecuta.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

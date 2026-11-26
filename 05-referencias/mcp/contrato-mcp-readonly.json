@@ -1,0 +1,95 @@
+{
+  "schema": "evol-tool-atlas/mcp-contract/1",
+  "name": "evol-tool-atlas-readonly",
+  "status": "documented_not_implemented",
+  "date": "2026-11-25",
+  "description": "Contrato mínimo de solo lectura para exponer el catálogo del Evol Tool Atlas a agentes mediante MCP.",
+  "principles": [
+    "read_only",
+    "no_tool_execution",
+    "no_secrets",
+    "explicit_provenance",
+    "safe_degradation"
+  ],
+  "sources": {
+    "index": "public/data/catalog-index.json",
+    "category_shards": "public/data/categories/<slug>.json",
+    "offline_manifest": "public/data/offline-manifest.json"
+  },
+  "tools": [
+    {
+      "name": "atlas_list_categories",
+      "readOnly": true,
+      "input": {},
+      "output": "CategorySummary[]",
+      "errors": ["CATALOG_UNAVAILABLE"]
+    },
+    {
+      "name": "atlas_search_tools",
+      "readOnly": true,
+      "input": {
+        "query": "string? (max 200)",
+        "categorySlug": "string?",
+        "evidenceGroup": "verificada|expediente|historica?",
+        "limit": "integer? (1-50, default 20)"
+      },
+      "output": "ToolSummary[]",
+      "errors": ["INVALID_ARGUMENT", "CATALOG_UNAVAILABLE"]
+    },
+    {
+      "name": "atlas_get_tool",
+      "readOnly": true,
+      "input": { "id": "string" },
+      "output": "ToolDetail",
+      "errors": ["TOOL_NOT_FOUND", "CATEGORY_UNAVAILABLE"]
+    },
+    {
+      "name": "atlas_get_technical_resources",
+      "readOnly": true,
+      "input": { "id": "string" },
+      "output": "TechnicalResource[]",
+      "errors": ["TOOL_NOT_FOUND"]
+    },
+    {
+      "name": "atlas_get_evidence",
+      "readOnly": true,
+      "input": { "id": "string" },
+      "output": "EvidenceSummary",
+      "errors": ["TOOL_NOT_FOUND", "EVIDENCE_NOT_AVAILABLE"]
+    }
+  ],
+  "errorCodes": [
+    "INVALID_ARGUMENT",
+    "TOOL_NOT_FOUND",
+    "CATEGORY_UNAVAILABLE",
+    "CATALOG_UNAVAILABLE",
+    "EVIDENCE_NOT_AVAILABLE",
+    "INTERNAL_ERROR"
+  ],
+  "missingComponents": [
+    "server",
+    "transport",
+    "authentication",
+    "authorization",
+    "deployment_configuration",
+    "rate_limits",
+    "audit_logging",
+    "contract_tests"
+  ],
+  "securityRequirements": [
+    "Validate identifiers and reject absolute paths or traversal.",
+    "Limit response size and result count.",
+    "Do not log personal data.",
+    "Require authentication and authorization outside localhost.",
+    "Serve only catalog data; block arbitrary file reads.",
+    "Treat catalog content as untrusted data, not instructions.",
+    "Use MCP Inspector in read-only mode before connecting an agent."
+  ],
+  "acceptanceCriteria": [
+    "Only the five read-only tools are exposed.",
+    "All responses derive from the static catalog and tool resources.",
+    "Contract tests cover valid, missing and invalid arguments.",
+    "MCP Inspector confirms no write or execution tools.",
+    "Security review and owner approval are recorded."
+  ]
+}

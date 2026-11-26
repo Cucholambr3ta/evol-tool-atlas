@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "proptest",
+  "id_catalogo": "AT-SEC-012",
+  "nombre": "proptest",
+  "tipo": "Biblioteca de pruebas",
+  "categoria": "Pruebas y auditoría técnica · Property testing",
+  "subtipo": "Pruebas y auditoría técnica · Property testing",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://github.com/proptest-rs/proptest",
+  "sitio_web": "https://proptest-rs.github.io/proptest/intro.html",
+  "descripcion": "Framework de property testing para Rust con generación y reducción automática de casos.",
+  "uso_evol_propuesto": "Probar invariantes de parsers, codecs y estructuras de datos de EVOL con entradas generadas.",
+  "caso_uso_evol": "Probar invariantes de parsers, codecs y estructuras de datos de EVOL con entradas generadas.",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · mantenimiento pasivo; versión 1.12.0 (2026-10-10)",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "1.12.0",
+  "version_actual": "1.12.0",
+  "version_evidencia": null,
+  "licencia": "MIT OR Apache-2.0",
+  "sistema_operativo": "Linux, macOS y Windows con toolchain Rust (MSRV 1.88)",
+  "dependencias": "Rust 1.88 o superior; crate de desarrollo `proptest` 1.12.",
+  "requisitos": "Invariantes bien definidos y estrategias de generación adecuadas.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/proptest-rs/proptest",
+    "documentacion": "https://proptest-rs.github.io/proptest/intro.html",
+    "api": "https://docs.rs/proptest/latest/proptest/"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/proptest-rs/proptest",
+    "https://proptest-rs.github.io/proptest/intro.html",
+    "https://docs.rs/proptest/latest/proptest/"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Repositorio oficial",
+      "url": "https://github.com/proptest-rs/proptest"
+    },
+    {
+      "label": "Libro de proptest",
+      "url": "https://proptest-rs.github.io/proptest/intro.html"
+    },
+    {
+      "label": "Documentación de la API",
+      "url": "https://docs.rs/proptest/latest/proptest/"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Las entradas generadas pueden ser muy grandes; limitar tamaño y tiempo para evitar consumo excesivo.",
+    "No generar datos reales ni credenciales en las estrategias.",
+    "Un test de propiedad que pasa no demuestra corrección total; depende de la propiedad y del espacio de entradas.",
+    "Registrar la semilla o el caso reducido para reproducir fallos."
+  ],
+  "limites": [
+    "No se localizó evidencia de ejecución de proptest en los espacios de trabajo revisados.",
+    "No se ha definido ni ejecutado una propiedad sobre un componente real de EVOL."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/proptest/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/proptest/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/proptest/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/proptest/evidencias.json"
+  }
+}

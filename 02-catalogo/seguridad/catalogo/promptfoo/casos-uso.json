@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "promptfoo",
+  "id_catalogo": "AT-SEC-002",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-002-01",
+      "titulo": "Regresión de un prompt de agente",
+      "contexto": "Un cambio en el prompt puede alterar el formato de respuesta de un agente EVOL.",
+      "objetivo": "Detectar regresiones con casos y aserciones reproducibles.",
+      "prerequisitos": [
+        "Configuración revisada",
+        "Proveedor autorizado o local",
+        "Conjunto de casos ficticios"
+      ],
+      "pasos": [
+        "Definir prompts, proveedor y aserciones.",
+        "Ejecutar `promptfoo eval`.",
+        "Comparar resultados con la línea base.",
+        "Guardar salida y versión."
+      ],
+      "resultado_esperado": "Informe de evaluación con casos PASS/FAIL y comparación.",
+      "evidencia_requerida": [
+        "promptfooconfig.yaml",
+        "Salida JSON",
+        "Versión",
+        "SHA-256"
+      ],
+      "riesgo": "MEDIO · Posible envío de datos al proveedor.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-002-02",
+      "titulo": "Prueba controlada de defensas frente a prompts adversarios",
+      "contexto": "Se quiere comprobar si una defensa bloquea una familia de entradas hostiles.",
+      "objetivo": "Medir respuestas con un conjunto acotado y datos sintéticos.",
+      "prerequisitos": [
+        "Alcance autorizado",
+        "Entorno aislado",
+        "Proveedor con política de datos revisada"
+      ],
+      "pasos": [
+        "Definir casos adversarios sintéticos.",
+        "Ejecutar red teaming acotado.",
+        "Clasificar respuestas.",
+        "Documentar falsos positivos y limitaciones."
+      ],
+      "resultado_esperado": "Informe de respuestas y brechas con revisión humana.",
+      "evidencia_requerida": [
+        "Configuración",
+        "Informe",
+        "Registro de proveedor",
+        "Limitaciones"
+      ],
+      "riesgo": "ALTO · Contenido adversario y posible exposición de datos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-002-03",
+      "titulo": "Comparación de dos configuraciones de prompt",
+      "contexto": "Dos variantes deben compararse antes de elegir una.",
+      "objetivo": "Seleccionar con métricas reproducibles, no por impresión subjetiva.",
+      "prerequisitos": [
+        "Mismo conjunto de casos",
+        "Mismo proveedor y parámetros"
+      ],
+      "pasos": [
+        "Ejecutar cada variante por separado.",
+        "Conservar salidas con el mismo formato.",
+        "Comparar aciertos y fallos.",
+        "Revisar casos límite manualmente."
+      ],
+      "resultado_esperado": "Comparativa documentada con criterio de decisión.",
+      "evidencia_requerida": [
+        "Dos configuraciones",
+        "Dos salidas",
+        "Hashes"
+      ],
+      "riesgo": "BAJO · Si se usan datos ficticios.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

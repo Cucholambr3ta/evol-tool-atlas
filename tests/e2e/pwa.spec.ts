@@ -27,10 +27,10 @@ test.describe('Evol Tool Atlas PWA', () => {
 
     // Wait for dashboard KPIs
     await expect(page.getByRole('heading', { name: 'Evol Tool Atlas', level: 1 })).toBeVisible();
-    await expect(page.locator('.kpi-value').nth(0)).toHaveText('48');
-    await expect(page.locator('.kpi-value').nth(1)).toHaveText(/2[.,]127/);
+    await expect(page.locator('.kpi-value').nth(0)).toHaveText('49');
+    await expect(page.locator('.kpi-value').nth(1)).toHaveText(/2[.,]137/);
     await expect(page.locator('.kpi-value').nth(2)).toHaveText('741');
-    await expect(page.locator('.kpi-value').nth(3)).toHaveText(/2[.,]868/);
+    await expect(page.locator('.kpi-value').nth(3)).toHaveText(/2[.,]878/);
 
     // Check zero forbidden mentions on dashboard & index JSON
     const bodyText = await page.locator('body').innerText();
@@ -133,12 +133,12 @@ test.describe('Evol Tool Atlas PWA', () => {
     expect(badResponses).toEqual([]);
   });
 
-  test('verifies 48 categories, search, empty state, tool detail, and favorites persistence', async ({ page }) => {
+  test('verifies 49 categories, search, empty state, tool detail, and favorites persistence', async ({ page }) => {
     await page.goto(BASE_PATH, { waitUntil: 'networkidle' });
 
-    // Explore 48 categories
+    // Explore 49 categories
     await page.goto(`${BASE_PATH}#/categorias`, { waitUntil: 'networkidle' });
-    await expect(page.locator('[data-category-slug]')).toHaveCount(48);
+    await expect(page.locator('[data-category-slug]')).toHaveCount(49);
 
     // Search for Semgrep
     const topSearch = page.getByLabel('Buscador global de herramientas');
@@ -159,6 +159,20 @@ test.describe('Evol Tool Atlas PWA', () => {
       'href',
       `${BASE_PATH}02-catalogo/testing-y-auditoria/semgrep/index.html`,
     );
+
+    // New technical resources, use cases and evidence are visible in the detail view
+    await page.goto(`${BASE_PATH}#/herramienta/cargo-fuzz`, { waitUntil: 'networkidle' });
+    await expect(page.getByRole('heading', { name: 'cargo-fuzz', level: 1 })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Guía técnica' })).toHaveAttribute(
+      'href',
+      `${BASE_PATH}02-catalogo/pruebas-tecnicas/cargo-fuzz/GUIA.md`,
+    );
+    await expect(page.getByText('Casos de uso propuestos (3)')).toBeVisible();
+    await expect(page.getByText('Evidencia registrada')).toBeVisible();
+    await expect(page.getByText('PASS', { exact: true })).toBeVisible();
+
+    await page.goto(`${BASE_PATH}#/buscar?q=cargo-fuzz`, { waitUntil: 'networkidle' });
+    await expect(page.locator('[data-tool-id="cargo-fuzz"]')).toBeVisible();
 
     // Check historical tool warnings preserved on bluediving
     await page.goto(`${BASE_PATH}#/herramienta/bluediving`, { waitUntil: 'networkidle' });
@@ -259,7 +273,7 @@ test.describe('Evol Tool Atlas PWA', () => {
     await expect(startBtn).toBeEnabled();
     await startBtn.click();
     await expect(
-      page.getByText(/Todas las categorías y las 2\.127 fichas están disponibles sin conexión/i),
+      page.getByText(/Todas las categorías y las 2\.137 fichas están disponibles sin conexión/i),
     ).toBeVisible({ timeout: 90_000 });
 
     // Switch browser to genuine OFFLINE mode

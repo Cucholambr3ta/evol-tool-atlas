@@ -1,0 +1,26 @@
+{
+  "categoria": "pruebas-tecnicas",
+  "numero": 49,
+  "nombre": "Pruebas y auditoría técnica",
+  "fecha": "2026-11-25",
+  "origen": "ampliacion_pruebas_tecnicas_2026-11-25",
+  "regla_inclusion": "Herramientas de pruebas, integridad y auditoría técnica con fuente oficial localizable, versión o documentación vigente verificada y encaje complementario en el catálogo. No se admiten duplicados de fichas existentes.",
+  "limites": [
+    "Esta categoría es una ampliación posterior al corpus documental v2.3.2; no forma parte de las 48 categorías originales.",
+    "La inclusión es documental: no implica instalación, validación funcional ni aprobación para uso operativo.",
+    "Las herramientas de kernel requieren laboratorio aislado y dispositivos desechables."
+  ],
+  "exclusion": [],
+  "herramientas": [
+    "cargo-fuzz",
+    "mcp-inspector",
+    "cargo-audit",
+    "loom",
+    "dm-flakey",
+    "dm-log-writes",
+    "gitleaks",
+    "miri",
+    "cargo-mutants",
+    "proptest"
+  ]
+}

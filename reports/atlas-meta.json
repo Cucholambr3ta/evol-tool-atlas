@@ -2,11 +2,11 @@
   "_comment": "Estado declarado para EVOL Atlas. Edítalo a mano cuando cambie la realidad del proyecto; scripts/atlas-report.mjs lo copia tal cual y añade solo los resultados de las comprobaciones ejecutadas.",
   "milestone": "v1.0.0",
   "status": "en_pruebas",
-  "summary": "PWA documental v1.0.0 implementada (Vite + TypeScript estricto + Workbox): 48 categorías y 2.127 fichas, modo offline con descarga explícita del catálogo, favoritos locales, instalación local como servicio systemd y CI en GitHub. Fase de verificación: typecheck, lint, pruebas unitarias, build y verificación del catálogo se ejecutan localmente con evidencia; las pruebas E2E solo se ejecutan con --e2e. Sin auditoría independiente.",
+  "summary": "PWA documental v1.0.0 implementada (Vite + TypeScript estricto + Workbox): 48 categorías y 2.127 fichas, modo offline con descarga explícita del catálogo, favoritos locales, instalación local como servicio systemd y CI en GitHub. Fase de verificación: typecheck, lint, pruebas unitarias, build, verificación del catálogo y pruebas E2E (Playwright + Chromium) se ejecutan localmente con evidencia; el hook post-commit omite E2E, que requiere npm run atlas:report:full. Sin auditoría independiente.",
   "blockers": [],
   "pending_decisions": [],
   "next_steps": [
-    "Ejecutar npm run atlas:report:full para incluir la evidencia E2E (Playwright + Chromium).",
+    "Ejecutar npm run atlas:report:full tras cada commit que afecte a la interfaz o al service worker, para que la evidencia E2E corresponda al HEAD.",
     "Solicitar auditoría independiente antes de declarar en_revision o un estado posterior."
   ]
 }

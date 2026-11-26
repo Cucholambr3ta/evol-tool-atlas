@@ -246,6 +246,7 @@ function main() {
   const toolSummaries = [];
   const evidenceCounts = {};
   const featuredCandidates = [];
+  const resourceOfflineItems = [];
 
   for (const t of catalogo.herramientas) {
     const cat = categoryByNumber.get(Number(t.cat));
@@ -263,6 +264,71 @@ function main() {
     }
 
     const meta = readJson(metaPath);
+
+    const resourceSpecs = [
+      ['GUIA.md', 'Guía técnica', 'guide'],
+      ['SKILL.md', 'Skill reutilizable', 'skill'],
+      ['casos-uso.json', 'Casos de uso', 'use-cases'],
+      ['evidencias.json', 'Evidencias', 'evidence'],
+    ];
+    const technicalResources = [];
+    for (const [file, label, kind] of resourceSpecs) {
+      const rel = `${toolDirRel}/${file}`;
+      if (fs.existsSync(path.join(ROOT, rel))) {
+        technicalResources.push({ label, href: rel, kind });
+        resourceOfflineItems.push({ url: rel, kind: 'tool-resource' });
+      }
+    }
+
+    let useCases = [];
+    const useCasesPath = path.join(toolDirAbs, 'casos-uso.json');
+    if (fs.existsSync(useCasesPath)) {
+      const useCasesJson = readJson(useCasesPath);
+      const rawCases = Array.isArray(useCasesJson.casos) ? useCasesJson.casos : [];
+      useCases = rawCases.map((item) => ({
+        id: String(item.id ?? ''),
+        titulo: String(item.titulo ?? 'Caso sin título'),
+        objetivo: String(item.objetivo ?? ''),
+        estado: String(item.estado ?? 'propuesto_no_ejecutado'),
+        evidenciaRequerida: Array.isArray(item.evidencia_requerida)
+          ? item.evidencia_requerida.map(String)
+          : [],
+        riesgo: String(item.riesgo ?? ''),
+      }));
+    }
+
+    let evidenceSummary = null;
+    const evidencePath = path.join(toolDirAbs, 'evidencias.json');
+    if (fs.existsSync(evidencePath)) {
+      const evidenceJson = readJson(evidencePath);
+      const rawRecords = Array.isArray(evidenceJson.registros) ? evidenceJson.registros : [];
+      const counts = {};
+      for (const record of rawRecords) {
+        const status = String(record.resultado ?? 'INCONCLUSIVE');
+        counts[status] = (counts[status] ?? 0) + 1;
+      }
+      evidenceSummary = {
+        schema: String(evidenceJson.schema ?? ''),
+        total: rawRecords.length,
+        counts,
+        records: rawRecords.map((record) => ({
+          id: String(record.id ?? ''),
+          tipo: String(record.tipo ?? ''),
+          fecha: record.fecha ? String(record.fecha) : null,
+          resultado: String(record.resultado ?? 'INCONCLUSIVE'),
+          version: record.version ? String(record.version) : null,
+          resumen: String(record.resumen ?? ''),
+          evidencia:
+            record.evidencia && typeof record.evidencia === 'object' && record.evidencia.destRel
+              ? String(record.evidencia.destRel)
+              : null,
+          sha256: record.sha256 ? String(record.sha256) : null,
+        })),
+        pendientes: Array.isArray(evidenceJson.pendientes)
+          ? evidenceJson.pendientes.map(String)
+          : [],
+      };
+    }
 
     let description =
       (typeof t.description === 'string' && t.description.trim()) ||
@@ -451,6 +517,9 @@ function main() {
       htmlHref: String(t.href),
       metadataHref: `${toolDirRel}/metadata.json`,
       readmeHref: fs.existsSync(readmePath) ? `${toolDirRel}/README.md` : null,
+      technicalResources,
+      useCases,
+      evidence: evidenceSummary,
       historicalFlag,
       revalidated20261122,
       rawMetadata: meta,
@@ -499,6 +568,9 @@ function main() {
   for (const tool of toolSummaries) {
     offlineItems.push({ url: tool.htmlHref, kind: 'tool-html' });
   }
+  for (const item of resourceOfflineItems) {
+    offlineItems.push(item);
+  }
 
   const indexPayload = {
     project: String(catalogo.proyecto ?? 'EVOL Tool Atlas'),
@@ -515,7 +587,7 @@ function main() {
       categories: categories.length,
       admitted: toolSummaries.length,
       excluded: Number(informe.exclusiones ?? categories.reduce((acc, c) => acc + c.excluded, 0)),
-      totalEntries: Number(informe.entradas_dataset ?? categories.reduce((acc, c) => acc + c.totalEntries, 0)),
+      totalEntries: categories.reduce((acc, c) => acc + c.totalEntries, 0),
     },
     evidenceCounts,
     categories,

@@ -12,6 +12,29 @@
     "https://github.com/promptfoo/promptfoo"
   ],
   "id": "promptfoo",
+  "id_catalogo": "AT-SEC-002",
+  "tipo": "CLI / framework de evaluación de LLM",
+  "subtipo": "IA · Evaluación de LLM",
+  "upstream": "https://github.com/promptfoo/promptfoo",
+  "sitio_web": "https://www.promptfoo.dev/",
+  "licencia": "MIT",
+  "sistema_operativo": "Linux, macOS y Windows con Node.js 22.22+",
+  "dependencias": "Node.js 22.22 o superior; proveedores de modelos o ejecutores locales.",
+  "requisitos": "Revisar el proveedor y la política de datos antes de ejecutar.",
+  "version_release_verificada": "0.126.0",
+  "version_evidencia": "0.125.1",
+  "referencias_oficiales": [
+    { "label": "Repositorio oficial", "url": "https://github.com/promptfoo/promptfoo" },
+    { "label": "Documentación oficial", "url": "https://www.promptfoo.dev/docs/" },
+    { "label": "Paquete npm", "url": "https://www.npmjs.com/package/promptfoo" }
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/seguridad/catalogo/promptfoo/GUIA.md",
+    "skill": "02-catalogo/seguridad/catalogo/promptfoo/SKILL.md",
+    "casos_uso": "02-catalogo/seguridad/catalogo/promptfoo/casos-uso.json",
+    "evidencias": "02-catalogo/seguridad/catalogo/promptfoo/evidencias.json"
+  },
+  "probado_en_host": false,
   "instalado_en_host": null,
   "no_incluye_codigo_ni_ejecutables": true,
   "nombre": "promptfoo",
@@ -28,6 +51,7 @@
     "Aprobación del propietario para instalación"
   ],
   "verificacion_fecha": "2026-11-22",
+  "fecha_revision": "2026-11-25",
   "version_actual": "NO_COMPROBADA",
   "version_historica": "0.120.20"
 }

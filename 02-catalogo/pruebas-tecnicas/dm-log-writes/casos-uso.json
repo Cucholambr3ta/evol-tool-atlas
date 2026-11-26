@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "dm-log-writes",
+  "id_catalogo": "AT-SEC-008",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-008-01",
+      "titulo": "Verificar fsync en una capa de almacenamiento",
+      "contexto": "Se necesita comprobar que una operación declara correctamente la persistencia.",
+      "objetivo": "Reproducir el log hasta la marca de fsync y comparar el contenido.",
+      "prerequisitos": [
+        "Dos dispositivos de pruebas",
+        "Root en entorno aislado",
+        "replay-log"
+      ],
+      "pasos": [
+        "Crear el target.",
+        "Formatear y montar el mapper.",
+        "Ejecutar la operación con fsync.",
+        "Marcar y desmontar.",
+        "Reproducir hasta la marca y comparar."
+      ],
+      "resultado_esperado": "Contenido consistente tras la reproducción o evidencia del fallo.",
+      "evidencia_requerida": [
+        "Tabla",
+        "Marcas",
+        "Hashes antes/después",
+        "Logs"
+      ],
+      "riesgo": "ALTO · Sobrescritura de dispositivos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-008-02",
+      "titulo": "Comprobar consistencia durante una operación compleja",
+      "contexto": "Una operación de mantenimiento puede dejar el sistema de archivos en un estado intermedio.",
+      "objetivo": "Reproducir y ejecutar comprobaciones de consistencia en puntos intermedios.",
+      "prerequisitos": [
+        "Dispositivos de pruebas",
+        "Herramienta de comprobación del sistema de archivos"
+      ],
+      "pasos": [
+        "Preparar el log y las marcas.",
+        "Ejecutar la operación.",
+        "Reproducir hasta cada marca.",
+        "Ejecutar la comprobación.",
+        "Documentar resultados."
+      ],
+      "resultado_esperado": "Evidencia de consistencia o localización del punto de fallo.",
+      "evidencia_requerida": [
+        "Secuencia de marcas",
+        "Salidas de fsck",
+        "Logs"
+      ],
+      "riesgo": "ALTO · Entorno de kernel y datos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-008-03",
+      "titulo": "Diseñar un experimento sin ejecutarlo",
+      "contexto": "El equipo necesita un plan revisado antes de disponer de hardware.",
+      "objetivo": "Documentar dispositivos, marcas y criterios de limpieza.",
+      "prerequisitos": [
+        "Revisión de la documentación",
+        "Inventario de dispositivos"
+      ],
+      "pasos": [
+        "Definir tabla y marcas.",
+        "Revisar riesgos.",
+        "Definir criterios de aceptación.",
+        "Marcar BLOCKED hasta autorización."
+      ],
+      "resultado_esperado": "Plan reproducible y seguro.",
+      "evidencia_requerida": [
+        "Plan",
+        "Revisión",
+        "Estado BLOCKED"
+      ],
+      "riesgo": "BAJO · No se ejecuta.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

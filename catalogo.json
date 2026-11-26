@@ -528,6 +528,17 @@
       "numero": 48,
       "slug": "webapp",
       "zip": "EVOL-TOOL-ATLAS-CATEGORIA-48-WEBAPP-v1.zip"
+    },
+    {
+      "admitidas": 10,
+      "entradas": 10,
+      "excluidas": 0,
+      "grupo_origen": "grupo-pruebas-tecnicas",
+      "href": "02-catalogo/pruebas-tecnicas/index.html",
+      "nombre": "Pruebas y auditoría técnica",
+      "numero": 49,
+      "slug": "pruebas-tecnicas",
+      "zip": "EVOL-TOOL-ATLAS-CATEGORIA-49-PRUEBAS-TECNICAS-v1.zip"
     }
   ],
   "fecha": "2026-11-22",
@@ -21802,6 +21813,106 @@
       "name": "ysoserial",
       "origin": "entrega_46_48",
       "slug": "webapp"
+    },
+    {
+      "cat": 49,
+      "description": "Subcomando de Cargo para fuzzing de código Rust con libFuzzer.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/cargo-fuzz/index.html",
+      "id": "cargo-fuzz",
+      "name": "cargo-fuzz",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Herramientas de inspección y prueba determinista para servidores Model Context Protocol.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/mcp-inspector/index.html",
+      "id": "mcp-inspector",
+      "name": "MCP Inspector",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Auditoría de dependencias Rust contra la base de datos de avisos RustSec.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/cargo-audit/index.html",
+      "id": "cargo-audit",
+      "name": "cargo-audit",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Herramienta de prueba de permutaciones de concurrencia para código Rust.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/loom/index.html",
+      "id": "loom",
+      "name": "Loom",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Objetivo de device-mapper del kernel Linux que simula fallos intermitentes de E/S.",
+      "evidence": "FUENTE_OFICIAL_VERIFICADA_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/dm-flakey/index.html",
+      "id": "dm-flakey",
+      "name": "dm-flakey",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Objetivo de device-mapper que registra escrituras para reproducir y verificar la consistencia de un sistema de archivos.",
+      "evidence": "FUENTE_OFICIAL_VERIFICADA_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/dm-log-writes/index.html",
+      "id": "dm-log-writes",
+      "name": "dm-log-writes",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Escáner de secretos en código, historial de Git y directorios.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/gitleaks/index.html",
+      "id": "gitleaks",
+      "name": "Gitleaks",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Intérprete de Rust que detecta comportamiento indefinido en código unsafe.",
+      "evidence": "FUENTE_OFICIAL_VERIFICADA_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/miri/index.html",
+      "id": "miri",
+      "name": "Miri",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Herramienta de mutación que inserta fallos y comprueba si los tests los detectan.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/cargo-mutants/index.html",
+      "id": "cargo-mutants",
+      "name": "cargo-mutants",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
+    },
+    {
+      "cat": 49,
+      "description": "Framework de property testing para Rust con generación y reducción automática de casos.",
+      "evidence": "FUENTE_Y_RELEASE_VERIFICADOS_2026-11-25",
+      "href": "02-catalogo/pruebas-tecnicas/proptest/index.html",
+      "id": "proptest",
+      "name": "proptest",
+      "origin": "ampliacion_pruebas_tecnicas_2026-11-25",
+      "slug": "pruebas-tecnicas"
     }
   ],
   "proyecto": "EVOL Tool Atlas"

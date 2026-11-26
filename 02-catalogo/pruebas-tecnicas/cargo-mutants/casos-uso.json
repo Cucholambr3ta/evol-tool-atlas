@@ -1,0 +1,84 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "cargo-mutants",
+  "id_catalogo": "AT-SEC-011",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-011-01",
+      "titulo": "Evaluar la suite de un módulo crítico",
+      "contexto": "Un módulo Rust de EVOL tiene tests, pero no se sabe si detectan fallos reales.",
+      "objetivo": "Medir mutantes detectados y no detectados en un archivo.",
+      "prerequisitos": [
+        "Tests deterministas",
+        "Entorno aislado",
+        "Tiempo acotado"
+      ],
+      "pasos": [
+        "Ejecutar `--list`.",
+        "Ejecutar sobre un archivo.",
+        "Revisar mutantes no detectados.",
+        "Añadir aserciones justificadas."
+      ],
+      "resultado_esperado": "Informe de mutación y plan de mejora de tests.",
+      "evidencia_requerida": [
+        "Comando",
+        "Versión",
+        "Informe",
+        "Commit"
+      ],
+      "riesgo": "MEDIO · Consumo de tiempo y compilaciones.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-011-02",
+      "titulo": "Comparar dos revisiones",
+      "contexto": "Se quiere saber si un cambio mejora la detección de fallos.",
+      "objetivo": "Comparar resultados con el mismo alcance.",
+      "prerequisitos": [
+        "Dos commits",
+        "Mismo conjunto de tests",
+        "Límites idénticos"
+      ],
+      "pasos": [
+        "Ejecutar en la base.",
+        "Ejecutar en la revisión.",
+        "Comparar mutantes detectados.",
+        "Documentar diferencias."
+      ],
+      "resultado_esperado": "Comparativa reproducible.",
+      "evidencia_requerida": [
+        "Commits",
+        "Informes",
+        "Hashes"
+      ],
+      "riesgo": "MEDIO · Diferencias de entorno pueden sesgar.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-011-03",
+      "titulo": "Diseñar una política de CI",
+      "contexto": "El equipo evalúa integrar mutación sin bloquear todos los cambios.",
+      "objetivo": "Definir alcance, tiempo y criterios.",
+      "prerequisitos": [
+        "Medición previa",
+        "Presupuesto de CI"
+      ],
+      "pasos": [
+        "Medir en un módulo.",
+        "Definir umbral realista.",
+        "Documentar exclusiones.",
+        "Marcar la adopción como pendiente."
+      ],
+      "resultado_esperado": "Propuesta de política basada en datos.",
+      "evidencia_requerida": [
+        "Medición",
+        "Propuesta",
+        "Revisión"
+      ],
+      "riesgo": "BAJO · No se ejecuta en producción.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

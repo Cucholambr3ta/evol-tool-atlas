@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "cargo-audit",
+  "id_catalogo": "AT-SEC-005",
+  "nombre": "cargo-audit",
+  "tipo": "CLI / subcomando de Cargo",
+  "categoria": "Pruebas y auditoría técnica · Dependencias",
+  "subtipo": "Pruebas y auditoría técnica · Dependencias",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://github.com/rustsec/rustsec",
+  "sitio_web": "https://rustsec.org/",
+  "descripcion": "Auditoría de dependencias Rust contra la base de datos de avisos RustSec.",
+  "uso_evol_propuesto": "Detección de dependencias Rust con avisos de seguridad antes de integrar componentes EVOL.",
+  "caso_uso_evol": "Detección de dependencias Rust con avisos de seguridad antes de integrar componentes EVOL.",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · cargo-audit 0.23.0 (2026-11-10)",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "0.23.0",
+  "version_actual": "0.23.0",
+  "version_evidencia": "0.23.0",
+  "licencia": "MIT OR Apache-2.0 (RustSec)",
+  "sistema_operativo": "Linux, macOS y Windows con toolchain Rust",
+  "dependencias": "Rust estable, acceso a la base RustSec o una copia local.",
+  "requisitos": "Cargo.lock del proyecto y política de actualización de la base de avisos.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/rustsec/rustsec",
+    "documentacion": "https://rustsec.org/",
+    "base_datos": "https://github.com/rustsec/advisory-db"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/rustsec/rustsec",
+    "https://rustsec.org/",
+    "https://github.com/rustsec/advisory-db"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Repositorio RustSec",
+      "url": "https://github.com/rustsec/rustsec"
+    },
+    {
+      "label": "Sitio de RustSec",
+      "url": "https://rustsec.org/"
+    },
+    {
+      "label": "Base de avisos",
+      "url": "https://github.com/rustsec/advisory-db"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "La base de avisos debe actualizarse; una copia antigua produce falsos negativos.",
+    "Un aviso no implica explotabilidad en este proyecto: revisar la ruta de dependencia y el uso real.",
+    "No ejecutar herramientas que modifiquen dependencias sin revisar el diff y las pruebas.",
+    "La salida puede revelar nombres de dependencias internas; tratarla según la política de información."
+  ],
+  "limites": [
+    "La evidencia disponible valida detección positiva y negativa sobre fixtures con una base local, no sobre un proyecto EVOL real.",
+    "No se verificó la actualización de la base de avisos ni la integración en CI."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/cargo-audit/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/cargo-audit/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/cargo-audit/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/cargo-audit/evidencias.json"
+  }
+}

@@ -2,9 +2,10 @@
 
 **Evol Tool Atlas** es una Progressive Web App (PWA) documental, instalable, responsive y utilizable sin conexión que organiza el catálogo completo de herramientas de seguridad y auditoría para **Evol OS**.
 
-- **Categorías documentales:** 48
-- **Fichas admitidas:** 2.127
-- **Entradas excluidas documentadas en auditoría:** 741 (total corpus analizado: 2.868)
+- **Categorías documentales:** 49
+- **Fichas admitidas:** 2.137
+- **Entradas excluidas documentadas en auditoría:** 741 (total corpus analizado: 2.878)
+- **Ampliación 2026-11-25:** 12 fichas de pruebas y auditoría técnica (AT-SEC-001…AT-SEC-012), con guía, skill, casos de uso y evidencias.
 - **Identidad visual:** Sistema oficial **Evol OS — Minimal line art** (`14-minimal-line-art`, tipografías locales *Manrope* y *Atkinson Hyperlegible*, iconografía *Evol Fine Line* y glifo oficial *O*).
 
 ---
@@ -13,10 +14,11 @@
 
 - **Stack:** Vite + TypeScript estricto + `vite-plugin-pwa` (estrategia `injectManifest` con Workbox) + CSS modular alineado con los tokens DTCG oficiales.
 - **Preservación documental:** Las rutas estáticas originales en `02-catalogo/` y `05-referencias/auditoria-v2.3.2/` se conservan íntegramente y se copian al directorio final `dist/` sin alterar los HTML individuales.
+- **Contrato MCP de solo lectura:** Documentado en `05-referencias/mcp/CONTRATO-MCP-READONLY.md`; no existe servidor MCP implementado en este repositorio.
 - **Generación de índices desde las fuentes:** `scripts/build-catalog-index.mjs` construye en tiempo de compilación:
-  - `public/data/catalog-index.json` (índice compacto de búsqueda para 48 categorías y 2.127 fichas).
-  - `public/data/categories/<slug>.json` (48 fragmentos por categoría con metadatos normalizados y exclusiones).
-  - `public/data/offline-manifest.json` (lista ordenada de 2.224 recursos descargables bajo demanda).
+  - `public/data/catalog-index.json` (índice compacto de búsqueda para 49 categorías y 2.137 fichas).
+  - `public/data/categories/<slug>.json` (49 fragmentos por categoría con metadatos normalizados y exclusiones).
+  - `public/data/offline-manifest.json` (lista ordenada de 2.284 recursos descargables bajo demanda, incluidos guías, skills, casos de uso y evidencias de las 12 fichas ampliadas).
 - **Enrutamiento:** Hash routing (`#/`, `#/categorias`, `#/categoria/<slug>`, `#/buscar`, `#/herramienta/<id>`, `#/favoritos`, `#/offline`, `#/acerca`) compatible con publicación en subrutas de GitHub Pages (`/evol-tool-atlas/`) sin errores 404 al recargar.
 
 ---

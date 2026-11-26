@@ -1,0 +1,84 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "mcp-inspector",
+  "id_catalogo": "AT-SEC-004",
+  "nombre": "MCP Inspector",
+  "tipo": "CLI / interfaz web / TUI",
+  "categoria": "Pruebas y auditoría técnica · MCP",
+  "subtipo": "Pruebas y auditoría técnica · MCP",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://github.com/modelcontextprotocol/inspector",
+  "sitio_web": "https://modelcontextprotocol.io/",
+  "descripcion": "Herramientas de inspección y prueba determinista para servidores Model Context Protocol.",
+  "uso_evol_propuesto": "Verificar contratos, herramientas y recursos de servidores MCP de EVOL antes de conectarlos a agentes.",
+  "caso_uso_evol": "Verificar contratos, herramientas y recursos de servidores MCP de EVOL antes de conectarlos a agentes.",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · última release 2.16.0 (2026-11-18)",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "2.16.0",
+  "version_actual": "2.16.0",
+  "version_evidencia": null,
+  "licencia": "Apache-2.0 (transición desde MIT; revisar LICENSE)",
+  "sistema_operativo": "Linux, macOS y Windows con Node.js 22.23.4+, 24.22.1+ o 26.12.1+",
+  "dependencias": "Node.js y npm/npx; servidor MCP local o remoto.",
+  "requisitos": "Definir si la inspección es local o remota; revisar permisos de las herramientas del servidor.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/modelcontextprotocol/inspector",
+    "paquete": "https://www.npmjs.com/package/@modelcontextprotocol/inspector",
+    "documentacion": "https://modelcontextprotocol.io/"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/modelcontextprotocol/inspector",
+    "https://www.npmjs.com/package/@modelcontextprotocol/inspector",
+    "https://modelcontextprotocol.io/"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Repositorio oficial",
+      "url": "https://github.com/modelcontextprotocol/inspector"
+    },
+    {
+      "label": "Paquete npm",
+      "url": "https://www.npmjs.com/package/@modelcontextprotocol/inspector"
+    },
+    {
+      "label": "Documentación MCP",
+      "url": "https://modelcontextprotocol.io/"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Un servidor MCP puede exponer herramientas con efectos destructivos; inspeccionar primero el contrato y usar un servidor de pruebas.",
+    "Las cabeceras y variables de entorno pueden contener credenciales; no incluirlas en capturas, informes ni evidencia.",
+    "La inspección remota puede enviar datos al servidor y a proxies intermedios; revisar la política de red.",
+    "El Inspector no certifica la seguridad del servidor: solo muestra su contrato y comportamiento observable.",
+    "Revisar la licencia en transición (MIT/Apache-2.0) antes de redistribuir."
+  ],
+  "limites": [
+    "No se localizó evidencia de ejecución de MCP Inspector en los espacios de trabajo revisados.",
+    "La ficha documenta el contrato del Inspector, no la seguridad ni la calidad de ningún servidor MCP concreto."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/mcp-inspector/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/mcp-inspector/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/mcp-inspector/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/mcp-inspector/evidencias.json"
+  }
+}

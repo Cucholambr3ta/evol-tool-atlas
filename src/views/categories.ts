@@ -16,7 +16,7 @@ export function renderCategoriesExplorerView(index: CatalogIndex): HTMLElement {
     className: 'input',
     attrs: {
       type: 'search',
-      placeholder: 'Filtrar las 48 categorías por nombre o identificador…',
+      placeholder: 'Filtrar las 49 categorías por nombre o identificador…',
       'aria-label': 'Filtrar categorías',
       autocomplete: 'off',
     },
@@ -28,7 +28,7 @@ export function renderCategoriesExplorerView(index: CatalogIndex): HTMLElement {
       className: 'select',
       attrs: { 'aria-label': 'Ordenar categorías' },
     },
-    el('option', { attrs: { value: 'number' }, text: 'Orden original (01–48)' }),
+    el('option', { attrs: { value: 'number' }, text: 'Orden original (01–49)' }),
     el('option', { attrs: { value: 'name' }, text: 'Alfabético (A–Z)' }),
     el('option', { attrs: { value: 'admitted-desc' }, text: 'Más fichas admitidas' }),
     el('option', { attrs: { value: 'excluded-desc' }, text: 'Más entradas excluidas' }),

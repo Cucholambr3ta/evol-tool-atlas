@@ -1,0 +1,83 @@
+{
+  "schema": "evol-tool-atlas/tool/2",
+  "id": "cargo-fuzz",
+  "id_catalogo": "AT-SEC-003",
+  "nombre": "cargo-fuzz",
+  "tipo": "CLI / subcomando de Cargo",
+  "categoria": "Pruebas y auditoría técnica · Fuzzing",
+  "subtipo": "Pruebas y auditoría técnica · Fuzzing",
+  "categoria_atlas": "pruebas-tecnicas",
+  "categoria_origen": "grupo-pruebas-tecnicas",
+  "upstream": "https://github.com/rust-fuzz/cargo-fuzz",
+  "sitio_web": "https://rust-fuzz.github.io/book/cargo-fuzz.html",
+  "descripcion": "Subcomando de Cargo para fuzzing de código Rust con libFuzzer.",
+  "uso_evol_propuesto": "Fuzzing de parsers y rutas de entrada no confiable en componentes Rust de EVOL.",
+  "caso_uso_evol": "Fuzzing de parsers y rutas de entrada no confiable en componentes Rust de EVOL.",
+  "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · última release 0.13.2 (2026-06-09)",
+  "estado_operativo_evol": "NO_INSTALADO_EN_HOST · SIN_PRUEBA_EN_ATLAS",
+  "fecha_verificacion": "2026-11-25",
+  "verificacion_fecha": "2026-11-25",
+  "version_release_verificada": "0.13.2",
+  "version_actual": "0.13.2",
+  "version_evidencia": "0.13.2",
+  "licencia": "MIT OR Apache-2.0",
+  "sistema_operativo": "Linux y macOS (x86-64 y AArch64); Windows no soportado oficialmente",
+  "dependencias": "Rust nightly, LLVM con soporte de sanitizers, compilador C++ con C++11.",
+  "requisitos": "Toolchain nightly, target soportado, corpus y límites de ejecución.",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/rust-fuzz/cargo-fuzz",
+    "documentacion": "https://rust-fuzz.github.io/book/cargo-fuzz.html",
+    "releases": "https://github.com/rust-fuzz/cargo-fuzz/releases"
+  },
+  "fuentes_consultadas": [
+    "https://github.com/rust-fuzz/cargo-fuzz",
+    "https://rust-fuzz.github.io/book/cargo-fuzz.html",
+    "https://github.com/rust-fuzz/cargo-fuzz/releases"
+  ],
+  "referencias_oficiales": [
+    {
+      "label": "Repositorio oficial",
+      "url": "https://github.com/rust-fuzz/cargo-fuzz"
+    },
+    {
+      "label": "Rust Fuzz Book",
+      "url": "https://rust-fuzz.github.io/book/cargo-fuzz.html"
+    },
+    {
+      "label": "Publicaciones oficiales",
+      "url": "https://github.com/rust-fuzz/cargo-fuzz/releases"
+    }
+  ],
+  "probado_en_cachyos": false,
+  "probado_en_host": false,
+  "instalado_en_host": null,
+  "no_incluye_codigo_ni_ejecutables": true,
+  "advertencias": [
+    "Ejecutar en un entorno aislado y con límites de CPU, memoria, tiempo y disco.",
+    "No usar entradas de producción sin autorización; el corpus y los crashes pueden contener datos personales o secretos.",
+    "Los fallos encontrados requieren triaje y reproducción; un crash no implica por sí mismo una vulnerabilidad explotable.",
+    "La toolchain nightly y los sanitizers cambian con frecuencia; fijar versiones y registrar la evidencia."
+  ],
+  "limites": [
+    "Disponibilidad y versión verificadas externamente; la evidencia disponible solo confirma `cargo-fuzz 0.13.2`, no una campaña de fuzzing.",
+    "Windows no está soportado oficialmente por el proyecto."
+  ],
+  "condiciones_antes_de_uso": [
+    "Revisar la licencia y las dependencias de la versión concreta.",
+    "Ejecutar en entorno aislado y con datos ficticios o autorizados.",
+    "Registrar la prueba con comando, versión, salida y hash antes de declarar adopción.",
+    "Obtener aprobación del propietario del entorno antes de un uso operativo."
+  ],
+  "validaciones_pendientes": [
+    "Instalación real mediante método autorizado.",
+    "Prueba funcional aislada y reproducible.",
+    "Verificación de licencia y política de telemetría."
+  ],
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/pruebas-tecnicas/cargo-fuzz/GUIA.md",
+    "skill": "02-catalogo/pruebas-tecnicas/cargo-fuzz/SKILL.md",
+    "casos_uso": "02-catalogo/pruebas-tecnicas/cargo-fuzz/casos-uso.json",
+    "evidencias": "02-catalogo/pruebas-tecnicas/cargo-fuzz/evidencias.json"
+  }
+}

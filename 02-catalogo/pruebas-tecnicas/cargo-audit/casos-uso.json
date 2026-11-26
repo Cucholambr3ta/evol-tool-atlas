@@ -1,0 +1,85 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "cargo-audit",
+  "id_catalogo": "AT-SEC-005",
+  "fecha_actualizacion": "2026-11-25",
+  "nota": "Casos propuestos. Ninguno se ejecutó en el Atlas; requieren autorización, entorno aislado y registro de evidencia.",
+  "casos": [
+    {
+      "id": "CU-AT-SEC-005-01",
+      "titulo": "Auditoría de dependencias antes de una release",
+      "contexto": "Un componente Rust va a publicarse y se necesita revisar avisos conocidos.",
+      "objetivo": "Identificar dependencias afectadas y documentar decisiones.",
+      "prerequisitos": [
+        "Cargo.lock",
+        "Base RustSec actualizada o copia local",
+        "Entorno aislado"
+      ],
+      "pasos": [
+        "Ejecutar `cargo audit`.",
+        "Guardar salida JSON.",
+        "Revisar cada aviso y su ruta.",
+        "Documentar actualización, mitigación o aceptación."
+      ],
+      "resultado_esperado": "Informe de avisos con decisiones trazables.",
+      "evidencia_requerida": [
+        "Cargo.lock",
+        "Salida JSON",
+        "Versión",
+        "Fecha de la base"
+      ],
+      "riesgo": "MEDIO · Falsos negativos si la base está desactualizada.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-005-02",
+      "titulo": "Puerta de CI para dependencias",
+      "contexto": "Se quiere impedir la introducción de dependencias con avisos graves.",
+      "objetivo": "Automatizar una comprobación repetible.",
+      "prerequisitos": [
+        "CI con Rust",
+        "Política de severidad",
+        "Base actualizada"
+      ],
+      "pasos": [
+        "Fijar la versión de cargo-audit.",
+        "Ejecutar con salida JSON.",
+        "Aplicar la política acordada.",
+        "Conservar el artefacto."
+      ],
+      "resultado_esperado": "Resultado de CI reproducible y auditable.",
+      "evidencia_requerida": [
+        "Configuración de CI",
+        "Salida",
+        "Versión"
+      ],
+      "riesgo": "MEDIO · Un umbral mal definido puede bloquear cambios legítimos.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-AT-SEC-005-03",
+      "titulo": "Auditoría offline con base local",
+      "contexto": "El entorno no tiene acceso a Internet.",
+      "objetivo": "Ejecutar la comprobación con una copia controlada de la base.",
+      "prerequisitos": [
+        "Copia local de advisory-db",
+        "Cargo.lock"
+      ],
+      "pasos": [
+        "Verificar la fecha de la copia.",
+        "Ejecutar con `--db` y `--no-fetch`.",
+        "Registrar la fecha y el hash de la base.",
+        "Documentar la limitación de actualización."
+      ],
+      "resultado_esperado": "Auditoría reproducible con alcance temporal explícito.",
+      "evidencia_requerida": [
+        "Ruta de la base",
+        "Fecha",
+        "Hash",
+        "Salida"
+      ],
+      "riesgo": "MEDIO · La copia puede estar desactualizada.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

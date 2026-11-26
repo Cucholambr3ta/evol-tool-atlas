@@ -232,7 +232,7 @@ export function mountApp(rootEl: HTMLElement): void {
 
   const navLinks: Array<{ key: string; href: string; label: string; icon: Parameters<typeof createFineLineIcon>[0]; badge?: HTMLElement }> = [
     { key: 'dashboard', href: '#/', label: 'Inicio', icon: 'home' },
-    { key: 'categories', href: '#/categorias', label: 'Categorías (48)', icon: 'security' },
+    { key: 'categories', href: '#/categorias', label: 'Categorías (49)', icon: 'security' },
     { key: 'search', href: '#/buscar', label: 'Buscador', icon: 'search' },
     { key: 'favorites', href: '#/favoritos', label: 'Favoritos', icon: 'favorite', badge: el('span', { className: 'badge-count', text: '0' }) },
     { key: 'offline', href: '#/offline', label: 'Uso sin conexión', icon: 'download' },
@@ -267,7 +267,7 @@ export function mountApp(rootEl: HTMLElement): void {
 
   const sidebarCatsList = el('nav', {
     className: 'sidebar-cats-list',
-    attrs: { 'aria-label': 'Acceso rápido a las 48 categorías' },
+    attrs: { 'aria-label': 'Acceso rápido a las 49 categorías' },
   });
 
   const sidebar = el(
