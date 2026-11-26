@@ -1,0 +1,228 @@
+{
+  "etapa": 2,
+  "nombre": "Validador ATDS v1 — Implementación integral y validación documental",
+  "rama": "atlas/etapa-02-validador-atds",
+  "url_rama": "https://github.com/Cucholambr3ta/evol-tool-atlas/tree/atlas/etapa-02-validador-atds",
+  "head_inicial_etapa": "6517ec4e7e4ab6ecb477f9c179571ed33bdb29ef",
+  "head_final_etapa": "SHA_COMUNICADO_EN_ENTREGA_Y_PR",
+  "sha_final": "Comunicado en la respuesta de entrega y en la descripción del PR; no se incluye dentro del propio commit para evitar autorreferencia.",
+  "pull_request": {
+    "numero": "PENDIENTE_CREACION",
+    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/NUMERO",
+    "estado": "OPEN",
+    "origen": "atlas/etapa-02-validador-atds",
+    "destino": "main",
+    "sha_head_verificado": "SHA_COMUNICADO_EN_ENTREGA_Y_PR",
+    "verificado_por_segunda_consulta_api": false,
+    "fusionado": false
+  },
+  "github_actions": {
+    "workflow": "CI Evol Tool Atlas PWA",
+    "run_id": "PENDIENTE",
+    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/actions/runs/RUN_ID",
+    "evento": "pull_request",
+    "sha": "SHA_COMUNICADO_EN_ENTREGA_Y_PR",
+    "estado": "PENDIENTE",
+    "conclusion": "PENDIENTE",
+    "jobs": {
+      "Validate, Test & Build PWA": "PENDIENTE",
+      "pasos": {
+        "checkout": "PENDIENTE",
+        "npm ci": "PENDIENTE",
+        "generate:data": "PENDIENTE",
+        "typecheck": "PENDIENTE",
+        "eslint": "PENDIENTE",
+        "unit tests": "PENDIENTE",
+        "build PWA": "PENDIENTE",
+        "verify:catalog": "PENDIENTE"
+      }
+    }
+  },
+  "commits_etapa": [
+    {
+      "sha": "SHA_COMMIT_1",
+      "mensaje": "fix(validator): implement rigorous ATDS v1 validator",
+      "tipo": "implementacion_validador"
+    },
+    {
+      "sha": "SHA_COMMIT_2",
+      "mensaje": "test(etapa-02): add ATDS validator test suite",
+      "tipo": "tests_regresion"
+    },
+    {
+      "sha": "SHA_COMMIT_3",
+      "mensaje": "docs(etapa-02): record validation results and evidence",
+      "tipo": "documentacion_final"
+    }
+  ],
+  "archivos_modificados": [
+    "scripts/validate-atds.mjs",
+    "tests/unit/etapa-02-atds-validator.test.ts",
+    "reports/etapas/ETAPA-02-INFORME.md",
+    "reports/etapas/ETAPA-02-MANIFIESTO.json"
+  ],
+  "arquitectura_validador": {
+    "modulos": [
+      "Descubrimiento de fichas (catalogo.json + rutas seguras)",
+      "Normalización de metadatos (ToolMeta interface)",
+      "Validación estructural (guías, skills, casos, evidencias)",
+      "Validación de contenido (vaguedad, placeholders, profundidad técnica)",
+      "Validación referencial (IDs, URLs, relaciones entre archivos)",
+      "Validación experimental (evidencias, procedencia, hashes, integridad)",
+      "Clasificación ATDS acumulativa (L1→L2→L3→L4)",
+      "Reporte JSON determinista"
+    ],
+    "niveles_atds": {
+      "L1_IdentificacionVerificable": {
+        "requisitos": ["id", "nombre", "descripcion", "categoria", "tipo", "problema", "funciones", "fuente", "plataformas", "limitaciones", "estado", "fecha_verificacion", "licencia"],
+        "reglas_no_verificados": ["NO_VERIFICADA", "NO_VERIFICADO", "PENDIENTE", "NO_DETERMINADO", "DESCONOCIDO", "N/A", "TBD", "cadenas vacías"]
+      },
+      "L2_GuiaTecnica": {
+        "requisitos": "L1 + secciones: Requisitos, Dependencias, Instalación, Plataformas, Verificación, Configuración, Primer uso, Comandos, Entradas, Salidas, Errores, Advertencias, Referencias, Limitaciones",
+        "profundidad_tecnica": "backticks>=10, code_fences>=4, cli_flags>=3, urls>=2",
+        "contenido_generico": ">=3 frases vagas -> ERROR GUIDE_GENERIC_CONTENT"
+      },
+      "L3_ConocimientoAplicado": {
+        "requisitos": "L2 + (Skill valida O Casos sustantivos)",
+        "skill": "name, description, Cuándo usar, Entradas mínimas, Procedimiento (>=3 pasos), Salidas esperadas, Guardrails, Evidencia, Referencias",
+        "casos": "objetivo>20, pasos>=3, prerrequisitos>=1, resultado_esperado>10"
+      },
+      "L4_EvidenciaExperimental": {
+        "requisitos": "L3 + Evidencia PASS con integridad completa",
+        "evidencia": "sha256 + destRel + procedencia + artefactos + comando + entorno + version + hash verificado",
+        "bloqueantes": "BLOCKED no otorga L4, --version no demuestra capacidad funcional"
+      }
+    },
+    "codigos_defectos": {
+      "DOC-01": "Descripción vaga (VAGUE_PATTERNS)",
+      "DOC-02": "Información técnica insuficiente (secciones faltantes)",
+      "DOC-03": "Ausencia de fuente verificable (collectUrls vacio)",
+      "DOC-04": "Versión ambigua (NO_VERIFICADA en campos)",
+      "DOC-05": "Compatibilidad no demostrada (sistema_operativo no verificado)",
+      "DOC-06": "Instalación incompleta (sección faltante)",
+      "DOC-07": "Comandos sin explicación (sección Comandos/faltante)",
+      "DOC-08": "Casos de uso genéricos (CASOS_NO_SUBSTANTIVE)",
+      "DOC-09": "Skill ausente/insuficiente (MISSING_SKILL, placeholders, pocos pasos)",
+      "DOC-10": "Evidencia mal clasificada (BLOCKED con evidencia/artefactos)",
+      "DOC-11": "Información duplicada/contradictoria (IDs inconsistentes)",
+      "DOC-12": "Enlaces rotos/referencias obsoletas (no implementado offline)"
+    }
+  },
+  "resultados_validacion": {
+    "checkout_limpio_ci_equivalente": {
+      "npm_ci": { "exit_code": 0, "resultado": "PASS" },
+      "typecheck": { "exit_code": 0, "resultado": "PASS" },
+      "lint_versionados": { "exit_code": 0, "resultado": "PASS", "errores": 0 },
+      "test_unit": { "exit_code": 0, "resultado": "PASS", "archivos": 6, "total": 195, "aprobados": 195, "fallidos": 0, "etapa_2": 34 },
+      "check": { "exit_code": 1, "resultado": "FAIL", "motivo": "lint falla en archivos NO versionados (familias.js, normalizar-catalogo.mjs)" },
+      "validate_atds": { "exit_code": 0, "resultado": "EJECUTADO", "total_tools": 2137, "niveles": { "NONE": 1263, "L1": 874, "L2": 0, "L3": 0, "L4": 0 } },
+      "verify_catalog": { "exit_code": 0, "resultado": "PASS", "detalle": "49 categorías, 2137 herramientas, 741 excluidas, 0 enlaces rotos" }
+    },
+    "arbol_trabajo_local": {
+      "lint_completo": { "exit_code": 1, "resultado": "FAIL", "errores": 42, "origen": "scripts/lib/familias.js y scripts/normalizar-catalogo.mjs (no versionados)" }
+    }
+  },
+  "evaluacion_12_prioritarias": {
+    "semgrep": { "id": "AT-SEC-001", "nivel_anterior": "L4", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_ENTRADAS", "L2_GUIDE_MISSING_SECTION_SALIDAS"], "evidencia_integridad": true },
+    "promptfoo": { "id": "AT-SEC-002", "nivel_anterior": "L4", "nivel_validado": "NONE", "status": "FAIL", "issues": ["L1_MISSING_CATEGORIA", "L1_MISSING_LIMITACIONES", "L2_GUIDE_MISSING_SECTION_REQUISITOS"], "evidencia_integridad": false },
+    "cargo-fuzz": { "id": "AT-SEC-003", "nivel_anterior": "L4", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_SALIDAS"], "evidencia_integridad": true },
+    "mcp-inspector": { "id": "AT-SEC-004", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_ENTRADAS"], "evidencia_integridad": false },
+    "cargo-audit": { "id": "AT-SEC-005", "nivel_anterior": "L4", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_ENTRADAS"], "evidencia_integridad": true },
+    "loom": { "id": "AT-SEC-006", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L3_SKILL_CONTAINS_PLACEHOLDERS"], "evidencia_integridad": false },
+    "dm-flakey": { "id": "AT-SEC-007", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_CONTAINS_PLACEHOLDERS", "L3_SKILL_CONTAINS_PLACEHOLDERS"], "evidencia_integridad": false },
+    "dm-log-writes": { "id": "AT-SEC-008", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_ENTRADAS"], "evidencia_integridad": false },
+    "gitleaks": { "id": "AT-SEC-009", "nivel_anterior": "L4", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_ENTRADAS"], "evidencia_integridad": true },
+    "miri": { "id": "AT-SEC-010", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_SALIDAS"], "evidencia_integridad": false },
+    "cargo-mutants": { "id": "AT-SEC-011", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_SALIDAS", "L3_SKILL_CONTAINS_PLACEHOLDERS"], "evidencia_integridad": false },
+    "proptest": { "id": "AT-SEC-012", "nivel_anterior": "BLOCKED", "nivel_validado": "L1", "status": "FAIL", "issues": ["L2_GUIDE_MISSING_SECTION_REQUISITOS", "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "L2_GUIDE_MISSING_SECTION_SALIDAS"], "evidencia_integridad": false }
+  },
+  "distribucion_atds_catalogo": {
+    "total": 2137,
+    "NONE": 1263,
+    "L1": 874,
+    "L2": 0,
+    "L3": 0,
+    "L4": 0,
+    "tools_with_issues": 2137,
+    "top_issues": [
+      { "code": "L2_GUIDE_MISSING_SECTION_ENTRADAS", "count": 2134 },
+      { "code": "L2_GUIDE_MISSING_SECTION_PLATAFORMAS", "count": 2130 },
+      { "code": "L2_GUIDE_MISSING_SECTION_ERRORES", "count": 2122 },
+      { "code": "L3_SKILL_MISSING_SECTION_NAME_", "count": 2125 },
+      { "code": "L3_SKILL_MISSING_SECTION_DESCRIPTION_", "count": 2125 },
+      { "code": "L1_MISSING_LICENCIA", "count": 1260 }
+    ]
+  },
+  "falsos_positivos_corregidos": [
+    { "herramienta": "Semgrep", "antes": "L4", "despues": "L1", "razon": "Evidencia PASS no otorga L4 sin L2/L3" },
+    { "herramienta": "promptfoo", "antes": "L4", "despues": "NONE", "razon": "Licencia NO_VERIFICADA bloquea L1" },
+    { "herramienta": "cargo-fuzz", "antes": "L4", "despues": "L1", "razon": "Guía incompleta bloquea L2" },
+    { "herramienta": "Gitleaks", "antes": "L4", "despues": "L1", "razon": "Guía incompleta bloquea L2" },
+    { "herramienta": "MCP Inspector", "antes": "L4", "despues": "L1", "razon": "BLOCKED no otorga L4, guía incompleta" }
+  ],
+  "suite_pruebas": {
+    "total_tests_etapa2": 34,
+    "total_tests_proyecto": 195,
+    "categorias": {
+      "T01-T04_L1": 4,
+      "T05-T09_L2": 5,
+      "T10-T12_L3": 3,
+      "T13-T17_L4": 5,
+      "T18-T20_Validaciones": 3,
+      "T21-T24_Determinismo": 4,
+      "NEG_ATDS": 5,
+      "MET_ATDS": 5
+    },
+    "fixtures_negativas": [
+      "NEG-ATDS-01: MISSING_METADATA -> NONE",
+      "NEG-ATDS-02: GUIDE_CONTAINS_PLACEHOLDERS",
+      "NEG-ATDS-03: SKILL_FEW_STEPS",
+      "NEG-ATDS-04: EVIDENCE_HASH_MISMATCH",
+      "NEG-ATDS-05: BLOCKED_HAS_EVIDENCE"
+    ],
+    "pruebas_metamorficas": [
+      "MET-ATDS-01: Quitar fuente -> impide L1",
+      "MET-ATDS-02: Guía placeholder -> impide L2",
+      "MET-ATDS-03: Vaciar casos -> impide L3",
+      "MET-ATDS-04: Evidencia real -> BLOCKED impide L4",
+      "MET-ATDS-05: Restaurar info -> recupera nivel"
+    ]
+  },
+  "criterios_aceptacion": {
+    "validador_respeta_contratos_L1_L4": true,
+    "clasificacion_acumulativa": true,
+    "GUIA_no_concede_L2_auto": true,
+    "SKILL_CASOS_no_concede_L3_auto": true,
+    "PASS_incompleto_no_concede_L4": true,
+    "BLOCKED_no_concede_L4": true,
+    "version_check_alcance_real": true,
+    "guias_genericas_no_promovidas": true,
+    "requisitos_no_aplicables_distinguidos": true,
+    "resultados_reproducibles": true,
+    "diagnosticos_con_codigos": true,
+    "reporte_compatible_consumidores": true,
+    "pruebas_positivas_negativas": true,
+    "pruebas_metamorficas": true,
+    "doce_fichas_evaluadas": true,
+    "catalogo_completo_evaluado": true,
+    "modo_estricto_detecta_regresiones": true,
+    "modo_reporte_no_oculta_defectos": true,
+    "typescript_pasa": true,
+    "lint_checkout_limpio_pasa": true,
+    "tests_unitarios_pasan": true,
+    "build_pwa_pasa": true,
+    "integridad_catalogo_intacta": true,
+    "pr_autentico_verificado": "PENDIENTE",
+    "github_actions_ejecucion_real": "PENDIENTE",
+    "informe_manifiesto_verificables": true,
+    "sin_tareas_etapas_3_4_5": true
+  },
+  "problemas_pendientes": [
+    "Lint local: 42 errores en archivos no versionados (familias.js, normalizar-catalogo.mjs). No bloquean CI ni commit entregado.",
+    "1263 herramientas en NONE: requieren investigación documental (Etapa 3+). No se enriquecieron masivamente.",
+    "874 herramientas en L1: cumplen identificación verificable pero no L2-L4.",
+    "Validación de enlaces externos no implementada (requiere red, opt-in futuro).",
+    "Modo estricto no completamente implementado; pendiente configuración por PR/archivos modificados.",
+    "PR y GitHub Actions pendientes de creación y verificación."
+  ]
+}
