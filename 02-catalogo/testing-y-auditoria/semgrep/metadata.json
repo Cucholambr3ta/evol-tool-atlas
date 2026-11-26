@@ -24,6 +24,7 @@
   },
   "probado_en_host": false,
   "estado_fuente": "FUENTE_Y_RELEASE_VERIFICADOS",
+  "estado_mantenimiento": "ACTIVO · última release 1.187.0 (2026-11-25)",
   "estado_instalacion": "NO_VERIFICADA_EN_HOST",
   "fecha_verificacion": "2026-11-22",
   "fecha_revision": "2026-11-25",
