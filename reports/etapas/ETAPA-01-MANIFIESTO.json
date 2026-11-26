@@ -1,12 +1,44 @@
 {
   "etapa": 1,
-  "nombre": "Recuperación y Preservación Documental (Corregida y Verificada)",
+  "nombre": "Recuperación y Preservación Documental — corrección focalizada NEG-04, documentación genérica y CI",
   "rama": "atlas/etapa-01-recuperacion",
   "url_rama": "https://github.com/Cucholambr3ta/evol-tool-atlas/tree/atlas/etapa-01-recuperacion",
   "head_inicial_etapa": "e061d48c30c488016c2bfe5e660eaf01e28c907e",
-  "head_auditado_no_go": "bc50dea4458b5f9ff86f635e49744fa4ea0a776e",
-  "head_corregido_final": "31b2d2b826a4365220531fba4ef08df9216388bf",
-  "url_pull_request": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/1",
+  "head_auditado_no_go": "5f9d8a519ec3c2ec88a0d77d220eaf786191fdcc",
+  "head_correcciones_publicadas": "88846308409baea30d05fb371e4c33bbe3afd126",
+  "sha_final": "Comunicado en la respuesta de entrega y en la descripción del PR; no se incluye dentro del propio commit para evitar autorreferencia.",
+  "pull_request": {
+    "numero": 1,
+    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/1",
+    "estado": "OPEN",
+    "origen": "atlas/etapa-01-recuperacion",
+    "destino": "main",
+    "sha_head_verificado": "88846308409baea30d05fb371e4c33bbe3afd126",
+    "verificado_por_segunda_consulta_api": true,
+    "fusionado": false
+  },
+  "github_actions": {
+    "workflow": "CI Evol Tool Atlas PWA",
+    "run_id": "45758241230",
+    "url": "https://github.com/Cucholambr3ta/evol-tool-atlas/actions/runs/45758241230",
+    "evento": "pull_request",
+    "sha": "88846308409baea30d05fb371e4c33bbe3afd126",
+    "estado": "completed",
+    "conclusion": "success",
+    "jobs": {
+      "Validate, Test & Build PWA": "success",
+      "pasos": {
+        "checkout": "success",
+        "npm ci": "success",
+        "generate:data": "success",
+        "typecheck": "success",
+        "eslint": "success",
+        "unit tests": "success",
+        "build PWA": "success",
+        "verify:catalog": "success"
+      }
+    }
+  },
   "commits_etapa": [
     {
       "sha": "bc50dea4458b5f9ff86f635e49744fa4ea0a776e",
@@ -21,145 +53,138 @@
     {
       "sha": "309c088d13596ac9492ca9b7d96803a3309a2111",
       "mensaje": "fix(etapa-01): complete audit corrections E1-04",
-      "tipo": "correccion_final_auditoria"
+      "tipo": "correccion_auditoria"
     },
     {
       "sha": "31b2d2b826a4365220531fba4ef08df9216388bf",
       "mensaje": "fix(etapa-01): complete audit corrections E1-04",
-      "tipo": "correccion_final_auditoria"
+      "tipo": "correccion_auditoria"
+    },
+    {
+      "sha": "5f9d8a519ec3c2ec88a0d77d220eaf786191fdcc",
+      "mensaje": "docs(etapa-01): final corrected reports and manifest",
+      "tipo": "head_auditado_iteracion"
+    },
+    {
+      "sha": "88846308409baea30d05fb371e4c33bbe3afd126",
+      "mensaje": "fix(tests): isolate negative fixtures and reject generic guides",
+      "tipo": "correccion_focalizada_actual"
     }
   ],
-  "archivos_modificados_realmente": [
-    "02-catalogo/testing-y-auditoria/semgrep/metadata.json",
-    "02-catalogo/testing-y-auditoria/semgrep/SHA256SUMS.txt",
-    "02-catalogo/seguridad/catalogo/promptfoo/SHA256SUMS.txt",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/SHA256SUMS.txt",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/SHA256SUMS.txt",
-    "02-catalogo/pruebas-tecnicas/gitleaks/SHA256SUMS.txt",
-    "tests/unit/etapa-01-recuperacion.test.ts",
-    "tsconfig.json",
-    "package.json",
-    "package-lock.json",
-    "reports/etapas/ETAPA-01-INFORME.md",
-    "reports/etapas/ETAPA-01-MANIFIESTO.json"
+  "archivos_modificados_en_esta_iteracion": [
+    "tests/unit/etapa-01-recuperacion.test.ts"
   ],
-  "archivos_verificados_sin_modificacion_12_prioritarias": [
-    "02-catalogo/testing-y-auditoria/semgrep/metadata.json (id_catalogo ya correcto en baseline)",
-    "02-catalogo/testing-y-auditoria/semgrep/evidencias.json (id_catalogo ya correcto)",
-    "02-catalogo/testing-y-auditoria/semgrep/casos-uso.json (id_catalogo ya correcto)",
-    "02-catalogo/testing-y-auditoria/semgrep/GUIA.md (contenido especializado ya presente)",
-    "02-catalogo/testing-y-auditoria/semgrep/SKILL.md (contenido especializado ya presente)",
-    "02-catalogo/seguridad/catalogo/promptfoo/metadata.json",
-    "02-catalogo/seguridad/catalogo/promptfoo/evidencias.json",
-    "02-catalogo/seguridad/catalogo/promptfoo/casos-uso.json",
-    "02-catalogo/seguridad/catalogo/promptfoo/GUIA.md",
-    "02-catalogo/seguridad/catalogo/promptfoo/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/metadata.json",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/mcp-inspector/metadata.json",
-    "02-catalogo/pruebas-tecnicas/mcp-inspector/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/mcp-inspector/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/mcp-inspector/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/mcp-inspector/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/metadata.json",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/loom/metadata.json",
-    "02-catalogo/pruebas-tecnicas/loom/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/loom/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/loom/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/loom/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/dm-flakey/metadata.json",
-    "02-catalogo/pruebas-tecnicas/dm-flakey/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/dm-flakey/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/dm-flakey/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/dm-flakey/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/dm-log-writes/metadata.json",
-    "02-catalogo/pruebas-tecnicas/dm-log-writes/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/dm-log-writes/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/dm-log-writes/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/dm-log-writes/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/gitleaks/metadata.json",
-    "02-catalogo/pruebas-tecnicas/gitleaks/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/gitleaks/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/gitleaks/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/gitleaks/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/miri/metadata.json",
-    "02-catalogo/pruebas-tecnicas/miri/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/miri/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/miri/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/miri/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/cargo-mutants/metadata.json",
-    "02-catalogo/pruebas-tecnicas/cargo-mutants/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/cargo-mutants/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/cargo-mutants/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/cargo-mutants/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/proptest/metadata.json",
-    "02-catalogo/pruebas-tecnicas/proptest/evidencias.json",
-    "02-catalogo/pruebas-tecnicas/proptest/casos-uso.json",
-    "02-catalogo/pruebas-tecnicas/proptest/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/proptest/SKILL.md"
+  "residuos_eliminados": [
+    "tests/unit/fixtures/negative/test-tool/artifact.json (artefacto residual de NEG-04 anterior)"
   ],
-  "informe": "reports/etapas/ETAPA-01-INFORME.md",
-  "validacion_atds": "reports/atds-validation.json",
-  "pruebas_ejecutadas": [
-    "npm run typecheck",
-    "npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts",
-    "npm run validate:atds",
-    "npm run verify:catalog"
-  ],
-  "resultado_pruebas": {
-    "typecheck": "PASS — TypeScript strict mode compila sin errores",
-    "test_unit": {
-      "total": 150,
-      "passed": 150,
-      "failed": 0,
-      "reg_codes": [
-        "REG-01: 12/12 herramientas existen",
-        "REG-02: 12/12 id_catalogo correctos en metadata",
-        "REG-03: 12/12 id_catalogo correctos en casos-uso",
-        "REG-04: 12/12 id_catalogo correctos en evidencias",
-        "REG-05: 12/12 sin AT-???",
-        "REG-06: 5/5 PASS evidencias con artefactos y hashes",
-        "REG-07: 7/7 BLOCKED preservados (IDs explícitos verificados)",
-        "REG-08: 12/12 SHA256SUMS consistentes (todos los archivos existen y hashes coinciden)",
-        "REG-09: 12 IDs únicos sin duplicados",
-        "REG-10: Catálogo preservado (49/2137/741/2878)",
-        "REG-11: 12/12 guías/skills estructurales + 2 fixtures negativas",
-        "REG-12: 5/5 artefactos PASS con hash cruzado en SHA256SUMS",
-        "REG-13: 10/10 fixtures negativas detectan defectos"
-      ]
+  "correcciones": {
+    "neg_04": {
+      "estado": "PASS",
+      "directorio_temporal": "mkdtempSync(path.join(os.tmpdir(), 'evol-tool-atlas-negative-'))",
+      "raiz_documental_explicita": true,
+      "misma_logica_para_reales_y_sinteticos": true,
+      "proteccion_path_traversal": true,
+      "comprobacion_symlinks": true,
+      "control_positivo_hash_correcto": true,
+      "sin_residuos_en_repositorio": true
     },
-    "validate_atds": {
-      "total_tools": 2137,
-      "niveles": { "L3": 2123, "L4": 4, "NONE": 10 },
-      "tools_with_issues": 9,
-      "issue_counts": { "MISSING_SOURCE": 9 }
+    "documentacion_generica": {
+      "estado": "PASS",
+      "error_generic_documentation": true,
+      "warning_solo_para_senales_debiles": true,
+      "fixture_estructura_completa_rechazada": true,
+      "guias_reales_siguen_pasando": "12/12",
+      "skills_reales_siguen_pasando": "12/12",
+      "naturaleza": "validación estructural y heurística; no investigación semántica completa"
+    }
+  },
+  "resultados_comandos": {
+    "checkout_limpio_8884630": {
+      "descripcion": "Estado real entregado y evaluado por GitHub Actions",
+      "npm_ci": { "exit_code": 0, "resultado": "PASS" },
+      "typecheck": { "exit_code": 0, "resultado": "PASS" },
+      "lint": { "exit_code": 0, "resultado": "PASS", "errores": 0 },
+      "test_unit": {
+        "exit_code": 0,
+        "resultado": "PASS",
+        "archivos": 5,
+        "total": 161,
+        "aprobados": 161,
+        "fallidos": 0,
+        "etapa_1_total": 152,
+        "etapa_1_aprobados": 152
+      },
+      "check": { "exit_code": 0, "resultado": "PASS" },
+      "validate_atds": {
+        "exit_code": 0,
+        "resultado": "EJECUTADO (reporta, no bloquea)",
+        "total_tools": 2137,
+        "niveles": { "NONE": 2125, "L4": 4, "L1": 1, "L3": 7 },
+        "tools_with_issues": 2125,
+        "herramientas_prioritarias_con_incidencias": 0
+      },
+      "verify_catalog": {
+        "exit_code": 0,
+        "resultado": "PASS",
+        "detalle": "49 categorías, 2137 herramientas, 741 excluidas, 0 enlaces rotos"
+      }
     },
-    "verify_catalog": "ALL VERIFICATIONS PASSED: 49 categories, 2137 tools, 741 excluded, 0 broken links, 0 forbidden mentions, official Evol branding verified"
+    "arbol_trabajo_local": {
+      "descripcion": "Incluye cambios preexistentes no versionados ajenos a la entrega",
+      "typecheck": { "exit_code": 0, "resultado": "PASS" },
+      "lint": { "exit_code": 1, "resultado": "FAIL", "errores": 42, "origen": "scripts/lib/familias.js y scripts/normalizar-catalogo.mjs (no versionados)" },
+      "test_unit": { "exit_code": 0, "resultado": "PASS", "total": 161, "aprobados": 161, "fallidos": 0 },
+      "check": { "exit_code": 1, "resultado": "FAIL", "motivo": "se detiene en el lint de archivos no versionados" },
+      "validate_atds": { "exit_code": 0, "niveles": { "L3": 2123, "NONE": 10, "L4": 4 }, "issues": 9 },
+      "verify_catalog": { "exit_code": 0, "resultado": "PASS" }
+    }
+  },
+  "procedencia_lint": {
+    "archivos_conflictivos": [
+      "scripts/lib/familias.js",
+      "scripts/normalizar-catalogo.mjs"
+    ],
+    "existen_en_baseline_e061d48": false,
+    "existen_en_head": false,
+    "versionados_en_rama_o_pr": false,
+    "lint_archivos_versionados": "0 errores",
+    "lint_checkout_limpio": "PASS",
+    "lint_github_actions": "PASS",
+    "se_excluyeron_archivos_del_lint": false,
+    "se_elimino_trabajo_local": false
+  },
+  "conservacion": {
+    "categorias": 49,
+    "herramientas_admitidas": 2137,
+    "exclusiones": 741,
+    "entradas_totales": 2878,
+    "ids_at_sec": 12,
+    "evidencias_pass": 5,
+    "evidencias_blocked": 7,
+    "manifiestos_sha256_consistentes": true
   },
   "criterios_aceptacion": {
-    "e1_01_reconciliado_historial_real": true,
-    "e1_02_integridad_sha256_comprobada": true,
-    "e1_03_informe_manifiesto_correctos": true,
-    "e1_04_pruebas_regresion_reales_ejecutadas": true,
-    "e1_05_discrepancia_zip_github_documentada": true,
-    "doce_ids_at_sec_correctos": true,
-    "evidencias_legitimas_vinculadas": true,
-    "sin_duplicados_introducidos": true,
-    "catalogo_historico_preservado": true,
-    "tests_focales_aprobados": true,
-    "cambios_disponibles_github": true
+    "neg_04_almacenamiento_temporal_aislado": true,
+    "pruebas_sin_archivos_residuales": true,
+    "reg_11_rechaza_guia_generica_estructura_completa": true,
+    "misma_funcion_evalua_reales_y_fixtures": true,
+    "doce_fichas_prioritarias_integras": true,
+    "pruebas_unitarias_completas_ejecutadas": true,
+    "numero_real_pruebas_documentado": true,
+    "typescript_pasa": true,
+    "lint_checkout_limpio_y_ci_pasa": true,
+    "npm_run_check_checkout_limpio_pasa": true,
+    "manifiestos_sha256_consistentes": true,
+    "catalogo_conserva_conteos": true,
+    "pr_autentico_verificado": true,
+    "github_actions_ejecucion_real": true,
+    "estado_ci_corresponde_al_sha_publicado": true,
+    "sin_modificaciones_fuera_de_alcance_sin_justificar": true
   },
   "problemas_pendientes": [
-    "9 herramientas con MISSING_SOURCE (no prioritarias) - investigación documental posterior",
-    "7 herramientas con evidencias BLOCKED - estado correcto, no se convierten a FAIL/PASS",
-    "Lint preexistente: 42 errores en scripts/lib/familias.js y scripts/normalizar-catalogo.mjs (ajenos a esta intervención)"
-  ],
-  "nota_hashes": "El SHA final del commit de corrección (31b2d2b826a4365220531fba4ef08df9216388bf) se registra en el mensaje de entrega final y en la descripción del PR, no dentro del propio manifiesto versionado (evita referencia circular)."
+    "2.125 herramientas fuera del alcance de Etapa 1 conservan metadatos ATDS de baseline (NONE); su enriquecimiento corresponde a la Etapa 2.",
+    "7 evidencias BLOCKED permanecen correctamente en estado BLOCKED.",
+    "42 errores de lint locales provienen de dos archivos no versionados que no existen en baseline, HEAD ni PR; no se eliminaron para no destruir trabajo local del propietario.",
+    "El SHA final de este commit de documentación se comunica en la respuesta de entrega y en el PR; la ejecución de CI se re-verifica sobre ese SHA."
+  ]
 }

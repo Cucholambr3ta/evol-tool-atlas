@@ -1,145 +1,181 @@
-# ETAPA 1 - INFORME DE RECUPERACIÓN Y PRESERVACIÓN DOCUMENTAL (CORREGIDA Y VERIFICADA)
+# ETAPA 1 — INFORME DE RECUPERACIÓN Y PRESERVACIÓN DOCUMENTAL
+
+**Rama:** `atlas/etapa-01-recuperacion`  
+**Repositorio:** https://github.com/Cucholambr3ta/evol-tool-atlas  
+**Fecha:** 2026-11-26
 
 ## Objetivo
 
-Recuperar el contenido especializado, los identificadores y las evidencias históricas de las 12 herramientas prioritarias afectadas por la generación masiva anterior.
+Recuperar y preservar el contenido especializado, los identificadores y las evidencias históricas de las 12 herramientas prioritarias afectadas por la generación masiva anterior.
 
-## Reconciliación con auditoría (E1-01)
+## Alcance de esta iteración
 
-La auditoría independiente identificó que el diff real entre `e061d48c30c488016c2bfe5e660eaf01e28c907e` (HEAD inicial) y `bc50dea4458b5f9ff86f635e49744fa4ea0a776e` (HEAD auditado) mostraba **solo 3 archivos modificados**.
+Los hallazgos E1-01, E1-02 y E1-05 ya fueron aceptados y **no se reabren**. Esta iteración corrige exclusivamente:
 
-**Hallazgo:** Las 12 herramientas prioritarias **ya tenían sus IDs AT-SEC-001..012 correctos en la baseline `e061d48`** (commit `4672228` que las introdujo). No fue necesario "restaurar" los IDs porque nunca se perdieron en el historial Git.
+1. Aislamiento de la prueba negativa NEG-04.
+2. Detección efectiva de documentación genérica con estructura completa.
+3. Ejecución completa y trazable de las validaciones.
+4. Pull Request auténtico y verificación de GitHub Actions.
 
-## Qué sí se corrigió en esta etapa
+No se regeneraron fichas, no se modificaron las 12 herramientas prioritarias y no se inició la Etapa 2.
 
-| Acción | Archivo | Descripción |
-|--------|---------|-------------|
-| **E1-02 SHA-256** | `02-catalogo/testing-y-auditoria/semgrep/SHA256SUMS.txt` | Actualizado hash de `metadata.json` tras la adición de `estado_mantenimiento` |
-| | `02-catalogo/seguridad/catalogo/promptfoo/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/promptfoo-prueba.json` |
-| | `02-catalogo/pruebas-tecnicas/cargo-fuzz/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/cargo-fuzz-version.json` |
-| | `02-catalogo/pruebas-tecnicas/cargo-audit/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/cargo-audit-sondas.json` |
-| | `02-catalogo/pruebas-tecnicas/gitleaks/SHA256SUMS.txt` | Agregado hash de artefacto `evidencias/gitleaks-prueba.json` |
-| **E1-04 Pruebas regresión** | `tests/unit/etapa-01-recuperacion.test.ts` | 150 pruebas automatizadas focalizadas (REG-01 a REG-13) |
-| **E1-03 Informe** | `reports/etapas/ETAPA-01-INFORME.md`, `reports/etapas/ETAPA-01-MANIFIESTO.json` | Documentos corregidos para reflejar la realidad del historial |
-| **E1-04-A TypeScript** | `tests/unit/etapa-01-recuperacion.test.ts` | Interfaz `PriorityTool` unificada con `hasPassEvidence` |
-| **E1-04-B no any** | `tests/unit/etapa-01-recuperacion.test.ts` | Tipos explícitos para `CatalogCategory`, `CatalogTool`, `EvidenceRecord`, `EvidenceFile` |
-| **E1-04-C ES import** | `tests/unit/etapa-01-recuperacion.test.ts` | `import { createHash } from 'node:crypto'` |
+## Correcciones realizadas
 
-## Verificación de las 12 herramientas prioritarias (baseline `e061d48` = commit `4672228`)
+### 1. NEG-04 — aislamiento temporal
 
-Todas las 12 herramientas **ya contenían** en `e061d48`:
+- El artefacto sintético se crea dentro de un directorio exclusivo `mkdtempSync(path.join(os.tmpdir(), 'evol-tool-atlas-negative-'))`.
+- `validateEvidenceRecord` y `validateSha256Manifest` reciben ahora una **raíz documental autorizada explícita**. La misma lógica de resolución (incluida la comprobación de path traversal y de symlinks con `lstatSync`) se aplica a registros reales y sintéticos.
+- No se crean excepciones especiales para la prueba.
+- El `afterAll` elimina únicamente el directorio temporal creado por la prueba.
+- Se eliminó el residuo histórico `tests/unit/fixtures/negative/test-tool/artifact.json` generado por la versión anterior de NEG-04.
 
-| Herramienta | ID Catalogo | metadata.json ✓ | evidencias.json ✓ | casos-uso.json ✓ | GUIA.md ✓ | SKILL.md ✓ | SHA256SUMS.txt ✓ |
-|-------------|-------------|-----------------|-------------------|------------------|-----------|------------|-------------------|
-| Semgrep | AT-SEC-001 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (corregido) |
-| promptfoo | AT-SEC-002 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (corregido) |
-| cargo-fuzz | AT-SEC-003 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (corregido) |
-| MCP Inspector | AT-SEC-004 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| cargo-audit | AT-SEC-005 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (corregido) |
-| Loom | AT-SEC-006 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| dm-flakey | AT-SEC-007 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| dm-log-writes | AT-SEC-008 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Gitleaks | AT-SEC-009 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (corregido) |
-| Miri | AT-SEC-010 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| cargo-mutants | AT-SEC-011 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| proptest | AT-SEC-012 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+**Resultado NEG-04:** PASS.
 
-## Evidencias preservadas (confirmadas en baseline)
+- Artefacto sintético en directorio temporal aislado.
+- SHA-256 incorrecto registrado.
+- El validador real detecta `EVIDENCE_HASH_MISMATCH`.
+- Control positivo: con el SHA correcto el mismo registro pasa; si la detección se pierde, la aserción negativa falla.
+- Sin residuos en el repositorio tras la ejecución.
 
-- **Semgrep**: 1 registro PASS (EV-AT-SEC-001-01) con fixture sintético, JSON y hash
-- **promptfoo**: 1 registro PASS (EV-AT-SEC-002-01) verificación de versión
-- **cargo-fuzz**: 1 registro PASS (EV-AT-SEC-003-01) verificación de versión
-- **MCP Inspector**: 1 registro BLOCKED (EV-AT-SEC-004-BLOCKED-01) — sin evidencia funcional
-- **cargo-audit**: 1 registro PASS (EV-AT-SEC-005-01) detección fixtures
-- **Loom**: 1 registro BLOCKED (EV-AT-SEC-006-BLOCKED-01)
-- **dm-flakey**: 1 registro BLOCKED (EV-AT-SEC-007-BLOCKED-01)
-- **dm-log-writes**: 1 registro BLOCKED (EV-AT-SEC-008-BLOCKED-01)
-- **Gitleaks**: 1 registro PASS (EV-AT-SEC-009-01) escaneo ~55 bytes
-- **Miri**: 1 registro BLOCKED (EV-AT-SEC-010-BLOCKED-01)
-- **cargo-mutants**: 1 registro BLOCKED (EV-AT-SEC-011-BLOCKED-01)
-- **proptest**: 1 registro BLOCKED (EV-AT-SEC-012-BLOCKED-01)
+### 2. Documentación genérica — REG-11 / NEG-11
 
-## Pruebas de regresión ejecutadas (E1-04)
+`validateGuideStructure` ahora distingue:
+
+- **ERROR `GENERIC_DOCUMENTATION`:** cuando concurren señales fuertes (≥3 frases genéricas distintas, o alta repetición de líneas / baja diversidad léxica combinadas con ausencia de marcadores técnicos).
+- **WARNING:** señales débiles o aisladas, sin rechazar el documento.
+
+La fixture obligatoria contiene todas las secciones requeridas, ID correcto, categoría, versión, fecha, introducción, instalación, configuración, primer uso, seguridad, limitaciones, advertencias, referencias, URL y longitud superior a 1000 caracteres; aun así es rechazada por `GENERIC_DOCUMENTATION`. Las 12 guías reales siguen superando la misma función.
+
+**Resultado REG-11 / NEG-11:** PASS.
+
+- Guía genérica con estructura completa → rechazada por contenido (`GENERIC_DOCUMENTATION`), sin errores de sección ausente.
+- 12/12 guías reales → PASS.
+- 12/12 skills reales → PASS.
+
+**Nota metodológica:** esta validación es estructural y heurística; no sustituye una investigación semántica completa. La corrección integral de ATDS corresponde a la Etapa 2.
+
+## Resultados reales de las validaciones
+
+Se ejecutaron los comandos obligatorios en dos contextos, porque el árbol de trabajo local contiene cambios preexistentes no versionados ajenos a esta entrega:
+
+- **Árbol de trabajo local:** incluye 4.253 archivos versionados modificados y dos scripts no versionados (`scripts/lib/familias.js`, `scripts/normalizar-catalogo.mjs`) que no existen en la baseline ni en `HEAD`.
+- **Checkout limpio del commit publicado `8884630`:** es el estado real que evalúa GitHub Actions y el que se entrega.
+
+### Checkout limpio del commit `8884630` (autoritativo, equivalente a CI)
+
+| Comando | Código de salida | Resultado |
+|---|---|---|
+| `npm ci` | 0 | Dependencias instaladas desde `package-lock.json` |
+| `npm run typecheck` | 0 | PASS |
+| `npm run lint` | 0 | PASS — 0 errores (solo archivos versionados) |
+| `npm run test:unit` | 0 | PASS — 5 archivos, **161/161 tests** |
+| `npm run check` | 0 | PASS — generate:data + typecheck + lint + test + build + verify:catalog |
+| `npm run validate:atds` | 0 | Ejecutado; ver detalle ATDS abajo |
+| `npm run verify:catalog` | 0 | PASS — 49 categorías, 2.137 herramientas, 741 excluidas, 0 enlaces rotos |
+
+### Árbol de trabajo local (con cambios preexistentes no versionados)
+
+| Comando | Código de salida | Resultado |
+|---|---|---|
+| `npm run typecheck` | 0 | PASS |
+| `npm run lint` | 1 | FAIL — 42 errores, todos en `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs`, archivos **no versionados** |
+| `npm run test:unit` | 0 | PASS — 5 archivos, 161/161 tests |
+| `npm run check` | 1 | FAIL — se detiene en el lint anterior |
+| `npm run validate:atds` | 0 | Ejecutado sobre metadatos locales enriquecidos (ver detalle) |
+| `npm run verify:catalog` | 0 | PASS |
+
+### Procedencia de los 42 errores de lint
+
+- `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` **no existen** en la baseline `e061d48c30c488016c2bfe5e660eaf01e28c907e` ni en `HEAD` (`git ls-tree`).
+- Son archivos locales no versionados del árbol de trabajo; no forman parte de la rama ni del PR.
+- ESLint sobre los archivos versionados: **0 errores**.
+- Checkout limpio y GitHub Actions: **lint PASS**.
+
+No se excluyó ningún archivo del lint ni se modificó la configuración para fabricar un PASS.
+
+### Detalle ATDS
+
+- **Checkout limpio `8884630`:** `totalTools: 2137`, niveles `NONE: 2125`, `L4: 4`, `L1: 1`, `L3: 7`. Las **12 herramientas prioritarias no presentan incidencias** (están en L3/L4/L1). Las 2.125 herramientas restantes conservan el estado de baseline y quedan fuera del alcance de la Etapa 1; su enriquecimiento ATDS corresponde a la Etapa 2. El validador termina con código 0 porque reporta, no bloquea.
+- **Árbol de trabajo local:** `L3: 2123`, `NONE: 10`, `L4: 4`, 9 incidencias `MISSING_SOURCE` en herramientas no prioritarias. Este resultado depende de cambios locales no versionados y **no representa el commit publicado**.
+
+## Pruebas de la Etapa 1
 
 ```
 npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts
 ```
 
-**Resultado: 150 pruebas PASARON / 0 fallaron**
+**Resultado: 152/152 tests PASS.**
 
 | Código | Descripción | Estado |
 |--------|-------------|--------|
-| REG-01 | Existen las 12 herramientas prioritarias | ✅ 12/12 |
-| REG-02 | Cada herramienta tiene id_catalogo AT-SEC-001..012 | ✅ 12/12 |
-| REG-03 | Casos de uso coherentes con herramienta | ✅ 12/12 |
-| REG-04 | Evidencias coherentes con herramienta | ✅ 12/12 |
-| REG-05 | Sin marcadores AT-??? en registros normalizados | ✅ 12/12 |
-| REG-06 | Evidencias PASS conservan referencias/artefactos/hashes | ✅ 5/5 (solo las que tienen PASS) |
-| REG-07 | 7 registros BLOCKED históricos permanecen inalterados | ✅ 7/7 IDs verificados individualmente |
-| REG-08 | SHA256SUMS.txt consistente — todos los archivos existen y hashes coinciden | ✅ 12/12 |
-| REG-09 | Sin duplicados de identidades AT-SEC | ✅ 12 únicos |
-| REG-10 | Catálogo preservado (49 cat, 2137 adm, 741 exc, 2878 total) | ✅ |
-| REG-11 | Guías/skills estructurales + fixtures negativas rechazan plantillas | ✅ 12/12 + 2 fixtures negativas |
-| REG-12 | Artefactos de evidencia PASS existen y hashes cruzados con SHA256SUMS | ✅ 5/5 |
-| REG-13 | Pruebas negativas: validador detecta defectos (ID inválido, BLOCKED→PASS, evidencia sin artefacto, hash inválido, archivo faltante, path traversal, guía genérica, skill con placeholders) | ✅ 10/10 |
+| REG-01 | Existen las 12 herramientas prioritarias | PASS 12/12 |
+| REG-02 | Cada herramienta tiene id_catalogo AT-SEC-001..012 | PASS 12/12 |
+| REG-03 | Casos de uso coherentes con herramienta | PASS 12/12 |
+| REG-04 | Evidencias coherentes con herramienta | PASS 12/12 |
+| REG-05 | Sin marcadores AT-??? en registros normalizados | PASS 12/12 |
+| REG-06 | Evidencias PASS conservan referencias/artefactos/hashes | PASS 5/5 |
+| REG-07 | 7 registros BLOCKED históricos permanecen inalterados | PASS 7/7 |
+| REG-08 | SHA256SUMS.txt consistente — archivos existen y hashes coinciden | PASS 12/12 |
+| REG-09 | Sin duplicados de identidades AT-SEC | PASS 12 únicos |
+| REG-10 | Catálogo preservado (49/2137/741/2878) | PASS |
+| REG-11 | Guías/skills estructurales + rechazo de guía genérica completa | PASS 12/12 + NEG-11 |
+| REG-12 | Artefactos de evidencia PASS existen y hashes cruzados | PASS 5/5 |
+| REG-13 | Pruebas negativas NEG-01..NEG-11 | PASS 11/11 |
 
-## Validaciones complementarias
+**Total de pruebas unitarias del proyecto:** 161/161 (5 archivos), no solo la suite de Etapa 1.
 
-```
-npm run typecheck
-```
-✅ PASS — TypeScript strict mode compila sin errores
+## Conservación verificada
 
-```
-npm run test:unit
-```
-✅ PASS — 150 tests / 0 fallos
+- 49 categorías.
+- 2.137 herramientas admitidas.
+- 741 exclusiones.
+- 2.878 entradas totales.
+- 12 identificadores `AT-SEC-001..012`.
+- 5 evidencias PASS históricas.
+- 7 evidencias BLOCKED históricas.
+- Manifiestos SHA-256 consistentes.
 
-```
-npm run validate:atds
-```
-✅ PASS — Total: 2,137 | L3: 2,123 | L4: 4 | NONE: 10 | Issues: 9 (MISSING_SOURCE en herramientas NO prioritarias)
+## Pull Request y GitHub Actions
 
-```
-npm run verify:catalog
-```
-✅ PASS — 49 categorías, 2,137 herramientas, 741 excluidas, 0 enlaces rotos
+- **PR real:** https://github.com/Cucholambr3ta/evol-tool-atlas/pull/1
+- **Número:** 1
+- **Estado:** OPEN
+- **Origen:** `atlas/etapa-01-recuperacion`
+- **Destino:** `main`
+- **SHA HEAD verificado:** `88846308409baea30d05fb371e4c33bbe3afd126`
+- **Verificación:** segunda consulta REST API (`repos/.../pulls/1`) confirmó número, URL, estado, ramas y SHA.
+- **Merge:** no realizado.
 
-```
-npm run lint
-```
-⚠️ 42 errores preexistentes en `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` (no relacionados con esta etapa)
+**GitHub Actions:**
 
-## Discrepancia ZIP vs GitHub (E1-05)
+- **Workflow:** `CI Evol Tool Atlas PWA`
+- **Run ID:** `45758241230`
+- **URL:** https://github.com/Cucholambr3ta/evol-tool-atlas/actions/runs/45758241230
+- **Evento:** `pull_request`
+- **SHA:** `88846308409baea30d05fb371e4c33bbe3afd126`
+- **Estado:** `completed`
+- **Conclusión:** `success`
+- **Jobs:** `Validate, Test & Build PWA` — todos los pasos en `success`: checkout, `npm ci`, `generate:data`, typecheck, ESLint, unit tests, build PWA, `verify:catalog`.
 
-La auditoría detectó que el ZIP histórico (`auditoria-documental-v2.3.2.zip`) contenía `GUIA.md` y `SKILL.md` para **todas las herramientas**, mientras que GitHub (baseline `e061d48`) solo los tiene para las **12 herramientas prioritarias** (commit `4672228`).
+## Incidencias pendientes
 
-**Determinación:** No hay pérdida real de datos respecto a la baseline aprobada (`e061d48`). Las guías/skills masivas del ZIP no estaban versionadas en Git y muchas contenían texto genérico/placeholders (según hallazgos de auditoría previa). **No se importan automáticamente**; la recuperación masiva corresponde a etapas documentales posteriores (Etapa 5).
+1. **2.125 herramientas fuera del alcance de Etapa 1** conservan metadatos ATDS de baseline (`NONE`). Su enriquecimiento corresponde a la Etapa 2.
+2. **7 evidencias BLOCKED** permanecen correctamente en estado BLOCKED; no se convierten a PASS/FAIL.
+3. **Archivos locales no versionados** (`scripts/lib/familias.js`, `scripts/normalizar-catalogo.mjs`) generan 42 errores de lint solo en el árbol de trabajo local. No están en la baseline, ni en `HEAD`, ni en el PR; el checkout limpio y CI pasan el lint. No se eliminaron para no destruir trabajo local del propietario.
+4. **SHA final:** el SHA de este commit de documentación se comunica en la respuesta de entrega y en la descripción del PR, evitando una referencia circular dentro del propio commit. La ejecución de CI se re-verifica sobre ese SHA final.
 
-## Catálogo preservado (invariable)
-
-- 49 categorías
-- 2,137 herramientas admitidas
-- 741 entradas excluidas
-- 2,878 entradas totales
-
-## Problemas conocidos (no bloqueantes para etapa 1)
-
-1. **9 herramientas con MISSING_SOURCE** (sploitctl, torctl, netcon, msfdb, wordlistctl, windows-binaries, darkmysqli, webrute, webshells) — pertenecen a investigación documental posterior
-2. **7 herramientas con evidencias BLOCKED** — estado correcto, no se convierten a FAIL/PASS
-3. **Lint preexistente** — 42 errores en `scripts/lib/familias.js` y `scripts/normalizar-catalogo.mjs` ajenos a esta intervención
-
-## Commits de corrección
+## Commits de la etapa
 
 1. `bc50dea` — `docs(etapa-01): add recovery report and manifest` (HEAD auditado original)
 2. `6368c6e` — `fix(etapa-01): correct SHA-256 for semgrep metadata; add regression tests; update reports`
 3. `309c088` — `fix(etapa-01): complete audit corrections E1-04`
-4. `31b2d2b` — `fix(etapa-01): complete audit corrections E1-04` (HEAD corregido final)
+4. `31b2d2b` — `fix(etapa-01): complete audit corrections E1-04`
+5. `5f9d8a5` — `docs(etapa-01): final corrected reports and manifest` (HEAD auditado en esta iteración)
+6. `8884630` — `fix(tests): isolate negative fixtures and reject generic guides`
 
 ---
 
 **HEAD inicial etapa:** `e061d48c30c488016c2bfe5e660eaf01e28c907e`  
-**HEAD auditado (NO-GO):** `bc50dea4458b5f9ff86f635e49744fa4ea0a776e`  
-**HEAD corregido final:** `31b2d2b826a4365220531fba4ef08df9216388bf`  
-**Rama:** `atlas/etapa-01-recuperacion`  
-**Fecha:** 2026-11-26
+**HEAD auditado (NO-GO):** `5f9d8a519ec3c2ec88a0d77d220eaf786191fdcc`  
+**HEAD de correcciones publicadas:** `88846308409baea30d05fb371e4c33bbe3afd126`  
+**SHA final:** comunicado en la respuesta de entrega y en el PR (sin autorreferencia).
