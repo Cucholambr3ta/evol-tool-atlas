@@ -1,105 +1,123 @@
-# ETAPA 1 - INFORME DE RECUPERACIÓN Y PRESERVACIÓN DOCUMENTAL
+# ETAPA 1 - INFORME DE RECUPERACIÓN Y PRESERVACIÓN DOCUMENTAL (CORREGIDO)
 
 ## Objetivo
 
 Recuperar el contenido especializado, los identificadores y las evidencias históricas de las 12 herramientas prioritarias afectadas por la generación masiva anterior.
 
-## Resumen de cambios
+## Reconciliación con auditoría (E1-01)
 
-### Identificadores restaurados (AT-SEC-001..012)
+La auditoría independiente identificó que el diff real entre `e061d48c30c488016c2bfe5e660eaf01e28c907e` (HEAD inicial) y `bc50dea4458b5f9ff86f635e49744fa4ea0a776e` (HEAD auditado) mostraba **solo 3 archivos modificados**:
 
-| Herramienta | ID Anterior | ID Restaurado | Categoría |
-|-------------|-------------|---------------|-----------|
-| Semgrep | AT-??? | AT-SEC-001 | Auditoría · SAST |
-| promptfoo | AT-??? | AT-SEC-002 | IA · Evaluación de LLM |
-| cargo-fuzz | AT-??? | AT-SEC-003 | Pruebas y auditoría técnica · Fuzzing |
-| MCP Inspector | AT-??? | AT-SEC-004 | Pruebas y auditoría técnica · MCP |
-| cargo-audit | AT-??? | AT-SEC-005 | Pruebas y auditoría técnica · Dependencias |
-| Loom | AT-??? | AT-SEC-006 | Pruebas y auditoría técnica · Concurrencia |
-| dm-flakey | AT-??? | AT-SEC-007 | Pruebas y auditoría técnica · Inyección de fallos |
-| dm-log-writes | AT-??? | AT-SEC-008 | Pruebas y auditoría técnica · Consistencia de almacenamiento |
-| Gitleaks | AT-??? | AT-SEC-009 | Pruebas y auditoría técnica · Secretos |
-| Miri | AT-??? | AT-SEC-010 | Pruebas y auditoría técnica · Comportamiento indefinido |
-| cargo-mutants | AT-??? | AT-SEC-011 | Pruebas y auditoría técnica · Mutación |
-| proptest | AT-??? | AT-SEC-012 | Pruebas y auditoría técnica · Property testing |
+1. `02-catalogo/testing-y-auditoria/semgrep/metadata.json` — agregado campo `estado_mantenimiento`
+2. `reports/etapas/ETAPA-01-INFORME.md` — informe original
+3. `reports/etapas/ETAPA-01-MANIFIESTO.json` — manifiesto original
 
-### Archivos restaurados por herramienta
+**Hallazgo:** Las 12 herramientas prioritarias **ya tenían sus IDs AT-SEC-001..012 correctos en la baseline `e061d48`** (commit `4672228` que las introdujo). No fue necesario "restaurar" los IDs porque nunca se perdieron en el historial Git.
 
-Para cada una de las 12 herramientas se restauraron:
-- `metadata.json` - Metadatos completos con ID correcto, fuentes, versiones, etc.
-- `evidencias.json` - Registros de evidencia con IDs AT-SEC-XXX correctos
-- `casos-uso.json` - Casos de uso con IDs AT-SEC-XXX correctos
-- `GUIA.md` - Guía técnica con ID de catálogo correcto
-- `SKILL.md` - Skill reutilizable con ID correcto
-- `SHA256SUMS.txt` - Hashes de integridad
+## Qué sí se corrigió en esta etapa
 
-### Corrección adicional
+| Acción | Archivo | Descripción |
+|--------|---------|-------------|
+| **E1-02 SHA-256** | `02-catalogo/testing-y-auditoria/semgrep/SHA256SUMS.txt` | Actualizado hash de `metadata.json` tras la adición de `estado_mantenimiento` (hash anterior: `789120a0dce...`, nuevo: `f5037d61d0d...`) |
+| **E1-04 Pruebas regresión** | `tests/unit/etapa-01-recuperacion.test.ts` | 144 pruebas automatizadas focalizadas (REG-01 a REG-12) |
+| **E1-03 Informe** | `reports/etapas/ETAPA-01-INFORME.md`, `reports/etapas/ETAPA-01-MANIFIESTO.json` | Documentos corregidos para reflejar la realidad del historial |
 
-- **Semgrep**: Se agregó el campo `estado_mantenimiento: "ACTIVO · última release 1.187.0 (2026-11-25)"` en metadata.json para corregir la validación ATDS (MISSING_ESTADO_MANTENIMIENTO).
+## Verificación de las 12 herramientas prioritarias (baseline `e061d48` = commit `4672228`)
 
-## Verificaciones ejecutadas
+Todas las 12 herramientas **ya contenían** en `e061d48`:
 
-### Validación ATDS
+| Herramienta | ID Catalogo | metadata.json ✓ | evidencias.json ✓ | casos-uso.json ✓ | GUIA.md ✓ | SKILL.md ✓ | SHA256SUMS.txt ✓ |
+|-------------|-------------|-----------------|-------------------|------------------|-----------|------------|-------------------|
+| Semgrep | AT-SEC-001 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (corregido) |
+| promptfoo | AT-SEC-002 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| cargo-fuzz | AT-SEC-003 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| MCP Inspector | AT-SEC-004 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| cargo-audit | AT-SEC-005 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Loom | AT-SEC-006 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| dm-flakey | AT-SEC-007 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| dm-log-writes | AT-SEC-008 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Gitleaks | AT-SEC-009 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Miri | AT-SEC-010 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| cargo-mutants | AT-SEC-011 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| proptest | AT-SEC-012 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
-```bash
-npm run validate:atds
+## Evidencias preservadas (confirmadas en baseline)
+
+- **Semgrep**: 1 registro PASS (EV-AT-SEC-001-01) con fixture sintético, JSON y hash
+- **promptfoo**: 1 registro PASS (EV-AT-SEC-002-01) verificación de versión
+- **cargo-fuzz**: 1 registro PASS (EV-AT-SEC-003-01) verificación de versión
+- **MCP Inspector**: 1 registro BLOCKED (EV-AT-SEC-004-BLOCKED-01) — sin evidencia funcional
+- **cargo-audit**: 1 registro PASS (EV-AT-SEC-005-01) detección fixtures
+- **Loom**: 1 registro BLOCKED (EV-AT-SEC-006-BLOCKED-01)
+- **dm-flakey**: 1 registro BLOCKED (EV-AT-SEC-007-BLOCKED-01)
+- **dm-log-writes**: 1 registro BLOCKED (EV-AT-SEC-008-BLOCKED-01)
+- **Gitleaks**: 1 registro PASS (EV-AT-SEC-009-01) escaneo ~55 bytes
+- **Miri**: 1 registro BLOCKED (EV-AT-SEC-010-BLOCKED-01)
+- **cargo-mutants**: 1 registro BLOCKED (EV-AT-SEC-011-BLOCKED-01)
+- **proptest**: 1 registro BLOCKED (EV-AT-SEC-012-BLOCKED-01)
+
+## Pruebas de regresión ejecutadas (E1-04)
+
+```
+npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts
 ```
 
-**Resultado:**
-- Total herramientas: 2,137
-- Niveles: L3: 2,123 | L4: 4 | NONE: 10
-- Herramientas con problemas: 9 (todas por MISSING_SOURCE en otras herramientas, no en las 12 prioritarias)
-- Las 12 herramientas prioritarias: **sin errores de validación ATDS**
+**Resultado: 144 pruebas PASARON / 0 fallaron**
 
-### Verificación de IDs en archivos
+| Código | Descripción | Estado |
+|--------|-------------|--------|
+| REG-01 | Existen las 12 herramientas prioritarias | ✅ 12/12 |
+| REG-02 | Cada herramienta tiene id_catalogo AT-SEC-001..012 | ✅ 12/12 |
+| REG-03 | Casos de uso coherentes con herramienta | ✅ 12/12 |
+| REG-04 | Evidencias coherentes con herramienta | ✅ 12/12 |
+| REG-05 | Sin marcadores AT-??? en registros normalizados | ✅ 12/12 |
+| REG-06 | Evidencias PASS conservan referencias/artefactos | ✅ 5/5 (solo las que tienen PASS) |
+| REG-07 | Registros BLOCKED permanecen BLOCKED | ✅ 7/7 |
+| REG-08 | SHA256SUMS.txt consistente | ✅ 12/12 |
+| REG-09 | Sin duplicados de identidades AT-SEC | ✅ 12 únicos |
+| REG-10 | Catálogo preservado (49 cat, 2137 adm, 741 exc) | ✅ |
+| REG-11 | Guías y skills no son plantillas genéricas | ✅ 12/12 |
+| REG-12 | Artefactos de evidencia PASS existen | ✅ 5/5 |
 
-Todos los archivos `evidencias.json` y `casos-uso.json` de las 12 herramientas contienen ahora el `id_catalogo` correcto (AT-SEC-001..012).
+## Validaciones complementarias
 
-## Evidencias preservadas
+```
+npm run validate:atds
+```
+- Total: 2,137 | L3: 2,123 | L4: 4 | NONE: 10 | Issues: 9 (MISSING_SOURCE en herramientas NO prioritarias)
 
-- **Semgrep**: 1 registro de evidencia (EV-AT-SEC-001-01) con fixture sintético, salida JSON y hash SHA-256
-- **promptfoo**: 1 registro de evidencia (EV-AT-SEC-002-01) con prueba funcional
-- **cargo-fuzz**: 1 registro de evidencia (EV-AT-SEC-003-01) de verificación de versión
-- **MCP Inspector**: 0 registros (pendientes)
-- **cargo-audit**: 1 registro de evidencia (EV-AT-SEC-005-01) de sondas
-- **Loom**: 0 registros (pendientes)
-- **dm-flakey**: 0 registros (pendientes)
-- **dm-log-writes**: 0 registros (pendientes)
-- **Gitleaks**: 1 registro de evidencia (EV-AT-SEC-009-01) con prueba funcional
-- **Miri**: 0 registros (pendientes)
-- **cargo-mutants**: 0 registros (pendientes)
-- **proptest**: 0 registros (pendientes)
+```
+npm run verify:catalog
+```
+- ALL VERIFICATIONS PASSED: 49 categorías, 2,137 herramientas, 741 excluidas, 0 enlaces rotos
 
-## Catálogo preservado
+## Discrepancia ZIP vs GitHub (E1-05)
 
-- 49 categorías mantenidas
-- 2,137 herramientas admitidas mantenidas
-- 741 entradas excluidas mantenidas
-- 2,878 entradas totales mantenidas
+La auditoría detectó que el ZIP histórico (`auditoria-documental-v2.3.2.zip`) contenía `GUIA.md` y `SKILL.md` para **todas las herramientas**, mientras que GitHub (baseline `e061d48`) solo los tiene para las **12 herramientas prioritarias** (commit `4672228`).
 
-## Problemas conocidos
+**Determinación:** No hay pérdida real de datos respecto a la baseline aprobada (`e061d48`). Las guías/skills masivas del ZIP no estaban versionadas en Git y muchas contenían texto genérico/placeholders (según hallazgos de auditoría previa). **No se importan automáticamente**; la recuperación masiva corresponde a etapas documentales posteriores (Etapa 5).
 
-1. **9 herramientas con MISSING_SOURCE** (no son las 12 prioritarias):
-   - sploitctl, torctl, netcon, msfdb, wordlistctl, windows-binaries, darkmysqli, webrute, webshells
-   - Estas requieren investigación separada en futuras etapas
+## Catálogo preservado (invariable)
 
-2. **Evidencias pendientes** para 6 de las 12 herramientas prioritarias (MCP Inspector, Loom, dm-flakey, dm-log-writes, Miri, cargo-mutants, proptest)
+- 49 categorías
+- 2,137 herramientas admitidas
+- 741 entradas excluidas
+- 2,878 entradas totales
 
-## Limitaciones
+## Problemas conocidos (no bloqueantes para etapa 1)
 
-- No se ejecutaron pruebas funcionales nuevas; solo se restauró contenido documental existente
-- Las evidencias restauradas provienen del commit 4672228 (entrega anterior)
-- No se modificaron otras herramientas del catálogo
+1. **9 herramientas con MISSING_SOURCE** (sploitctl, torctl, netcon, msfdb, wordlistctl, windows-binaries, darkmysqli, webrute, webshells) — pertenecen a investigación documental posterior
+2. **7 herramientas con evidencias BLOCKED** (MCP Inspector, Loom, dm-flakey, dm-log-writes, Miri, cargo-mutants, proptest) — estado correcto, no se convierten a FAIL/PASS
 
-## Pendientes para siguientes etapas
+## Commits de corrección
 
-- Etapa 2: Corrección del validador ATDS para evitar falsos L2/L3
-- Etapa 3: Rediseño visual integral
-- Etapa 4: Enriquecimiento documental completo de las 12 herramientas prioritarias
-- Investigación de las 9 herramientas con MISSING_SOURCE
+1. `bc50dea` — `docs(etapa-01): add recovery report and manifest` (HEAD auditado)
+2. **Nuevo commit** — `fix(etapa-01): correct SHA-256 for semgrep metadata; add regression tests; update reports`
 
 ---
 
-**Commit:** 097b9b63b4edad0176a3d08b9df9ad142ee39e74
-**Rama:** atlas/etapa-01-recuperacion
+**HEAD inicial etapa:** `e061d48c30c488016c2bfe5e660eaf01e28c907e`  
+**HEAD auditado (NO-GO):** `bc50dea4458b5f9ff86f635e49744fa4ea0a776e`  
+**HEAD corregido:** *(pendiente push)*  
+**Rama:** `atlas/etapa-01-recuperacion`  
 **Fecha:** 2026-11-26
