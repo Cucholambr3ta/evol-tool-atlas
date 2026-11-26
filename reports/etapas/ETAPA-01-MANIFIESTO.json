@@ -1,12 +1,12 @@
 {
   "etapa": 1,
-  "nombre": "Recuperación y Preservación Documental (Corregida)",
+  "nombre": "Recuperación y Preservación Documental (Corregida y Verificada)",
   "rama": "atlas/etapa-01-recuperacion",
   "url_rama": "https://github.com/Cucholambr3ta/evol-tool-atlas/tree/atlas/etapa-01-recuperacion",
   "head_inicial_etapa": "e061d48c30c488016c2bfe5e660eaf01e28c907e",
   "head_auditado_no_go": "bc50dea4458b5f9ff86f635e49744fa4ea0a776e",
-  "head_corregido": "PENDIENTE_PUSH",
-  "url_pull_request": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/new/atlas/etapa-01-recuperacion",
+  "head_corregido_final": "309c088d13596ac9492ca9b7d96803a3309a2111",
+  "url_pull_request": "https://github.com/Cucholambr3ta/evol-tool-atlas/pull/1",
   "commits_etapa": [
     {
       "sha": "bc50dea4458b5f9ff86f635e49744fa4ea0a776e",
@@ -14,15 +14,27 @@
       "tipo": "original_no_go"
     },
     {
-      "sha": "PENDIENTE",
+      "sha": "6368c6ef6a2e632b4420c73a0ff683ab5e6e3db3",
       "mensaje": "fix(etapa-01): correct SHA-256 for semgrep metadata; add regression tests; update reports",
       "tipo": "correccion_auditoria"
+    },
+    {
+      "sha": "309c088d13596ac9492ca9b7d96803a3309a2111",
+      "mensaje": "fix(etapa-01): complete audit corrections E1-04",
+      "tipo": "correccion_final_auditoria"
     }
   ],
   "archivos_modificados_realmente": [
     "02-catalogo/testing-y-auditoria/semgrep/metadata.json",
     "02-catalogo/testing-y-auditoria/semgrep/SHA256SUMS.txt",
+    "02-catalogo/seguridad/catalogo/promptfoo/SHA256SUMS.txt",
+    "02-catalogo/pruebas-tecnicas/cargo-fuzz/SHA256SUMS.txt",
+    "02-catalogo/pruebas-tecnicas/cargo-audit/SHA256SUMS.txt",
+    "02-catalogo/pruebas-tecnicas/gitleaks/SHA256SUMS.txt",
     "tests/unit/etapa-01-recuperacion.test.ts",
+    "tsconfig.json",
+    "package.json",
+    "package-lock.json",
     "reports/etapas/ETAPA-01-INFORME.md",
     "reports/etapas/ETAPA-01-MANIFIESTO.json"
   ],
@@ -37,86 +49,70 @@
     "02-catalogo/seguridad/catalogo/promptfoo/casos-uso.json",
     "02-catalogo/seguridad/catalogo/promptfoo/GUIA.md",
     "02-catalogo/seguridad/catalogo/promptfoo/SKILL.md",
-    "02-catalogo/seguridad/catalogo/promptfoo/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/cargo-fuzz/metadata.json",
     "02-catalogo/pruebas-tecnicas/cargo-fuzz/evidencias.json",
     "02-catalogo/pruebas-tecnicas/cargo-fuzz/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/cargo-fuzz/GUIA.md",
     "02-catalogo/pruebas-tecnicas/cargo-fuzz/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/cargo-fuzz/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/mcp-inspector/metadata.json",
     "02-catalogo/pruebas-tecnicas/mcp-inspector/evidencias.json",
     "02-catalogo/pruebas-tecnicas/mcp-inspector/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/mcp-inspector/GUIA.md",
     "02-catalogo/pruebas-tecnicas/mcp-inspector/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/mcp-inspector/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/cargo-audit/metadata.json",
     "02-catalogo/pruebas-tecnicas/cargo-audit/evidencias.json",
     "02-catalogo/pruebas-tecnicas/cargo-audit/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/cargo-audit/GUIA.md",
     "02-catalogo/pruebas-tecnicas/cargo-audit/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/cargo-audit/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/loom/metadata.json",
     "02-catalogo/pruebas-tecnicas/loom/evidencias.json",
     "02-catalogo/pruebas-tecnicas/loom/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/loom/GUIA.md",
     "02-catalogo/pruebas-tecnicas/loom/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/loom/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/dm-flakey/metadata.json",
     "02-catalogo/pruebas-tecnicas/dm-flakey/evidencias.json",
     "02-catalogo/pruebas-tecnicas/dm-flakey/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/dm-flakey/GUIA.md",
     "02-catalogo/pruebas-tecnicas/dm-flakey/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/dm-flakey/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/dm-log-writes/metadata.json",
     "02-catalogo/pruebas-tecnicas/dm-log-writes/evidencias.json",
     "02-catalogo/pruebas-tecnicas/dm-log-writes/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/dm-log-writes/GUIA.md",
     "02-catalogo/pruebas-tecnicas/dm-log-writes/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/dm-log-writes/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/gitleaks/metadata.json",
     "02-catalogo/pruebas-tecnicas/gitleaks/evidencias.json",
     "02-catalogo/pruebas-tecnicas/gitleaks/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/gitleaks/GUIA.md",
     "02-catalogo/pruebas-tecnicas/gitleaks/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/gitleaks/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/miri/metadata.json",
     "02-catalogo/pruebas-tecnicas/miri/evidencias.json",
     "02-catalogo/pruebas-tecnicas/miri/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/miri/GUIA.md",
     "02-catalogo/pruebas-tecnicas/miri/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/miri/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/cargo-mutants/metadata.json",
     "02-catalogo/pruebas-tecnicas/cargo-mutants/evidencias.json",
     "02-catalogo/pruebas-tecnicas/cargo-mutants/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/cargo-mutants/GUIA.md",
     "02-catalogo/pruebas-tecnicas/cargo-mutants/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/cargo-mutants/SHA256SUMS.txt",
     "02-catalogo/pruebas-tecnicas/proptest/metadata.json",
     "02-catalogo/pruebas-tecnicas/proptest/evidencias.json",
     "02-catalogo/pruebas-tecnicas/proptest/casos-uso.json",
     "02-catalogo/pruebas-tecnicas/proptest/GUIA.md",
-    "02-catalogo/pruebas-tecnicas/proptest/SKILL.md",
-    "02-catalogo/pruebas-tecnicas/proptest/SHA256SUMS.txt"
+    "02-catalogo/pruebas-tecnicas/proptest/SKILL.md"
   ],
   "informe": "reports/etapas/ETAPA-01-INFORME.md",
   "validacion_atds": "reports/atds-validation.json",
   "pruebas_ejecutadas": [
+    "npm run typecheck",
+    "npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts",
     "npm run validate:atds",
-    "npm run verify:catalog",
-    "npm run test:unit -- tests/unit/etapa-01-recuperacion.test.ts"
+    "npm run verify:catalog"
   ],
   "resultado_pruebas": {
-    "validate_atds": {
-      "total_tools": 2137,
-      "niveles": { "L3": 2123, "L4": 4, "NONE": 10 },
-      "tools_with_issues": 9,
-      "issue_counts": { "MISSING_SOURCE": 9 }
-    },
-    "verify_catalog": "ALL VERIFICATIONS PASSED",
-    "regression_tests": {
-      "total": 144,
-      "passed": 144,
+    "typecheck": "PASS — TypeScript strict mode compila sin errores",
+    "test_unit": {
+      "total": 151,
+      "passed": 151,
       "failed": 0,
       "reg_codes": [
         "REG-01: 12/12 herramientas existen",
@@ -124,15 +120,23 @@
         "REG-03: 12/12 id_catalogo correctos en casos-uso",
         "REG-04: 12/12 id_catalogo correctos en evidencias",
         "REG-05: 12/12 sin AT-???",
-        "REG-06: 5/5 PASS evidencias con artefactos",
-        "REG-07: 7/7 BLOCKED preservados",
-        "REG-08: 12/12 SHA256SUMS consistentes",
+        "REG-06: 5/5 PASS evidencias con artefactos y hashes",
+        "REG-07: 7/7 BLOCKED preservados (IDs explícitos verificados)",
+        "REG-08: 12/12 SHA256SUMS consistentes (todos los archivos existen y hashes coinciden)",
         "REG-09: 12 IDs únicos sin duplicados",
         "REG-10: Catálogo preservado (49/2137/741/2878)",
-        "REG-11: 12/12 guías/skills especializados",
-        "REG-12: 5/5 artefactos PASS existen"
+        "REG-11: 12/12 guías/skills estructurales + 2 fixtures negativas",
+        "REG-12: 5/5 artefactos PASS con hash cruzado en SHA256SUMS",
+        "REG-13: 8/8 fixtures negativas detectan defectos"
       ]
-    }
+    },
+    "validate_atds": {
+      "total_tools": 2137,
+      "niveles": { "L3": 2123, "L4": 4, "NONE": 10 },
+      "tools_with_issues": 9,
+      "issue_counts": { "MISSING_SOURCE": 9 }
+    },
+    "verify_catalog": "ALL VERIFICATIONS PASSED: 49 categories, 2137 tools, 741 excluded, 0 broken links, 0 forbidden mentions, official Evol branding verified"
   },
   "criterios_aceptacion": {
     "e1_01_reconciliado_historial_real": true,
@@ -150,7 +154,7 @@
   "problemas_pendientes": [
     "9 herramientas con MISSING_SOURCE (no prioritarias) - investigación documental posterior",
     "7 herramientas con evidencias BLOCKED - estado correcto, no se convierten a FAIL/PASS",
-    "SHA final del commit de corrección pendiente de registro tras push"
+    "Lint preexistente: 42 errores en scripts/lib/familias.js y scripts/normalizar-catalogo.mjs (ajenos a esta intervención)"
   ],
-  "nota_hashes": "El SHA final del commit de corrección se registrará en el mensaje de entrega final y en la descripción del PR, no dentro del propio manifiesto versionado (evita referencia circular)."
+  "nota_hashes": "El SHA final del commit de corrección (309c088d13596ac9492ca9b7d96803a3309a2111) se registra en el mensaje de entrega final y en la descripción del PR, no dentro del propio manifiesto versionado (evita referencia circular)."
 }
