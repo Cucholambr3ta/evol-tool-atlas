@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import path from 'node:path';
 import { VAGUE_PATTERNS } from './normalize.mjs';
 
 const PLACEHOLDER_RE = /(^|\s)(TODO|FIXME)(\s|$|[.,;:])|\[PENDIENTE\]|\[TODO\]|\bPLACEHOLDER\b/i;
@@ -105,7 +104,7 @@ function getGuideSections(toolType) {
   return { required: def.required, markers: def.markers };
 }
 
-function checkContentSubstantive(content, sectionKey, patterns, toolType) {
+function checkContentSubstantive(content, sectionKey, patterns) {
   const sectionContent = extractSectionContent(content, sectionKey, patterns);
   if (!sectionContent || sectionContent.trim().length < 50) return false;
   
@@ -185,7 +184,7 @@ function checkGuideContent(guidePath, toolType = 'other') {
     if (found) {
       foundSections++;
       sections.push(sec.key);
-      if (checkContentSubstantive(content, sec.key, sec.patterns, toolType)) {
+      if (checkContentSubstantive(content, sec.key, sec.patterns)) {
         substantiveSections++;
       } else {
         issues.push(`GUIDE_SECTION_GENERIC_${sec.key.toUpperCase().replace(/[^A-Z0-9]/g, '_')}`);

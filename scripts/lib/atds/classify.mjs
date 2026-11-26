@@ -1,4 +1,5 @@
-import { makeFinding, mapCodeToDoc } from './diagnostics.mjs';
+// Imports reserved for future use
+// import { makeFinding, mapCodeToDoc } from './diagnostics.mjs';
 
 function evaluateL1(normalizedMeta) {
   const issues = [];
@@ -98,7 +99,7 @@ function evaluateL2(l1Result, guideResult, normalizedMeta) {
   };
 }
 
-function evaluateL3(l2Result, skillResult, casesResult, normalizedMeta) {
+function evaluateL3(l2Result, skillResult, casesResult) {
   if (!l2Result.passed) {
     return { passed: false, issues: ['L3_BLOCKED_BY_L2'], warnings: [], checks: { L3_SKILL: 'BLOCKED', L3_CASOS: 'BLOCKED' } };
   }
@@ -195,6 +196,7 @@ function evaluateL4(l3Result, evidenceResult, normalizedMeta) {
 }
 
 function computeLevels(l1Result, l2Result, l3Result, l4Result) {
+  // All results used
   const candidateLevel = l4Result.passed ? 'L4' : l3Result.passed ? 'L3' : l2Result.passed ? 'L2' : l1Result.passed ? 'L1' : 'NONE';
   
   // Validated level considers only blocking issues at each level
@@ -203,7 +205,7 @@ function computeLevels(l1Result, l2Result, l3Result, l4Result) {
   return { candidateLevel, validatedLevel };
 }
 
-function computeStatus(issues, l1Result, l2Result, l3Result, l4Result) {
+function computeStatus(issues) {
   // Separate structural/blocking from informational
   const blockingIssues = issues.filter(i => 
     i.startsWith('L1_') || i.startsWith('L2_') || i.startsWith('L3_') || i.startsWith('L4_')

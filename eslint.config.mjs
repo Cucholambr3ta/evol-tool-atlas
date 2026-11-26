@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'node_modules/**', 'public/**', '02-catalogo/**', '05-referencias/**'],
+    ignores: ['dist/**', 'node_modules/**', 'public/**', '02-catalogo/**', '05-referencias/**', 'scripts/lib/atds/*.d.ts', 'tests/types/**', 'tests/global.d.ts'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -41,6 +41,13 @@ export default tseslint.config(
     },
     rules: {
       'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    },
+  },
+  {
+    files: ['scripts/**/*.d.ts'],
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 );

@@ -1,7 +1,6 @@
 import fs from 'node:fs';
-import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { readJsonWithin, sha256Within, resolveWithin } from './paths.mjs';
+import { resolveWithin } from './paths.mjs';
 
 const VALID_EVIDENCE_RESULTS = new Set(['PASS', 'FAIL', 'BLOCKED', 'INCONCLUSIVE']);
 const VALID_TEST_TYPES = new Set(['prueba_funcional', 'prueba_funcional_acotada', 'verificacion_de_version', 'prueba_integracion', 'prueba_rendimiento', 'prueba_seguridad', 'otro']);
@@ -64,12 +63,10 @@ function checkEvidenceContent(evidencePath, root, docRoot) {
       
       // Check artifact hash integrity
       let artifactIntegrity = false;
-      let artifactPathResolved = null;
       if (hasEvidenceObj) {
         try {
           const resolved = resolveWithin(docRoot, r.evidencia.destRel, { allowMissing: false });
           if (resolved.ok) {
-            artifactPathResolved = resolved.path;
             const hash = sha256File(resolved.path);
             if (hash === r.evidencia.sha256) {
               artifactIntegrity = true;

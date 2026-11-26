@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import path from 'node:path';
 
 const PLACEHOLDER_RE = /(^|\s)(TODO|FIXME)(\s|$|[.,;:])|\[PENDIENTE\]|\[TODO\]|\bPLACEHOLDER\b/i;
 
@@ -50,8 +49,8 @@ function countSubstantiveSteps(procedimientoContent) {
   let count = 0;
   for (const line of lines) {
     const trimmed = line.trim();
-    if (/^\d+[\.\)]\s+/.test(trimmed) || /^[-*]\s+/.test(trimmed)) {
-      const text = trimmed.replace(/^(\d+[\.\)]|[-*])\s+/, '');
+    if (/^\d+[.)]\s+/.test(trimmed) || /^[-*]\s+/.test(trimmed)) {
+      const text = trimmed.replace(/^(\d+[.)]|[-*])\s+/, '');
       if (text.length > 10 && !PLACEHOLDER_RE.test(text) && !/^(paso|step|todo|pendiente)/i.test(text)) {
         count++;
       }
@@ -93,7 +92,7 @@ function checkSkillContent(skillPath) {
   }
   
   const procedimientoContent = extractSectionContent(content, REQUIRED_SKILL_SECTIONS.find(s => s.key === 'Procedimiento').patterns);
-  const numberedSteps = (content.match(/^\d+[\.\)]\s+/gm) || []).length;
+  const numberedSteps = (content.match(/^\d+[.)]\s+/gm) || []).length;
   const substantiveSteps = countSubstantiveSteps(procedimientoContent);
   
   if (substantiveSteps < 3) {

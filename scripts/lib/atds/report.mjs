@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { summarizeFindings } from './diagnostics.mjs';
+import { mapCodeToDoc } from './diagnostics.mjs';
 
-function buildToolReport(tool, result, toolDir) {
+function buildToolReport(tool, result) {
   const { 
     validatedLevel, candidateLevel, status, checks, issues, warnings, 
     evidenceRefs, limitations = [] 
@@ -50,21 +50,6 @@ function buildSummary(report) {
   }
   
   return summary;
-}
-
-function mapCodeToDoc(code) {
-  if (code.startsWith('L1_MISSING_FUENTE') || code.startsWith('L1_SOURCE')) return 'DOC-03';
-  if (code.startsWith('L1_DESCRIPTION_VAGUE') || code.startsWith('L1_DESCRIPTION_GENERIC')) return 'DOC-01';
-  if (code.startsWith('L1_MISSING_PLATAFORMAS') || code.startsWith('L2_GUIDE_MISSING_SECTION_PLATAFORMAS')) return 'DOC-05';
-  if (code.includes('VERSION') || code.includes('VERSI')) return 'DOC-04';
-  if (code.includes('INSTALACION') || code.includes('INSTALL') || code.startsWith('L2_GUIDE_MISSING_SECTION_INSTALACI')) return 'DOC-06';
-  if (code.includes('COMANDOS') || code.includes('COMMAND') || code.startsWith('L2_GUIDE_MISSING_SECTION_COMANDOS')) return 'DOC-07';
-  if (code.startsWith('L3_CASOS') || code.startsWith('CASO_')) return 'DOC-08';
-  if (code.startsWith('L3_SKILL') || code.startsWith('SKILL_')) return 'DOC-09';
-  if (code.startsWith('BLOCKED_') || code.startsWith('EVIDENCE_') || code.startsWith('L4_')) return 'DOC-10';
-  if (code.startsWith('L2_GUIDE') || code.startsWith('L1_') || code.startsWith('L3_')) return 'DOC-02';
-  if (code.startsWith('MISSING_') || code.startsWith('INVALID_') || code.startsWith('L1_ID_') || code.startsWith('PATH_')) return 'DOC-11';
-  return 'DOC-02';
 }
 
 function writeReport(root, report) {

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { readJsonWithin, toolDirFromHref, ROOT } from './lib/atds/paths.mjs';
 import { normalizeMetadata, VAGUE_PATTERNS } from './lib/atds/normalize.mjs';
 import { checkGuideContent } from './lib/atds/guide.mjs';
@@ -13,9 +12,6 @@ import {
   computeLevels, computeStatus 
 } from './lib/atds/classify.mjs';
 import { buildToolReport, buildSummary, writeReport } from './lib/atds/report.mjs';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-// __dirname available for ESM module resolution if needed
 
 async function evaluateTool(tool, options = {}) {
   const { strict = false, strictTargets = [], strictMinLevel = null } = options;
