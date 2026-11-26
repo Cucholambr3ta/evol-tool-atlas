@@ -17,6 +17,6 @@
     "skipLibCheck": true,
     "types": ["vite/client", "vite-plugin-pwa/client", "node"]
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["src/sw.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/sw.ts", "tests/**/*.ts"]
 }

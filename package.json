@@ -10,6 +10,7 @@
     "build": "npm run generate:data && vite build && node scripts/copy-static-catalog.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.sw.json --noEmit",
+    "typecheck:ci": "tsc --noEmit -p tsconfig.json --excludeDirectories tests && tsc --noEmit -p tsconfig.sw.json",
     "lint": "eslint src scripts tests",
     "verify:catalog": "node scripts/verify-atlas.mjs",
     "validate:atds": "node scripts/validate-atds.mjs",

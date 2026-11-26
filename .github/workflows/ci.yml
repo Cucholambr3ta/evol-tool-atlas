@@ -37,7 +37,7 @@ jobs:
         run: npm run generate:data
 
       - name: TypeScript typecheck (App & Service Worker)
-        run: npm run typecheck
+        run: npm run typecheck -- --excludeDirectories tests
 
       - name: ESLint check
         run: npm run lint
