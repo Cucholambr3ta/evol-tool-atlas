@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit && tsc -p tsconfig.sw.json --noEmit",
     "lint": "eslint src scripts tests",
     "verify:catalog": "node scripts/verify-atlas.mjs",
-  "validate:atds": "node scripts/validate-atds.mjs",
+    "validate:atds": "node scripts/validate-atds.mjs",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "check": "npm run generate:data && npm run typecheck && npm run lint && npm run test:unit && npm run build && npm run verify:catalog",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@eslint/js": "9.39.5",
     "@playwright/test": "1.65.1",
+    "@types/node": "^26.6.11",
     "eslint": "9.39.5",
     "globals": "17.14.0",
     "typescript": "5.9.3",
