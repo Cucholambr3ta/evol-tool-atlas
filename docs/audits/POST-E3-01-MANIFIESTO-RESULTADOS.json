@@ -1,0 +1,165 @@
+{
+  "schema": "evol-tool-atlas/post-e3-01-resultados/1",
+  "estado": "IMPLEMENTADA LOCALMENTE — AUDITORÍA INDEPENDIENTE REQUERIDA",
+  "repositorio": "https://github.com/Cucholambr3ta/evol-tool-atlas",
+  "rama": "atlas/estabilizacion-post-e3-01",
+  "baseline_main": "6a98bfb48fe3bd1945c007cfb0032f8e52b95d6a",
+  "head_certificado": "d4e903f2a236a527fbf429b87a6d5be2740bea1e",
+  "sha_final": "El commit que contiene este manifiesto va encima del certificado (sin autorreferencia).",
+  "publicacion": {
+    "push": false,
+    "pull_request": null,
+    "ci_remoto": "NO VERIFICADO (rama no publicada)"
+  },
+  "entorno": {
+    "node": "v26.13.1",
+    "npm": "12.2.3",
+    "typescript": "5.9.3",
+    "vite": "6.4.6",
+    "playwright": "1.65.1",
+    "chromium": "158.0.8127.88 (sistema, PLAYWRIGHT_CHROMIUM_PATH)",
+    "opencode": "v2.4.1"
+  },
+  "commits": [
+    {
+      "sha": "709fb746",
+      "mensaje": "docs(audit): línea base y plan de remediación post-E3-01"
+    },
+    {
+      "sha": "dcd0dd31",
+      "mensaje": "fix(seguridad): rutas del servidor dev, hashes malformados y CSP por cabecera"
+    },
+    {
+      "sha": "14da2d4e",
+      "mensaje": "fix(atds): robustez de evidencias, identidad, tipos, versión, procedencia y L3 opcional"
+    },
+    {
+      "sha": "0c1915fb",
+      "mensaje": "fix(datos): contratos JSON en la frontera del fetch y validación estática de iconos"
+    },
+    {
+      "sha": "071b8668",
+      "mensaje": "feat(atds-ui): estado ATDS oficial en la ficha, fechas explícitas y política de publicación"
+    },
+    {
+      "sha": "e1857025",
+      "mensaje": "fix(offline): revisiones verificadas por SHA-256, cobertura del manifiesto, consistencia exacta y favoritos reales"
+    },
+    {
+      "sha": "d71a972b",
+      "mensaje": "fix(a11y): drawer modal accesible, foco y scroll centralizados, migas, estados y nombres accesibles"
+    },
+    {
+      "sha": "755c70c4",
+      "mensaje": "build(release): check:release con E2E bloqueante, escaneo estructural del HTML histórico y métricas"
+    },
+    {
+      "sha": "d4e903f2",
+      "mensaje": "docs(skill): transferencia operativa a OpenCode con skill canónica actualizada y planificador de solo lectura"
+    }
+  ],
+  "validaciones": [
+    {
+      "comando": "npm ci",
+      "exit": 0,
+      "resultado": "OK"
+    },
+    {
+      "comando": "npm run check:release",
+      "exit": 0,
+      "resultado": "check + verify:release + test:e2e"
+    },
+    {
+      "comando": "npm run test:unit",
+      "exit": 0,
+      "resultado": "549/549 (baseline 356)"
+    },
+    {
+      "comando": "npm run validate:atds",
+      "exit": 0,
+      "resultado": "2137 evaluadas; estados ERROR 0"
+    },
+    {
+      "comando": "npm run gate:atds",
+      "exit": 0,
+      "resultado": "27/27 (baseline 22)"
+    },
+    {
+      "comando": "npm run verify:catalog",
+      "exit": 0,
+      "resultado": "49/2137/741; 0 enlaces rotos; escaneo HTML 0 bloqueantes"
+    },
+    {
+      "comando": "npm run verify:release",
+      "exit": 0,
+      "resultado": "6672 URL del manifiesto en dist/ con SHA-256"
+    },
+    {
+      "comando": "npm run test:e2e",
+      "exit": 0,
+      "resultado": "12/12"
+    },
+    {
+      "comando": "VITE_BASE_PATH=/ build + verify:release + e2e (sin offline)",
+      "exit": 0,
+      "resultado": "7/7"
+    },
+    {
+      "comando": "node scripts/verify-atlas.mjs --release (sin dist/)",
+      "exit": 1,
+      "resultado": "esperado"
+    },
+    {
+      "comando": "opencode run --agent plan (solo lectura)",
+      "exit": 0,
+      "resultado": "árbol sin cambios; descubrimiento PASS; carga por herramienta skill NO VERIFICADA"
+    }
+  ],
+  "integridad_catalogo": {
+    "categorias": 49,
+    "herramientas": 2137,
+    "exclusiones": 741,
+    "entradas": 2878,
+    "catalogo_json_sha256": "bf279af87d037e4e904712c3047aac2bfd42e511d530940d335f54cae3410483",
+    "corpus_modificado": false
+  },
+  "atds": {
+    "validados": {
+      "NONE": 2124,
+      "L1": 9,
+      "L2": 0,
+      "L3": 4,
+      "L4": 0
+    },
+    "candidatos": {
+      "NONE": 0,
+      "L1": 2121,
+      "L2": 0,
+      "L3": 11,
+      "L4": 5
+    },
+    "e3_01": {
+      "threat-dragon": "L3",
+      "sagan": "L3",
+      "nfcutils": "L3",
+      "secure-delete": "L3"
+    },
+    "igual_a_baseline": true
+  },
+  "offline": {
+    "revision": "a2388f713fe60058b0b30e4c113d82e71362628773d36f1f3bbd62b16c30a630",
+    "recursos": 6672,
+    "bytes": 26127104,
+    "determinista": true
+  },
+  "hallazgos": {
+    "total": 41,
+    "p1_abiertos": 0,
+    "no_verificado": [
+      "UX-02 revisión manual con lector de pantalla",
+      "QA-01 run de CI remoto",
+      "Carga de la skill por la herramienta skill de OpenCode en modo no interactivo"
+    ]
+  },
+  "dictamen_propuesto": "GO CON OBSERVACIONES (decisión de la auditoría independiente y del propietario)"
+}
