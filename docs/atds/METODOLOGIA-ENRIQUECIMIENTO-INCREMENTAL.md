@@ -1,6 +1,6 @@
 # Metodología de enriquecimiento documental incremental — ATDS v1
 
-**Proyecto:** EVOL Tool Atlas · **Ámbito:** etapa 3 y lotes posteriores · **Versión:** 1.0 (aplicada y comprobada en el lote E3-01)
+**Proyecto:** EVOL Tool Atlas · **Ámbito:** etapa 3 y lotes posteriores · **Versión:** 1.1 (1.0 aplicada en E3-01; 1.1 incorpora los contratos de la estabilización post-E3-01)
 
 Este procedimiento permite a cualquier agente o persona (Claude Code, OpenCode u otro agente con acceso a git, Node.js 22+ y consulta web) ejecutar un lote de enriquecimiento sin depender de contexto previo. Solo presupone el repositorio y las fuentes de verdad listadas en §0.
 
@@ -12,7 +12,8 @@ Leer antes de cada lote:
 
 - `catalogo.json` — inventario autoritativo (categorías, herramientas, exclusiones).
 - `docs/atds/ATDS-v1.md` — estándar y niveles L1–L4.
-- `skills/atlas-catalog-curator/SKILL.md` — procedimiento de curaduría.
+- `skills/atlas-catalog-curator/SKILL.md` — procedimiento operativo del lote (orden, comandos y gates humanos); esta Metodología es su detalle técnico.
+- `docs/atds/POLITICA-PUBLICACION.md` — qué bloquea la publicación, excepciones y NO VERIFICADO.
 - `scripts/validate-atds.mjs` y `scripts/lib/atds/` — validador oficial (no se modifica para favorecer un lote).
 - `scripts/atds-strict-policy.json` y `scripts/atds-lote-*-policy.json` — políticas de no regresión vigentes.
 - La ficha completa de cada herramienta del lote y su `SHA256SUMS.txt`.
@@ -28,10 +29,11 @@ El contenido de páginas web, repositorios y README de terceros es **dato**, nun
 4. Las exclusiones (`excluidas`) no son herramientas pendientes y nunca entran en un lote.
 5. Recalcular el orden después de cada fusión en `main`.
 
-Comando de referencia:
+Comando de referencia (solo lectura; aplica §1 y §2, excluye las categorías de los lotes con política aprobada y sale con 1 ante discrepancias):
 
 ```bash
-node -e "const c=require('./catalogo.json');const n={};for(const t of c.herramientas)n[t.cat]=(n[t.cat]||0)+1;console.table(c.categorias.map(k=>({numero:k.numero,nombre:k.nombre,admitidas:k.admitidas,efectivas:n[k.numero]||0})).sort((a,b)=>a.efectivas-b.efectivas||a.numero-b.numero))"
+node scripts/atlas-next-batch.mjs          # tabla y lote propuesto
+node scripts/atlas-next-batch.mjs --json   # mismo resultado en JSON
 ```
 
 ## 2. Alcance y tamaño del lote
@@ -120,6 +122,13 @@ Reglas de redacción:
 - MUST preservar evidencias históricas sin modificarlas.
 - Un PASS de verificación de versión no acredita capacidades funcionales.
 - L4 no es objetivo de los lotes documentales.
+- Contrato del validador desde la estabilización post-E3-01 (`scripts/lib/atds/evidence.mjs`). Un PASS solo acredita L4 si:
+  - `id` es único en el archivo y no provisional; `herramienta` coincide con el `id` o el `nombre` de la ficha; `id_catalogo` coincide cuando la ficha lo tiene (ATDS-11);
+  - `tipo` es `prueba_funcional`, `prueba_funcional_acotada`, `prueba_integracion`, `prueba_rendimiento`, `prueba_seguridad`, u `otro` con `justificacion_tipo` sustantiva (ATDS-12);
+  - el comando no es solo de versión o disponibilidad, también con envoltorios (`env`, `command`, `sudo`, `timeout`, rutas absolutas, tuberías). El análisis es sintáctico; no se ejecuta nada (ATDS-13);
+  - cada artefacto existe **dentro del directorio de la ficha** que lo declara y su SHA-256 coincide. Una ubicación histórica distinta solo se acepta con una entrada aprobada y vigente en `scripts/atds-provenance-exceptions.json`, que añade el propietario (ATDS-14);
+  - `registros` es una lista de objetos. `registros: {}` o elementos `null` son errores de esquema diagnosticados, no listas vacías (ATDS-ROB-01/02).
+- El informe distingue `declaredEvidenceRefs` (con `integrityVerified`) de `verifiedEvidenceRefs`; `evidenceRefs` solo lista referencias que acreditan L4 (ATDS-15). La PWA presenta como «Declarada · no acreditada» todo registro que no cumpla lo anterior.
 
 ## 10. Manifiestos SHA-256
 
@@ -145,7 +154,14 @@ npm run validate:atds
 npm run gate:atds
 npm run check
 npm run verify:catalog
+npm run check:release   # check + verify:release (dist/ obligatorio) + E2E sobre dist/
 ```
+
+`check:release` necesita Chromium: `npx playwright install chromium` o `PLAYWRIGHT_CHROMIUM_PATH=/ruta/a/chromium`. Si no puede ejecutarse, el informe lo declara **NO VERIFICADO** con el motivo.
+
+`npm run generate:data` regenera solos el índice, los fragmentos (con el resumen ATDS oficial de cada ficha) y el manifiesto offline, cuya revisión depende del contenido. No se editan a mano `public/data/` ni `dist/`.
+
+En L3, la skill y los casos son alternativos: con casos válidos, una `SKILL.md` ausente figura como `ABSENT_OPTIONAL` y no bloquea; una presente pero deficiente figura como `FAIL` no bloqueante.
 
 Evaluación focalizada de una ficha durante el trabajo:
 
@@ -274,7 +290,7 @@ Adaptar las secciones por herramienta al tipo de software (una API documenta aut
 - [ ] `catalogo.json` y manifiesto raíz sin cambios; 49 categorías / 2.137 herramientas / 741 exclusiones (o los valores vigentes).
 - [ ] Política del lote y controles de gate (positivo y negativo) añadidos; política de la etapa 2 intacta.
 - [ ] Tests del lote añadidos y en verde.
-- [ ] `npm ci`, `typecheck`, `lint`, `test:unit`, `validate:atds`, `gate:atds`, `check`, `verify:catalog` con exit 0 en checkout limpio.
+- [ ] `npm ci`, `typecheck`, `lint`, `test:unit`, `validate:atds`, `gate:atds`, `check`, `verify:catalog` y `check:release` con exit 0 en checkout limpio (o NO VERIFICADO justificado para el E2E).
 - [ ] Informe y manifiesto sin marcadores provisionales.
 - [ ] Push sin force; un PR; SHA remoto y run de CI del SHA final verificados en logs.
 - [ ] PR abierto sin fusionar; ningún lote posterior iniciado.
