@@ -5,7 +5,7 @@
   "rama": "atlas/estabilizacion-post-e3-01",
   "baseline_main": "6a98bfb48fe3bd1945c007cfb0032f8e52b95d6a",
   "head_certificado": "d4e903f2a236a527fbf429b87a6d5be2740bea1e",
-  "sha_final": "Ver el comentario de cierre del P1 NEXT-BATCH-01 en el PR #4 (sin autorreferencia).",
+  "sha_final": "Ver el comentario de cierre del P1 NEXT-BATCH-02 en el PR #4 (sin autorreferencia).",
   "publicacion": {
     "push": false,
     "pull_request": null,
@@ -157,7 +157,7 @@
     "determinista": true
   },
   "hallazgos": {
-    "total": 42,
+    "total": 43,
     "p1_abiertos": 0,
     "no_verificado": [
       "UX-02 revisión manual con lector de pantalla",
@@ -173,6 +173,33 @@
       "commit": "7c070aaf",
       "estado": "CERRADO, pendiente de revisión independiente focalizada",
       "pruebas": "tests/unit/post-e3-01-next-batch.test.ts",
+      "e3_02_sin_cambios": [
+        "sherlocked",
+        "vbsmin",
+        "logkeys",
+        "python-keylogger"
+      ]
+    },
+    {
+      "id": "NEXT-BATCH-02",
+      "severidad": "P1",
+      "commit": "ver PR #4",
+      "estado": "CERRADO, pendiente de revisión independiente focalizada",
+      "pruebas": "tests/unit/post-e3-01-next-batch.test.ts",
+      "categorias_reales_afectadas": {
+        "webapp": {
+          "herramientas": 257,
+          "sublotes_de_6": 43
+        },
+        "scanner": {
+          "herramientas": 228,
+          "sublotes_de_6": 38
+        },
+        "reconocimiento": {
+          "herramientas": 211,
+          "sublotes_de_6": 36
+        }
+      },
       "e3_02_sin_cambios": [
         "sherlocked",
         "vbsmin",

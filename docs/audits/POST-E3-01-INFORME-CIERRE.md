@@ -236,3 +236,22 @@ Después, verificar el run de CI del SHA final en sus logs. No se fusiona sin au
 - **Resultado actual sin cambios:** E3-02 = sherlocked, vbsmin, logkeys, python-keylogger.
 - **Alcance:** sin cambios en fichas, `catalogo.json` ni políticas aprobadas. E3-02 no se ha iniciado y el PR no se fusiona.
 - **Certificación del nuevo SHA final:** `npm run check:release` local y el run de GitHub Actions sobre ese SHA se registran en el comentario de cierre del P1 en el PR #4. No se escriben aquí para evitar la autorreferencia del SHA.
+
+## Adenda — corrección del P1 NEXT-BATCH-02 (auditoría independiente del PR #4)
+
+- **Hallazgo:** el sufijo del sublote siguiente se calculaba sumando 1 al código de una sola letra, y `parseLotId` solo admitía una letra. Después de `z` se generaba `{`, que el propio planificador rechaza. Afecta a categorías reales: webapp (257 herramientas, 43 sublotes de 6), scanner (228, 38) y reconocimiento (211, 36).
+- **Reproducción con la versión `cd4e034a`:** categoría sintética de 257; el sublote 27 se propuso como `E3-01{`, `parseLotId` devolvió `null` y el planificador se detuvo con 162 de 257 IDs procesados.
+- **Corrección, en `scripts/lib/next-batch.mjs`:**
+  - Sufijos en base 26 biyectiva sin límite artificial: `a`…`z`, `aa`, `ab`, …, `az`, `ba`, …, `zz`, `aaa`. Funciones `suffixToIndex` e `indexToSuffix`.
+  - `parseLotId` acepta sufijos de varias letras; `formatLotId` rechaza sufijos no alfabéticos.
+  - El sufijo siguiente es el ordinal máximo de los sublotes previos + 1; no se comparan caracteres sueltos. Un lote sin sufijo cuenta como su primer sublote.
+  - Compatible con `E3-01`, `E3-02a` y las políticas existentes; el orden lexicográfico de los nombres de archivo (`e3-02aa` antes que `e3-02b`) no afecta al cálculo.
+- **Ajuste formal:** Metodología §2 (secuencia de sufijos) y paso 2 de la skill canónica.
+- **Pruebas** (`tests/unit/post-e3-01-next-batch.test.ts`, 12/12; 5 nuevas, en rojo contra `cd4e034a`):
+  - ida y vuelta ordinal ↔ sufijo de 0 a 2000 y casos frontera (`z` = 26, `aa` = 27, `zz` = 702, `aaa` = 703);
+  - `parseLotId`/`formatLotId` con sufijos multiletra;
+  - progresión de una categoría de 160 (27 sublotes, transición `E3-02z` → `E3-02aa`) y de 257 (43 sublotes, último `E3-02aq` con 5), con todos los IDs exactamente una vez y en orden;
+  - CLI real con las políticas `e3-02a` … `e3-02z` en disco: propone `E3-02aa` con `g157`–`g160`.
+- **Resultado actual sin cambios:** E3-02 = sherlocked, vbsmin, logkeys, python-keylogger.
+- **Alcance:** sin cambios en fichas, `catalogo.json`, políticas aprobadas ni el validador ATDS. E3-02 no se ha iniciado y el PR no se fusiona.
+- **Certificación del nuevo SHA final:** se registra en el comentario de cierre del P1 NEXT-BATCH-02 en el PR #4.
