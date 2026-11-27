@@ -28,7 +28,8 @@
 1. **Instalación rápida:** Al instalar o abrir la PWA, el Service Worker (`src/sw.ts`) precarga únicamente el *App Shell* (HTML, CSS, JS, fuentes, iconos oficiales, `catalog-index.json` y `offline-manifest.json`). No descarga masivamente los más de 2.000 HTML durante el `install` para evitar fallos o bloqueos por cuota.
 2. **Descarga explícita del catálogo completo:** Desde la vista **Centro offline** (`#/offline`), el usuario puede pulsar **«Guardar catálogo completo para uso sin conexión»** con barra de progreso en tiempo real, botón de **cancelación**, **reanudación** (omite archivos ya cacheados), **reintento de fallidos** y gestión de errores de cuota.
 3. **Almacenamiento local:**
-   - Las fichas offline se almacenan en `CacheStorage` (`evol-atlas-catalog-v1`).
+   - Cada revisión del manifiesto offline (determinista, con SHA-256 por recurso) se guarda en su propia caché `evol-atlas-offline-<revisión>`; un puntero en `evol-atlas-offline-meta` solo avanza cuando la revisión está completa y verificada, y la anterior se borra después. **Verificar integridad** vuelve a comprobar los hashes bajo demanda.
+   - La navegación en línea refresca una caché aparte (`evol-atlas-catalog-v1`).
    - Los favoritos y la preferencia de tema (`Sistema`, `Claro`, `Oscuro`) se guardan exclusivamente en `localStorage` sin cuentas, telemetría ni sincronización en nube.
 4. **Actualizaciones controladas:** El Service Worker no ejecuta `skipWaiting()` automáticamente mientras el usuario consulta una ficha; muestra un aviso visible **«Actualizar ahora»** para aplicar la nueva versión bajo control del usuario sin perder favoritos.
 
@@ -38,7 +39,7 @@
 
 - **Solo documentación:** La inclusión de una ficha **no** implica instalación, compatibilidad ni validación funcional en CachyOS / Evol OS.
 - **Sin ejecución ni instalaciones automáticas:** La aplicación no ejecuta binarios, comandos del sistema ni instaladores de herramientas del catálogo.
-- **Política CSP estricta y renderizado seguro:** Construcción del DOM sin `innerHTML` sobre datos externos, validación estricta de URLs `http(s)` y rutas internas, y cabecera `<meta http-equiv="Content-Security-Policy">` en compilación de producción.
+- **CSP por cabecera y renderizado seguro:** Construcción del DOM sin `innerHTML` sobre datos externos, validación de URLs `http(s)` y rutas internas, contratos JSON validados al cargar (`src/lib/contracts.ts`), CSP por cabecera HTTP en `vite preview` para la SPA y para las páginas estáticas, y meta CSP en `index.html`. Detalle y límites por hosting: [`docs/hosting/HOSTING.md`](docs/hosting/HOSTING.md).
 
 ---
 
@@ -99,13 +100,25 @@ npm run preview
 # Verificación integral: datos + TypeScript (app y SW) + ESLint + Vitest + build + auditoría de catálogo y marca
 npm run check
 
-# Pruebas end-to-end reales con Chromium (PWA, manifiesto, SW, offline real y responsive).
-# Usan el puerto 4174 para no chocar con el servicio local en 4173.
+# Pruebas end-to-end reales con Chromium sobre el build de producción (PWA, CSP, SW,
+# offline real, accesibilidad y responsive). Puerto 4174 (ATLAS_E2E_PORT lo cambia).
+# Usa el Chromium de Playwright (`npx playwright install chromium`) o uno del sistema:
+#   PLAYWRIGHT_CHROMIUM_PATH=/usr/bin/chromium npm run test:e2e
 npm run test:e2e
+
+# Certificación de publicación: check + verify:release (dist/ obligatorio, cada URL
+# del manifiesto offline en dist/ con su SHA-256) + E2E.
+npm run check:release
+
+# Medición reproducible de rendimiento de un build (no modifica archivos).
+node scripts/measure-performance.mjs --root . --runs 5
 ```
+
+Política de publicación ATDS (REPORT/STRICT, excepciones, NO VERIFICADO):
+[`docs/atds/POLITICA-PUBLICACION.md`](docs/atds/POLITICA-PUBLICACION.md).
 
 ---
 
 ## Integración continua
 
-El workflow `.github/workflows/ci.yml` se ejecuta en cada push y pull request a `main`: `generate:data`, `typecheck`, `lint`, `test:unit`, `build` y `verify:catalog`. No publica la app en ningún sitio: la distribución es local mediante `scripts/install-local.sh`.
+El workflow `.github/workflows/ci.yml` se ejecuta en cada push y pull request a `main`: `generate:data`, `typecheck`, `lint`, `test:unit`, `validate:atds`, `gate:atds`, `build`, `verify:catalog`, `verify:release` y, como paso bloqueante, el E2E con el Chromium de Playwright contra el mismo `dist/`. No publica la app en ningún sitio: la distribución es local mediante `scripts/install-local.sh`.

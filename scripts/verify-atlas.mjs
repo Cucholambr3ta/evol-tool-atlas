@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { compareCatalogIndexShards, verifyManifestAgainstDist } from './lib/atlas-consistency.mjs';
 import { resolveBasePath } from './lib/base-path.mjs';
+import { scanStaticTree } from './lib/html-scan.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -136,6 +137,22 @@ function verifyCatalogAndLinks() {
       assert(fs.existsSync(resolved), `Broken internal link ${href} in ${path.relative(ROOT, htmlFile)}`);
     }
   }
+}
+
+// SEC-STATIC-01: structural scan (tokenizer) complementing the regex heuristics above.
+// Blocking findings fail; advisory ones are written to reports/static-html-scan.json
+// for the separate template audit. The historical sheets are never modified.
+function verifyStaticHtmlStructure() {
+  const report = { generatedFrom: 'scripts/lib/html-scan.mjs', trees: {} };
+  for (const dir of ['02-catalogo', '05-referencias', 'skills']) {
+    const abs = path.join(ROOT, dir);
+    if (!fs.existsSync(abs)) continue;
+    const r = scanStaticTree(abs, ROOT);
+    report.trees[dir] = { files: r.files, blocking: r.blocking.length, advisoryCounts: r.advisoryCounts, stats: r.stats };
+    assert(r.blocking.length === 0, `Structural HTML findings in ${dir}:\n  ${r.blocking.slice(0, 20).join('\n  ')}`);
+  }
+  fs.mkdirSync(path.join(ROOT, 'reports'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'reports', 'static-html-scan.json'), `${JSON.stringify(report, null, 2)}\n`);
 }
 
 function verifyBrandingCompliance() {
@@ -285,6 +302,7 @@ function verifyDistBuild() {
 }
 
 verifyCatalogAndLinks();
+verifyStaticHtmlStructure();
 verifyBrandingCompliance();
 verifyZeroForbiddenMentions();
 verifyDistBuild();

@@ -63,3 +63,20 @@ jobs:
 
       - name: Verify catalog integrity, branding & zero-mention rules
         run: npm run verify:catalog
+
+      # QA-04: release certification — dist/ is mandatory and every offline
+      # manifest URL must exist in dist/ with its SHA-256.
+      - name: Verify release artifact (dist/ required)
+        env:
+          VITE_BASE_PATH: /evol-tool-atlas/
+        run: npm run verify:release
+
+      # QA-01/QA-02: browser tests against the same dist/ served by vite preview,
+      # with Playwright's managed Chromium. Blocking: no '|| true'.
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: E2E browser tests (production build)
+        env:
+          VITE_BASE_PATH: /evol-tool-atlas/
+        run: npm run test:e2e
