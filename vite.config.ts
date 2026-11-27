@@ -1,84 +1,46 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import type { IncomingMessage, ServerResponse } from 'node:http';
-import { defineConfig, type Plugin } from 'vite';
+import type { Plugin } from 'vite';
+import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { resolveBasePath } from './scripts/lib/base-path.mjs';
+import { createDevStaticMiddleware } from './scripts/lib/dev-static.mjs';
+import { APP_CSP_META, createSecurityHeadersMiddleware } from './scripts/lib/security-headers.mjs';
 
-const RAW_BASE = process.env.VITE_BASE_PATH ?? '/evol-tool-atlas/';
-const BASE = RAW_BASE.endsWith('/') ? RAW_BASE : `${RAW_BASE}/`;
+const BASE = resolveBasePath();
 const WORKSPACE_ROOT = __dirname;
 
-const MIME_TYPES: Record<string, string> = {
-  '.html': 'text/html; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.md': 'text/markdown; charset=utf-8',
-  '.txt': 'text/plain; charset=utf-8',
-  '.csv': 'text/csv; charset=utf-8',
-  '.svg': 'image/svg+xml',
-  '.png': 'image/png',
-};
-
+/** Dev server only: serves the static catalogue from the repository (SEC-DEV-01). */
 function serveStaticCatalogDevPlugin(basePath: string): Plugin {
-  const staticPrefixes = ['02-catalogo/', '05-referencias/', 'catalogo.json', 'SHA256SUMS.txt'];
   return {
     name: 'evol-serve-static-catalog-dev',
     configureServer(server) {
-      server.middlewares.use((req: IncomingMessage, res: ServerResponse, next: () => void) => {
-        const rawUrl = req.url?.split('?')[0] ?? '';
-        let rel = rawUrl;
-        if (rel.startsWith(basePath)) {
-          rel = rel.slice(basePath.length);
-        } else if (rel.startsWith('/')) {
-          rel = rel.slice(1);
-        }
-        if (!staticPrefixes.some((p) => rel === p || rel.startsWith(p))) {
-          next();
-          return;
-        }
-        const safeRel = path.normalize(rel).replace(/^(\.\.[/\\])+/, '');
-        const abs = path.resolve(WORKSPACE_ROOT, safeRel);
-        if (!abs.startsWith(WORKSPACE_ROOT + path.sep) && abs !== WORKSPACE_ROOT) {
-          res.statusCode = 403;
-          res.end('Forbidden');
-          return;
-        }
-        const candidate = fs.existsSync(abs) && fs.statSync(abs).isDirectory()
-          ? path.join(abs, 'index.html')
-          : abs;
-        if (!fs.existsSync(candidate) || !fs.statSync(candidate).isFile()) {
-          next();
-          return;
-        }
-        const ext = path.extname(candidate).toLowerCase();
-        res.setHeader('Content-Type', MIME_TYPES[ext] ?? 'application/octet-stream');
-        fs.createReadStream(candidate).pipe(res);
-      });
+      server.middlewares.use(createSecurityHeadersMiddleware(basePath, { documentsOnly: true }));
+      server.middlewares.use(createDevStaticMiddleware(basePath, WORKSPACE_ROOT));
     },
   };
 }
 
-function productionCspPlugin(): Plugin {
-  const cspContent = [
-    "default-src 'self'",
-    "script-src 'self'",
-    "style-src 'self'",
-    "img-src 'self' data:",
-    "font-src 'self'",
-    "connect-src 'self'",
-    "manifest-src 'self'",
-    "worker-src 'self'",
-    "object-src 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-  ].join('; ');
+/**
+ * Production hosting (`vite preview`, systemd service): HTTP security headers on every
+ * response, including the static catalogue pages copied into dist/ (SEC-WEB-01).
+ */
+function securityHeadersPreviewPlugin(basePath: string): Plugin {
+  return {
+    name: 'evol-security-headers-preview',
+    configurePreviewServer(server) {
+      server.middlewares.use(createSecurityHeadersMiddleware(basePath));
+    },
+  };
+}
 
+/** Meta CSP for the SPA shell, for hosts that cannot send headers. */
+function productionCspPlugin(): Plugin {
   return {
     name: 'evol-production-csp',
     apply: 'build',
     transformIndexHtml(html: string) {
       return html.replace(
         '<head>',
-        `<head>\n    <meta http-equiv="Content-Security-Policy" content="${cspContent}" />`,
+        `<head>\n    <meta http-equiv="Content-Security-Policy" content="${APP_CSP_META}" />`,
       );
     },
   };
@@ -88,6 +50,7 @@ export default defineConfig({
   base: BASE,
   plugins: [
     serveStaticCatalogDevPlugin(BASE),
+    securityHeadersPreviewPlugin(BASE),
     productionCspPlugin(),
     VitePWA({
       strategies: 'injectManifest',

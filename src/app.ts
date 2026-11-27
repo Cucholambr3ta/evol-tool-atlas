@@ -520,6 +520,22 @@ export function mountApp(rootEl: HTMLElement): void {
       } else if (route.name === 'about') {
         document.title = 'Política documental · Evol Tool Atlas';
         mainContent.replaceChildren(renderAboutView(catalogIndex));
+      } else if (route.name === 'invalid') {
+        document.title = 'Ruta no válida · Evol Tool Atlas';
+        mainContent.replaceChildren(
+          renderStatePanel({
+            icon: 'warning',
+            title: 'Ruta no válida',
+            description:
+              route.reason === 'SEGMENT_TOO_LONG'
+                ? 'La dirección contiene un identificador demasiado largo para corresponder a una ficha o categoría.'
+                : 'La dirección contiene caracteres codificados de forma incorrecta y no puede interpretarse.',
+            actions: [
+              el('a', { className: 'btn btn-primary', attrs: { href: '#/' }, text: 'Volver al inicio' }),
+              el('a', { className: 'btn', attrs: { href: '#/buscar' }, text: 'Ir al buscador' }),
+            ],
+          }),
+        );
       } else {
         document.title = 'Página no encontrada · Evol Tool Atlas';
         mainContent.replaceChildren(
