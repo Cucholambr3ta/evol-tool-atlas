@@ -51,9 +51,12 @@ Cada paso indica su comando real. Registrar comando, código de salida y resulta
    políticas de lote. Si `gh` está disponible: `gh pr list --state open` para no solapar lotes.
    Un lote anterior sin fusionar bloquea el siguiente.
 2. **Detectar la siguiente categoría y el lote propuesto (solo lectura).**
-   `node scripts/atlas-next-batch.mjs` (o `--json`). Ordena por herramientas efectivas
-   ascendentes (empate por `numero`), excluye las categorías de lotes aprobados, se detiene con
-   exit 1 si `admitidas` ≠ efectivas, y propone el lote ≤ 6 herramientas (Metodología §1–§2).
+   `node scripts/atlas-next-batch.mjs` (o `--json`). Mide el progreso por ID (una categoría sigue
+   pendiente hasta que todas sus herramientas figuren en políticas de lotes aprobados), ordena por
+   herramientas efectivas ascendentes (empate por `numero`) continuando primero una categoría ya
+   empezada, propone el lote ≤ 6 herramientas o el sublote `E3-NNa`/`E3-NNb` de una categoría mayor,
+   y se detiene con exit 1 si `admitidas` ≠ efectivas o con exit 2 si las políticas de lote son
+   inconsistentes (Metodología §1–§2).
 3. **Determinar el lote autorizado.** Comparar la propuesta con la autorización humana. Si no hay
    autorización, entregar el plan (alcance, IDs, rutas, comandos) y **detenerse**. Con ella: rama
    `atlas/etapa-03-lote-<NN>-<descripcion>` desde el HEAD real de `origin/main` y alcance escrito en
