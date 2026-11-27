@@ -10,18 +10,131 @@
   "categoria_atlas": "nfc",
   "detalle_verificacion": "REPOSITORIO_OFICIAL_IDENTIFICADO_HISTORICO",
   "estado": "FUENTE_PRIMARIA_VERIFICADA_HEREDADA",
-  "estado_mantenimiento": "Proyecto histórico; no consta mantenimiento actual",
+  "estado_mantenimiento": "INACTIVO · último commit 2015-04-07 (49aa1781205f); sin releases ni etiquetas; repositorio no archivado.",
   "fuente_distribucion_comprobada": "https://github.com/nfc-tools/nfcutils",
   "fuente_proyecto": "https://github.com/nfc-tools/nfcutils",
   "fuentes_consultadas": [
     "https://nfc-tools.github.io/projects/nfcutils/",
-    "https://github.com/nfc-tools/nfcutils"
+    "https://github.com/nfc-tools/nfcutils",
+    "https://github.com/nfc-tools/nfcutils/blob/master/src/lsnfc.c",
+    "https://github.com/nfc-tools/nfcutils/commits/master/",
+    "https://github.com/nfc-tools/libnfc",
+    "https://github.com/nfc-tools/libnfc/tags",
+    "https://packages.debian.org/search?keywords=nfcutils"
   ],
   "id": "nfcutils",
   "instalado_en_host": null,
   "nombre": "nfcutils",
   "probado_en_cachyos": false,
   "schema": "evol-tool-atlas/tool/1",
-  "sin_instrucciones_de_instalacion": true,
-  "verificacion_fecha": "2026-11-22"
+  "sin_instrucciones_de_instalacion": false,
+  "verificacion_fecha": "2026-11-22",
+  "categoria": "NFC",
+  "tipo": "Utilidad de línea de comandos (CLI) basada en libnfc",
+  "descripcion": "Proyecto que contiene lsnfc, utilidad de línea de comandos que enumera los lectores NFC detectados por libnfc y las etiquetas ISO14443A, ISO14443B y FeliCa presentes en su campo, identificando modelos como MIFARE Classic, Ultralight o DESFire.",
+  "problema_que_resuelve": "Identifica rápidamente qué tipo de etiqueta o tarjeta hay en el campo de un lector antes de elegir la herramienta o el procedimiento de análisis adecuado.",
+  "funciones_principales": "Enumeración de lectores libnfc; listado de objetivos pasivos ISO14443A/B y FeliCa a 212 y 424 kbps; identificación por SAK/ATS de MIFARE Ultralight/UL-C, Mini, Classic 1k/4k, DESFire/EV1, Plus, JCOP y FeliCa Lite/NDEF; recuento de etiquetas por dispositivo.",
+  "sistema_operativo": "Sin lista oficial. Inferido de sus dependencias: sistemas tipo Unix con autotools, pkg-config y libnfc >= 1.7.0; el repositorio incluye empaquetado debian/ propio.",
+  "licencia": "GPL-3.0-or-later",
+  "dependencias": "libnfc >= 1.7.0 (libnfc-dev), pkg-config, compilador C99, autoconf y automake.",
+  "requisitos": "Lector NFC soportado por libnfc, permisos de acceso al dispositivo (regla udev 93-pn53x.rules) y módulos del núcleo nfc/pn533 en lista negra según libnfc.",
+  "estado_fuente": "FUENTE_PRIMARIA_VERIFICADA_HEREDADA",
+  "version_declarada": "0.3.2",
+  "version_declarada_fuente": "configure.ac (AC_INIT) en el commit 49aa1781205f",
+  "nota_version_historica": "El valor histórico 61.49aa178 corresponde a 61 commits con cabeza 49aa178, coherente con el repositorio actual.",
+  "fecha_verificacion": "2026-11-26",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/nfc-tools/nfcutils",
+    "proyecto": "https://nfc-tools.github.io/projects/nfcutils/",
+    "dependencia_libnfc": "https://github.com/nfc-tools/libnfc"
+  },
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/seguridad/catalogo/nfcutils/GUIA.md",
+    "casos_uso": "02-catalogo/seguridad/catalogo/nfcutils/casos-uso.json"
+  },
+  "limites": [
+    "Proyecto inactivo desde 2015, sin releases y con README vacío.",
+    "Instalación inferida de los archivos autotools; no documentada por upstream ni compilada en el Atlas.",
+    "No se probó ningún lector NFC ni la compatibilidad con libnfc 1.8.0.",
+    "lsnfc envía comandos a las etiquetas (selección, GetVersion, autenticación UL-C); no es pasivo."
+  ],
+  "registro_fuentes": [
+    {
+      "dato": "Licencia GPL-3.0 (COPYING) y cabecera de lsnfc.c 'version 3 ... or any later version'; copyright 2009-2010 Romuald Conty",
+      "fuente": "Repositorio",
+      "url": "https://github.com/nfc-tools/nfcutils",
+      "tipo": "oficial_repositorio",
+      "version": "49aa1781205f",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "61 commits; último 2015-04-07 'nfcutils: update code to use libnfc 1.7.0'; sin releases ni etiquetas; README de 0 bytes",
+      "fuente": "API de GitHub",
+      "url": "https://github.com/nfc-tools/nfcutils/commits/master/",
+      "tipo": "oficial_repositorio",
+      "version": "49aa1781205f",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Versión 0.3.2 en AC_INIT; libnfc >= 1.7.0 obligatoria vía pkg-config; -std=c99; opción --enable-debug",
+      "fuente": "configure.ac",
+      "url": "https://github.com/nfc-tools/nfcutils/blob/master/configure.ac",
+      "tipo": "oficial_codigo",
+      "version": "49aa1781205f",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_EN_CODIGO",
+      "contradicciones": null
+    },
+    {
+      "dato": "API libnfc usada, tipos de etiqueta identificados, ausencia de opciones y formato de salida",
+      "fuente": "src/lsnfc.c",
+      "url": "https://github.com/nfc-tools/nfcutils/blob/master/src/lsnfc.c",
+      "tipo": "oficial_codigo",
+      "version": "49aa1781205f",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_EN_CODIGO",
+      "contradicciones": "El propio código duda de la detección de Jewel."
+    },
+    {
+      "dato": "Controladores de libnfc, regla udev, lista negra de módulos, libnfc.conf y variables LIBNFC_*; última etiqueta libnfc-1.8.0 (2020-05-22); licencia LGPL-3.0",
+      "fuente": "README y etiquetas de libnfc",
+      "url": "https://github.com/nfc-tools/libnfc",
+      "tipo": "oficial_dependencia",
+      "version": "libnfc-1.8.0 / master 3fa0751ad58f",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "No existe paquete nfcutils en Debian",
+      "fuente": "Búsqueda de paquetes Debian",
+      "url": "https://packages.debian.org/search?keywords=nfcutils",
+      "tipo": "distribucion",
+      "version": "todas las suites",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Disponibilidad en AUR",
+      "fuente": "AUR",
+      "url": "https://aur.archlinux.org/packages?K=nfcutils",
+      "tipo": "distribucion",
+      "version": null,
+      "fecha_consulta": "2026-11-26",
+      "estado": "BLOQUEADO",
+      "contradicciones": "El sitio rechazó el acceso automatizado; no se afirma nada sobre el AUR."
+    }
+  ],
+  "nivel_atds_e3_01": {
+    "inicial": "NONE",
+    "objetivo_justificado": "L3",
+    "nota": "L4 no aplica: sin pruebas de hardware ni evidencias experimentales."
+  },
+  "sin_instrucciones_de_instalacion_anterior": true,
+  "nota_instalacion_e3_01": "Desde E3-01 la ficha incluye GUIA.md con instalación documentada o propuesta (no ejecutada)."
 }

@@ -1,0 +1,75 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "nfcutils",
+  "id_herramienta": "nfcutils",
+  "fecha_actualizacion": "2026-11-26",
+  "nota": "Casos propuestos a partir del código de lsnfc y del README de libnfc. Ninguno se ejecutó; requieren lector NFC y etiquetas propias.",
+  "casos": [
+    {
+      "id": "CU-NFC-01",
+      "titulo": "Identificar el tipo de tarjetas propias antes de analizarlas",
+      "escenario": "Un laboratorio recibe un lote de tarjetas de prueba propias y necesita saber qué tecnología usa cada una para elegir el procedimiento de análisis.",
+      "objetivo": "Clasificar cada tarjeta del lote por familia (ISO14443A/B, FeliCa) y modelo reconocido por lsnfc antes de aplicar cualquier herramienta de análisis más invasiva.",
+      "prerequisitos": [
+        "Lector compatible con libnfc detectado por nfc-scan-device",
+        "lsnfc compilado contra libnfc >= 1.7.0",
+        "Tarjetas propias o con autorización escrita"
+      ],
+      "pasos": [
+        "Ejecutar LIBNFC_AUTO_SCAN=true nfc-scan-device y anotar la cadena de conexión del lector.",
+        "Colocar una única tarjeta en el campo y ejecutar LIBNFC_DEVICE=<cadena> lsnfc.",
+        "Registrar el tipo informado (por ejemplo MIFARE Classic 1k o DESFire EV1) y el UID de cada tarjeta.",
+        "Repetir con cada tarjeta y marcar como pendientes las que aparezcan como «Unknown ISO14443A tag type»."
+      ],
+      "resultado_esperado": "Tabla con una fila por tarjeta: familia, modelo identificado por lsnfc o «desconocido», y UID, generada con un lector identificado.",
+      "interpretacion": "La identificación se basa en SAK/ATS y en respuestas a GetVersion; tarjetas emuladas o clones pueden presentar valores de otro modelo, por lo que el resultado es una clasificación orientativa.",
+      "limites_y_advertencias": [
+        "No lee el contenido de la memoria ni evalúa la seguridad de la tarjeta.",
+        "Los UID pueden ser datos personales si las tarjetas se han usado."
+      ],
+      "referencias": [
+        "https://github.com/nfc-tools/nfcutils/blob/master/src/lsnfc.c",
+        "https://github.com/nfc-tools/libnfc"
+      ],
+      "evidencia_requerida": [
+        "Modelo de lector y cadena de conexión",
+        "Versión de libnfc",
+        "Salida de lsnfc por tarjeta"
+      ],
+      "riesgo": "BAJO · Operación de solo identificación sobre tarjetas propias.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-NFC-02",
+      "titulo": "Diagnóstico de un lector que libnfc no detecta",
+      "escenario": "Un lector USB conectado al equipo de laboratorio no aparece en la salida de lsnfc.",
+      "objetivo": "Determinar si el fallo se debe a permisos, a un módulo del núcleo que reclama el dispositivo o a la configuración de libnfc, usando solo los mecanismos documentados por libnfc.",
+      "prerequisitos": [
+        "Acceso de administrador al equipo de laboratorio",
+        "Clon de libnfc para copiar contrib/udev y contrib/linux"
+      ],
+      "pasos": [
+        "Ejecutar LIBNFC_LOG_LEVEL=3 lsnfc y guardar el diagnóstico de libnfc.",
+        "Comprobar si los módulos pn533 o pn533_usb están cargados y, si lo están, instalar blacklist-libnfc.conf y reconectar el lector.",
+        "Instalar la regla 93-pn53x.rules en /lib/udev/rules.d/ y volver a conectar el lector para aplicar permisos.",
+        "Repetir LIBNFC_AUTO_SCAN=true nfc-scan-device y lsnfc y comparar el diagnóstico con el inicial."
+      ],
+      "resultado_esperado": "El lector aparece en nfc-scan-device y lsnfc lo lista con «0 tag(s) on device.», o el diagnóstico identifica la causa que impide detectarlo.",
+      "interpretacion": "Si el lector aparece tras la lista negra, el conflicto era con el controlador NFC del núcleo; si aparece solo como root, faltaba la regla udev.",
+      "limites_y_advertencias": [
+        "La lista negra desactiva el soporte NFC del núcleo para otras aplicaciones.",
+        "Solo aplica a lectores soportados por los controladores de libnfc."
+      ],
+      "referencias": [
+        "https://github.com/nfc-tools/libnfc"
+      ],
+      "evidencia_requerida": [
+        "Salida con LIBNFC_LOG_LEVEL=3 antes y después",
+        "Lista de módulos cargados",
+        "Modelo del lector"
+      ],
+      "riesgo": "BAJO · Cambios reversibles de configuración del sistema de laboratorio.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}
