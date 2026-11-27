@@ -1,0 +1,18 @@
+{
+  "schema": "evol-tool-atlas/atds-strict-policy/1",
+  "descripcion": "Política de no regresión ATDS para las doce herramientas prioritarias incluidas en el alcance de la etapa 2. Cada nivel es el nivel validado medido con el validador corregido (E2-R3); STRICT falla si una ficha baja de él. No impone un mínimo universal al catálogo histórico: las fichas fuera de esta lista solo se evalúan en modo REPORT. NONE significa que solo bloquean errores estructurales.",
+  "targets": {
+    "semgrep": "L1",
+    "cargo-fuzz": "L1",
+    "mcp-inspector": "L1",
+    "cargo-audit": "L1",
+    "dm-flakey": "L1",
+    "dm-log-writes": "L1",
+    "gitleaks": "L1",
+    "miri": "L1",
+    "proptest": "L1",
+    "promptfoo": "NONE",
+    "loom": "NONE",
+    "cargo-mutants": "NONE"
+  }
+}

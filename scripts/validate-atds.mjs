@@ -1,315 +1,175 @@
 #!/usr/bin/env node
+/**
+ * EVOL Tool Atlas — ATDS v1 validator CLI.
+ *
+ * Exit codes: 0 = success / all PASS, 1 = STRICT policy failure,
+ * 2 = operational error (bad arguments, unknown targets, unreadable catalogue).
+ */
 import fs from 'node:fs';
 import path from 'node:path';
-import { readJsonWithin, toolDirFromHref, ROOT } from './lib/atds/paths.mjs';
-import { normalizeMetadata, VAGUE_PATTERNS } from './lib/atds/normalize.mjs';
-import { checkGuideContent } from './lib/atds/guide.mjs';
-import { checkSkillContent } from './lib/atds/skill.mjs';
-import { checkCasesContent } from './lib/atds/cases.mjs';
-import { checkEvidenceContent } from './lib/atds/evidence.mjs';
-import { 
-  evaluateL1, evaluateL2, evaluateL3, evaluateL4, 
-  computeLevels, computeStatus 
-} from './lib/atds/classify.mjs';
+import { ROOT } from './lib/atds/paths.mjs';
+import { parseLevel } from './lib/atds/classify.mjs';
+import { evaluateTool, evaluateStrict, resolveTargets, OperationalError } from './lib/atds/evaluate.mjs';
 import { buildToolReport, buildSummary, writeReport } from './lib/atds/report.mjs';
 
-async function evaluateTool(tool, options = {}) {
-  const { strict = false, strictTargets = [], strictMinLevel = null } = options;
-  const toolDir = toolDirFromHref(tool.href);
-  
-  const issues = [];
-  const warnings = [];
-  const checks = {};
-  const checkedFiles = [];
-  
-  // Read metadata with safe path resolution
-  const metaResult = readJsonWithin(ROOT, path.posix.join(toolDir, 'metadata.json'));
-  if (!metaResult.ok) {
-    issues.push('MISSING_METADATA');
-    return buildEmptyResult(tool, toolDir, issues, warnings, checks, checkedFiles);
+function loadCatalog(root) {
+  const catalogPath = path.join(root, 'catalogo.json');
+  let catalog;
+  try {
+    catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+  } catch (e) {
+    throw new OperationalError(`No se pudo leer ${catalogPath}: ${e.message}`);
   }
-  
-  const normalizedMeta = normalizeMetadata(metaResult.data, toolDir);
-  normalizedMeta.VAGUE_PATTERNS = VAGUE_PATTERNS;
-  normalizedMeta.id_catalogo = metaResult.data.id_catalogo || '';
-  
-  // Resolve document paths
-  const guidePath = path.join(ROOT, toolDir, 'GUIA.md');
-  const skillPath = path.join(ROOT, toolDir, 'SKILL.md');
-  const casesPath = path.join(ROOT, toolDir, 'casos-uso.json');
-  const evidencePath = path.join(ROOT, toolDir, 'evidencias.json');
-  
-  checkedFiles.push(guidePath, skillPath, casesPath, evidencePath);
-  
-  // Evaluate each level
-  const l1Result = evaluateL1(normalizedMeta);
-  issues.push(...l1Result.issues);
-  warnings.push(...l1Result.warnings);
-  Object.assign(checks, l1Result.checks);
-  
-  const guideResult = checkGuideContent(guidePath, normalizedMeta.toolType);
-  const l2Result = evaluateL2(l1Result, guideResult, normalizedMeta);
-  issues.push(...l2Result.issues.filter(i => i.startsWith('L2_')));
-  warnings.push(...l2Result.warnings.filter(w => w.startsWith('L2_')));
-  Object.assign(checks, l2Result.checks);
-  
-  const skillResult = checkSkillContent(skillPath);
-  const casesResult = checkCasesContent(casesPath);
-  const l3Result = evaluateL3(l2Result, skillResult, casesResult, normalizedMeta);
-  issues.push(...l3Result.issues.filter(i => i.startsWith('L3_')));
-  warnings.push(...l3Result.warnings.filter(w => w.startsWith('L3_')));
-  Object.assign(checks, l3Result.checks);
-  
-  const evidenceResult = checkEvidenceContent(evidencePath, ROOT, ROOT);
-  const l4Result = evaluateL4(l3Result, evidenceResult, normalizedMeta);
-  issues.push(...l4Result.issues.filter(i => i.startsWith('L4_')));
-  warnings.push(...l4Result.warnings.filter(w => w.startsWith('L4_')));
-  Object.assign(checks, l4Result.checks);
-  
-  const { candidateLevel, validatedLevel } = computeLevels(l1Result, l2Result, l3Result, l4Result);
-  const status = computeStatus(issues, l1Result, l2Result, l3Result, l4Result);
-  
-  const result = {
-    toolId: tool.id,
-    catalogId: normalizedMeta.id_catalogo || null,
-    validatedLevel,
-    candidateLevel,
-    status,
-    checks,
-    issues,
-    warnings,
-    evidenceRefs: l4Result.evidenceRefs || [],
-    checkedFiles: checkedFiles.filter(f => fs.existsSync(f)),
-    limitations: [],
-  };
-  
-  // STRICT mode evaluation
-  if (strict) {
-    const inScope = strictTargets.length === 0 || 
-      strictTargets.some(t => 
-        t === tool.id || 
-        t === toolDir ||
-        t === normalizedMeta.id_catalogo ||
-        (normalizedMeta.id && t === normalizedMeta.id)
-      );
-    
-    if (inScope) {
-      result.strictResult = evaluateStrict(result, strictMinLevel);
-    }
-  }
-  
-  return result;
+  if (!catalog || !Array.isArray(catalog.herramientas)) throw new OperationalError(`${catalogPath} no contiene "herramientas"`);
+  return catalog;
 }
 
-function buildEmptyResult(tool, toolDir, issues, warnings, checks, checkedFiles) {
-  return {
-    toolId: tool.id,
-    catalogId: null,
-    validatedLevel: 'NONE',
-    candidateLevel: 'NONE',
-    status: 'ERROR',
-    checks: { ...checks, L1_METADATA: 'FAIL' },
-    issues,
-    warnings,
-    evidenceRefs: [],
-    checkedFiles: checkedFiles.filter(f => fs.existsSync(f)),
-    limitations: [],
-  };
-}
-
-function evaluateStrict(result, minLevel) {
-  const levels = { NONE: 0, L1: 1, L2: 2, L3: 3, L4: 4 };
-  const current = levels[result.validatedLevel] || 0;
-  const required = minLevel ? (levels[minLevel] || 0) : 1; // Default L1 minimum
-  
-  const blockingIssues = result.issues.filter(i => 
-    i.startsWith('L1_') || i.startsWith('L2_') || i.startsWith('L3_') || i.startsWith('L4_')
-  );
-  
-  const belowMinimum = current < required;
-  const hasBlocking = blockingIssues.length > 0;
-  
-  return {
-    inScope: true,
-    passed: !belowMinimum && !hasBlocking,
-    currentLevel: result.validatedLevel,
-    requiredLevel: minLevel || 'L1',
-    belowMinimum,
-    blockingIssues: blockingIssues.length,
-    issues: blockingIssues,
-  };
-}
-
-async function runReportMode(catalogo) {
-  console.log('[REPORT] Starting full catalog evaluation...');
+function runReportMode(root, { quiet = false } = {}) {
+  const catalog = loadCatalog(root);
+  const tools = catalog.herramientas;
   const report = {
     generatedAt: new Date().toISOString(),
-    totals: { tools: catalogo.herramientas.length, categories: catalogo.categorias.length },
-    levels: {},
-    issues: [],
+    totals: { tools: tools.length, categories: Array.isArray(catalog.categorias) ? catalog.categorias.length : 0 },
     tools: [],
   };
-  
-  for (let i = 0; i < catalogo.herramientas.length; i++) {
-    const t = catalogo.herramientas[i];
-    const result = await evaluateTool(t);
-    const lvl = result.validatedLevel;
-    report.levels[lvl] = (report.levels[lvl] || 0) + 1;
-    
-    const entry = buildToolReport(t, result, path.posix.dirname(t.href));
-    report.tools.push(entry);
-    if (result.issues.length > 0 || result.warnings.length > 0) {
-      report.issues.push(entry);
-    }
-    
-    if ((i + 1) % 200 === 0) {
-      console.log(`[REPORT] Progress: ${i + 1}/${catalogo.herramientas.length}`);
-    }
+  for (const t of tools) {
+    report.tools.push(buildToolReport(t, evaluateTool(t, { root })));
   }
-  
+  if (report.tools.length !== tools.length) throw new OperationalError('El reporte no cubre todas las herramientas del catálogo');
   report.summary = buildSummary(report);
-  writeReport(ROOT, report);
-  console.log('[REPORT] Complete.');
-  console.log(JSON.stringify(report.summary, null, 2));
-  
-  // REPORT mode returns 0 if no operational errors
-  return { exitCode: 0, report };
+  const target = writeReport(root, report);
+  if (!quiet) {
+    console.log(`[REPORT] ${report.tools.length} herramientas evaluadas → ${path.relative(process.cwd(), target) || target}`);
+    const { levels, candidateLevels, statusCounts, findings, reviewRequired } = report.summary;
+    console.log(JSON.stringify({ levels, candidateLevels, statusCounts, findings, reviewRequired }, null, 2));
+  }
+  return 0;
 }
 
-async function runStrictMode(catalogo, targets, minLevel) {
-  console.log(`[STRICT] Evaluating ${targets.length} target(s) with minLevel=${minLevel || 'L1'}...`);
-  
+function runStrictMode(root, selection) {
+  const catalog = loadCatalog(root);
+  const resolved = resolveTargets(catalog.herramientas, selection.map((s) => s.target), root);
   const results = [];
-  let hasFailure = false;
-  let hasError = false;
-  let matchedCount = 0;
-  
-  for (const t of catalogo.herramientas) {
-    const toolDir = path.posix.dirname(t.href);
-    const inScope = targets.some(target => 
-      target === t.id || 
-      target === toolDir ||
-      (t.id_catalogo && target === t.id_catalogo)
-    );
-    
-    if (!inScope) continue;
-    
-    matchedCount++;
-    const result = await evaluateTool(t, { strict: true, strictTargets: targets, strictMinLevel: minLevel });
-    results.push(result);
-    
-    if (result.strictResult) {
-      if (result.strictResult.passed) {
-        console.log(`[STRICT] PASS ${t.id} (${result.validatedLevel})`);
-      } else {
-        hasFailure = true;
-        console.error(`[STRICT] FAIL ${t.id} (${result.validatedLevel}) - ${result.strictResult.blockingIssues} blocking issues`);
-        if (result.strictResult.belowMinimum) {
-          console.error(`  Below minimum: ${result.validatedLevel} < ${result.strictResult.requiredLevel}`);
-        }
-        for (const issue of result.strictResult.issues) {
-          console.error(`  - ${issue}`);
-        }
-      }
+  let failed = 0;
+  for (let i = 0; i < resolved.length; i++) {
+    const { target, tool } = resolved[i];
+    const minLevel = selection[i].minLevel;
+    const result = evaluateTool(tool, { root });
+    const strict = evaluateStrict(result, minLevel);
+    results.push({ target, toolId: tool.id, validatedLevel: result.validatedLevel, candidateLevel: result.candidateLevel, strict });
+    if (strict.passed) {
+      console.log(`[STRICT] PASS ${tool.id} (validado ${strict.currentLevel}, mínimo ${strict.requiredLevel}) — ${strict.explanation}`);
+    } else {
+      failed++;
+      console.error(`[STRICT] FAIL ${tool.id} (validado ${strict.currentLevel}, mínimo ${strict.requiredLevel}) — ${strict.explanation}`);
+      for (const code of strict.issues) console.error(`  - ${code}`);
     }
   }
-  
-  if (matchedCount === 0) {
-    console.error('[STRICT] ERROR: No tools matched the selection criteria');
-    hasError = true;
+  console.log(`[STRICT] ${resolved.length} evaluada(s): ${resolved.length - failed} PASS, ${failed} FAIL`);
+  return { exitCode: failed > 0 ? 1 : 0, results };
+}
+
+function parseArgs(argv) {
+  const opts = { strict: false, report: false, targets: [], targetsFile: null, minLevel: null, policy: null, root: ROOT, output: null };
+  const needValue = (i, flag) => {
+    const v = argv[i + 1];
+    if (v === undefined || v.startsWith('--')) throw new OperationalError(`${flag} requiere un valor`);
+    return v;
+  };
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    switch (a) {
+      case '--strict': opts.strict = true; break;
+      case '--report': opts.report = true; break;
+      case '--targets': opts.targets = needValue(i, a).split(',').map((s) => s.trim()).filter(Boolean); i++; break;
+      case '--targets-file': opts.targetsFile = needValue(i, a); i++; break;
+      case '--min-level': opts.minLevel = needValue(i, a); i++; break;
+      case '--policy': opts.policy = needValue(i, a); i++; break;
+      case '--root': opts.root = path.resolve(needValue(i, a)); i++; break;
+      case '--output': opts.output = needValue(i, a); i++; break;
+      case '--help': case '-h': opts.help = true; break;
+      default: throw new OperationalError(`Argumento desconocido: ${a}`);
+    }
   }
-  
-  console.log(`[STRICT] Evaluated ${matchedCount} tools, ${hasFailure ? 'FAIL' : 'PASS'}`);
-  
-  return { exitCode: hasError ? 2 : hasFailure ? 1 : 0, results, matchedCount };
+  if (opts.strict && opts.report) throw new OperationalError('--strict y --report son excluyentes');
+  return opts;
+}
+
+/**
+ * Build the STRICT selection: [{ target, minLevel }].
+ * A policy file is `{ "targets": { "<id>": "L1", ... } }`.
+ */
+function buildSelection(opts) {
+  if (opts.policy && (opts.targets.length > 0 || opts.targetsFile || opts.minLevel)) {
+    throw new OperationalError('--policy no se combina con --targets, --targets-file ni --min-level');
+  }
+  if (opts.policy) {
+    let policy;
+    try {
+      policy = JSON.parse(fs.readFileSync(opts.policy, 'utf8'));
+    } catch (e) {
+      throw new OperationalError(`No se pudo leer la política ${opts.policy}: ${e.message}`);
+    }
+    const entries = policy && typeof policy.targets === 'object' && policy.targets ? Object.entries(policy.targets) : [];
+    if (entries.length === 0) throw new OperationalError('La política no define "targets"');
+    return entries.map(([target, level]) => {
+      if (!parseLevel(level)) throw new OperationalError(`Nivel inválido en la política para ${target}: ${String(level)}`);
+      return { target, minLevel: parseLevel(level) };
+    });
+  }
+  let targets = opts.targets;
+  if (opts.targetsFile) {
+    try {
+      targets = JSON.parse(fs.readFileSync(opts.targetsFile, 'utf8'));
+    } catch (e) {
+      throw new OperationalError(`No se pudo leer el archivo de targets: ${e.message}`);
+    }
+    if (!Array.isArray(targets) || !targets.every((t) => typeof t === 'string')) throw new OperationalError('El archivo de targets debe ser un array de cadenas');
+  }
+  if (targets.length === 0) throw new OperationalError('No se indicaron targets (use --targets, --targets-file o --policy)');
+  const minLevel = opts.minLevel === null ? 'L1' : parseLevel(opts.minLevel);
+  if (!minLevel) throw new OperationalError(`Nivel mínimo inválido: ${opts.minLevel} (use NONE, L1, L2, L3 o L4)`);
+  return targets.map((target) => ({ target, minLevel }));
 }
 
 function printUsage() {
   console.log(`
 EVOL Tool Atlas — ATDS v1 Validator
 
-Usage:
-  npm run validate:atds              # REPORT mode (full catalog)
-  node scripts/validate-atds.mjs --report          # Same as above
-  node scripts/validate-atds.mjs --strict [options]  # STRICT mode
+  node scripts/validate-atds.mjs [--report] [--root <dir>]
+  node scripts/validate-atds.mjs --strict --targets <id,...> [--min-level <NONE|L1|L2|L3|L4>] [--root <dir>] [--output <file>]
+  node scripts/validate-atds.mjs --strict --targets-file <file.json> [--min-level <level>]
+  node scripts/validate-atds.mjs --strict --policy <policy.json>
 
-REPORT mode:
-  Evaluates all 2137 tools, generates full report at reports/atds-validation.json
-  Exit code: 0 on success, non-zero on operational error
-
-STRICT mode:
-  Evaluates only selected tools against a minimum level policy
-  Exit code: 0 = all PASS, 1 = some FAIL, 2 = operational error
-
-STRICT options:
-  --targets <id|path>[,...]    Comma-separated tool IDs or catalog paths
-  --min-level <NONE|L1|L2|L3|L4>  Minimum required level (default: L1)
-  --targets-file <path>        JSON file with array of target IDs/paths
-  --output <path>              Write strict results to file
-
-Examples:
-  node scripts/validate-atds.mjs --strict --targets semgrep,promptfoo --min-level L2
-  node scripts/validate-atds.mjs --strict --targets-file targets.json --min-level L3
+REPORT: evaluates every tool in <root>/catalogo.json and writes <root>/reports/atds-validation.json
+        (generated file, not versioned). Exit 0, or 2 on operational error.
+STRICT: evaluates the selected tools against the requested minimum level only;
+        findings of higher levels do not block. Exit 0 = PASS, 1 = FAIL, 2 = operational error
+        (invalid level, unknown target, unreadable files).
 `);
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  
-  if (args.includes('--help') || args.includes('-h')) {
-    printUsage();
-    process.exit(0);
-  }
-  
-  const catalogoPath = path.join(ROOT, 'catalogo.json');
-  const catalogo = JSON.parse(fs.readFileSync(catalogoPath, 'utf8'));
-  
-  const isStrict = args.includes('--strict');
-  const isReport = args.includes('--report') || !isStrict;
-  
-  if (isReport && !isStrict) {
-    const { exitCode } = await runReportMode(catalogo);
-    process.exit(exitCode);
-  }
-  
-  if (isStrict) {
-    let targets = [];
-    let minLevel = null;
-    let targetsFile = null;
-    let outputFile = null;
-    
-    for (let i = 0; i < args.length; i++) {
-      if (args[i] === '--targets') targets = args[++i].split(',').map(s => s.trim()).filter(Boolean);
-      else if (args[i] === '--min-level') minLevel = args[++i];
-      else if (args[i] === '--targets-file') targetsFile = args[++i];
-      else if (args[i] === '--output') outputFile = args[++i];
+function main() {
+  let opts;
+  try {
+    opts = parseArgs(process.argv.slice(2));
+    if (opts.help) {
+      printUsage();
+      return 0;
     }
-    
-    if (targetsFile) {
-      try {
-        targets = JSON.parse(fs.readFileSync(targetsFile, 'utf8'));
-      } catch (e) {
-        console.error(`[STRICT] ERROR: Failed to read targets file: ${e.message}`);
-        process.exit(2);
-      }
+    if (!opts.strict) return runReportMode(opts.root);
+    const selection = buildSelection(opts);
+    const { exitCode, results } = runStrictMode(opts.root, selection);
+    if (opts.output) fs.writeFileSync(opts.output, JSON.stringify({ results }, null, 2));
+    return exitCode;
+  } catch (err) {
+    if (err instanceof OperationalError) {
+      console.error(`[ATDS] ERROR operacional: ${err.message}`);
+      return 2;
     }
-    
-    if (targets.length === 0) {
-      console.error('[STRICT] ERROR: No targets specified (use --targets or --targets-file)');
-      process.exit(2);
-    }
-    
-    const { exitCode, results, matchedCount } = await runStrictMode(catalogo, targets, minLevel);
-    
-    if (outputFile) {
-      fs.writeFileSync(outputFile, JSON.stringify({ results, matchedCount }, null, 2));
-    }
-    
-    process.exit(exitCode);
+    console.error('[ATDS] FATAL', err);
+    return 2;
   }
 }
 
-main().catch(err => {
-  console.error('[FATAL]', err);
-  process.exit(2);
-});
+process.exitCode = main();
