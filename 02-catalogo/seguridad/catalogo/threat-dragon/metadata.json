@@ -4,7 +4,7 @@
   "categoria_origen": "grupo-threat-model",
   "categoria_evol": "Seguridad / Modelado de amenazas",
   "ubicacion": "02-catalogo/seguridad/catalogo/threat-dragon",
-  "fecha_verificacion": "2026-11-22",
+  "fecha_verificacion": "2026-11-26",
   "fuente_origen": "auditoria-documental-v2.3.2.zip",
   "version_historica": "2.2.0",
   "version_release_verificada": "2.6.2",
@@ -24,7 +24,7 @@
     "DIE",
     "PLOT4ai"
   ],
-  "licencia": "Open source; comprobar LICENSE de la release antes de redistribuir binarios.",
+  "licencia": "Apache-2.0",
   "advertencias": "La versión de la guía (2.2.0) es histórica. OWASP registra release 2.6.2. No se ha descargado ni ejecutado la aplicación y no se recomienda publicar diagramas confidenciales en servicios de terceros.",
   "fuentes_verificadas": [
     "https://owasp.org/projects/threat-dragon",
@@ -33,6 +33,117 @@
   ],
   "limites": [
     "Se validaron páginas del proyecto y release, no el checksum del ejecutable descargado",
-    "Estado de instalación local desconocido."
-  ]
+    "Estado de instalación local desconocido.",
+    "Ningún procedimiento se ejecutó en el Atlas; la guía es documental.",
+    "La aplicación ayuda a razonar sobre amenazas; no detecta vulnerabilidades ni sustituye pruebas de seguridad.",
+    "En la aplicación web, el almacenamiento en proveedores (GitHub, Bitbucket, GitLab, Google Drive) deposita los modelos en servicios de terceros."
+  ],
+  "licencia_historica": "Open source; comprobar LICENSE de la release antes de redistribuir binarios.",
+  "categoria": "Modelado de amenazas",
+  "tipo": "Aplicación de escritorio (Electron) y aplicación web autoalojable de modelado de amenazas",
+  "problema_que_resuelve": "Permite documentar el diseño de un sistema como diagrama de flujo de datos con límites de confianza y registrar, por elemento, las amenazas y mitigaciones identificadas, de forma revisable y versionable.",
+  "funciones_principales": "Diagramas con procesos, almacenes de datos, actores, flujos de datos y límites de confianza; registro de amenazas por elemento con STRIDE, LINDDUN, CIA, CIA-DIE, PLOT4ai o Generic; sugerencia de amenazas por tipo y por contexto; informe imprimible (PDF en escritorio); exportación de diagramas a SVG/PNG; modelos JSON validables contra esquema v1/v2; almacenamiento local o en GitHub, GitHub Enterprise, Bitbucket, GitLab o Google Drive (web).",
+  "sistema_operativo": "Escritorio 2.6.2: Windows 64 bits (NSIS), macOS x86-64 y arm64 (dmg), Linux x86-64 (AppImage, deb, rpm, Snap). Web: contenedor linux/amd64 y linux/arm64, o Node.js desde código fuente.",
+  "dependencias": "Escritorio: instalador autocontenido. Web: Docker, o Node.js, npm y git para ejecutar desde código fuente.",
+  "requisitos": "Web: archivo .env con ENCRYPTION_KEYS (obligatoria) y claves JWT; credenciales OAuth solo si se usa un proveedor de repositorios. Escritorio: entorno gráfico.",
+  "estado_mantenimiento": "ACTIVO · release 2.6.2 publicada 2026-05-10; último commit en main 2026-11-19 (c27988f2e69b).",
+  "fecha_verificacion_anterior": "2026-11-22",
+  "version_release_publicada": "2026-05-10",
+  "fuentes_oficiales": {
+    "proyecto_owasp": "https://owasp.org/projects/threat-dragon",
+    "repositorio": "https://github.com/OWASP/threat-dragon",
+    "release_verificada": "https://github.com/OWASP/threat-dragon/releases/tag/v2.6.2",
+    "documentacion": "https://www.threatdragon.com/docs/"
+  },
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/seguridad/catalogo/threat-dragon/GUIA.md",
+    "casos_uso": "02-catalogo/seguridad/catalogo/threat-dragon/casos-uso.json"
+  },
+  "registro_fuentes": [
+    {
+      "dato": "Release 2.6.2 es la última publicada (published_at 2026-05-10), con instaladores Windows NSIS, dmg x86-64/arm64, AppImage, deb, rpm y archivos checksum*.yml",
+      "fuente": "API de releases de GitHub",
+      "url": "https://github.com/OWASP/threat-dragon/releases/tag/v2.6.2",
+      "tipo": "oficial_release",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": "El README aún muestra ejemplos Docker con v2.2.0 y el espacio threatdragon/owasp-threat-dragon."
+    },
+    {
+      "dato": "Licencia Apache-2.0",
+      "fuente": "Repositorio oficial (license.txt y metadatos del repositorio)",
+      "url": "https://github.com/OWASP/threat-dragon",
+      "tipo": "oficial_repositorio",
+      "version": "main",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": "El enlace de licencia del README apunta a la copia de la etiqueta v2.2.0."
+    },
+    {
+      "dato": "Ejecución como escritorio o como web en contenedor; etiqueta Docker stable = última release",
+      "fuente": "Documentación 2.6.2 (Docker, Introduction)",
+      "url": "https://www.threatdragon.com/docs/install/docker.html",
+      "tipo": "oficial_documentacion",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Variables de entorno del servidor; ENCRYPTION_KEYS obligatoria; claves con openssl rand -hex 16; sufijo _FILE",
+      "fuente": "Documentación 2.6.2 (Configure)",
+      "url": "https://www.threatdragon.com/docs/configure/configure.html",
+      "tipo": "oficial_documentacion",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Elementos de diagrama, exportación SVG/PNG, flujo de creación de modelo y amenazas, informe Print/PDF",
+      "fuente": "Documentación 2.6.2 (Diagrams, Getting started, Threats)",
+      "url": "https://www.threatdragon.com/docs/usage/getting-started.html",
+      "tipo": "oficial_documentacion",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Metodologías STRIDE, LINDDUN, CIA, CIA-DIE, PLOT4ai y Generic",
+      "fuente": "Documentación 2.6.2 (Threat categories)",
+      "url": "https://www.threatdragon.com/docs/usage/threat-categories.html",
+      "tipo": "oficial_documentacion",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": "El registro histórico listaba 'DIE'; la documentación actual lo denomina CIA-DIE."
+    },
+    {
+      "dato": "Modelos JSON con esquemas v1/v2, validación con ajv; carga con aviso no bloqueante",
+      "fuente": "Documentación 2.6.2 (Schema)",
+      "url": "https://www.threatdragon.com/docs/development/schema.html",
+      "tipo": "oficial_documentacion",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Analítica desactivada por defecto, nunca en escritorio; no envía contenido de modelos; el servidor reenvía IP y User-Agent si se activa",
+      "fuente": "Documentación 2.6.2 (Analytics)",
+      "url": "https://www.threatdragon.com/docs/trust/analytics.html",
+      "tipo": "oficial_documentacion",
+      "version": "2.6.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    }
+  ],
+  "nivel_atds_e3_01": {
+    "inicial": "NONE",
+    "objetivo_justificado": "L3",
+    "nota": "L4 no aplica: no existen evidencias experimentales y este lote no ejecuta herramientas."
+  }
 }

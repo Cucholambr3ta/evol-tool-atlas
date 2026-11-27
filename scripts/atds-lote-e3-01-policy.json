@@ -1,0 +1,10 @@
+{
+  "schema": "evol-tool-atlas/atds-strict-policy/1",
+  "descripcion": "Control de no regresión del lote E3-01 (etapa 3, categorías con una herramienta). Cada nivel es el validado por el validador ATDS v1 tras el enriquecimiento documental; STRICT falla si una ficha del lote baja de él. No sustituye ni modifica scripts/atds-strict-policy.json (12 prioritarias de la etapa 2).",
+  "targets": {
+    "threat-dragon": "L3",
+    "sagan": "L3",
+    "nfcutils": "L3",
+    "secure-delete": "L3"
+  }
+}

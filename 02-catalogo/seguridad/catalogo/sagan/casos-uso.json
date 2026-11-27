@@ -1,0 +1,84 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "Sagan",
+  "id_herramienta": "sagan",
+  "fecha_actualizacion": "2026-11-26",
+  "nota": "Casos propuestos a partir de la documentación y el código de Sagan. Ninguno se ejecutó en el Atlas; requieren una máquina virtual de laboratorio.",
+  "casos": [
+    {
+      "id": "CU-SAGAN-01",
+      "titulo": "Alerta por disco lleno a partir de syslog local",
+      "escenario": "Una máquina virtual de laboratorio envía su syslog a Sagan mediante rsyslog y se quiere confirmar la cadena completa de ingesta y alerta.",
+      "objetivo": "Comprobar que un mensaje syslog que contiene «No space left on device» atraviesa rsyslog, el FIFO y Sagan, y produce la alerta de la regla documentada sid 5000116.",
+      "prerequisitos": [
+        "Máquina virtual desechable con rsyslog",
+        "Sagan 2.0.2 compilado con libpcre y libyaml",
+        "FIFO y usuario sagan creados según la guía",
+        "Regla sid 5000116 incluida en un archivo .rules cargado"
+      ],
+      "pasos": [
+        "Configurar /etc/rsyslog.d/10-sagan.conf con la plantilla SaganPipe y la acción ompipe hacia /var/sagan/fifo/sagan.fifo.",
+        "Validar la configuración con sagan -T y corregir cualquier regla o ruta que no cargue.",
+        "Arrancar sudo sagan --debug syslog,engine en una terminal y reiniciar rsyslog.",
+        "Emitir en otra terminal logger \"No space left on device\".",
+        "Revisar /var/log/sagan/alert.log y $LOG_PATH/eve.json buscando el sid 5000116."
+      ],
+      "resultado_esperado": "Una alerta con msg «[SYSLOG] System out of disk space» y sid 5000116 en alert.log y el evento equivalente en eve.json.",
+      "interpretacion": "Si el mensaje aparece en la depuración pero no hay alerta, el fallo está en la carga de reglas; si no aparece, en la ruta o permisos del FIFO. El umbral de la regla limita a una alerta cada 300 segundos por origen.",
+      "limites_y_advertencias": [
+        "Solo prueba la cadena de ingesta y una regla; no mide cobertura de detección.",
+        "No conectar la VM a registros de producción."
+      ],
+      "referencias": [
+        "https://sagan.readthedocs.io/en/latest/configuration.html",
+        "https://sagan.readthedocs.io/en/latest/rule-syntax.html",
+        "https://sagan.readthedocs.io/en/latest/install.html"
+      ],
+      "evidencia_requerida": [
+        "Versión de Sagan (sagan --help)",
+        "Configuración rsyslog usada",
+        "Fragmento de alert.log",
+        "SHA-256 de los artefactos"
+      ],
+      "riesgo": "BAJO · Entorno aislado y mensaje sintético.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-SAGAN-02",
+      "titulo": "Revisión de reglas de un fabricante antes de activarlas",
+      "escenario": "Se quiere vigilar registros de un tipo de dispositivo concreto usando un archivo de sagan-rules sin introducir ruido ni falsos positivos.",
+      "objetivo": "Seleccionar un archivo de reglas del repositorio quadrantsec/sagan-rules, validarlo con la configuración local y estimar su ruido sobre una muestra de registros de laboratorio antes de activarlo en producción.",
+      "prerequisitos": [
+        "Clon de https://github.com/quadrantsec/sagan-rules con commit registrado",
+        "Muestra de registros del dispositivo sin datos personales",
+        "Sagan instalado en laboratorio"
+      ],
+      "pasos": [
+        "Copiar el archivo .rules elegido y añadirlo a rule-files en una copia de sagan.yaml de laboratorio.",
+        "Ejecutar sagan -f copia-sagan.yaml -T para comprobar que configuración y reglas cargan.",
+        "Reproducir la muestra de registros hacia el FIFO de laboratorio a través de rsyslog.",
+        "Contar alertas por sid en eve.json y revisar manualmente una muestra de cada sid.",
+        "Documentar qué reglas se activan, cuáles se ajustan con umbrales y cuáles se descartan."
+      ],
+      "resultado_esperado": "Lista de sid del archivo con número de alertas sobre la muestra y decisión justificada (activar, ajustar umbral o descartar) para cada uno.",
+      "interpretacion": "Un sid con muchas alertas sobre registros benignos indica una regla demasiado amplia para el entorno; la ausencia de alertas no prueba que la regla funcione, solo que la muestra no contenía el patrón.",
+      "limites_y_advertencias": [
+        "La muestra puede no representar el tráfico real.",
+        "Las reglas cambian con frecuencia; registrar el commit de sagan-rules usado."
+      ],
+      "referencias": [
+        "https://github.com/quadrantsec/sagan-rules",
+        "https://sagan.readthedocs.io/en/latest/configuration.html",
+        "https://github.com/quadrantsec/sagan/blob/main/src/usage.c"
+      ],
+      "evidencia_requerida": [
+        "Commit de sagan-rules",
+        "Copia de sagan.yaml de laboratorio",
+        "Recuento de alertas por sid",
+        "Decisiones del revisor"
+      ],
+      "riesgo": "MEDIO · Las muestras de registros pueden contener datos sensibles si no se anonimizan.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}

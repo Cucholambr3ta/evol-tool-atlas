@@ -10,18 +10,133 @@
   "categoria_atlas": "ids",
   "detalle_verificacion": "REPOSITORIO_OFICIAL_IDENTIFICADO",
   "estado": "FUENTE_PRIMARIA_VERIFICADA",
-  "estado_mantenimiento": "Versión actual y mantenimiento no comprobados",
+  "estado_mantenimiento": "MANTENIMIENTO_BAJO · última release 2.0.2 (2021-12-29); último commit en main 2025-10-06 (3b9b0fa3ad4d); sagan-rules actualizado 2026-11-25.",
   "fuente_distribucion_comprobada": "https://github.com/quadrantsec/sagan",
   "fuente_proyecto": "https://github.com/quadrantsec/sagan",
   "fuentes_consultadas": [
     "https://github.com/quadrantsec/sagan",
-    "https://github.com/beave/sagan"
+    "https://github.com/beave/sagan",
+    "https://github.com/quadrantsec/sagan/releases",
+    "https://github.com/quadrantsec/sagan-rules",
+    "https://sagan.readthedocs.io/en/latest/install.html",
+    "https://sagan.readthedocs.io/en/latest/configuration.html",
+    "https://sagan.readthedocs.io/en/latest/rule-syntax.html",
+    "https://github.com/quadrantsec/sagan/blob/main/src/usage.c"
   ],
   "id": "sagan",
   "instalado_en_host": null,
   "nombre": "Sagan",
   "probado_en_cachyos": false,
   "schema": "evol-tool-atlas/tool/1",
-  "sin_instrucciones_de_instalacion": true,
-  "verificacion_fecha": "2026-11-22"
+  "sin_instrucciones_de_instalacion": false,
+  "verificacion_fecha": "2026-11-22",
+  "estado_mantenimiento_anterior": "Versión actual y mantenimiento no comprobados",
+  "categoria": "Detección de intrusiones",
+  "tipo": "Motor de análisis de registros (daemon de línea de comandos)",
+  "descripcion": "Motor multihilo en C que analiza eventos de registro (syslog o JSON) recibidos por una tubería con nombre y aplica reglas de sintaxis similar a Snort/Suricata para generar alertas.",
+  "problema_que_resuelve": "Detecta en tiempo real patrones de eventos sospechosos o de fallo en los registros de sistemas y dispositivos, que de otro modo solo se revisarían a posteriori.",
+  "funciones_principales": "Ingesta por FIFO desde rsyslog o syslog-ng (modo pipe o JSON); reglas con pcre, umbrales y clasificación; normalización con liblognorm; GeoIP opcional; flexbits/xbits en mmap o Redis; salidas alert.log, fast.log, eve.json (JSON), SMTP y syslog.",
+  "sistema_operativo": "Sistemas tipo Unix; la documentación incluye dependencias para Debian/Ubuntu, Red Hat/CentOS, FreeBSD/OpenBSD y Gentoo, sin lista formal de plataformas soportadas.",
+  "licencia": "GPL-2.0",
+  "dependencias": "Obligatorias: libpcre y libyaml. Recomendada: liblognorm (con libfastjson). Opcionales: libesmtp, libmaxminddb, hiredis, libpcap.",
+  "requisitos": "Compilador C y autotools; rsyslog o syslog-ng configurado para escribir en el FIFO; usuario de sistema sagan y directorios /var/sagan/fifo, /var/log/sagan y /var/run/sagan.",
+  "estado_fuente": "FUENTE_PRIMARIA_VERIFICADA",
+  "version_release_verificada": "2.0.2",
+  "version_release_publicada": "2021-12-29",
+  "fecha_verificacion": "2026-11-26",
+  "fuentes_oficiales": {
+    "repositorio": "https://github.com/quadrantsec/sagan",
+    "releases": "https://github.com/quadrantsec/sagan/releases",
+    "reglas": "https://github.com/quadrantsec/sagan-rules",
+    "documentacion": "https://sagan.readthedocs.io/en/latest/"
+  },
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/seguridad/catalogo/sagan/GUIA.md",
+    "casos_uso": "02-catalogo/seguridad/catalogo/sagan/casos-uso.json"
+  },
+  "limites": [
+    "No se compiló ni ejecutó Sagan para esta ficha.",
+    "Última release de 2021; los cambios posteriores en main no están publicados como release.",
+    "La documentación oficial contiene secciones incompletas y referencias desactualizadas (beave/sagan-rules, versiones 1.2.1 y 2.0.1, Snortsam/Unified2 retirados en 2.0.0).",
+    "Las reglas de terceros requieren revisión para evitar falsos positivos."
+  ],
+  "registro_fuentes": [
+    {
+      "dato": "Repositorio vigente quadrantsec/sagan, GPL-2.0, no archivado; beave/sagan solo contiene aviso de traslado",
+      "fuente": "GitHub (repositorios y notas de la release 2.0.0)",
+      "url": "https://github.com/quadrantsec/sagan",
+      "tipo": "oficial_repositorio",
+      "version": "main 3b9b0fa3ad4d",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Última release 2.0.2 publicada 2021-12-29 (etiqueta 'v,2,0.2'); 2.0.1 2021-02-08; 2.0.0 2021-01-27",
+      "fuente": "API de releases de GitHub",
+      "url": "https://github.com/quadrantsec/sagan/releases",
+      "tipo": "oficial_release",
+      "version": "2.0.2",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": "La página de etiquetas muestra 2021-12-09 para la etiqueta y la release figura el 2021-12-29; se registra la fecha de publicación de la release. La versión histórica del inventario (2.0.2) coincide con la última release."
+    },
+    {
+      "dato": "Dependencias, comandos de compilación, preparación de usuario/FIFO/directorios y unidad systemd",
+      "fuente": "Documentación (Installation)",
+      "url": "https://sagan.readthedocs.io/en/latest/install.html",
+      "tipo": "oficial_documentacion",
+      "version": "sin versión declarada (ejemplos 1.2.1 y 2.0.1)",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_CON_INCONSISTENCIAS",
+      "contradicciones": "Enlaces sin completar, opción --disable-snortsam pese a su retirada en 2.0.0, clonado de reglas desde beave/sagan-rules."
+    },
+    {
+      "dato": "Secciones de sagan.yaml, configuración rsyslog ompipe, salidas eve-log/alert/fast/smtp/syslog",
+      "fuente": "Documentación (Sagan Configuration)",
+      "url": "https://sagan.readthedocs.io/en/latest/configuration.html",
+      "tipo": "oficial_documentacion",
+      "version": "sin versión declarada",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_CON_INCONSISTENCIAS",
+      "contradicciones": "Ruta del FIFO /var/sagan/fifo/sagan.fifo (rsyslog) frente a /var/sagan/sagan.fifo (syslog-ng)."
+    },
+    {
+      "dato": "Sintaxis de reglas y regla de ejemplo sid 5000116",
+      "fuente": "Documentación (Rule syntax)",
+      "url": "https://sagan.readthedocs.io/en/latest/rule-syntax.html",
+      "tipo": "oficial_documentacion",
+      "version": "sin versión declarada",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_PARCIAL",
+      "contradicciones": "La página no define las opciones posteriores a msg."
+    },
+    {
+      "dato": "Opciones de línea de comandos (-h, -C, -d, -D, -u, -c, -f, -F, -l, -Q, -t, -b, -r, -T)",
+      "fuente": "Código fuente src/usage.c",
+      "url": "https://github.com/quadrantsec/sagan/blob/main/src/usage.c",
+      "tipo": "oficial_codigo",
+      "version": "main 3b9b0fa3ad4d (posterior a 2.0.2)",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_EN_CODIGO",
+      "contradicciones": "La página Command Line Options está vacía; las opciones pueden diferir en la release 2.0.2."
+    },
+    {
+      "dato": "sagan-rules: reglas por fabricante/producto, GPL-2.0, último commit 2026-11-25",
+      "fuente": "GitHub",
+      "url": "https://github.com/quadrantsec/sagan-rules",
+      "tipo": "oficial_repositorio",
+      "version": "main 598cec5ceaac",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    }
+  ],
+  "nivel_atds_e3_01": {
+    "inicial": "NONE",
+    "objetivo_justificado": "L3",
+    "nota": "L4 no aplica: sin evidencias experimentales."
+  },
+  "sin_instrucciones_de_instalacion_anterior": true,
+  "nota_instalacion_e3_01": "Desde E3-01 la ficha incluye GUIA.md con instalación documentada o propuesta (no ejecutada)."
 }

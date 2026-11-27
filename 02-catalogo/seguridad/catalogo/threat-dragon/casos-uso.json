@@ -1,0 +1,81 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "OWASP Threat Dragon",
+  "fecha_actualizacion": "2026-11-26",
+  "nota": "Casos propuestos a partir de la documentación oficial 2.6.2. Ninguno se ejecutó en el Atlas.",
+  "casos": [
+    {
+      "id": "CU-TD-01",
+      "titulo": "Modelo STRIDE de un servicio con IPC local",
+      "escenario": "Un componente EVOL expone un canal IPC local a una interfaz de usuario y persiste datos en disco; se quiere revisar su diseño antes de un cambio sensible.",
+      "objetivo": "Representar procesos, almacén, actores y flujos del componente con sus límites de confianza y registrar amenazas STRIDE por elemento antes de implementar el cambio.",
+      "prerequisitos": [
+        "Threat Dragon 2.6.2 de escritorio instalado y verificado por checksum",
+        "Diagrama de arquitectura vigente del componente",
+        "Revisor de seguridad asignado"
+      ],
+      "pasos": [
+        "Crear un modelo nuevo desde la pantalla de bienvenida e indicar el título del componente.",
+        "Añadir un diagrama y dibujar actor, procesos, almacén de datos y flujos de datos desde el panel lateral.",
+        "Trazar un límite de confianza entre la interfaz de usuario y el proceso que atiende el IPC.",
+        "Seleccionar cada elemento y registrar amenazas con «New Threat» usando el tipo STRIDE, con mitigación propuesta.",
+        "Guardar el modelo JSON en el repositorio privado del componente y generar el informe en PDF para la revisión."
+      ],
+      "resultado_esperado": "Modelo JSON versionado y un informe PDF con cada elemento del diagrama asociado a amenazas STRIDE, su estado y la mitigación propuesta.",
+      "interpretacion": "Los elementos en rojo tienen amenazas abiertas; cada una requiere una decisión (mitigar, aceptar o transferir) documentada por el revisor. Un elemento sin amenazas no implica que sea seguro.",
+      "limites_y_advertencias": [
+        "El modelo refleja el diseño declarado, no el comportamiento real del código.",
+        "No almacenar el modelo en servicios de terceros si describe componentes confidenciales."
+      ],
+      "referencias": [
+        "https://www.threatdragon.com/docs/usage/getting-started.html",
+        "https://www.threatdragon.com/docs/usage/threats.html",
+        "https://www.threatdragon.com/docs/usage/threat-categories.html"
+      ],
+      "evidencia_requerida": [
+        "Versión de Threat Dragon",
+        "Archivo JSON del modelo",
+        "Informe PDF",
+        "SHA-256 de ambos artefactos"
+      ],
+      "riesgo": "BAJO · Exposición del diseño si el modelo se guarda fuera del repositorio privado.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-TD-02",
+      "titulo": "Revisión de privacidad con LINDDUN de un flujo de datos personales",
+      "escenario": "Un flujo recibe datos personales de usuarios y los almacena; se necesita una revisión de privacidad además de la de seguridad.",
+      "objetivo": "Registrar amenazas de privacidad LINDDUN sobre los flujos y almacenes que tratan datos personales y vincular cada una a una medida de minimización o protección.",
+      "prerequisitos": [
+        "Modelo del sistema existente en Threat Dragon",
+        "Inventario de datos personales tratados",
+        "Responsable de privacidad disponible"
+      ],
+      "pasos": [
+        "Abrir el modelo existente y el diagrama que contiene los flujos con datos personales.",
+        "Marcar como fuera de alcance los elementos que no tratan datos personales para que no generen ruido.",
+        "Seleccionar cada flujo y almacén con datos personales y añadir amenazas con el tipo LINDDUN.",
+        "Usar «New Threat by Context» como sugerencia y validar manualmente cada propuesta antes de aplicarla.",
+        "Generar el informe incluyendo elementos fuera de alcance para que el revisor vea el criterio aplicado."
+      ],
+      "resultado_esperado": "Informe con amenazas LINDDUN asociadas a flujos y almacenes de datos personales, y la justificación de los elementos excluidos.",
+      "interpretacion": "Las sugerencias automáticas son un punto de partida; solo cuentan las amenazas validadas por el responsable de privacidad.",
+      "limites_y_advertencias": [
+        "LINDDUN no sustituye una evaluación de impacto formal.",
+        "Las sugerencias por contexto pueden ser incompletas o no pertinentes."
+      ],
+      "referencias": [
+        "https://www.threatdragon.com/docs/usage/threat-categories.html",
+        "https://www.threatdragon.com/docs/usage/threats.html"
+      ],
+      "evidencia_requerida": [
+        "Archivo JSON del modelo",
+        "Informe generado",
+        "Registro de validación del responsable de privacidad"
+      ],
+      "riesgo": "MEDIO · El modelo contiene descripciones de datos personales y debe tratarse como confidencial.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ],
+  "id_herramienta": "threat-dragon"
+}

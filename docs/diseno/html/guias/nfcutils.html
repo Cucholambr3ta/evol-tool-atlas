@@ -1,0 +1,64 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Guía nfcutils · Auditoría EVOL Tool Atlas</title><style>
+:root{color-scheme:light;--bg:#F6F3ED;--fg:#30383C;--accent:#365568;--line:#BEC5C6;--muted:#657078;--card:#FFFFFF}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Manrope,"Atkinson Hyperlegible",system-ui,sans-serif}
+@font-face{font-family:Manrope;src:url(../assets/manrope-DAjpq4PJ.ttf)}@font-face{font-family:"Atkinson Hyperlegible";src:url(../assets/atkinsonhyperlegible-P-bv5LQr.ttf)}
+.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1200px;margin:auto;padding:32px 24px 80px}
+nav.toc{position:sticky;top:16px;align-self:start;font-size:.88rem;border-right:1px solid var(--line);padding-right:16px}nav.toc a{display:block;color:var(--accent);text-decoration:none;padding:2px 0}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:16px;padding-bottom:12px}.eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-weight:500;letter-spacing:-.03em;margin:.3em 0}h2{margin-top:2em;border-top:1px solid var(--line);padding-top:.8em}a{color:var(--accent);overflow-wrap:anywhere}
+table{border-collapse:collapse;width:100%;margin:1em 0;background:var(--card)}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}th{background:#ECE8E0}
+pre{background:#20282B;color:#F0EEE8;padding:14px;border-radius:8px;overflow:auto}code{font-family:ui-monospace,Menlo,monospace;font-size:.9em}p code,li code,td code{background:#E7E2D8;padding:1px 5px;border-radius:4px}
+blockquote{border-left:3px solid #A66C4B;margin:1em 0;padding:8px 16px;background:rgba(166,108,75,.08)}.meta{font-size:.85rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}.pill{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:2px 10px;font-size:.78rem;margin-right:6px}
+dl{display:grid;grid-template-columns:200px 1fr;gap:6px 16px}dt{font-weight:600;color:var(--muted)}dd{margin:0}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}nav.toc{position:static;border:0}}
+</style></head><body><div class="wrap"><nav class="toc" aria-label="Contenido"><strong>Contenido</strong><a href="#requisitos">Requisitos</a><a href="#dependencias">Dependencias</a><a href="#instalacion">Instalación</a><a href="#plataformas">Plataformas</a><a href="#verificacion">Verificación</a><a href="#configuracion">Configuración</a><a href="#primer-uso">Primer uso</a><a href="#comandos">Comandos</a><a href="#entradas">Entradas</a><a href="#salidas">Salidas</a><a href="#errores-y-solucion-de-problemas">Errores y solución de problemas</a><a href="#advertencias">Advertencias</a><a href="#referencias">Referencias</a><a href="#limitaciones">Limitaciones</a><hr><a href="../index.html">← Índice del paquete</a></nav><main><header class="doc"><div class="eyebrow">EVOL Tool Atlas · Guía técnica (lote E3-01)</div><p class="meta">Fuente: <code>02-catalogo/seguridad/catalogo/nfcutils/GUIA.md</code> · SHA-256 <code>fd426915345e2e5c78cf965d4da5050b55da2a9c50fcda577ae3778cf781a3e1</code> · rama atlas/etapa-03-lote-01-categorias-minimas · commit <code>2afbff28720c</code>. Conversión de Markdown a HTML sin cambios de contenido; ningún comando se ejecutó.</p></header><h1 id="nfcutils-lsnfc-guia-tecnica">nfcutils (lsnfc) · Guía técnica</h1>
+<p>Ficha del lote E3-01 de EVOL Tool Atlas. Proyecto histórico: último commit <code>49aa1781205f</code> (2015-04-07, «update code to use libnfc 1.7.0»), sin releases ni etiquetas. Versión declarada en <code>configure.ac</code>: <strong>0.3.2</strong>. Fuentes consultadas el 2026-11-26.</p>
+<p>Convención de procedencia:</p>
+<ul><li><strong>[Upstream-código]</strong> derivado de los archivos del repositorio <code>nfc-tools/nfcutils</code> (<code>configure.ac</code>, <code>src/Makefile.am</code>, <code>src/lsnfc.c</code>, <code>debian/control</code>).</li><li><strong>[Upstream-libnfc]</strong> tomado del README de <code>nfc-tools/libnfc</code>.</li><li><strong>[Propuesto]</strong> paso redactado para el Atlas; el README de nfcutils está vacío (0 bytes) y no documenta instalación.</li><li>Nada se ejecutó en el Atlas y <strong>no se probó ningún lector NFC</strong>.</li></ul>
+<h2 id="requisitos">Requisitos</h2>
+<ul><li>Lector NFC compatible con libnfc. El README de libnfc enumera los controladores <code>pn53x_usb</code>, <code>acr122_usb</code>, <code>acr122_pcsc</code>, <code>pcsc</code> y conexiones serie como <code>pn532_uart:/dev/ttyACM0</code>; menciona Feitian bR500 y R502 como funcionales vía PC/SC.</li><li>Permiso del usuario para acceder al dispositivo USB o serie (regla udev de libnfc).</li><li>Etiquetas o tarjetas propias o autorizadas para la prueba.</li></ul>
+<h2 id="dependencias">Dependencias</h2>
+<ul><li>libnfc <strong>≥ 1.7.0</strong>: <code>configure.ac</code> falla con «libnfc &gt;= 1.7.0 is mandatory» si no la encuentra [Upstream-código]. La última etiqueta de libnfc es <code>libnfc-1.8.0</code> (2020-05-22).</li><li><code>pkg-config</code>, compilador C (el proyecto fuerza <code>-std=c99</code>), autoconf y automake.</li><li><code>debian/control</code> del propio repositorio declara <code>Build-Depends: debhelper (&gt;= 5.0.37.2), libnfc-dev (&gt;= 1.7.0)</code> [Upstream-código].</li></ul>
+<h2 id="instalacion">Instalación</h2>
+<p>No existe paquete <code>nfcutils</code> en Debian (búsqueda en packages.debian.org sin resultados el 2026-11-26) ni release descargable. Compilación desde fuente [Propuesto, inferido de los archivos autotools del repositorio]:</p>
+<pre data-lang="bash"><code>sudo apt-get install libnfc-dev pkg-config autoconf automake build-essential
+git clone https://github.com/nfc-tools/nfcutils.git
+cd nfcutils
+autoreconf -vis
+./configure
+make
+sudo make install</code></pre>
+<p><code>--enable-debug</code> es la única opción propia de <code>configure</code> (añade <code>-O0 -g3 -Wall -DDEBUG -pedantic</code>). <code>make install</code> instala el binario <code>lsnfc</code> (<code>bin_PROGRAMS = lsnfc</code> en <code>src/Makefile.am</code>).</p>
+<p>Preparación del acceso al lector según libnfc [Upstream-libnfc], desde un clon de libnfc:</p>
+<pre data-lang="bash"><code>sudo cp contrib/udev/93-pn53x.rules /lib/udev/rules.d/
+sudo cp contrib/linux/blacklist-libnfc.conf /etc/modprobe.d/blacklist-libnfc.conf</code></pre>
+<p>La lista negra evita que los módulos del núcleo <code>nfc</code>, <code>pn533</code> y <code>pn533_usb</code> (Linux ≥ 3.1) se apropien del lector.</p>
+<h2 id="plataformas">Plataformas</h2>
+<ul><li>No hay lista oficial de plataformas para nfcutils. Por sus dependencias (autotools, pkg-config, libnfc) apunta a sistemas tipo Unix; libnfc documenta además FreeBSD (<code>contrib/devd/pn53x.conf</code>) y compilación en Windows. Esta compatibilidad es una inferencia, no una declaración de nfcutils.</li><li>La compatibilidad con libnfc 1.8.0 no está declarada: el último cambio del proyecto adaptó el código a libnfc 1.7.0.</li></ul>
+<h2 id="verificacion">Verificación</h2>
+<pre data-lang="bash"><code>LIBNFC_AUTO_SCAN=true nfc-scan-device
+lsnfc</code></pre>
+<p><code>nfc-scan-device</code> (herramienta de libnfc) debe mostrar el lector y su cadena de conexión. <code>lsnfc</code> sin etiquetas en el campo debe listar el dispositivo y terminar con «0 tag(s) on device.» [Upstream-código, <code>src/lsnfc.c</code>].</p>
+<h2 id="configuracion">Configuración</h2>
+<p>Configuración de libnfc [Upstream-libnfc]:</p>
+<pre data-lang="bash"><code>sudo mkdir /etc/nfc
+sudo cp libnfc.conf.sample /etc/nfc/libnfc.conf</code></pre>
+<ul><li>Dispositivos adicionales: archivos en <code>/etc/nfc/devices.d/</code>.</li><li>Variables de entorno: <code>LIBNFC_DEVICE=&lt;connstring&gt;</code> (usa solo ese dispositivo), <code>LIBNFC_DEFAULT_DEVICE</code>, <code>LIBNFC_AUTO_SCAN</code>, <code>LIBNFC_INTRUSIVE_SCAN</code> y <code>LIBNFC_LOG_LEVEL</code> (0–3).</li><li><code>lsnfc</code> no tiene archivo de configuración propio ni opciones.</li></ul>
+<h2 id="primer-uso">Primer uso</h2>
+<ol><li>Conectar el lector y confirmar que <code>nfc-scan-device</code> lo detecta.</li><li>Colocar una etiqueta propia sobre el lector.</li><li>Ejecutar <code>lsnfc</code> y leer el tipo de etiqueta e identificadores.</li><li>Para fijar el lector cuando hay varios [Propuesto]: <code>LIBNFC_DEVICE=pn532_uart:/dev/ttyACM0 lsnfc</code>.</li></ol>
+<h2 id="comandos">Comandos</h2>
+<ul><li><code>lsnfc</code>: no acepta argumentos (<code>main</code> ignora <code>argc</code> y <code>argv</code>). Abre cada dispositivo detectado por libnfc, activa el campo, enumera objetivos pasivos ISO14443A, ISO14443B y FeliCa (212 y 424 kbps) e intenta identificar el modelo de cada etiqueta.</li><li>Variables de libnfc como <code>LIBNFC_DEVICE</code> y <code>LIBNFC_LOG_LEVEL=3</code> controlan qué lector se usa y cuánto diagnóstico se muestra.</li></ul>
+<h2 id="entradas">Entradas</h2>
+<ul><li>Lectores NFC detectados por libnfc (o el indicado en <code>LIBNFC_DEVICE</code>).</li><li>Etiquetas presentes en el campo del lector en el momento de la ejecución.</li></ul>
+<h2 id="salidas">Salidas</h2>
+<p>Texto por salida estándar [Upstream-código, <code>src/lsnfc.c</code>]:</p>
+<ul><li>ISO14443A: identificación por SAK/ATS de MIFARE Ultralight (y UL-C mediante el comando de autenticación 0x1A), Mini, Classic 1k/4k, DESFire (EV1 y tamaño mediante GetVersion), Plus, JCOP31/41, Gemplus MPCOS, Jewel (con duda declarada en el código); el resto aparece como «Unknown ISO14443A tag type».</li><li>ISO14443B: PUPI, datos de aplicación e información de protocolo.</li><li>FeliCa: NFCID2, PAD y código de sistema; reconoce FeliCa Lite, NFC Forum (NDEF) y FeliCa Plug.</li><li>Cierre por dispositivo «N tag(s) on device.» y, con varios lectores, una línea «Total:».</li></ul>
+<h2 id="errores-y-solucion-de-problemas">Errores y solución de problemas</h2>
+<ul><li><strong><code>configure</code> aborta con «libnfc &gt;= 1.7.0 is mandatory»:</strong> instalar <code>libnfc-dev</code> o exportar <code>PKG_CONFIG_PATH</code> hacia la instalación local de libnfc.</li><li><strong><code>configure</code> aborta con «pkg-config not found»:</strong> instalar <code>pkg-config</code>.</li><li><strong>El lector no aparece:</strong> comprobar la regla udev, la lista negra de módulos <code>pn533</code>, y ejecutar con <code>LIBNFC_LOG_LEVEL=3</code> para ver el diagnóstico de libnfc.</li><li><strong>Etiqueta «Unknown ISO14443A tag type»:</strong> el código solo conoce los modelos enumerados en Salidas; no implica un fallo del lector.</li><li><strong>Avisos de autoconf al regenerar:</strong> <code>configure.ac</code> usa macros antiguas (<code>AC_CONFIG_HEADER</code>, <code>svnversion</code>); los avisos no bloquean necesariamente la compilación, pero no se comprobó con autoconf actual.</li></ul>
+<h2 id="advertencias">Advertencias</h2>
+<ul><li>Leer solo tarjetas propias o con autorización: los identificadores de tarjetas de acceso o transporte pueden ser datos personales.</li><li><code>lsnfc</code> envía comandos a las etiquetas (selección, GetVersion, autenticación UL-C); no es un escaneo pasivo.</li><li>Instalar con <code>make install</code> en un prefijo de laboratorio o contenedor si no se quiere modificar el sistema.</li></ul>
+<h2 id="referencias">Referencias</h2>
+<ul><li>Repositorio: <a href="https://github.com/nfc-tools/nfcutils">https://github.com/nfc-tools/nfcutils</a></li><li>Página del proyecto: <a href="https://nfc-tools.github.io/projects/nfcutils/">https://nfc-tools.github.io/projects/nfcutils/</a></li><li>Código de lsnfc: <a href="https://github.com/nfc-tools/nfcutils/blob/master/src/lsnfc.c">https://github.com/nfc-tools/nfcutils/blob/master/src/lsnfc.c</a></li><li>Historial: <a href="https://github.com/nfc-tools/nfcutils/commits/master/">https://github.com/nfc-tools/nfcutils/commits/master/</a></li><li>libnfc: <a href="https://github.com/nfc-tools/libnfc">https://github.com/nfc-tools/libnfc</a></li><li>Etiquetas de libnfc: <a href="https://github.com/nfc-tools/libnfc/tags">https://github.com/nfc-tools/libnfc/tags</a></li></ul>
+<h2 id="limitaciones">Limitaciones</h2>
+<ul><li>Proyecto sin actividad desde 2015, sin releases y con README vacío.</li><li>Las instrucciones de compilación son inferidas de los archivos autotools; no están documentadas por upstream ni se compilaron.</li><li>No se comprobó compatibilidad con libnfc 1.8.0 ni con ningún lector del equipo local.</li><li>No se pudo consultar el AUR (acceso bloqueado al intentarlo); su disponibilidad en Arch/CachyOS queda sin verificar.</li></ul></main></div></body></html>

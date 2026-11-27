@@ -22,6 +22,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const CLI = path.join(__dirname, 'validate-atds.mjs');
 const POLICY = path.join(__dirname, 'atds-strict-policy.json');
+const LOT_E3_01_POLICY = path.join(__dirname, 'atds-lote-e3-01-policy.json');
 
 function run(args) {
   const r = spawnSync(process.execPath, [CLI, ...args], { encoding: 'utf8' });
@@ -57,6 +58,13 @@ function main() {
     fs.writeFileSync(metaPath, JSON.stringify(meta));
     const regPolicy = path.join(tmp, 'regression-policy.json');
     fs.writeFileSync(regPolicy, JSON.stringify({ targets: { semgrep: 'L1' } }));
+    // Lot E3-01 regression: a copy of threat-dragon without its guide must fall below L3.
+    const lotOk = path.join(tmp, 'lot-e3-01-unchanged');
+    const lotBad = path.join(tmp, 'lot-e3-01-degraded');
+    copyRealTool(lotOk, 'threat-dragon');
+    fs.rmSync(path.join(copyRealTool(lotBad, 'threat-dragon'), 'GUIA.md'));
+    const lotPolicy = path.join(tmp, 'lot-e3-01-policy.json');
+    fs.writeFileSync(lotPolicy, JSON.stringify({ targets: { 'threat-dragon': 'L3' } }));
     const badPolicy = path.join(tmp, 'bad-policy.json');
     fs.writeFileSync(badPolicy, JSON.stringify({ targets: { semgrep: 'L7' } }));
 
@@ -71,6 +79,8 @@ function main() {
       { name: 'Fixture L3 / mínimo L3', expect: 0, args: ['--strict', '--root', fx, '--targets', 'fx-l3', '--min-level', 'L3'] },
       { name: 'Fixture L4 / mínimo L4', expect: 0, args: ['--strict', '--root', fx, '--targets', 'fx-l4', '--min-level', 'L4'] },
       { name: 'Regresión: copia intacta de semgrep / política L1', expect: 0, args: ['--strict', '--root', regOk, '--policy', regPolicy] },
+      { name: 'Lote E3-01: política de no regresión (4 fichas)', expect: 0, args: ['--strict', '--policy', LOT_E3_01_POLICY] },
+      { name: 'Lote E3-01: copia intacta de threat-dragon / L3', expect: 0, args: ['--strict', '--root', lotOk, '--policy', lotPolicy] },
       // Negative controls → 1
       { name: 'Semgrep L1 / mínimo L2', expect: 1, args: ['--strict', '--targets', 'semgrep', '--min-level', 'L2'] },
       { name: 'promptfoo NONE / mínimo L1', expect: 1, args: ['--strict', '--targets', 'promptfoo', '--min-level', 'L1'] },
@@ -78,6 +88,7 @@ function main() {
       { name: 'Fixture L1 / mínimo L2', expect: 1, args: ['--strict', '--root', fx, '--targets', 'fx-l1', '--min-level', 'L2'] },
       { name: 'Fixture L4 con artefacto secundario corrupto / mínimo L4', expect: 1, args: ['--strict', '--root', fx, '--targets', 'fx-l4-artefacto-corrupto', '--min-level', 'L4'] },
       { name: 'Regresión: semgrep sin fuentes / política L1', expect: 1, args: ['--strict', '--root', regBad, '--policy', regPolicy] },
+      { name: 'Lote E3-01: threat-dragon sin GUIA.md / L3', expect: 1, args: ['--strict', '--root', lotBad, '--policy', lotPolicy] },
       // Operational errors → 2
       { name: 'Nivel inválido', expect: 2, args: ['--strict', '--targets', 'semgrep', '--min-level', 'L9'] },
       { name: 'Target inexistente', expect: 2, args: ['--strict', '--targets', 'semgrep,herramienta-inexistente', '--min-level', 'L1'] },
