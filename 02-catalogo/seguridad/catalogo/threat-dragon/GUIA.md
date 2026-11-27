@@ -145,6 +145,9 @@ npx ajv validate --allow-union-types -s ~/threat-dragon-v2.schema.json --all-err
 - Configuración: https://www.threatdragon.com/docs/configure/configure.html
 - Docker: https://www.threatdragon.com/docs/install/docker.html
 - Primeros pasos: https://www.threatdragon.com/docs/usage/getting-started.html
+- Amenazas: https://www.threatdragon.com/docs/usage/threats.html
+- Categorías de amenazas: https://www.threatdragon.com/docs/usage/threat-categories.html
+- Diagramas: https://www.threatdragon.com/docs/usage/diagrams.html
 - Esquema de modelos: https://www.threatdragon.com/docs/development/schema.html
 - Analítica: https://www.threatdragon.com/docs/trust/analytics.html
 
