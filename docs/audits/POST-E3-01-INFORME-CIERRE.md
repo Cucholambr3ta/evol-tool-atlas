@@ -211,3 +211,28 @@ gh pr create --base main --head atlas/estabilizacion-post-e3-01
 ```
 
 Después, verificar el run de CI del SHA final en sus logs. No se fusiona sin auditoría independiente.
+
+## Adenda — corrección del P1 NEXT-BATCH-01 (auditoría independiente del PR #4)
+
+- **Hallazgo:** el planificador `scripts/atlas-next-batch.mjs` marcaba como completada una categoría en cuanto una parte de sus herramientas aparecía en una política de lote aprobado. Los sublotes de categorías con más de 6 herramientas habrían omitido herramientas pendientes.
+- **Reproducción con la versión `d4e903f2`:**
+  - Raíz temporal con una categoría de 8 herramientas y un sublote aprobado de 6.
+  - El plan propuso la categoría siguiente y omitió `g7` y `g8`.
+- **Corrección (`7c070aaf`), en `scripts/lib/next-batch.mjs`, ahora función pura con el CLI como envoltorio de solo lectura:**
+  - El progreso se mide por ID.
+  - Una categoría sigue pendiente hasta procesar todas sus herramientas admitidas.
+  - Una categoría ya empezada se continúa primero.
+  - Los sublotes son consecutivos: `E3-NNa` y luego `E3-NNb`, `E3-NNc`… con el mismo número.
+  - Se respeta el límite `--max-tools`, sin repetir ni omitir IDs.
+  - Una política que cita un ID inexistente, o un ID presente en dos políticas, provoca exit 2.
+- **Ajuste formal:** Metodología §1.6–§1.7 y §2 (regla de numeración y nombre de la política del sublote) y paso 2 de la skill canónica.
+- **Pruebas** (`tests/unit/post-e3-01-next-batch.test.ts`, 7/7; junto con la de la skill, 14/14):
+  - progresión categoría de 8 → sublote E3-02a de 6 → sublote E3-02b de 2 → categoría completada, con la unión exacta de IDs y sin intersección;
+  - límite 3 (E3-02a/b/c);
+  - categoría pequeña parcialmente cubierta;
+  - políticas inconsistentes;
+  - CLI real en una raíz temporal;
+  - repositorio real.
+- **Resultado actual sin cambios:** E3-02 = sherlocked, vbsmin, logkeys, python-keylogger.
+- **Alcance:** sin cambios en fichas, `catalogo.json` ni políticas aprobadas. E3-02 no se ha iniciado y el PR no se fusiona.
+- **Certificación del nuevo SHA final:** `npm run check:release` local y el run de GitHub Actions sobre ese SHA se registran en el comentario de cierre del P1 en el PR #4. No se escriben aquí para evitar la autorreferencia del SHA.
