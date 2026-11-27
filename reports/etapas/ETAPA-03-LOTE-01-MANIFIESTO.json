@@ -1,0 +1,597 @@
+{
+  "lote": "E3-01",
+  "etapa": 3,
+  "fecha_consulta": "2026-11-26",
+  "repositorio": "https://github.com/Cucholambr3ta/evol-tool-atlas",
+  "rama": "atlas/etapa-03-lote-01-categorias-minimas",
+  "baseline_main": "48136e09f7cc9964477f6a9101ec3afeeb1280a1",
+  "baseline_coincide_con_indicada": true,
+  "sha_implementacion": "b2476c834393a2d0cacae969174ae414a23b09ab",
+  "sha_final": "Publicado en la descripción del PR y en la entrega (sin autorreferencia).",
+  "metodologia": "docs/atds/METODOLOGIA-ENRIQUECIMIENTO-INCREMENTAL.md",
+  "criterio_orden": "Número efectivo de herramientas por categoría ascendente, contrastado con categorias[].admitidas; empate por categorias[].numero ascendente; exclusiones no consideradas.",
+  "tamano": {
+    "herramientas": 4,
+    "categorias": 4,
+    "pull_requests": 1
+  },
+  "categorias": [
+    {
+      "numero": 2,
+      "nombre": "Modelado de amenazas",
+      "admitidas": 1,
+      "efectivas": 1
+    },
+    {
+      "numero": 3,
+      "nombre": "Detección de intrusiones",
+      "admitidas": 1,
+      "efectivas": 1
+    },
+    {
+      "numero": 4,
+      "nombre": "NFC",
+      "admitidas": 1,
+      "efectivas": 1
+    },
+    {
+      "numero": 5,
+      "nombre": "Anti-forense",
+      "admitidas": 1,
+      "efectivas": 1
+    }
+  ],
+  "herramientas": [
+    {
+      "id": "threat-dragon",
+      "nombre": "OWASP Threat Dragon",
+      "categoria": {
+        "numero": 2,
+        "nombre": "Modelado de amenazas"
+      },
+      "ruta": "02-catalogo/seguridad/catalogo/threat-dragon",
+      "nivel_inicial": "NONE",
+      "nivel_final": "L3",
+      "tipo_guia": "gui",
+      "licencia": "Apache-2.0",
+      "estado_mantenimiento": "ACTIVO · release 2.6.2 publicada 2026-05-10; último commit en main 2026-11-19 (c27988f2e69b).",
+      "fuentes": [
+        {
+          "url": "https://github.com/OWASP/threat-dragon/releases/tag/v2.6.2",
+          "tipo": "oficial_release",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://github.com/OWASP/threat-dragon",
+          "tipo": "oficial_repositorio",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.threatdragon.com/docs/install/docker.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.threatdragon.com/docs/configure/configure.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.threatdragon.com/docs/usage/getting-started.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.threatdragon.com/docs/usage/threat-categories.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.threatdragon.com/docs/development/schema.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.threatdragon.com/docs/trust/analytics.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO"
+        }
+      ],
+      "archivos": [
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/threat-dragon/GUIA.md",
+          "estado": "creado",
+          "sha256": "e616166d2dbbd94e8464cee993cffc143608ba2843cd68e71e86c7c579c8bf94"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/threat-dragon/casos-uso.json",
+          "estado": "creado",
+          "sha256": "863f32737ed6b64695ff9a0204d42dd3a7919fc15d037333df8b24de0f321237"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/threat-dragon/metadata.json",
+          "estado": "modificado",
+          "sha256": "b0c25531def2538f371f4bcc6276d2774a438c99f82648dc6d32aedfbd0c5076"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/threat-dragon/SHA256SUMS.txt",
+          "estado": "modificado",
+          "sha256": "00c7d561d98bd03d83639c2d71e05769fff275139c5ae47de4effbf3d35b1292"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/threat-dragon/README.md",
+          "estado": "sin_cambios",
+          "sha256": "9a3ef606f668682605903145f5cabe56adeb31bc072b182cac4b14877cb22cc4"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/threat-dragon/index.html",
+          "estado": "sin_cambios",
+          "sha256": "eae75a4b1777457c388f17e142b806b912feedd5ffe3650dfef9c0bbac14008a"
+        }
+      ],
+      "skill": null,
+      "casos": 2,
+      "bloqueos": [
+        "Páginas de configuración Bitbucket/GitLab/Google Drive y variable de analítica no consultadas",
+        "Formato interno de ENCRYPTION_KEYS remitido a minimal.env"
+      ],
+      "defectos_doc_pendientes": [
+        "DOC-10: sin evidencia experimental (L4)",
+        "DOC-09: sin skill (informativo; L3 por casos)",
+        "DOC-12: enlaces no comprobados por red"
+      ],
+      "justificacion_nivel": "L1 y L2 (guía GUI con 3+ pasos ordenados y todas las secciones sustantivas) y L3 por casos sustantivos; L4 no: sin evidencia experimental."
+    },
+    {
+      "id": "sagan",
+      "nombre": "Sagan",
+      "categoria": {
+        "numero": 3,
+        "nombre": "Detección de intrusiones"
+      },
+      "ruta": "02-catalogo/seguridad/catalogo/sagan",
+      "nivel_inicial": "NONE",
+      "nivel_final": "L3",
+      "tipo_guia": "cli",
+      "licencia": "GPL-2.0",
+      "estado_mantenimiento": "MANTENIMIENTO_BAJO · última release 2.0.2 (2021-12-29); último commit en main 2025-10-06 (3b9b0fa3ad4d); sagan-rules actualizado 2026-11-25.",
+      "fuentes": [
+        {
+          "url": "https://github.com/quadrantsec/sagan",
+          "tipo": "oficial_repositorio",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://github.com/quadrantsec/sagan/releases",
+          "tipo": "oficial_release",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://sagan.readthedocs.io/en/latest/install.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO_CON_INCONSISTENCIAS"
+        },
+        {
+          "url": "https://sagan.readthedocs.io/en/latest/configuration.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO_CON_INCONSISTENCIAS"
+        },
+        {
+          "url": "https://sagan.readthedocs.io/en/latest/rule-syntax.html",
+          "tipo": "oficial_documentacion",
+          "estado": "VERIFICADO_PARCIAL"
+        },
+        {
+          "url": "https://github.com/quadrantsec/sagan/blob/main/src/usage.c",
+          "tipo": "oficial_codigo",
+          "estado": "VERIFICADO_EN_CODIGO"
+        },
+        {
+          "url": "https://github.com/quadrantsec/sagan-rules",
+          "tipo": "oficial_repositorio",
+          "estado": "VERIFICADO"
+        }
+      ],
+      "archivos": [
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/sagan/GUIA.md",
+          "estado": "creado",
+          "sha256": "96707bd978f8b781f14cad5443105a9744690f00ffd265ebfb17e51d0f05e02d"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/sagan/casos-uso.json",
+          "estado": "creado",
+          "sha256": "92f009503ccba3692353b5d235ddfbe0dc153b517888e71e8ba3edd53d8054d4"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/sagan/metadata.json",
+          "estado": "modificado",
+          "sha256": "70f42e660b24758eb3afe8930bc786c76d4276acf2ffa04f7f400ee0a2bce435"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/sagan/SHA256SUMS.txt",
+          "estado": "modificado",
+          "sha256": "b9748224de2b7c821d7d8ed24d2f717b5432c07c7f9a8631c9793241359f774d"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/sagan/README.md",
+          "estado": "sin_cambios",
+          "sha256": "ad2cd5e082916c8aa3e9a61696bec2f987bce33aebf8d83ca56f2bcad3f55fed"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/sagan/index.html",
+          "estado": "sin_cambios",
+          "sha256": "baffe77ae9e7e5d024eab3c324b4e4cebaa6bb4251b082e0f091766332cda151"
+        }
+      ],
+      "skill": null,
+      "casos": 2,
+      "bloqueos": [
+        "Página Command Line Options vacía (opciones tomadas de src/usage.c en main)",
+        "sagan-peek.html devuelve 404",
+        "Formato de línea 'Sagan format' para -F no documentado"
+      ],
+      "defectos_doc_pendientes": [
+        "DOC-10: sin evidencia experimental (L4)",
+        "DOC-09: sin skill (informativo; L3 por casos)",
+        "DOC-12: enlaces no comprobados por red"
+      ],
+      "justificacion_nivel": "L1, L2 (guía CLI con comandos ejecutables documentados) y L3 por casos sustantivos; L4 no: sin evidencia experimental."
+    },
+    {
+      "id": "nfcutils",
+      "nombre": "nfcutils",
+      "categoria": {
+        "numero": 4,
+        "nombre": "NFC"
+      },
+      "ruta": "02-catalogo/seguridad/catalogo/nfcutils",
+      "nivel_inicial": "NONE",
+      "nivel_final": "L3",
+      "tipo_guia": "cli",
+      "licencia": "GPL-3.0-or-later",
+      "estado_mantenimiento": "INACTIVO · último commit 2015-04-07 (49aa1781205f); sin releases ni etiquetas; repositorio no archivado.",
+      "fuentes": [
+        {
+          "url": "https://github.com/nfc-tools/nfcutils",
+          "tipo": "oficial_repositorio",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://github.com/nfc-tools/nfcutils/commits/master/",
+          "tipo": "oficial_repositorio",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://github.com/nfc-tools/nfcutils/blob/master/configure.ac",
+          "tipo": "oficial_codigo",
+          "estado": "VERIFICADO_EN_CODIGO"
+        },
+        {
+          "url": "https://github.com/nfc-tools/nfcutils/blob/master/src/lsnfc.c",
+          "tipo": "oficial_codigo",
+          "estado": "VERIFICADO_EN_CODIGO"
+        },
+        {
+          "url": "https://github.com/nfc-tools/libnfc",
+          "tipo": "oficial_dependencia",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://packages.debian.org/search?keywords=nfcutils",
+          "tipo": "distribucion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://aur.archlinux.org/packages?K=nfcutils",
+          "tipo": "distribucion",
+          "estado": "BLOQUEADO"
+        }
+      ],
+      "archivos": [
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/nfcutils/GUIA.md",
+          "estado": "creado",
+          "sha256": "fd426915345e2e5c78cf965d4da5050b55da2a9c50fcda577ae3778cf781a3e1"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/nfcutils/casos-uso.json",
+          "estado": "creado",
+          "sha256": "ddca4c4998e83002a64a9d9ad78a62fef0eedefd934a25552a3e79414d5bac8a"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/nfcutils/metadata.json",
+          "estado": "modificado",
+          "sha256": "95d484cb26f521b1bbc36d6acffdb4c6cd105c694a4cb73f8de4d28bbd361d2c"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/nfcutils/SHA256SUMS.txt",
+          "estado": "modificado",
+          "sha256": "3ec5d46e6ca5d2a92f558687fdf66bca5ded9de46bb914d2a0af051405f9b1b2"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/nfcutils/README.md",
+          "estado": "sin_cambios",
+          "sha256": "0c9420976c39767df07bf6a34106137f5ad662bdae0e9b61de96c0aeb36dc67c"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/nfcutils/index.html",
+          "estado": "sin_cambios",
+          "sha256": "f2649dcd9defbb2390bb488824e05dea6e87b64fc308fe20f53226dcaef4fb33"
+        }
+      ],
+      "skill": null,
+      "casos": 2,
+      "bloqueos": [
+        "README de 0 bytes: compilación propuesta e inferida de autotools",
+        "Sin releases ni etiquetas; inactivo desde 2015-04-07",
+        "AUR inaccesible (acceso automatizado denegado)",
+        "Sin lector NFC: compatibilidad de hardware no probada"
+      ],
+      "defectos_doc_pendientes": [
+        "DOC-10: sin evidencia experimental (L4)",
+        "DOC-09: sin skill (informativo; L3 por casos)",
+        "DOC-12: enlaces no comprobados por red",
+        "DOC-02: señal heurística de pocos flags CLI (warning)"
+      ],
+      "justificacion_nivel": "L1, L2 (guía CLI; instalación marcada como propuesta) y L3 por casos sustantivos; L4 no: sin pruebas de hardware ni evidencia."
+    },
+    {
+      "id": "secure-delete",
+      "nombre": "secure-delete",
+      "categoria": {
+        "numero": 5,
+        "nombre": "Anti-forense"
+      },
+      "ruta": "02-catalogo/seguridad/catalogo/secure-delete",
+      "nivel_inicial": "NONE",
+      "nivel_final": "L3",
+      "tipo_guia": "cli",
+      "licencia": "GPL-2.0-only (upstream, según debian/copyright); empaquetado Debian GPL-2.0-or-later",
+      "estado_mantenimiento": "UPSTREAM_INACTIVO · copyright 1997-2003; descarga thc.org/releases/secure_delete-3.1.tar.gz devuelve 404 (2026-11-26); mantenido como paquete Debian 3.1-12.",
+      "fuentes": [
+        {
+          "url": "https://packages.debian.org/trixie/secure-delete",
+          "tipo": "distribucion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://metadata.ftp-master.debian.org/changelogs/main/s/secure-delete/unstable_copyright",
+          "tipo": "distribucion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://manpages.debian.org/trixie/secure-delete/srm.1.en.html",
+          "tipo": "distribucion",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://www.thc.org/releases/secure_delete-3.1.tar.gz",
+          "tipo": "upstream_historico",
+          "estado": "NO_DISPONIBLE"
+        },
+        {
+          "url": "https://github.com/van-hauser-thc/secure-delete",
+          "tipo": "upstream_historico",
+          "estado": "NO_DISPONIBLE"
+        },
+        {
+          "url": "https://csrc.nist.gov/pubs/sp/800/88/r1/final",
+          "tipo": "secundaria_normativa",
+          "estado": "VERIFICADO_HISTORICO"
+        },
+        {
+          "url": "https://btrfs.readthedocs.io/en/latest/Subvolumes.html",
+          "tipo": "secundaria_oficial_tercero",
+          "estado": "VERIFICADO"
+        },
+        {
+          "url": "https://wiki.archlinux.org/title/Securely_wipe_disk",
+          "tipo": "secundaria",
+          "estado": "BLOQUEADO"
+        }
+      ],
+      "archivos": [
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/secure-delete/GUIA.md",
+          "estado": "creado",
+          "sha256": "3f79eaa565f10d876b5f940dd2e0aff3b11b0642035f14af1cd1d383ed188fc3"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/secure-delete/casos-uso.json",
+          "estado": "creado",
+          "sha256": "1b42065f27defc165fc9bbafaf307500ddf9388fd5119d6deac434d69d777fbf"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/secure-delete/metadata.json",
+          "estado": "modificado",
+          "sha256": "10278aecbf6ce96a0a3f8ed85fb30a8e7bf22947aaca1338c3a22076cd6ce9ba"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/secure-delete/SHA256SUMS.txt",
+          "estado": "modificado",
+          "sha256": "a00096784db457a4c61fb18debd89027790ddab2feac460538bf67c18209b245"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/secure-delete/README.md",
+          "estado": "sin_cambios",
+          "sha256": "760525c04c90f717a92658f7259c74d0e5de165927954b854a31bb6b0a63c16b"
+        },
+        {
+          "archivo": "02-catalogo/seguridad/catalogo/secure-delete/index.html",
+          "estado": "sin_cambios",
+          "sha256": "dfdac3ef51b5439afe562f28633d8c0ea7417cd4b335bc3f38fd924182907b33"
+        }
+      ],
+      "skill": null,
+      "casos": 2,
+      "bloqueos": [
+        "thc.org/releases/secure_delete-3.1.tar.gz devuelve 404",
+        "github.com/van-hauser-thc/secure-delete devuelve 404",
+        "Arch Wiki (acceso denegado) y manual GNU shred (HTTP 429) no consultables",
+        "NIST SP 800-88 Rev. 2 no revisada"
+      ],
+      "defectos_doc_pendientes": [
+        "DOC-10: sin evidencia experimental (L4)",
+        "DOC-09: sin skill (informativo; L3 por casos)",
+        "DOC-12: enlaces no comprobados por red",
+        "DOC-02: señal heurística de pocos flags CLI (warning)"
+      ],
+      "justificacion_nivel": "L1, L2 (guía CLI con manuales Debian y limitaciones respaldadas) y L3 por casos de laboratorio desechable; L4 no: nada ejecutado."
+    }
+  ],
+  "commits": [
+    {
+      "sha": "5ea1ff1a685d0a2cf843fa19c30c424a9132e1d4",
+      "mensaje": "docs(e3-01): Modelado de amenazas — OWASP Threat Dragon NONE → L3"
+    },
+    {
+      "sha": "b27cc4ef74b4480fa6370ffab7b94a4f837c5569",
+      "mensaje": "docs(e3-01): Detección de intrusiones — Sagan NONE → L3"
+    },
+    {
+      "sha": "6d9eb2e958e52582d33d23657d7edb428a1c5d3d",
+      "mensaje": "docs(e3-01): NFC — nfcutils NONE → L3"
+    },
+    {
+      "sha": "383eeec949906c645d87166e6cc43a5c4f5ad005",
+      "mensaje": "docs(e3-01): Anti-forense — secure-delete NONE → L3"
+    },
+    {
+      "sha": "a0594f0420aa19e8c311cd4a6b1a1c9649062af3",
+      "mensaje": "test(e3-01): control focalizado de no regresión del lote"
+    },
+    {
+      "sha": "b2476c834393a2d0cacae969174ae414a23b09ab",
+      "mensaje": "docs(atds): metodología reutilizable de enriquecimiento incremental"
+    },
+    {
+      "sha": "commit que contiene este manifiesto",
+      "mensaje": "docs(e3-01): informe y manifiesto del lote"
+    }
+  ],
+  "archivos_de_control": [
+    {
+      "archivo": "scripts/atds-lote-e3-01-policy.json",
+      "estado": "creado",
+      "sha256": "ff7cfc0222934e64b6ccc1ab3b5d1496ced8f5b9a485abee68cfa60aaf48fc58"
+    },
+    {
+      "archivo": "scripts/atds-gate.mjs",
+      "estado": "modificado",
+      "sha256": "bc6d720a4fae8dca88ea8f42d37f293ad628ce6bda79ed736993f4f743c4f8cf"
+    },
+    {
+      "archivo": "tests/unit/etapa-03-lote-01.test.ts",
+      "estado": "creado",
+      "sha256": "b8a55a50fcacfee0e296d2d2a0d02c93f861942b010483e1272c1e23f983da9c"
+    },
+    {
+      "archivo": "docs/atds/METODOLOGIA-ENRIQUECIMIENTO-INCREMENTAL.md",
+      "estado": "creado",
+      "sha256": "0148e4a2967ec0e9817edb7845009aa8d61a367e1ffddcddcdd7b6afb134c051"
+    }
+  ],
+  "validaciones_checkout_limpio": {
+    "sha": "b2476c834393a2d0cacae969174ae414a23b09ab",
+    "entorno": "git worktree, Node 26.13.1",
+    "resultados": [
+      {
+        "comando": "npm ci",
+        "exit": 0,
+        "notas": "avisos de paquetes deprecados; script de instalación de esbuild bloqueado por política local de npm"
+      },
+      {
+        "comando": "npm run generate:data",
+        "exit": 0
+      },
+      {
+        "comando": "npm run typecheck",
+        "exit": 0
+      },
+      {
+        "comando": "npm run lint",
+        "exit": 0,
+        "errores": 0,
+        "advertencias": 0
+      },
+      {
+        "comando": "npm run test:unit",
+        "exit": 0,
+        "archivos": 7,
+        "tests": 356,
+        "tests_lote_e3_01": 43
+      },
+      {
+        "comando": "npm run validate:atds",
+        "exit": 0,
+        "herramientas": 2137
+      },
+      {
+        "comando": "npm run gate:atds",
+        "exit": 0,
+        "controles": 22,
+        "correctos": 22
+      },
+      {
+        "comando": "npm run check",
+        "exit": 0
+      },
+      {
+        "comando": "npm run verify:catalog",
+        "exit": 0
+      }
+    ]
+  },
+  "distribucion_atds": {
+    "antes": {
+      "NONE": 2128,
+      "L1": 9,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0
+    },
+    "despues": {
+      "NONE": 2124,
+      "L1": 9,
+      "L2": 0,
+      "L3": 4,
+      "L4": 0
+    },
+    "cambios": "Solo las cuatro fichas del lote (NONE → L3)."
+  },
+  "politicas": {
+    "etapa_2_prioritarias": "scripts/atds-strict-policy.json sin cambios",
+    "lote_e3_01": "scripts/atds-lote-e3-01-policy.json",
+    "validador_modificado": false
+  },
+  "integridad_catalogo": {
+    "categorias": 49,
+    "herramientas": 2137,
+    "exclusiones": 741,
+    "catalogo_json_sha256": "bf279af87d037e4e904712c3047aac2bfd42e511d530940d335f54cae3410483",
+    "catalogo_json_modificado": false,
+    "fichas_fuera_del_lote_modificadas": 0,
+    "evidencias_creadas": 0,
+    "07_laboratorio_modificado": false
+  },
+  "ci": "Run del SHA final publicado en la descripción del PR y en la entrega.",
+  "pull_request": "Número y URL en la entrega; creado tras este commit.",
+  "limitaciones": [
+    "Guías documentales: ningún comando ejecutado y sin pruebas de hardware.",
+    "index.html y README.md de las fichas no rediseñados.",
+    "El validador comprueba estructura y procedencia, no la corrección técnica de cada paso; los procedimientos [Propuesto] requieren revisión humana.",
+    "Fuentes bloqueadas o inexistentes registradas y no citadas como respaldo.",
+    "NIST SP 800-88 Rev. 1 retirada; Rev. 2 no revisada."
+  ],
+  "fuera_de_alcance": [
+    "Packer",
+    "Keylogger",
+    "Firmware",
+    "Drones",
+    "Bases de datos",
+    "resto de categorías",
+    "E3-02"
+  ],
+  "aprobacion": "Pendiente de auditoría independiente y autorización del propietario. Solo se declara implementado el lote E3-01."
+}
