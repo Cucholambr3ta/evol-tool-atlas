@@ -19,6 +19,8 @@ export class DataContractError extends Error {
   }
 }
 
+const ATDS_LEVELS: ReadonlySet<string> = new Set(['NONE', 'L1', 'L2', 'L3', 'L4']);
+const INTEGRITY_STATES: ReadonlySet<string> = new Set(['VERIFICADA', 'NO_ACREDITADA', 'NO_APLICA']);
 const EVIDENCE_GROUPS: ReadonlySet<EvidenceGroup> = new Set(['verificada', 'expediente', 'historica']);
 
 type Obj = Record<string, unknown>;
@@ -68,6 +70,12 @@ class Checker {
   catalogPath(v: unknown, at: string): string {
     const s = this.str(v, at, { nonEmpty: true });
     if (!isSafeCatalogPath(s)) this.fail(`${at} no es una ruta del catálogo permitida`);
+    return s;
+  }
+
+  isoDate(v: unknown, at: string): string {
+    const s = this.str(v, at);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) this.fail(`${at} no es una fecha AAAA-MM-DD`);
     return s;
   }
 
@@ -122,6 +130,8 @@ export function validateCatalogIndex(raw: unknown): CatalogIndex {
     if (!EVIDENCE_GROUPS.has(t.evidenceGroup as EvidenceGroup)) c.fail(`tools[${i}].evidenceGroup desconocido`);
     c.catalogPath(t.htmlHref, `tools[${i}].htmlHref`);
     c.bool(t.historicalFlag, `tools[${i}].historicalFlag`);
+    if (t.sourceCheckedOn !== null) c.isoDate(t.sourceCheckedOn, `tools[${i}].sourceCheckedOn`);
+    if (!ATDS_LEVELS.has(t.atdsLevel as string)) c.fail(`tools[${i}].atdsLevel desconocido`);
   });
   if (tools.length !== totals.admitted) c.fail('totals.admitted no coincide con la lista de herramientas');
   categories.forEach((item) => {
@@ -134,6 +144,45 @@ export function validateCatalogIndex(raw: unknown): CatalogIndex {
   for (const id of featured) if (!ids.has(id)) c.fail(`featuredIds contiene "${id}", que no está en el índice`);
 
   return raw as CatalogIndex;
+}
+
+/**
+ * ATDS summary of a sheet (ATDS-UI-01). Artifact links must stay inside the sheet's
+ * directory, and VERIFICADA is only accepted for PASS records.
+ */
+function validateAtdsSummary(c: Checker, raw: unknown, at: string, htmlHref: string): void {
+  const a = c.obj(raw, at);
+  if (!ATDS_LEVELS.has(a.candidateLevel as string)) c.fail(`${at}.candidateLevel desconocido`);
+  if (!ATDS_LEVELS.has(a.validatedLevel as string)) c.fail(`${at}.validatedLevel desconocido`);
+  c.str(a.status, `${at}.status`);
+  c.num(a.blockingCount, `${at}.blockingCount`);
+  c.arr(a.findings, `${at}.findings`);
+  c.str(a.contentRevision, `${at}.contentRevision`, { nonEmpty: true });
+  const toolDir = htmlHref.slice(0, htmlHref.lastIndexOf('/') + 1);
+  c.arr(a.resources, `${at}.resources`).forEach((item, j) => {
+    const r = c.obj(item, `${at}.resources[${j}]`);
+    c.str(r.kind, `${at}.resources[${j}].kind`);
+    c.bool(r.present, `${at}.resources[${j}].present`);
+    c.bool(r.valid, `${at}.resources[${j}].valid`);
+    if (r.href !== null) c.catalogPath(r.href, `${at}.resources[${j}].href`);
+  });
+  if (a.evidence === null) return;
+  const ev = c.obj(a.evidence, `${at}.evidence`);
+  c.arr(ev.records, `${at}.evidence.records`).forEach((item, j) => {
+    const r = c.obj(item, `${at}.evidence.records[${j}]`);
+    c.str(r.id, `${at}.evidence.records[${j}].id`);
+    const integrity = c.str(r.integrity, `${at}.evidence.records[${j}].integrity`);
+    if (!INTEGRITY_STATES.has(integrity)) c.fail(`${at}.evidence.records[${j}].integrity desconocido`);
+    if (integrity === 'VERIFICADA' && r.resultado !== 'PASS') c.fail(`${at}.evidence.records[${j}] acredita un resultado que no es PASS`);
+    c.strList(r.limitaciones, `${at}.evidence.records[${j}].limitaciones`);
+    c.arr(r.artifacts, `${at}.evidence.records[${j}].artifacts`).forEach((art, k) => {
+      const ar = c.obj(art, `${at}.evidence.records[${j}].artifacts[${k}]`);
+      if (ar.href !== null) {
+        const href = c.catalogPath(ar.href, `${at}.evidence.records[${j}].artifacts[${k}].href`);
+        if (!href.startsWith(toolDir)) c.fail(`${at}.evidence.records[${j}].artifacts[${k}] apunta fuera de la ficha`);
+      }
+    });
+  });
 }
 
 /**
@@ -177,10 +226,8 @@ export function validateCategoryShard(raw: unknown, expectedSlug: string, index?
       c.catalogPath(r.href, `tools[${i}].technicalResources[${j}].href`);
     });
     c.arr(t.useCases, `tools[${i}].useCases`);
-    if (t.evidence !== null) {
-      const ev = c.obj(t.evidence, `tools[${i}].evidence`);
-      c.arr(ev.records, `tools[${i}].evidence.records`);
-    }
+    if (t.sourceCheckedOn !== null) c.isoDate(t.sourceCheckedOn, `tools[${i}].sourceCheckedOn`);
+    validateAtdsSummary(c, t.atds, `tools[${i}].atds`, String(t.htmlHref));
     if (!isObj(t.rawMetadata)) c.fail(`tools[${i}].rawMetadata debe ser un objeto`);
   });
   if (isObj(cat) && typeof cat.admitted === 'number' && cat.admitted !== tools.length) {

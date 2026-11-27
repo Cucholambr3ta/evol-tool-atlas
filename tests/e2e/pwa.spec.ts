@@ -153,7 +153,8 @@ test.describe('Evol Tool Atlas PWA', () => {
     // Open Semgrep detail view & verify preserved metadata and static link
     await page.locator('[data-tool-id="semgrep"] a', { hasText: 'Ver ficha' }).click();
     await expect(page.getByRole('heading', { name: 'Semgrep', level: 1 })).toBeVisible();
-    await expect(page.getByText('1.186.0', { exact: true })).toBeVisible();
+    // The version is shown in the metadata grid and again in the evidence record.
+    await expect(page.locator('.facts-grid').first().getByText('1.186.0', { exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Volver a Auditoría de código' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Ficha HTML original' })).toHaveAttribute(
       'href',

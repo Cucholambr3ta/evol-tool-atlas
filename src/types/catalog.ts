@@ -27,8 +27,11 @@ export interface ToolSummary {
   evidenceGroup: EvidenceGroup;
   origin: string;
   htmlHref: string;
-  revalidated20261122: boolean;
+  /** Explicit date the source was contrasted (ATDS-UI-05), or null. Replaces revalidated20261122. */
+  sourceCheckedOn: string | null;
   historicalFlag: boolean;
+  /** ATDS validated level, computed at build time by the official validator. */
+  atdsLevel: AtdsLevel;
 }
 
 export interface CatalogIndex {
@@ -64,28 +67,83 @@ export interface UseCaseSummary {
   id: string;
   titulo: string;
   objetivo: string;
-  estado: string;
+  /** Recorded state, e.g. "propuesto_no_ejecutado"; null when the sheet records none. */
+  estado: string | null;
   evidenciaRequerida: string[];
   riesgo: string;
 }
 
-export interface EvidenceRecordSummary {
-  id: string;
-  tipo: string;
-  fecha: string | null;
-  resultado: 'PASS' | 'FAIL' | 'BLOCKED' | 'INCONCLUSIVE' | string;
-  version: string | null;
-  resumen: string;
-  evidencia: string | null;
-  sha256: string | null;
+export type AtdsLevel = 'NONE' | 'L1' | 'L2' | 'L3' | 'L4';
+export type AtdsStatus = 'PASS' | 'FAIL' | 'REVIEW_REQUIRED' | 'ERROR';
+export type AtdsCheckState = 'PASS' | 'FAIL' | 'BLOCKED' | 'ABSENT_OPTIONAL' | 'ABSENT';
+
+export interface AtdsResource {
+  kind: 'metadata' | 'guide' | 'skill' | 'cases' | 'evidence';
+  file: string;
+  /** Present on disk: a link exists. Presence is not validity or certification. */
+  href: string | null;
+  present: boolean;
+  /** The validator's controls for this resource pass. */
+  valid: boolean;
+  check: AtdsCheckState | string;
 }
 
-export interface EvidenceSummary {
-  schema: string;
-  total: number;
-  counts: Record<string, number>;
-  records: EvidenceRecordSummary[];
+export interface AtdsArtifact {
+  nombre: string | null;
+  path: string | null;
+  role: 'primary' | 'artifact';
+  status: string;
+  /** Only set for files inside the sheet's directory that exist. */
+  href: string | null;
+}
+
+export interface AtdsEvidenceRecord {
+  id: string;
+  resultado: 'PASS' | 'FAIL' | 'BLOCKED' | 'INCONCLUSIVE' | string;
+  tipo: string | null;
+  objetivo: string | null;
+  alcance: 'functional' | 'version' | 'none';
+  version: string | null;
+  entorno: string | null;
+  fecha: string | null;
+  criterio: string | null;
+  observado: string | null;
+  resumen: string | null;
+  limitaciones: string[];
+  /** VERIFICADA only when the validator demonstrated integrity, identity, type and scope. */
+  integrity: 'VERIFICADA' | 'NO_ACREDITADA' | 'NO_APLICA';
+  reasons: string[];
+  artifacts: AtdsArtifact[];
+}
+
+export interface AtdsEvidence {
+  schemaStatus: 'MISSING_FILE' | 'INVALID_JSON' | 'INVALID_SCHEMA' | 'EMPTY' | 'OK' | 'NOT_EVALUATED';
+  records: AtdsEvidenceRecord[];
   pendientes: string[];
+  verifiedCount: number;
+  declaredCount: number;
+}
+
+export interface AtdsFindingSummary {
+  code: string;
+  doc: string;
+  level: string;
+  severity: 'ERROR' | 'WARNING' | 'INFO';
+  blocking: boolean;
+}
+
+export interface AtdsSummary {
+  schema: string;
+  candidateLevel: AtdsLevel;
+  validatedLevel: AtdsLevel;
+  status: AtdsStatus;
+  reviewRequired: boolean;
+  blockingCount: number;
+  warningCount: number;
+  findings: AtdsFindingSummary[];
+  resources: AtdsResource[];
+  evidence: AtdsEvidence | null;
+  contentRevision: string;
 }
 
 export interface ToolDetail {
@@ -118,9 +176,9 @@ export interface ToolDetail {
   readmeHref: string | null;
   technicalResources: TechnicalResource[];
   useCases: UseCaseSummary[];
-  evidence: EvidenceSummary | null;
   historicalFlag: boolean;
-  revalidated20261122: boolean;
+  sourceCheckedOn: string | null;
+  atds: AtdsSummary;
   rawMetadata: Record<string, unknown>;
 }
 
