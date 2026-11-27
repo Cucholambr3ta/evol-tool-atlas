@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'node_modules/**', 'public/**', '02-catalogo/**', '05-referencias/**', 'scripts/lib/atds/*.d.ts', 'tests/types/**', 'tests/global.d.ts'],
+    ignores: ['dist/**', 'node_modules/**', 'public/**', '02-catalogo/**', '05-referencias/**'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -44,10 +44,11 @@ export default tseslint.config(
     },
   },
   {
-    files: ['scripts/**/*.d.ts'],
+    // Declaration files for the ATDS .mjs modules: type-only, linted with the
+    // TypeScript rules (no-explicit-any stays on).
+    files: ['scripts/**/*.d.mts'],
     rules: {
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'error',
     },
   },
 );

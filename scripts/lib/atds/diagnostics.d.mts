@@ -1,8 +1,12 @@
+import type { FindingLevel, Severity } from './types.d.mts';
+
+export const DOC_DEFINITIONS: Record<string, { title: string; action: string }>;
+
 export interface Finding {
   doc: string;
   code: string;
-  severity: 'ERROR' | 'WARNING' | 'INFO';
-  level: 'L1' | 'L2' | 'L3' | 'L4' | 'STRUCT';
+  severity: Severity;
+  level: FindingLevel;
   toolId: string | null;
   file: string | null;
   field: string | null;
@@ -12,24 +16,27 @@ export interface Finding {
   evidence?: unknown;
 }
 
-export function makeFinding(input: {
+export interface FindingInput {
   code: string;
-  level?: 'L1' | 'L2' | 'L3' | 'L4' | 'STRUCT';
+  level?: FindingLevel;
   toolId?: string | null;
   file?: string | null;
   field?: string | null;
   message?: string;
   action?: string;
-  severity?: 'ERROR' | 'WARNING' | 'INFO';
+  severity?: Severity;
   blocking?: boolean;
   doc?: string;
   evidence?: unknown;
-}): Finding;
+}
 
 export function mapCodeToDoc(code: string): string;
+export function levelOfCode(code: string): FindingLevel | 'INFO';
+export function findingFromCode(code: string, ctx: { severity: Severity; toolId?: string | null; toolDir?: string | null }): Finding;
+export function makeFinding(input: FindingInput): Finding;
 export function summarizeFindings(findings: Finding[]): {
   byDoc: Record<string, number>;
-  bySeverity: Record<string, number>;
+  bySeverity: Record<Severity, number>;
   total: number;
   blocking: number;
 };

@@ -1,12 +1,17 @@
+import type { ToolType } from './types.d.mts';
+
 export const ROOT: string;
 export const UNVERIFIED_VALUES: ReadonlySet<string>;
+export const UNVERIFIED_PREFIXES: readonly string[];
 export const VAGUE_PATTERNS: readonly RegExp[];
 export function isHttpUrl(v: unknown): boolean;
 export function isVerifiedValue(v: unknown): boolean;
+export function isPlaceholderUrl(v: unknown): boolean;
+export function isIsoDate(v: unknown): boolean;
 export function collectUrls(meta: Record<string, unknown>): string[];
-export function extractTypeFromMeta(meta: Record<string, unknown>): 'cli' | 'gui' | 'api/sdk' | 'service/infra' | 'other';
-export function extractToolIdentity(meta: Record<string, unknown>, toolDir: string): Record<string, unknown>;
-export function normalizeMetadata(rawMeta: Record<string, unknown> | null, toolDir: string): {
+export function extractTypeFromMeta(meta: Record<string, unknown>): ToolType;
+
+export interface ToolIdentity {
   id: string;
   nombre: string;
   descripcion: string;
@@ -22,7 +27,7 @@ export function normalizeMetadata(rawMeta: Record<string, unknown> | null, toolD
   upstream: string;
   sitio_web: string;
   licencia: string;
-  sistema_operativo: string;
+  sistema_operativo: string | string[];
   dependencias: string;
   requisitos: string;
   fecha_verificacion: string;
@@ -31,7 +36,13 @@ export function normalizeMetadata(rawMeta: Record<string, unknown> | null, toolD
   id_catalogo: string;
   toolDir: string;
   rawTipo: string;
+}
+export function extractToolIdentity(meta: Record<string, unknown>, toolDir: string): ToolIdentity;
+
+export interface NormalizedMetadata extends ToolIdentity {
   urls: string[];
-  toolType: 'cli' | 'gui' | 'api/sdk' | 'service/infra' | 'other';
-  raw: Record<string, unknown>;
-};
+  toolType: ToolType;
+  raw: Record<string, unknown> | null | undefined;
+  VAGUE_PATTERNS?: readonly RegExp[];
+}
+export function normalizeMetadata(rawMeta: Record<string, unknown> | null | undefined, toolDir: string): NormalizedMetadata;
