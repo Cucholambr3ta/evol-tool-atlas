@@ -36,7 +36,7 @@ jobs:
       - name: Generate search index and category shards
         run: npm run generate:data
 
-      - name: TypeScript typecheck (App & Service Worker)
+      - name: TypeScript typecheck (App, Service Worker & tests)
         run: npm run typecheck
 
       - name: ESLint check
@@ -44,6 +44,17 @@ jobs:
 
       - name: Run unit tests
         run: npm run test:unit
+
+      # REPORT: evaluates all 2,137 entries; fails only on operational errors
+      # (exit 2), never on inherited documentary gaps.
+      - name: ATDS validation — REPORT mode (full catalogue)
+        run: npm run validate:atds
+
+      # STRICT gate: runs the validator CLI for positive (exit 0), negative
+      # (exit 1) and operational (exit 2) controls, plus the no-regression
+      # policy for the 12 priority tools. Any unexpected exit code fails CI.
+      - name: ATDS validation — STRICT gate (positive, negative, regression)
+        run: npm run gate:atds
 
       - name: Build production PWA & copy static catalog
         env:

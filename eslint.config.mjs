@@ -43,4 +43,12 @@ export default tseslint.config(
       'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
   },
+  {
+    // Declaration files for the ATDS .mjs modules: type-only, linted with the
+    // TypeScript rules (no-explicit-any stays on).
+    files: ['scripts/**/*.d.mts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'error',
+    },
+  },
 );
