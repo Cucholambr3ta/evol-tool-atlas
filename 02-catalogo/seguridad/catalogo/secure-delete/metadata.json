@@ -10,17 +10,148 @@
   "categoria_atlas": "anti-forense",
   "detalle_verificacion": "ESPEJO_Y_DISTRIBUCION_VERIFICADOS",
   "estado": "DISTRIBUCION_VERIFICADA_HEREDADA",
-  "estado_mantenimiento": "Utilidad heredada; la fuente GitHub consultada es un espejo, no upstream",
+  "estado_mantenimiento": "UPSTREAM_INACTIVO · copyright 1997-2003; descarga thc.org/releases/secure_delete-3.1.tar.gz devuelve 404 (2026-11-26); mantenido como paquete Debian 3.1-12.",
   "fuente_distribucion_comprobada": "https://packages.debian.org/trixie/secure-delete",
   "fuente_proyecto": "https://packages.debian.org/trixie/secure-delete",
   "fuentes_consultadas": [
-    "https://packages.debian.org/trixie/secure-delete"
+    "https://packages.debian.org/trixie/secure-delete",
+    "https://packages.debian.org/sid/secure-delete",
+    "https://metadata.ftp-master.debian.org/changelogs/main/s/secure-delete/unstable_copyright",
+    "https://manpages.debian.org/trixie/secure-delete/srm.1.en.html",
+    "https://manpages.debian.org/trixie/secure-delete/sfill.1.en.html",
+    "https://manpages.debian.org/trixie/secure-delete/sswap.1.en.html",
+    "https://manpages.debian.org/trixie/secure-delete/sdmem.1.en.html",
+    "https://csrc.nist.gov/pubs/sp/800/88/r1/final",
+    "https://csrc.nist.gov/pubs/sp/800/88/r2/final",
+    "https://btrfs.readthedocs.io/en/latest/Subvolumes.html"
   ],
   "id": "secure-delete",
   "instalado_en_host": null,
   "nombre": "secure-delete",
   "probado_en_cachyos": false,
   "schema": "evol-tool-atlas/tool/1",
-  "sin_instrucciones_de_instalacion": true,
-  "verificacion_fecha": "2026-11-22"
+  "sin_instrucciones_de_instalacion": false,
+  "verificacion_fecha": "2026-11-22",
+  "categoria": "Anti-forense",
+  "tipo": "Utilidades de línea de comandos (CLI) de sobrescritura de datos",
+  "descripcion": "Conjunto de utilidades de THC (srm, sfill, sswap y sdmem) que sobrescriben archivos, espacio libre, particiones de intercambio y memoria libre con secuencias de pasadas basadas en el método de Peter Gutmann.",
+  "problema_que_resuelve": "Reduce la posibilidad de recuperar el contenido de archivos borrados en medios magnéticos y sistemas de archivos que sobrescriben en el mismo lugar, sin garantizar la irrecuperabilidad en SSD, copy-on-write, snapshots, RAID, NFS ni copias de seguridad.",
+  "funciones_principales": "srm: sobrescritura, renombrado aleatorio, truncado y eliminación de archivos (recursiva con -r); sfill: relleno del espacio libre e inodos libres; sswap: sobrescritura de una partición de swap desactivada; sdmem: sobrescritura de memoria libre; modos reducidos -l/-ll, pasada final con ceros -z y modo rápido inseguro -f.",
+  "sistema_operativo": "Linux; Debian empaqueta 3.1-12 para amd64, arm64, armel, armhf, i386, ppc64el, riscv64 y s390x. sswap declara estar probado solo en Linux.",
+  "licencia": "GPL-2.0-only (upstream, según debian/copyright); empaquetado Debian GPL-2.0-or-later",
+  "dependencias": "Paquete Debian: libc6 (>= 2.34); recomienda libgsecuredelete0; sugiere nautilus-wipe.",
+  "requisitos": "Privilegios de administrador para sfill sobre puntos de montaje ajenos, sswap y sdmem; swap desactivada antes de sswap; uso exclusivo en entornos desechables para pruebas.",
+  "estado_fuente": "DISTRIBUCION_VERIFICADA_HEREDADA",
+  "version_upstream": "3.1",
+  "version_distribucion": {
+    "debian_trixie": "3.1-12",
+    "debian_sid": "3.1-12"
+  },
+  "nota_version_historica": "El valor histórico 1.b63d814 procede de un espejo GitHub no identificado y no coincide con la numeración upstream 3.1; se conserva como trazabilidad.",
+  "estado_mantenimiento_anterior": "Utilidad heredada; la fuente GitHub consultada es un espejo, no upstream",
+  "fecha_verificacion": "2026-11-26",
+  "fuentes_oficiales": {
+    "paquete_debian": "https://packages.debian.org/trixie/secure-delete",
+    "copyright_debian": "https://metadata.ftp-master.debian.org/changelogs/main/s/secure-delete/unstable_copyright",
+    "manual_srm": "https://manpages.debian.org/trixie/secure-delete/srm.1.en.html"
+  },
+  "recursos_tecnicos": {
+    "guia": "02-catalogo/seguridad/catalogo/secure-delete/GUIA.md",
+    "casos_uso": "02-catalogo/seguridad/catalogo/secure-delete/casos-uso.json"
+  },
+  "limites": [
+    "No garantiza irrecuperabilidad: SSD/flash con wear levelling y celdas de reserva, Btrfs y otros copy-on-write, snapshots, RAID, NFS, cachés, bloques remapeados y copias de seguridad pueden conservar datos.",
+    "sswap y sdmem se declaran beta; sswap exige desactivar la swap para no bloquear el sistema.",
+    "Sin desarrollo upstream conocido posterior a 2003; la descarga original de THC no está disponible.",
+    "No se ejecutó ninguna utilidad para esta ficha."
+  ],
+  "registro_fuentes": [
+    {
+      "dato": "Versión 3.1-12 en trixie y sid; arquitecturas; dependencias; Homepage https://www.thc.org",
+      "fuente": "Debian packages",
+      "url": "https://packages.debian.org/trixie/secure-delete",
+      "tipo": "distribucion",
+      "version": "3.1-12",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": "Un resultado de búsqueda secundario indicaba 3.1-10 para trixie; la página del paquete muestra 3.1-12 y prevalece."
+    },
+    {
+      "dato": "Autor van Hauser / THC, copyright 1997-2003, licencia GPL-2; empaquetado GPL-2+",
+      "fuente": "debian/copyright",
+      "url": "https://metadata.ftp-master.debian.org/changelogs/main/s/secure-delete/unstable_copyright",
+      "tipo": "distribucion",
+      "version": "3.1-12",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Opciones, modo por defecto y advertencias de srm, sfill, sswap y sdmem",
+      "fuente": "Páginas de manual Debian trixie",
+      "url": "https://manpages.debian.org/trixie/secure-delete/srm.1.en.html",
+      "tipo": "distribucion",
+      "version": "3.1-12",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "La página de THC no menciona secure-delete y la URL de descarga 3.1 devuelve 404",
+      "fuente": "thc.org",
+      "url": "https://www.thc.org/releases/secure_delete-3.1.tar.gz",
+      "tipo": "upstream_historico",
+      "version": "3.1",
+      "fecha_consulta": "2026-11-26",
+      "estado": "NO_DISPONIBLE",
+      "contradicciones": null
+    },
+    {
+      "dato": "Repositorio GitHub del autor",
+      "fuente": "GitHub",
+      "url": "https://github.com/van-hauser-thc/secure-delete",
+      "tipo": "upstream_historico",
+      "version": null,
+      "fecha_consulta": "2026-11-26",
+      "estado": "NO_DISPONIBLE",
+      "contradicciones": "Devuelve 404; no se encontró repositorio equivalente en la organización hackerschoice citada en el copyright."
+    },
+    {
+      "dato": "Flash/SSD: celdas de reserva y wear levelling impiden sanear con sobrescritura; datos en medios no mapeados pueden permanecer; remapeo de bloques",
+      "fuente": "NIST SP 800-88 Rev. 1, secciones 2.5 y 2.8 y tabla A-8",
+      "url": "https://csrc.nist.gov/pubs/sp/800/88/r1/final",
+      "tipo": "secundaria_normativa",
+      "version": "Rev. 1 (2014, retirada 2025-09-26; sustituida por Rev. 2)",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO_HISTORICO",
+      "contradicciones": "No se revisó el texto de la Rev. 2 vigente."
+    },
+    {
+      "dato": "Btrfs es copy-on-write; snapshot y original comparten bloques y las modificaciones de uno no afectan al otro",
+      "fuente": "Documentación de Btrfs",
+      "url": "https://btrfs.readthedocs.io/en/latest/Subvolumes.html",
+      "tipo": "secundaria_oficial_tercero",
+      "version": "latest",
+      "fecha_consulta": "2026-11-26",
+      "estado": "VERIFICADO",
+      "contradicciones": null
+    },
+    {
+      "dato": "Limitaciones de sobrescritura en Arch Wiki y manual de GNU shred",
+      "fuente": "Arch Wiki / GNU coreutils",
+      "url": "https://wiki.archlinux.org/title/Securely_wipe_disk",
+      "tipo": "secundaria",
+      "version": null,
+      "fecha_consulta": "2026-11-26",
+      "estado": "BLOQUEADO",
+      "contradicciones": "Acceso automatizado denegado (Arch Wiki) y limitación de peticiones (GNU); no se citan."
+    }
+  ],
+  "nivel_atds_e3_01": {
+    "inicial": "NONE",
+    "objetivo_justificado": "L3",
+    "nota": "L4 no aplica: sin evidencias experimentales; los casos son de laboratorio desechable y no se ejecutaron."
+  },
+  "sin_instrucciones_de_instalacion_anterior": true,
+  "nota_instalacion_e3_01": "Desde E3-01 la ficha incluye GUIA.md con instalación documentada o propuesta (no ejecutada)."
 }

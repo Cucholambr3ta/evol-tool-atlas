@@ -1,0 +1,79 @@
+{
+  "schema": "evol-tool-atlas/casos-uso/1",
+  "herramienta": "secure-delete",
+  "id_herramienta": "secure-delete",
+  "fecha_actualizacion": "2026-11-26",
+  "nota": "Casos de análisis de sanitización. Solo en máquina virtual desechable y sobre imágenes de disco en archivo. Ninguno se ejecutó en el Atlas.",
+  "casos": [
+    {
+      "id": "CU-SD-01",
+      "titulo": "Comprobar restos tras srm en una imagen ext4 de laboratorio",
+      "escenario": "Se necesita documentar qué deja srm en un sistema de archivos que sobrescribe en el mismo lugar, como referencia para la política de eliminación de datos de EVOL.",
+      "objetivo": "Medir si un marcador de texto único escrito en un archivo permanece en una imagen ext4 después de eliminar el archivo con srm, comparado con un rm ordinario.",
+      "prerequisitos": [
+        "Máquina virtual desechable con secure-delete 3.1-12",
+        "Dos imágenes de 64 MiB en archivo, sin datos reales",
+        "Marcador de texto único generado para la prueba"
+      ],
+      "pasos": [
+        "Crear y formatear dos imágenes con truncate -s 64M y mkfs.ext4 -F, y montarlas por loop en /mnt/a y /mnt/b.",
+        "Escribir el mismo marcador en /mnt/a/muestra.txt y /mnt/b/muestra.txt y ejecutar sync.",
+        "Eliminar con rm /mnt/a/muestra.txt y con srm -v /mnt/b/muestra.txt, desmontar ambas imágenes.",
+        "Contar apariciones del marcador en cada imagen con grep -c -a y registrar ambos resultados."
+      ],
+      "resultado_esperado": "Recuento del marcador en cada imagen: se espera que la imagen tratada con rm conserve el marcador y que la tratada con srm no lo contenga; cualquier otro resultado se documenta tal cual.",
+      "interpretacion": "La ausencia del marcador en la imagen de srm solo demuestra el comportamiento en ext4 sobre un archivo loop; no se extrapola a SSD, a Btrfs ni a discos reales. El journal de ext4 puede conservar fragmentos según el modo de montaje.",
+      "limites_y_advertencias": [
+        "Nunca usar dispositivos o particiones reales del anfitrión.",
+        "Una imagen loop no reproduce el remapeo ni el wear levelling de un disco físico."
+      ],
+      "referencias": [
+        "https://manpages.debian.org/trixie/secure-delete/srm.1.en.html",
+        "https://csrc.nist.gov/pubs/sp/800/88/r1/final"
+      ],
+      "evidencia_requerida": [
+        "Versión del paquete (dpkg -s)",
+        "Comandos exactos",
+        "Recuentos de grep por imagen",
+        "SHA-256 de las imágenes antes y después"
+      ],
+      "riesgo": "ALTO si se ejecuta fuera de la VM · operación destructiva; BAJO dentro de una VM desechable con imágenes en archivo.",
+      "estado": "propuesto_no_ejecutado"
+    },
+    {
+      "id": "CU-SD-02",
+      "titulo": "Demostrar la limitación de srm frente a snapshots Btrfs",
+      "escenario": "Equipos con Btrfs y snapshots automáticos podrían dar una falsa sensación de borrado seguro al usar srm.",
+      "objetivo": "Documentar con una imagen Btrfs de laboratorio que sobrescribir un archivo con srm en un subvolumen no elimina su contenido de un snapshot tomado antes del borrado.",
+      "prerequisitos": [
+        "Máquina virtual desechable con btrfs-progs y secure-delete",
+        "Imagen de 256 MiB en archivo formateada con mkfs.btrfs",
+        "Marcador de texto único"
+      ],
+      "pasos": [
+        "Montar la imagen por loop, crear el subvolumen datos y escribir datos/muestra.txt con el marcador.",
+        "Crear un snapshot de solo lectura de datos con btrfs subvolume snapshot -r y ejecutar sync.",
+        "Ejecutar srm -v sobre datos/muestra.txt y comprobar que el archivo sigue existiendo dentro del snapshot.",
+        "Desmontar y contar el marcador en la imagen completa con grep -c -a."
+      ],
+      "resultado_esperado": "El archivo con el marcador sigue presente y legible en el snapshot y el marcador aparece en la imagen, aunque srm haya terminado sin errores sobre el subvolumen original.",
+      "interpretacion": "Coherente con la documentación de Btrfs (snapshot y original comparten bloques; modificar uno no afecta al otro). Para datos sensibles en Btrfs se requiere eliminar los snapshots y, preferiblemente, cifrado de volumen con borrado criptográfico.",
+      "limites_y_advertencias": [
+        "No ejecutar sobre el sistema de archivos del anfitrión ni sobre sus snapshots reales.",
+        "Eliminar el snapshot tampoco garantiza la sobrescritura física de los bloques liberados."
+      ],
+      "referencias": [
+        "https://btrfs.readthedocs.io/en/latest/Subvolumes.html",
+        "https://manpages.debian.org/trixie/secure-delete/srm.1.en.html"
+      ],
+      "evidencia_requerida": [
+        "Versiones de secure-delete y btrfs-progs",
+        "Comandos exactos",
+        "Listado del snapshot tras srm",
+        "Recuento de grep"
+      ],
+      "riesgo": "ALTO si se ejecuta fuera de la VM · BAJO dentro de una VM desechable con imagen en archivo.",
+      "estado": "propuesto_no_ejecutado"
+    }
+  ]
+}
