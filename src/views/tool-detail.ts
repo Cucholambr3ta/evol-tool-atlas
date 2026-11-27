@@ -1,4 +1,5 @@
 import { el, formatFactValue, isSafeCatalogPath, isSafeHttpUrl, withBase } from '../lib/dom';
+import { renderBreadcrumbs } from '../components/breadcrumbs';
 import { isFavorite, toggleFavorite } from '../lib/favorites';
 import { createFineLineIcon } from '../lib/icons';
 import { buildHashUrl } from '../lib/router';
@@ -102,17 +103,12 @@ export function renderToolDetailView(
   const header = el(
     'header',
     { className: 'surface-window' },
-    el(
-      'div',
-      { className: 'breadcrumbs' },
-      el('a', { attrs: { href: '#/' }, text: 'Inicio' }),
-      '/',
-      el('a', { attrs: { href: '#/categorias' }, text: 'Categorías' }),
-      '/',
-      el('a', { attrs: { href: catHash }, text: tool.categoryName }),
-      '/',
-      el('span', { text: tool.name }),
-    ),
+    renderBreadcrumbs([
+      { label: 'Inicio', href: '#/' },
+      { label: 'Categorías', href: '#/categorias' },
+      { label: tool.categoryName, href: catHash },
+      { label: tool.name },
+    ]),
     el(
       'div',
       { className: 'detail-header' },

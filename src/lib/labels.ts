@@ -28,10 +28,10 @@ export interface EvidenceStatusLabel {
  * link was checked over the network by the Atlas, and none certifies the tool.
  */
 const STATUS_BASES: Array<[RegExp, string, SourceKind]> = [
-  [/^FUENTE_Y_RELEASE(_OFICIALES)?_VERIFICADOS$/, 'Fuente y publicación oficial verificadas en el registro', 'publicacion-verificada'],
-  [/^RELEASE_OFICIAL_VERIFICADA$/, 'Publicación oficial verificada en el registro', 'publicacion-verificada'],
-  [/^DISTRIBUCION_PYPI_VERIFICADA$/, 'Distribución en PyPI verificada en el registro', 'publicacion-verificada'],
-  [/^FUENTE_OFICIAL_VERIFICADA$/, 'Fuente oficial contrastada en el registro', 'primaria-contrastada'],
+  [/^FUENTE_Y_RELEASE(_OFICIALES)?_VERIFICADOS$/, 'Fuente y publicación oficial verificadas según el registro', 'publicacion-verificada'],
+  [/^RELEASE_OFICIAL_VERIFICADA$/, 'Publicación oficial verificada según el registro', 'publicacion-verificada'],
+  [/^DISTRIBUCION_PYPI_VERIFICADA$/, 'Distribución en PyPI verificada según el registro', 'publicacion-verificada'],
+  [/^FUENTE_OFICIAL_VERIFICADA$/, 'Fuente oficial contrastada según el registro', 'primaria-contrastada'],
   [/^(REVALIDADA_WEB|FUENTE_REVALIDADA_WEB)$/, 'Fuente revalidada en web según el registro', 'primaria-contrastada'],
   [/^FUENTE_(WEB|PUBLICA)_CONTRASTADA$/, 'Fuente pública contrastada según el registro', 'primaria-contrastada'],
   [/^FUENTE_CONTRASTADA_EN_ESTA_ENTREGA$/, 'Fuente contrastada en la entrega documental', 'primaria-contrastada'],

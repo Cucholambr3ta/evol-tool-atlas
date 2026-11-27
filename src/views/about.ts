@@ -1,4 +1,5 @@
 import { el, formatNumber, isSafeCatalogPath, withBase } from '../lib/dom';
+import { renderBreadcrumbs } from '../components/breadcrumbs';
 import { createFineLineIcon } from '../lib/icons';
 import type { CatalogIndex } from '../types/catalog';
 
@@ -20,7 +21,7 @@ export function renderAboutView(index: CatalogIndex): HTMLElement {
     el(
       'header',
       { className: 'surface-window' },
-      el('div', { className: 'breadcrumbs' }, el('a', { attrs: { href: '#/' }, text: 'Inicio' }), '/', el('span', { text: 'Política documental' })),
+      renderBreadcrumbs([{ label: 'Inicio', href: '#/' }, { label: 'Política documental' }]),
       el('h1', { text: 'Política documental, seguridad e identidad EVOL' }),
       el('p', {
         className: 'section-subtitle',
@@ -79,8 +80,17 @@ export function renderAboutView(index: CatalogIndex): HTMLElement {
       { className: 'surface-window' },
       el('h2', { text: 'Documentación y skill de mantenimiento' }),
       el('p', {
-        text: 'El estándar editorial ATDS v1 está disponible en docs/atds/ATDS-v1.md. La skill oficial de curaduría está disponible en skills/atlas-catalog-curator/SKILL.md y enseña a investigar, crear, completar y validar fichas.',
+        text: 'El estándar editorial ATDS v1 define los niveles L1–L4 que el validador calcula para cada ficha. La skill oficial de curaduría enseña a investigar, crear, completar y validar fichas.',
       }),
+      el(
+        'p',
+        { className: 'pill-row' },
+        el('a', {
+          className: 'btn btn-sm',
+          attrs: { href: withBase('docs/atds/ATDS-v1.md'), target: '_blank', rel: 'noopener noreferrer' },
+          text: 'Leer el estándar ATDS v1',
+        }),
+      ),
       isSafeCatalogPath('skills/atlas-catalog-curator/SKILL.md')
         ? el(
             'p',

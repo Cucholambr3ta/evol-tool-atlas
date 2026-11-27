@@ -1,6 +1,6 @@
 import { el, formatNumber, withBase } from './lib/dom';
 import { loadCatalogIndex, loadCategoryShard, loadToolDetail, OfflineUnavailableError } from './lib/data';
-import { subscribeFavorites } from './lib/favorites';
+import { getFavoritesPersistence, subscribeFavorites } from './lib/favorites';
 import { createFineLineIcon } from './lib/icons';
 import { getOfflineStatus } from './lib/offline';
 import { applySwUpdate, getPwaState, initPwa, promptInstall, subscribePwa } from './lib/pwa';
@@ -107,7 +107,7 @@ export function mountApp(rootEl: HTMLElement): void {
     'a',
     {
       className: 'btn btn-sm',
-      attrs: { href: '#/favoritos', 'aria-label': 'Ver herramientas favoritas' },
+      attrs: { href: '#/favoritos', 'aria-label': 'Favoritos (0) — ver herramientas favoritas' },
     },
     createFineLineIcon('favorite'),
     el('span', { text: 'Favoritos' }),
@@ -120,7 +120,7 @@ export function mountApp(rootEl: HTMLElement): void {
     'a',
     {
       className: 'btn btn-sm',
-      attrs: { href: '#/offline', 'aria-label': 'Estado de disponibilidad sin conexión' },
+      attrs: { href: '#/offline', 'aria-label': 'En línea — estado de disponibilidad sin conexión' },
     },
     offlineIconHost,
     offlinePillText,
@@ -131,7 +131,7 @@ export function mountApp(rootEl: HTMLElement): void {
     'button',
     {
       className: 'btn btn-sm',
-      attrs: { type: 'button', 'aria-label': 'Cambiar tema visual (Sistema, Claro, Oscuro)' },
+      attrs: { type: 'button', 'aria-label': 'Tema: Sistema — cambiar tema visual (Sistema, Claro, Oscuro)' },
       on: {
         click: () => {
           cycleThemePreference();
@@ -218,7 +218,15 @@ export function mountApp(rootEl: HTMLElement): void {
     ),
   );
 
-  const systemBanners = el('div', { className: 'system-banners' }, offlineBanner, updateBanner);
+  // FAV-01: never promise persistence the browser did not grant.
+  const favStorageText = el('span', { text: '' });
+  const favStorageBanner = el(
+    'div',
+    { className: 'system-banner', attrs: { role: 'status', hidden: true, 'data-favorites-persistence': 'session-only' } },
+    el('div', { className: 'system-banner-inner' }, el('div', { className: 'system-banner-msg' }, createFineLineIcon('warning'), favStorageText)),
+  );
+
+  const systemBanners = el('div', { className: 'system-banners' }, offlineBanner, updateBanner, favStorageBanner);
 
   // Sidebar + Drawer
   const sidebarCloseBtn = el(
@@ -331,21 +339,58 @@ export function mountApp(rootEl: HTMLElement): void {
 
   rootEl.replaceChildren(shell);
 
-  const setDrawerOpen = (next: boolean) => {
+  // A11Y-01: on narrow screens the sidebar is an overlay drawer. While open, the
+  // rest of the page is inert (not focusable, hidden from assistive tech), focus
+  // moves into the drawer and stays there, and Escape / backdrop / close button
+  // close it and return focus to the menu button. It is not announced as a dialog.
+  const backgroundRegions = (): HTMLElement[] => [skipLink, topbar, systemBanners, mainContent, footer];
+  const isOverlayLayout = () => getComputedStyle(menuBtn).display !== 'none';
+
+  const focusableIn = (root: HTMLElement): HTMLElement[] =>
+    Array.from(
+      root.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+    ).filter((n) => !n.hidden && n.offsetParent !== null);
+
+  const setDrawerOpen = (next: boolean, options: { restoreFocus?: boolean } = {}) => {
+    const wasOpen = drawerOpen;
     drawerOpen = next;
     sidebar.classList.toggle('is-open', next);
     backdrop.classList.toggle('is-visible', next);
     menuBtn.setAttribute('aria-expanded', String(next));
+    const modal = next && isOverlayLayout();
+    for (const region of backgroundRegions()) region.inert = modal;
+    if (modal) {
+      sidebarCloseBtn.focus();
+    } else if (wasOpen && options.restoreFocus) {
+      menuBtn.focus();
+    }
   };
 
-  menuBtn.addEventListener('click', () => setDrawerOpen(!drawerOpen));
-  sidebarCloseBtn.addEventListener('click', () => setDrawerOpen(false));
-  backdrop.addEventListener('click', () => setDrawerOpen(false));
+  menuBtn.addEventListener('click', () => setDrawerOpen(!drawerOpen, { restoreFocus: true }));
+  sidebarCloseBtn.addEventListener('click', () => setDrawerOpen(false, { restoreFocus: true }));
+  backdrop.addEventListener('click', () => setDrawerOpen(false, { restoreFocus: true }));
 
   document.addEventListener('keydown', (ev) => {
     if (ev.key === 'Escape' && drawerOpen) {
-      setDrawerOpen(false);
-      menuBtn.focus();
+      ev.preventDefault();
+      setDrawerOpen(false, { restoreFocus: true });
+      return;
+    }
+    if (ev.key === 'Tab' && drawerOpen && isOverlayLayout()) {
+      const items = focusableIn(sidebar);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (!first || !last) return;
+      if (!sidebar.contains(document.activeElement)) {
+        ev.preventDefault();
+        first.focus();
+      } else if (ev.shiftKey && document.activeElement === first) {
+        ev.preventDefault();
+        last.focus();
+      } else if (!ev.shiftKey && document.activeElement === last) {
+        ev.preventDefault();
+        first.focus();
+      }
       return;
     }
     if (ev.key === '/' && !ev.ctrlKey && !ev.metaKey && !ev.altKey) {
@@ -354,7 +399,7 @@ export function mountApp(rootEl: HTMLElement): void {
         active instanceof HTMLInputElement ||
         active instanceof HTMLTextAreaElement ||
         active instanceof HTMLSelectElement;
-      if (!isInput) {
+      if (!isInput && !drawerOpen) {
         ev.preventDefault();
         topSearchInput.focus();
         topSearchInput.select();
@@ -410,15 +455,23 @@ export function mountApp(rootEl: HTMLElement): void {
     } else {
       offlinePillText.textContent = 'En línea';
     }
+    offlineLink.setAttribute('aria-label', `${offlinePillText.textContent} — estado de disponibilidad sin conexión`);
   };
 
   subscribeTheme((pref) => {
     themeBtnText.textContent = THEME_LABELS[pref];
+    themeBtn.setAttribute('aria-label', `${THEME_LABELS[pref]} — cambiar tema visual (Sistema, Claro, Oscuro)`);
   });
 
-  subscribeFavorites((favs) => {
+  subscribeFavorites((favs, persistence) => {
+    favStorageBanner.hidden = persistence === 'persistent';
+    if (persistence !== 'persistent') {
+      const { reason } = getFavoritesPersistence();
+      favStorageText.textContent = `Favoritos guardados solo durante esta sesión: ${reason ?? 'el almacenamiento local no está disponible.'} Se perderán al cerrar la pestaña.`;
+    }
     const label = formatNumber(favs.length);
     favBadge.textContent = label;
+    favLink.setAttribute('aria-label', `Favoritos (${label}) — ver herramientas favoritas`);
     const sideFavBadge = navLinks.find((l) => l.key === 'favorites')?.badge;
     if (sideFavBadge) sideFavBadge.textContent = label;
   });
@@ -449,8 +502,49 @@ export function mountApp(rootEl: HTMLElement): void {
     refreshSidebarCategories(currentActiveCatSlug);
   };
 
+  // UX-01: one place decides focus and scroll after every view change.
+  let previousRouteKey: string | null = null;
+  const routeKey = (r: Route): string =>
+    r.name === 'tool' ? `tool:${r.id}` : r.name === 'category' ? `category:${r.slug}` : r.name;
+
+  const describeFocus = (node: Element | null): string | null => {
+    if (!(node instanceof HTMLElement) || !mainContent.contains(node)) return null;
+    return node.getAttribute('aria-label') ?? node.getAttribute('name') ?? (node.id || null);
+  };
+
+  const settleView = (route: Route, focusKey: string | null) => {
+    const key = routeKey(route);
+    const changed = key !== previousRouteKey;
+    const first = previousRouteKey === null;
+    previousRouteKey = key;
+    const saved = (history.state as { atlasScrollY?: unknown } | null)?.atlasScrollY;
+    if (typeof saved === 'number') window.scrollTo({ top: saved });
+    else if (changed) window.scrollTo({ top: 0 });
+    if (changed && !first) {
+      const heading = mainContent.querySelector<HTMLElement>('h1') ?? mainContent;
+      if (heading !== mainContent) heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    } else if (focusKey) {
+      // Same view re-rendered (filters, search): keep the user's place.
+      const again = Array.from(mainContent.querySelectorAll<HTMLElement>('[aria-label], [name], [id]')).find(
+        (n) => n.getAttribute('aria-label') === focusKey || n.getAttribute('name') === focusKey || n.id === focusKey,
+      );
+      again?.focus({ preventScroll: true });
+    }
+  };
+
+  let scrollSaveTimer = 0;
+  window.addEventListener('scroll', () => {
+    window.clearTimeout(scrollSaveTimer);
+    scrollSaveTimer = window.setTimeout(() => {
+      const state = (history.state as Record<string, unknown> | null) ?? {};
+      history.replaceState({ ...state, atlasScrollY: window.scrollY }, '');
+    }, 150);
+  }, { passive: true });
+
   const renderCurrentRoute = async () => {
     const token = ++routeToken;
+    const focusKey = describeFocus(document.activeElement);
     const route = parseHashRoute(window.location.hash);
     setDrawerOpen(false);
     updateActiveNav(route);
@@ -465,6 +559,7 @@ export function mountApp(rootEl: HTMLElement): void {
       if (route.name === 'offline') {
         document.title = 'Centro offline · Evol Tool Atlas';
         mainContent.replaceChildren(renderOfflineView(() => void refreshOfflinePill()));
+        settleView(route, focusKey);
         return;
       }
 
@@ -484,6 +579,22 @@ export function mountApp(rootEl: HTMLElement): void {
       } else if (route.name === 'categories') {
         document.title = 'Categorías · Evol Tool Atlas';
         mainContent.replaceChildren(renderCategoriesExplorerView(catalogIndex));
+      } else if (route.name === 'category' && !catalogIndex.categories.some((c) => c.slug === route.slug)) {
+        // Unknown slug: answer from the index instead of fetching a shard that does
+        // not exist (the host would return the SPA shell, not JSON).
+        document.title = 'Categoría no encontrada · Evol Tool Atlas';
+        mainContent.replaceChildren(
+          renderStatePanel({
+            headingLevel: 1,
+            icon: 'warning',
+            title: 'Categoría no encontrada',
+            description: `No existe ninguna categoría con el identificador "${route.slug}".`,
+            actions: [
+              el('a', { className: 'btn btn-primary', attrs: { href: '#/categorias' }, text: 'Ver las 49 categorías' }),
+              el('a', { className: 'btn', attrs: { href: '#/' }, text: 'Volver al inicio' }),
+            ],
+          }),
+        );
       } else if (route.name === 'category') {
         const shard = await loadCategoryShard(route.slug);
         if (token !== routeToken) return;
@@ -501,6 +612,7 @@ export function mountApp(rootEl: HTMLElement): void {
           document.title = 'Ficha no encontrada · Evol Tool Atlas';
           mainContent.replaceChildren(
             renderStatePanel({
+              headingLevel: 1,
               icon: 'warning',
               title: 'Ficha no encontrada',
               description: `No existe ninguna herramienta admitida con el identificador "${route.id}".`,
@@ -510,6 +622,7 @@ export function mountApp(rootEl: HTMLElement): void {
               ],
             }),
           );
+          settleView(route, focusKey);
           return;
         }
         document.title = `${detail.name} · Evol Tool Atlas`;
@@ -524,6 +637,7 @@ export function mountApp(rootEl: HTMLElement): void {
         document.title = 'Ruta no válida · Evol Tool Atlas';
         mainContent.replaceChildren(
           renderStatePanel({
+            headingLevel: 1,
             icon: 'warning',
             title: 'Ruta no válida',
             description:
@@ -540,6 +654,7 @@ export function mountApp(rootEl: HTMLElement): void {
         document.title = 'Página no encontrada · Evol Tool Atlas';
         mainContent.replaceChildren(
           renderStatePanel({
+            headingLevel: 1,
             icon: 'warning',
             title: 'Ruta no encontrada',
             description: `La ruta "${route.path}" no corresponde a una vista del atlas.`,
@@ -549,27 +664,37 @@ export function mountApp(rootEl: HTMLElement): void {
           }),
         );
       }
-      window.scrollTo({ top: 0 });
+      settleView(route, focusKey);
     } catch (err) {
       if (token !== routeToken) return;
       if (err instanceof OfflineUnavailableError) {
         document.title = 'Sin conexión · Evol Tool Atlas';
-        mainContent.replaceChildren(renderOfflineUnavailableState(err.message));
+        mainContent.replaceChildren(renderOfflineUnavailableState(err.message, 1));
       } else {
         document.title = 'Error · Evol Tool Atlas';
         const msg = err instanceof Error ? err.message : 'Error inesperado al cargar la vista.';
-        mainContent.replaceChildren(renderErrorState(msg, () => void renderCurrentRoute()));
+        mainContent.replaceChildren(renderErrorState(msg, () => void safeRender(), 1));
       }
+      settleView(route, focusKey);
     }
   };
+
+  // Never leave a rejected navigation promise unhandled (ROUTER-01).
+  const safeRender = () =>
+    renderCurrentRoute().catch((err: unknown) => {
+      document.title = 'Error · Evol Tool Atlas';
+      mainContent.replaceChildren(
+        renderErrorState(err instanceof Error ? err.message : 'Error inesperado al cargar la vista.', () => void safeRender(), 1),
+      );
+    });
 
   for (const link of navLinkEls.values()) {
     link.addEventListener('click', () => setDrawerOpen(false));
   }
 
   window.addEventListener('hashchange', () => {
-    void renderCurrentRoute();
+    void safeRender();
   });
 
-  void renderCurrentRoute();
+  void safeRender();
 }

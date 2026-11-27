@@ -1,4 +1,5 @@
 import { el, formatNumber } from '../lib/dom';
+import { renderBreadcrumbs } from '../components/breadcrumbs';
 import { getFavoriteIds } from '../lib/favorites';
 import { createFineLineIcon } from '../lib/icons';
 import { buildHashUrl, navigate, type Route } from '../lib/router';
@@ -139,7 +140,7 @@ export function renderSearchView(
     el(
       'header',
       { className: 'surface-window' },
-      el('div', { className: 'breadcrumbs' }, el('a', { attrs: { href: '#/' }, text: 'Inicio' }), '/', el('span', { text: 'Buscador global' })),
+      renderBreadcrumbs([{ label: 'Inicio', href: '#/' }, { label: 'Buscador global' }]),
       el('h1', { text: 'Buscador del catálogo' }),
       summaryLine,
     ),
