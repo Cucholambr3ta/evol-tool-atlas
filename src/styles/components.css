@@ -387,6 +387,35 @@
   font-size: 0.93rem;
 }
 
+/* A11Y-04: ordered list inside nav, same visual trail with "/" separators. */
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs-list li + li::before {
+  content: "/";
+  margin-right: 8px;
+  color: var(--evol-muted);
+}
+
+/* OFF-05: confirmation dialog */
+.confirm-dialog {
+  max-width: min(520px, calc(100vw - 32px));
+  color: var(--evol-text);
+  background: var(--evol-surface);
+  border: var(--evol-border-width) solid var(--evol-border);
+}
+
+.confirm-dialog::backdrop {
+  background: var(--evol-backdrop);
+}
+
 .pagination {
   display: flex;
   align-items: center;

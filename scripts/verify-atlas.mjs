@@ -1,10 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { compareCatalogIndexShards, verifyManifestAgainstDist } from './lib/atlas-consistency.mjs';
+import { resolveBasePath } from './lib/base-path.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
+// QA-04: --release makes dist/ mandatory (publication certification).
+const RELEASE = process.argv.includes('--release');
+const BASE_PATH = resolveBasePath();
 
 // Dynamically constructed so this script itself never embeds forbidden wording.
 const FORBIDDEN_TERM_RE = new RegExp(['bl', 'ack', '\\s*', 'ar', 'ch'].join(''), 'i');
@@ -88,6 +93,14 @@ function verifyCatalogAndLinks() {
   }
 
   assert(shardToolCount === 2137, `Total shard tools mismatch: ${shardToolCount}`);
+
+  // DATA-02: exact equality by ID (not only counts) between catalogo.json, index and shards.
+  const shards = new Map(indexData.categories.map((cat) => [
+    cat.slug,
+    readJson(path.join(ROOT, 'public', 'data', 'categories', `${cat.slug}.json`)),
+  ]));
+  const consistencyErrors = compareCatalogIndexShards({ catalog: catalogo, index: indexData, shards });
+  assert(consistencyErrors.length === 0, `Index/shard inconsistency:\n  ${consistencyErrors.slice(0, 20).join('\n  ')}`);
 
   // Ensure excluded entries (without colliding legitimate names? verify exact tool IDs vs excluded names)
   for (const ex of excludedNames) {
@@ -227,7 +240,8 @@ function verifyZeroForbiddenMentions() {
 
 function verifyDistBuild() {
   if (!fs.existsSync(DIST)) {
-    console.log('dist/ not present yet; skipping dist checks.');
+    assert(!RELEASE, 'dist/ is required in --release mode (run npm run build first)');
+    console.log('dist/ not present yet; skipping dist checks (diagnostic mode, not a release certification).');
     return;
   }
   const manifestPath = path.join(DIST, 'manifest.webmanifest');
@@ -235,11 +249,11 @@ function verifyDistBuild() {
   const manifest = readJson(manifestPath);
   assert(manifest.name === 'Evol Tool Atlas', `Unexpected manifest.name: ${manifest.name}`);
   assert(manifest.display === 'standalone', `Unexpected manifest.display: ${manifest.display}`);
-  assert(manifest.start_url === '/evol-tool-atlas/', `Unexpected manifest.start_url: ${manifest.start_url}`);
-  assert(manifest.scope === '/evol-tool-atlas/', `Unexpected manifest.scope: ${manifest.scope}`);
+  assert(manifest.start_url === BASE_PATH, `Unexpected manifest.start_url: ${manifest.start_url} (expected ${BASE_PATH})`);
+  assert(manifest.scope === BASE_PATH, `Unexpected manifest.scope: ${manifest.scope} (expected ${BASE_PATH})`);
   assert(Array.isArray(manifest.icons) && manifest.icons.length >= 4, 'Manifest must define at least 4 icons');
   for (const icon of manifest.icons) {
-    const cleanIcon = icon.src.replace(/^\/evol-tool-atlas\//, '').replace(/^\//, '');
+    const cleanIcon = icon.src.startsWith(BASE_PATH) ? icon.src.slice(BASE_PATH.length) : icon.src.replace(/^\//, '');
     const iconPath = path.join(DIST, cleanIcon);
     assert(fs.existsSync(iconPath), `Manifest icon missing in dist/: ${icon.src}`);
   }
@@ -252,6 +266,22 @@ function verifyDistBuild() {
   assert(distIndex.includes('Content-Security-Policy'), 'Missing CSP meta in dist/index.html');
   assert(fs.existsSync(path.join(DIST, '02-catalogo', 'seguridad', 'catalogo', 'firmware', 'index.html')), 'Missing static catalog in dist/');
   assert(fs.existsSync(path.join(DIST, '05-referencias', 'auditoria-v2.3.2', 'INFORME-FINAL.json')), 'Missing static references in dist/');
+
+  // OFF-VERIFY-01: the published manifest is the generated one, and every URL it
+  // promises is a file inside dist/ with the declared SHA-256.
+  const distManifestPath = path.join(DIST, 'data', 'offline-manifest.json');
+  assert(fs.existsSync(distManifestPath), 'Missing dist/data/offline-manifest.json');
+  assert(
+    fs.readFileSync(distManifestPath).equals(fs.readFileSync(path.join(ROOT, 'public', 'data', 'offline-manifest.json'))),
+    'dist/data/offline-manifest.json differs from the generated manifest (stale build?)',
+  );
+  const distErrors = verifyManifestAgainstDist({ manifest: readJson(distManifestPath), distDir: DIST });
+  assert(distErrors.length === 0, `Offline manifest vs dist/:\n  ${distErrors.slice(0, 20).join('\n  ')}`);
+
+  // DOC-01: only the authorised docs are published.
+  assert(fs.existsSync(path.join(DIST, 'docs', 'atds', 'ATDS-v1.md')), 'Missing dist/docs/atds/ATDS-v1.md');
+  const publishedDocs = walkFiles(path.join(DIST, 'docs')).map((f) => path.relative(DIST, f));
+  assert(publishedDocs.every((f) => f === path.join('docs', 'atds', 'ATDS-v1.md')), `Unexpected docs published: ${publishedDocs.join(', ')}`);
 }
 
 verifyCatalogAndLinks();

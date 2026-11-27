@@ -44,7 +44,7 @@ describe('ATDS-UI-01: niveles oficiales en el índice y los fragmentos', () => {
       counts[r.validatedLevel] = (counts[r.validatedLevel] ?? 0) + 1;
     }
     expect(counts).toEqual({ NONE: 2124, L1: 9, L3: 4 });
-  });
+  }, 120_000);
 
   it('el índice ligero lleva el mismo nivel validado que el fragmento', () => {
     for (const t of index.tools) expect(t.atdsLevel, t.id).toBe(details.get(t.id)?.atds.validatedLevel);

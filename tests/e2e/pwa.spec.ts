@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
+import { resolveBasePath } from '../../scripts/lib/base-path.mjs';
 
-const BASE_PATH = '/evol-tool-atlas/';
+const BASE_PATH = resolveBasePath();
 const FORBIDDEN_RE = new RegExp(['bl', 'ack', '\\s*', 'ar', 'ch'].join(''), 'i');
 
 test.describe('Evol Tool Atlas PWA', () => {
@@ -18,7 +19,7 @@ test.describe('Evol Tool Atlas PWA', () => {
       pageErrors.push(err.message);
     });
     page.on('response', (res) => {
-      if (res.status() >= 400 && res.url().startsWith('http://127.0.0.1:4174')) {
+      if (res.status() >= 400 && new URL(res.url()).origin === new URL(page.url()).origin) {
         badResponses.push(`${res.status()} ${res.url()}`);
       }
     });
@@ -207,6 +208,7 @@ test.describe('Evol Tool Atlas PWA', () => {
     page,
     context,
   }) => {
+    test.setTimeout(420_000);
     await page.goto(BASE_PATH, { waitUntil: 'networkidle' });
 
     // Validate manifest.webmanifest
@@ -228,7 +230,7 @@ test.describe('Evol Tool Atlas PWA', () => {
     expect(manifest.icons.some((i) => i.purpose === 'maskable')).toBe(true);
 
     for (const icon of manifest.icons) {
-      const iconUrl = new URL(icon.src, `http://127.0.0.1:4174${BASE_PATH}`).pathname;
+      const iconUrl = new URL(icon.src, new URL(BASE_PATH, page.url())).pathname;
       const iconRes = await page.request.get(iconUrl);
       expect(iconRes.ok(), `Icon ${iconUrl} should return HTTP 200`).toBe(true);
     }
@@ -273,9 +275,10 @@ test.describe('Evol Tool Atlas PWA', () => {
     // Resume / complete full catalog download
     await expect(startBtn).toBeEnabled();
     await startBtn.click();
+    // 6.672 resources (≈26 MB) are fetched and SHA-256-checked; allow for loaded CI hosts.
     await expect(
       page.getByText(/Todas las categorías y las 2\.137 fichas están disponibles sin conexión/i),
-    ).toBeVisible({ timeout: 90_000 });
+    ).toBeVisible({ timeout: 300_000 });
 
     // Switch browser to genuine OFFLINE mode
     await context.setOffline(true);

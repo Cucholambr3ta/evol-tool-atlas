@@ -55,6 +55,19 @@ describe('SEC-DATA-01: contrato de los fragmentos por categoría', () => {
     expect(validateCategoryShard(shard, 'modelado-amenazas', index).tools[0]?.id).toBe('threat-dragon');
   });
 
+  it('los 49 fragmentos reales cumplen el contrato contra el índice', () => {
+    const failures: string[] = [];
+    for (const cat of index.categories) {
+      const raw = JSON.parse(fs.readFileSync(path.join(DATA, 'categories', `${cat.slug}.json`), 'utf8')) as unknown;
+      try {
+        validateCategoryShard(raw, cat.slug, index);
+      } catch (e) {
+        failures.push(`${cat.slug}: ${(e as Error).message}`);
+      }
+    }
+    expect(failures).toEqual([]);
+  });
+
   it('rechaza un fragmento servido para otra categoría', () => {
     expect(() => validateCategoryShard(shard, 'otra', index)).toThrow(DataContractError);
   });

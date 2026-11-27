@@ -1,5 +1,6 @@
 import { el, formatNumber } from '../lib/dom';
-import { clearFavorites, getFavorites, removeFavorite } from '../lib/favorites';
+import { renderBreadcrumbs } from '../components/breadcrumbs';
+import { clearFavorites, getFavorites, getFavoritesPersistence, removeFavorite } from '../lib/favorites';
 import { createFineLineIcon } from '../lib/icons';
 import { buildHashUrl } from '../lib/router';
 import { normalizeText } from '../lib/search';
@@ -89,7 +90,11 @@ export function renderFavoritesView(
 
     clearBtn.disabled = favorites.length === 0;
     exportBtn.disabled = favorites.length === 0;
-    countText.textContent = `${formatNumber(favorites.length)} ficha${favorites.length === 1 ? '' : 's'} guardada${favorites.length === 1 ? '' : 's'} localmente en este navegador (sin cuentas ni envío a terceros).`;
+    const n = favorites.length;
+    const where = getFavoritesPersistence().status === 'persistent'
+      ? 'localmente en este navegador'
+      : 'solo durante esta sesión (el almacenamiento local no está disponible)';
+    countText.textContent = `${formatNumber(n)} ficha${n === 1 ? '' : 's'} guardada${n === 1 ? '' : 's'} ${where}, sin cuentas ni envío a terceros.`;
 
     listHost.replaceChildren();
     if (favorites.length === 0) {
@@ -183,7 +188,7 @@ export function renderFavoritesView(
     el(
       'header',
       { className: 'surface-window' },
-      el('div', { className: 'breadcrumbs' }, el('a', { attrs: { href: '#/' }, text: 'Inicio' }), '/', el('span', { text: 'Favoritos' })),
+      renderBreadcrumbs([{ label: 'Inicio', href: '#/' }, { label: 'Favoritos' }]),
       el('h1', { text: 'Favoritos locales' }),
       countText,
     ),

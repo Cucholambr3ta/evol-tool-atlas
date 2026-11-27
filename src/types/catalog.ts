@@ -199,13 +199,19 @@ export interface CategoryShard {
 
 export interface OfflineManifestItem {
   url: string;
-  kind: 'shard' | 'report' | 'category-html' | 'tool-html' | 'tool-resource';
+  kind: 'shard' | 'report' | 'category-html' | 'category-validation' | 'tool-html' | 'tool-resource' | 'evidence-artifact' | 'reference' | string;
+  sha256: string;
+  bytes: number;
 }
 
+/** Deterministic manifest (OFF-03): `revision` is derived from every item's SHA-256. */
 export interface OfflineManifest {
+  schema: string;
+  revision: string;
+  /** First 16 hex characters of `revision`; names the cache of this revision. */
   version: string;
-  generatedAt: string;
   totalFiles: number;
+  totalBytes: number;
   items: OfflineManifestItem[];
 }
 

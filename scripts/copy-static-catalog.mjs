@@ -6,7 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 
-const ITEMS_TO_COPY = ['02-catalogo', '05-referencias', 'skills', 'catalogo.json', 'SHA256SUMS.txt'];
+// DOC-01: docs/ is not copied wholesale; only documents the app links to are published.
+const ITEMS_TO_COPY = ['02-catalogo', '05-referencias', 'skills', 'catalogo.json', 'SHA256SUMS.txt', 'docs/atds/ATDS-v1.md'];
 
 function copyEntry(src, dest) {
   const stat = fs.statSync(src);

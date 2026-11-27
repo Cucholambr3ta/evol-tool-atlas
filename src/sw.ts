@@ -11,7 +11,44 @@ declare const self: ServiceWorkerGlobalScope & {
   __WB_MANIFEST: Array<string | { url: string; revision: string | null }>;
 };
 
+/** Runtime cache filled while browsing online (network-first refresh). */
 const CATALOG_CACHE_NAME = 'evol-atlas-catalog-v1';
+/** Verified offline revisions and their pointer, written by src/lib/offline.ts. */
+const OFFLINE_CACHE_PREFIX = 'evol-atlas-offline-';
+const OFFLINE_META_CACHE = 'evol-atlas-offline-meta';
+const OFFLINE_STATE_URL = '/__evol-atlas/offline-state.json';
+const FALLBACK_CSP = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
+
+/**
+ * Cached copy of a catalogue resource when the network fails. Order: the active
+ * verified revision, then the runtime cache, then any other offline revision
+ * (a partially downloaded new revision or the previous one during an update).
+ */
+async function matchOffline(request: Request): Promise<Response | undefined> {
+  const meta = await caches.open(OFFLINE_META_CACHE);
+  const stateRes = await meta.match(OFFLINE_STATE_URL);
+  let activeName: string | null = null;
+  if (stateRes) {
+    try {
+      const state = (await stateRes.json()) as { activeVersion?: string };
+      if (typeof state.activeVersion === 'string') activeName = `${OFFLINE_CACHE_PREFIX}${state.activeVersion}`;
+    } catch {
+      activeName = null;
+    }
+  }
+  if (activeName && (await caches.has(activeName))) {
+    const hit = await (await caches.open(activeName)).match(request);
+    if (hit) return hit;
+  }
+  const runtime = await (await caches.open(CATALOG_CACHE_NAME)).match(request);
+  if (runtime) return runtime;
+  for (const name of await caches.keys()) {
+    if (!name.startsWith(OFFLINE_CACHE_PREFIX) || name === OFFLINE_META_CACHE || name === activeName) continue;
+    const hit = await (await caches.open(name)).match(request);
+    if (hit) return hit;
+  }
+  return undefined;
+}
 const NETWORK_TIMEOUT_MS = 4000;
 
 precacheAndRoute(self.__WB_MANIFEST);
@@ -145,6 +182,8 @@ registerRoute(
       rel.startsWith('data/categories/') ||
       rel.startsWith('02-catalogo/') ||
       rel.startsWith('05-referencias/') ||
+      rel.startsWith('skills/') ||
+      rel.startsWith('docs/atds/') ||
       rel === 'catalogo.json' ||
       rel === 'SHA256SUMS.txt'
     );
@@ -154,11 +193,22 @@ registerRoute(
     // always preferred (keeps catalog updates visible) and refreshes the cache.
     // The cached copy is used only when the server is unreachable (offline mode).
     const cache = await caches.open(CATALOG_CACHE_NAME);
+    // The offline downloader stores verified copies itself; do not duplicate them.
+    if (request.headers.get('X-Atlas-Offline-Download') === '1') {
+      return fetch(request, { cache: 'no-cache' });
+    }
     try {
-      const response = await fetch(request, {
-        cache: 'no-cache',
-        signal: AbortSignal.timeout(NETWORK_TIMEOUT_MS),
-      });
+      // The timeout only bounds the wait for the response headers. A signal that
+      // stays armed (AbortSignal.timeout) would also abort the body stream and
+      // truncate large shards on slow hosts.
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), NETWORK_TIMEOUT_MS);
+      let response: Response;
+      try {
+        response = await fetch(request, { cache: 'no-cache', signal: controller.signal });
+      } finally {
+        clearTimeout(timer);
+      }
       if (response.ok && response.status === 200) {
         try {
           await cache.put(request, response.clone());
@@ -167,10 +217,10 @@ registerRoute(
         }
         return response;
       }
-      const cachedOnError = await cache.match(request);
+      const cachedOnError = await matchOffline(request);
       return cachedOnError ?? response;
     } catch {
-      const cached = await cache.match(request);
+      const cached = await matchOffline(request);
       if (cached) {
         return cached;
       }
@@ -180,7 +230,7 @@ registerRoute(
         return new Response(buildOfflineFallbackHtml(base, url.pathname), {
           status: 503,
           statusText: 'Offline Unavailable',
-          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+          headers: { 'Content-Type': 'text/html; charset=utf-8', 'Content-Security-Policy': FALLBACK_CSP },
         });
       }
       return new Response(
@@ -206,6 +256,8 @@ const navigationRoute = new NavigationRoute(shellHandler, {
   denylist: [
     /\/02-catalogo\//,
     /\/05-referencias\//,
+    /\/skills\//,
+    /\/docs\/atds\//,
     /\/catalogo\.json$/,
     /\/SHA256SUMS\.txt$/,
   ],

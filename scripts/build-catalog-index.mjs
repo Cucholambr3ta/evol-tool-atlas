@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { evaluateToolSafe } from './lib/atds/evaluate.mjs';
 import { buildAtdsSummary } from './lib/atds/pwa-summary.mjs';
+import { buildOfflineManifest } from './lib/offline-manifest.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -278,6 +279,9 @@ function main() {
 
     const meta = readJson(metaPath);
 
+    resourceOfflineItems.push({ url: `${toolDirRel}/metadata.json`, kind: 'tool-resource' });
+    if (fs.existsSync(readmePath)) resourceOfflineItems.push({ url: `${toolDirRel}/README.md`, kind: 'tool-resource' });
+
     const resourceSpecs = [
       ['GUIA.md', 'Guía técnica', 'guide'],
       ['SKILL.md', 'Skill reutilizable', 'skill'],
@@ -314,6 +318,12 @@ function main() {
     // ATDS-UI-01: official ATDS state from the validator, computed at build time.
     const atdsResult = evaluateToolSafe({ id: String(t.id), href: String(t.href), cat: Number(t.cat) }, { root: ROOT });
     const atds = buildAtdsSummary({ id: String(t.id), href: String(t.href) }, atdsResult, ROOT);
+    // Evidence artifacts the sheet links to (authorised, inside the sheet's directory).
+    for (const rec of atds.evidence?.records ?? []) {
+      for (const art of rec.artifacts) {
+        if (art.href) resourceOfflineItems.push({ url: art.href, kind: 'evidence-artifact' });
+      }
+    }
 
     let description =
       (typeof t.description === 'string' && t.description.trim()) ||
@@ -550,11 +560,21 @@ function main() {
   for (const cat of categories) {
     offlineItems.push({ url: cat.htmlHref, kind: 'category-html' });
   }
+  for (const cat of categories) {
+    // Linked from the category view (OFF-02).
+    for (const href of [cat.validationJsonHref, cat.validationMdHref]) {
+      if (fs.existsSync(path.join(ROOT, href))) offlineItems.push({ url: href, kind: 'category-validation' });
+    }
+  }
   for (const tool of toolSummaries) {
     offlineItems.push({ url: tool.htmlHref, kind: 'tool-html' });
   }
   for (const item of resourceOfflineItems) {
     offlineItems.push(item);
+  }
+  // Documents the app links to from every view (footer, policy page).
+  for (const url of ['catalogo.json', 'SHA256SUMS.txt', 'skills/atlas-catalog-curator/SKILL.md', 'docs/atds/ATDS-v1.md']) {
+    offlineItems.push({ url, kind: 'reference' });
   }
 
   const indexPayload = {
@@ -581,17 +601,12 @@ function main() {
 
   fs.writeFileSync(path.join(OUT_DIR, 'catalog-index.json'), JSON.stringify(indexPayload), 'utf8');
 
-  const offlineManifest = {
-    version: `${indexPayload.date}-${toolSummaries.length}`,
-    generatedAt: new Date().toISOString(),
-    totalFiles: offlineItems.length,
-    items: offlineItems,
-  };
+  const offlineManifest = buildOfflineManifest({ root: ROOT, publicDir: path.join(ROOT, 'public'), items: offlineItems });
 
   fs.writeFileSync(path.join(OUT_DIR, 'offline-manifest.json'), JSON.stringify(offlineManifest), 'utf8');
 
   console.log(
-    `Generated catalog index: ${categories.length} categories, ${toolSummaries.length} tools, ${indexPayload.totals.excluded} excluded, ${offlineItems.length} offline manifest items.`,
+    `Generated catalog index: ${categories.length} categories, ${toolSummaries.length} tools, ${indexPayload.totals.excluded} excluded, ${offlineManifest.totalFiles} offline manifest items (revision ${offlineManifest.version}).`,
   );
 }
 
