@@ -9,7 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT } from './lib/atds/paths.mjs';
 import { parseLevel } from './lib/atds/classify.mjs';
-import { evaluateTool, evaluateStrict, resolveTargets, OperationalError } from './lib/atds/evaluate.mjs';
+import { evaluateToolSafe, evaluateStrict, resolveTargets, OperationalError } from './lib/atds/evaluate.mjs';
 import { buildToolReport, buildSummary, writeReport } from './lib/atds/report.mjs';
 
 function loadCatalog(root) {
@@ -33,7 +33,7 @@ function runReportMode(root, { quiet = false } = {}) {
     tools: [],
   };
   for (const t of tools) {
-    report.tools.push(buildToolReport(t, evaluateTool(t, { root })));
+    report.tools.push(buildToolReport(t, evaluateToolSafe(t, { root })));
   }
   if (report.tools.length !== tools.length) throw new OperationalError('El reporte no cubre todas las herramientas del catálogo');
   report.summary = buildSummary(report);
@@ -54,7 +54,7 @@ function runStrictMode(root, selection) {
   for (let i = 0; i < resolved.length; i++) {
     const { target, tool } = resolved[i];
     const minLevel = selection[i].minLevel;
-    const result = evaluateTool(tool, { root });
+    const result = evaluateToolSafe(tool, { root });
     const strict = evaluateStrict(result, minLevel);
     results.push({ target, toolId: tool.id, validatedLevel: result.validatedLevel, candidateLevel: result.candidateLevel, strict });
     if (strict.passed) {

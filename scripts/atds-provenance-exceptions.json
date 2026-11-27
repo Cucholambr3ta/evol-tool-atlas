@@ -1,0 +1,5 @@
+{
+  "schema": "evol-tool-atlas/atds-provenance-exceptions/1",
+  "descripcion": "Excepciones documentadas a la regla de procedencia ATDS-14: un artefacto de evidencia debe estar dentro del directorio de la ficha cuyo evidencias.json lo declara. Una excepción solo acepta una ubicación histórica para el triple exacto (herramienta, ruta, sha256); no crea evidencia ni repara datos. Cada entrada exige motivo, aprobado_por (propietario del repositorio) y vence (AAAA-MM-DD); una entrada vencida deja de aplicarse sin intervención. A fecha de la estabilización post-E3-01 ninguna evidencia real la necesita.",
+  "exceptions": []
+}

@@ -16,7 +16,13 @@ function buildToolReport(tool, result) {
     issues: result.issues,
     warnings: result.warnings,
     findings: result.findings || [],
+    // ATDS-15: evidenceRefs = verified references that accredit L4; declared ones keep
+    // their own list with an explicit integrityVerified flag.
     evidenceRefs: result.evidenceRefs || [],
+    declaredEvidenceRefs: result.declaredEvidenceRefs || [],
+    verifiedEvidenceRefs: result.verifiedEvidenceRefs || [],
+    evidenceSchemaStatus: result.evidenceSchemaStatus || 'NOT_EVALUATED',
+    resources: result.resources || null,
     evidenceIntegrity: result.evidenceIntegrity || [],
     checkedFiles: result.checkedFiles || [],
     limitations: result.limitations || [],

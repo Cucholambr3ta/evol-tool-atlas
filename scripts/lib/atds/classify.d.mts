@@ -1,12 +1,15 @@
 import type { AtdsLevel, CheckResultBase, LevelResult, ToolStatus } from './types.d.mts';
-import type { EvidenceRecord } from './evidence.d.mts';
+import type { DeclaredEvidenceRef, EvidenceRecord, EvidenceRef } from './evidence.d.mts';
 import type { NormalizedMetadata } from './normalize.d.mts';
 
 export interface L1Result extends LevelResult { score: number }
 export type L2Result = LevelResult;
 export type L3Result = LevelResult;
 export interface L4Result extends LevelResult {
-  evidenceRefs: Array<{ id: string; sha256: string; destRel: string }>;
+  /** Verified references only, and only when L4 evidence holds (ATDS-15). */
+  evidenceRefs: EvidenceRef[];
+  declaredEvidenceRefs: DeclaredEvidenceRef[];
+  verifiedEvidenceRefs: EvidenceRef[];
 }
 
 /** Minimal shape of the normalised metadata the level evaluators read. */
@@ -30,8 +33,14 @@ export function evaluateL3(
 ): L3Result;
 export function evaluateL4(
   l3Result: Pick<LevelResult, 'passed' | 'issues' | 'warnings' | 'checks'>,
-  evidenceResult: CheckResultBase & { stats: { passWithIntegrity: number }; records?: EvidenceRecord[] },
-  normalizedMeta: ClassifiableMeta,
+  evidenceResult: CheckResultBase & {
+    stats: { passWithIntegrity: number };
+    records?: EvidenceRecord[];
+    declaredEvidenceRefs?: DeclaredEvidenceRef[];
+    verifiedEvidenceRefs?: EvidenceRef[];
+  },
+  /** Ignored since ATDS-11: identity is checked in evidence.mjs. Kept for compatibility. */
+  normalizedMeta?: ClassifiableMeta,
 ): L4Result;
 export function computeCandidateLevel(resources: ResourcePresence | undefined): AtdsLevel;
 export function computeLevels(

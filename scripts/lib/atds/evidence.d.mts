@@ -28,11 +28,13 @@ export interface EvidenceRecord {
   limitaciones?: string[];
   criterio_aceptacion?: string;
   resultado_observado?: string;
+  justificacion_tipo?: string;
 }
 
 export type ArtifactStatus =
   | 'VERIFIED' | 'VERIFIED_VIA_PRIMARY' | 'UNVERIFIABLE_NO_PATH' | 'NO_IDENTITY' | 'MALFORMED_HASH'
-  | 'UNSAFE_PATH' | 'MISSING' | 'NOT_A_FILE' | 'HASH_MISMATCH' | 'DUPLICATE';
+  | 'UNSAFE_PATH' | 'MISSING' | 'NOT_A_FILE' | 'HASH_MISMATCH' | 'DUPLICATE'
+  | 'FOREIGN_ARTIFACT' | 'VERIFIED_BY_EXCEPTION';
 
 export interface ArtifactCheck {
   role: 'primary' | 'artifact';
@@ -48,6 +50,10 @@ export interface RecordIntegrity {
   resultado: EvidenceResult;
   supportsL4: boolean;
   versionOnly: boolean;
+  scope: 'functional' | 'version' | 'none';
+  identityOk: boolean;
+  typeOk: boolean;
+  complete: boolean;
   artifacts: ArtifactCheck[];
 }
 
@@ -60,15 +66,51 @@ export interface EvidenceStats {
   versionOnlyCount: number;
 }
 
+export type EvidenceSchemaStatus = 'MISSING_FILE' | 'INVALID_JSON' | 'INVALID_SCHEMA' | 'EMPTY' | 'OK';
+
+export interface EvidenceRef { id: string; sha256: string | null; destRel: string | null }
+export interface DeclaredEvidenceRef extends EvidenceRef { integrityVerified: boolean }
+
+export interface EvidenceIdentity {
+  id?: string;
+  nombre?: string;
+  id_catalogo?: string | null;
+  exceptionsPath?: string;
+  today?: string;
+}
+
+export interface ProvenanceException {
+  id?: string;
+  herramienta: string;
+  ruta: string;
+  sha256: string;
+  motivo: string;
+  aprobado_por: string;
+  vence: string;
+}
+
 export interface EvidenceCheckResult extends CheckResultBase {
+  schemaStatus: EvidenceSchemaStatus;
+  declaredEvidenceRefs: DeclaredEvidenceRef[];
+  verifiedEvidenceRefs: EvidenceRef[];
   records: EvidenceRecord[];
   integrity: RecordIntegrity[];
   limitations: string[];
   stats: EvidenceStats;
 }
 
-export function checkEvidenceContent(evidencePath: string, root: string, docRoot: string): EvidenceCheckResult;
-export function verifyArtifact(art: DeclaredArtifact, docRoot: string, primary: ArtifactCheck | null, role: 'primary' | 'artifact'): ArtifactCheck;
+export function checkEvidenceContent(evidencePath: string, root: string, docRoot: string, identity?: EvidenceIdentity | null): EvidenceCheckResult;
+export function verifyArtifact(
+  art: DeclaredArtifact,
+  docRoot: string,
+  primary: ArtifactCheck | null,
+  role: 'primary' | 'artifact',
+  scope?: { toolDirAbs?: string | null; toolId?: string | null; exceptions?: ProvenanceException[]; today?: string },
+): ArtifactCheck;
 export function isVersionOnlyCommand(comando: unknown): boolean;
+export function commandScope(comando: unknown): 'version' | 'other' | 'none';
+export function normalizeIdentity(value: unknown): string;
+export function loadProvenanceExceptions(filePath?: string): ProvenanceException[];
+export const L4_FUNCTIONAL_TYPES: ReadonlySet<string>;
 export const VALID_EVIDENCE_RESULTS: ReadonlySet<string>;
 export const VALID_TEST_TYPES: ReadonlySet<string>;
