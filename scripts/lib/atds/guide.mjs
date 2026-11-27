@@ -104,65 +104,158 @@ function getGuideSections(toolType) {
   return { required: def.required, markers: def.markers };
 }
 
-function checkContentSubstantive(content, sectionKey, patterns) {
-  const sectionContent = extractSectionContent(content, sectionKey, patterns);
-  if (!sectionContent || sectionContent.trim().length < 50) return false;
-  
-  const vagueCount = VAGUE_PATTERNS.filter(p => p.test(sectionContent)).length;
-  if (vagueCount >= 2) return false;
-  
-  if (PLACEHOLDER_RE.test(sectionContent)) return false;
-  
-  // References section often just lists URLs - special handling
-  if (sectionKey.toLowerCase() === 'referencias' || sectionKey.toLowerCase() === 'referencias oficiales') {
-    // Just check it has at least one URL
-    const urls = (sectionContent.match(/https?:\/\/[^\s)]+/g) || []).length;
-    return urls >= 1;
+/**
+ * Sections whose content must carry the procedure for each tool type, and the
+ * kind of procedural evidence required. These are substantive requirements;
+ * counts of backticks, flags or URLs are only heuristic signals.
+ */
+const PROCEDURE_REQUIREMENTS = {
+  cli: { sections: ['Instalación', 'Verificación', 'Primer uso', 'Comandos', 'Configuración'], need: 'commands' },
+  other: { sections: ['Instalación', 'Verificación', 'Primer uso', 'Comandos o Uso', 'Configuración'], need: 'commandsOrSteps' },
+  gui: { sections: ['Acceso o Instalación', 'Primer uso', 'Interfaz y Flujo', 'Configuración', 'Verificación'], need: 'steps' },
+  'api/sdk': { sections: ['Primer uso', 'Ejemplos de llamada', 'Configuración'], responseSections: ['Respuestas'], need: 'requestResponse' },
+  'service/infra': { sections: ['Configuración', 'Primer uso', 'Operación'], need: 'commandsOrSteps' },
+};
+
+const MIN_SECTION_CHARS = 30;
+const MIN_UNIQUE_WORDS = 4;
+
+function normalizeForComparison(text) {
+  return text.toLowerCase().replace(/https?:\/\/\S+/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
+function checkContentSubstantive(sectionContent, sectionKey) {
+  if (!sectionContent) return false;
+  const text = sectionContent.trim();
+  if (PLACEHOLDER_RE.test(text)) return false;
+  if (VAGUE_PATTERNS.filter((p) => p.test(text)).length >= 2) return false;
+
+  const key = sectionKey.toLowerCase();
+  if (key === 'referencias' || key === 'referencias oficiales') {
+    return (text.match(/https?:\/\/[^\s)]+/g) || []).length >= 1;
   }
-  
-  const words = sectionContent.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  const uniqueWords = new Set(words);
-  // Lower threshold for technical content - 5 unique meaningful words (technical terms count)
-  if (uniqueWords.size < 5) return false;
-  
-  return true;
+  const hasCode = /```[\s\S]*?\S[\s\S]*?```|`[^`\n]+`/.test(text);
+  if (text.length < MIN_SECTION_CHARS && !hasCode) return false;
+  const uniqueWords = new Set(text.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
+  return uniqueWords.size >= MIN_UNIQUE_WORDS || hasCode;
+}
+
+/** Ordered steps such as "1. Abrir el menú Archivo > Nuevo proyecto". */
+function countOrderedSteps(text) {
+  return (text.match(/^\s*\d+[.)]\s+\S.{9,}$/gm) || []).length;
+}
+
+/**
+ * Executable command lines: non-empty lines inside fenced code blocks plus
+ * inline code spans that look like an invocation (`tool arg`, `tool --flag`).
+ */
+function countCommands(text) {
+  let count = 0;
+  for (const block of text.matchAll(/```[^\n]*\n([\s\S]*?)```/g)) {
+    count += block[1].split('\n').filter((l) => l.trim() !== '' && !l.trim().startsWith('#')).length;
+  }
+  const withoutFences = text.replace(/```[\s\S]*?```/g, '');
+  for (const span of withoutFences.matchAll(/`([^`\n]+)`/g)) {
+    if (/^[\w./-]+\s+\S/.test(span[1].trim())) count++;
+  }
+  return count;
+}
+
+function hasRequestExample(text) {
+  return /\b(GET|POST|PUT|PATCH|DELETE|HEAD)\s+\/\S*/.test(text) ||
+    /\bcurl\s+\S/.test(text) ||
+    /```[\s\S]*?\w+\s*\.\s*\w+\s*\([\s\S]*?```/.test(text) ||
+    /```[\s\S]*?\w+\s*\([^)]*\)[\s\S]*?```/.test(text);
+}
+
+function hasResponseExample(text) {
+  return /```[\s\S]*?[{[][\s\S]*?```/.test(text) ||
+    /\b(HTTP\/\d(?:\.\d)?\s+)?[1-5]\d\d\b\s*(OK|Created|Accepted|No Content|Bad Request|Unauthorized|Forbidden|Not Found|Too Many Requests|Internal Server Error|:|-|—)/i.test(text);
+}
+
+/**
+ * Evaluate whether the guide contains a technically usable procedure for its
+ * tool type. Returns the blocking issues (empty when sufficient).
+ */
+function checkProcedure(sectionTexts, toolType) {
+  const req = PROCEDURE_REQUIREMENTS[toolType] || PROCEDURE_REQUIREMENTS.other;
+  const procText = req.sections.map((k) => sectionTexts[k] || '').join('\n');
+  const steps = countOrderedSteps(procText);
+  const commands = countCommands(procText);
+  const issues = [];
+  switch (req.need) {
+    case 'commands':
+      if (commands < 2) issues.push('GUIDE_NO_EXECUTABLE_PROCEDURE');
+      break;
+    case 'steps':
+      if (steps < 3) issues.push('GUIDE_NO_ORDERED_PROCEDURE');
+      break;
+    case 'commandsOrSteps':
+      if (commands < 2 && steps < 3) issues.push('GUIDE_NO_PROCEDURE');
+      break;
+    case 'requestResponse': {
+      const respText = (req.responseSections || []).map((k) => sectionTexts[k] || '').join('\n');
+      if (!hasRequestExample(procText)) issues.push('GUIDE_NO_REQUEST_EXAMPLE');
+      if (!hasResponseExample(respText)) issues.push('GUIDE_NO_RESPONSE_EXAMPLE');
+      break;
+    }
+    default:
+      break;
+  }
+  return { issues, steps, commands };
+}
+
+/**
+ * Detect boilerplate: the same text repeated across several sections.
+ */
+function countRepeatedSections(sectionTexts) {
+  const seen = new Map();
+  for (const text of Object.values(sectionTexts)) {
+    const norm = normalizeForComparison(text);
+    if (norm.length < 20) continue;
+    seen.set(norm, (seen.get(norm) || 0) + 1);
+  }
+  let repeated = 0;
+  for (const n of seen.values()) if (n > 1) repeated += n;
+  return repeated;
 }
 
 function extractSectionContent(content, sectionKey, patterns) {
   const lines = content.split('\n');
   let inSection = false;
-  let result = [];
-  
+  let inFence = false;
+  const result = [];
+
   for (const line of lines) {
-    const headerMatch = line.match(/^#{1,3}\s+(.+)$/);
+    if (/^\s*```/.test(line)) inFence = !inFence;
+    const headerMatch = !inFence && line.match(/^(#{1,3})\s+(.+)$/);
     if (headerMatch) {
-      const header = headerMatch[1].trim();
-      const isMainHeader = line.startsWith('# ') || line.startsWith('## ');
-      const isSubHeader = line.startsWith('### ');
-      
+      const header = headerMatch[2].trim();
+      const isMainHeader = headerMatch[1].length <= 2;
       if (inSection) {
-        if (isMainHeader) {
-          // Main headers (## or #) end the section
-          break;
-        }
-        // Sub-headers (###) should be included in the section content
-        if (isSubHeader) {
-          result.push(line);
-          continue;
-        }
+        if (isMainHeader) break;
+        result.push(line);
+        continue;
       }
-      // Check against patterns - only start on main headers
-      if (isMainHeader && patterns.some(p => header.toLowerCase().includes(p.toLowerCase()))) {
+      if (isMainHeader && patterns.some((p) => header.toLowerCase().includes(p.toLowerCase()))) {
         inSection = true;
         continue;
       }
     }
-    if (inSection) {
-      result.push(line);
-    }
+    if (inSection) result.push(line);
   }
-  
   return result.join('\n').trim();
+}
+
+function hasSectionHeader(content, patterns) {
+  return content.split('\n').some((line) => {
+    const m = line.match(/^#{1,2}\s+(.+)$/);
+    return Boolean(m) && patterns.some((p) => m[1].toLowerCase().includes(p.toLowerCase()));
+  });
+}
+
+function sectionCode(key) {
+  return key.toUpperCase().replace(/[^A-Z0-9]/g, '_');
 }
 
 function checkGuideContent(guidePath, toolType = 'other') {
@@ -173,38 +266,39 @@ function checkGuideContent(guidePath, toolType = 'other') {
   const issues = [];
   const warnings = [];
   const sections = [];
-  
+  const sectionTexts = {};
   const { required, markers } = getGuideSections(toolType);
-  
+
   let foundSections = 0;
   let substantiveSections = 0;
-  
   for (const sec of required) {
-    const found = sec.patterns.some(p => content.includes(p));
-    if (found) {
-      foundSections++;
-      sections.push(sec.key);
-      if (checkContentSubstantive(content, sec.key, sec.patterns)) {
-        substantiveSections++;
-      } else {
-        issues.push(`GUIDE_SECTION_GENERIC_${sec.key.toUpperCase().replace(/[^A-Z0-9]/g, '_')}`);
-      }
-    } else {
-      issues.push(`GUIDE_MISSING_SECTION_${sec.key.toUpperCase().replace(/[^A-Z0-9]/g, '_')}`);
+    if (!hasSectionHeader(content, sec.patterns)) {
+      issues.push(`GUIDE_MISSING_SECTION_${sectionCode(sec.key)}`);
+      continue;
     }
+    foundSections++;
+    sections.push(sec.key);
+    const text = extractSectionContent(content, sec.key, sec.patterns);
+    sectionTexts[sec.key] = text;
+    if (checkContentSubstantive(text, sec.key)) substantiveSections++;
+    else issues.push(`GUIDE_SECTION_GENERIC_${sectionCode(sec.key)}`);
   }
-  
-  const vagueCount = VAGUE_PATTERNS.filter(p => p.test(content)).length;
-  if (vagueCount >= 3) {
-    issues.push('GUIDE_GENERIC_CONTENT');
-  } else if (vagueCount > 0) {
-    warnings.push(`GUIDE_VAGUE_PATTERNS_${vagueCount}`);
-  }
-  
-  if (PLACEHOLDER_RE.test(content)) {
-    issues.push('GUIDE_CONTAINS_PLACEHOLDERS');
-  }
-  
+
+  const vagueCount = VAGUE_PATTERNS.filter((p) => p.test(content)).length;
+  if (vagueCount >= 3) issues.push('GUIDE_GENERIC_CONTENT');
+  else if (vagueCount > 0) warnings.push(`GUIDE_VAGUE_PATTERNS_${vagueCount}`);
+
+  if (PLACEHOLDER_RE.test(content)) issues.push('GUIDE_CONTAINS_PLACEHOLDERS');
+
+  const repeatedSections = countRepeatedSections(sectionTexts);
+  if (repeatedSections >= 3) issues.push('GUIDE_REPETITIVE_CONTENT');
+  else if (repeatedSections > 0) warnings.push('GUIDE_REPEATED_SECTION_TEXT');
+
+  // Substantive requirement: a usable procedure for the tool type.
+  const procedure = checkProcedure(sectionTexts, toolType);
+  issues.push(...procedure.issues);
+
+  // Heuristic signals: informative only, never sufficient nor blocking.
   const backticks = (content.match(/`/g) || []).length;
   const codeFences = (content.match(/```/g) || []).length;
   const cliFlags = (content.match(/--[a-zA-Z][\w-]*/g) || []).length;
@@ -212,36 +306,26 @@ function checkGuideContent(guidePath, toolType = 'other') {
   const guiMarkers = (content.match(/(bot[óo]n|ventana|panel|men[uú]|clic|interfaz|UI|interacci[oó]n)/gi) || []).length;
   const apiMarkers = (content.match(/(endpoint|request|response|payload|json|http|status|header|token|auth)/gi) || []).length;
   const serviceMarkers = (content.match(/(despliegue|provisioning|regi[oó]n|zona|monitoreo|m[eé]trica|sla|costo)/gi) || []).length;
-  
-  let markerPass = true;
-  if (markers.backticks && backticks < markers.backticks) markerPass = false;
-  if (markers.codeFences && codeFences < markers.codeFences) markerPass = false;
-  if (markers.cliFlags && cliFlags < markers.cliFlags) markerPass = false;
-  if (markers.urls && urls < markers.urls) markerPass = false;
-  if (markers.guiMarkers && guiMarkers < markers.guiMarkers) markerPass = false;
-  if (markers.apiMarkers && apiMarkers < markers.apiMarkers) markerPass = false;
-  if (markers.serviceMarkers && serviceMarkers < markers.serviceMarkers) markerPass = false;
-  
-  if (foundSections >= 10 && substantiveSections >= 8 && markerPass) {
-    // Good
-  } else if (foundSections >= 10) {
-    if (substantiveSections < 8) {
-      issues.push('GUIDE_INSUFFICIENT_SUBSTANTIVE_SECTIONS');
-    } else if (!markerPass) {
-      warnings.push('GUIDE_LOW_TECHNICAL_DEPTH');
-    }
+  const signals = { backticks, codeFences, cliFlags, urls, guiMarkers, apiMarkers, serviceMarkers };
+  for (const [name, min] of Object.entries(markers)) {
+    if (typeof signals[name] === 'number' && signals[name] < min) warnings.push(`GUIDE_LOW_SIGNAL_${sectionCode(name)}`);
   }
-  
-  return { 
-    valid: issues.length === 0, 
-    issues, 
-    warnings, 
-    sections, 
-    stats: { 
-      backticks, codeFences, cliFlags, urls, guiMarkers, apiMarkers, serviceMarkers,
-      vagueCount, foundSections, substantiveSections 
-    } 
+
+  return {
+    valid: issues.length === 0,
+    issues,
+    warnings,
+    sections,
+    stats: {
+      ...signals,
+      vagueCount,
+      foundSections,
+      substantiveSections,
+      orderedSteps: procedure.steps,
+      commands: procedure.commands,
+      repeatedSections,
+    },
   };
 }
 
-export { checkGuideContent, getGuideSections, SECTION_DEFINITIONS };
+export { checkGuideContent, getGuideSections, SECTION_DEFINITIONS, PROCEDURE_REQUIREMENTS, countOrderedSteps, countCommands };
