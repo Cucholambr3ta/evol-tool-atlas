@@ -1,5 +1,18 @@
 import type { CatalogIndex, CategoryShard, ToolDetail } from '../types/catalog';
+import { DataContractError, validateCatalogIndex, validateCategoryShard } from './contracts';
 import { withBase } from './dom';
+
+export { DataContractError };
+
+/** Parse a JSON body; malformed JSON is a contract error, not a network error. */
+async function readJson(res: Response, resource: string): Promise<unknown> {
+  const text = await res.text();
+  try {
+    return JSON.parse(text) as unknown;
+  } catch {
+    throw new DataContractError(resource, 'JSON malformado');
+  }
+}
 
 export class OfflineUnavailableError extends Error {
   constructor(message: string) {
@@ -22,10 +35,10 @@ export async function loadCatalogIndex(): Promise<CatalogIndex> {
         if (!res.ok) {
           throw new Error(`No se pudo cargar el índice del catálogo (HTTP ${res.status}).`);
         }
-        return (await res.json()) as CatalogIndex;
+        return validateCatalogIndex(await readJson(res, 'el índice del catálogo'));
       } catch (err) {
         catalogIndexPromise = null;
-        if (err instanceof OfflineUnavailableError) throw err;
+        if (err instanceof OfflineUnavailableError || err instanceof DataContractError) throw err;
         if (typeof navigator !== 'undefined' && !navigator.onLine) {
           throw new OfflineUnavailableError('Sin conexión y sin índice en caché local.');
         }
@@ -51,10 +64,12 @@ export async function loadCategoryShard(slug: string): Promise<CategoryShard> {
       if (!res.ok) {
         throw new Error(`No se pudo cargar la categoría "${slug}" (HTTP ${res.status}).`);
       }
-      return (await res.json()) as CategoryShard;
+      const raw = await readJson(res, `la categoría "${slug}"`);
+      const index = await loadCatalogIndex().catch(() => null);
+      return validateCategoryShard(raw, slug, index);
     } catch (err) {
       shardPromises.delete(slug);
-      if (err instanceof OfflineUnavailableError) throw err;
+      if (err instanceof OfflineUnavailableError || err instanceof DataContractError) throw err;
       if (typeof navigator !== 'undefined' && !navigator.onLine) {
         throw new OfflineUnavailableError(
           `No hay conexión para descargar la categoría "${slug}".`,
@@ -66,6 +81,12 @@ export async function loadCategoryShard(slug: string): Promise<CategoryShard> {
 
   shardPromises.set(slug, promise);
   return promise;
+}
+
+/** Test hook: forget cached promises. */
+export function resetDataCacheForTests(): void {
+  catalogIndexPromise = null;
+  shardPromises.clear();
 }
 
 export async function loadToolDetail(toolId: string): Promise<ToolDetail | null> {
