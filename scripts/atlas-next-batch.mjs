@@ -7,7 +7,7 @@
  * Progress is tracked per tool ID (scripts/lib/next-batch.mjs): a category stays
  * pending until all its admitted tools appear in approved lot policies
  * (scripts/atds-lote-<lote>-policy.json). Categories larger than --max-tools are
- * split into consecutive sub-lots E3-NNa, E3-NNb, … without repeating or skipping IDs.
+ * split into consecutive sub-lots E3-NNa … E3-NNz, E3-NNaa, … without repeating or skipping IDs.
  *
  * Exit codes: 0 = plan produced; 1 = admitidas/efectivas discrepancy (§1.2, stop);
  * 2 = invalid arguments or inconsistent lot policies.
@@ -46,7 +46,7 @@ const plan = planNextBatch({ catalog, lots, maxTools: MAX_TOOLS });
 const output = {
   lote: plan.propuesta ? plan.propuesta.lote : null,
   modo: 'PLAN — solo lectura; no se ha modificado ningún archivo',
-  criterio: `efectivas ascendente; empate por numero; progreso por ID; lote ≤ ${MAX_TOOLS} herramientas; categorías mayores en sublotes E3-NNa, E3-NNb…`,
+  criterio: `efectivas ascendente; empate por numero; progreso por ID; lote ≤ ${MAX_TOOLS} herramientas; categorías mayores en sublotes E3-NNa … E3-NNz, E3-NNaa…`,
   lotes_aprobados: plan.lotes_aprobados,
   herramientas_completadas: plan.herramientas_completadas,
   herramientas_pendientes: plan.herramientas_pendientes,

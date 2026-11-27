@@ -5,10 +5,45 @@
  * admitted tools appears in an approved lot policy. Categories keep the global
  * order (effective tools ascending, ties by numero), except that a category already
  * started is continued first; a category larger than the limit is split into
- * consecutive sub-lots E3-NNa, E3-NNb, … that never repeat or skip an ID.
+ * consecutive sub-lots E3-NNa, E3-NNb, … E3-NNz, E3-NNaa, E3-NNab, … that never
+ * repeat or skip an ID.
  */
 
-const LOT_ID_RE = /^E3-(\d+)([a-z]?)$/i;
+const LOT_ID_RE = /^E3-(\d+)([a-z]*)$/i;
+const SUFFIX_RE = /^[a-z]*$/;
+
+/**
+ * Sub-lot suffix → ordinal, bijective base 26: "" → 0, "a" → 1, "z" → 26,
+ * "aa" → 27, "az" → 52, "ba" → 53, … (no artificial limit).
+ *
+ * @param {string} suffix
+ * @returns {number}
+ */
+export function suffixToIndex(suffix) {
+  const s = String(suffix ?? '').toLowerCase();
+  if (!SUFFIX_RE.test(s)) throw new Error(`Sufijo de sublote no válido: ${suffix}`);
+  let n = 0;
+  for (const ch of s) n = n * 26 + (ch.charCodeAt(0) - 96);
+  return n;
+}
+
+/**
+ * Ordinal → sub-lot suffix (inverse of suffixToIndex): 1 → "a", 26 → "z", 27 → "aa".
+ *
+ * @param {number} index
+ * @returns {string}
+ */
+export function indexToSuffix(index) {
+  if (!Number.isSafeInteger(index) || index < 0) throw new Error(`Ordinal de sublote no válido: ${index}`);
+  let n = index;
+  let s = '';
+  while (n > 0) {
+    n -= 1;
+    s = String.fromCharCode(97 + (n % 26)) + s;
+    n = Math.floor(n / 26);
+  }
+  return s;
+}
 
 /**
  * Parse a lot id such as "E3-01" or "E3-05b".
@@ -22,9 +57,11 @@ export function parseLotId(id) {
   return { number: Number(m[1]), letter: (m[2] ?? '').toLowerCase() };
 }
 
-/** Format a lot id: formatLotId(5, 'b') → "E3-05b". */
+/** Format a lot id: formatLotId(5, 'b') → "E3-05b"; formatLotId(5, 'aa') → "E3-05aa". */
 export function formatLotId(number, letter = '') {
-  return `E3-${String(number).padStart(2, '0')}${letter}`;
+  const suffix = String(letter ?? '').toLowerCase();
+  if (!SUFFIX_RE.test(suffix)) throw new Error(`Sufijo de sublote no válido: ${letter}`);
+  return `E3-${String(number).padStart(2, '0')}${suffix}`;
 }
 
 /**
@@ -100,8 +137,10 @@ export function planNextBatch({ catalog, lots, maxTools = 6 }) {
     let letter;
     if (previous.length > 0) {
       number = previous[0].number;
-      const letters = previous.filter((p) => p.number === number).map((p) => p.letter || 'a');
-      letter = String.fromCharCode(Math.max(...letters.map((x) => x.charCodeAt(0))) + 1);
+      // Next suffix by ordinal (a … z, aa, ab, …), never by comparing characters.
+      // A plain lot number without suffix counts as its first sub-lot ("a").
+      const ordinals = previous.filter((p) => p.number === number).map((p) => suffixToIndex(p.letter) || 1);
+      letter = indexToSuffix(Math.max(...ordinals) + 1);
     } else {
       number = maxNumber + 1;
       letter = 'a';

@@ -54,7 +54,7 @@ Cada paso indica su comando real. Registrar comando, código de salida y resulta
    `node scripts/atlas-next-batch.mjs` (o `--json`). Mide el progreso por ID (una categoría sigue
    pendiente hasta que todas sus herramientas figuren en políticas de lotes aprobados), ordena por
    herramientas efectivas ascendentes (empate por `numero`) continuando primero una categoría ya
-   empezada, propone el lote ≤ 6 herramientas o el sublote `E3-NNa`/`E3-NNb` de una categoría mayor,
+   empezada, propone el lote ≤ 6 herramientas o el sublote `E3-NNa`, `E3-NNb`, …, `E3-NNz`, `E3-NNaa`, … de una categoría mayor,
    y se detiene con exit 1 si `admitidas` ≠ efectivas o con exit 2 si las políticas de lote son
    inconsistentes (Metodología §1–§2).
 3. **Determinar el lote autorizado.** Comparar la propuesta con la autorización humana. Si no hay

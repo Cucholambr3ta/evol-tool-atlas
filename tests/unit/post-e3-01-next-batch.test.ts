@@ -2,6 +2,7 @@
  * P1 de la auditoría del PR #4 — el planificador debe seguir el progreso por ID.
  * Una categoría solo se completa cuando todas sus herramientas admitidas figuran en
  * políticas de lotes aprobados; los sublotes no repiten ni omiten IDs.
+ * NEXT-BATCH-02: los sufijos de sublote son extensibles (a … z, aa, ab, …).
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import * as fs from 'node:fs';
@@ -9,7 +10,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { formatLotId, parseLotId, planNextBatch } from '../../scripts/lib/next-batch.mjs';
+import { formatLotId, indexToSuffix, parseLotId, planNextBatch, suffixToIndex } from '../../scripts/lib/next-batch.mjs';
 import type { BatchPlan } from '../../scripts/lib/next-batch.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -44,6 +45,83 @@ describe('Identificadores de lote', () => {
     expect(parseLotId('e3-01')).toEqual({ number: 1, letter: '' });
     expect(parseLotId('E2')).toBeNull();
   });
+});
+
+describe('NEXT-BATCH-02 — sufijos de sublote extensibles (a … z, aa, ab, …)', () => {
+  it('ordinal biyectivo en base 26, ida y vuelta, sin comparar caracteres sueltos', () => {
+    const pairs: Array<[string, number]> = [['', 0], ['a', 1], ['b', 2], ['z', 26], ['aa', 27], ['ab', 28], ['az', 52], ['ba', 53], ['zz', 702], ['aaa', 703]];
+    for (const [suffix, n] of pairs) {
+      expect(suffixToIndex(suffix)).toBe(n);
+      expect(indexToSuffix(n)).toBe(suffix);
+    }
+    for (let n = 0; n <= 2000; n++) expect(suffixToIndex(indexToSuffix(n))).toBe(n);
+    expect(suffixToIndex('aa')).toBeGreaterThan(suffixToIndex('z'));
+    expect(() => suffixToIndex('{')).toThrow();
+    expect(() => indexToSuffix(-1)).toThrow();
+  });
+
+  it('parseLotId/formatLotId aceptan sufijos de varias letras y siguen siendo compatibles', () => {
+    expect(parseLotId('E3-01')).toEqual({ number: 1, letter: '' });
+    expect(parseLotId('E3-02a')).toEqual({ number: 2, letter: 'a' });
+    expect(parseLotId('E3-02aa')).toEqual({ number: 2, letter: 'aa' });
+    expect(parseLotId('e3-02AQ')).toEqual({ number: 2, letter: 'aq' });
+    expect(parseLotId('E3-01{')).toBeNull();
+    expect(formatLotId(2, 'aa')).toBe('E3-02aa');
+    expect(() => formatLotId(2, '{')).toThrow();
+  });
+
+  // Catálogo sintético: A (1 herramienta) y una categoría grande G de n herramientas.
+  const big = (n: number) => ({
+    categorias: [
+      { numero: 1, slug: 'a', nombre: 'A', admitidas: 1 },
+      { numero: 2, slug: 'g', nombre: 'G', admitidas: n },
+    ],
+    herramientas: [
+      { id: 'a1', cat: 1, href: '02-catalogo/a/a1/index.html' },
+      ...Array.from({ length: n }, (_, i) => ({ id: `g${i + 1}`, cat: 2, href: `02-catalogo/g/g${i + 1}/index.html` })),
+    ],
+  });
+
+  for (const [n, sublots, lastLot, lastSize] of [
+    [160, 27, 'E3-02aa', 4],
+    [257, 43, 'E3-02aq', 5],
+  ] as const) {
+    it(`categoría de ${n}: ${sublots} sublotes E3-02a … ${lastLot}, transición z → aa, todos los IDs una sola vez`, () => {
+      const cat = big(n);
+      let lots: Array<{ id: string; targets: Record<string, string> }> = [];
+      let plan = planNextBatch({ catalog: cat, lots, maxTools: 6 });
+      expect(plan.propuesta).toMatchObject({ lote: 'E3-01', tipo: 'lote', total: 1 });
+      lots = approve(lots, plan);
+
+      const names: string[] = [];
+      const ids: string[] = [];
+      for (;;) {
+        plan = planNextBatch({ catalog: cat, lots, maxTools: 6 });
+        expect(plan.errors).toEqual([]);
+        if (!plan.propuesta) break;
+        expect(plan.propuesta.tipo).toBe('sublote');
+        expect(plan.propuesta.total).toBeLessThanOrEqual(6);
+        expect(parseLotId(plan.propuesta.lote)).not.toBeNull();
+        names.push(plan.propuesta.lote);
+        ids.push(...plan.propuesta.herramientas.map((h) => h.id));
+        lots = approve(lots, plan);
+        expect(names.length).toBeLessThanOrEqual(sublots);
+      }
+
+      expect(names).toHaveLength(sublots);
+      expect(names.slice(0, 2)).toEqual(['E3-02a', 'E3-02b']);
+      expect(names[25]).toBe('E3-02z');
+      expect(names[26]).toBe('E3-02aa');
+      expect(names.at(-1)).toBe(lastLot);
+      expect(new Set(names).size).toBe(names.length);
+      expect(names.map((x) => suffixToIndex(parseLotId(x)!.letter))).toEqual(Array.from({ length: sublots }, (_, i) => i + 1));
+      expect(lots.at(-1)?.targets && Object.keys(lots.at(-1)!.targets)).toHaveLength(lastSize);
+      expect(ids).toEqual(Array.from({ length: n }, (_, i) => `g${i + 1}`));
+      expect(new Set(ids).size).toBe(n);
+      expect(plan.herramientas_pendientes).toBe(0);
+      expect(plan.categorias_completadas).toEqual(['a', 'g']);
+    });
+  }
 });
 
 describe('Progresión por ID: 8 herramientas → sublote de 6 → sublote de 2 → completada', () => {
@@ -143,6 +221,36 @@ describe('CLI real: progresión en una raíz temporal y resultado actual del rep
     expect(status).toBe(0);
     expect(plan.lote).toBe('E3-02b');
     expect(plan.propuesta?.herramientas.map((h) => h.id)).toEqual(['b7', 'b8']);
+  });
+
+  it('NEXT-BATCH-02: con E3-02a … E3-02z en disco propone E3-02aa con los IDs siguientes', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'atlas-next-batch-aa-'));
+    try {
+      fs.mkdirSync(path.join(dir, 'scripts', 'lib'), { recursive: true });
+      fs.copyFileSync(path.join(ROOT, 'scripts', 'atlas-next-batch.mjs'), path.join(dir, 'scripts', 'atlas-next-batch.mjs'));
+      fs.copyFileSync(path.join(ROOT, 'scripts', 'lib', 'next-batch.mjs'), path.join(dir, 'scripts', 'lib', 'next-batch.mjs'));
+      const n = 160;
+      fs.writeFileSync(
+        path.join(dir, 'catalogo.json'),
+        JSON.stringify({
+          categorias: [{ numero: 1, slug: 'g', nombre: 'G', admitidas: n }],
+          herramientas: Array.from({ length: n }, (_, i) => ({ id: `g${i + 1}`, cat: 1, href: `02-catalogo/g/g${i + 1}/index.html` })),
+        }),
+      );
+      for (let k = 1; k <= 26; k++) {
+        const ids = Array.from({ length: 6 }, (_, j) => `g${(k - 1) * 6 + j + 1}`);
+        fs.writeFileSync(
+          path.join(dir, 'scripts', `atds-lote-e3-02${indexToSuffix(k)}-policy.json`),
+          JSON.stringify({ targets: Object.fromEntries(ids.map((i) => [i, 'L1'])) }),
+        );
+      }
+      const { status, plan } = run(dir);
+      expect(status).toBe(0);
+      expect(plan.lote).toBe('E3-02aa');
+      expect(plan.propuesta?.herramientas.map((h) => h.id)).toEqual(['g157', 'g158', 'g159', 'g160']);
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
   });
 
   it('repositorio real: E3-02 = sherlocked, vbsmin, logkeys, python-keylogger', () => {

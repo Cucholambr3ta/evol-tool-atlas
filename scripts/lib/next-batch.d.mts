@@ -1,4 +1,6 @@
 export function parseLotId(id: string): { number: number; letter: string } | null;
+export function suffixToIndex(suffix: string): number;
+export function indexToSuffix(index: number): string;
 export function formatLotId(number: number, letter?: string): string;
 export interface PlanTool { id: string; ruta: string }
 export interface PlanCategory { numero: number; slug: string; nombre: string; efectivas: number; completadas: number; pendientes: number }
