@@ -355,6 +355,16 @@ export function writeFixtureEvidence(root, toolDir, meta, options = {}) {
     ],
     limitaciones: ['Fixture sintética; no demuestra comportamiento sobre código real.'],
   };
+  // Negative variants used by the STRICT gate (post-E3-01): each must deny L4.
+  if (options.unknownType) record.tipo = 'escaneo_acotado';
+  if (options.wrappedVersion) record.comando = 'env LANG=C fx-cli --version';
+  if (options.toolMismatch) record.herramienta = 'Herramienta ajena';
+  if (options.foreignArtifact) {
+    const foreignDir = path.join(root, 'fixtures', 'ficha-ajena', 'evidencias');
+    fs.mkdirSync(foreignDir, { recursive: true });
+    fs.writeFileSync(path.join(foreignDir, 'ejecucion.log'), log);
+    record.artefactos[1] = { nombre: 'Registro de ejecución', sha256: sha256(log), destRel: 'fixtures/ficha-ajena/evidencias/ejecucion.log' };
+  }
   const doc = { schema: 'evol-tool-atlas/evidencias/1', herramienta: meta.nombre, id_catalogo: meta.id_catalogo, registros: [record] };
   fs.writeFileSync(path.join(root, toolDir, 'evidencias.json'), JSON.stringify(doc, null, 2));
   return doc;
@@ -376,6 +386,17 @@ export const FIXTURE_SPECS = [
   { id: 'fx-l3', expected: 'L3', guide: CLI_GUIDE, skill: true, cases: true },
   { id: 'fx-l4', expected: 'L4', guide: CLI_GUIDE, skill: true, cases: true, evidence: {} },
   { id: 'fx-l4-artefacto-corrupto', expected: 'L3', guide: CLI_GUIDE, skill: true, cases: true, evidence: { corruptSecondary: true } },
+];
+
+/**
+ * Post-E3-01 negative L4 fixtures (ATDS-11..14). Kept apart from FIXTURE_SPECS so
+ * the historical E2 expectations stay unchanged; each one must stay at L3.
+ */
+export const NEGATIVE_L4_FIXTURE_SPECS = [
+  { id: 'fx-l4-tipo-desconocido', expected: 'L3', guide: CLI_GUIDE, skill: true, cases: true, evidence: { unknownType: true } },
+  { id: 'fx-l4-version-envuelta', expected: 'L3', guide: CLI_GUIDE, skill: true, cases: true, evidence: { wrappedVersion: true } },
+  { id: 'fx-l4-identidad-ajena', expected: 'L3', guide: CLI_GUIDE, skill: true, cases: true, evidence: { toolMismatch: true } },
+  { id: 'fx-l4-artefacto-ajeno', expected: 'L3', guide: CLI_GUIDE, skill: true, cases: true, evidence: { foreignArtifact: true } },
 ];
 
 /**

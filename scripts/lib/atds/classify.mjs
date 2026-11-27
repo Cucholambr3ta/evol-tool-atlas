@@ -117,6 +117,19 @@ function evaluateL2(l1Result, guideResult, normalizedMeta) {
   return { passed: !issues.some((i) => i.startsWith('L2_')), issues, warnings, checks };
 }
 
+/**
+ * State of an L3 resource (ATDS-L3-01). Skill and use cases are alternatives:
+ * when one of them is valid, the other is optional and its absence is not a failure.
+ *
+ * @returns {'PASS'|'FAIL'|'ABSENT_OPTIONAL'|'ABSENT'}
+ */
+function resourceState(result, missingCode, otherSatisfies) {
+  const absent = Array.isArray(result.issues) && result.issues.includes(missingCode);
+  if (result.valid) return 'PASS';
+  if (absent) return otherSatisfies ? 'ABSENT_OPTIONAL' : 'ABSENT';
+  return 'FAIL';
+}
+
 function evaluateL3(l2Result, skillResult, casesResult) {
   if (!l2Result.passed) {
     return { passed: false, issues: ['L3_BLOCKED_BY_L2'], warnings: [], checks: { L3_SKILL: 'BLOCKED', L3_CASOS: 'BLOCKED' } };
@@ -125,22 +138,29 @@ function evaluateL3(l2Result, skillResult, casesResult) {
   const warnings = [...l2Result.warnings];
   const checks = { ...l2Result.checks };
 
-  checks.L3_SKILL = skillResult.valid ? 'PASS' : 'FAIL';
-  checks.L3_CASOS = casesResult.valid ? 'PASS' : 'FAIL';
-
   const hasValidSkill = skillResult.valid;
   const hasValidCases = casesResult.valid && casesResult.stats.substantive > 0;
+  const skillState = resourceState(skillResult, 'MISSING_SKILL', hasValidCases);
+  const casesState = resourceState(casesResult, 'MISSING_CASOS_USO', hasValidSkill);
+  checks.L3_SKILL = skillState;
+  checks.L3_CASOS = casesState;
 
   if (hasValidCases) {
     issues.push(...casesResult.issues.map((i) => `L3_${i}`));
     warnings.push(...casesResult.warnings.map((w) => `L3_${w}`));
-    warnings.push(...skillResult.issues.map((i) => `L3_SKILL_${i}`));
-    warnings.push(...skillResult.warnings.map((w) => `L3_SKILL_${w}`));
+    // An absent optional skill produces no diagnostic; a present but deficient one
+    // is reported as a non-blocking warning.
+    if (skillState === 'FAIL') {
+      warnings.push(...skillResult.issues.map((i) => `L3_SKILL_${i}`));
+      warnings.push(...skillResult.warnings.map((w) => `L3_SKILL_${w}`));
+    }
   } else if (hasValidSkill) {
     issues.push(...skillResult.issues.map((i) => `L3_${i}`));
     warnings.push(...skillResult.warnings.map((w) => `L3_${w}`));
-    warnings.push(...casesResult.issues.map((i) => `L3_CASOS_${i}`));
-    warnings.push(...casesResult.warnings.map((w) => `L3_CASOS_${w}`));
+    if (casesState === 'FAIL') {
+      warnings.push(...casesResult.issues.map((i) => `L3_CASOS_${i}`));
+      warnings.push(...casesResult.warnings.map((w) => `L3_CASOS_${w}`));
+    }
   } else {
     issues.push(...skillResult.issues.map((i) => `L3_${i}`));
     warnings.push(...skillResult.warnings.map((w) => `L3_${w}`));
@@ -152,11 +172,25 @@ function evaluateL3(l2Result, skillResult, casesResult) {
   return { passed: !issues.some((i) => i.startsWith('L3_')), issues, warnings, checks };
 }
 
-function evaluateL4(l3Result, evidenceResult, normalizedMeta) {
+/**
+ * L4: evidence with demonstrated integrity, identity, type and functional scope.
+ * Identity, type and provenance checks live in evidence.mjs (ATDS-11..14); the
+ * references below come from that same authoritative evaluation (ATDS-15).
+ */
+function evaluateL4(l3Result, evidenceResult) {
+  const declaredEvidenceRefs = Array.isArray(evidenceResult.declaredEvidenceRefs) ? evidenceResult.declaredEvidenceRefs : [];
+  const verifiedEvidenceRefs = Array.isArray(evidenceResult.verifiedEvidenceRefs) ? evidenceResult.verifiedEvidenceRefs : [];
   if (!l3Result.passed) {
-    return { passed: false, issues: ['L4_BLOCKED_BY_L3'], warnings: [], checks: { L4_EVIDENCIA: 'BLOCKED' }, evidenceRefs: [] };
+    return {
+      passed: false,
+      issues: ['L4_BLOCKED_BY_L3'],
+      warnings: [],
+      checks: { L4_EVIDENCIA: 'BLOCKED' },
+      evidenceRefs: [],
+      declaredEvidenceRefs,
+      verifiedEvidenceRefs,
+    };
   }
-  const m = normalizedMeta || {};
   const issues = [...l3Result.issues];
   const warnings = [...l3Result.warnings];
   const checks = { ...l3Result.checks };
@@ -168,21 +202,16 @@ function evaluateL4(l3Result, evidenceResult, normalizedMeta) {
   warnings.push(...evidenceResult.warnings.map((w) => `L4_${w}`));
   if (!l4EvidenceOk) issues.push('L4_INSUFFICIENT_EVIDENCE');
 
-  const records = Array.isArray(evidenceResult.records) ? evidenceResult.records : [];
-  for (const r of records) {
-    if (r.resultado !== 'PASS') continue;
-    if (m.id_catalogo && r.id_catalogo !== m.id_catalogo) issues.push(`L4_EVIDENCE_ID_MISMATCH_${r.id}`);
-    const name = String(r.herramienta || '').toLowerCase();
-    if (name && name !== String(m.id || '').toLowerCase() && name !== String(m.nombre || '').toLowerCase()) {
-      warnings.push(`L4_EVIDENCE_NAME_MISMATCH_${r.id}`);
-    }
-  }
-
-  const evidenceRefs = records
-    .filter((r) => r.resultado === 'PASS' && r.evidencia)
-    .map((r) => ({ id: r.id, sha256: r.evidencia.sha256, destRel: r.evidencia.destRel }));
-
-  return { passed: !issues.some((i) => i.startsWith('L4_')), issues, warnings, checks, evidenceRefs };
+  // `evidenceRefs` only ever lists references whose integrity was demonstrated.
+  return {
+    passed: !issues.some((i) => i.startsWith('L4_')),
+    issues,
+    warnings,
+    checks,
+    evidenceRefs: l4EvidenceOk ? verifiedEvidenceRefs : [],
+    declaredEvidenceRefs,
+    verifiedEvidenceRefs,
+  };
 }
 
 /**

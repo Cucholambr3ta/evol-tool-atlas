@@ -1,6 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { evaluateToolSafe } from './lib/atds/evaluate.mjs';
+import { buildAtdsSummary } from './lib/atds/pwa-summary.mjs';
+import { buildOfflineManifest } from './lib/offline-manifest.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -177,6 +180,17 @@ function collectExternalReferences(meta, primaryUrl) {
   return refs;
 }
 
+/** Status codes that state a contrast/revalidation of the source (ATDS-UI-05). */
+const REVALIDATION_STATUS_RE = /REVALIDADA_WEB|RELEASE_OFICIAL_VERIFICADA|FUENTE_Y_RELEASE|PYPI_VERIFICADA|FUENTE_EXTERNA_COMPROBADA|CONTRASTADA|FUENTE_OFICIAL_VERIFICADA/;
+
+function isoDateOrNull(value) {
+  if (typeof value !== 'string') return null;
+  const m = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return null;
+  const d = new Date(`${m[0]}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== m[0] ? null : m[0];
+}
+
 function classifyEvidenceGroup(evidenceStatus, meta) {
   const upper = evidenceStatus.toUpperCase();
   const maint = String(meta.mantenimiento_actual ?? meta.estado_mantenimiento ?? '').toUpperCase();
@@ -265,6 +279,9 @@ function main() {
 
     const meta = readJson(metaPath);
 
+    resourceOfflineItems.push({ url: `${toolDirRel}/metadata.json`, kind: 'tool-resource' });
+    if (fs.existsSync(readmePath)) resourceOfflineItems.push({ url: `${toolDirRel}/README.md`, kind: 'tool-resource' });
+
     const resourceSpecs = [
       ['GUIA.md', 'Guía técnica', 'guide'],
       ['SKILL.md', 'Skill reutilizable', 'skill'],
@@ -289,7 +306,8 @@ function main() {
         id: String(item.id ?? ''),
         titulo: String(item.titulo ?? 'Caso sin título'),
         objetivo: String(item.objetivo ?? ''),
-        estado: String(item.estado ?? 'propuesto_no_ejecutado'),
+        // ATDS-UI-03: an absent state is unverified data, never inferred as executed or proposed.
+        estado: typeof item.estado === 'string' && item.estado.trim() ? item.estado.trim() : null,
         evidenciaRequerida: Array.isArray(item.evidencia_requerida)
           ? item.evidencia_requerida.map(String)
           : [],
@@ -297,37 +315,14 @@ function main() {
       }));
     }
 
-    let evidenceSummary = null;
-    const evidencePath = path.join(toolDirAbs, 'evidencias.json');
-    if (fs.existsSync(evidencePath)) {
-      const evidenceJson = readJson(evidencePath);
-      const rawRecords = Array.isArray(evidenceJson.registros) ? evidenceJson.registros : [];
-      const counts = {};
-      for (const record of rawRecords) {
-        const status = String(record.resultado ?? 'INCONCLUSIVE');
-        counts[status] = (counts[status] ?? 0) + 1;
+    // ATDS-UI-01: official ATDS state from the validator, computed at build time.
+    const atdsResult = evaluateToolSafe({ id: String(t.id), href: String(t.href), cat: Number(t.cat) }, { root: ROOT });
+    const atds = buildAtdsSummary({ id: String(t.id), href: String(t.href) }, atdsResult, ROOT);
+    // Evidence artifacts the sheet links to (authorised, inside the sheet's directory).
+    for (const rec of atds.evidence?.records ?? []) {
+      for (const art of rec.artifacts) {
+        if (art.href) resourceOfflineItems.push({ url: art.href, kind: 'evidence-artifact' });
       }
-      evidenceSummary = {
-        schema: String(evidenceJson.schema ?? ''),
-        total: rawRecords.length,
-        counts,
-        records: rawRecords.map((record) => ({
-          id: String(record.id ?? ''),
-          tipo: String(record.tipo ?? ''),
-          fecha: record.fecha ? String(record.fecha) : null,
-          resultado: String(record.resultado ?? 'INCONCLUSIVE'),
-          version: record.version ? String(record.version) : null,
-          resumen: String(record.resumen ?? ''),
-          evidencia:
-            record.evidencia && typeof record.evidencia === 'object' && record.evidencia.destRel
-              ? String(record.evidencia.destRel)
-              : null,
-          sha256: record.sha256 ? String(record.sha256) : null,
-        })),
-        pendientes: Array.isArray(evidenceJson.pendientes)
-          ? evidenceJson.pendientes.map(String)
-          : [],
-      };
     }
 
     let description =
@@ -351,14 +346,6 @@ function main() {
 
     const evidenceGroup = classifyEvidenceGroup(evidenceStatus, meta);
     const historicalFlag = evidenceGroup === 'historica';
-    const revalidated20261122 =
-      evidenceStatus.includes('2026-11-22') ||
-      evidenceStatus.includes('REVALIDADA_WEB') ||
-      evidenceStatus.includes('RELEASE_OFICIAL_VERIFICADA') ||
-      evidenceStatus.includes('FUENTE_Y_RELEASE') ||
-      evidenceStatus.includes('PYPI_VERIFICADA') ||
-      evidenceStatus.includes('FUENTE_EXTERNA_COMPROBADA');
-
     const sourceUrl = pickFirstUrl(meta, [
       'sitio_oficial',
       'repositorio',
@@ -458,6 +445,13 @@ function main() {
       'fecha_verificacion_expediente',
     ]);
 
+    // ATDS-UI-05: the date a source was contrasted is an explicit, recorded date
+    // (metadata field, or the date embedded in the status code), or null. It is
+    // never inferred from a status label alone.
+    const sourceCheckedOn = REVALIDATION_STATUS_RE.test(evidenceStatus)
+      ? (isoDateOrNull(verificationDate) ?? isoDateOrNull(evidenceStatus.match(/(\d{4}-\d{2}-\d{2})$/)?.[1]))
+      : null;
+
     const reviewDate = pickFirstString(meta, [
       'fecha_revision',
       'fecha_revision_documental',
@@ -485,8 +479,9 @@ function main() {
       evidenceGroup,
       origin: String(t.origin ?? ''),
       htmlHref: String(t.href),
-      revalidated20261122,
+      sourceCheckedOn,
       historicalFlag,
+      atdsLevel: atds.validatedLevel,
     };
 
     const detail = {
@@ -519,9 +514,9 @@ function main() {
       readmeHref: fs.existsSync(readmePath) ? `${toolDirRel}/README.md` : null,
       technicalResources,
       useCases,
-      evidence: evidenceSummary,
       historicalFlag,
-      revalidated20261122,
+      sourceCheckedOn,
+      atds,
       rawMetadata: meta,
     };
 
@@ -565,11 +560,21 @@ function main() {
   for (const cat of categories) {
     offlineItems.push({ url: cat.htmlHref, kind: 'category-html' });
   }
+  for (const cat of categories) {
+    // Linked from the category view (OFF-02).
+    for (const href of [cat.validationJsonHref, cat.validationMdHref]) {
+      if (fs.existsSync(path.join(ROOT, href))) offlineItems.push({ url: href, kind: 'category-validation' });
+    }
+  }
   for (const tool of toolSummaries) {
     offlineItems.push({ url: tool.htmlHref, kind: 'tool-html' });
   }
   for (const item of resourceOfflineItems) {
     offlineItems.push(item);
+  }
+  // Documents the app links to from every view (footer, policy page).
+  for (const url of ['catalogo.json', 'SHA256SUMS.txt', 'skills/atlas-catalog-curator/SKILL.md', 'docs/atds/ATDS-v1.md']) {
+    offlineItems.push({ url, kind: 'reference' });
   }
 
   const indexPayload = {
@@ -596,17 +601,12 @@ function main() {
 
   fs.writeFileSync(path.join(OUT_DIR, 'catalog-index.json'), JSON.stringify(indexPayload), 'utf8');
 
-  const offlineManifest = {
-    version: `${indexPayload.date}-${toolSummaries.length}`,
-    generatedAt: new Date().toISOString(),
-    totalFiles: offlineItems.length,
-    items: offlineItems,
-  };
+  const offlineManifest = buildOfflineManifest({ root: ROOT, publicDir: path.join(ROOT, 'public'), items: offlineItems });
 
   fs.writeFileSync(path.join(OUT_DIR, 'offline-manifest.json'), JSON.stringify(offlineManifest), 'utf8');
 
   console.log(
-    `Generated catalog index: ${categories.length} categories, ${toolSummaries.length} tools, ${indexPayload.totals.excluded} excluded, ${offlineItems.length} offline manifest items.`,
+    `Generated catalog index: ${categories.length} categories, ${toolSummaries.length} tools, ${indexPayload.totals.excluded} excluded, ${offlineManifest.totalFiles} offline manifest items (revision ${offlineManifest.version}).`,
   );
 }
 

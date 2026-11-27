@@ -1,20 +1,28 @@
 import { el } from '../lib/dom';
 import { createFineLineIcon, type IconName } from '../lib/icons';
 
+/**
+ * A11Y-03: a state that replaces a whole view (404, invalid route, load error,
+ * offline-unavailable) is that view's main heading (h1); a state inside a view
+ * keeps h2. Errors are announced as alerts, other states politely.
+ */
 export function renderStatePanel(options: {
   icon: IconName;
   title: string;
   description: string;
   actions?: HTMLElement[];
+  headingLevel?: 1 | 2;
+  tone?: 'status' | 'alert';
 }): HTMLElement {
+  const tone = options.tone ?? 'status';
   return el(
     'section',
     {
       className: 'state-panel',
-      attrs: { role: 'status', 'aria-live': 'polite' },
+      attrs: tone === 'alert' ? { role: 'alert' } : { role: 'status', 'aria-live': 'polite' },
     },
     createFineLineIcon(options.icon),
-    el('h2', { text: options.title }),
+    el(options.headingLevel === 1 ? 'h1' : 'h2', { text: options.title }),
     el('p', { text: options.description }),
     options.actions && options.actions.length > 0
       ? el('div', { className: 'pill-row', attrs: { 'data-state-actions': 'true' } }, ...options.actions)
@@ -30,8 +38,9 @@ export function renderLoadingState(label = 'Cargando datos documentales…'): HT
   });
 }
 
-export function renderOfflineUnavailableState(detail?: string): HTMLElement {
+export function renderOfflineUnavailableState(detail?: string, headingLevel: 1 | 2 = 2): HTMLElement {
   return renderStatePanel({
+    headingLevel,
     icon: 'offline',
     title: 'Contenido no disponible sin conexión',
     description:
@@ -52,7 +61,7 @@ export function renderOfflineUnavailableState(detail?: string): HTMLElement {
   });
 }
 
-export function renderErrorState(message: string, onRetry?: () => void): HTMLElement {
+export function renderErrorState(message: string, onRetry?: () => void, headingLevel: 1 | 2 = 2): HTMLElement {
   const actions: HTMLElement[] = [
     el('a', {
       className: 'btn',
@@ -75,6 +84,8 @@ export function renderErrorState(message: string, onRetry?: () => void): HTMLEle
     );
   }
   return renderStatePanel({
+    headingLevel,
+    tone: 'alert',
     icon: 'error',
     title: 'No se pudo cargar esta vista',
     description: message,

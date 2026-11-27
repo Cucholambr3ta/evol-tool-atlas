@@ -1,7 +1,7 @@
 import type { AtdsLevel, Severity, ToolStatus } from './types.d.mts';
 import type { Finding } from './diagnostics.d.mts';
-import type { RecordIntegrity } from './evidence.d.mts';
-import type { CatalogTool, ToolEvaluation } from './evaluate.d.mts';
+import type { DeclaredEvidenceRef, EvidenceRef, EvidenceSchemaStatus, RecordIntegrity } from './evidence.d.mts';
+import type { CatalogTool, ResourceState, ToolEvaluation } from './evaluate.d.mts';
 
 export interface ToolReportEntry {
   id: string;
@@ -14,7 +14,11 @@ export interface ToolReportEntry {
   issues: string[];
   warnings: string[];
   findings: Finding[];
-  evidenceRefs: Array<{ id: string; sha256: string; destRel: string }>;
+  evidenceRefs: EvidenceRef[];
+  declaredEvidenceRefs: DeclaredEvidenceRef[];
+  verifiedEvidenceRefs: EvidenceRef[];
+  evidenceSchemaStatus: EvidenceSchemaStatus | 'NOT_EVALUATED';
+  resources: Record<string, ResourceState> | null;
   evidenceIntegrity: RecordIntegrity[];
   checkedFiles: string[];
   limitations: string[];

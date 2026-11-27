@@ -33,6 +33,7 @@ const STRUCTURAL_CODES = new Set([
   'L1_ID_MISMATCH',
   'INVALID_CASOS_USO_JSON',
   'INVALID_EVIDENCIAS_JSON',
+  'EVALUATION_ERROR',
 ]);
 
 /**
@@ -48,7 +49,7 @@ export function mapCodeToDoc(code) {
   if (code === 'L1_DESCRIPTION_VAGUE' || code === 'L1_DESCRIPTION_GENERIC' || code === 'L1_UNVERIFIED_DESCRIPCION') return 'DOC-01';
   if (code.includes('_FUENTE') || code.startsWith('L1_SOURCE_') || code === 'L1_MISSING_ESTADO' || code === 'L1_UNVERIFIED_ESTADO') return 'DOC-03';
   // Evidence codes first: "VERSION_CHECK_AS_FUNCTIONAL" is misclassified evidence, not an ambiguous version.
-  if (code.includes('_ID_MISMATCH') || code.includes('SHA_INCONSISTENT') || code.includes('ARTIFACT_DUPLICATE') || code.includes('CASOS_DUPLICATE_ID')) return 'DOC-11';
+  if (code.includes('_ID_MISMATCH') || code.includes('ID_CATALOGO_MISMATCH') || code.includes('_TOOL_MISMATCH') || code.includes('DUPLICATE_ID') || code.includes('AMBIGUOUS_ID') || code.includes('SHA_INCONSISTENT') || code.includes('ARTIFACT_DUPLICATE') || code.includes('CASOS_DUPLICATE_ID')) return 'DOC-11';
   if (code.startsWith('BLOCKED_') || code.startsWith('EVIDENCE_') || code.startsWith('L4_')) return 'DOC-10';
   if (code.includes('PLATAFORMAS') || code.includes('SISTEMA_OPERATIVO')) return 'DOC-05';
   if (code.includes('VERSION') || code.includes('VERSI')) return 'DOC-04';
@@ -85,6 +86,7 @@ function fileForCode(code) {
   if (code === 'MISSING_METADATA' || code === 'INVALID_METADATA_JSON') return 'metadata.json';
   if (code === 'INVALID_CASOS_USO_JSON') return 'casos-uso.json';
   if (code === 'INVALID_EVIDENCIAS_JSON') return 'evidencias.json';
+  if (code === 'EVALUATION_ERROR') return null;
   if (code === 'L3_NO_SKILL_OR_CASOS') return 'SKILL.md|casos-uso.json';
   for (const [re, file] of FILE_BY_PREFIX) if (re.test(code)) return file;
   return null;

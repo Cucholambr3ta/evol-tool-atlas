@@ -53,10 +53,35 @@ function emptyResult(tool, toolDir, code) {
     warnings: [],
     findings: buildFindings([code], [], tool.id, toolDir),
     evidenceRefs: [],
+    declaredEvidenceRefs: [],
+    verifiedEvidenceRefs: [],
     evidenceIntegrity: [],
+    evidenceSchemaStatus: 'NOT_EVALUATED',
+    resources: emptyResources(),
     checkedFiles: [],
     limitations: [],
   };
+}
+
+function emptyResources() {
+  return {
+    metadata: { present: false, valid: false },
+    guide: { present: false, valid: false },
+    skill: { present: false, valid: false },
+    cases: { present: false, valid: false },
+    evidence: { present: false, valid: false },
+  };
+}
+
+/**
+ * A result for a tool whose evaluation raised an unexpected exception. The error
+ * is reported as a structural finding with its location; other tools continue.
+ */
+function evaluationErrorResult(tool, err) {
+  const toolDir = toolDirFromHref(tool && tool.href);
+  const result = emptyResult(tool || { id: 'SIN_ID' }, toolDir, 'EVALUATION_ERROR');
+  result.limitations = [`Evaluación interrumpida: ${err && err.message ? err.message : String(err)}`];
+  return result;
 }
 
 /**
@@ -107,16 +132,36 @@ function evaluateTool(tool, options = {}) {
   warnings.push(...l3Result.warnings.filter((w) => w.startsWith('L3_')));
   Object.assign(checks, l3Result.checks);
 
-  const evidenceResult = checkEvidenceContent(evidencePath || '', root, root);
-  const l4Result = evaluateL4(l3Result, evidenceResult, normalizedMeta);
+  const rawMeta = metaResult.data && typeof metaResult.data === 'object' ? metaResult.data : {};
+  const identity = {
+    id: typeof rawMeta.id === 'string' && rawMeta.id.trim() ? rawMeta.id.trim() : tool.id,
+    nombre: typeof rawMeta.nombre === 'string' ? rawMeta.nombre : normalizedMeta.nombre,
+    id_catalogo: typeof rawMeta.id_catalogo === 'string' && rawMeta.id_catalogo.trim() ? rawMeta.id_catalogo.trim() : null,
+    exceptionsPath: options.provenanceExceptionsPath,
+    today: options.today,
+  };
+  const evidenceResult = checkEvidenceContent(evidencePath || '', root, root, identity);
+  const l4Result = evaluateL4(l3Result, evidenceResult);
   issues.push(...l4Result.issues.filter((i) => i.startsWith('L4_')));
   warnings.push(...l4Result.warnings.filter((w) => w.startsWith('L4_')));
   Object.assign(checks, l4Result.checks);
+  // ATDS-ROB-02: a malformed evidence schema is always diagnosed, even when L4 is
+  // not evaluated because a lower level fails (then it does not block).
+  if (!l3Result.passed && evidenceResult.schemaStatus === 'INVALID_SCHEMA') {
+    warnings.push(...evidenceResult.issues.filter((i) => i.startsWith('EVIDENCE_SCHEMA_')).map((i) => `L4_${i}`));
+  }
 
   // Structural JSON corruption is reported regardless of the level reached.
   if (casesResult.issues.includes('INVALID_CASOS_USO_JSON') && !issues.includes('INVALID_CASOS_USO_JSON')) issues.push('INVALID_CASOS_USO_JSON');
   if (evidenceResult.issues.includes('INVALID_EVIDENCIAS_JSON') && !issues.includes('INVALID_EVIDENCIAS_JSON')) issues.push('INVALID_EVIDENCIAS_JSON');
 
+  const resourceStates = {
+    metadata: { present: true, valid: l1Result.passed },
+    guide: { present: exists(guidePath), valid: Boolean(guideResult.valid) },
+    skill: { present: exists(skillPath), valid: Boolean(skillResult.valid) },
+    cases: { present: exists(casesPath), valid: Boolean(casesResult.valid && casesResult.stats.substantive > 0) },
+    evidence: { present: exists(evidencePath), valid: evidenceResult.schemaStatus === 'OK' || evidenceResult.schemaStatus === 'EMPTY' },
+  };
   const resources = {
     metadata: true,
     guide: exists(guidePath),
@@ -158,7 +203,11 @@ function evaluateTool(tool, options = {}) {
     warnings,
     findings,
     evidenceRefs: l4Result.evidenceRefs || [],
+    declaredEvidenceRefs: evidenceResult.declaredEvidenceRefs,
+    verifiedEvidenceRefs: evidenceResult.verifiedEvidenceRefs,
     evidenceIntegrity: evidenceResult.integrity,
+    evidenceSchemaStatus: evidenceResult.schemaStatus,
+    resources: resourceStates,
     checkedFiles: [guidePath, skillPath, casesPath, evidencePath].filter(exists).map((p) => path.relative(root, p)),
     limitations,
   };
@@ -236,4 +285,17 @@ function resolveTargets(tools, targets, root = ROOT) {
   return targets.map((target) => ({ target, tool: byKey.get(target) }));
 }
 
-export { evaluateTool, evaluateStrict, resolveTargets, OperationalError };
+/**
+ * evaluateTool that never throws for a single tool (ATDS-ROB-01): an unexpected
+ * exception becomes a structural EVALUATION_ERROR result for that tool only.
+ */
+function evaluateToolSafe(tool, options = {}) {
+  try {
+    return evaluateTool(tool, options);
+  } catch (err) {
+    if (err instanceof OperationalError) throw err;
+    return evaluationErrorResult(tool, err);
+  }
+}
+
+export { evaluateTool, evaluateToolSafe, evaluateStrict, resolveTargets, OperationalError };

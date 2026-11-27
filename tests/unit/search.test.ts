@@ -14,7 +14,8 @@ const SAMPLE_TOOLS: ToolSummary[] = [
     evidenceGroup: 'verificada',
     origin: 'entrega_anterior',
     htmlHref: '02-catalogo/testing-y-auditoria/semgrep/index.html',
-    revalidated20261122: true,
+    sourceCheckedOn: '2026-11-22',
+    atdsLevel: 'NONE',
     historicalFlag: false,
   },
   {
@@ -28,7 +29,8 @@ const SAMPLE_TOOLS: ToolSummary[] = [
     evidenceGroup: 'historica',
     origin: 'entrega_anterior',
     htmlHref: '02-catalogo/seguridad/catalogo/bluediving/index.html',
-    revalidated20261122: false,
+    sourceCheckedOn: null,
+    atdsLevel: 'NONE',
     historicalFlag: true,
   },
   {
@@ -42,7 +44,8 @@ const SAMPLE_TOOLS: ToolSummary[] = [
     evidenceGroup: 'historica',
     origin: 'entrega_anterior',
     htmlHref: '02-catalogo/seguridad/catalogo/firmware-mod-kit/index.html',
-    revalidated20261122: false,
+    sourceCheckedOn: null,
+    atdsLevel: 'NONE',
     historicalFlag: true,
   },
   {
@@ -56,7 +59,8 @@ const SAMPLE_TOOLS: ToolSummary[] = [
     evidenceGroup: 'expediente',
     origin: 'entrega_46_48',
     htmlHref: '02-catalogo/seguridad/catalogo/nmap/index.html',
-    revalidated20261122: false,
+    sourceCheckedOn: null,
+    atdsLevel: 'NONE',
     historicalFlag: false,
   },
 ];

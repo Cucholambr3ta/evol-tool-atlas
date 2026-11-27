@@ -7,10 +7,49 @@ export type Route =
   | { name: 'favorites' }
   | { name: 'offline' }
   | { name: 'about' }
-  | { name: 'not-found'; path: string };
+  | { name: 'not-found'; path: string }
+  | { name: 'invalid'; path: string; reason: 'MALFORMED_ENCODING' | 'SEGMENT_TOO_LONG' };
 
+/** Longest accepted route segment; real slugs and ids are far shorter. */
+export const MAX_ROUTE_SEGMENT_LENGTH = 256;
+
+class InvalidRouteError extends Error {
+  constructor(readonly reason: 'MALFORMED_ENCODING' | 'SEGMENT_TOO_LONG') {
+    super(reason);
+    this.name = 'InvalidRouteError';
+  }
+}
+
+function decodeSegment(segment: string): string {
+  if (segment.length > MAX_ROUTE_SEGMENT_LENGTH * 3) throw new InvalidRouteError('SEGMENT_TOO_LONG');
+  let decoded: string;
+  try {
+    decoded = decodeURIComponent(segment);
+  } catch {
+    throw new InvalidRouteError('MALFORMED_ENCODING');
+  }
+  if (decoded.length > MAX_ROUTE_SEGMENT_LENGTH) throw new InvalidRouteError('SEGMENT_TOO_LONG');
+  return decoded;
+}
+
+/**
+ * Parse a location hash. Never throws: malformed escapes or extreme segments
+ * produce `{ name: 'invalid' }`, which the app renders as a recoverable state.
+ */
 export function parseHashRoute(rawHash: string): Route {
   const cleaned = rawHash.replace(/^#/, '') || '/';
+  try {
+    return parseCleanedHash(cleaned);
+  } catch (err) {
+    if (err instanceof InvalidRouteError) {
+      const [rawPath = '/'] = cleaned.split('?');
+      return { name: 'invalid', path: rawPath.slice(0, 120), reason: err.reason };
+    }
+    throw err;
+  }
+}
+
+function parseCleanedHash(cleaned: string): Route {
   const [rawPath = '/', rawQuery = ''] = cleaned.split('?');
   const pathParts = rawPath.split('/').filter(Boolean);
   const query = new URLSearchParams(rawQuery);
@@ -26,7 +65,7 @@ export function parseHashRoute(rawHash: string): Route {
   if (head === 'categoria' && pathParts[1]) {
     return {
       name: 'category',
-      slug: decodeURIComponent(pathParts[1]),
+      slug: decodeSegment(pathParts[1]),
       page: Math.max(1, Number(query.get('page') ?? '1') || 1),
       q: query.get('q') ?? '',
       evidence: query.get('ev') ?? 'all',
@@ -47,7 +86,7 @@ export function parseHashRoute(rawHash: string): Route {
   if (head === 'herramienta' && pathParts[1]) {
     return {
       name: 'tool',
-      id: decodeURIComponent(pathParts[1]),
+      id: decodeSegment(pathParts[1]),
     };
   }
   if (head === 'favoritos') {

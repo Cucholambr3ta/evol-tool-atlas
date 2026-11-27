@@ -14,3 +14,5 @@ reports/.atlas-report.lock
 .atlas-cache/
 # Reporte ATDS generado por `npm run validate:atds` (regenerable, ~5 MB).
 reports/atds-validation.json
+# Escaneo estructural del HTML histórico generado por verify:catalog.
+reports/static-html-scan.json

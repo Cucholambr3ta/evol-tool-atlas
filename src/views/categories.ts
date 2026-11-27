@@ -1,4 +1,6 @@
 import { el, formatNumber, isSafeCatalogPath, withBase } from '../lib/dom';
+import { renderBreadcrumbs } from '../components/breadcrumbs';
+import { plural } from '../lib/labels';
 import { getFavoriteIds } from '../lib/favorites';
 import { createFineLineIcon } from '../lib/icons';
 import { buildHashUrl, navigate, type Route } from '../lib/router';
@@ -103,7 +105,7 @@ export function renderCategoriesExplorerView(index: CatalogIndex): HTMLElement {
     el(
       'header',
       { className: 'surface-window' },
-      el('div', { className: 'breadcrumbs' }, el('a', { attrs: { href: '#/' }, text: 'Inicio' }), '/', el('span', { text: 'Categorías' })),
+      renderBreadcrumbs([{ label: 'Inicio', href: '#/' }, { label: 'Categorías' }]),
       el('h1', { text: `Explorador de ${formatNumber(index.categories.length)} categorías` }),
       el('p', {
         className: 'section-subtitle',
@@ -159,15 +161,7 @@ export function renderCategoryDetailView(
   const header = el(
     'header',
     { className: 'surface-window' },
-    el(
-      'div',
-      { className: 'breadcrumbs' },
-      el('a', { attrs: { href: '#/' }, text: 'Inicio' }),
-      '/',
-      el('a', { attrs: { href: '#/categorias' }, text: 'Categorías' }),
-      '/',
-      el('span', { text: cat.name }),
-    ),
+    renderBreadcrumbs([{ label: 'Inicio', href: '#/' }, { label: 'Categorías', href: '#/categorias' }, { label: cat.name }]),
     el(
       'div',
       { className: 'detail-header' },
@@ -185,9 +179,9 @@ export function renderCategoryDetailView(
     el(
       'div',
       { className: 'pill-row' },
-      el('span', { className: 'pill pill-accent', text: `${formatNumber(cat.admitted)} fichas admitidas` }),
-      el('span', { className: 'pill pill-muted', text: `${formatNumber(cat.excluded)} excluidas` }),
-      el('span', { className: 'pill', text: `${formatNumber(cat.totalEntries)} registros de origen` }),
+      el('span', { className: 'pill pill-accent', text: `${formatNumber(cat.admitted)} ${plural(cat.admitted, 'ficha admitida', 'fichas admitidas')}` }),
+      el('span', { className: 'pill pill-muted', text: `${formatNumber(cat.excluded)} ${plural(cat.excluded, 'excluida', 'excluidas')}` }),
+      el('span', { className: 'pill', text: `${formatNumber(cat.totalEntries)} ${plural(cat.totalEntries, 'registro de origen', 'registros de origen')}` }),
     ),
   );
 
@@ -259,7 +253,7 @@ export function renderCategoryDetailView(
       getFavoriteIds(),
     );
 
-    countEl.textContent = `Mostrando ${formatNumber(res.items.length)} de ${formatNumber(res.total)} fichas en ${cat.name}.`;
+    countEl.textContent = `Mostrando ${formatNumber(res.items.length)} de ${formatNumber(res.total)} ${plural(res.total, 'ficha', 'fichas')} en ${cat.name}.`;
     resultsHost.replaceChildren();
 
     if (res.items.length === 0) {

@@ -16,7 +16,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { buildFixtureRoot } from './atds-fixtures.mjs';
+import { buildFixtureRoot, NEGATIVE_L4_FIXTURE_SPECS } from './atds-fixtures.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -48,6 +48,9 @@ function main() {
   try {
     fs.mkdirSync(fx);
     buildFixtureRoot(fx);
+    const fxNeg = path.join(tmp, 'fixtures-negative-l4');
+    fs.mkdirSync(fxNeg);
+    buildFixtureRoot(fxNeg, NEGATIVE_L4_FIXTURE_SPECS);
 
     // Regression control: the same real entry, unchanged vs. degraded copy.
     copyRealTool(regOk, 'semgrep');
@@ -87,6 +90,11 @@ function main() {
       { name: 'Fixture NONE / mínimo L1', expect: 1, args: ['--strict', '--root', fx, '--targets', 'fx-none', '--min-level', 'L1'] },
       { name: 'Fixture L1 / mínimo L2', expect: 1, args: ['--strict', '--root', fx, '--targets', 'fx-l1', '--min-level', 'L2'] },
       { name: 'Fixture L4 con artefacto secundario corrupto / mínimo L4', expect: 1, args: ['--strict', '--root', fx, '--targets', 'fx-l4-artefacto-corrupto', '--min-level', 'L4'] },
+      { name: 'Fixture L4 con tipo de prueba desconocido / mínimo L4', expect: 1, args: ['--strict', '--root', fxNeg, '--targets', 'fx-l4-tipo-desconocido', '--min-level', 'L4'] },
+      { name: 'Fixture L4 con versión envuelta (env … --version) / mínimo L4', expect: 1, args: ['--strict', '--root', fxNeg, '--targets', 'fx-l4-version-envuelta', '--min-level', 'L4'] },
+      { name: 'Fixture L4 con identidad de herramienta ajena / mínimo L4', expect: 1, args: ['--strict', '--root', fxNeg, '--targets', 'fx-l4-identidad-ajena', '--min-level', 'L4'] },
+      { name: 'Fixture L4 con artefacto de otra ficha (hash correcto) / mínimo L4', expect: 1, args: ['--strict', '--root', fxNeg, '--targets', 'fx-l4-artefacto-ajeno', '--min-level', 'L4'] },
+      { name: 'Fixtures L4 negativas conservan L3 / mínimo L3', expect: 0, args: ['--strict', '--root', fxNeg, '--targets', 'fx-l4-tipo-desconocido,fx-l4-version-envuelta,fx-l4-identidad-ajena,fx-l4-artefacto-ajeno', '--min-level', 'L3'] },
       { name: 'Regresión: semgrep sin fuentes / política L1', expect: 1, args: ['--strict', '--root', regBad, '--policy', regPolicy] },
       { name: 'Lote E3-01: threat-dragon sin GUIA.md / L3', expect: 1, args: ['--strict', '--root', lotBad, '--policy', lotPolicy] },
       // Operational errors → 2

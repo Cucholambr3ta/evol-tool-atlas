@@ -1,4 +1,5 @@
 import { el, formatNumber } from '../lib/dom';
+import { plural } from '../lib/labels';
 import { createFineLineIcon } from '../lib/icons';
 import { buildHashUrl } from '../lib/router';
 import { isFavorite, toggleFavorite } from '../lib/favorites';
@@ -136,7 +137,7 @@ export function renderCategoryCard(category: CategorySummary): HTMLElement {
         { className: 'pill-row' },
         el('span', {
           className: 'pill pill-accent',
-          text: `${formatNumber(category.admitted)} fichas`,
+          text: `${formatNumber(category.admitted)} ${plural(category.admitted, 'ficha', 'fichas')}`,
         }),
         el('span', {
           className: 'pill pill-muted',
