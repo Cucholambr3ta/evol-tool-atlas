@@ -9,3 +9,8 @@ reports/atlas-status.json
 reports/evidence/
 reports/atlas-report.log
 reports/.atlas-report.lock
+# Estado de trabajo de agentes externos (normalización por lotes): no lo produce
+# ni lo consume ningún script del repositorio.
+.atlas-cache/
+# Reporte ATDS generado por `npm run validate:atds` (regenerable, ~5 MB).
+reports/atds-validation.json
