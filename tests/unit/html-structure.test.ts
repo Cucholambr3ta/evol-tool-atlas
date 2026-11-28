@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import {
   RULES,
@@ -438,20 +439,24 @@ describe('allowlist', () => {
   });
 
   it('rejects P1, unknown rules, missing files and missing expiry', () => {
-    const tmp = path.join('/tmp/opencode', 'html-allowlist-test.json');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'atlas-html-allowlist-'));
+    const tmp = path.join(dir, 'html-allowlist-test.json');
     const write = (obj: unknown) => fs.writeFileSync(tmp, JSON.stringify(obj));
+    try {
+      write([{ file: '02-catalogo/seguridad/catalogo/0trace/index.html', rule: 'dl-valid', expiresAt: '2027-01-01' }]);
+      expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/P1/);
 
-    write([{ file: '02-catalogo/seguridad/catalogo/0trace/index.html', rule: 'dl-valid', expiresAt: '2027-01-01' }]);
-    expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/P1/);
+      write([{ file: '02-catalogo/seguridad/catalogo/0trace/index.html', rule: 'not-a-rule', expiresAt: '2027-01-01' }]);
+      expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/unknown rule/);
 
-    write([{ file: '02-catalogo/seguridad/catalogo/0trace/index.html', rule: 'not-a-rule', expiresAt: '2027-01-01' }]);
-    expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/unknown rule/);
+      write([{ file: '02-catalogo/no-existe/index.html', rule: 'focus-visible', expiresAt: '2027-01-01' }]);
+      expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/missing file/);
 
-    write([{ file: '02-catalogo/no-existe/index.html', rule: 'focus-visible', expiresAt: '2027-01-01' }]);
-    expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/missing file/);
-
-    write([{ file: '02-catalogo/seguridad/catalogo/0trace/index.html', rule: 'focus-visible' }]);
-    expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/expiresAt/);
+      write([{ file: '02-catalogo/seguridad/catalogo/0trace/index.html', rule: 'focus-visible' }]);
+      expect(() => loadAllowlist(tmp, { rootDir: ROOT, now })).toThrow(/expiresAt/);
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
   });
 });
 
