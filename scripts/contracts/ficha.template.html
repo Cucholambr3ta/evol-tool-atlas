@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <title>{{TOOL_NAME}} · Evol Tool Atlas</title>
+  <!--
+    CSS strategy: Option A (embedded). The DOCUMENT CSP is
+    "default-src 'none'; style-src 'unsafe-inline'; ...": it allows <style> blocks and
+    blocks any external stylesheet (no 'self') and any web font (no font-src).
+    Official Fine Line Premium palette; fonts fall back to locally installed faces.
+  -->
+  <style>
+    :root {
+      color-scheme: light dark;
+      --canvas: #f6f3ed; --surface: #fffdf7; --text: #30383c; --muted: #4d4b48;
+      --accent: #365568; --on-accent: #ffffff; --border: #9b8793;
+      --font-display: "Manrope", system-ui, sans-serif;
+      --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #191b1e; --surface: #27292d; --text: #faf8f0; --muted: #ccc9c1;
+        --accent: #f6f3ed; --on-accent: #30383c; --border: #a98a9f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--text); font: 16px/1.6 var(--font-body); }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.25; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    code { font-family: var(--font-mono); }
+    .skip-link { position: absolute; left: 1rem; top: -4rem; padding: .5rem 1rem; background: var(--accent); color: var(--on-accent); }
+    .skip-link:focus-visible { top: 1rem; }
+    .site-header, .site-footer, main { max-width: 60rem; margin: 0 auto; padding: 1rem 1.25rem; }
+    .muted, .eyebrow { color: var(--muted); }
+    .ficha-meta, .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; }
+    .ficha-meta div { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .ficha-meta dt { font-weight: 700; min-width: 12rem; }
+    .ficha-meta dd { margin: 0; }
+    .resource-links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+    .tool-grid { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+    .atds-badge { display: inline-block; border: 1px solid var(--border); border-radius: 10px; padding: 0 .5rem; font-size: .875rem; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="site-header" role="banner">
+    <p class="brand">Evol Tool Atlas</p>
+    <nav aria-label="Ruta de navegación">
+      <a href="{{ROOT}}index.html">Inicio</a> ›
+      <a href="{{CATEGORY_HREF}}">{{CATEGORY_NAME}}</a> ›
+      <span aria-current="page">{{TOOL_NAME}}</span>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article class="tool-ficha">
+      <div class="ficha-header">
+        <p class="eyebrow">{{CATEGORY_NAME}} · Ficha {{TOOL_ID}}</p>
+        <h1>{{TOOL_NAME}}</h1>
+        <p class="lead">{{DESCRIPTION}}</p>
+
+        <dl class="ficha-meta" aria-label="Metadatos de la herramienta">
+          <div><dt>Identificador</dt><dd>{{TOOL_ID}}</dd></div>
+          <div><dt>Estado documental ATDS</dt><dd>
+            <span class="atds-badge" data-atds-validated="{{ATDS_VALIDATED}}" data-atds-candidate="{{ATDS_CANDIDATE}}">Validado: {{ATDS_VALIDATED}} · Candidato: {{ATDS_CANDIDATE}}</span>
+          </dd></div>
+          <div><dt>Fecha de verificación</dt><dd>{{DATE}}</dd></div>
+        </dl>
+      </div>
+
+{{CONTENT_SECTIONS_HTML}}
+
+      <section aria-labelledby="recursos-h">
+        <h2 id="recursos-h">Recursos técnicos disponibles</h2>
+        <nav class="resource-links" aria-label="Recursos técnicos">
+{{RESOURCE_LINKS_HTML}}
+        </nav>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p><small>Fine Line Premium · Evol Tool Atlas · {{DATE}} · <a href="{{ROOT}}docs/atds/ATDS-v1.md">ATDS v1</a></small></p>
+  </footer>
+</body>
+</html>

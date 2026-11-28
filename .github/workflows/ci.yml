@@ -56,6 +56,14 @@ jobs:
       - name: ATDS validation — STRICT gate (positive, negative, regression)
         run: npm run gate:atds
 
+      # HTML5-03: advisory structural validation of all 2,186 pages. Historical
+      # findings are reported in the job summary and never fail this step; the
+      # validator exits 2 on real operational errors (unknown argument, unreadable
+      # catalogue, missing catalogued page, invalid allowlist), which fails CI.
+      # No '|| true' and no continue-on-error.
+      - name: HTML structure validation — ADVISORY (full corpus, summary)
+        run: npm run validate:html -- --output="$RUNNER_TEMP/html-validation.json" --summary-md="$GITHUB_STEP_SUMMARY"
+
       - name: Build production PWA & copy static catalog
         env:
           VITE_BASE_PATH: /evol-tool-atlas/

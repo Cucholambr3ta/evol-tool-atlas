@@ -1,13 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { STATIC_CATALOG_ITEMS } from './lib/static-publish.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 
 // DOC-01: docs/ is not copied wholesale; only documents the app links to are published.
-const ITEMS_TO_COPY = ['02-catalogo', '05-referencias', 'skills', 'catalogo.json', 'SHA256SUMS.txt', 'docs/atds/ATDS-v1.md'];
+// The list lives in scripts/lib/static-publish.mjs so the HTML contract checks use the same set.
+const ITEMS_TO_COPY = STATIC_CATALOG_ITEMS;
 
 function copyEntry(src, dest) {
   const stat = fs.statSync(src);
