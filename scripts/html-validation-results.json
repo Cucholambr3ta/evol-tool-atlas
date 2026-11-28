@@ -1,7 +1,7 @@
 {
   "schema": "evol-tool-atlas/html-validation/2",
-  "generatedAt": "2026-11-28T01:52:16.603Z",
-  "head": "092f202c01448a8a8dd3f19180a7079852cdade0",
+  "generatedAt": "2026-11-28T04:22:03.111Z",
+  "head": "47dc06e3576ea3f1a3acdc357be60ca8c46d62c4",
   "mode": "advisory",
   "parser": "node-html-parser@9.0.7",
   "corpus": {
@@ -21,12 +21,12 @@
     },
     {
       "id": "skip-link",
-      "name": "Bypass block: skip link to main content",
-      "priority": "P1",
-      "severity": "error",
-      "category": "wcag-a",
+      "name": "Bypass block: skip link to main content (manual verification)",
+      "priority": "P2",
+      "severity": "warn",
+      "category": "wcag-candidate",
       "wcag": "2.4.1",
-      "description": "WCAG 2.2 2.4.1 (A): a mechanism must exist to bypass repeated blocks. A skip link to #main-content is the auditable mechanism; if another bypass exists it must be documented."
+      "description": "WCAG 2.2 2.4.1 (A) requires some mechanism to bypass repeated blocks. Absence of a skip link is not, by itself, proof of failure: headings, landmarks or another documented mechanism may satisfy it. Reported as a recommendation for manual verification, never as an automatic normative error."
     },
     {
       "id": "link-text",
@@ -172,12 +172,12 @@
   "summary": {
     "total": 28518,
     "byPriority": {
-      "P1": 8342,
-      "P2": 17313,
+      "P1": 6156,
+      "P2": 19499,
       "P3": 2863
     },
     "byCategory": {
-      "wcag-a": 2186,
+      "wcag-candidate": 2186,
       "recommendation": 17313,
       "normative-html": 6156,
       "visual-contract": 2863

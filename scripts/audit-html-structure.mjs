@@ -531,11 +531,11 @@ function printSummary(results) {
   const noCategoryLink = fichas.filter(r => r.linksToCategoryIndex === 0).length;
   const deadEnds = fichas.filter(r => r.internalLinks === 0 && r.externalLinks > 0).length;
   
-  console.log('\n=== P1 NORMATIVE HTML / WCAG ===');
+  console.log('\n=== P1 NORMATIVE HTML ===');
   console.log(`Loose dt/dd pairs: ${looseDt}/${looseDd} across ${filesWithLooseDt} files (HTML conformance)`);
-  console.log(`Pages without skip link: ${noSkipLink} (WCAG 2.4.1 candidate)`);
 
   console.log('\n=== P2 ACCESSIBILITY / NAVIGATION RECOMMENDATIONS ===');
+  console.log(`Pages without skip link: ${noSkipLink} (WCAG 2.4.1 candidate; verify alternative bypass)`);
   console.log(`Pages without <nav>: ${noNav} (semantic navigation absent)`);
   console.log(`Pages with <nav> but no accessible name: ${navWithoutName} / ${valid.filter(r => r.navCount > 0).length}`);
   console.log(`<main> without id="main-content": ${noMainId}`);

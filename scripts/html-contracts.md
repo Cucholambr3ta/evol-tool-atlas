@@ -13,12 +13,17 @@
 
 La revisión independiente exigió separar tres cosas que antes se mezclaban. El validador
 usa una prioridad y una categoría por regla; **P1 solo contiene incumplimientos
-normativos de HTML o WCAG A**, nunca elementos válidos según la especificación.
+normativos de HTML**, nunca elementos válidos según la especificación ni candidatos WCAG que
+requieren verificación manual.
+
+> **Criterio de autorización (condición 6):** la ausencia de skip link no se presenta como
+> incumplimiento normativo universal. `skip-link` es P2 (`wcag-candidate`) y su mensaje pide
+> comprobar si existe otro mecanismo de bypass antes de declarar un fallo de WCAG 2.4.1.
 
 | Prioridad | Categoría | Reglas | Por qué |
 |---|---|---|---|
 | **P1** | `normative-html` | `dl-valid` | `<dt>`/`<dd>` fuera de `<dl>` incumple el content model de WHATWG HTML. |
-| **P1** | `wcag-a` | `skip-link` | WCAG 2.2 2.4.1 (A): no se detecta mecanismo de bypass. Si existe otro mecanismo documentado, el hallazgo se cierra manualmente. |
+| **P2** | `wcag-candidate` | `skip-link` | WCAG 2.2 2.4.1 (A) exige *algún* mecanismo de bypass. La ausencia de skip link **no demuestra por sí sola** un fallo: encabezados, landmarks u otro mecanismo documentado pueden satisfacerlo. Se reporta para verificación manual. |
 | **P2** | `recommendation` | `nav-present`, `nav-named`, `main-id`, `header-footer-landmarks`, `internal-link`, `category-link`, `resource-links`, `section-heading`, `focus-visible`, `link-text` | HTML válido y/o WCAG dependiente de contexto. Se reportan como recomendaciones, no como errores P1. |
 | **P2** | `contract-integrity` | `atds-badge` | El badge, **si existe**, debe coincidir con `reports/atds-validation.json`. Las fichas legacy sin badge no se penalizan. |
 | **P3** | `visual-contract` | `meta-description`, `no-inline-style` | Convenciones de publicación y contrato visual; no son errores de HTML ni de WCAG. |
@@ -161,7 +166,7 @@ la distinción que la revisión pidió.
 |---|---|
 | `h1` único | Coincide con `catalogo.json` (2.137/2.137 exactos en la baseline) |
 | `dl` | `<dt>`/`<dd>` dentro de `<dl>` (directos o en `<div>`); `dl-valid` P1 |
-| Skip link | `a[href="#main-content"]` + `main#main-content`; `skip-link` P1 |
+| Skip link | `a[href="#main-content"]` + `main#main-content`; `skip-link` P2 (verificación manual de 2.4.1) |
 | Landmarks | `<header role="banner">` y `<footer role="contentinfo">` fuera de `<main>` |
 | Navegación | Al menos un `<nav>` con `aria-label`; `nav-present` y `nav-named` P2 |
 | Enlace de categoría | La ficha enlaza al `href` de su categoría en `catalogo.json`; `category-link` P2 |

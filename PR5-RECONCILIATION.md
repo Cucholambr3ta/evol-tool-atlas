@@ -65,7 +65,7 @@ mal: contaba `header`/`footer` dentro de `main`, `main` sin `id`, `<nav>` sin no
 | Prioridad | Categoría | Reglas |
 |---|---|---|
 | **P1** | `normative-html` | `dl-valid` |
-| **P1** | `wcag-a` | `skip-link` |
+| **P2** | `wcag-candidate` | `skip-link` |
 | **P2** | `recommendation` | `nav-present`, `nav-named`, `main-id`, `header-footer-landmarks`, `internal-link`, `category-link`, `resource-links`, `section-heading`, `focus-visible`, `link-text` |
 | **P2** | `contract-integrity` | `atds-badge` |
 | **P3** | `visual-contract` | `meta-description`, `no-inline-style` |
@@ -78,8 +78,9 @@ Justificación de los traslados:
 - `<nav>` sin `aria-label` es una **recomendación WAI-ARIA**, no un fallo de conformidad HTML. Es P2.
 - `meta description` y `style=""` son convenciones de publicación/contrato visual. Son P3.
 - `dl-valid` sí es inválido: `<dt>`/`<dd>` fuera de `<dl>` incumple el content model de WHATWG.
-- `skip-link` se mantiene P1 porque WCAG 2.2 2.4.1 (A) exige un mecanismo de bypass; el
-  validador detecta la ausencia del mecanismo auditable.
+- `skip-link` es P2 (`wcag-candidate`): WCAG 2.4.1 exige *algún* mecanismo de bypass, pero su
+  ausencia no demuestra por sí sola un fallo. Encabezados, landmarks u otro mecanismo
+  documentado pueden satisfacerlo; el mensaje pide verificación manual.
 
 ---
 
@@ -95,7 +96,7 @@ Parser: `node-html-parser@9.0.7` (árbol DOM, no regex). Corpus: **2.186 archivo
 | `resource-links` | P2 | 6.419 | 2.127+ |
 | `dl-valid` | **P1** | 6.156 | 772 |
 | `header-footer-landmarks` | P2 | 3.605 | 1.419 headers + 2.186 footers |
-| `skip-link` | **P1** | 2.186 | 2.186 |
+| `skip-link` | P2 | 2.186 | 2.186 |
 | `main-id` | P2 | 2.186 | 2.186 |
 | `meta-description` | P3 | 2.167 | 2.167 (solo 19 páginas la tienen) |
 | `nav-named` | P2 | 1.268 | 1.268 |
@@ -108,8 +109,8 @@ Parser: `node-html-parser@9.0.7` (árbol DOM, no regex). Corpus: **2.186 archivo
 | `focus-visible` | P2 | 228 | 228 |
 | `atds-badge` | P2 | 0 | 0 (no hay badges reales en el corpus) |
 
-**Totales:** P1 = **8.342**, P2 = **17.313**, P3 = **2.863**, total **28.518**.
-Con allowlist en strict se suprimen exactamente 9 `focus-visible`: P2 = 17.304, total 28.509.
+**Totales:** P1 = **6.156**, P2 = **19.499**, P3 = **2.863**, total **28.518**.
+Con allowlist en strict se suprimen exactamente 9 `focus-visible`: P2 = 19.490, total 28.509.
 
 > `header-footer-landmarks` genera 3.605 hallazgos porque cuenta cada `<header>` y cada
 > `<footer>` dentro de `main` (1.419 + 2.186), no porque haya 3.605 archivos afectados.
@@ -232,20 +233,21 @@ Parser: node-html-parser@9.0.7
 Corpus: 2186 files (2137 fichas, 49 indices)
 Security scan (scripts/lib/html-scan.mjs): 2186 files, 0 blocking, 2186 advisory
 Total findings: 28509
-  P1 normative HTML/WCAG (error): 8342
-  P2 accessibility/navigation/contract (warn): 17304
+  P1 normative HTML (error): 6156
+  P2 accessibility/navigation/contract (warn): 19490
   P3 visual/publication contract (warn): 2863
   ...
   entries: 9, expired: 0, suppressed in strict: 9
-[VALIDATE] strict gate: P1=8342, security blocking=0, expired allowlist=0
+[VALIDATE] strict gate: P1=6156, security blocking=0, expired allowlist=0
 [VALIDATE] WOULD FAIL (strict without --fail-on-error; no exit code set)
 ```
 
-El validador es **advisory por defecto**. `--strict --fail-on-error` falla hoy porque el corpus
-sin migrar conserva 8.342 hallazgos P1; ese es el estado real y no se oculta. El gate
-bloqueante de release sigue siendo `verify-atlas.mjs` + `html-scan.mjs`, que reportan
-**0 blocking**. El modo strict está pensado para el piloto de PR #6, no para bloquear el
-corpus legacy en este PR.
+El validador es **advisory por defecto** y **no forma parte de `check:release`**. El modo
+strict no bloquea el release por los defectos históricos aún no migrados.
+`--strict --fail-on-error` falla hoy porque el corpus sin migrar conserva 6.156 hallazgos P1
+(`dl-valid`); ese es el estado real y no se oculta. El gate bloqueante de release sigue siendo
+`verify-atlas.mjs` + `html-scan.mjs`, que reportan **0 blocking**. El modo strict está pensado
+para el piloto de PR #6, no para bloquear el corpus legacy en este PR.
 
 ---
 

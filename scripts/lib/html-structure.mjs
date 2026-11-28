@@ -32,6 +32,7 @@ export const PRIORITY_SEVERITY = Object.freeze({
 export const CATEGORY_LABELS = Object.freeze({
   'normative-html': 'HTML conformance (WHATWG)',
   'wcag-a': 'WCAG 2.2 Level A',
+  'wcag-candidate': 'WCAG candidate requiring manual verification',
   recommendation: 'Accessibility / usability recommendation',
   'contract-integrity': 'ATDS / data contract consistency',
   'visual-contract': 'Visual / publication contract',
@@ -121,21 +122,28 @@ export const RULES = [
   },
   {
     id: 'skip-link',
-    name: 'Bypass block: skip link to main content',
-    priority: 'P1',
-    severity: PRIORITY_SEVERITY.P1,
-    category: 'wcag-a',
+    name: 'Bypass block: skip link to main content (manual verification)',
+    priority: 'P2',
+    severity: PRIORITY_SEVERITY.P2,
+    category: 'wcag-candidate',
     description:
-      'WCAG 2.2 2.4.1 (A): a mechanism must exist to bypass repeated blocks. A skip link to #main-content is the auditable mechanism; if another bypass exists it must be documented.',
+      'WCAG 2.2 2.4.1 (A) requires some mechanism to bypass repeated blocks. Absence of a skip link is not, by itself, proof of failure: headings, landmarks or another documented mechanism may satisfy it. Reported as a recommendation for manual verification, never as an automatic normative error.',
     wcag: '2.4.1',
     check({ root }) {
       const out = [];
       const skip = root.querySelector('a[href="#main-content"], a.skip-link');
       const target = root.querySelector('main#main-content, [id="main-content"]');
       if (!skip) {
-        out.push(finding('Missing skip link (a[href="#main-content"] or a.skip-link)', 'body'));
+        out.push(
+          finding(
+            'No skip link detected; verify an alternative bypass mechanism before declaring WCAG 2.4.1 failure',
+            'body',
+          ),
+        );
       } else if (!target) {
-        out.push(finding('Skip link present but target #main-content does not exist', 'a'));
+        out.push(
+          finding('Skip link present but target #main-content does not exist (broken bypass mechanism)', 'a'),
+        );
       }
       return out;
     },

@@ -38,11 +38,11 @@
 
 | Prioridad | Total | Reglas principales |
 |---|---:|---|
-| **P1** normativo HTML/WCAG | **8.342** | `dl-valid` 6.156; `skip-link` 2.186 |
-| **P2** accesibilidad/navegación/contrato | **17.313** | `resource-links` 6.419; `header-footer-landmarks` 3.605; `main-id` 2.186; `nav-named` 1.268; `nav-present` 918; `section-heading` 765; `link-text` 726; `category-link` 604; `internal-link` 594; `focus-visible` 228 |
+| **P1** normativo HTML | **6.156** | `dl-valid` 6.156 |
+| **P2** accesibilidad/navegación/contrato | **19.499** | `resource-links` 6.419; `header-footer-landmarks` 3.605; `main-id` 2.186; `skip-link` 2.186 (candidato WCAG, verificación manual); `nav-named` 1.268; `nav-present` 918; `section-heading` 765; `link-text` 726; `category-link` 604; `internal-link` 594; `focus-visible` 228 |
 | **P3** contrato visual | **2.863** | `meta-description` 2.167; `no-inline-style` 696 |
 
-Con allowlist en strict se suprimen 9 `focus-visible`: P2 = 17.304.
+Con allowlist en strict se suprimen 9 `focus-visible`: P2 = 19.490.
 
 ### Tres distinciones de navegación
 
@@ -60,10 +60,12 @@ El corpus legacy no tiene badges reales (0). La regla solo valida badges present
 
 ---
 
-## Por qué P1 solo contiene dos reglas
+## Por qué P1 solo contiene una regla
 
 - `dl-valid`: `<dt>`/`<dd>` fuera de `<dl>` incumple WHATWG HTML.
-- `skip-link`: WCAG 2.2 2.4.1 (A), ausencia de mecanismo de bypass.
+- `skip-link` **no** es P1: WCAG 2.2 2.4.1 (A) exige *algún* mecanismo de bypass, y la
+  ausencia de skip link no demuestra por sí sola un fallo (encabezados, landmarks u otro
+  mecanismo documentado pueden satisfacerlo). Es P2 `wcag-candidate`, con verificación manual.
 
 `header`/`footer` dentro de `main`, `main` sin `id`, `<nav>` sin nombre, `meta description`
 y `style=""` son **HTML válido**. Se reportan como P2/P3, nunca como P1.

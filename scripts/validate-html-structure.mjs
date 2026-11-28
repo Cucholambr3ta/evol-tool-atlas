@@ -89,7 +89,7 @@ function printTextReport(report) {
     );
   }
   console.log(`Total findings: ${summary.total}`);
-  console.log(`  P1 normative HTML/WCAG (error): ${summary.byPriority.P1}`);
+  console.log(`  P1 normative HTML (error): ${summary.byPriority.P1}`);
   console.log(`  P2 accessibility/navigation/contract (warn): ${summary.byPriority.P2}`);
   console.log(`  P3 visual/publication contract (warn): ${summary.byPriority.P3}`);
   console.log(`Files with findings: ${summary.filesWithFindings}`);

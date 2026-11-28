@@ -98,7 +98,7 @@ describe('rule catalogue', () => {
 
   it('only P1 rules are normative HTML or WCAG A', () => {
     const p1 = RULES.filter((r) => r.priority === 'P1').map((r) => r.id).sort();
-    expect(p1).toEqual(['dl-valid', 'skip-link']);
+    expect(p1).toEqual(['dl-valid']);
     for (const rule of RULES.filter((r) => r.priority === 'P1')) {
       expect(['normative-html', 'wcag-a']).toContain(rule.category);
       expect(rule.severity).toBe('error');
@@ -133,13 +133,17 @@ describe('dl-valid (P1, normative HTML)', () => {
   });
 });
 
-describe('skip-link (P1, WCAG 2.4.1)', () => {
+describe('skip-link (P2, WCAG 2.4.1 candidate — manual verification)', () => {
   it('accepts a skip link whose target exists', () => {
     expect(rulesOf(findings(doc('<a href="#main-content">Saltar</a><main id="main-content"></main>')))).not.toContain('skip-link');
   });
 
-  it('flags a missing skip link', () => {
-    expect(rulesOf(findings(doc('<main id="main-content"></main>')))).toContain('skip-link');
+  it('reports a missing skip link as P2, not as an automatic normative failure', () => {
+    const f = findings(doc('<main id="main-content"></main>'));
+    const skip = f.find((x) => x.rule === 'skip-link');
+    expect(skip?.priority).toBe('P2');
+    expect(skip?.category).toBe('wcag-candidate');
+    expect(skip?.message).toContain('alternative bypass mechanism');
   });
 
   it('flags a skip link with a missing target', () => {
@@ -486,11 +490,11 @@ describe('full corpus (2,186 pages)', () => {
   for (const file of files) all.push(...validateFile(file, BASE));
   const summary = summarize(all);
 
-  it('covers 2,186 pages and classifies P1 only as HTML/WCAG', () => {
+  it('covers 2,186 pages and classifies P1 only as normative HTML', () => {
     expect(files).toHaveLength(2186);
-    expect(summary.byPriority.P1).toBe(8342);
+    expect(summary.byPriority.P1).toBe(6156);
     const p1Rules = [...new Set(all.filter((f) => f.priority === 'P1').map((f) => f.rule))].sort();
-    expect(p1Rules).toEqual(['dl-valid', 'skip-link']);
+    expect(p1Rules).toEqual(['dl-valid']);
   });
 
   it('keeps the three navigation questions separate', () => {
