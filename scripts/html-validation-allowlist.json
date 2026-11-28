@@ -1,0 +1,71 @@
+{
+  "schema": "evol-tool-atlas/html-validation-allowlist/1",
+  "owner": "PR #5 (validator) — must be removed by the PR #6 template pilot",
+  "expiresAt": "2027-03-31",
+  "policy": "Only P2/P3 recommendations may be allowlisted. P1 normative HTML/WCAG findings are never allowlisted. Advisory mode always reports every finding; strict mode suppresses only these exact file+rule pairs. An expired entry suppresses nothing.",
+  "entries": [
+    {
+      "file": "02-catalogo/pruebas-tecnicas/cargo-audit/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/cargo-fuzz/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/cargo-mutants/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/dm-flakey/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/dm-log-writes/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/gitleaks/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas index has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/loom/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/mcp-inspector/index.html",
+      "rule": "focus-visible",
+      "reason": "Legacy pruebas-tecnicas template has no :focus-visible block; the PR #6 pilot replaces the template.",
+      "ticket": "PR #6",
+      "expiresAt": "2027-03-31"
+    }
+  ]
+}
