@@ -1,0 +1,51 @@
+{
+  "schema": "evol-tool-atlas/html-certification-targets/1",
+  "description": "Piloto PR #6: 10 fichas + 1 índice (scripts/html-contracts.md §8). Ninguna está migrada en PR #5: la certificación falla hoy por diseño.",
+  "expectedCount": 11,
+  "targets": [
+    {
+      "file": "02-catalogo/seguridad/catalogo/threat-dragon/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/sagan/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/nfcutils/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/secure-delete/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/testing-y-auditoria/semgrep/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/promptfoo/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/cargo-fuzz/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/pruebas-tecnicas/mcp-inspector/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/0trace/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/adversarial-robustness-toolbox/index.html",
+      "contract": "ficha"
+    },
+    {
+      "file": "02-catalogo/seguridad/catalogo/scanner/index.html",
+      "contract": "category-index"
+    }
+  ]
+}

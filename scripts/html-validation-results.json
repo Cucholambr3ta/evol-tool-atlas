@@ -1,9 +1,8 @@
 {
-  "schema": "evol-tool-atlas/html-validation/2",
-  "generatedAt": "2026-11-28T04:22:03.111Z",
-  "head": "47dc06e3576ea3f1a3acdc357be60ca8c46d62c4",
+  "schema": "evol-tool-atlas/html-validation/3",
   "mode": "advisory",
   "parser": "node-html-parser@9.0.7",
+  "atdsSource": "evaluate",
   "corpus": {
     "files": 2186,
     "fichas": 2137,
@@ -125,7 +124,7 @@
       "severity": "warn",
       "category": "contract-integrity",
       "wcag": null,
-      "description": "Reads reports/atds-validation.json (the official result). Only checks badges that are present; legacy sheets without a badge are not penalised."
+      "description": "Compares present badges with the official ATDS result (computed in-process by the ATDS validator, or read from a report). Legacy sheets without a badge are not penalised in advisory mode; the certification contract requires the badge."
     },
     {
       "id": "meta-description",
@@ -2388,5 +2387,5 @@
     },
     "filesWithFindings": 2186
   },
-  "note": "Compact output: full per-finding detail omitted. Re-run without --compact for the complete list."
+  "note": "Compact output: per-finding detail omitted. Re-run `npm run validate:html` without --compact for the complete list."
 }

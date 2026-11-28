@@ -29,6 +29,16 @@ export interface AtdsReport {
   [key: string]: unknown;
 }
 
+export interface AtdsOfficial {
+  level: string;
+  candidateLevel: string;
+  status?: string | null;
+  evaluationError?: boolean;
+  limitations?: string[];
+}
+
+export type AtdsLookup = (tool: { id: string; href?: string; cat?: number }) => AtdsOfficial | null;
+
 export interface Finding {
   rule: string;
   ruleName: string;
@@ -50,6 +60,7 @@ export interface RuleContext {
   tool: ToolRecord | null;
   category: CategoryRecord | null;
   atdsReport: AtdsReport | null;
+  atdsLookup: AtdsLookup | null;
   rootDir: string;
   basePath: string;
 }
@@ -69,9 +80,11 @@ export interface BaseContext {
   rootDir: string;
   catalogo: { herramientas: ToolRecord[]; categorias: CategoryRecord[] };
   atdsReport: AtdsReport | null;
+  atdsLookup: AtdsLookup | null;
   basePath: string;
   toolsByHref: Map<string, ToolRecord>;
   categoriesByNumber: Map<number, CategoryRecord>;
+  categoriesByHref: Map<string, CategoryRecord>;
 }
 
 export interface AllowlistEntry {
@@ -105,12 +118,16 @@ export const DEFAULT_BASE_PATH: string;
 export const PRIORITY_SEVERITY: Readonly<Record<Priority, Severity>>;
 export const CATEGORY_LABELS: Readonly<Record<string, string>>;
 export const RULES: Rule[];
+export const ATDS_BADGE_SELECTOR: string;
+
+export function atdsLookupFromReport(atdsReport: unknown): AtdsLookup | null;
 
 export function resolveLocalHref(fromDir: string, href: string | null | undefined, basePath?: string): string | null;
 export function createContext(input: {
   rootDir: string;
   catalogo: { herramientas: ToolRecord[]; categorias: CategoryRecord[] };
   atdsReport?: AtdsReport | null;
+  atdsLookup?: AtdsLookup | null;
   basePath?: string;
 }): BaseContext;
 export function fileContext(base: BaseContext, filePath: string): Omit<RuleContext, 'root'>;

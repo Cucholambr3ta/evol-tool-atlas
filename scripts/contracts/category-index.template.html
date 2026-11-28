@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Índice de {{TOOL_COUNT}} herramientas en {{CATEGORY_NAME}} · Evol Tool Atlas">
+  <title>{{CATEGORY_NUMBER}}. {{CATEGORY_NAME}} · Evol Tool Atlas</title>
+  <!--
+    CSS strategy: Option A (embedded). The DOCUMENT CSP is
+    "default-src 'none'; style-src 'unsafe-inline'; ...": it allows <style> blocks and
+    blocks any external stylesheet (no 'self') and any web font (no font-src).
+    Official Fine Line Premium palette; fonts fall back to locally installed faces.
+  -->
+  <style>
+    :root {
+      color-scheme: light dark;
+      --canvas: #f6f3ed; --surface: #fffdf7; --text: #30383c; --muted: #4d4b48;
+      --accent: #365568; --on-accent: #ffffff; --border: #9b8793;
+      --font-display: "Manrope", system-ui, sans-serif;
+      --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #191b1e; --surface: #27292d; --text: #faf8f0; --muted: #ccc9c1;
+        --accent: #f6f3ed; --on-accent: #30383c; --border: #a98a9f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--text); font: 16px/1.6 var(--font-body); }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.25; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    code { font-family: var(--font-mono); }
+    .skip-link { position: absolute; left: 1rem; top: -4rem; padding: .5rem 1rem; background: var(--accent); color: var(--on-accent); }
+    .skip-link:focus-visible { top: 1rem; }
+    .site-header, .site-footer, main { max-width: 60rem; margin: 0 auto; padding: 1rem 1.25rem; }
+    .muted, .eyebrow { color: var(--muted); }
+    .ficha-meta, .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; }
+    .ficha-meta div { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .ficha-meta dt { font-weight: 700; min-width: 12rem; }
+    .ficha-meta dd { margin: 0; }
+    .resource-links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+    .tool-grid { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+    .atds-badge { display: inline-block; border: 1px solid var(--border); border-radius: 10px; padding: 0 .5rem; font-size: .875rem; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="site-header" role="banner">
+    <p class="brand">Evol Tool Atlas</p>
+    <nav aria-label="Ruta de navegación">
+      <a href="{{ROOT}}index.html">Inicio</a> ›
+      <span aria-current="page">{{CATEGORY_NAME}}</span>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="index-header">
+      <p class="eyebrow">Categoría {{CATEGORY_NUMBER}} · {{CATEGORY_SLUG}}</p>
+      <h1>{{CATEGORY_NAME}}</h1>
+      <p class="lead">{{TOOL_COUNT}} herramientas documentadas</p>
+    </div>
+
+    <nav aria-label="Acciones del índice">
+      <a href="{{ROOT}}index.html">Volver al navegador principal</a>
+{{CATEGORY_README_LINK_HTML}}
+    </nav>
+
+    <section aria-labelledby="tools-h">
+      <h2 id="tools-h">Herramientas documentadas</h2>
+      <ul class="tool-grid" role="list">
+{{TOOL_CARDS_HTML}}
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p><small>Fine Line Premium · Evol Tool Atlas · {{DATE}} · <a href="{{ROOT}}docs/atds/ATDS-v1.md">ATDS v1</a></small></p>
+  </footer>
+</body>
+</html>

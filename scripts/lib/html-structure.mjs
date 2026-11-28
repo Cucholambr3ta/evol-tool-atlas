@@ -7,7 +7,7 @@
  * (which remains the blocking gate called by `scripts/verify-atlas.mjs`).
  *
  * Classification (see `scripts/html-contracts.md`):
- *   P1 — normative HTML conformance or WCAG Level A failure.
+ *   P1 — normative HTML conformance failure.
  *   P2 — accessibility / navigation / contract-integrity recommendation.
  *   P3 — visual or publication contract convention.
  *
@@ -47,6 +47,9 @@ const RESOURCE_FILES = Object.freeze([
   { file: 'casos-uso.json', label: 'Casos de uso' },
   { file: 'evidencias.json', label: 'Evidencias' },
 ]);
+
+export const ATDS_BADGE_SELECTOR =
+  '[data-atds-validated], [data-atds-candidate], .atds-badge, [class*="atds-badge"]';
 
 const EXTERNAL_RE = /^(https?:|mailto:|tel:|data:|javascript:)/i;
 
@@ -352,15 +355,14 @@ export const RULES = [
     severity: PRIORITY_SEVERITY.P2,
     category: 'contract-integrity',
     description:
-      'Reads reports/atds-validation.json (the official result). Only checks badges that are present; legacy sheets without a badge are not penalised.',
-    check({ root, tool, atdsReport }) {
-      if (!tool || !atdsReport?.report?.tools) return [];
-      const official = atdsReport.report.tools.find((t) => t.id === tool.id);
-      if (!official) return [];
-      const badges = root.querySelectorAll(
-        '[data-atds-validated], [data-atds-candidate], .atds-badge, [class*="atds-badge"]',
-      );
+      'Compares present badges with the official ATDS result (computed in-process by the ATDS validator, or read from a report). Legacy sheets without a badge are not penalised in advisory mode; the certification contract requires the badge.',
+    check({ root, tool, atdsLookup }) {
+      if (!tool || typeof atdsLookup !== 'function') return [];
+      const badges = root.querySelectorAll(ATDS_BADGE_SELECTOR);
       if (badges.length === 0) return [];
+      // Resolved lazily: only pages that actually carry a badge pay for the ATDS evaluation.
+      const official = atdsLookup(tool);
+      if (!official) return [];
       const out = [];
       for (const badge of badges) {
         const text = textOf(badge);
@@ -435,12 +437,45 @@ export const RULES = [
 // ============================================================
 
 /**
- * @param {{ rootDir: string, catalogo: any, atdsReport?: any, basePath?: string }} input
+ * Build an ATDS lookup from an already-loaded `reports/atds-validation.json` document.
+ *
+ * @param {any} atdsReport
+ * @returns {((tool: { id: string }) => { level: string, candidateLevel: string } | null) | null}
  */
-export function createContext({ rootDir, catalogo, atdsReport = null, basePath = DEFAULT_BASE_PATH }) {
+export function atdsLookupFromReport(atdsReport) {
+  const tools = atdsReport?.report?.tools ?? atdsReport?.tools;
+  if (!Array.isArray(tools)) return null;
+  const byId = new Map(tools.map((t) => [t.id, t]));
+  return (tool) => {
+    const t = byId.get(tool.id);
+    return t ? { level: t.level, candidateLevel: t.candidateLevel, status: t.status ?? null } : null;
+  };
+}
+
+/**
+ * @param {{ rootDir: string, catalogo: any, atdsReport?: any, atdsLookup?: Function | null, basePath?: string }} input
+ */
+export function createContext({
+  rootDir,
+  catalogo,
+  atdsReport = null,
+  atdsLookup = null,
+  basePath = DEFAULT_BASE_PATH,
+}) {
   const toolsByHref = new Map(catalogo.herramientas.map((t) => [t.href, t]));
   const categoriesByNumber = new Map(catalogo.categorias.map((c) => [Number(c.numero), c]));
-  return { rootDir, catalogo, atdsReport, basePath, toolsByHref, categoriesByNumber };
+  const categoriesByHref = new Map(catalogo.categorias.map((c) => [c.href, c]));
+  const lookup = atdsLookup ?? atdsLookupFromReport(atdsReport);
+  return {
+    rootDir,
+    catalogo,
+    atdsReport,
+    atdsLookup: lookup,
+    basePath,
+    toolsByHref,
+    categoriesByNumber,
+    categoriesByHref,
+  };
 }
 
 /**

@@ -22,14 +22,13 @@ import type {
   ToolRecord,
 } from '../../scripts/lib/html-structure.mjs';
 import { scanHtml, scanStaticTree } from '../../scripts/lib/html-scan.mjs';
+import { createAtdsLookup } from '../../scripts/lib/html-contract.mjs';
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const CATALOGO = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalogo.json'), 'utf8'));
-// reports/atds-validation.json is a gitignored artifact produced by `validate:atds`, which CI
-// runs after the unit tests. Treat it as optional, exactly like validate-html-structure.mjs.
-const ATDS_PATH = path.join(ROOT, 'reports', 'atds-validation.json');
-const ATDS = fs.existsSync(ATDS_PATH) ? JSON.parse(fs.readFileSync(ATDS_PATH, 'utf8')) : null;
-const BASE = createContext({ rootDir: ROOT, catalogo: CATALOGO, atdsReport: ATDS });
+// The official ATDS result is computed in-process (same evaluateToolSafe() as the build), so
+// the suite never depends on the gitignored reports/atds-validation.json.
+const BASE = createContext({ rootDir: ROOT, catalogo: CATALOGO, atdsLookup: createAtdsLookup({ rootDir: ROOT }) });
 
 const TOOL_0TRACE = CATALOGO.herramientas.find((t: ToolRecord) => t.id === '0trace') as ToolRecord;
 const CAT_SCANNER = CATALOGO.categorias.find((c: CategoryRecord) => c.numero === TOOL_0TRACE.cat) as CategoryRecord;

@@ -2,9 +2,10 @@
 
 **PR:** #5 — validador estructural + auditoría DOM + contratos propuestos
 **Baseline aprobada:** `main` = `1144dedd1b65fe3c9a844fc0519e3a441f931ba6` (PR #4, estabilización post-E3-01)
-**Estado:** propuesta; **no se migra ninguna página en este PR**
-**Fuente de verdad ATDS:** `reports/atds-validation.json` (generado por `validate-atds.mjs`)
-**Validador:** `scripts/validate-html-structure.mjs` (advisory por defecto; strict con allowlist)
+**Estado:** contratos publicables y certificables; **no se migra ninguna página en este PR**
+**Plantillas canónicas:** `scripts/contracts/ficha.template.html` y `scripts/contracts/category-index.template.html`
+**Fuente de verdad ATDS:** el resultado oficial de `evaluateToolSafe()` (`scripts/lib/atds/evaluate.mjs`), el mismo que usa `scripts/build-catalog-index.mjs` para `tool.atds`. Se calcula en proceso y **no depende** de artefactos gitignored. `reports/atds-validation.json` es opcional (`--atds-source=report`).
+**Validador:** `scripts/validate-html-structure.mjs` (advisory por defecto; certificación por `--targets-file`)
 **Escáner de seguridad:** `scripts/lib/html-scan.mjs` (bloqueante, invocado por `scripts/verify-atlas.mjs`; este PR no lo modifica)
 
 ---
@@ -25,7 +26,7 @@ requieren verificación manual.
 | **P1** | `normative-html` | `dl-valid` | `<dt>`/`<dd>` fuera de `<dl>` incumple el content model de WHATWG HTML. |
 | **P2** | `wcag-candidate` | `skip-link` | WCAG 2.2 2.4.1 (A) exige *algún* mecanismo de bypass. La ausencia de skip link **no demuestra por sí sola** un fallo: encabezados, landmarks u otro mecanismo documentado pueden satisfacerlo. Se reporta para verificación manual. |
 | **P2** | `recommendation` | `nav-present`, `nav-named`, `main-id`, `header-footer-landmarks`, `internal-link`, `category-link`, `resource-links`, `section-heading`, `focus-visible`, `link-text` | HTML válido y/o WCAG dependiente de contexto. Se reportan como recomendaciones, no como errores P1. |
-| **P2** | `contract-integrity` | `atds-badge` | El badge, **si existe**, debe coincidir con `reports/atds-validation.json`. Las fichas legacy sin badge no se penalizan. |
+| **P2** | `contract-integrity` | `atds-badge` | El badge, **si existe**, debe coincidir con el resultado ATDS oficial. Las fichas legacy sin badge no se penalizan en advisory; en certificación el badge es obligatorio. |
 | **P3** | `visual-contract` | `meta-description`, `no-inline-style` | Convenciones de publicación y contrato visual; no son errores de HTML ni de WCAG. |
 
 ### Las tres preguntas de navegación, separadas
@@ -43,240 +44,169 @@ la distinción que la revisión pidió.
 
 ---
 
-## 2. Contrato A — Ficha de herramienta
+## 2. Estrategia CSS y CSP (decisión)
 
-### 2.1 Reglas de oro
+**Se adopta la Opción A: CSS embebido en un bloque `<style>` por página.**
 
-1. **Sin scripts.** Ni `<script>`, ni `on*`, ni `javascript:`. La CSP de documentos es
-   `default-src 'none'; script-src 'none'; ...`.
-2. **Enlaces relativos o con base path.** El despliegue por defecto es
-   `/evol-tool-atlas/` (`scripts/lib/base-path.mjs`). Una ruta absoluta `/shared/...`
-   rompe la subruta; usar rutas relativas desde la ficha o `import.meta.env.BASE_URL`
-   en el renderizador.
-3. **Sin recursos remotos embebidos.** Nada de `<img src="https://...">`, `<link>` a
-   CDN, `<iframe>`, `<object>`, `<embed>`, `<base>`, `<form>`.
-4. **Estilos.** La CSP de documentos permite `style-src 'unsafe-inline'` para el legado,
-   pero el contrato visual prefiere una hoja compartida. Un bloque `<style>` es
-   compatible con la CSP; un atributo `style="..."` es P3 (`no-inline-style`).
-5. **ATDS oficial.** El badge se rellena desde `reports/atds-validation.json`
-   (`id`, `level`, `candidateLevel`) o desde el resumen de build
-   (`tool.atds.validatedLevel`, `tool.atds.candidateLevel`). Nunca desde
-   `catalogo.json.evidence` ni desde etiquetas escritas a mano.
-6. **Recursos reales.** Solo se enlaza `README.md`, `metadata.json`, `SHA256SUMS.txt`,
-   `GUIA.md`, `SKILL.md`, `casos-uso.json` o `evidencias.json` si el archivo existe en
-   disco en el momento del build.
-7. **Identidad Fine Line Premium.** Tokens oficiales, fuentes Manrope/Atkinson
-   Hyperlegible y pie `Fine Line Premium · Evol Tool Atlas`.
+La CSP de documentos (`DOCUMENT_CSP_HEADER` en `scripts/lib/security-headers.mjs`) es:
 
-### 2.2 Esqueleto
+```
+default-src 'none'; script-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:;
+object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+```
+
+| Recurso | ¿Lo permite la CSP actual? | Consecuencia en el contrato |
+|---|---|---|
+| Bloque `<style>` | Sí (`style-src 'unsafe-inline'`) | Es la estrategia elegida |
+| `<link rel="stylesheet" href="…">` | **No**: `style-src` no incluye `'self'` | Prohibido (`no-external-stylesheet`) |
+| `@import` | **No** | Prohibido (`no-external-stylesheet`) |
+| `@font-face` / web fonts | **No**: no hay `font-src` y `default-src 'none'` | Prohibido (`no-web-fonts`); `Manrope` y `Atkinson Hyperlegible` se declaran con *fallback* `system-ui` y solo se usan si están instaladas localmente |
+| Atributo `style="…"` | Sí, pero es convención visual | Prohibido en páginas migradas (`no-inline-style`) |
+
+**Opción B (CSS compartido), descartada en PR #5 y PR #6.** Exigiría, como mínimo:
+
+1. Añadir `'self'` a `style-src` (y `font-src 'self'` si se quieren las fuentes) en
+   `DOCUMENT_CSP_HEADER`, en `scripts/lib/security-headers.mjs` y en el servidor de
+   desarrollo `scripts/lib/dev-static.mjs`, con sus tests.
+2. Publicar la hoja: añadirla a `STATIC_CATALOG_ITEMS` (`scripts/lib/static-publish.mjs`,
+   que usa `scripts/copy-static-catalog.mjs`) para que llegue a `dist/`.
+3. Registrar su SHA-256 en `SHA256SUMS.txt` y en el manifiesto offline
+   (`scripts/lib/offline-manifest.mjs`), con `verify:release` comprobándolo.
+4. Enlazarla con una ruta relativa calculada por profundidad, válida en `/` y en `/evol-tool-atlas/`.
+
+Esto amplía la CSP de documentos, así que no se hace para obtener un resultado verde. Un test
+fija el valor exacto de `DOCUMENT_CSP_HEADER`, de modo que cualquier cambio de CSP tiene que
+ser explícito y revisado.
+
+---
+
+## 3. Rutas relativas reales
+
+Las fichas y los índices **no** están a la misma profundidad, así que ninguna ruta fija
+(`../../../`) vale para todos. El renderizador (`scripts/lib/html-contract.mjs`) calcula:
+
+- `{{ROOT}}` = `rootPrefix(rel)`: un `../` por directorio de la ruta de la página.
+- `{{CATEGORY_HREF}}` = `relativeHref(rel, categoria.href)`, a partir de `catalogo.json`.
+
+| Página real | Profundidad | `{{ROOT}}` | Enlace a la categoría |
+|---|---:|---|---|
+| `02-catalogo/seguridad/catalogo/threat-dragon/index.html` | 4 | `../../../../` | `../modelado-amenazas/index.html` |
+| `02-catalogo/testing-y-auditoria/semgrep/index.html` | 3 | `../../../` | `../../seguridad/catalogo/auditoria-codigo/index.html` |
+| `02-catalogo/pruebas-tecnicas/cargo-fuzz/index.html` | 3 | `../../../` | `../index.html` |
+| `02-catalogo/pruebas-tecnicas/index.html` (índice) | 2 | `../../` | — |
+| `02-catalogo/seguridad/catalogo/scanner/index.html` (índice) | 4 | `../../../../` | — |
+
+Reglas de enlace (comprobación `local-links-resolve`, que se ejecuta para **cada** base path):
+
+- Solo se usan rutas relativas. Una ruta que empieza por `/` falla en uno de los dos despliegues.
+- Cada enlace se resuelve como lo haría un navegador desde `/<rel>` y desde
+  `/evol-tool-atlas/<rel>`. El destino no puede salirse del base path, tiene que existir y
+  tiene que estar publicado en `dist/` (`isPublishedPath()`; misma lista que copia
+  `scripts/copy-static-catalog.mjs`).
+- `{{ROOT}}index.html` es la SPA. `{{ROOT}}docs/atds/ATDS-v1.md` es el único documento de `docs/`
+  publicado. Otros documentos de `docs/` **no** se enlazan, porque no llegan a `dist/`.
+- Los tests renderizan las 11 páginas del piloto en sus rutas reales y verifican todos sus
+  enlaces bajo `/` y `/evol-tool-atlas/`.
+
+---
+
+## 4. Contrato A — Ficha de herramienta
+
+Plantilla canónica: `scripts/contracts/ficha.template.html`. Se renderiza con
+`renderContract('ficha', fichaContractVars(rel, base, atdsLookup, { date, description, contentSectionsHtml }))`.
+Cualquier placeholder sin valor, o valor sin placeholder, es un error.
+
+| Placeholder | Origen |
+|---|---|
+| `{{TOOL_NAME}}`, `{{TOOL_ID}}` | `catalogo.json` (`name`, `id`); el `<h1>` debe coincidir con `name` |
+| `{{DESCRIPTION}}` | `catalogo.json.description` o una descripción verificada explícita. Si no hay ninguna, el renderizado se rechaza (no se emite un `meta description` vacío) |
+| `{{CATEGORY_NAME}}`, `{{CATEGORY_HREF}}` | `catalogo.json.categorias[tool.cat]` (ruta relativa calculada) |
+| `{{ROOT}}` | Profundidad de la página (§3) |
+| `{{ATDS_VALIDATED}}`, `{{ATDS_CANDIDATE}}` | Resultado ATDS oficial (`level`, `candidateLevel`), **nunca** `catalogo.json.evidence` |
+| `{{RESOURCE_LINKS_HTML}}` | Solo los recursos que existen en disco: `README.md`, `metadata.json`, `SHA256SUMS.txt`, `GUIA.md`, `casos-uso.json`, `SKILL.md`, `evidencias.json` |
+| `{{CONTENT_SECTIONS_HTML}}` | Secciones de contenido ATDS L1 (`<section aria-labelledby>` + `<h2>`) |
+| `{{DATE}}` | Fecha de verificación |
+
+Estructura (extracto de la plantilla):
 
 ```html
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="[Descripción ATDS L1 verificada, ≤160 caracteres]">
-  <title>[Nombre oficial] · Evol Tool Atlas</title>
-  <!-- Ruta relativa: funciona en / y en /evol-tool-atlas/ -->
-  <link rel="stylesheet" href="../../../shared/ficha.css">
-</head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
   <header class="site-header" role="banner">
-    <p class="brand">Evol Tool Atlas</p>
     <nav aria-label="Ruta de navegación">
-      <a href="../../../../index.html">Inicio</a> ›
-      <a href="../[categoria]/index.html">[Categoría]</a> ›
-      <span aria-current="page">[Nombre]</span>
+      <a href="{{ROOT}}index.html">Inicio</a> › <a href="{{CATEGORY_HREF}}">{{CATEGORY_NAME}}</a> ›
+      <span aria-current="page">{{TOOL_NAME}}</span>
     </nav>
   </header>
-
-  <main id="main-content" role="main">
+  <main id="main-content">
     <article class="tool-ficha">
-      <header class="ficha-header">
-        <p class="eyebrow">[Categoría] · Ficha [ID catálogo]</p>
-        <h1>[Nombre oficial]</h1>
-        <p class="lead">[Descripción ATDS L1]</p>
-
-        <dl class="ficha-meta" aria-label="Metadatos de la herramienta">
-          <div><dt>Identificador</dt><dd>[AT-SEC-XXX]</dd></div>
-          <div><dt>Tipo</dt><dd>[tipo verificado]</dd></div>
-          <div><dt>Licencia</dt><dd>[licencia verificada]</dd></div>
-          <div><dt>Plataformas</dt><dd>[SO verificados]</dd></div>
-          <div><dt>Estado documental ATDS</dt><dd>
-            <!-- Valores inyectados desde reports/atds-validation.json -->
-            <span class="atds-badge"
-                  data-atds-validated="[L1|L2|L3|L4|NONE]"
-                  data-atds-candidate="[L1|L2|L3|L4|NONE]">
-              Validado: [level] · Candidato: [candidateLevel]
-            </span>
-          </dd></div>
-          <div><dt>Fecha de verificación</dt><dd>[YYYY-MM-DD]</dd></div>
-        </dl>
-      </header>
-
-      <section aria-labelledby="problema-h">
-        <h2 id="problema-h">Problema que resuelve</h2>
-        <p>[ATDS L1]</p>
-      </section>
-
-      <section aria-labelledby="funciones-h">
-        <h2 id="funciones-h">Funciones principales</h2>
-        <ul>[ATDS L1]</ul>
-      </section>
-
-      <section aria-labelledby="recursos-h">
-        <h2 id="recursos-h">Recursos técnicos disponibles</h2>
-        <nav aria-label="Recursos técnicos">
-          <!-- Solo si el archivo existe en disco -->
-          <a href="README.md" rel="noopener">README</a>
-          <a href="metadata.json" rel="noopener">Metadatos JSON</a>
-          <a href="SHA256SUMS.txt" rel="noopener">SHA-256</a>
-          <a href="GUIA.md" rel="noopener">Guía técnica</a>
-          <a href="casos-uso.json" rel="noopener">Casos de uso</a>
-          <a href="SKILL.md" rel="noopener">Skill reutilizable</a>
-          <a href="evidencias.json" rel="noopener">Registro de evidencias</a>
-        </nav>
-      </section>
-
-      <section aria-labelledby="fuentes-h">
-        <h2 id="fuentes-h">Fuentes y referencias</h2>
-        <ul>
-          <li><a href="[url oficial]" rel="noopener noreferrer">[Título verificado]</a></li>
-        </ul>
-      </section>
+      <div class="ficha-header">            <!-- no <header> dentro de <main> -->
+        <h1>{{TOOL_NAME}}</h1>
+        <dl class="ficha-meta"> … <span class="atds-badge" data-atds-validated="{{ATDS_VALIDATED}}"
+            data-atds-candidate="{{ATDS_CANDIDATE}}">…</span> … </dl>
+      </div>
+      {{CONTENT_SECTIONS_HTML}}
+      <section aria-labelledby="recursos-h"> <h2 id="recursos-h">…</h2>
+        <nav aria-label="Recursos técnicos">{{RESOURCE_LINKS_HTML}}</nav> </section>
     </article>
   </main>
-
-  <!-- Fuera de <main>: conserva el landmark contentinfo -->
-  <footer class="site-footer" role="contentinfo">
-    <p><small>Fine Line Premium · Evol Tool Atlas · [fecha] ·
-      <a href="../../../docs/atds/ATDS-v1.md">ATDS v1</a></small></p>
-  </footer>
+  <footer class="site-footer" role="contentinfo"> … <a href="{{ROOT}}docs/atds/ATDS-v1.md">ATDS v1</a></footer>
 </body>
-</html>
 ```
 
-### 2.3 Reglas obligatorias (ficha)
+### 4.1 Reglas obligatorias (ficha)
 
-| Regla | Comprobación |
+En certificación **bloquean todas**, no solo P1. Proceden de `CONTRACTS.ficha` en
+`scripts/lib/html-contract.mjs`, y un test obliga a clasificar cualquier regla nueva.
+
+| Tipo | Reglas / comprobaciones |
 |---|---|
-| `h1` único | Coincide con `catalogo.json` (2.137/2.137 exactos en la baseline) |
-| `dl` | `<dt>`/`<dd>` dentro de `<dl>` (directos o en `<div>`); `dl-valid` P1 |
-| Skip link | `a[href="#main-content"]` + `main#main-content`; `skip-link` P2 (verificación manual de 2.4.1) |
-| Landmarks | `<header role="banner">` y `<footer role="contentinfo">` fuera de `<main>` |
-| Navegación | Al menos un `<nav>` con `aria-label`; `nav-present` y `nav-named` P2 |
-| Enlace de categoría | La ficha enlaza al `href` de su categoría en `catalogo.json`; `category-link` P2 |
-| Badge ATDS | `data-atds-validated`/`data-atds-candidate` = `level`/`candidateLevel` oficiales |
-| Recursos | Solo archivos existentes; `resource-links` P2 |
-| Enlaces externos | Texto descriptivo; `target="_blank"` solo con `rel="noopener noreferrer"` |
-| Meta description | Presente y no vacía; `meta-description` P3 |
-| Estilos | Sin atributos `style`; `no-inline-style` P3 |
+| Normativa HTML (P1) | `dl-valid` |
+| Reglas del validador como obligación de contrato | `skip-link`, `main-id`, `header-footer-landmarks`, `nav-present`, `nav-named`, `section-heading`, `focus-visible`, `link-text`, `meta-description`, `no-inline-style`, `internal-link`, `category-link`, `resource-links`, `atds-badge` |
+| Comprobaciones de contrato | `single-h1`, `h1-matches-catalog`, `atds-badge-required`, `no-external-stylesheet`, `no-web-fonts`, `external-link-rel`, `local-links-resolve` |
+
+`skip-link` bloquea aquí como **obligación de la plantilla**, y el mensaje lo dice
+explícitamente. No es un veredicto automático de WCAG 2.4.1; en el corpus advisory sigue
+siendo P2 `wcag-candidate`.
 
 ---
 
-## 3. Contrato B — Índice de categoría
+## 5. Contrato B — Índice de categoría
 
-```html
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Índice de [N] herramientas en [Categoría] — Evol Tool Atlas">
-  <title>[N]. [Categoría] · Evol Tool Atlas</title>
-  <link rel="stylesheet" href="../../shared/index.css">
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+Plantilla canónica: `scripts/contracts/category-index.template.html`, renderizada con
+`categoryContractVars(rel, base, atdsLookup, { date })`. Las tarjetas se generan para
+**todas** las herramientas de la categoría en `catalogo.json`, con un badge por tarjeta tomado del
+resultado ATDS oficial. El enlace `README.md` ("Criterios de la categoría") solo aparece si
+el archivo existe en el directorio del índice.
 
-  <header class="site-header" role="banner">
-    <p class="brand">Evol Tool Atlas</p>
-    <nav aria-label="Ruta de navegación">
-      <a href="../../../index.html">Inicio</a> ›
-      <span aria-current="page">[Categoría]</span>
-    </nav>
-  </header>
-
-  <main id="main-content" role="main">
-    <header class="index-header">
-      <p class="eyebrow">Categoría [NN] · [slug]</p>
-      <h1>[Nombre categoría]</h1>
-      <p class="lead">[N] herramientas documentadas · [M] con procedencia verificada · [K] excluidas</p>
-    </header>
-
-    <nav aria-label="Acciones del índice">
-      <a href="../../../index.html">Volver al navegador principal</a>
-      <a href="README.md" rel="noopener">Criterios de la categoría</a>
-    </nav>
-
-    <section aria-labelledby="tools-h">
-      <h2 id="tools-h">Herramientas documentadas</h2>
-      <ul class="tool-grid" role="list">
-        <li>
-          <article class="tool-card">
-            <h3><a href="[herramienta]/index.html">[Nombre]</a></h3>
-            <p class="muted">[Descripción corta ≤140 caracteres]</p>
-            <!-- Nivel desde reports/atds-validation.json, no desde catalogo.json.evidence -->
-            <span class="atds-badge"
-                  data-atds-validated="[level]"
-                  data-atds-candidate="[candidateLevel]">ATDS: [level]</span>
-          </article>
-        </li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="excluidas-h" hidden>
-      <h2 id="excluidas-h">Entradas excluidas del índice operativo</h2>
-      <ul>...</ul>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <p><small>Fine Line Premium · Evol Tool Atlas · [fecha] ·
-      <a href="../../docs/atds/ATDS-v1.md">ATDS v1</a></small></p>
-  </footer>
-</body>
-</html>
-```
-
-### 3.1 Reglas obligatorias (índice)
-
-| Regla | Comprobación |
+| Tipo | Reglas / comprobaciones |
 |---|---|
-| `<nav>` con nombre | `nav-present` + `nav-named` P2 |
-| `ul.tool-grid` | `role="list"` (Safari/VoiceOver) |
-| Card | `h3 > a` con nombre accesible; sin texto de enlace vacío |
-| Badge ATDS | Sincronizado con `reports/atds-validation.json` |
-| Enlace a cada ficha | Ruta relativa `[herramienta]/index.html` |
-| Footer | `role="contentinfo"` fuera de `<main>` |
-| Sección excluidas | `hidden` si no hay entradas |
+| Normativa HTML (P1) | `dl-valid` |
+| Reglas del validador como obligación de contrato | `skip-link`, `main-id`, `header-footer-landmarks`, `nav-present`, `nav-named`, `section-heading`, `focus-visible`, `link-text`, `meta-description`, `no-inline-style` |
+| No aplican (solo fichas) | `internal-link`, `category-link`, `resource-links`, `atds-badge` |
+| Comprobaciones de contrato | `single-h1`, `h1-matches-catalog`, `no-external-stylesheet`, `no-web-fonts`, `external-link-rel`, `local-links-resolve`, `tool-grid-list` (`ul.tool-grid[role=list]`), `links-every-tool`, `card-badges-match-atds` |
 
 ---
 
-## 4. Compatibilidad con la baseline real
+## 6. Compatibilidad con la baseline real
 
 | Componente | Baseline `1144dedd` | Contrato | Acción en PR #5 / PR #6 |
 |---|---|---|---|
 | `scripts/lib/html-scan.mjs` | Escáner estructural bloqueante (SEC-STATIC-01) | **Intocable** | PR #5 no lo modifica; el validador nuevo lo ejecuta y reporta `0 blocking` |
 | `scripts/verify-atlas.mjs` | Gate de seguridad + enlaces + marca + dist | **Intocable** | Se ejecuta tal cual en `check:release` |
 | `scripts/atds-gate.mjs` | **27/27** controles | Mantener 27 | PR #5 no toca ATDS |
-| `tests/unit` | **561/561** tests | Mantener ≥561 + tests nuevos | PR #5 añade tests del validador |
+| `tests/unit` | 561 tests en la baseline | Mantener todos + tests nuevos | PR #5 añade los tests del validador y de la certificación (ver evidencia del PR) |
 | `npm run check:release` | `check && verify:release && test:e2e` | Mantener | Se ejecuta en la entrega |
-| `reports/atds-validation.json` | `report.tools[]` con `id`, `level`, `candidateLevel` | Única fuente de badge | El renderizador lee estos campos |
-| `build-catalog-index.mjs` | Ya publica `tool.atds.validatedLevel`/`candidateLevel` | Reutilizar | No duplicar lógica |
+| `reports/atds-validation.json` | Gitignored; `report.tools[]` con `id`, `level`, `candidateLevel` | Fuente opcional (`--atds-source=report`) | Si se pide y falta, es un error operativo (exit 2) |
+| `scripts/build-catalog-index.mjs` | Publica `tool.atds.validatedLevel`/`candidateLevel` con `evaluateToolSafe()` | Misma función que la certificación | Sin lógica ATDS duplicada; funciona en un build limpio |
 | CSP SPA | Cabecera + meta: `script-src 'self'; style-src 'self'; ...` | Mantener | No se toca |
 | CSP documentos | Cabecera `default-src 'none'; script-src 'none'; style-src 'unsafe-inline'; ...` | Mantener | No se inyecta meta CSP en estáticas |
 | `SHA256SUMS.txt` | Raíz + por herramienta; copiado a `dist/` | Regenerar si cambia HTML | PR #5 no cambia HTML; PR #6 debe regenerar y verificar `sha256sum -c` |
 | `public/data/offline-manifest.json` | **6.672** entradas, revisión determinista por SHA-256 | Incluir cada HTML nuevo | `build-catalog-index.mjs` ya recorre las 2.186 páginas |
-| Base path | `/evol-tool-atlas/` (`scripts/lib/base-path.mjs`) | Rutas relativas o `BASE_URL` | Nunca `/shared/...` absoluto |
-| Identidad | Fine Line Premium, Manrope + Atkinson Hyperlegible, paleta oficial | Mantener | `verify-atlas.mjs` valida colores y fuentes |
+| Base path | `/evol-tool-atlas/` (`scripts/lib/base-path.mjs`) | Rutas relativas calculadas por profundidad (§3) | Nunca rutas absolutas `/…`; se comprueba bajo `/` y `/evol-tool-atlas/` |
+| Identidad | Fine Line Premium, Manrope + Atkinson Hyperlegible, paleta oficial | Mantener | Un test exige que el `<style>` de las plantillas use solo la paleta oficial de `scripts/verify-atlas.mjs`; las fuentes se declaran por nombre, con *fallback* (§2) |
 
-### 4.1 CSP: qué permite y qué prohíbe
+### 6.1 CSP: qué permite y qué prohíbe
 
 | Directiva | SPA (APP) | Documentos históricos |
 |---|---|---|
@@ -294,10 +224,10 @@ estáticas: la política se aplica por cabecera en `vite preview`
 (`scripts/lib/dev-static.mjs`). Inyectar meta CSP en 2.186 páginas sería una migración
 masiva y además `frame-ancestors` se ignora en `<meta>`.
 
-### 4.2 SHA-256 y manifiesto offline
+### 6.2 SHA-256 y manifiesto offline
 
 - Cada herramienta publica `SHA256SUMS.txt`; la raíz publica `SHA256SUMS.txt`.
-- `copy-static-catalog.mjs` copia ambos a `dist/`.
+- `scripts/copy-static-catalog.mjs` copia ambos a `dist/`.
 - El manifiesto offline incluye el SHA-256 y el tamaño de **cada** archivo publicado;
   su `revision` se deriva del contenido, no de timestamps.
 - **Regla:** si PR #6 modifica un `index.html`, debe regenerar el `SHA256SUMS.txt` de esa
@@ -309,76 +239,121 @@ masiva y además `frame-ancestors` se ignora en `<meta>`.
 
 ---
 
-## 5. Validador: modos, allowlist y anti-regresión
+## 7. Validador: modos, certificación, allowlist y CI
 
-### 5.1 Modos
+### 7.1 Modos y códigos de salida
 
-```bash
-# Advisory (por defecto): reporta todo, nunca bloquea
-node scripts/validate-html-structure.mjs
+| Modo | Comando | Alcance | Bloquea |
+|---|---|---|---|
+| Advisory (por defecto) | `npm run validate:html` | Las 2.186 páginas | Nunca por hallazgos |
+| Strict global | `npm run validate:html -- --strict --fail-on-error` | Las 2.186 páginas | P1, seguridad o allowlist caducada. Hoy falla por los 6.156 `dl-valid` históricos: **no es un gate de release** |
+| Certificación | `npm run validate:html -- --targets-file=scripts/html-pilot-targets.json` | **Solo** los targets | Cualquier regla obligatoria del contrato del target. El resto del corpus se informa en advisory y no bloquea |
 
-# Strict: solo para el piloto / árbol migrado; falla con P1, seguridad o allowlist expirada
-node scripts/validate-html-structure.mjs --strict --fail-on-error
+Códigos de salida: `0` = OK/PASS, `1` = FAIL (strict o certificación), `2` = error
+operativo. Un error operativo nunca termina en `0` y un hallazgo nunca termina en `2`.
 
-# JSON reproducible
-node scripts/validate-html-structure.mjs --output=/tmp/html.json
+Errores operativos: argumento desconocido o incompleto (`--target-file` no se ignora en
+silencio), `catalogo.json` ilegible, una página catalogada ausente de `02-catalogo/`
+(cobertura incompleta), allowlist inválida, selección de targets inválida, resultados ATDS
+ausentes cuando se exigen y evaluación ATDS interrumpida.
 
-# JSON compacto (solo agregados; es el artefacto versionado)
-node scripts/validate-html-structure.mjs --compact
+Opciones: `--root=<dir>` (raíz documental alternativa, para tests),
+`--atds-source=evaluate|report`, `--atds-report=<file>`, `--output=<file>` (JSON completo),
+`--summary-md=<file>` (resumen Markdown), `--compact` (artefacto agregado versionado:
+`scripts/html-validation-results.json`), `--no-security`, `--no-allowlist`.
+
+### 7.2 Selección de targets (`--targets-file`)
+
+```json
+{
+  "schema": "evol-tool-atlas/html-certification-targets/1",
+  "expectedCount": 11,
+  "targets": [{ "file": "02-catalogo/…/index.html", "contract": "ficha" }]
+}
 ```
 
-El validador **no** sustituye a `verify-atlas.mjs`. De hecho, ejecuta
-`scanStaticTree()` de `scripts/lib/html-scan.mjs` y muestra su resultado
-(`0 blocking` en la baseline). Así se demuestra que los controles de seguridad siguen
-activos y que el validador solo añade semántica, accesibilidad y contrato.
+Ningún target se descarta en silencio. Cualquiera de estas condiciones aborta con exit 2:
 
-### 5.2 Allowlist (9 entradas, P2/P3 solamente)
+- La ruta no está normalizada, es absoluta, usa `..` o queda fuera de `02-catalogo/`.
+- El archivo no existe, o no es una ficha ni un índice de `catalogo.json`.
+- El `contract` es desconocido o no coincide con lo que dice `catalogo.json`.
+- Hay targets duplicados, o una clave desconocida (las erratas no se ignoran).
+- `expectedCount` falta o no coincide con el número de targets.
+
+Además, la certificación comprueba que el número de páginas certificadas coincide con
+`expectedCount`. Un test exige que `scripts/html-pilot-targets.json` contenga exactamente las
+11 rutas de la tabla del §8, así que ninguno de los dos puede cambiar sin el otro.
+
+La certificación **no aplica la allowlist**: una página migrada cumple el contrato completo.
+
+### 7.3 ATDS en la certificación
+
+- `--atds-source=evaluate` (por defecto): `evaluateToolSafe()` en proceso. Funciona en un
+  checkout limpio.
+- `--atds-source=report`: lee `reports/atds-validation.json` o `--atds-report`. Si falta, es exit 2.
+- Si una ficha no tiene resultado oficial, o su evaluación se interrumpe, es exit 2. Si el badge
+  no coincide con `level`/`candidateLevel`, es FAIL (exit 1).
+
+### 7.4 Allowlist (9 entradas, P2/P3 solamente)
 
 `scripts/html-validation-allowlist.json` contiene 9 pares `file:focus-visible` del
 template legacy `pruebas-tecnicas/`. Cada entrada declara `reason`, `ticket` y
-`expiresAt: 2027-03-31` (o la fusión de PR #6, lo que ocurra antes).
+`expiresAt: 2027-03-31`.
 
-Garantías anti-regresión:
-
-1. **P1 nunca se permite.** `loadAllowlist()` lanza error si una entrada referencia una
+1. **P1 nunca se permite.** `loadAllowlist()` lanza un error si una entrada referencia una
    regla P1.
-2. **Solo suprime en strict.** En advisory se reportan las 228 fichas sin
-   `:focus-visible`; en strict se suprimen exactamente 9 y quedan 219.
-3. **Entrada caducada no suprime nada.** Si `expiresAt` ya pasó, strict falla.
-4. **Entrada obsoleta rompe el test.** Un test comprueba que cada archivo permitido
-   sigue disparando la regla; si se arregla, el test obliga a borrar la entrada.
-5. **Archivo/regla deben existir.** El loader valida que el archivo exista y que la regla
-   esté en el catálogo.
-6. **Tests del validador real.** Los tests importan `RULES` y `validateHtml()` del
-   módulo, no una copia de la lógica.
+2. **Solo suprime en strict global.** En advisory se reportan las 228 fichas sin
+   `:focus-visible`; en strict se suprimen 9. En certificación no se aplica.
+3. **Una entrada caducada no suprime nada.**
+4. **Una entrada obsoleta rompe el test.** Si se arregla el archivo, hay que borrar la entrada.
+5. **El archivo y la regla deben existir.**
+
+### 7.5 CI (advisory)
+
+`.github/workflows/ci.yml` ejecuta, después del gate ATDS:
+
+```bash
+npm run validate:html -- --output="$RUNNER_TEMP/html-validation.json" --summary-md="$GITHUB_STEP_SUMMARY"
+```
+
+Analiza las 2.186 páginas y publica en el resumen del job una tabla por prioridad y por regla.
+No falla por los defectos históricos declarados y sí falla (exit 2) ante errores operativos.
+No usa `|| true` ni `continue-on-error`; un test lo comprueba.
+
+### 7.6 Artefacto versionado
+
+`scripts/html-validation-results.json` (`--compact`) no contiene marca de tiempo ni SHA de
+commit, porque un archivo no puede nombrar el commit que lo contiene. Un test recalcula el
+resumen del corpus y exige que coincida con el artefacto.
 
 ---
 
-## 6. Piloto PR #6 (10 fichas + 1 índice)
+## 8. Piloto PR #6 (10 fichas + 1 índice)
 
 | # | Herramienta | Ruta | Familia | Por qué |
 |---|---|---|---|---|
-| 1 | threat-dragon | `02-catalogo/seguridad/catalogo/threat-dragon/index.html` | E3-01 L3 | Enlace de categoría correcto, sin `<nav>`: control de la distinción |
-| 2 | sagan | `02-catalogo/seguridad/catalogo/sagan/index.html` | E3-01 L3 | Referencia ATDS L3 |
-| 3 | nfcutils | `02-catalogo/seguridad/catalogo/nfcutils/index.html` | E3-01 L3 | Referencia ATDS L3 |
-| 4 | secure-delete | `02-catalogo/seguridad/catalogo/secure-delete/index.html` | E3-01 L3 | Referencia ATDS L3 |
-| 5 | semgrep | `02-catalogo/testing-y-auditoria/semgrep/index.html` | L1 prioritario | ATDS L1, recursos completos |
-| 6 | promptfoo | `02-catalogo/seguridad/catalogo/promptfoo/index.html` | NONE prioritario | Caso límite, recursos parciales |
-| 7 | cargo-fuzz | `02-catalogo/pruebas-tecnicas/cargo-fuzz/index.html` | L1 prioritario | Template legacy sin `focus-visible` (allowlist) |
-| 8 | mcp-inspector | `02-catalogo/pruebas-tecnicas/mcp-inspector/index.html` | L1 prioritario | Template legacy sin `focus-visible` (allowlist) |
-| 9 | 0trace | `02-catalogo/seguridad/catalogo/0trace/index.html` | `nav` + `dt/dd` sueltos | Familia mayoritaria |
-| 10 | adversarial-robustness-toolbox | `02-catalogo/seguridad/catalogo/adversarial-robustness-toolbox/index.html` | Sin nav/header | Familia minimalista |
-| 11 | scanner (índice) | `02-catalogo/seguridad/catalogo/scanner/index.html` | Índice grande | 257 `style` inline, grid de cards |
+| 1 | threat-dragon | `02-catalogo/seguridad/catalogo/threat-dragon/index.html` | E3-01, ATDS L3/L3 | Enlace de categoría correcto, sin `<nav>`: control de la distinción |
+| 2 | sagan | `02-catalogo/seguridad/catalogo/sagan/index.html` | E3-01, ATDS L3/L3 | Referencia L3; sin `description` en `catalogo.json` (el migrador debe aportarla) |
+| 3 | nfcutils | `02-catalogo/seguridad/catalogo/nfcutils/index.html` | E3-01, ATDS L3/L3 | Referencia L3; sin `description` en `catalogo.json` |
+| 4 | secure-delete | `02-catalogo/seguridad/catalogo/secure-delete/index.html` | E3-01, ATDS L3/L3 | Referencia L3; sin `description` en `catalogo.json` |
+| 5 | semgrep | `02-catalogo/testing-y-auditoria/semgrep/index.html` | Prioritaria, ATDS L1/L4 | Profundidad 3 y categoría en otro árbol (`seguridad/catalogo/auditoria-codigo/`) |
+| 6 | promptfoo | `02-catalogo/seguridad/catalogo/promptfoo/index.html` | Prioritaria, ATDS NONE/L4 | Caso límite, recursos parciales |
+| 7 | cargo-fuzz | `02-catalogo/pruebas-tecnicas/cargo-fuzz/index.html` | Prioritaria, ATDS L1/L4 | Template legacy sin `focus-visible` (allowlist) |
+| 8 | mcp-inspector | `02-catalogo/pruebas-tecnicas/mcp-inspector/index.html` | Prioritaria, ATDS L1/L3 | Template legacy sin `focus-visible` (allowlist) |
+| 9 | 0trace | `02-catalogo/seguridad/catalogo/0trace/index.html` | `nav` + `dt/dd` sueltos, ATDS NONE/L1 | Familia mayoritaria |
+| 10 | adversarial-robustness-toolbox | `02-catalogo/seguridad/catalogo/adversarial-robustness-toolbox/index.html` | Sin nav/header, ATDS NONE/L1 | Familia minimalista |
+| 11 | scanner (índice) | `02-catalogo/seguridad/catalogo/scanner/index.html` | Índice grande | 228 atributos `style`, grid de cards |
 
 ### Criterios de aceptación del piloto
 
-- [ ] `node scripts/validate-html-structure.mjs --strict --fail-on-error` pasa **solo**
-      en los 11 archivos piloto (el resto del corpus sigue en advisory).
+- [ ] `npm run validate:html -- --targets-file=scripts/html-pilot-targets.json` termina con
+      exit 0 (11/11 PASS). Hoy termina con exit 1, porque ninguna página está migrada; el resto
+      del corpus sigue en advisory.
 - [ ] `npm run check:release` pasa completo (check + verify:release + E2E).
 - [ ] `scripts/verify-atlas.mjs` pasa sin cambios y `html-scan.mjs` sigue bloqueando.
 - [ ] `SHA256SUMS.txt` regenerado y `sha256sum -c` OK para los 11 archivos.
 - [ ] Manifiesto offline regenerado, con revisión nueva y cobertura de los 11 HTML.
-- [ ] `reports/atds-validation.json` sin cambios; badge = `level`/`candidateLevel`.
+- [ ] Políticas ATDS sin cambios; badge = `level`/`candidateLevel` oficiales (certificación).
 - [ ] Base path probado en `/` y `/evol-tool-atlas/`.
 - [ ] Sin scripts, sin recursos remotos, sin formularios, sin `<base>`.
 - [ ] Identidad Fine Line Premium y contraste WCAG AA verificados.
@@ -386,9 +361,11 @@ Garantías anti-regresión:
 
 ---
 
-## 7. Fuera de alcance de PR #5
+## 9. Fuera de alcance de PR #5
 
 - No se migra ninguna ficha ni índice.
 - No se modifica `catalogo.json`, `02-catalogo/`, `docs/diseno/` ni las políticas ATDS.
 - No se toca `scripts/verify-atlas.mjs` ni `scripts/lib/html-scan.mjs`.
+- `scripts/copy-static-catalog.mjs` solo cambia para importar su lista de `scripts/lib/static-publish.mjs`; copia exactamente los mismos elementos.
+- No se modifica la CSP (`scripts/lib/security-headers.mjs`).
 - No se abre PR #6 ni se inicia E3-02.

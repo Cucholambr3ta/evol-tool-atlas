@@ -2,6 +2,11 @@
 
 **Rama:** `atlas/etapa-03-lote-01-categorias-minimas`
 **Baseline oficial:** `main` = `1144dedd1b65fe3c9a844fc0519e3a441f931ba6` (PR #4, estabilización post-E3-01)
+
+> **Sobre los SHA.** Este archivo no puede contener el SHA del commit que lo incluye. El SHA
+> definitivo es el `head` del PR #5 en GitHub (`gh pr view 5 --json headRefOid`). Los SHA que
+> aparecen aquí son la **baseline** (`1144dedd`) o commits **intermedios** ya superados, y se
+> rotulan como tales.
 **Estado:** trabajo local verificado; **sin push, sin PR abierto, sin merge**
 **Fecha de ejecución:** 2026-11-27
 **Entorno:** Node `v26.13.1`, npm `12.2.3`, `node-html-parser@9.0.7`
@@ -38,7 +43,7 @@ controles.
 | `scripts/audit-html-structure.mjs` | Auditoría DOM reproducible de las 2.186 páginas |
 | `scripts/html-validation-allowlist.json` | 9 entradas `focus-visible` con `reason`, `ticket`, `expiresAt` |
 | `scripts/html-audit-results.json` | Inventario por archivo (métricas DOM) |
-| `scripts/html-validation-results.json` | Resultado compacto del validador (schema v2; agregados por regla/archivo; el detalle completo se regenera sin `--compact`) |
+| `scripts/html-validation-results.json` | Resultado compacto del validador (schema v3; agregados por regla/archivo, sin marca de tiempo ni SHA; el detalle completo se obtiene con `--output`) |
 | `scripts/html-contracts.md` | Contratos canónicos, clasificación P1/P2/P3 y plan piloto |
 | `tests/unit/html-structure.test.ts` | 51 tests que importan las reglas reales |
 | `PR5-SUMMARY.md` / `PR5-RECONCILIATION.md` | Resumen y este informe |
@@ -186,7 +191,10 @@ Resultado: advisory `focus-visible` = 228; strict = 219 (9 suprimidas).
 
 ---
 
-## 7. Evidencia de ejecución
+## 7. Evidencia de ejecución (entrega inicial, histórica)
+
+> Esta sección reproduce la evidencia de la **entrega inicial** (antes de la auditoría). La
+> evidencia vigente del delta correctivo está en el §10.
 
 ```bash
 $ git rev-parse HEAD
@@ -246,8 +254,8 @@ El validador es **advisory por defecto** y **no forma parte de `check:release`**
 strict no bloquea el release por los defectos históricos aún no migrados.
 `--strict --fail-on-error` falla hoy porque el corpus sin migrar conserva 6.156 hallazgos P1
 (`dl-valid`); ese es el estado real y no se oculta. El gate bloqueante de release sigue siendo
-`verify-atlas.mjs` + `html-scan.mjs`, que reportan **0 blocking**. El modo strict está pensado
-para el piloto de PR #6, no para bloquear el corpus legacy en este PR.
+`verify-atlas.mjs` + `html-scan.mjs`, que reportan **0 blocking**. El piloto de PR #6 no se
+certifica con strict global, sino con `--targets-file` (§10).
 
 ---
 
@@ -265,14 +273,64 @@ También se verificó que `scripts/lib/html-scan.mjs` sigue importado y llamado 
 
 ---
 
-## 9. SHA final y solicitud de autorización
+## 9. Publicación
 
-**SHA de baseline:** `1144dedd1b65fe3c9a844fc0519e3a441f931ba6`
-**Diff:** solo los archivos nuevos listados en §2 + `package.json`/`package-lock.json`.
-**Nada publicado:** no hay push, no hay PR #5 abierto, no hay merge, no se inició PR #6 ni E3-02.
+PR #5 se publicó desde la rama nueva `atlas/html-structure-pr5-advisory`; la rama
+`atlas/etapa-03-lote-01-categorias-minimas` no se reutilizó. Historial sobre `1144dedd`:
 
-El commit local de PR #5 se crea sobre `1144dedd` como parte de la entrega; su SHA se reporta
-en la conversación. Solicito autorización para:
+| Commit (intermedio) | Contenido |
+|---|---|
+| `47dc06e3` | Validador, auditoría y contratos (entrega inicial) |
+| `c7c63d3f` | `skip-link` pasa a P2 `wcag-candidate` |
+| `11b6efcf` | Los tests no dependen de `reports/atds-validation.json` |
+| `14912fe7` | Directorio temporal por ejecución en los tests (CI en verde) |
+| *head del PR* | Delta correctivo HTML5-01/02/03 (§10) |
 
-1. Publicar la rama y abrir **PR #5** hacia `main`.
-2. Mantener el merge y el piloto PR #6 a la espera de revisión humana.
+---
+
+## 10. Delta correctivo de auditoría (HTML5-01 / HTML5-02 / HTML5-03)
+
+Dictamen de la auditoría independiente sobre `14912fe7`: NO-GO temporal por tres hallazgos.
+
+### HTML5-01 — Certificación del piloto
+
+- `scripts/lib/html-contract.mjs`: `CONTRACTS` (`ficha`, `category-index`) clasifica **cada**
+  regla del validador como obligatoria o no aplicable, y añade comprobaciones de contrato
+  (`single-h1`, `h1-matches-catalog`, `atds-badge-required`, `no-external-stylesheet`,
+  `no-web-fonts`, `external-link-rel`, `local-links-resolve`, `tool-grid-list`,
+  `links-every-tool`, `card-badges-match-atds`).
+- `--targets-file=<json>` (schema `evol-tool-atlas/html-certification-targets/1`) y
+  `expectedCount` obligatorio. Las rutas inexistentes, fuera de `02-catalogo/`, no catalogadas,
+  duplicadas o con contrato incorrecto, y las claves desconocidas, abortan con exit 2.
+  `scripts/html-pilot-targets.json` contiene las 11 páginas del piloto, y un test lo compara
+  con la tabla de `scripts/html-contracts.md`.
+- ATDS: se calcula en proceso con `evaluateToolSafe()` (opcionalmente
+  `--atds-source=report`). Si falta el resultado o la evaluación se interrumpe, es exit 2; un
+  badge discrepante es FAIL.
+- La allowlist no se aplica en certificación. El resto del corpus se informa en advisory y no bloquea.
+- Hoy, `npm run certify:html:pilot` termina con **exit 1 (0/11 PASS)**, como se espera: no se migró ninguna página.
+
+### HTML5-02 — Contratos publicables
+
+- Plantillas: `scripts/contracts/ficha.template.html` y
+  `scripts/contracts/category-index.template.html`. El renderizador rechaza placeholders sin
+  valor y fichas sin descripción.
+- CSS: Opción A (embebido). La CSP de documentos no cambia, y un test fija su valor exacto.
+  La Opción B queda documentada con sus requisitos (CSP, `dist/`, hashes y manifiesto) y descartada.
+- Rutas: `{{ROOT}}` y `{{CATEGORY_HREF}}` se calculan por profundidad. Las 11 páginas piloto,
+  renderizadas en sus rutas reales, pasan la certificación y `html-scan.mjs` (0 blocking).
+  Todos sus enlaces se resuelven bajo `/` y `/evol-tool-atlas/` a archivos existentes y
+  publicados en `dist/`, según la lista compartida `scripts/lib/static-publish.mjs`.
+- Se eliminaron las referencias a archivos inexistentes, y un test verifica todas las rutas citadas en el contrato.
+
+### HTML5-03 — Advisory en CI
+
+- Paso nuevo en `.github/workflows/ci.yml`:
+  `npm run validate:html -- --output="$RUNNER_TEMP/html-validation.json" --summary-md="$GITHUB_STEP_SUMMARY"`.
+- Analiza las 2.186 páginas. Comprueba la cobertura: si falta una página catalogada, exit 2.
+  Los hallazgos históricos dan exit 0. Sin `|| true` ni `continue-on-error`, y un test lo comprueba.
+
+### Evidencia
+
+- `npm run test:unit`: **667/667** (18 archivos).
+- `npm run check:release`, el CI y el SHA definitivo se reportan en el PR #5 sobre su `head`.
